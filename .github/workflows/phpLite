@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3 
-          
+        uses: actions/checkout@v4 
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -23,7 +23,7 @@ jobs:
           
       - name: Execute PHP script
         run: |
-          set -e  
+          set -euo pipefail
           cd lite
           php -d display_errors get.php
           php -d display_errors duplicate.php
