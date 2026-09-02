@@ -1,37 +1,27 @@
 <?php
-// Enable error reporting
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ERROR | E_PARSE);
 
-// Include the functions file
 require "functions.php";
 
-// Fetch the JSON data from the API and decode it into an associative array
 $sourcesArray = json_decode(
     file_get_contents("channels.json"),
     true
 );
 
-// Load sublinks.json (optional)
 $sublinksArray = ["sublinks" => []];
 if (file_exists("sublinks.json")) {
     $sublinksJson = file_get_contents("sublinks.json");
-
-    // Replace placeholders with actual URLs from environment variables (GitHub Actions secrets)
-    $sublinksJson = str_replace(
-        [
-            "__PRIVATE_LINK_SiNAVM_1__",
-            "__PRIVATE_LINK_SiNAVM_2__",
-            "__PRIVATE_LINK_SiNAVM_3__"
-        ],
-        [
-            getenv("PRIVATE_LINK_SiNAVM_1"),
-            getenv("PRIVATE_LINK_SiNAVM_2"),
-            getenv("PRIVATE_LINK_SiNAVM_3")
-        ],
-        $sublinksJson
-    );
+    $sublinksJson = preg_replace_callback('/__PRIVATE_LINK_SiNAVM_(\d+)__/', function ($m) {
+        $n = $m[1];
+        foreach ([getenv("PRIVATE_LINK_SiNAVM_" . $n), getenv("PRIVATE_LINK_SINAVM_" . $n)] as $val) {
+            if (is_string($val) && trim($val) !== '') {
+                return trim($val);
+            }
+        }
+        return '';
+    }, $sublinksJson);
 
     $decoded = json_decode($sublinksJson, true);
     if (is_array($decoded) && isset($decoded["sublinks"]) && is_array($decoded["sublinks"])) {
@@ -39,28 +29,20 @@ if (file_exists("sublinks.json")) {
     }
 }
 
-
-// Count the total number of sources
 $totalSources = count($sourcesArray) + count($sublinksArray["sublinks"]);
 $tempCounter = 1;
 
-// Initialize an empty array to store the configurations
 $configsList = [];
 echo "Fetching Configs\n";
 
-// Loop through each source in the sources array
 foreach ($sourcesArray as $source => $types) {
-    // Calculate the percentage complete
     $percentage = ($tempCounter / $totalSources) * 100;
-
-    // Print the progress bar
     echo "\rProgress: [";
     echo str_repeat("=", $tempCounter);
     echo str_repeat(" ", $totalSources - $tempCounter);
     echo "] $percentage%";
     $tempCounter++;
 
-    // Fetch the data from the source
     $tempData = file_get_contents("https://t.me/s/" . $source);
     $type = implode("|", $types);
     $tempExtract = extractLinksByType($tempData, $type);
@@ -69,22 +51,18 @@ foreach ($sourcesArray as $source => $types) {
     }
 }
 
-// Loop through each sublink in sublinks.json (if any)
 foreach ($sublinksArray["sublinks"] as $sublink) {
-    // Calculate the percentage complete
     $percentage = ($tempCounter / $totalSources) * 100;
-
-    // Print the progress bar
     echo "\rProgress: [";
     echo str_repeat("=", floor($percentage / (100 / $totalSources)));
     echo str_repeat(" ", $totalSources - floor($percentage / (100 / $totalSources)));
     echo "] " . number_format($percentage, 2) . "%";
     $tempCounter++;
 
-    $url = $sublink["url"] ?? "";
-    $protocols = isset($sublink["protocols"]) ? implode("|", (array)$sublink["protocols"]) : "";
+    $url = preg_replace('/#.*$/', '', trim((string)($sublink["url"] ?? "")));
+    $protocols = expandProtocolPattern($sublink["protocols"] ?? []);
 
-    if (empty($url) || empty($protocols)) {
+    if ($url === '' || strpos($url, '__PRIVATE_LINK_') !== false || $protocols === '') {
         continue;
     }
 
@@ -93,27 +71,26 @@ foreach ($sublinksArray["sublinks"] as $sublink) {
         if ($response === false) {
             continue;
         }
+        $response = decodeMaybeBase64($response);
 
         $sublink_configs = array_filter(explode("\n", $response), function($config) use ($protocols) {
             $config = trim($config);
-            return $config !== "" && preg_match("/^($protocols):\/\//", $config);
+            return $config !== "" && preg_match("/^($protocols):\/\//i", $config);
         });
 
         if (!empty($sublink_configs)) {
             $configsList[$url] = $sublink_configs;
         }
     } catch (Exception $e) {
-        echo "\nError fetching sublink $url: " . $e->getMessage() . "\n";
+        echo "\nError fetching sublink\n";
     }
 }
 
-// Initialize an empty array to store the final output
 $finalOutput = [];
 $locationBased = [];
 $needleArray = ["amp%3B"];
 $replaceArray = [""];
 
-// Define the hash and IP keys for each type of configuration
 $configsHash = [
     "vmess" => "ps",
     "vless" => "hash",
@@ -135,26 +112,20 @@ echo "\nProcessing Configs\n";
 $totalSources = count($configsList);
 $tempSource = 1;
 
-// Loop through each source in the configs list
 foreach ($configsList as $source => $configs) {
     $totalConfigs = count($configs);
     $tempCounter = 1;
     echo "\n" . strval($tempSource) . "/" . strval($totalSources) . "\n";
 
-    // Loop through each config in the configs array
     $limitKey = count($configs) - 2;
     foreach (array_reverse($configs) as $key => $config) {
-        // Calculate the percentage complete
         $percentage = ($tempCounter / $totalConfigs) * 100;
-
-        // Print the progress bar
         echo "\rProgress: [";
         echo str_repeat("=", $tempCounter);
         echo str_repeat(" ", $totalConfigs - $tempCounter);
         echo "] $percentage%";
         $tempCounter++;
 
-        // If the config is valid and the key is less than or equal to 1
         if (is_valid($config) && $key >= $limitKey) {
             $type = detect_type($config);
             $configHash = $configsHash[$type];
@@ -164,12 +135,12 @@ foreach ($configsList as $source => $configs) {
                 ip_info($decodedConfig[$configIp])->country ?? "XX";
             $configFlag =
                 $configLocation === "XX" ? "❔" : ($configLocation === "CF" ? "🚩" : getFlags($configLocation));
-            $isEncrypted = 
+            $isEncrypted =
                 isEncrypted($config) ? "🟢" : "🔴";
             $decodedConfig[$configHash] =
                 $configFlag .
                 $configLocation .
-                " | " . 
+                " | " .
                 $isEncrypted .
                 " | " .
                 $type .
@@ -199,7 +170,6 @@ deleteFolder("subscriptions/location/base64");
 mkdir("subscriptions/location/normal");
 mkdir("subscriptions/location/base64");
 
-// Loop through each location in the location-based array
 foreach ($locationBased as $location => $configs) {
     $tempConfig = urldecode(implode("\n", $configs));
     $base64TempConfig = base64_encode($tempConfig);
@@ -213,7 +183,6 @@ foreach ($locationBased as $location => $configs) {
     );
 }
 
-// Write the final output to a file
 file_put_contents("config.txt", implode("\n", $finalOutput));
 
 echo "\nGetting Configs Done!\n";
