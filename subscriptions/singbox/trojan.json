@@ -75,7 +75,7 @@
             "mtu": 1400,
             "platform": {
                 "http_proxy": {
-                    "enabled": true,
+                    "enabled": false,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
@@ -87,12 +87,47 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@𝙎𝙞𝙉𝘼𝙑𝙈"
+                "@SiNAVM",
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3",
+                "@SiNAVM-4",
+                "@SiNAVM-5",
+                "@SiNAVM-6",
+                "@SiNAVM-7",
+                "@SiNAVM-8",
+                "@SiNAVM-9",
+                "@SiNAVM-10",
+                "@SiNAVM-11",
+                "@SiNAVM-12",
+                "@SiNAVM-13",
+                "@SiNAVM-14",
+                "@SiNAVM-15",
+                "@SiNAVM-16",
+                "@SiNAVM-17",
+                "@SiNAVM-18",
+                "@SiNAVM-19",
+                "@SiNAVM-20",
+                "@SiNAVM-21",
+                "@SiNAVM-22",
+                "@SiNAVM-23",
+                "@SiNAVM-24",
+                "@SiNAVM-25",
+                "@SiNAVM-26",
+                "@SiNAVM-27",
+                "@SiNAVM-28",
+                "@SiNAVM-29",
+                "@SiNAVM-30",
+                "@SiNAVM-31",
+                "@SiNAVM-32",
+                "@SiNAVM-33",
+                "@SiNAVM-34",
+                "@SiNAVM-35"
             ]
         },
         {
             "type": "urltest",
-            "tag": "@𝙎𝙞𝙉𝘼𝙑𝙈",
+            "tag": "@SiNAVM",
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
@@ -139,7 +174,6 @@
             "server": "151.101.56.7",
             "server_port": 443,
             "password": "MiTiVPN",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "ssl.fastly.com",
@@ -160,6 +194,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-1"
         },
         {
@@ -167,7 +202,6 @@
             "server": "199.232.78.160",
             "server_port": 443,
             "password": "MiTiVPN",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "ssl.fastly.com",
@@ -188,6 +222,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-2"
         },
         {
@@ -195,7 +230,6 @@
             "server": "104.21.60.109",
             "server_port": 2087,
             "password": "netra",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "LAtE",
@@ -217,6 +251,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-3"
         },
         {
@@ -224,7 +259,6 @@
             "server": "172.67.218.38",
             "server_port": 443,
             "password": "Telegram_healer_config",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "1v95V6tjywCyTBAhl7f7lX8B27G.l4495eycQmSE9he0YVoemJfc4IBYf",
@@ -246,6 +280,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
         },
         {
@@ -253,7 +288,7 @@
             "server": "43.165.185.191",
             "server_port": 50000,
             "password": "0964f6b7-6aab-4b84-9e80-dd078ed1f269",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-5"
         },
         {
@@ -261,7 +296,7 @@
             "server": "jp200m.jiasu.asia",
             "server_port": 50000,
             "password": "0964f6b7-6aab-4b84-9e80-dd078ed1f269",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-6"
         },
         {
@@ -269,7 +304,7 @@
             "server": "34.131.228.210",
             "server_port": 443,
             "password": "M7v%w11Se*",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-7"
         },
         {
@@ -277,7 +312,6 @@
             "server": "34.94.125.227",
             "server_port": 443,
             "password": "M7v%w11Se*",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "mxlo.wsone.icu",
@@ -290,6 +324,7 @@
                     "fingerprint": "chrome"
                 }
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-8"
         },
         {
@@ -297,7 +332,6 @@
             "server": "199.232.78.160",
             "server_port": 443,
             "password": "MiTiVPN",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "ssl.fastly.com",
@@ -318,6 +352,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-9"
         },
         {
@@ -325,7 +360,7 @@
             "server": "hk200m.jiasu.asia",
             "server_port": 50000,
             "password": "ac4bd92e-6714-4b77-8ef1-5f3e2a4f08e5",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-10"
         },
         {
@@ -333,7 +368,7 @@
             "server": "43.165.185.191",
             "server_port": 50000,
             "password": "d9ac7c6d-9ca8-4e1b-af9f-d268f69249b5",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-11"
         },
         {
@@ -341,7 +376,7 @@
             "server": "jp200m.jiasu.asia",
             "server_port": 50000,
             "password": "d9ac7c6d-9ca8-4e1b-af9f-d268f69249b5",
-            "domain_strategy": "prefer_ipv4",
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-12"
         },
         {
@@ -349,7 +384,6 @@
             "server": "104.16.174.101",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -370,6 +404,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-13"
         },
         {
@@ -377,7 +412,6 @@
             "server": "104.16.174.36",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -398,6 +432,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-14"
         },
         {
@@ -405,7 +440,6 @@
             "server": "104.16.174.37",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -426,6 +460,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-15"
         },
         {
@@ -433,7 +468,6 @@
             "server": "104.17.177.143",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -454,6 +488,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-16"
         },
         {
@@ -461,7 +496,6 @@
             "server": "104.18.152.108",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -482,6 +516,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-17"
         },
         {
@@ -489,7 +524,6 @@
             "server": "104.18.152.113",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -510,6 +544,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-18"
         },
         {
@@ -517,7 +552,6 @@
             "server": "104.18.152.140",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -538,6 +572,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-19"
         },
         {
@@ -545,7 +580,6 @@
             "server": "104.18.152.152",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -566,6 +600,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-20"
         },
         {
@@ -573,7 +608,6 @@
             "server": "104.18.152.246",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -594,6 +628,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-21"
         },
         {
@@ -601,7 +636,6 @@
             "server": "104.18.152.73",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -622,6 +656,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-22"
         },
         {
@@ -629,7 +664,6 @@
             "server": "104.26.14.137",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -650,6 +684,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-23"
         },
         {
@@ -657,7 +692,6 @@
             "server": "104.26.15.137",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -678,6 +712,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-24"
         },
         {
@@ -685,7 +720,6 @@
             "server": "130.250.137.171",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -706,6 +740,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-25"
         },
         {
@@ -713,7 +748,6 @@
             "server": "172.67.149.60",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -734,6 +768,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-26"
         },
         {
@@ -741,7 +776,6 @@
             "server": "185.114.72.31",
             "server_port": 2053,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.calmlunch.com",
@@ -762,6 +796,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-27"
         },
         {
@@ -769,7 +804,6 @@
             "server": "185.75.243.102",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -790,6 +824,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-28"
         },
         {
@@ -797,7 +832,6 @@
             "server": "188.42.145.180",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.volumeroot.com",
@@ -818,6 +852,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-29"
         },
         {
@@ -825,7 +860,6 @@
             "server": "213.182.199.137",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.pleadcourt.org",
@@ -846,6 +880,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-30"
         },
         {
@@ -853,7 +888,6 @@
             "server": "216.24.57.7",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -874,6 +908,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-31"
         },
         {
@@ -881,7 +916,6 @@
             "server": "8.6.112.0",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -902,6 +936,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-32"
         },
         {
@@ -909,7 +944,6 @@
             "server": "82.117.245.125",
             "server_port": 2053,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.calmlunch.com",
@@ -930,6 +964,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-33"
         },
         {
@@ -937,7 +972,6 @@
             "server": "join-telegram-channel.tirexnet.kdns.fr",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -958,6 +992,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-34"
         },
         {
@@ -965,7 +1000,6 @@
             "server": "www.speedtest.net",
             "server_port": 443,
             "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
                 "server_name": "www.ignitelimit.com",
@@ -986,6 +1020,7 @@
                 },
                 "max_early_data": 0
             },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-35"
         },
         {
@@ -1066,7 +1101,7 @@
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

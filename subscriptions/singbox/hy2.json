@@ -75,7 +75,7 @@
             "mtu": 1400,
             "platform": {
                 "http_proxy": {
-                    "enabled": true,
+                    "enabled": false,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
@@ -87,12 +87,12 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@𝙎𝙞𝙉𝘼𝙑𝙈"
+                "@SiNAVM"
             ]
         },
         {
             "type": "urltest",
-            "tag": "@𝙎𝙞𝙉𝘼𝙑𝙈",
+            "tag": "@SiNAVM",
             "outbounds": [],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -176,7 +176,7 @@
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

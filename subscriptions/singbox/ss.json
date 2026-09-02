@@ -75,7 +75,7 @@
             "mtu": 1400,
             "platform": {
                 "http_proxy": {
-                    "enabled": true,
+                    "enabled": false,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
@@ -87,18 +87,31 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@𝙎𝙞𝙉𝘼𝙑𝙈"
+                "@SiNAVM",
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
-            "tag": "@𝙎𝙞𝙉𝘼𝙑𝙈",
+            "tag": "@SiNAVM",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.9",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "shadowsocks",
@@ -107,8 +120,8 @@
             "method": "chacha20-ietf-poly1305",
             "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4",
             "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-1"
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
@@ -188,7 +201,7 @@
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }
