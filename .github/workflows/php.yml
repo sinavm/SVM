@@ -15,6 +15,7 @@ permissions:
 jobs:
   sinavm-full:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     env:
       PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 || secrets.PRIVATE_LINK_SiNAVM_1 }}
       PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 || secrets.PRIVATE_LINK_SiNAVM_2 }}
@@ -22,6 +23,7 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
+      SINGBOX_VERSION: "1.14.0"
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -30,11 +32,18 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          extensions: curl
+          coverage: none
 
-      - name: Install Dependencies for HiddifyCli
+      - name: Install sing-box
         run: |
-          sudo apt-get update
-          sudo apt-get install -y curl tar
+          set -euo pipefail
+          VER="${SINGBOX_VERSION:-1.14.0}"
+          curl -L --retry 5 --retry-delay 2 -o /tmp/sing-box.tar.gz \
+            "https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          tar -xzf /tmp/sing-box.tar.gz -C /tmp
+          sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
+          sing-box version
 
       - name: Execute PHP script
         run: |
@@ -44,7 +53,7 @@ jobs:
           git pull --rebase
 
           php -d display_errors get.php
-          php -d display_errors config-test.php || true
+          php -d display_errors config-test.php
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
@@ -57,7 +66,7 @@ jobs:
           git config --global user.name "sinavm"
           git config credential.helper store
 
-          git rm -r --cached cache lite/cache hiddify-cli reports/invalid.txt lite/reports/invalid.txt 2>/dev/null || true
+          git rm -r --cached cache lite/cache hiddify-cli sing-box-bin reports/invalid.txt lite/reports/invalid.txt reports/singbox-test.log 2>/dev/null || true
 
           for i in {1..3}; do
             git pull --rebase
@@ -69,6 +78,7 @@ jobs:
 
   sinavm-lite:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     needs: sinavm-full
     env:
       PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 || secrets.PRIVATE_LINK_SiNAVM_1 }}
@@ -77,6 +87,7 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
+      SINGBOX_VERSION: "1.14.0"
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -85,11 +96,18 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          extensions: curl
+          coverage: none
 
-      - name: Install Dependencies for HiddifyCli
+      - name: Install sing-box
         run: |
-          sudo apt-get update
-          sudo apt-get install -y curl tar
+          set -euo pipefail
+          VER="${SINGBOX_VERSION:-1.14.0}"
+          curl -L --retry 5 --retry-delay 2 -o /tmp/sing-box.tar.gz \
+            "https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          tar -xzf /tmp/sing-box.tar.gz -C /tmp
+          sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
+          sing-box version
 
       - name: Execute PHP script
         run: |
@@ -100,7 +118,7 @@ jobs:
 
           cd lite
           php -d display_errors ../get.php
-          php -d display_errors ../config-test.php || true
+          php -d display_errors ../config-test.php
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors ../toSingbox.php
@@ -111,7 +129,7 @@ jobs:
           git config --global user.name "sinavm"
           git config credential.helper store
 
-          git rm -r --cached cache lite/cache hiddify-cli reports/invalid.txt lite/reports/invalid.txt 2>/dev/null || true
+          git rm -r --cached cache lite/cache hiddify-cli sing-box-bin reports/invalid.txt lite/reports/invalid.txt reports/singbox-test.log lite/reports/singbox-test.log 2>/dev/null || true
 
           for i in {1..3}; do
             git pull --rebase
