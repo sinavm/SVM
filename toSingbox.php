@@ -19,6 +19,16 @@ function processWsPath($input)
     return ["path" => "/" . $path, "max_early_data" => $max_early_data];
 }
 
+function sanitizeUtlsFingerprint($raw)
+{
+    $fp = strtolower(trim((string)$raw));
+    $allowed = ["chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"];
+    if (in_array($fp, $allowed, true)) {
+        return $fp;
+    }
+    return "chrome";
+}
+
 function setTls($decodedConfig, $configType)
 {
     $serverNameTypes = [
@@ -28,6 +38,9 @@ function setTls($decodedConfig, $configType)
         "tuic" => $decodedConfig["params"]["sni"] ?? $decodedConfig["hostname"] ?? "",
         "hy2" => $decodedConfig["params"]["sni"] ?? $decodedConfig["hostname"] ?? ""
     ];
+    $rawFp = $decodedConfig["params"]["fp"]
+        ?? $decodedConfig["fp"]
+        ?? "chrome";
     $tlsConfig = [
         "enabled" => true,
         "server_name" => $serverNameTypes[$configType],
@@ -35,7 +48,7 @@ function setTls($decodedConfig, $configType)
         "alpn" => explode(",", $decodedConfig["params"]["alpn"] ?? ($configType === "tuic" ? "h3,spdy/3.1" : "h3")),
         "min_version" => "1.3",
         "max_version" => "1.3",
-        "utls" => ["enabled" => true, "fingerprint" => $decodedConfig["params"]["fp"] ?? "chrome"]
+        "utls" => ["enabled" => true, "fingerprint" => sanitizeUtlsFingerprint($rawFp)]
     ];
     if ($configType === "vless" && !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
         $tlsConfig["reality"] = [
@@ -231,9 +244,13 @@ $directoryOfFiles = [
 ];
 
 foreach ($directoryOfFiles as $directory) {
+    if (!is_file($directory)) {
+        continue;
+    }
     $configsName = "@SiNAVM | " . explode("/", $directory)[3];
     $configsData = file_get_contents($directory);
     $convertionResult = processConvertion($configsData, $configsName);
+    @mkdir("subscriptions/singbox", 0777, true);
     file_put_contents("subscriptions/singbox/" . explode("/", $directory)[3] . ".json", $convertionResult);
 }
 
