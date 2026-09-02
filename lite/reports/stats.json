@@ -1,16 +1,19 @@
 {
-    "total_raw": 195,
-    "total_valid": 161,
-    "total_invalid": 34,
+    "total_raw": 1685,
+    "total_valid": 1536,
+    "total_invalid": 149,
     "by_type": {
-        "vless": 136,
-        "trojan": 21,
-        "vmess": 0,
-        "ss": 4
+        "vless": 1464,
+        "trojan": 62,
+        "vmess": 5,
+        "ss": 5
     },
     "invalid_reasons": {
-        "vless_invalid_port": 5,
-        "reality_missing_or_invalid_pbk_sid": 14,
-        "parse_failed": 15
+        "vless_invalid_uuid": 116,
+        "vless_invalid_host": 2,
+        "vless_missing_uuid": 3,
+        "parse_failed": 15,
+        "reality_missing_or_invalid_pbk": 12,
+        "vmess_invalid_uuid": 1
     }
 }

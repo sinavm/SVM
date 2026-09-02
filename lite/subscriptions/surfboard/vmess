@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #4 = vmess, www.shopify.com, 443, username = d187a23a-76a9-4d55-84e3-ea3b8b222cbf, ws = true, tls = 1, vmess-aead = true, ws-path = /d187a23a-76a9-4d55-84e3-ea3b8b222cbf-vm, ws-headers = Host:"dimensional", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #4
+URL-TEST = url-test,SiNAVM | VMESS | #4
+FALLBACK = fallback,SiNAVM | VMESS | #4
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL

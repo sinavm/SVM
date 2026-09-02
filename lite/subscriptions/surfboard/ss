@@ -15,10 +15,11 @@ SiNAVM | SS | #1 = ss, 46.183.185.37, 990, encrypt-method = chacha20-ietf-poly13
 SiNAVM | SS | #2 = ss, 141.98.4.67, 52952, encrypt-method = chacha20-ietf-poly1305, password = LMSNh21TrXjR2ok25Q2nE8ENT2zoBmPvka3RCCUAHZELCnWoekVjvaf89qwcRkdbxEfep2bc2aUtmnxqvF1ayQRez1JHjULj
 SiNAVM | SS | #3 = ss, 69.30.251.122, 51004, encrypt-method = chacha20-ietf-poly1305, password = 245f2c1d-a317-45a8-b230-e420566a7f62
 SiNAVM | SS | #4 = ss, 90.156.203.62, 5112, encrypt-method = chacha20-ietf-poly1305, password = VVlAff77CnAU43Aoc5j15Y
+SiNAVM | SS | #5 = ss, 36.224.147.226, 50099, encrypt-method = chacha20-ietf-poly1305, password = 7e731ec3-f8e1-43f6-92cf-3978d14705c4
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4
-URL-TEST = url-test,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4
-FALLBACK = fallback,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5
+URL-TEST = url-test,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5
+FALLBACK = fallback,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
