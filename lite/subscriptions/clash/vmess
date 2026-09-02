@@ -118,11 +118,7 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"103.240.197.112","port":"55314","cipher":"auto","uuid":"bdb68629-1c6a-4eed-8083-7d4379a2dd52","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"119.46.51.45","port":"37515","cipher":"auto","uuid":"9b76bc31-17a5-4454-934a-8d5fb602cd70","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #3","type":"vmess","server":"47.236.207.245","port":"29521","cipher":"auto","uuid":"f1bb29bf-a342-44d4-9ac5-5ca4566a216a","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"www.shopify.com","port":"443","cipher":"auto","uuid":"d187a23a-76a9-4d55-84e3-ea3b8b222cbf","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/d187a23a-76a9-4d55-84e3-ea3b8b222cbf-vm","headers":{"host":"dimensional"}}}
-  - {"name":"SiNAVM | VMESS | #5","type":"vmess","server":"107.173.254.27","port":"15311","cipher":"auto","uuid":"ad78d02b-873f-4cff-8d4a-673f53d6ce0f","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"107.173.254.27","port":"15311","cipher":"auto","uuid":"ad78d02b-873f-4cff-8d4a-673f53d6ce0f","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -130,10 +126,6 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #5'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -141,20 +133,12 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #5'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #5'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
