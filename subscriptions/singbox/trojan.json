@@ -128,10 +128,7 @@
                 "@SiNAVM-32",
                 "@SiNAVM-33",
                 "@SiNAVM-34",
-                "@SiNAVM-35",
-                "@SiNAVM-36",
-                "@SiNAVM-37",
-                "@SiNAVM-38"
+                "@SiNAVM-35"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -150,8 +147,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -163,8 +158,7 @@
                 "headers": {
                     "Host": "ssl.fastly.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-1"
         },
@@ -181,8 +175,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -194,8 +186,7 @@
                 "headers": {
                     "Host": "ssl.fastly.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-2"
         },
@@ -212,8 +203,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -243,8 +232,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -263,34 +250,19 @@
         },
         {
             "type": "trojan",
-            "server": "edu.ruangguru.com",
-            "server_port": 443,
-            "password": "018b8e7b-7813-4dcb-84a5-3c98f1521e00",
+            "server": "43.165.185.191",
+            "server_port": 50000,
+            "password": "0964f6b7-6aab-4b84-9e80-dd078ed1f269",
             "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "id1.nathaya.web.id",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/trojan",
-                "headers": {
-                    "Host": "id1.nathaya.web.id"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
             "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "trojan",
+            "server": "jp200m.jiasu.asia",
+            "server_port": 50000,
+            "password": "0964f6b7-6aab-4b84-9e80-dd078ed1f269",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "trojan",
@@ -298,7 +270,7 @@
             "server_port": 443,
             "password": "M7v%w11Se*",
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "trojan",
@@ -313,14 +285,12 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "trojan",
@@ -335,8 +305,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -348,39 +316,7 @@
                 "headers": {
                     "Host": "ssl.fastly.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "trojan",
-            "server": "104.21.76.194",
-            "server_port": 443,
-            "password": "Telegram_healer_config",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "X8xus4X7UTZMDozv2.bZuH25LZINNeTwTOcXYIcx.WORkERs.deV",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/tr\/nDuppKYyUqsEcG0rcQEg5sghG0",
-                "headers": {
-                    "Host": "X8xus4X7UTZMDozv2.bZuH25LZINNeTwTOcXYIcx.WORkERs.deV"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-9"
         },
@@ -391,6 +327,22 @@
             "password": "ac4bd92e-6714-4b77-8ef1-5f3e2a4f08e5",
             "domain_strategy": "prefer_ipv4",
             "tag": "@SiNAVM-10"
+        },
+        {
+            "type": "trojan",
+            "server": "43.165.185.191",
+            "server_port": 50000,
+            "password": "d9ac7c6d-9ca8-4e1b-af9f-d268f69249b5",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "trojan",
+            "server": "jp200m.jiasu.asia",
+            "server_port": 50000,
+            "password": "d9ac7c6d-9ca8-4e1b-af9f-d268f69249b5",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "trojan",
@@ -405,8 +357,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -418,41 +368,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "trojan",
-            "server": "104.16.174.12",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.ignitelimit.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.ignitelimit.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "trojan",
@@ -467,8 +385,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -480,10 +396,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-13"
+            "tag": "@SiNAVM-14"
         },
         {
             "type": "trojan",
@@ -498,8 +413,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -511,10 +424,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-14"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "trojan",
@@ -529,8 +441,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -542,10 +452,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "trojan",
@@ -560,8 +469,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -573,10 +480,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "trojan",
@@ -591,8 +497,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -604,10 +508,37 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.152.140",
+            "server_port": 443,
+            "password": "humanity",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.ignitelimit.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.ignitelimit.com"
+                },
+                "max_early_data": 0
+            },
+            "tag": "@SiNAVM-19"
         },
         {
             "type": "trojan",
@@ -622,8 +553,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -635,10 +564,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-18"
+            "tag": "@SiNAVM-20"
         },
         {
             "type": "trojan",
@@ -653,8 +581,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -666,10 +592,37 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-19"
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.152.73",
+            "server_port": 443,
+            "password": "humanity",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.ignitelimit.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.ignitelimit.com"
+                },
+                "max_early_data": 0
+            },
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "trojan",
@@ -684,8 +637,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -697,10 +648,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-20"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "trojan",
@@ -715,8 +665,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -728,10 +676,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-24"
         },
         {
             "type": "trojan",
@@ -746,8 +693,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -759,41 +704,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "trojan",
-            "server": "168.100.9.178",
-            "server_port": 2053,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-23"
+            "tag": "@SiNAVM-25"
         },
         {
             "type": "trojan",
@@ -808,8 +721,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -821,10 +732,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-24"
+            "tag": "@SiNAVM-26"
         },
         {
             "type": "trojan",
@@ -839,8 +749,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -852,10 +760,9 @@
                 "headers": {
                     "Host": "www.calmlunch.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-25"
+            "tag": "@SiNAVM-27"
         },
         {
             "type": "trojan",
@@ -870,8 +777,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "android"
@@ -883,41 +788,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-27"
+            "tag": "@SiNAVM-28"
         },
         {
             "type": "trojan",
@@ -932,8 +805,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -945,10 +816,9 @@
                 "headers": {
                     "Host": "www.volumeroot.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-28"
+            "tag": "@SiNAVM-29"
         },
         {
             "type": "trojan",
@@ -959,12 +829,10 @@
             "tls": {
                 "enabled": true,
                 "server_name": "www.pleadcourt.org",
-                "insecure": false,
+                "insecure": true,
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -976,10 +844,9 @@
                 "headers": {
                     "Host": "www.pleadcourt.org"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-29"
+            "tag": "@SiNAVM-30"
         },
         {
             "type": "trojan",
@@ -994,8 +861,6 @@
                 "alpn": [
                     "http\/1.1"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -1007,72 +872,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-30"
-        },
-        {
-            "type": "trojan",
-            "server": "45.87.41.18",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-31"
-        },
-        {
-            "type": "trojan",
-            "server": "5.78.92.27",
-            "server_port": 8443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-32"
         },
         {
             "type": "trojan",
@@ -1087,8 +889,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -1100,8 +900,35 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
+            },
+            "tag": "@SiNAVM-32"
+        },
+        {
+            "type": "trojan",
+            "server": "82.117.245.125",
+            "server_port": 2053,
+            "password": "humanity",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-33"
         },
@@ -1118,8 +945,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -1131,72 +956,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
             "tag": "@SiNAVM-34"
-        },
-        {
-            "type": "trojan",
-            "server": "render.com",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.ignitelimit.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.ignitelimit.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-35"
-        },
-        {
-            "type": "trojan",
-            "server": "www.ignitelimit.com",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.ignitelimit.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.ignitelimit.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-36"
         },
         {
             "type": "trojan",
@@ -1211,8 +973,6 @@
                 "alpn": [
                     "h3"
                 ],
-                "min_version": "1.3",
-                "max_version": "1.3",
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
@@ -1224,41 +984,9 @@
                 "headers": {
                     "Host": "www.ignitelimit.com"
                 },
-                "max_early_data": 0,
-                "early_data_header_name": ""
+                "max_early_data": 0
             },
-            "tag": "@SiNAVM-37"
-        },
-        {
-            "type": "trojan",
-            "server": "www.speedtest.org",
-            "server_port": 443,
-            "password": "humanity",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.ignitelimit.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.ignitelimit.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-38"
+            "tag": "@SiNAVM-35"
         },
         {
             "type": "direct",
