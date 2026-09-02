@@ -24,17 +24,12 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4' 
+          php-version: '8.2'
 
       - name: Install Dependencies for HiddifyCli
         run: |
           sudo apt-get update
           sudo apt-get install -y curl tar 
-
-      - name: Run Clash API
-        run: |
-          docker run -d -p 6756:6756 dreamacro/clash --port 6756
-          sleep 10 
 
       - name: Execute PHP script
         run: |
@@ -61,7 +56,7 @@ jobs:
             git pull --rebase 
             git add -A 
 
-            commit_message="🤴🏻 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+            commit_message="🤴‍♂️ Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
             git commit -m "$commit_message" --allow-empty
             git push && break || sleep 5 
           done
@@ -81,17 +76,12 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.2'
 
       - name: Install Dependencies for HiddifyCli
         run: |
           sudo apt-get update
           sudo apt-get install -y curl tar
-
-      - name: Run Clash API
-        run: |
-          docker run -d -p 6756:6756 dreamacro/clash --port 6756
-          sleep 10 
 
       - name: Execute PHP script
         run: |
@@ -116,7 +106,7 @@ jobs:
             git pull --rebase 
             git add -A 
 
-            commit_message="👸🏻 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+            commit_message="👸 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
             git commit -m "$commit_message" --allow-empty
             git push && break || sleep 5 
           done
