@@ -21,7 +21,7 @@ jobs:
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
