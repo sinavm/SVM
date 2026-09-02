@@ -19,10 +19,9 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -72,10 +71,9 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
