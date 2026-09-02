@@ -74,13 +74,6 @@ function sanitizePacketEncoding($raw)
     return "xudp";
 }
 
-function sanitizeDomainStrategy($raw)
-{
-    $s = strtolower(trim((string)$raw));
-    $allowed = ["prefer_ipv4", "prefer_ipv6", "ipv4_only", "ipv6_only"];
-    return in_array($s, $allowed, true) ? $s : "prefer_ipv4";
-}
-
 function sanitizeAlpn($alpn)
 {
     if (is_string($alpn)) {
@@ -110,8 +103,9 @@ function sanitizeOutboundForSingbox114($ob)
         return $ob;
     }
 
-    if (isset($ob["domain_strategy"])) {
-        $ob["domain_strategy"] = sanitizeDomainStrategy($ob["domain_strategy"]);
+    unset($ob["domain_strategy"]);
+    if (!isset($ob["domain_resolver"])) {
+        $ob["domain_resolver"] = "dns_direct";
     }
 
     if (isset($ob["tls"]) && is_array($ob["tls"])) {
@@ -259,7 +253,7 @@ function setTls($decodedConfig, $configType)
         "enabled" => true,
         "server_name" => $serverNameTypes[$configType],
         "insecure" => $insecure,
-        "alpn" => sanitizeAlpn($decodedConfig["params"]["alpn"] ?? ($configType === "tuic" ? "h3" : "h3")),
+        "alpn" => sanitizeAlpn($decodedConfig["params"]["alpn"] ?? "h3"),
         "utls" => ["enabled" => true, "fingerprint" => sanitizeUtlsFingerprint($rawFp)]
     ];
     if ($configType === "vless" && !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality") {
@@ -317,7 +311,7 @@ function vmessToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) return null;
-    $configResult = ["type" => "vmess", "server" => $decodedConfig["add"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["id"] ?? "", "security" => $decodedConfig["scy"] ?? "auto", "alter_id" => intval($decodedConfig["aid"] ?? 0), "domain_strategy" => "prefer_ipv4"];
+    $configResult = ["type" => "vmess", "server" => $decodedConfig["add"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["id"] ?? "", "security" => $decodedConfig["scy"] ?? "auto", "alter_id" => intval($decodedConfig["aid"] ?? 0)];
     if (($decodedConfig["port"] === "443" || ($decodedConfig["tls"] ?? "") === "tls") && !empty($configResult["server"])) {
         $tls = setTls($decodedConfig, "vmess");
         if (!empty($tls["server_name"])) $configResult["tls"] = $tls;
@@ -334,7 +328,7 @@ function vlessToSingbox($input)
     $decodedConfig = configParse($input);
     if (!$decodedConfig) return null;
     $isReality = !empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "reality";
-    $configResult = ["type" => "vless", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["username"] ?? "", "packet_encoding" => "xudp", "domain_strategy" => "prefer_ipv4"];
+    $configResult = ["type" => "vless", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["username"] ?? "", "packet_encoding" => "xudp"];
     $flow = sanitizeVlessFlow($decodedConfig["params"]["flow"] ?? "");
     if ($flow !== "") {
         $configResult["flow"] = $flow;
@@ -355,7 +349,7 @@ function trojanToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) return null;
-    $configResult = ["type" => "trojan", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "password" => $decodedConfig["username"] ?? "", "domain_strategy" => "prefer_ipv4"];
+    $configResult = ["type" => "trojan", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "password" => $decodedConfig["username"] ?? ""];
     if (($decodedConfig["port"] === "443" || (!empty($decodedConfig["params"]["security"]) && $decodedConfig["params"]["security"] === "tls")) && !empty($configResult["server"])) {
         $tls = setTls($decodedConfig, "trojan");
         if (!empty($tls["server_name"])) $configResult["tls"] = $tls;
@@ -373,7 +367,7 @@ function ssToSingbox($input)
     if (!$decodedConfig) return null;
     $encryptionMethods = ["chacha20-ietf-poly1305", "xchacha20-ietf-poly1305", "aes-256-gcm", "aes-128-gcm", "2022-blake3-aes-256-gcm", "2022-blake3-aes-128-gcm", "2022-blake3-chacha20-poly1305"];
     if (!in_array($decodedConfig["encryption_method"] ?? "", $encryptionMethods)) return null;
-    $configResult = ["type" => "shadowsocks", "server" => $decodedConfig["server_address"] ?? "", "server_port" => intval($decodedConfig["server_port"] ?? 0), "method" => $decodedConfig["encryption_method"], "password" => $decodedConfig["password"] ?? "", "udp_over_tcp" => true, "domain_strategy" => "prefer_ipv4"];
+    $configResult = ["type" => "shadowsocks", "server" => $decodedConfig["server_address"] ?? "", "server_port" => intval($decodedConfig["server_port"] ?? 0), "method" => $decodedConfig["encryption_method"], "password" => $decodedConfig["password"] ?? "", "udp_over_tcp" => true];
     return sanitizeOutboundForSingbox114($configResult);
 }
 
@@ -381,7 +375,7 @@ function tuicToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) return null;
-    $configResult = ["type" => "tuic", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["username"] ?? "", "password" => $decodedConfig["pass"] ?? "", "congestion_control" => $decodedConfig["params"]["congestion_control"] ?? "bbr", "udp_relay_mode" => $decodedConfig["params"]["udp_relay_mode"] ?? "native", "zero_rtt_handshake" => false, "heartbeat" => "10s", "network" => "tcp", "domain_strategy" => "prefer_ipv4"];
+    $configResult = ["type" => "tuic", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "uuid" => $decodedConfig["username"] ?? "", "password" => $decodedConfig["pass"] ?? "", "congestion_control" => $decodedConfig["params"]["congestion_control"] ?? "bbr", "udp_relay_mode" => $decodedConfig["params"]["udp_relay_mode"] ?? "native", "zero_rtt_handshake" => false, "heartbeat" => "10s", "network" => "tcp"];
     $tls = setTls($decodedConfig, "tuic");
     if (!empty($tls["server_name"])) $configResult["tls"] = $tls;
     return sanitizeOutboundForSingbox114($configResult);
@@ -391,7 +385,7 @@ function hy2ToSingbox($input)
 {
     $decodedConfig = configParse($input);
     if (!$decodedConfig) return null;
-    $configResult = ["type" => "hysteria2", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "password" => $decodedConfig["username"] ?? "", "domain_strategy" => "ipv4_only", "hop_interval" => "10s"];
+    $configResult = ["type" => "hysteria2", "server" => $decodedConfig["hostname"] ?? "", "server_port" => intval($decodedConfig["port"] ?? 0), "password" => $decodedConfig["username"] ?? "", "hop_interval" => "10s"];
     if (!empty($decodedConfig["params"]["ports"])) $configResult["server_ports"] = $decodedConfig["params"]["ports"];
     if (!empty($decodedConfig["params"]["obfs"])) {
         $configResult["obfs"] = ["type" => $decodedConfig["params"]["obfs"], "password" => $decodedConfig["params"]["obfs-password"] ?? ""];
@@ -436,6 +430,9 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
         $urltest['outbounds'][] = $tag;
         $index++;
     }
+    $urltest['tag'] = "@SiNAVM";
+    $selector['tag'] = "انتخابگر دستی";
+    $selector['outbounds'] = array_values(array_unique(array_merge(["@SiNAVM"], $urltest['outbounds'])));
     $tail = [];
     for ($i = 2; $i < count($structure['outbounds']); $i++) $tail[] = $structure['outbounds'][$i];
     if (empty($tail)) $tail[] = ["type" => "direct", "tag" => "direct"];
