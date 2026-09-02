@@ -43,7 +43,7 @@ jobs:
 
           php -d display_errors get.php
           php -d display_errors config-test.php || true
-          php -d display_errors channelsAssets.php
+          php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors toSingbox.php
@@ -57,7 +57,7 @@ jobs:
           for i in {1..3}; do
             git pull --rebase
             git add -A
-            commit_message="🤴‍♂️ Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+            commit_message="👷‍♂️ Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
             git commit -m "$commit_message" --allow-empty
             git push && break || sleep 5
           done
