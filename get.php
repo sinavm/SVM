@@ -1,23 +1,16 @@
 <?php
-// Enable error reporting
 ini_set("display_errors", 1);
 ini_set("display_startup_errors", 1);
 error_reporting(E_ERROR | E_PARSE);
 
 require "functions.php";
 
-/**
- * Simple cached fetch with retries + backoff.
- * - Caches responses to disk to reduce load and make debugging easier.
- * - If the network fails, will fall back to cache if available.
- */
 function fetchWithCache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3) {
     $cacheDir = dirname($cacheFile);
     if (!is_dir($cacheDir)) {
         @mkdir($cacheDir, 0777, true);
     }
 
-    // fresh cache
     if (is_file($cacheFile) && (time() - filemtime($cacheFile) < $ttlSeconds)) {
         return file_get_contents($cacheFile);
     }
@@ -32,7 +25,7 @@ function fetchWithCache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3) {
     ]);
 
     $lastErr = null;
-    $backoffs = [1, 3, 7]; // seconds
+    $backoffs = [1, 3, 7];
     for ($i = 0; $i < $retries; $i++) {
         $data = @file_get_contents($url, false, $context);
         if ($data !== false && strlen($data) > 50) {
@@ -44,7 +37,6 @@ function fetchWithCache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3) {
         usleep($sleep * 1000000);
     }
 
-    // fallback to old cache
     if (is_file($cacheFile)) {
         return file_get_contents($cacheFile);
     }
@@ -52,14 +44,24 @@ function fetchWithCache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3) {
     throw new Exception("Fetch failed: " . ($lastErr['message'] ?? 'unknown error'));
 }
 
-// Load sources
+function resolvePrivateSublink($n) {
+    $candidates = [
+        getenv("PRIVATE_LINK_SiNAVM_" . $n),
+        getenv("PRIVATE_LINK_SINAVM_" . $n),
+    ];
+    foreach ($candidates as $val) {
+        if (is_string($val) && trim($val) !== '') {
+            return trim($val);
+        }
+    }
+    return '';
+}
+
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
 
-// Load sublinks and inject secrets (__PRIVATE_LINK_SiNAVM_N__ -> env)
 $sublinksJson = file_get_contents("sublinks.json");
 $sublinksJson = preg_replace_callback('/__PRIVATE_LINK_SiNAVM_(\d+)__/', function ($m) {
-    $val = getenv("PRIVATE_LINK_SiNAVM_" . $m[1]);
-    return $val !== false ? $val : '';
+    return resolvePrivateSublink($m[1]);
 }, $sublinksJson);
 $sublinksArray = json_decode($sublinksJson, true);
 if (!is_array($sublinksArray) || !isset($sublinksArray['sublinks']) || !is_array($sublinksArray['sublinks'])) {
@@ -69,15 +71,13 @@ if (!is_array($sublinksArray) || !isset($sublinksArray['sublinks']) || !is_array
 $totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
 $tempCounter = 1;
 
-$configsRaw = [];   // raw lines (strings)
-$sourceOf = [];     // raw line => source label (best-effort)
+$configsRaw = [];
+$sourceOf = [];
 
-// Ensure folders
 @mkdir("cache/telegram", 0777, true);
 @mkdir("cache/subs", 0777, true);
 @mkdir("reports", 0777, true);
 
-// 1) Telegram channels: fetch HTML -> extract links
 foreach ($sourcesArray as $source => $types) {
     $percentage = ($tempCounter / $totalSources) * 100;
     echo "\rProgress: [";
@@ -104,7 +104,6 @@ foreach ($sourcesArray as $source => $types) {
     }
 }
 
-// 2) Sublinks: fetch subscription text (maybe base64) -> collect lines
 foreach ($sublinksArray['sublinks'] as $sublink) {
     $percentage = ($tempCounter / $totalSources) * 100;
     echo "\rProgress: [";
@@ -114,17 +113,18 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $tempCounter++;
 
     $url = trim((string)($sublink['url'] ?? ''));
-    // drop URL fragment used only as a label (e.g. #SUB3)
     $url = preg_replace('/#.*$/', '', $url);
     $protocols = expandProtocolPattern($sublink['protocols'] ?? []);
 
-    if ($url === '' || $protocols === '') continue;
+    if ($url === '' || strpos($url, '__PRIVATE_LINK_') !== false || $protocols === '') {
+        continue;
+    }
 
     $cacheKey = substr(sha1($url), 0, 16);
     $cacheFile = "cache/subs/" . $cacheKey . ".txt";
 
     try {
-        $resp = fetchWithCache($url, $cacheFile, 1800, 3); // 30m ttl for subs
+        $resp = fetchWithCache($url, $cacheFile, 1800, 3);
         $resp = decodeMaybeBase64($resp);
 
         $lines = preg_split('/\r?\n/', $resp);
@@ -136,11 +136,10 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
             $sourceOf[$line] = "sub:" . $cacheKey;
         }
     } catch (Exception $e) {
-        file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] sub:$url " . $e->getMessage() . "\n", FILE_APPEND);
+        file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] sub:$cacheKey " . $e->getMessage() . "\n", FILE_APPEND);
     }
 }
 
-// 3) QA: validate + normalize names
 $invalid = [];
 $valid = [];
 $stats = [
@@ -165,27 +164,18 @@ foreach ($configsRaw as $raw) {
         $reason = $res['reason'] ?? 'invalid';
         if (!isset($stats["invalid_reasons"][$reason])) $stats["invalid_reasons"][$reason] = 0;
         $stats["invalid_reasons"][$reason] += 1;
-
         $invalid[] = ($sourceOf[$raw] ?? "unknown") . " | " . $reason . " | " . $raw;
         continue;
     }
 
     $stats["total_valid"] += 1;
     $stats["by_type"][$type] += 1;
-
     $counterByType[$type] += 1;
-    $n = $counterByType[$type];
-
-    // Replace fragment/name with standard brand name
-    $raw2 = setConfigName($raw, buildStandardName($type, $n));
-    $valid[] = $raw2;
+    $valid[] = setConfigName($raw, buildStandardName($type, $counterByType[$type]));
 }
 
-// Write reports
 file_put_contents("reports/invalid.txt", implode("\n", $invalid));
 file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-
-// Save final config.txt
 file_put_contents("config.txt", implode("\n", $valid));
 
 echo "\nDone. Valid: {$stats['total_valid']} | Invalid: {$stats['total_invalid']}\n";
