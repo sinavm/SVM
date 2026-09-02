@@ -21,12 +21,55 @@ function processWsPath($input)
 
 function sanitizeUtlsFingerprint($raw)
 {
-    $fp = strtolower(trim((string)$raw));
-    $allowed = ["chrome", "firefox", "edge", "safari", "360", "qq", "ios", "android", "random", "randomized"];
-    if (in_array($fp, $allowed, true)) {
-        return $fp;
+    if (is_array($raw)) {
+        $raw = reset($raw);
+    }
+    $fp = strtolower(trim(urldecode((string)$raw)));
+    $fp = str_replace([" ", "_"], ["", "-"], $fp);
+    $allowed = [
+        "chrome" => "chrome",
+        "firefox" => "firefox",
+        "edge" => "edge",
+        "safari" => "safari",
+        "360" => "360",
+        "qq" => "qq",
+        "ios" => "ios",
+        "android" => "android",
+        "random" => "random",
+        "randomized" => "randomized",
+        "chrome-psk" => "chrome",
+        "chrome-psk-shuffle" => "chrome",
+        "chrome-padding-psk-shuffle" => "chrome",
+        "chrome-pq" => "chrome",
+        "chrome-pq-psk" => "chrome",
+        "chromeauto" => "chrome",
+        "hellochrome" => "chrome",
+        "hellofirefox" => "firefox",
+        "helloios" => "ios",
+    ];
+    if (isset($allowed[$fp])) {
+        return $allowed[$fp];
     }
     return "chrome";
+}
+
+function sanitizeStructureFingerprints(&$structure)
+{
+    if (!is_array($structure) || empty($structure["outbounds"]) || !is_array($structure["outbounds"])) {
+        return;
+    }
+    foreach ($structure["outbounds"] as &$ob) {
+        if (!is_array($ob)) {
+            continue;
+        }
+        if (isset($ob["tls"]["utls"]["fingerprint"])) {
+            $ob["tls"]["utls"]["fingerprint"] = sanitizeUtlsFingerprint($ob["tls"]["utls"]["fingerprint"]);
+        }
+        if (isset($ob["tls"]["fingerprint"])) {
+            $ob["tls"]["fingerprint"] = sanitizeUtlsFingerprint($ob["tls"]["fingerprint"]);
+        }
+    }
+    unset($ob);
 }
 
 function setTls($decodedConfig, $configType)
@@ -229,6 +272,7 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     for ($i = 2; $i < count($structure['outbounds']); $i++) $tail[] = $structure['outbounds'][$i];
     if (empty($tail)) $tail[] = ["type" => "direct", "tag" => "direct"];
     $structure['outbounds'] = array_merge([$selector, $urltest], $proxyOutbounds, $tail);
+    sanitizeStructureFingerprints($structure);
     return hiddifyHeader($configsName) . json_encode($structure, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 }
 
