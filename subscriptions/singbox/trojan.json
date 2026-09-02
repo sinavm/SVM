@@ -12,36 +12,28 @@
     "dns": {
         "servers": [
             {
+                "type": "https",
                 "tag": "dns_proxy",
-                "address": "https:\/\/1.1.1.1:443\/dns-query",
-                "address_resolver": "dns_direct",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "1.1.1.1",
+                "server_port": 443,
+                "path": "\/dns-query",
+                "detour": "انتخابگر دستی"
             },
             {
+                "type": "udp",
                 "tag": "dns_direct",
-                "address": "local",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "8.8.8.8"
             },
             {
-                "tag": "direct",
-                "address": "tls:\/\/8.8.8.8",
-                "detour": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag": "dns_block",
-                "address": "rcode:\/\/success"
-            }
-        ],
-        "rules": [
-            {
-                "outbound": "any",
-                "server": "dns_direct"
+                "type": "tls",
+                "tag": "dns_google",
+                "server": "8.8.8.8",
+                "detour": "انتخابگر دستی"
             }
         ],
         "final": "dns_proxy",
-        "independent_cache": true
+        "strategy": "ipv4_only",
+        "reverse_mapping": true
     },
     "ntp": {
         "enabled": true,
@@ -52,33 +44,27 @@
     "inbounds": [
         {
             "type": "mixed",
+            "tag": "mixed-in",
             "listen": "127.0.0.1",
             "listen_port": 20122,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "http",
+            "tag": "http-in",
             "listen": "127.0.0.1",
-            "listen_port": 8181,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "listen_port": 8181
         },
         {
             "type": "socks",
+            "tag": "socks-in",
             "listen": "127.0.0.1",
             "listen_port": 8080,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "tun",
+            "tag": "tun-in",
             "address": [
                 "172.19.0.1\/30",
                 "fdfe:dcba:9876::1\/126"
@@ -86,97 +72,27 @@
             "auto_route": true,
             "strict_route": true,
             "stack": "mixed",
+            "mtu": 1400,
             "platform": {
                 "http_proxy": {
                     "enabled": true,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
-            },
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            }
         }
     ],
     "outbounds": [
         {
             "type": "selector",
-            "tag": "Internet",
+            "tag": "انتخابگر دستی",
             "outbounds": [
-                "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10",
-                "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17",
-                "@SiNAVM-18",
-                "@SiNAVM-19",
-                "@SiNAVM-20",
-                "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23",
-                "@SiNAVM-24",
-                "@SiNAVM-25",
-                "@SiNAVM-26",
-                "@SiNAVM-27",
-                "@SiNAVM-28",
-                "@SiNAVM-29",
-                "@SiNAVM-30",
-                "@SiNAVM-31",
-                "@SiNAVM-32",
-                "@SiNAVM-33",
-                "@SiNAVM-34",
-                "@SiNAVM-35",
-                "@SiNAVM-36",
-                "@SiNAVM-37",
-                "@SiNAVM-38",
-                "@SiNAVM-39",
-                "@SiNAVM-40",
-                "@SiNAVM-41",
-                "@SiNAVM-42",
-                "@SiNAVM-43",
-                "@SiNAVM-44",
-                "@SiNAVM-45",
-                "@SiNAVM-46",
-                "@SiNAVM-47",
-                "@SiNAVM-48",
-                "@SiNAVM-49",
-                "@SiNAVM-50",
-                "@SiNAVM-51",
-                "@SiNAVM-52",
-                "@SiNAVM-53",
-                "@SiNAVM-54",
-                "@SiNAVM-55",
-                "@SiNAVM-56",
-                "@SiNAVM-57",
-                "@SiNAVM-58",
-                "@SiNAVM-59",
-                "@SiNAVM-60",
-                "@SiNAVM-61",
-                "@SiNAVM-62",
-                "@SiNAVM-63",
-                "@SiNAVM-64",
-                "@SiNAVM-65",
-                "@SiNAVM-66",
-                "@SiNAVM-67",
-                "@SiNAVM-68"
+                "@𝙎𝘾𝙉𝘼𝙑𝙈"
             ]
         },
         {
             "type": "urltest",
-            "tag": "Best Latency",
+            "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
@@ -197,69 +113,21 @@
                 "@SiNAVM-17",
                 "@SiNAVM-18",
                 "@SiNAVM-19",
-                "@SiNAVM-20",
-                "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23",
-                "@SiNAVM-24",
-                "@SiNAVM-25",
-                "@SiNAVM-26",
-                "@SiNAVM-27",
-                "@SiNAVM-28",
-                "@SiNAVM-29",
-                "@SiNAVM-30",
-                "@SiNAVM-31",
-                "@SiNAVM-32",
-                "@SiNAVM-33",
-                "@SiNAVM-34",
-                "@SiNAVM-35",
-                "@SiNAVM-36",
-                "@SiNAVM-37",
-                "@SiNAVM-38",
-                "@SiNAVM-39",
-                "@SiNAVM-40",
-                "@SiNAVM-41",
-                "@SiNAVM-42",
-                "@SiNAVM-43",
-                "@SiNAVM-44",
-                "@SiNAVM-45",
-                "@SiNAVM-46",
-                "@SiNAVM-47",
-                "@SiNAVM-48",
-                "@SiNAVM-49",
-                "@SiNAVM-50",
-                "@SiNAVM-51",
-                "@SiNAVM-52",
-                "@SiNAVM-53",
-                "@SiNAVM-54",
-                "@SiNAVM-55",
-                "@SiNAVM-56",
-                "@SiNAVM-57",
-                "@SiNAVM-58",
-                "@SiNAVM-59",
-                "@SiNAVM-60",
-                "@SiNAVM-61",
-                "@SiNAVM-62",
-                "@SiNAVM-63",
-                "@SiNAVM-64",
-                "@SiNAVM-65",
-                "@SiNAVM-66",
-                "@SiNAVM-67",
-                "@SiNAVM-68"
+                "@SiNAVM-20"
             ],
-            "url": "http:\/\/1.1.1.1\/",
+            "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
         },
         {
             "type": "trojan",
-            "server": "do-itforyou.pages.dev",
-            "server_port": 2083,
-            "password": "$_qP4V4U26sb{04A",
+            "server": "tronblue.qzz.io",
+            "server_port": 443,
+            "password": "3d24de45-e38a-49c2-a963-ba8271c62d2b",
             "domain_strategy": "prefer_ipv4",
             "tls": {
                 "enabled": true,
-                "server_name": "do",
+                "server_name": "tronblue.qzz.io",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -273,138 +141,14 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/trdFPAI0ljLLOygN2y",
+                "path": "\/152.32.255.24:587",
                 "headers": {
-                    "Host": "do"
+                    "Host": "tronblue.qzz.io"
                 },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
+                "max_early_data": 0,
+                "early_data_header_name": ""
             },
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "trojan",
-            "server": "seashell.qzz.io",
-            "server_port": 443,
-            "password": "13e71ddb-908c-45e0-993c-da482d848c88",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "seashell.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/156.254.114.120:30011",
-                "headers": {
-                    "Host": "seashell.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "trojan",
-            "server": "seashell.qzz.io",
-            "server_port": 443,
-            "password": "13e71ddb-908c-45e0-993c-da482d848c88",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "seashell.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/156.254.114.120:30011",
-                "headers": {
-                    "Host": "seashell.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "trojan",
-            "server": "tronblue.qzz.io",
-            "server_port": 443,
-            "password": "3d24de45-e38a-49c2-a963-ba8271c62d2b",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "tronblue.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/152.32.255.24:587",
-                "headers": {
-                    "Host": "tronblue.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "trojan",
-            "server": "tronblue.qzz.io",
-            "server_port": 443,
-            "password": "3d24de45-e38a-49c2-a963-ba8271c62d2b",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "tronblue.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/152.32.255.24:587",
-                "headers": {
-                    "Host": "tronblue.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-5"
         },
         {
             "type": "trojan",
@@ -426,7 +170,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "trojan",
@@ -448,7 +192,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "trojan",
@@ -470,7 +214,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-8"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "trojan",
@@ -492,73 +236,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "trojan",
-            "server": "160.16.107.37",
-            "server_port": 3169,
-            "password": "44e660b0ee21cf3ac66aee2c08af85d2",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "trojan",
-            "server": "160.16.116.227",
-            "server_port": 4054,
-            "password": "44e660b0ee21cf3ac66aee2c08af85d2",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "trojan",
-            "server": "160.16.117.182",
-            "server_port": 3093,
-            "password": "44e660b0ee21cf3ac66aee2c08af85d2",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "trojan",
@@ -580,51 +258,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "trojan",
-            "server": "160.16.151.196",
-            "server_port": 4054,
-            "password": "44e660b0ee21cf3ac66aee2c08af85d2",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "trojan",
-            "server": "160.16.242.183",
-            "server_port": 3093,
-            "password": "44e660b0ee21cf3ac66aee2c08af85d2",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "trojan",
@@ -646,7 +280,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "trojan",
@@ -677,38 +311,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-17"
-        },
-        {
-            "type": "trojan",
-            "server": "104.19.220.22",
-            "server_port": 443,
-            "password": "5a2c16f9",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "snippets.kkii.eu.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/\/",
-                "headers": {
-                    "Host": "snippets.kkii.eu.org"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-18"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "trojan",
@@ -739,38 +342,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-19"
-        },
-        {
-            "type": "trojan",
-            "server": "cf.090227.xyz",
-            "server_port": 443,
-            "password": "87d1bfd4-574e-4c96-ad42-0426f27461ff",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "_acme",
-                "insecure": true,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "_acme"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-20"
+            "tag": "@SiNAVM-9"
         },
         {
             "type": "trojan",
@@ -801,7 +373,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "trojan",
@@ -832,610 +404,7 @@
                 "max_early_data": 2560,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
-            "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "trojan",
-            "server": "70.34.218.149",
-            "server_port": 11930,
-            "password": "BaeSzHdfJIR13l67",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "softpillow.silentrocket.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-23"
-        },
-        {
-            "type": "trojan",
-            "server": "172.236.171.37",
-            "server_port": 28042,
-            "password": "M=vdPVIuNS389OQ6iqbAn-5G",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.fuzzyfeelergauge.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-24"
-        },
-        {
-            "type": "trojan",
-            "server": "172.236.171.37",
-            "server_port": 28042,
-            "password": "M=vdPVIuNS389OQ6iqbAn-5G",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.fuzzyfeelergauge.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-25"
-        },
-        {
-            "type": "trojan",
-            "server": "172.67.134.185",
-            "server_port": 443,
-            "password": "POORIARED",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "reDfRee8.REDFree8.ir",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/eyJqdW5rIjoiVUl6eXhLZkkwUTJ3ZzkiLCJwcm90b2NvbCI6InRyIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119",
-                "headers": {
-                    "Host": "reDfRee8.REDFree8.ir"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "trojan",
-            "server": "mfyousheng.nl.eu.org",
-            "server_port": 443,
-            "password": "Puj01Rc8UcA9IzcFcYOs8KMOhCz6aX2Q",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "mfyousheng.nl.eu.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/tjwsLhx0SFASG4l9FERJ1g",
-                "headers": {
-                    "Host": "mfyousheng.nl.eu.org"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-27"
-        },
-        {
-            "type": "trojan",
-            "server": "verarussia1.uspn.io",
-            "server_port": 443,
-            "password": "VjXsgvA0s4",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "verarussia1.uspn.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/trojan",
-                "headers": {
-                    "Host": "verarussia1.uspn.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-28"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.3",
-            "server_port": 443,
-            "password": "cf142ac0-4bae-4c4b-9882-21fc0550a661",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "red"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-29"
-        },
-        {
-            "type": "trojan",
-            "server": "blueivy.qzz.io",
-            "server_port": 443,
-            "password": "da943f80-91e6-46df-b7ba-c6ecf28e0171",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "blueivy.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/192.252.182.52:7602",
-                "headers": {
-                    "Host": "blueivy.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-30"
-        },
-        {
-            "type": "trojan",
-            "server": "202.181.103.246",
-            "server_port": 1334,
-            "password": "dd2f25b4c70689de8bc0f7fa9d6591cb",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.nintendogames.net",
-                "insecure": true,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-31"
-        },
-        {
-            "type": "trojan",
-            "server": "verager2.uspn.io",
-            "server_port": 443,
-            "password": "ddnkbe753N",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "verager2.uspn.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/trojan",
-                "headers": {
-                    "Host": "verager2.uspn.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-32"
-        },
-        {
-            "type": "trojan",
-            "server": "5.175.249.117",
-            "server_port": 443,
-            "password": "dkp96mJVuj",
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-33"
-        },
-        {
-            "type": "trojan",
-            "server": "ivory.qzz.io",
-            "server_port": 443,
-            "password": "e2e3b171-33a8-4c8f-9e5f-ae6e92299e40",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "ivory.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/46.232.122.240:8000",
-                "headers": {
-                    "Host": "ivory.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-34"
-        },
-        {
-            "type": "trojan",
-            "server": "bisque.qzz.io",
-            "server_port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "bisque.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/66.135.4.222:8443",
-                "headers": {
-                    "Host": "bisque.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-35"
-        },
-        {
-            "type": "trojan",
-            "server": "bisque.qzz.io",
-            "server_port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "bisque.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/66.135.4.222:8443",
-                "headers": {
-                    "Host": "bisque.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-36"
-        },
-        {
-            "type": "trojan",
-            "server": "bisque.qzz.io",
-            "server_port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "bisque.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/66.135.4.222:8443",
-                "headers": {
-                    "Host": "bisque.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-37"
-        },
-        {
-            "type": "trojan",
-            "server": "bisque.qzz.io",
-            "server_port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "bisque.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/66.135.4.222:8443",
-                "headers": {
-                    "Host": "bisque.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-38"
-        },
-        {
-            "type": "trojan",
-            "server": "bisque.qzz.io",
-            "server_port": 443,
-            "password": "e86364fb-a5e3-42c3-b7fa-6ce8097fe19f",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "bisque.qzz.io",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/66.135.4.222:8443",
-                "headers": {
-                    "Host": "bisque.qzz.io"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-39"
-        },
-        {
-            "type": "trojan",
-            "server": "tunel.amirspacee.top",
-            "server_port": 443,
-            "password": "ignHF1x8Gp",
-            "domain_strategy": "prefer_ipv4",
-            "transport": {
-                "type": "ws",
-                "path": "\/mfvmfdvnfjvfkdmv",
-                "headers": {
-                    "Host": "tunel.amirspacee.top"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-40"
-        },
-        {
-            "type": "trojan",
-            "server": "15.236.57.222",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-41"
-        },
-        {
-            "type": "trojan",
-            "server": "3.126.96.173",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-42"
-        },
-        {
-            "type": "trojan",
-            "server": "3.72.120.152",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-43"
-        },
-        {
-            "type": "trojan",
-            "server": "35.180.171.33",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-44"
-        },
-        {
-            "type": "trojan",
-            "server": "35.181.29.196",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-45"
-        },
-        {
-            "type": "trojan",
-            "server": "52.29.42.219",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-46"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "trojan",
@@ -1457,7 +426,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-47"
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "trojan",
@@ -1479,7 +448,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-48"
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "trojan",
@@ -1501,7 +470,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-49"
+            "tag": "@SiNAVM-14"
         },
         {
             "type": "trojan",
@@ -1523,7 +492,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-50"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "trojan",
@@ -1545,7 +514,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-51"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "trojan",
@@ -1567,7 +536,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-52"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "trojan",
@@ -1589,7 +558,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-53"
+            "tag": "@SiNAVM-18"
         },
         {
             "type": "trojan",
@@ -1611,7 +580,7 @@
                     "fingerprint": "chrome"
                 }
             },
-            "tag": "@SiNAVM-54"
+            "tag": "@SiNAVM-19"
         },
         {
             "type": "trojan",
@@ -1642,320 +611,7 @@
                 "max_early_data": 0,
                 "early_data_header_name": ""
             },
-            "tag": "@SiNAVM-55"
-        },
-        {
-            "type": "trojan",
-            "server": "cf.130519.xyz",
-            "server_port": 443,
-            "password": "87d1bfd4-574e-4c96-ad42-0426f27461ff",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "_acme",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "_acme"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-56"
-        },
-        {
-            "type": "trojan",
-            "server": "saas.sin.fan",
-            "server_port": 443,
-            "password": "87d1bfd4-574e-4c96-ad42-0426f27461ff",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "_acme",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "_acme"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-57"
-        },
-        {
-            "type": "trojan",
-            "server": "sub.danfeng.eu.org",
-            "server_port": 443,
-            "password": "87d1bfd4-574e-4c96-ad42-0426f27461ff",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "_acme",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "_acme"
-                },
-                "max_early_data": 2560,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "tag": "@SiNAVM-58"
-        },
-        {
-            "type": "trojan",
-            "server": "167.179.113.248",
-            "server_port": 10435,
-            "password": "ace1qxDyr_-GmIUgK.1Tnjb6ikAN",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuzzyfonduepotstand.oscillatingovenmitt.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-59"
-        },
-        {
-            "type": "trojan",
-            "server": "45.77.20.207",
-            "server_port": 10435,
-            "password": "ace1qxDyr_-GmIUgK.1Tnjb6ikAN",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuzzyfonduepotstand.oscillatingovenmitt.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-60"
-        },
-        {
-            "type": "trojan",
-            "server": "38.54.82.205",
-            "server_port": 27877,
-            "password": "pUF zmIw0QuRESBPLofx7eOj6Xc49",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.metaphysicalmagnet.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-61"
-        },
-        {
-            "type": "trojan",
-            "server": "45.15.140.107",
-            "server_port": 19106,
-            "password": "tSk5LQoJr7F.WnRsUM4hT",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "binaryboots.algorithmblanket.click",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-62"
-        },
-        {
-            "type": "trojan",
-            "server": "13.37.158.14",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-63"
-        },
-        {
-            "type": "trojan",
-            "server": "18.193.19.215",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-64"
-        },
-        {
-            "type": "trojan",
-            "server": "3.74.127.230",
-            "server_port": 22223,
-            "password": "telegram-id-directvpn",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-65"
-        },
-        {
-            "type": "trojan",
-            "server": "13.37.158.14",
-            "server_port": 22222,
-            "password": "telegram-id-privatevpns",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-66"
-        },
-        {
-            "type": "trojan",
-            "server": "18.193.19.215",
-            "server_port": 22222,
-            "password": "telegram-id-privatevpns",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-67"
-        },
-        {
-            "type": "trojan",
-            "server": "3.74.127.230",
-            "server_port": 22222,
-            "password": "telegram-id-privatevpns",
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "trojan.burgerip.co.uk",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "tag": "@SiNAVM-68"
+            "tag": "@SiNAVM-20"
         },
         {
             "type": "direct",
@@ -1965,7 +621,6 @@
     "route": {
         "rules": [
             {
-                "inbound": "tun-in",
                 "action": "sniff"
             },
             {
@@ -1973,20 +628,23 @@
                 "mode": "or",
                 "rules": [
                     {
-                        "inbound": "dns-in"
+                        "protocol": "dns"
                     },
                     {
                         "port": 53
-                    },
-                    {
-                        "protocol": "dns"
                     }
                 ],
                 "action": "hijack-dns"
             },
             {
-                "clash_mode": "@sinvt خرید نسخه ویژه",
-                "outbound": "@sinvt خرید نسخه ویژه"
+                "inbound": "tun-in",
+                "action": "resolve",
+                "strategy": "ipv4_only"
+            },
+            {
+                "clash_mode": "@sinavmbot خرید",
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "network": "tcp",
@@ -1999,23 +657,9 @@
                 "action": "reject"
             },
             {
-                "inbound": "tun-in",
-                "action": "resolve"
-            },
-            {
                 "ip_cidr": "10.10.34.0\/24",
-                "outbound": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "domain_regex": [
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
-                "outbound": "direct"
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "protocol": "stun",
@@ -2033,19 +677,21 @@
                 "action": "reject"
             }
         ],
+        "final": "انتخابگر دستی",
         "auto_detect_interface": true,
-        "override_android_vpn": true
+        "default_domain_resolver": "dns_direct"
     },
     "experimental": {
         "cache_file": {
             "enabled": true,
             "path": "cache.db",
             "cache_id": "sinavm",
-            "store_fakeip": true
+            "store_fakeip": true,
+            "store_dns": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM👈️تلگرام",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

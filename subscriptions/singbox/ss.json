@@ -12,36 +12,28 @@
     "dns": {
         "servers": [
             {
+                "type": "https",
                 "tag": "dns_proxy",
-                "address": "https:\/\/1.1.1.1:443\/dns-query",
-                "address_resolver": "dns_direct",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "1.1.1.1",
+                "server_port": 443,
+                "path": "\/dns-query",
+                "detour": "انتخابگر دستی"
             },
             {
+                "type": "udp",
                 "tag": "dns_direct",
-                "address": "local",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "8.8.8.8"
             },
             {
-                "tag": "direct",
-                "address": "tls:\/\/8.8.8.8",
-                "detour": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag": "dns_block",
-                "address": "rcode:\/\/success"
-            }
-        ],
-        "rules": [
-            {
-                "outbound": "any",
-                "server": "dns_direct"
+                "type": "tls",
+                "tag": "dns_google",
+                "server": "8.8.8.8",
+                "detour": "انتخابگر دستی"
             }
         ],
         "final": "dns_proxy",
-        "independent_cache": true
+        "strategy": "ipv4_only",
+        "reverse_mapping": true
     },
     "ntp": {
         "enabled": true,
@@ -52,33 +44,27 @@
     "inbounds": [
         {
             "type": "mixed",
+            "tag": "mixed-in",
             "listen": "127.0.0.1",
             "listen_port": 20122,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "http",
+            "tag": "http-in",
             "listen": "127.0.0.1",
-            "listen_port": 8181,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "listen_port": 8181
         },
         {
             "type": "socks",
+            "tag": "socks-in",
             "listen": "127.0.0.1",
             "listen_port": 8080,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "tun",
+            "tag": "tun-in",
             "address": [
                 "172.19.0.1\/30",
                 "fdfe:dcba:9876::1\/126"
@@ -86,171 +72,27 @@
             "auto_route": true,
             "strict_route": true,
             "stack": "mixed",
+            "mtu": 1400,
             "platform": {
                 "http_proxy": {
                     "enabled": true,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
-            },
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            }
         }
     ],
     "outbounds": [
         {
             "type": "selector",
-            "tag": "Internet",
+            "tag": "انتخابگر دستی",
             "outbounds": [
-                "Best Latency",
-                "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10",
-                "@SiNAVM-11",
-                "@SiNAVM-12",
-                "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15",
-                "@SiNAVM-16",
-                "@SiNAVM-17",
-                "@SiNAVM-18",
-                "@SiNAVM-19",
-                "@SiNAVM-20",
-                "@SiNAVM-21",
-                "@SiNAVM-22",
-                "@SiNAVM-23",
-                "@SiNAVM-24",
-                "@SiNAVM-25",
-                "@SiNAVM-26",
-                "@SiNAVM-27",
-                "@SiNAVM-28",
-                "@SiNAVM-29",
-                "@SiNAVM-30",
-                "@SiNAVM-31",
-                "@SiNAVM-32",
-                "@SiNAVM-33",
-                "@SiNAVM-34",
-                "@SiNAVM-35",
-                "@SiNAVM-36",
-                "@SiNAVM-37",
-                "@SiNAVM-38",
-                "@SiNAVM-39",
-                "@SiNAVM-40",
-                "@SiNAVM-41",
-                "@SiNAVM-42",
-                "@SiNAVM-43",
-                "@SiNAVM-44",
-                "@SiNAVM-45",
-                "@SiNAVM-46",
-                "@SiNAVM-47",
-                "@SiNAVM-48",
-                "@SiNAVM-49",
-                "@SiNAVM-50",
-                "@SiNAVM-51",
-                "@SiNAVM-52",
-                "@SiNAVM-53",
-                "@SiNAVM-54",
-                "@SiNAVM-55",
-                "@SiNAVM-56",
-                "@SiNAVM-57",
-                "@SiNAVM-58",
-                "@SiNAVM-59",
-                "@SiNAVM-60",
-                "@SiNAVM-61",
-                "@SiNAVM-62",
-                "@SiNAVM-63",
-                "@SiNAVM-64",
-                "@SiNAVM-65",
-                "@SiNAVM-66",
-                "@SiNAVM-67",
-                "@SiNAVM-68",
-                "@SiNAVM-69",
-                "@SiNAVM-70",
-                "@SiNAVM-71",
-                "@SiNAVM-72",
-                "@SiNAVM-73",
-                "@SiNAVM-74",
-                "@SiNAVM-75",
-                "@SiNAVM-76",
-                "@SiNAVM-77",
-                "@SiNAVM-78",
-                "@SiNAVM-79",
-                "@SiNAVM-80",
-                "@SiNAVM-81",
-                "@SiNAVM-82",
-                "@SiNAVM-83",
-                "@SiNAVM-84",
-                "@SiNAVM-85",
-                "@SiNAVM-86",
-                "@SiNAVM-87",
-                "@SiNAVM-88",
-                "@SiNAVM-89",
-                "@SiNAVM-90",
-                "@SiNAVM-91",
-                "@SiNAVM-92",
-                "@SiNAVM-93",
-                "@SiNAVM-94",
-                "@SiNAVM-95",
-                "@SiNAVM-96",
-                "@SiNAVM-97",
-                "@SiNAVM-98",
-                "@SiNAVM-99",
-                "@SiNAVM-100",
-                "@SiNAVM-101",
-                "@SiNAVM-102",
-                "@SiNAVM-103",
-                "@SiNAVM-104",
-                "@SiNAVM-105",
-                "@SiNAVM-106",
-                "@SiNAVM-107",
-                "@SiNAVM-108",
-                "@SiNAVM-109",
-                "@SiNAVM-110",
-                "@SiNAVM-111",
-                "@SiNAVM-112",
-                "@SiNAVM-113",
-                "@SiNAVM-114",
-                "@SiNAVM-115",
-                "@SiNAVM-116",
-                "@SiNAVM-117",
-                "@SiNAVM-118",
-                "@SiNAVM-119",
-                "@SiNAVM-120",
-                "@SiNAVM-121",
-                "@SiNAVM-122",
-                "@SiNAVM-123",
-                "@SiNAVM-124",
-                "@SiNAVM-125",
-                "@SiNAVM-126",
-                "@SiNAVM-127",
-                "@SiNAVM-128",
-                "@SiNAVM-129",
-                "@SiNAVM-130",
-                "@SiNAVM-131",
-                "@SiNAVM-132",
-                "@SiNAVM-133",
-                "@SiNAVM-134",
-                "@SiNAVM-135",
-                "@SiNAVM-136",
-                "@SiNAVM-137",
-                "@SiNAVM-138",
-                "@SiNAVM-139",
-                "@SiNAVM-140",
-                "@SiNAVM-141",
-                "@SiNAVM-142"
+                "@𝙎𝘾𝙉𝘼𝙑𝙈"
             ]
         },
         {
             "type": "urltest",
-            "tag": "Best Latency",
+            "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
@@ -333,111 +175,11 @@
                 "@SiNAVM-79",
                 "@SiNAVM-80",
                 "@SiNAVM-81",
-                "@SiNAVM-82",
-                "@SiNAVM-83",
-                "@SiNAVM-84",
-                "@SiNAVM-85",
-                "@SiNAVM-86",
-                "@SiNAVM-87",
-                "@SiNAVM-88",
-                "@SiNAVM-89",
-                "@SiNAVM-90",
-                "@SiNAVM-91",
-                "@SiNAVM-92",
-                "@SiNAVM-93",
-                "@SiNAVM-94",
-                "@SiNAVM-95",
-                "@SiNAVM-96",
-                "@SiNAVM-97",
-                "@SiNAVM-98",
-                "@SiNAVM-99",
-                "@SiNAVM-100",
-                "@SiNAVM-101",
-                "@SiNAVM-102",
-                "@SiNAVM-103",
-                "@SiNAVM-104",
-                "@SiNAVM-105",
-                "@SiNAVM-106",
-                "@SiNAVM-107",
-                "@SiNAVM-108",
-                "@SiNAVM-109",
-                "@SiNAVM-110",
-                "@SiNAVM-111",
-                "@SiNAVM-112",
-                "@SiNAVM-113",
-                "@SiNAVM-114",
-                "@SiNAVM-115",
-                "@SiNAVM-116",
-                "@SiNAVM-117",
-                "@SiNAVM-118",
-                "@SiNAVM-119",
-                "@SiNAVM-120",
-                "@SiNAVM-121",
-                "@SiNAVM-122",
-                "@SiNAVM-123",
-                "@SiNAVM-124",
-                "@SiNAVM-125",
-                "@SiNAVM-126",
-                "@SiNAVM-127",
-                "@SiNAVM-128",
-                "@SiNAVM-129",
-                "@SiNAVM-130",
-                "@SiNAVM-131",
-                "@SiNAVM-132",
-                "@SiNAVM-133",
-                "@SiNAVM-134",
-                "@SiNAVM-135",
-                "@SiNAVM-136",
-                "@SiNAVM-137",
-                "@SiNAVM-138",
-                "@SiNAVM-139",
-                "@SiNAVM-140",
-                "@SiNAVM-141",
-                "@SiNAVM-142"
+                "@SiNAVM-82"
             ],
-            "url": "http:\/\/1.1.1.1\/",
+            "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "shadowsocks",
-            "server": "us1.opensocks.site",
-            "server_port": 8388,
-            "method": "chacha20-ietf-poly1305",
-            "password": "YjkxY",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "huojian3.vn9987.top",
-            "server_port": 51004,
-            "method": "chacha20-ietf-poly1305",
-            "password": "245f2c1d-a317-45a8-b230-e420566a7f62",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "46.183.217.204",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.177",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-4"
         },
         {
             "type": "shadowsocks",
@@ -447,7 +189,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-5"
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "shadowsocks",
@@ -457,7 +199,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "shadowsocks",
@@ -467,7 +209,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "shadowsocks",
@@ -477,7 +219,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "shadowsocks",
@@ -487,37 +229,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "77.110.99.118",
-            "server_port": 56949,
-            "method": "chacha20-ietf-poly1305",
-            "password": "6NKlSzWD8jDh44G7StAsRA",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "144.217.164.29",
-            "server_port": 12000,
-            "method": "aes-256-gcm",
-            "password": "8JCsPssfgS8tiRwiMlhARg==",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "84.200.91.158",
-            "server_port": 443,
-            "method": "aes-256-gcm",
-            "password": "23b5721e-f85c-4452-8272-6ef7a9097f4a",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "shadowsocks",
@@ -527,27 +239,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.154.204.7",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "94.131.22.134",
-            "server_port": 40565,
-            "method": "chacha20-ietf-poly1305",
-            "password": "QLXkEq597i3oGAGzjE4qS64uPGhjxWpPiqwwBArKbsqYPUNpQBwdgHL6KoDSRGE9bjSdn3p4UaDYMVm6s1wMoifavnirR5N8",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-15"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "shadowsocks",
@@ -557,7 +249,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-16"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "shadowsocks",
@@ -567,7 +259,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-17"
+            "tag": "@SiNAVM-8"
         },
         {
             "type": "shadowsocks",
@@ -577,7 +269,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-18"
+            "tag": "@SiNAVM-9"
         },
         {
             "type": "shadowsocks",
@@ -587,17 +279,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-19"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "23.95.76.147",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-20"
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "shadowsocks",
@@ -607,7 +289,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-21"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "shadowsocks",
@@ -617,247 +299,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "83.217.9.17",
-            "server_port": 25232,
-            "method": "chacha20-ietf-poly1305",
-            "password": "bgvLZUfs8sivoB9A7wkYdm",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-23"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "173.234.29.2",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-24"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "138.186.142.81",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-25"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.157",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.199",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-27"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.206",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-28"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.154",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-29"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.164",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-30"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.171",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-31"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.181",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-32"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.192",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-33"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "178.173.250.47",
-            "server_port": 56033,
-            "method": "chacha20-ietf-poly1305",
-            "password": "5LD874oS39jQ26cT97NaAo",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-34"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "196.245.238.34",
-            "server_port": 57456,
-            "method": "chacha20-ietf-poly1305",
-            "password": "6a85b249286a74a9",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-35"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "212.224.125.154",
-            "server_port": 57456,
-            "method": "chacha20-ietf-poly1305",
-            "password": "6a85b249286a74a9",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-36"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "62.133.60.43",
-            "server_port": 36456,
-            "method": "chacha20-ietf-poly1305",
-            "password": "7cndSk7mX1Wtee7IfhW8k8",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-37"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "92.112.126.90",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "9tqhMdIrTkgQ46PvhyAtMH",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-38"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "212.34.140.184",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "0NeN5ta7FLa5B9DLytU0um",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-39"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "promo1o.bystrivpn.ru",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "0NeN5ta7FLa5B9DLytU0um",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-40"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.157",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-41"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.164",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-42"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.166",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-43"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.171",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-44"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.181",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-45"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.188",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "1RWwXhwfAB5gAEozU4G2Pg",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-46"
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "shadowsocks",
@@ -867,7 +309,7 @@
             "password": "1RWwXhwfAB5gAEozU4G2Pg",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-47"
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "shadowsocks",
@@ -877,7 +319,7 @@
             "password": "1RWwXhwfAB5gAEozU4G2Pg",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-48"
+            "tag": "@SiNAVM-14"
         },
         {
             "type": "shadowsocks",
@@ -887,7 +329,7 @@
             "password": "345dbf842bce4b66",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-49"
+            "tag": "@SiNAVM-15"
         },
         {
             "type": "shadowsocks",
@@ -897,7 +339,7 @@
             "password": "360e21d21977dc11",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-50"
+            "tag": "@SiNAVM-16"
         },
         {
             "type": "shadowsocks",
@@ -907,7 +349,7 @@
             "password": "yODLXVLz2FWNTFeSSng3Fm",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-51"
+            "tag": "@SiNAVM-17"
         },
         {
             "type": "shadowsocks",
@@ -917,7 +359,7 @@
             "password": "AyyaPjnKFtJ6MSdUGG0pWn",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-52"
+            "tag": "@SiNAVM-18"
         },
         {
             "type": "shadowsocks",
@@ -927,7 +369,7 @@
             "password": "JIhN6rBKkaEboLNXVSv5rq",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-53"
+            "tag": "@SiNAVM-19"
         },
         {
             "type": "shadowsocks",
@@ -937,7 +379,7 @@
             "password": "JIhN6rBKkaEboLNXVSv5rq",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-54"
+            "tag": "@SiNAVM-20"
         },
         {
             "type": "shadowsocks",
@@ -947,7 +389,7 @@
             "password": "M6aJ7e4I295WFp4WYfwb1o",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-55"
+            "tag": "@SiNAVM-21"
         },
         {
             "type": "shadowsocks",
@@ -957,7 +399,7 @@
             "password": "OMOpV2XCoMOBYsKGAjLDmsKkw6bDpMOkdVhtD15fwpQqw70AN8Krw6AyH8OaCQ==",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-56"
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "shadowsocks",
@@ -967,7 +409,7 @@
             "password": "OiLR7aA0k5jJxv0uikQlTU",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-57"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "shadowsocks",
@@ -977,7 +419,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-58"
+            "tag": "@SiNAVM-24"
         },
         {
             "type": "shadowsocks",
@@ -987,7 +429,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-59"
+            "tag": "@SiNAVM-25"
         },
         {
             "type": "shadowsocks",
@@ -997,7 +439,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-60"
+            "tag": "@SiNAVM-26"
         },
         {
             "type": "shadowsocks",
@@ -1007,7 +449,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-61"
+            "tag": "@SiNAVM-27"
         },
         {
             "type": "shadowsocks",
@@ -1017,7 +459,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-62"
+            "tag": "@SiNAVM-28"
         },
         {
             "type": "shadowsocks",
@@ -1027,7 +469,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-63"
+            "tag": "@SiNAVM-29"
         },
         {
             "type": "shadowsocks",
@@ -1037,7 +479,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-64"
+            "tag": "@SiNAVM-30"
         },
         {
             "type": "shadowsocks",
@@ -1047,7 +489,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-65"
+            "tag": "@SiNAVM-31"
         },
         {
             "type": "shadowsocks",
@@ -1057,7 +499,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-66"
+            "tag": "@SiNAVM-32"
         },
         {
             "type": "shadowsocks",
@@ -1067,7 +509,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-67"
+            "tag": "@SiNAVM-33"
         },
         {
             "type": "shadowsocks",
@@ -1077,7 +519,7 @@
             "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-68"
+            "tag": "@SiNAVM-34"
         },
         {
             "type": "shadowsocks",
@@ -1087,7 +529,7 @@
             "password": "RFK38Cg7APneSB5cWDcpbm",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-69"
+            "tag": "@SiNAVM-35"
         },
         {
             "type": "shadowsocks",
@@ -1097,7 +539,7 @@
             "password": "RFK38Cg7APneSB5cWDcpbm",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-70"
+            "tag": "@SiNAVM-36"
         },
         {
             "type": "shadowsocks",
@@ -1107,7 +549,7 @@
             "password": "S2QudBxi0vRySw4YRLloPq",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-71"
+            "tag": "@SiNAVM-37"
         },
         {
             "type": "shadowsocks",
@@ -1117,7 +559,7 @@
             "password": "SwTShXYSQd404FISs8NFeJ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-72"
+            "tag": "@SiNAVM-38"
         },
         {
             "type": "shadowsocks",
@@ -1127,7 +569,7 @@
             "password": "SwTShXYSQd404FISs8NFeJ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-73"
+            "tag": "@SiNAVM-39"
         },
         {
             "type": "shadowsocks",
@@ -1137,7 +579,7 @@
             "password": "VVlAff77CnAU43Aoc5j15Y",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-74"
+            "tag": "@SiNAVM-40"
         },
         {
             "type": "shadowsocks",
@@ -1147,7 +589,7 @@
             "password": "YHalDvP1z5RriU6l4LngKi",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-75"
+            "tag": "@SiNAVM-41"
         },
         {
             "type": "shadowsocks",
@@ -1157,7 +599,17 @@
             "password": "YQCSKoCF3QazW8YlvDBWA4",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-76"
+            "tag": "@SiNAVM-42"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "83.217.9.17",
+            "server_port": 25232,
+            "method": "chacha20-ietf-poly1305",
+            "password": "bgvLZUfs8sivoB9A7wkYdm",
+            "udp_over_tcp": true,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-43"
         },
         {
             "type": "shadowsocks",
@@ -1167,7 +619,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-77"
+            "tag": "@SiNAVM-44"
         },
         {
             "type": "shadowsocks",
@@ -1177,7 +629,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-78"
+            "tag": "@SiNAVM-45"
         },
         {
             "type": "shadowsocks",
@@ -1187,7 +639,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-79"
+            "tag": "@SiNAVM-46"
         },
         {
             "type": "shadowsocks",
@@ -1197,7 +649,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-80"
+            "tag": "@SiNAVM-47"
         },
         {
             "type": "shadowsocks",
@@ -1207,7 +659,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-81"
+            "tag": "@SiNAVM-48"
         },
         {
             "type": "shadowsocks",
@@ -1217,7 +669,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-82"
+            "tag": "@SiNAVM-49"
         },
         {
             "type": "shadowsocks",
@@ -1227,7 +679,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-83"
+            "tag": "@SiNAVM-50"
         },
         {
             "type": "shadowsocks",
@@ -1237,7 +689,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-84"
+            "tag": "@SiNAVM-51"
         },
         {
             "type": "shadowsocks",
@@ -1247,7 +699,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-85"
+            "tag": "@SiNAVM-52"
         },
         {
             "type": "shadowsocks",
@@ -1257,7 +709,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-86"
+            "tag": "@SiNAVM-53"
         },
         {
             "type": "shadowsocks",
@@ -1267,87 +719,7 @@
             "password": "cvII85TrW6n0OGyfpHVS1u",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-87"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.192",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cvII85TrW6n0OGyfpHVS1u",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-88"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.193",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cvII85TrW6n0OGyfpHVS1u",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-89"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "ltnl17.saint.ydns.eu",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "cvII85TrW6n0OGyfpHVS1u",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-90"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "38.244.136.233",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "dAHM1pm8ag7KdlrUylQi6t",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-91"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "promo18v.bystrivpn.ru",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "dAHM1pm8ag7KdlrUylQi6t",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-92"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "103.163.218.2",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-93"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "104.192.226.106",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-94"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "119.59.98.58",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-95"
+            "tag": "@SiNAVM-54"
         },
         {
             "type": "shadowsocks",
@@ -1357,37 +729,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-96"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "134.255.210.49",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-97"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "145.14.131.37",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-98"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "154.205.159.100",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-99"
+            "tag": "@SiNAVM-55"
         },
         {
             "type": "shadowsocks",
@@ -1397,87 +739,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-100"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.126.237.38",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-101"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.192.124.188",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-102"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.231.233.173",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-103"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.47.252.251",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-104"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.47.253.171",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-105"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.47.254.87",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-106"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "188.214.36.155",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-107"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "192.71.244.150",
-            "server_port": 990,
-            "method": "chacha20-ietf-poly1305",
-            "password": "f8f7aCzcPKbsF8p3",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-108"
+            "tag": "@SiNAVM-56"
         },
         {
             "type": "shadowsocks",
@@ -1487,7 +749,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-109"
+            "tag": "@SiNAVM-57"
         },
         {
             "type": "shadowsocks",
@@ -1497,7 +759,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-110"
+            "tag": "@SiNAVM-58"
         },
         {
             "type": "shadowsocks",
@@ -1507,7 +769,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-111"
+            "tag": "@SiNAVM-59"
         },
         {
             "type": "shadowsocks",
@@ -1517,7 +779,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-112"
+            "tag": "@SiNAVM-60"
         },
         {
             "type": "shadowsocks",
@@ -1527,7 +789,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-113"
+            "tag": "@SiNAVM-61"
         },
         {
             "type": "shadowsocks",
@@ -1537,7 +799,7 @@
             "password": "f8f7aCzcPKbsF8p3",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-114"
+            "tag": "@SiNAVM-62"
         },
         {
             "type": "shadowsocks",
@@ -1547,7 +809,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-115"
+            "tag": "@SiNAVM-63"
         },
         {
             "type": "shadowsocks",
@@ -1557,47 +819,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-116"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "151.242.251.152",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-117"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.155",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-118"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.168",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-119"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.174",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-120"
+            "tag": "@SiNAVM-64"
         },
         {
             "type": "shadowsocks",
@@ -1607,7 +829,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-121"
+            "tag": "@SiNAVM-65"
         },
         {
             "type": "shadowsocks",
@@ -1617,7 +839,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-122"
+            "tag": "@SiNAVM-66"
         },
         {
             "type": "shadowsocks",
@@ -1627,7 +849,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-123"
+            "tag": "@SiNAVM-67"
         },
         {
             "type": "shadowsocks",
@@ -1637,7 +859,7 @@
             "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-124"
+            "tag": "@SiNAVM-68"
         },
         {
             "type": "shadowsocks",
@@ -1647,7 +869,7 @@
             "password": "k1umilV0sNEXbKoYECfYOu",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-125"
+            "tag": "@SiNAVM-69"
         },
         {
             "type": "shadowsocks",
@@ -1657,7 +879,7 @@
             "password": "o5osZg269v5zHpYjr1xY9s",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-126"
+            "tag": "@SiNAVM-70"
         },
         {
             "type": "shadowsocks",
@@ -1667,7 +889,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-127"
+            "tag": "@SiNAVM-71"
         },
         {
             "type": "shadowsocks",
@@ -1677,7 +899,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-128"
+            "tag": "@SiNAVM-72"
         },
         {
             "type": "shadowsocks",
@@ -1687,7 +909,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-129"
+            "tag": "@SiNAVM-73"
         },
         {
             "type": "shadowsocks",
@@ -1697,7 +919,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-130"
+            "tag": "@SiNAVM-74"
         },
         {
             "type": "shadowsocks",
@@ -1707,7 +929,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-131"
+            "tag": "@SiNAVM-75"
         },
         {
             "type": "shadowsocks",
@@ -1717,7 +939,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-132"
+            "tag": "@SiNAVM-76"
         },
         {
             "type": "shadowsocks",
@@ -1727,7 +949,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-133"
+            "tag": "@SiNAVM-77"
         },
         {
             "type": "shadowsocks",
@@ -1737,7 +959,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-134"
+            "tag": "@SiNAVM-78"
         },
         {
             "type": "shadowsocks",
@@ -1747,7 +969,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-135"
+            "tag": "@SiNAVM-79"
         },
         {
             "type": "shadowsocks",
@@ -1757,7 +979,7 @@
             "password": "omCK6FBFuN5SGgX0gClju9",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-136"
+            "tag": "@SiNAVM-80"
         },
         {
             "type": "shadowsocks",
@@ -1767,57 +989,17 @@
             "password": "p78naCf2EfOlRSLTX0wFVx",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-137"
+            "tag": "@SiNAVM-81"
         },
         {
             "type": "shadowsocks",
-            "server": "38.244.209.215",
-            "server_port": 443,
-            "method": "aes-256-gcm",
-            "password": "b46a9971-7b51-4c37-b6b0-5fb5cb3c857b",
+            "server": "82.180.146.173",
+            "server_port": 35652,
+            "method": "aes-128-gcm",
+            "password": "93498539-7838-4836-b9b3-8311ffc79bcf",
             "udp_over_tcp": true,
             "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-138"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.228.128.82",
-            "server_port": 443,
-            "method": "aes-256-gcm",
-            "password": "c62eae15-14ec-4ddc-aa3a-a9a3fdd8bfaf",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-139"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.87.175.199",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "4a2rfixophdjffa8KVA4Aa",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-140"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "desrv.vmagnum.win",
-            "server_port": 57456,
-            "method": "chacha20-ietf-poly1305",
-            "password": "6a85b249286a74a9",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-141"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "45.95.232.236",
-            "server_port": 4248,
-            "method": "chacha20-ietf-poly1305",
-            "password": "MOmVZBFk794kfbBkMQfBva",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-142"
+            "tag": "@SiNAVM-82"
         },
         {
             "type": "direct",
@@ -1827,7 +1009,6 @@
     "route": {
         "rules": [
             {
-                "inbound": "tun-in",
                 "action": "sniff"
             },
             {
@@ -1835,20 +1016,23 @@
                 "mode": "or",
                 "rules": [
                     {
-                        "inbound": "dns-in"
+                        "protocol": "dns"
                     },
                     {
                         "port": 53
-                    },
-                    {
-                        "protocol": "dns"
                     }
                 ],
                 "action": "hijack-dns"
             },
             {
-                "clash_mode": "@sinvt خرید نسخه ویژه",
-                "outbound": "@sinvt خرید نسخه ویژه"
+                "inbound": "tun-in",
+                "action": "resolve",
+                "strategy": "ipv4_only"
+            },
+            {
+                "clash_mode": "@sinavmbot خرید",
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "network": "tcp",
@@ -1861,23 +1045,9 @@
                 "action": "reject"
             },
             {
-                "inbound": "tun-in",
-                "action": "resolve"
-            },
-            {
                 "ip_cidr": "10.10.34.0\/24",
-                "outbound": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "domain_regex": [
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
-                "outbound": "direct"
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "protocol": "stun",
@@ -1895,19 +1065,21 @@
                 "action": "reject"
             }
         ],
+        "final": "انتخابگر دستی",
         "auto_detect_interface": true,
-        "override_android_vpn": true
+        "default_domain_resolver": "dns_direct"
     },
     "experimental": {
         "cache_file": {
             "enabled": true,
             "path": "cache.db",
             "cache_id": "sinavm",
-            "store_fakeip": true
+            "store_fakeip": true,
+            "store_dns": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM👈️تلگرام",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

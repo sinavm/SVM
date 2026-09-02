@@ -12,36 +12,28 @@
     "dns": {
         "servers": [
             {
+                "type": "https",
                 "tag": "dns_proxy",
-                "address": "https:\/\/1.1.1.1:443\/dns-query",
-                "address_resolver": "dns_direct",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "1.1.1.1",
+                "server_port": 443,
+                "path": "\/dns-query",
+                "detour": "انتخابگر دستی"
             },
             {
+                "type": "udp",
                 "tag": "dns_direct",
-                "address": "local",
-                "strategy": "prefer_ipv4",
-                "detour": "@sinvt خرید نسخه ویژه"
+                "server": "8.8.8.8"
             },
             {
-                "tag": "direct",
-                "address": "tls:\/\/8.8.8.8",
-                "detour": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag": "dns_block",
-                "address": "rcode:\/\/success"
-            }
-        ],
-        "rules": [
-            {
-                "outbound": "any",
-                "server": "dns_direct"
+                "type": "tls",
+                "tag": "dns_google",
+                "server": "8.8.8.8",
+                "detour": "انتخابگر دستی"
             }
         ],
         "final": "dns_proxy",
-        "independent_cache": true
+        "strategy": "ipv4_only",
+        "reverse_mapping": true
     },
     "ntp": {
         "enabled": true,
@@ -52,33 +44,27 @@
     "inbounds": [
         {
             "type": "mixed",
+            "tag": "mixed-in",
             "listen": "127.0.0.1",
             "listen_port": 20122,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "http",
+            "tag": "http-in",
             "listen": "127.0.0.1",
-            "listen_port": 8181,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "listen_port": 8181
         },
         {
             "type": "socks",
+            "tag": "socks-in",
             "listen": "127.0.0.1",
             "listen_port": 8080,
-            "udp_fragment": true,
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            "udp_fragment": true
         },
         {
             "type": "tun",
+            "tag": "tun-in",
             "address": [
                 "172.19.0.1\/30",
                 "fdfe:dcba:9876::1\/126"
@@ -86,33 +72,5024 @@
             "auto_route": true,
             "strict_route": true,
             "stack": "mixed",
+            "mtu": 1400,
             "platform": {
                 "http_proxy": {
                     "enabled": true,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
-            },
-            "sniff": true,
-            "sniff_override_destination": true,
-            "domain_strategy": "ipv4_only"
+            }
         }
     ],
     "outbounds": [
         {
             "type": "selector",
-            "tag": "Internet",
+            "tag": "انتخابگر دستی",
             "outbounds": [
-                "Best Latency"
+                "@𝙎𝘾𝙉𝘼𝙑𝙈"
             ]
         },
         {
             "type": "urltest",
-            "tag": "Best Latency",
-            "outbounds": [],
-            "url": "http:\/\/1.1.1.1\/",
+            "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
+            "outbounds": [
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3",
+                "@SiNAVM-4",
+                "@SiNAVM-5",
+                "@SiNAVM-6",
+                "@SiNAVM-7",
+                "@SiNAVM-8",
+                "@SiNAVM-9",
+                "@SiNAVM-10",
+                "@SiNAVM-11",
+                "@SiNAVM-12",
+                "@SiNAVM-13",
+                "@SiNAVM-14",
+                "@SiNAVM-15",
+                "@SiNAVM-16",
+                "@SiNAVM-17",
+                "@SiNAVM-18",
+                "@SiNAVM-19",
+                "@SiNAVM-20",
+                "@SiNAVM-21",
+                "@SiNAVM-22",
+                "@SiNAVM-23",
+                "@SiNAVM-24",
+                "@SiNAVM-25",
+                "@SiNAVM-26",
+                "@SiNAVM-27",
+                "@SiNAVM-28",
+                "@SiNAVM-29",
+                "@SiNAVM-30",
+                "@SiNAVM-31",
+                "@SiNAVM-32",
+                "@SiNAVM-33",
+                "@SiNAVM-34",
+                "@SiNAVM-35",
+                "@SiNAVM-36",
+                "@SiNAVM-37",
+                "@SiNAVM-38",
+                "@SiNAVM-39",
+                "@SiNAVM-40",
+                "@SiNAVM-41",
+                "@SiNAVM-42",
+                "@SiNAVM-43",
+                "@SiNAVM-44",
+                "@SiNAVM-45",
+                "@SiNAVM-46",
+                "@SiNAVM-47",
+                "@SiNAVM-48",
+                "@SiNAVM-49",
+                "@SiNAVM-50",
+                "@SiNAVM-51",
+                "@SiNAVM-52",
+                "@SiNAVM-53",
+                "@SiNAVM-54",
+                "@SiNAVM-55",
+                "@SiNAVM-56",
+                "@SiNAVM-57",
+                "@SiNAVM-58",
+                "@SiNAVM-59",
+                "@SiNAVM-60",
+                "@SiNAVM-61",
+                "@SiNAVM-62",
+                "@SiNAVM-63",
+                "@SiNAVM-64",
+                "@SiNAVM-65",
+                "@SiNAVM-66",
+                "@SiNAVM-67",
+                "@SiNAVM-68",
+                "@SiNAVM-69",
+                "@SiNAVM-70",
+                "@SiNAVM-71",
+                "@SiNAVM-72",
+                "@SiNAVM-73",
+                "@SiNAVM-74",
+                "@SiNAVM-75",
+                "@SiNAVM-76",
+                "@SiNAVM-77",
+                "@SiNAVM-78",
+                "@SiNAVM-79",
+                "@SiNAVM-80",
+                "@SiNAVM-81",
+                "@SiNAVM-82",
+                "@SiNAVM-83",
+                "@SiNAVM-84",
+                "@SiNAVM-85",
+                "@SiNAVM-86",
+                "@SiNAVM-87",
+                "@SiNAVM-88",
+                "@SiNAVM-89",
+                "@SiNAVM-90",
+                "@SiNAVM-91",
+                "@SiNAVM-92",
+                "@SiNAVM-93",
+                "@SiNAVM-94",
+                "@SiNAVM-95",
+                "@SiNAVM-96",
+                "@SiNAVM-97",
+                "@SiNAVM-98",
+                "@SiNAVM-99",
+                "@SiNAVM-100",
+                "@SiNAVM-101",
+                "@SiNAVM-102",
+                "@SiNAVM-103",
+                "@SiNAVM-104",
+                "@SiNAVM-105",
+                "@SiNAVM-106",
+                "@SiNAVM-107",
+                "@SiNAVM-108",
+                "@SiNAVM-109",
+                "@SiNAVM-110",
+                "@SiNAVM-111",
+                "@SiNAVM-112",
+                "@SiNAVM-113",
+                "@SiNAVM-114",
+                "@SiNAVM-115",
+                "@SiNAVM-116",
+                "@SiNAVM-117",
+                "@SiNAVM-118",
+                "@SiNAVM-119",
+                "@SiNAVM-120",
+                "@SiNAVM-121",
+                "@SiNAVM-122",
+                "@SiNAVM-123",
+                "@SiNAVM-124",
+                "@SiNAVM-125",
+                "@SiNAVM-126",
+                "@SiNAVM-127",
+                "@SiNAVM-128",
+                "@SiNAVM-129",
+                "@SiNAVM-130",
+                "@SiNAVM-131",
+                "@SiNAVM-132",
+                "@SiNAVM-133",
+                "@SiNAVM-134",
+                "@SiNAVM-135",
+                "@SiNAVM-136",
+                "@SiNAVM-137",
+                "@SiNAVM-138",
+                "@SiNAVM-139",
+                "@SiNAVM-140",
+                "@SiNAVM-141",
+                "@SiNAVM-142",
+                "@SiNAVM-143",
+                "@SiNAVM-144",
+                "@SiNAVM-145",
+                "@SiNAVM-146",
+                "@SiNAVM-147",
+                "@SiNAVM-148",
+                "@SiNAVM-149",
+                "@SiNAVM-150",
+                "@SiNAVM-151",
+                "@SiNAVM-152",
+                "@SiNAVM-153",
+                "@SiNAVM-154",
+                "@SiNAVM-155",
+                "@SiNAVM-156",
+                "@SiNAVM-157",
+                "@SiNAVM-158",
+                "@SiNAVM-159",
+                "@SiNAVM-160",
+                "@SiNAVM-161",
+                "@SiNAVM-162",
+                "@SiNAVM-163",
+                "@SiNAVM-164",
+                "@SiNAVM-165",
+                "@SiNAVM-166",
+                "@SiNAVM-167",
+                "@SiNAVM-168",
+                "@SiNAVM-169",
+                "@SiNAVM-170",
+                "@SiNAVM-171"
+            ],
+            "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "vless",
+            "server": "fra.germany-14.com",
+            "server_port": 2087,
+            "uuid": "2b7ff221-0ea2-4474-ab4e-686e6a11dc65",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
+            "server": "152.53.228.15",
+            "server_port": 22231,
+            "uuid": "ae33a896-6374-41d3-88c5-b2941e0d038c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vless",
+            "server": "144.31.213.7",
+            "server_port": 443,
+            "uuid": "70ad6ccb-45a3-4e98-818f-9631de43b7cc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vless",
+            "server": "nl1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-4"
+        },
+        {
+            "type": "vless",
+            "server": "nl5.tunnely.ru",
+            "server_port": 443,
+            "uuid": "bcfd2b93-4dfd-42b5-9001-11e14c255761",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "vless",
+            "server": "ru33.abvpn.net",
+            "server_port": 443,
+            "uuid": "0f6c83bc-34ba-4ca1-96e6-08b3620cbce5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vless",
+            "server": "47.253.226.114",
+            "server_port": 443,
+            "uuid": "055a1ce8-2a16-4a0d-a2c2-22826c9b2413",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-7"
+        },
+        {
+            "type": "vless",
+            "server": "159.89.87.21",
+            "server_port": 28190,
+            "uuid": "14c80e0e-f7ce-4991-94fc-99a1db4a9b1e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "aws.amazon.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "vless",
+            "server": "47.251.25.74",
+            "server_port": 443,
+            "uuid": "18805ff3-b420-45de-af18-93be14024ae8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.amazon.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "H56cOJhw0xw76lDEpt7IuJJmVGemK6_CK34KtHwDMX8",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-9"
+        },
+        {
+            "type": "vless",
+            "server": "b.confignor.site",
+            "server_port": 35493,
+            "uuid": "1c166dd3-f5d5-4725-b137-d3772348fb37",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cdn77.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "qq"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "qeWt8jJZTwf6vmiTvDfaalPaSZDkX7a3XkKrBxf2YVA",
+                    "short_id": "9c24"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "چنل سازنده اصلی کانفیگ @ConfigFree",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-10"
+        },
+        {
+            "type": "vless",
+            "server": "de1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "de1.jugploer.icu",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "RAO0oF4uh8HlNfJ_4exSLb-rmXzajkoYBX7ODesoRzs",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "vless",
+            "server": "fi1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fi1.jugploer.icu",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "awb21BMYndRuIsrKKJVlv22-l4Rs-EvEULcaOf5ERTw",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-12"
+        },
+        {
+            "type": "vless",
+            "server": "nl1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "nl1.jugploer.icu",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "do5W1A_cUiSkYzmQK1xCcky0LZEU6UQh9eSnz-LyJ0o",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-13"
+        },
+        {
+            "type": "vless",
+            "server": "ru1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "ru1.jugploer.icu",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "6NsYMzJu1KzVtGHhxQQ_nF-bfWfjqRUim6bWihwD-gU",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-14"
+        },
+        {
+            "type": "vless",
+            "server": "usa1.jugploer.icu",
+            "server_port": 443,
+            "uuid": "23d94ce7-81fe-4a37-935d-0fa980485c51",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "usa1.jugploer.icu",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Hnf0rsS2jGwkYlpF4Yywc0jfEC4b96a-rREvrIz_4xM",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-15"
+        },
+        {
+            "type": "vless",
+            "server": "89.23.123.59",
+            "server_port": 4443,
+            "uuid": "281d153a-2fae-4725-84ed-602fb3627ca6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "github.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE",
+                    "short_id": "aa7e96542880027a"
+                }
+            },
+            "tag": "@SiNAVM-16"
+        },
+        {
+            "type": "vless",
+            "server": "79.127.133.77",
+            "server_port": 8443,
+            "uuid": "291a2db3-04b5-4089-af90-adb5d1ce05ff",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "tradingview.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
+                    "short_id": "f4b4a6365558ea2e"
+                }
+            },
+            "tag": "@SiNAVM-17"
+        },
+        {
+            "type": "vless",
+            "server": "79.127.133.79",
+            "server_port": 8443,
+            "uuid": "291a2db3-04b5-4089-af90-adb5d1ce05ff",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "tradingview.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg",
+                    "short_id": "f4b4a6365558ea2e"
+                }
+            },
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "vless",
+            "server": "al.spirako.com",
+            "server_port": 443,
+            "uuid": "2a30e90e-02be-4602-8c57-308eb4feff5b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "spirako.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "ios"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "0hH6R90pSxwm7nZPGtJJcJFhwCXU3Rvf-wcEHE7hczo",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-19"
+        },
+        {
+            "type": "vless",
+            "server": "89.169.137.193",
+            "server_port": 443,
+            "uuid": "2c8adcaa-e428-4cea-9c88-e88166651ab3",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "eh.vk.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0",
+                    "short_id": "d1579a8745398e34"
+                }
+            },
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "vless",
+            "server": "188.34.193.153",
+            "server_port": 443,
+            "uuid": "309fa273-6579-4cb2-9143-7cad50401eba",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY",
+                    "short_id": "7cad5040"
+                }
+            },
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "vless",
+            "server": "45.67.139.37",
+            "server_port": 443,
+            "uuid": "3557aa39-7564-4362-9713-8a2dd2a98830",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "speedsmart.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "k3h5nEAsMcyb9tVMeEepA4jd9JiPhcVCIVLPKWyao0E",
+                    "short_id": "ed464ab7d7a8"
+                }
+            },
+            "tag": "@SiNAVM-22"
+        },
+        {
+            "type": "vless",
+            "server": "134.209.191.114",
+            "server_port": 443,
+            "uuid": "3a72f0fd-68c8-4089-8b02-36aa1da14e45",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.wikipedia.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "as04WkYoj-P4vEjJFXB3LeA_Rkt7Ud4pV2oTZ3bZwQg",
+                    "short_id": "1c213fd68e13"
+                }
+            },
+            "tag": "@SiNAVM-23"
+        },
+        {
+            "type": "vless",
+            "server": "verarussia1.uspn.io",
+            "server_port": 8443,
+            "uuid": "46930a41-9f9e-4489-be5b-4274788c510f",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "xverarussia1.uspn.io",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "U1qZy5wSBnJoymrD-uoznjsGocSeM3_0q-kDlhkzygI",
+                    "short_id": "2116e851d2f28868"
+                }
+            },
+            "tag": "@SiNAVM-24"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.146",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-25"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.148",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-26"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.149",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-27"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.154",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-28"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.155",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-29"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.159",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-30"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.160",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-31"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.164",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-32"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.165",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-33"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.167",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-34"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.168",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-35"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.169",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-36"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.172",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-37"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.175",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-38"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.176",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-39"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.177",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-40"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.195",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-41"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.197",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-42"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.198",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-43"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.206",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-44"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.214",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-45"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.216",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-46"
+        },
+        {
+            "type": "vless",
+            "server": "15.204.97.219",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-47"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.103",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-48"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.12",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-49"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.19",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-50"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.20",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-51"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.25",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-52"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.26",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-53"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.29",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-54"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.34",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-55"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.80",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-56"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.86",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-57"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.87",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-58"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.8",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-59"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.93",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-60"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.96",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-61"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.97",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-62"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.98",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-63"
+        },
+        {
+            "type": "vless",
+            "server": "62.210.91.10",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-64"
+        },
+        {
+            "type": "vless",
+            "server": "62.210.91.2",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "tag": "@SiNAVM-65"
+        },
+        {
+            "type": "vless",
+            "server": "83.222.23.81",
+            "server_port": 38065,
+            "uuid": "4b9063e0-3288-44e9-9aac-80fbfce323a0",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo",
+                    "short_id": "fa"
+                }
+            },
+            "tag": "@SiNAVM-66"
+        },
+        {
+            "type": "vless",
+            "server": "147.182.212.232",
+            "server_port": 56565,
+            "uuid": "7b188eea-b08f-42c2-bac7-d3b0e74218b8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.paypal.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Td03Ae-cuYLq4xg7MSps58c_yRUcbbwtZLXm0ywabjY",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-67"
+        },
+        {
+            "type": "vless",
+            "server": "77.91.68.70",
+            "server_port": 55983,
+            "uuid": "f667a096-5231-4cfb-8759-92bb32473139",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg",
+                    "short_id": "0e"
+                }
+            },
+            "tag": "@SiNAVM-68"
+        },
+        {
+            "type": "vless",
+            "server": "nl-amst-node.genadata.online",
+            "server_port": 2040,
+            "uuid": "fa0ba10d-fa04-4638-9760-79c885db744d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "tradingview.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "qq"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1RJ2ulM9UyAC8PFy194dV0RTZI6xF6U4CGClhNz9fTg",
+                    "short_id": "50ed6f6007515d63"
+                }
+            },
+            "tag": "@SiNAVM-69"
+        },
+        {
+            "type": "vless",
+            "server": "179.61.251.78",
+            "server_port": 443,
+            "uuid": "fabc8a38-76c5-48fe-ada7-a9e52dd16225",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "refersion.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "esHsu3-Fj0aZ0xuNBV6qW1zu1hLbas8YDn7AO0QGsBw",
+                    "short_id": "0ff58d687a4c6c"
+                }
+            },
+            "tag": "@SiNAVM-70"
+        },
+        {
+            "type": "vless",
+            "server": "65.109.221.167",
+            "server_port": 443,
+            "uuid": "fe449d30-e6ba-4787-97b3-bb3b84c8d120",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.wikipedia.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "as04WkYoj-P4vEjJFXB3LeA_Rkt7Ud4pV2oTZ3bZwQg",
+                    "short_id": "1c213fd68e13"
+                }
+            },
+            "tag": "@SiNAVM-71"
+        },
+        {
+            "type": "vless",
+            "server": "bountyhunter.fonixapp.org",
+            "server_port": 18092,
+            "uuid": "fea633c3-cacf-41d7-951a-a04b578b0dcf",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "ilovepdf.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "MJ40ajh3_flpAxxkkNgKzvaYqM8E5c9qBRPb-41arVI",
+                    "short_id": "13ec7fe402"
+                }
+            },
+            "tag": "@SiNAVM-72"
+        },
+        {
+            "type": "vless",
+            "server": "66.33.22.220",
+            "server_port": 16142,
+            "uuid": "05a468a9-760f-4977-8ab9-773aa031a93b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "instituteforgovernment.org.uk",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_Hkcj0UzvlA7gvwH8Ry-2n-DQ1D6ZZLR6cUQNXqQU2c",
+                    "short_id": "5040cca6a0c6"
+                }
+            },
+            "tag": "@SiNAVM-73"
+        },
+        {
+            "type": "vless",
+            "server": "62.171.228.244",
+            "server_port": 443,
+            "uuid": "05bfcbaa-cba0-4bce-9103-09fe3f5f0667",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.bing.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "3ei2ET7SLe8rAO3KOlUWyXy0U22zb86VNOqUCshRVl8",
+                    "short_id": "f648da8196bdb32e"
+                }
+            },
+            "tag": "@SiNAVM-74"
+        },
+        {
+            "type": "vless",
+            "server": "162.141.131.102",
+            "server_port": 50159,
+            "uuid": "063e01c2-4c0f-418e-9375-3cc1312f635b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "fLtEa_5BiN89xQDypfFMOu5o6DoUf6ch42jGdkXy6zE",
+                    "short_id": "7f24526f7307c07a"
+                }
+            },
+            "tag": "@SiNAVM-75"
+        },
+        {
+            "type": "vless",
+            "server": "144.31.183.177",
+            "server_port": 443,
+            "uuid": "06a70256-5acc-4a79-bd73-cc8e3c4c204b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yt.be",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_VeT5AgFK65VebuF3KC-yYJtFw_fnJCLYGK1Ap2NfWI",
+                    "short_id": "e9a7"
+                }
+            },
+            "tag": "@SiNAVM-76"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.109.126",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "wp.pl",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "YxGdcVKnOjKUtaG-E68lzI_rd9DI5RvsbLY0qyMFX2w",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-77"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.109.199",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "wp.pl",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "YxGdcVKnOjKUtaG-E68lzI_rd9DI5RvsbLY0qyMFX2w",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-78"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.112.103",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.epicgames.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "8SX8GXMe3lXOyY_acO4HFXXYJn_rOOf4zkYFrifV1Tk",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-79"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.125.201",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "booking.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "sgpya-5ohMKCjzyrDe4RWz7b8O9XegDzQ88oHCV45Gk",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-80"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.126.222",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "booking.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "sgpya-5ohMKCjzyrDe4RWz7b8O9XegDzQ88oHCV45Gk",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-81"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.126.47",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "booking.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "sgpya-5ohMKCjzyrDe4RWz7b8O9XegDzQ88oHCV45Gk",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-82"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.158.16",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.ea.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "W24D31y_1ZaASX1bq3d85DQaQd_3NcJQCvg1wmCn-Uo",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-83"
+        },
+        {
+            "type": "vless",
+            "server": "78.17.4.20",
+            "server_port": 13868,
+            "uuid": "06d44c57-8e1a-41f4-b9c4-65d35869e078",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.epicgames.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "8SX8GXMe3lXOyY_acO4HFXXYJn_rOOf4zkYFrifV1Tk",
+                    "short_id": "e852dc"
+                }
+            },
+            "tag": "@SiNAVM-84"
+        },
+        {
+            "type": "vless",
+            "server": "vip.sinavm.ir",
+            "server_port": 443,
+            "uuid": "07730597-ba4f-4ca8-abe5-a53b28ad318c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "android.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "7JDEwF5DtVN9ym8x_tHcdA5-L5hH_JlYNf-ZXUYqu18",
+                    "short_id": "3f958af268"
+                }
+            },
+            "tag": "@SiNAVM-85"
+        },
+        {
+            "type": "vless",
+            "server": "79.137.197.125",
+            "server_port": 8443,
+            "uuid": "07d8d513-d7a7-4e2e-a561-2a0d1b6731ce",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "play.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "scstSNvoaY9_9cauw_7JGQMWciyqpO4NTRrhT0yOY1A",
+                    "short_id": "d2d732ba"
+                }
+            },
+            "tag": "@SiNAVM-86"
+        },
+        {
+            "type": "vless",
+            "server": "194.110.207.48",
+            "server_port": 443,
+            "uuid": "0826e9c1-b15c-46c2-801c-14e4fb861042",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "kibi",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY",
+                    "short_id": "fd55b698ee8c3629"
+                }
+            },
+            "tag": "@SiNAVM-87"
+        },
+        {
+            "type": "vless",
+            "server": "a.r-o-o-t3.ir",
+            "server_port": 443,
+            "uuid": "09548571-364e-4876-8e92-98f423e73913",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.linkedin.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "nA87ol2_2BADZHfXhH00wy3fNe4R8TiGG_IQbzWbPnA",
+                    "short_id": "56c96c1d14"
+                }
+            },
+            "tag": "@SiNAVM-88"
+        },
+        {
+            "type": "vless",
+            "server": "5.160.77.199",
+            "server_port": 49429,
+            "uuid": "098104de-f68d-434e-adcd-2ab4d1f0759d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "skyroom.online",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "OQsVeM4sKyLRiGKO1QDfyo4C0xBJJhFB54EhFlcvzGM",
+                    "short_id": "414b8a385e81910a"
+                }
+            },
+            "tag": "@SiNAVM-89"
+        },
+        {
+            "type": "vless",
+            "server": "206.245.132.50",
+            "server_port": 8443,
+            "uuid": "0a2dde28-70da-4863-a06f-35d007d94d35",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ikgjW7sTpGgWMRVewLHLpovWxHa_FFdczKrq8kMiSFQ",
+                    "short_id": "f1c868899d48ba08"
+                }
+            },
+            "tag": "@SiNAVM-90"
+        },
+        {
+            "type": "vless",
+            "server": "45.136.126.70",
+            "server_port": 8443,
+            "uuid": "0a2dde28-70da-4863-a06f-35d007d94d35",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "6f8KzwYy7MVdBKzDM_Wt_SiKEjZyg1dl1zdR_MoUM3M",
+                    "short_id": "67933d8be5b42f78"
+                }
+            },
+            "tag": "@SiNAVM-91"
+        },
+        {
+            "type": "vless",
+            "server": "2.26.194.15",
+            "server_port": 443,
+            "uuid": "0a54534f-8a65-42f7-ae91-573ae0bf09b7",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.intel.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "vqxKvKPwdM4NB1EnIAy90LSglZM9oTRx995mUQIW2Rg",
+                    "short_id": "6bd15a"
+                }
+            },
+            "tag": "@SiNAVM-92"
+        },
+        {
+            "type": "vless",
+            "server": "163.5.153.153",
+            "server_port": 443,
+            "uuid": "0a76a766-d141-44b8-944e-dff757d7116f",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.samsung.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "aB_2Tcf0A5LoiIEZHztR_l-ZOFeJKxYRH67s_OVQ9C0",
+                    "short_id": "a91045bc"
+                }
+            },
+            "tag": "@SiNAVM-93"
+        },
+        {
+            "type": "vless",
+            "server": "91.99.81.222",
+            "server_port": 443,
+            "uuid": "0a9a4f2a-4144-4147-9018-d44627088ac8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "dYsy51W78tzZf26ql7Fh0Db65VlRSjGp6EH9nsAIRgo",
+                    "short_id": "16d9cabe"
+                }
+            },
+            "tag": "@SiNAVM-94"
+        },
+        {
+            "type": "vless",
+            "server": "77.239.126.62",
+            "server_port": 443,
+            "uuid": "0ab6b3f5-65f0-4a80-9672-6a311fab1187",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "es.ultraspeed.top",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "WdQ6Bx39POGXpoEpeUeROr1RKv3FtchyVeXwkOii7nc",
+                    "short_id": "a19afc0b48abf9e8"
+                }
+            },
+            "tag": "@SiNAVM-95"
+        },
+        {
+            "type": "vless",
+            "server": "185.79.138.71",
+            "server_port": 448,
+            "uuid": "0b0915d7-6800-4580-a44b-77d84f105e6a",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.samsung.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CsDgNRcCwCkPIslfZpKTIK71KFpIFNsotbdzKcZVoH8",
+                    "short_id": "cd21e552537c7c0b"
+                }
+            },
+            "tag": "@SiNAVM-96"
+        },
+        {
+            "type": "vless",
+            "server": "45.92.219.119",
+            "server_port": 7443,
+            "uuid": "0b0f0f45-b79a-4647-b466-d7879cd4aeea",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.microsoft.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "5QAO98ot2U7TcGs_f6EEaQjCzNOJLNHqPf6smYsdFVI",
+                    "short_id": "d82fb387"
+                }
+            },
+            "tag": "@SiNAVM-97"
+        },
+        {
+            "type": "vless",
+            "server": "ip1.berzema.ir",
+            "server_port": 6806,
+            "uuid": "0b0f1f7b-d005-4765-939f-9a2f6a2f3d85",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "play.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "lQbgwNDYw6Zbjdim0JtXUarzb-3GSjDvtX6FJYZD9Qo",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-98"
+        },
+        {
+            "type": "vless",
+            "server": "89.127.204.17",
+            "server_port": 8443,
+            "uuid": "0cfc585b-26f2-4597-9b70-e1bb1095a2f2",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yandex.aero",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "o8nHj0HmBGPkdRVTSrWd1r2eXPH5YRKDNfKY1FKvRCY",
+                    "short_id": "dfc3"
+                }
+            },
+            "tag": "@SiNAVM-99"
+        },
+        {
+            "type": "vless",
+            "server": "37.152.175.93",
+            "server_port": 8443,
+            "uuid": "0d9e572e-ad55-4fb8-adcf-858cbafb9c40",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "parsabr.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "vZruSVclFJztKnzP8Da1OuG7hyNeM1_YhDX9Tpih3mM",
+                    "short_id": "3650a4286bf867e9"
+                }
+            },
+            "tag": "@SiNAVM-100"
+        },
+        {
+            "type": "vless",
+            "server": "alman2.pythonsaz.ir",
+            "server_port": 1824,
+            "uuid": "0dc5792d-0e46-497c-8bb3-03f32da0b311",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "JIv_D-Lpo1cosiCUgu-qzGSJwOCGciyXSZ8ucNn6aBo",
+                    "short_id": "8390ee7a5996648b"
+                }
+            },
+            "tag": "@SiNAVM-101"
+        },
+        {
+            "type": "vless",
+            "server": "ger3.orangesms.ir",
+            "server_port": 1824,
+            "uuid": "0dc5792d-0e46-497c-8bb3-03f32da0b311",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "JIv_D-Lpo1cosiCUgu-qzGSJwOCGciyXSZ8ucNn6aBo",
+                    "short_id": "8390ee7a5996648b"
+                }
+            },
+            "tag": "@SiNAVM-102"
+        },
+        {
+            "type": "vless",
+            "server": "ger4.orangesms.ir",
+            "server_port": 3389,
+            "uuid": "0dc5792d-0e46-497c-8bb3-03f32da0b311",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "fJgfoeTonZ3FfIXETWnn65nJeuioFkRcwlqFzwlAlwU",
+                    "short_id": "25e1eaeece23a4ca"
+                }
+            },
+            "tag": "@SiNAVM-103"
+        },
+        {
+            "type": "vless",
+            "server": "gerne.orangesms.ir",
+            "server_port": 1824,
+            "uuid": "0dc5792d-0e46-497c-8bb3-03f32da0b311",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "JIv_D-Lpo1cosiCUgu-qzGSJwOCGciyXSZ8ucNn6aBo",
+                    "short_id": "8390ee7a5996648b"
+                }
+            },
+            "tag": "@SiNAVM-104"
+        },
+        {
+            "type": "vless",
+            "server": "193.34.213.72",
+            "server_port": 443,
+            "uuid": "0dea82cd-a030-4c11-bccd-f3c0be845297",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "app.prostocalc.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "c_9pNYSprG0wT-8Dz68poWfpFCktGVKIrX_EVG3J4wk",
+                    "short_id": "f49814084db8f3a6"
+                }
+            },
+            "tag": "@SiNAVM-105"
+        },
+        {
+            "type": "vless",
+            "server": "2.26.27.92",
+            "server_port": 443,
+            "uuid": "0dea82cd-a030-4c11-bccd-f3c0be845297",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "app.prostocalc.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "a5axu6OJ0c1Cci6j5sAZP1rI4y5brnq67hK7SIGwVng",
+                    "short_id": "5fa9a6a45806c1a9"
+                }
+            },
+            "tag": "@SiNAVM-106"
+        },
+        {
+            "type": "vless",
+            "server": "201.24.114.60",
+            "server_port": 443,
+            "uuid": "0dea82cd-a030-4c11-bccd-f3c0be845297",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "app.prostocalc.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "RRawEiil652RhrCcf0Oq94mBii7I21eN3YyOo34NrTY",
+                    "short_id": "47e4cb670b4e547d"
+                }
+            },
+            "tag": "@SiNAVM-107"
+        },
+        {
+            "type": "vless",
+            "server": "digin.riziro.ir",
+            "server_port": 8443,
+            "uuid": "0e6001f1-fe90-4e8c-9f4f-57071268af6e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "au2",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "zKeOuPoCS_FA1bsfFr-A8MmdYIS-DhcHwxmhDC1WaSA",
+                    "short_id": "8586"
+                }
+            },
+            "tag": "@SiNAVM-108"
+        },
+        {
+            "type": "vless",
+            "server": "hollowcon.riziro.ir",
+            "server_port": 8443,
+            "uuid": "0e6001f1-fe90-4e8c-9f4f-57071268af6e",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "au2",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Ve-mF0aFGxV4deOSEA8jDe3FdjxLddF7n4IchNKvcDc",
+                    "short_id": "c664c8be"
+                }
+            },
+            "tag": "@SiNAVM-109"
+        },
+        {
+            "type": "vless",
+            "server": "spt2.milkabebar.ir",
+            "server_port": 10694,
+            "uuid": "0ee1200e-049d-4eb4-9356-3bc3530f58ef",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-110"
+        },
+        {
+            "type": "vless",
+            "server": "109.169.76.39",
+            "server_port": 443,
+            "uuid": "0fcbc45d-acdc-40cf-9a66-961c00f5b4a5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "slashdot.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY",
+                    "short_id": "fd55b698ee8c3629"
+                }
+            },
+            "tag": "@SiNAVM-111"
+        },
+        {
+            "type": "vless",
+            "server": "store2.vevluma.ir",
+            "server_port": 1234,
+            "uuid": "0fe5364c-b21e-4338-a51c-1eb179999c4f",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "updates.cdn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "4sT8gYkbYI1RUPlO-SFVpJENKfGgMWoYQpflbcfspkI",
+                    "short_id": "4844fb0c077b20b7"
+                }
+            },
+            "tag": "@SiNAVM-112"
+        },
+        {
+            "type": "vless",
+            "server": "144.31.4.105",
+            "server_port": 443,
+            "uuid": "10a60cfd-a88d-4d18-88f6-a1cfed828280",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "pl.miginfo.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "yXH4JAq7cMJkfaajsBuZ31C6OCqP_iG6yG3yXGR_AkU",
+                    "short_id": "c7d3f8a1"
+                }
+            },
+            "tag": "@SiNAVM-113"
+        },
+        {
+            "type": "vless",
+            "server": "d8.syslogd.ir",
+            "server_port": 9094,
+            "uuid": "10c27186-9d0d-4b5e-afa8-53bff7aa70d6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "_wJqd5Am8LwVgEEwzBSAuWa8aGlwx1wxew7eHMz18xk",
+                    "short_id": "f579f0598e22af3a"
+                }
+            },
+            "tag": "@SiNAVM-114"
+        },
+        {
+            "type": "vless",
+            "server": "3.38.1.152",
+            "server_port": 19179,
+            "uuid": "10dd7b2d-eda2-4a47-9f6e-5093a3cd7ded",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.intel.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "BabvzCKB_cqCz56qFQhOWIypFKFhEWo9Eyn_JPZIAxA",
+                    "short_id": "fa1e592603c283"
+                }
+            },
+            "tag": "@SiNAVM-115"
+        },
+        {
+            "type": "vless",
+            "server": "yt.nl.xanka.best",
+            "server_port": 2761,
+            "uuid": "10e2817c-9a84-4c42-9eff-a8cfd6ec9283",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "nl.xanka.best",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "d9ncsYIjJIiCaqLszDyLhZoZ9-XMYYhBrlHUyuHFxQo",
+                    "short_id": "a4e1fd84"
+                }
+            },
+            "tag": "@SiNAVM-116"
+        },
+        {
+            "type": "vless",
+            "server": "fant2.milkabebar.ir",
+            "server_port": 10694,
+            "uuid": "1190cdb2-a31c-473e-a8ac-c0fc8a35c062",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-117"
+        },
+        {
+            "type": "vless",
+            "server": "193.163.203.170",
+            "server_port": 443,
+            "uuid": "11aabba0-5fd1-4f15-8068-74c1a466cefc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yandex.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o",
+                    "short_id": "b28db60d77c50b4f"
+                }
+            },
+            "tag": "@SiNAVM-118"
+        },
+        {
+            "type": "vless",
+            "server": "157.173.127.225",
+            "server_port": 443,
+            "uuid": "11beaf11-726d-4c11-8ce9-27308c1c608c",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "analytics.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "v3EwzA9RIIh5Ndxm-gypRY6RCJhOpQ-2WO7KaH8nsC8",
+                    "short_id": "eab26c4a32"
+                }
+            },
+            "tag": "@SiNAVM-119"
+        },
+        {
+            "type": "vless",
+            "server": "38.180.132.206",
+            "server_port": 443,
+            "uuid": "11e559f8-f5b7-48be-9ab5-7fc0915569e0",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "MvZRXOgSBhkQB88kC6CnjiKs7pveuPMWA_TFSOvyRQ0",
+                    "short_id": "cf12caecc0"
+                }
+            },
+            "tag": "@SiNAVM-120"
+        },
+        {
+            "type": "vless",
+            "server": "5.188.26.176",
+            "server_port": 7443,
+            "uuid": "1206bad5-dcc9-410e-9595-d9fe9ee54085",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "max.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "kGxErpyTzyh6Md1MLGYaR_0j3X6jrCzgTDRqRbbfOCg",
+                    "short_id": "a1b2c3d4"
+                }
+            },
+            "tag": "@SiNAVM-121"
+        },
+        {
+            "type": "vless",
+            "server": "digia.riziro.ir",
+            "server_port": 8443,
+            "uuid": "137539a1-15a1-442d-b0d1-7a9ec3e1f1a6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "stg",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Ve-mF0aFGxV4deOSEA8jDe3FdjxLddF7n4IchNKvcDc",
+                    "short_id": "f349e91517ab8da7"
+                }
+            },
+            "tag": "@SiNAVM-122"
+        },
+        {
+            "type": "vless",
+            "server": "digin.riziro.ir",
+            "server_port": 8443,
+            "uuid": "137539a1-15a1-442d-b0d1-7a9ec3e1f1a6",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "zKeOuPoCS_FA1bsfFr-A8MmdYIS-DhcHwxmhDC1WaSA",
+                    "short_id": "662bcfb6"
+                }
+            },
+            "tag": "@SiNAVM-123"
+        },
+        {
+            "type": "vless",
+            "server": "31.76.88.150",
+            "server_port": 443,
+            "uuid": "13b54a52-a29f-4737-9941-26f54a4f87c4",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.yandex.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4",
+                    "short_id": "b4c823"
+                }
+            },
+            "tag": "@SiNAVM-124"
+        },
+        {
+            "type": "vless",
+            "server": "104.105.202.38",
+            "server_port": 29239,
+            "uuid": "14155d8d-14f7-4105-984b-f477e3880943",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.sony.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "KGI60DoZFcBFTq4yrjFE5C4QitMypVH4HJlkM9VqB1M",
+                    "short_id": "fd7069bcd5853169"
+                }
+            },
+            "tag": "@SiNAVM-125"
+        },
+        {
+            "type": "vless",
+            "server": "172.81.102.142",
+            "server_port": 37533,
+            "uuid": "1416a27c-edba-4822-90d5-728b4333114d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.amazon.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "sMCL5iZlxohNM99-YH1tg56J74WL8ZO64rfcw95xdgQ",
+                    "short_id": "72"
+                }
+            },
+            "tag": "@SiNAVM-126"
+        },
+        {
+            "type": "vless",
+            "server": "webshecan.webredirect.org",
+            "server_port": 2087,
+            "uuid": "144bc4ad-3b59-4b9f-b8f6-00a810a4046a",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.speedtest.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "2M6UwPCIFyRuf41xzoiHRo_5DUDNBs8lfe-sK3c8-Dw",
+                    "short_id": "53242a95"
+                }
+            },
+            "tag": "@SiNAVM-127"
+        },
+        {
+            "type": "vless",
+            "server": "195.74.93.254",
+            "server_port": 443,
+            "uuid": "146eb6cf-a99c-4022-85ca-022cf81502dc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "web.max.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "7ReQIe2kMtP4rCrptgH5glkOM-JGcSAPzHNxOED-Z0s",
+                    "short_id": "247fd6dab1a34a48"
+                }
+            },
+            "tag": "@SiNAVM-128"
+        },
+        {
+            "type": "vless",
+            "server": "176.108.243.192",
+            "server_port": 9880,
+            "uuid": "14777bd9-56a5-46f6-a94f-826b4800dc05",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "dl.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0",
+                    "short_id": "aa"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "grpc-tunnel",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-129"
+        },
+        {
+            "type": "vless",
+            "server": "77.239.103.29",
+            "server_port": 2040,
+            "uuid": "14818654-7689-453a-9a1f-4c72f89782d5",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "tradingview.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1RJ2ulM9UyAC8PFy194dV0RTZI6xF6U4CGClhNz9fTg",
+                    "short_id": "50ed6f6007515d63"
+                }
+            },
+            "tag": "@SiNAVM-130"
+        },
+        {
+            "type": "vless",
+            "server": "31.77.220.32",
+            "server_port": 443,
+            "uuid": "148e52d4-c3fc-4527-b7e9-47c4a259cd61",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "de.global",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "bg_o5_i-5MSy-t3CB3iyqIeI8Uqyy_wTP2kheJCXngg",
+                    "short_id": "f7d0420b8ab26060"
+                }
+            },
+            "tag": "@SiNAVM-131"
+        },
+        {
+            "type": "vless",
+            "server": "de.global-cdn.org",
+            "server_port": 443,
+            "uuid": "148e52d4-c3fc-4527-b7e9-47c4a259cd61",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "de.global",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "bg_o5_i-5MSy-t3CB3iyqIeI8Uqyy_wTP2kheJCXngg",
+                    "short_id": "f7d0420b8ab26060"
+                }
+            },
+            "tag": "@SiNAVM-132"
+        },
+        {
+            "type": "vless",
+            "server": "179.255.148.66",
+            "server_port": 47588,
+            "uuid": "14be84e2-8b22-42c0-a1ba-3535fc8e9257",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "yellowpages.amazon.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "ViI3P61PX_g1Qw5isp6C1ZaGqKQO471V9cCEJwHFpE4",
+                    "short_id": "8b2730e4eb1313"
+                }
+            },
+            "tag": "@SiNAVM-133"
+        },
+        {
+            "type": "vless",
+            "server": "194.110.207.48",
+            "server_port": 443,
+            "uuid": "14eb2c19-89ba-4a10-bd52-cbf6a5f5cae0",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "kibi",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SiSky02wHz-S0TDHKFTdYhnrlT8Y3CfRsekZlcdLXDY",
+                    "short_id": "fd55b698ee8c3629"
+                }
+            },
+            "tag": "@SiNAVM-134"
+        },
+        {
+            "type": "vless",
+            "server": "shadow.mikikoo.com",
+            "server_port": 2087,
+            "uuid": "15150c26-7e7f-42a7-8e7a-d0b9ab359214",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "4vqnyvBYwbYWLCTK0a849E1eEQ3z03W0cSU2E5_Au2U",
+                    "short_id": "a89fcda873316426"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "yourServiceName",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-135"
+        },
+        {
+            "type": "vless",
+            "server": "43.207.162.145",
+            "server_port": 32913,
+            "uuid": "15836880-212b-4690-b29c-1889a749bf72",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.intel.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "iJhoNzfiPiua04PL88iAAyZz2u39su4ChSCiGVoekRQ",
+                    "short_id": "a8f0a95931a52732"
+                }
+            },
+            "tag": "@SiNAVM-136"
+        },
+        {
+            "type": "vless",
+            "server": "144.31.237.77",
+            "server_port": 443,
+            "uuid": "15e83ced-7544-422e-863d-deafe29a1dbe",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.amd.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "jgf0wWpgkEJZzu9wu45Ms33SNZpibtx507rpvzfz3mQ",
+                    "short_id": "635a76c25a4b1820"
+                }
+            },
+            "tag": "@SiNAVM-137"
+        },
+        {
+            "type": "vless",
+            "server": "5.253.42.163",
+            "server_port": 40443,
+            "uuid": "15fd22d1-8931-4d41-af37-8ba6711e93fe",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "deepl.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "d1gJntekIStCHyAwgJCuv-N4_BBx5dDQ7K6CeWmpMRo",
+                    "short_id": "84fc"
+                }
+            },
+            "tag": "@SiNAVM-138"
+        },
+        {
+            "type": "vless",
+            "server": "preview.netraidly.ru",
+            "server_port": 40443,
+            "uuid": "15fd22d1-8931-4d41-af37-8ba6711e93fe",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "deepl.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "d1gJntekIStCHyAwgJCuv-N4_BBx5dDQ7K6CeWmpMRo",
+                    "short_id": "84fc"
+                }
+            },
+            "tag": "@SiNAVM-139"
+        },
+        {
+            "type": "vless",
+            "server": "109.169.84.94",
+            "server_port": 443,
+            "uuid": "16529590-1702-4e7d-90d8-e64f4e18c1e2",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "strapi.io",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "vvpu_ljhBuTWmM9w5Hl6jj8ZTiE_JYq29S77zNDeCjQ",
+                    "short_id": "ff6975658b6cefce"
+                }
+            },
+            "tag": "@SiNAVM-140"
+        },
+        {
+            "type": "vless",
+            "server": "57.131.138.129",
+            "server_port": 2096,
+            "uuid": "16569657-116c-46ed-8920-758ab8abaac4",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "jqDgERbgQ5DVnJvw4p_j8XnM4GXUSXvPEn2t0TOtMms",
+                    "short_id": "c2b19b0e0e625d01"
+                }
+            },
+            "tag": "@SiNAVM-141"
+        },
+        {
+            "type": "vless",
+            "server": "62.238.60.118",
+            "server_port": 2096,
+            "uuid": "16569657-116c-46ed-8920-758ab8abaac4",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "jqDgERbgQ5DVnJvw4p_j8XnM4GXUSXvPEn2t0TOtMms",
+                    "short_id": "50797b67f581e453"
+                }
+            },
+            "tag": "@SiNAVM-142"
+        },
+        {
+            "type": "vless",
+            "server": "djuc1.rapidmesh.ir",
+            "server_port": 2096,
+            "uuid": "16569657-116c-46ed-8920-758ab8abaac4",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "jqDgERbgQ5DVnJvw4p_j8XnM4GXUSXvPEn2t0TOtMms",
+                    "short_id": "c2b19b0e0e625d01"
+                }
+            },
+            "tag": "@SiNAVM-143"
+        },
+        {
+            "type": "vless",
+            "server": "172.238.232.239",
+            "server_port": 32833,
+            "uuid": "167ed405-7de9-4bff-b1ea-6e3d49c76b0b",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.intel.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "PaTDdYBrlh1xBixdI0igvRRkf0vnUwMRzi-4oDyfS20",
+                    "short_id": "a0a305ccc8e94aa8"
+                }
+            },
+            "tag": "@SiNAVM-144"
+        },
+        {
+            "type": "vless",
+            "server": "pl-2.wrs.tconnect.services",
+            "server_port": 443,
+            "uuid": "16b34a60-cb57-4659-b802-da89506c7ff8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "stackoverflow.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "EYL4xS6Msvddf6qwmFHfHplw18bmntv98GkoQBK1fhM",
+                    "short_id": "71e87186710e710e"
+                }
+            },
+            "tag": "@SiNAVM-145"
+        },
+        {
+            "type": "vless",
+            "server": "31.77.145.230",
+            "server_port": 443,
+            "uuid": "16d65374-b0ed-4344-b73e-f3f1c9fe27b1",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "YT6QgpI1i_Nbq6XqKlLAEUOd7VzDxhqqeFaMSg2WrCE",
+                    "short_id": "c680d5582cb52b70"
+                }
+            },
+            "tag": "@SiNAVM-146"
+        },
+        {
+            "type": "vless",
+            "server": "31.56.184.133",
+            "server_port": 443,
+            "uuid": "176bc48c-460b-4260-abbd-68fd5ea85270",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "nll.mcqueenconnection.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "O2ttHpVFmwoAf-E1rHgOlv7NggcwxcWkHHen7jkIBjY",
+                    "short_id": "a8e8df4f1fb3e3f8"
+                }
+            },
+            "tag": "@SiNAVM-147"
+        },
+        {
+            "type": "vless",
+            "server": "172.233.156.42",
+            "server_port": 12668,
+            "uuid": "1990630e-c2cf-4d1f-bba0-a51423df89a9",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.tesla.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "3sM_YEGrVBcvVyTzs6wes0zYq3GSGYbDfgkseWaYFmU",
+                    "short_id": "7403a0a9d45e89"
+                }
+            },
+            "tag": "@SiNAVM-148"
+        },
+        {
+            "type": "vless",
+            "server": "45.198.96.210",
+            "server_port": 443,
+            "uuid": "19b64e79-73b4-4478-bbfc-fb57737b94f8",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "storage.yandex.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "9Y-_jCI3Z1x6SXK2tHdZ6V1CN9IJPNPnoxSW0cbXxD8",
+                    "short_id": "764f497dda21c4fc"
+                }
+            },
+            "tag": "@SiNAVM-149"
+        },
+        {
+            "type": "vless",
+            "server": "118.167.230.216",
+            "server_port": 24215,
+            "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "addons.mozilla.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-150"
+        },
+        {
+            "type": "vless",
+            "server": "54.180.145.182",
+            "server_port": 8686,
+            "uuid": "1a17b19d-4896-4531-af79-6e91d8ef8228",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.apple.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "A3NXnUIT-W0m1Y_leRnv5so2IeCvk9FCFgL31PulfTw",
+                    "short_id": "628b3c90c98ead4f"
+                }
+            },
+            "tag": "@SiNAVM-151"
+        },
+        {
+            "type": "vless",
+            "server": "94.26.228.10",
+            "server_port": 443,
+            "uuid": "1a6fe500-59da-4598-8576-256f06765ffb",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "ru.sfasti.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "J_jQq9-SWQZjiMhuPaFV7V2MaJ4pkKgVRaz7x6tmvy8",
+                    "short_id": "16895459a2c7768d"
+                }
+            },
+            "tag": "@SiNAVM-152"
+        },
+        {
+            "type": "vless",
+            "server": "91.99.81.222",
+            "server_port": 443,
+            "uuid": "1b328a36-80a7-45cf-83fb-3a9ec9d380bc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "dYsy51W78tzZf26ql7Fh0Db65VlRSjGp6EH9nsAIRgo",
+                    "short_id": "9cf2"
+                }
+            },
+            "tag": "@SiNAVM-153"
+        },
+        {
+            "type": "vless",
+            "server": "194.93.61.66",
+            "server_port": 443,
+            "uuid": "1b627e4d-4ea4-4dce-8bd8-fc2d3ffbeaba",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "cdnjs.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "0AVsyS7udTbxKRdSyQ2rtFC63icDQOVWq8FvAhhU-WY",
+                    "short_id": "cbb0a5c1dc905505"
+                }
+            },
+            "tag": "@SiNAVM-154"
+        },
+        {
+            "type": "vless",
+            "server": "turk.parsclad.ir",
+            "server_port": 37447,
+            "uuid": "1b832c5d-9467-4435-a7a1-8dc65ea950cb",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "hub.partners.nvidia.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "lTpDCNC2RYBlKblFo9h5Dbbz7FSIJMLmbnVOFCbdlBk",
+                    "short_id": "9dfa"
+                }
+            },
+            "tag": "@SiNAVM-155"
+        },
+        {
+            "type": "vless",
+            "server": "62.238.32.25",
+            "server_port": 443,
+            "uuid": "1b9e301d-cecd-4eb1-8b36-eef811c2696d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "yastatic.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "3LUIM_6cYceTgNt6LWnR8YSVrenpLsh-FIGDrmfjjwc",
+                    "short_id": "5e841fab"
+                }
+            },
+            "tag": "@SiNAVM-156"
+        },
+        {
+            "type": "vless",
+            "server": "fanl2.mechanicir.ir",
+            "server_port": 10694,
+            "uuid": "1c142498-85ea-4762-b3a6-8b425fdc1cbc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-157"
+        },
+        {
+            "type": "vless",
+            "server": "frl3.mechanicir.ir",
+            "server_port": 10694,
+            "uuid": "1c142498-85ea-4762-b3a6-8b425fdc1cbc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-158"
+        },
+        {
+            "type": "vless",
+            "server": "lanl2.mechanicir.ir",
+            "server_port": 10694,
+            "uuid": "1c142498-85ea-4762-b3a6-8b425fdc1cbc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-159"
+        },
+        {
+            "type": "vless",
+            "server": "swedl2.mechanicir.ir",
+            "server_port": 10694,
+            "uuid": "1c142498-85ea-4762-b3a6-8b425fdc1cbc",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "CHNEnURyZzZ1OQwb5SD2Ze8K9eIY2oggyrV5FOIsU28",
+                    "short_id": "a0fbc54d937aaccb"
+                }
+            },
+            "tag": "@SiNAVM-160"
+        },
+        {
+            "type": "vless",
+            "server": "104.167.24.227",
+            "server_port": 18443,
+            "uuid": "1c20357e-be52-4e5e-8eb6-6434adcb4b71",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "gp1.steptofsvo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": ""
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "QHkXBS2ENHV0khgY9VBYi8_9bpfqnUYDcfQN4cW5Qg0",
+                    "short_id": "5c766813929a1fdd"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "grpc",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "tag": "@SiNAVM-161"
+        },
+        {
+            "type": "vless",
+            "server": "5.182.38.91",
+            "server_port": 17267,
+            "uuid": "1c7fcc38-e6be-43c5-875f-b8de2516b9f2",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "yahoo.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "SnWZg6ORcQepuWLI1EVCTTVc4KyfDiGWR4o_CXCMhgk",
+                    "short_id": "4ae260"
+                }
+            },
+            "tag": "@SiNAVM-162"
+        },
+        {
+            "type": "vless",
+            "server": "149.33.36.32",
+            "server_port": 443,
+            "uuid": "1cde7b4a-6dd7-4eb6-ba2e-41625d491300",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "smartcaptcha.yandexcloud.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "oX_8IyRmI_X4pPWaGTbduLyvlZWwLkZlxJKmtvjmqEg",
+                    "short_id": "03a70b17f8036009"
+                }
+            },
+            "tag": "@SiNAVM-163"
+        },
+        {
+            "type": "vless",
+            "server": "217.11.164.92",
+            "server_port": 37430,
+            "uuid": "1dd334f9-8730-42fd-9c91-ffc1933c7db3",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "RxTaQwnqqU8vxMMvD6AeUTFadLVvwzUplghzVAilAEg",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-164"
+        },
+        {
+            "type": "vless",
+            "server": "46.28.64.242",
+            "server_port": 443,
+            "uuid": "1e560bb6-4d52-4625-a629-54b1282f1b93",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "2FrYX1NTCe-fnm0kvNLYMPAuOZ8jbsYOSCKu3lY3CBQ",
+                    "short_id": "64c147592a2f84d9"
+                }
+            },
+            "tag": "@SiNAVM-165"
+        },
+        {
+            "type": "vless",
+            "server": "91.98.27.174",
+            "server_port": 4450,
+            "uuid": "1eba8f10-8e16-484b-be7a-613327727d4d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "play.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "y6JSkggQ__RA_nmCJpX1_ddSQC6vzDUPaN7KyvjVuic",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-166"
+        },
+        {
+            "type": "vless",
+            "server": "89.124.115.125",
+            "server_port": 443,
+            "uuid": "1f9480a7-ea9e-4c30-8df5-9b4ac4f869ea",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "ai.android",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "d4yc90PciJ40ZoEd_b1_nJEAbT2H8hUXqrFupAOobWA",
+                    "short_id": "05afd49302dd"
+                }
+            },
+            "tag": "@SiNAVM-167"
+        },
+        {
+            "type": "vless",
+            "server": "13890bdf-tkyw00-trpvht-1ey07.hk3.hyhuawei.com",
+            "server_port": 443,
+            "uuid": "203d1d64-3313-11ed-bb74-f23c9164ca5d",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "updates.cdn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "bE6ws6dFPflj8WVJMGwtso0WOaiSmBOHM2muQO2Uul4",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-168"
+        },
+        {
+            "type": "vless",
+            "server": "212.227.102.223",
+            "server_port": 443,
+            "uuid": "2042e1e6-7175-4604-9e0a-b13284ffeb54",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "npv.tosiko.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "T7S1Y2CoRdwseMAqiTUhEzZ7LE7LWp6DMGmu7cORvCk",
+                    "short_id": "4f3e2491e42b6a"
+                }
+            },
+            "tag": "@SiNAVM-169"
+        },
+        {
+            "type": "vless",
+            "server": "206.1.96.49",
+            "server_port": 37430,
+            "uuid": "20660fcf-c99e-4ed5-8cb7-46b6923140ba",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "tls": {
+                "enabled": true,
+                "server_name": "amp",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "RxTaQwnqqU8vxMMvD6AeUTFadLVvwzUplghzVAilAEg",
+                    "short_id": ""
+                }
+            },
+            "tag": "@SiNAVM-170"
+        },
+        {
+            "type": "vless",
+            "server": "159.69.28.178",
+            "server_port": 20995,
+            "uuid": "20bcb7a8-c51b-4771-9686-6b4509dc9cd2",
+            "packet_encoding": "xudp",
+            "domain_strategy": "prefer_ipv4",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "itunes.apple.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "min_version": "1.3",
+                "max_version": "1.3",
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "GqIZ3PiZBcvHMfXhk7BDZMWhF2Q4FrGVW9sgkllXkA4",
+                    "short_id": "6ba85179e30d4fc2"
+                }
+            },
+            "tag": "@SiNAVM-171"
         },
         {
             "type": "direct",
@@ -122,7 +5099,6 @@
     "route": {
         "rules": [
             {
-                "inbound": "tun-in",
                 "action": "sniff"
             },
             {
@@ -130,20 +5106,23 @@
                 "mode": "or",
                 "rules": [
                     {
-                        "inbound": "dns-in"
+                        "protocol": "dns"
                     },
                     {
                         "port": 53
-                    },
-                    {
-                        "protocol": "dns"
                     }
                 ],
                 "action": "hijack-dns"
             },
             {
-                "clash_mode": "@sinvt خرید نسخه ویژه",
-                "outbound": "@sinvt خرید نسخه ویژه"
+                "inbound": "tun-in",
+                "action": "resolve",
+                "strategy": "ipv4_only"
+            },
+            {
+                "clash_mode": "@sinavmbot خرید",
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "network": "tcp",
@@ -156,23 +5135,9 @@
                 "action": "reject"
             },
             {
-                "inbound": "tun-in",
-                "action": "resolve"
-            },
-            {
                 "ip_cidr": "10.10.34.0\/24",
-                "outbound": "@sinvt خرید نسخه ویژه"
-            },
-            {
-                "ip_is_private": true,
-                "outbound": "direct"
-            },
-            {
-                "domain_regex": [
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
-                "outbound": "direct"
+                "action": "route",
+                "outbound": "انتخابگر دستی"
             },
             {
                 "protocol": "stun",
@@ -190,19 +5155,21 @@
                 "action": "reject"
             }
         ],
+        "final": "انتخابگر دستی",
         "auto_detect_interface": true,
-        "override_android_vpn": true
+        "default_domain_resolver": "dns_direct"
     },
     "experimental": {
         "cache_file": {
             "enabled": true,
             "path": "cache.db",
             "cache_id": "sinavm",
-            "store_fakeip": true
+            "store_fakeip": true,
+            "store_dns": true
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈🏻تلگرام",
+            "default_mode": "@SiNAVM👈️تلگرام",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

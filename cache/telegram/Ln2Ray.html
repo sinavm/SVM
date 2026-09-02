@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iranian Cypherpunks VPN – Telegram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible"
+     content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    
+<meta property="og:title" content="Iranian Cypherpunks VPN">
+<meta property="og:image" content="https://cdn4.telesco.pe/file/pHwX2g8C_6jQxUacDFVQkLtTmAcJzOUHXbUaLlbw50B3DOre32vgnOI2B0zF8AGu5Zx-P7SqmldB3yYR9SoyywEgVEQ74GDgapQA2wlMDqix1QDMWeG-ql4yEIjgEujCp5FqXIQwH-HQxc80gRwrqGcPxX7Vith5GecB7-qZby54QvvFF75H3Bcs8kG3wSVdLUFGzC0ddXQVAY_7MPhAaH1G77nyWjAi5hZaDDQYuyczavWMqNavrSWpq3csuqputmzIIVx_B2hl8GzRhQIKGIDwTHC4uIxE24mV6hl2EXQ6OA0ZcpKBTNq8fRVQvG9ypcHqc3ZmBUIEdBBLAQWpow.jpg">
+<meta property="og:site_name" content="Telegram">
+<meta property="og:description" content="هدف ما رسوندن اینترنت به همه مردم
+
+تاریکی اصالت نداره، تاریکی در نبود نور شکل میگیره، جریان آزاد اطلاعات در جایگاه نور این روزها.
+
+در حد توانمون نور میتابونیم به اطرافمون❤️">
+
+<meta property="twitter:title" content="Iranian Cypherpunks VPN">
+<meta property="twitter:image" content="https://cdn4.telesco.pe/file/pHwX2g8C_6jQxUacDFVQkLtTmAcJzOUHXbUaLlbw50B3DOre32vgnOI2B0zF8AGu5Zx-P7SqmldB3yYR9SoyywEgVEQ74GDgapQA2wlMDqix1QDMWeG-ql4yEIjgEujCp5FqXIQwH-HQxc80gRwrqGcPxX7Vith5GecB7-qZby54QvvFF75H3Bcs8kG3wSVdLUFGzC0ddXQVAY_7MPhAaH1G77nyWjAi5hZaDDQYuyczavWMqNavrSWpq3csuqputmzIIVx_B2hl8GzRhQIKGIDwTHC4uIxE24mV6hl2EXQ6OA0ZcpKBTNq8fRVQvG9ypcHqc3ZmBUIEdBBLAQWpow.jpg">
+<meta property="twitter:site" content="@Telegram">
+
+<meta property="al:ios:app_store_id" content="686449807">
+<meta property="al:ios:app_name" content="Telegram Messenger">
+<meta property="al:ios:url" content="tg://resolve?domain=Ln2Ray">
+
+<meta property="al:android:url" content="tg://resolve?domain=Ln2Ray">
+<meta property="al:android:app_name" content="Telegram">
+<meta property="al:android:package" content="org.telegram.messenger">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Telegram">
+<meta name="twitter:description" content="هدف ما رسوندن اینترنت به همه مردم
+
+تاریکی اصالت نداره، تاریکی در نبود نور شکل میگیره، جریان آزاد اطلاعات در جایگاه نور این روزها.
+
+در حد توانمون نور میتابونیم به اطرافمون❤️
+">
+
+    <link rel="prev" href="/s/Ln2Ray?before=1252">
+<link rel="canonical" href="/s/Ln2Ray?before=1275">
+
+    <script>window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches&&document.documentElement&&document.documentElement.classList&&document.documentElement.classList.add('theme_dark');</script>
+    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
+<link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
+<link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
+    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
+    <link href="//telegram.org/css/widget-frame.css?75" rel="stylesheet" media="screen">
+    <link href="//telegram.org/css/telegram-web.css?39" rel="stylesheet" media="screen">
+    <script>TBaseUrl='/';</script>
+    <style>        .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3391d4 0px, #3391d4 5px, #7dd3f0 5px, #7dd3f0 10px);
+          --user-accent-color: #3391d4;
+          --user-background: #3391d41f;
+        }        .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27a910 0px, #27a910 5px, #a7dc57 5px, #a7dc57 10px);
+          --user-accent-color: #27a910;
+          --user-background: #27a9101f;
+        }        .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e0802b 0px, #e0802b 5px, #fac534 5px, #fac534 10px);
+          --user-accent-color: #e0802b;
+          --user-background: #e0802b1f;
+        }        .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #e15052 0px, #e15052 5px, #f9ae63 5px, #f9ae63 10px);
+          --user-accent-color: #e15052;
+          --user-background: #e150521f;
+        }        .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a05ff3 0px, #a05ff3 5px, #f48fff 5px, #f48fff 10px);
+          --user-accent-color: #a05ff3;
+          --user-background: #a05ff31f;
+        }        .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #27acce 0px, #27acce 5px, #82e8d6 5px, #82e8d6 10px);
+          --user-accent-color: #27acce;
+          --user-background: #27acce1f;
+        }        .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #dd4371 0px, #dd4371 5px, #ffbe9f 5px, #ffbe9f 10px);
+          --user-accent-color: #dd4371;
+          --user-background: #dd43711f;
+        }        .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #247bed 0px, #247bed 5px, #f04856 5px, #f04856 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #247bed;
+          --user-background: #247bed1f;
+        }        .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #d67722 0px, #d67722 5px, #1ea011 5px, #1ea011 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #d67722;
+          --user-background: #d677221f;
+        }        .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #179e42 0px, #179e42 5px, #e84a3f 5px, #e84a3f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #179e42;
+          --user-background: #179e421f;
+        }        .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #2894af 0px, #2894af 5px, #6fc456 5px, #6fc456 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #2894af;
+          --user-background: #2894af1f;
+        }        .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #0c9ab3 0px, #0c9ab3 5px, #ffad95 5px, #ffad95 10px, #ffe6b5 10px, #ffe6b5 15px);
+          --user-accent-color: #0c9ab3;
+          --user-background: #0c9ab31f;
+        }        .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #7757d6 0px, #7757d6 5px, #f79610 5px, #f79610 10px, #ffde8e 10px, #ffde8e 15px);
+          --user-accent-color: #7757d6;
+          --user-background: #7757d61f;
+        }        .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #1585cf 0px, #1585cf 5px, #f2ab1d 5px, #f2ab1d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #1585cf;
+          --user-background: #1585cf1f;
+        }        body.dark .user-color-12, html.theme_dark .user-color-12 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #52bfff 0px, #52bfff 5px, #0b5494 5px, #0b5494 10px);
+          --user-accent-color: #52bfff;
+          --user-background: #52bfff1f;
+        }        body.dark .user-color-10, html.theme_dark .user-color-10 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #a7eb6e 0px, #a7eb6e 5px, #167e2d 5px, #167e2d 10px);
+          --user-accent-color: #a7eb6e;
+          --user-background: #a7eb6e1f;
+        }        body.dark .user-color-8, html.theme_dark .user-color-8 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ecb04e 0px, #ecb04e 5px, #c35714 5px, #c35714 10px);
+          --user-accent-color: #ecb04e;
+          --user-background: #ecb04e1f;
+        }        body.dark .user-color-7, html.theme_dark .user-color-7 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff9380 0px, #ff9380 5px, #992f37 5px, #992f37 10px);
+          --user-accent-color: #ff9380;
+          --user-background: #ff93801f;
+        }        body.dark .user-color-9, html.theme_dark .user-color-9 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #c697ff 0px, #c697ff 5px, #5e31c8 5px, #5e31c8 10px);
+          --user-accent-color: #c697ff;
+          --user-background: #c697ff1f;
+        }        body.dark .user-color-11, html.theme_dark .user-color-11 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #40d8d0 0px, #40d8d0 5px, #045c7f 5px, #045c7f 10px);
+          --user-accent-color: #40d8d0;
+          --user-background: #40d8d01f;
+        }        body.dark .user-color-13, html.theme_dark .user-color-13 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff86a6 0px, #ff86a6 5px, #8e366e 5px, #8e366e 10px);
+          --user-accent-color: #ff86a6;
+          --user-background: #ff86a61f;
+        }        body.dark .user-color-14, html.theme_dark .user-color-14 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3fa2fe 0px, #3fa2fe 5px, #e5424f 5px, #e5424f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3fa2fe;
+          --user-background: #3fa2fe1f;
+        }        body.dark .user-color-15, html.theme_dark .user-color-15 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #ff905e 0px, #ff905e 5px, #32a527 5px, #32a527 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #ff905e;
+          --user-background: #ff905e1f;
+        }        body.dark .user-color-16, html.theme_dark .user-color-16 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #66d364 0px, #66d364 5px, #d5444f 5px, #d5444f 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #66d364;
+          --user-background: #66d3641f;
+        }        body.dark .user-color-17, html.theme_dark .user-color-17 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #3da240 5px, #3da240 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-18, html.theme_dark .user-color-18 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #22bce2 0px, #22bce2 5px, #ff9778 5px, #ff9778 10px, #ffda6b 10px, #ffda6b 15px);
+          --user-accent-color: #22bce2;
+          --user-background: #22bce21f;
+        }        body.dark .user-color-19, html.theme_dark .user-color-19 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #9791ff 0px, #9791ff 5px, #f2731d 5px, #f2731d 10px, #ffdb59 10px, #ffdb59 15px);
+          --user-accent-color: #9791ff;
+          --user-background: #9791ff1f;
+        }        body.dark .user-color-20, html.theme_dark .user-color-20 {
+          --user-line-gradient: repeating-linear-gradient(-45deg, #3da6eb 0px, #3da6eb 5px, #eea51d 5px, #eea51d 10px, #ffffff 10px, #ffffff 15px);
+          --user-accent-color: #3da6eb;
+          --user-background: #3da6eb1f;
+        }.user-color-6, .user-color-4, .user-color-2, .user-color-0, .user-color-1, .user-color-3, .user-color-5,   .user-color-default {
+    --user-accent-color: var(--accent-color);
+    --user-accent-background: var(--accent-background);
+    --user-line-gradient: linear-gradient(45deg, var(--accent-color), var(--accent-color));
+  }</style>
+  </head>
+  <body class="widget_frame_base tgme_webpreview emoji_image thin_box_shadow tme_mode no_transitions">
+    <div class="tgme_background_wrap">
+      <canvas id="tgme_background" class="tgme_background" width="50" height="50" data-colors="dbddbb,6ba587,d5d88d,88b884"></canvas>
+      <div class="tgme_background_pattern"></div>
+    </div>
+    <header class="tgme_header search_collapsed">
+  <div class="tgme_container">
+    <div class="tgme_header_search">
+      <form class="tgme_header_search_form" action="/s/Ln2Ray">
+        <svg class="tgme_header_search_form_icon" width="20" height="20" viewBox="0 0 20 20"><g fill="none" stroke="#7D7F81" stroke-width="1.4"><circle cx="9" cy="9" r="6"></circle><path d="M13.5,13.5 L17,17" stroke-linecap="round"></path></g></svg>
+        <input class="tgme_header_search_form_input js-header_search" placeholder="Search" name="q" autocomplete="off" value="" />
+        <a href="/s/Ln2Ray" class="tgme_header_search_form_clear"><svg class="tgme_action_button_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><g class="icon_body" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#000000" stroke-width="1.5"><path d="M6 14l8-8m0 8L6 6" stroke-dasharray="0,11.314" stroke-dashoffset="5.657"/><path d="M26 14l8-8m0 8l-8-8" stroke-dasharray="0.371,10.943" stroke-dashoffset="5.842"/><path d="M46 14l8-8m0 8l-8-8" stroke-dasharray="1.982,9.332" stroke-dashoffset="6.647756"/><path d="M66 14l8-8m0 8l-8-8" stroke-dasharray="5.173,6.14" stroke-dashoffset="8.243"/><path d="M86 14l8-8m0 8l-8-8" stroke-dasharray="7.866,3.448" stroke-dashoffset="9.59"/><path d="M106 14l8-8m0 8l-8-8" stroke-dasharray="9.471,1.843" stroke-dashoffset="10.392"/><path d="M126 14l8-8m0 8l-8-8" stroke-dasharray="10.417,0.896" stroke-dashoffset="10.866"/><path d="M146 14l8-8m0 8l-8-8" stroke-dasharray="10.961,0.353" stroke-dashoffset="11.137"/><path d="M166 14l8-8m0 8l-8-8" stroke-dasharray="11.234,0.08" stroke-dashoffset="11.274"/><path d="M186 14l8-8m0 8l-8-8"/></g></svg></a>
+      </form>
+    </div>
+    <div class="tgme_header_right_column">
+      <section class="tgme_right_column">
+        <div class="tgme_channel_info">
+          <div class="tgme_channel_info_header">
+            <i class="tgme_page_photo_image bgcolor5" data-content="IV"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i>
+            <div class="tgme_channel_info_header_title_wrap">
+              <div class="tgme_channel_info_header_title"><span dir="auto">Iranian Cypherpunks VPN</span></div>
+              <div class="tgme_channel_info_header_labels"></div>
+            </div>
+            <div class="tgme_channel_info_header_username"><a href="https://t.me/Ln2Ray">@Ln2Ray</a></div>
+          </div>
+          <div class="tgme_channel_info_counters"><div class="tgme_channel_info_counter"><span class="counter_value">14.2K</span> <span class="counter_type">subscribers</span></div><div class="tgme_channel_info_counter"><span class="counter_value">367</span> <span class="counter_type">photos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">59</span> <span class="counter_type">videos</span></div><div class="tgme_channel_info_counter"><span class="counter_value">36</span> <span class="counter_type">files</span></div><div class="tgme_channel_info_counter"><span class="counter_value">422</span> <span class="counter_type">links</span></div></div>
+          <div class="tgme_channel_info_description">هدف ما رسوندن اینترنت به همه مردم<br/><br/>تاریکی اصالت نداره، تاریکی در نبود نور شکل میگیره، جریان آزاد اطلاعات در جایگاه نور این روزها.<br/><br/>در حد توانمون نور میتابونیم به اطرافمون<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤️</b></i></div>
+          <a class="tgme_channel_download_telegram" href="//telegram.org/dl?tme=523ef52e9346485f83_4020585110958350520">
+            <svg class="tgme_channel_download_telegram_icon" width="21px" height="18px" viewBox="0 0 21 18"><g fill="none"><path fill="#ffffff" d="M0.554,7.092 L19.117,0.078 C19.737,-0.156 20.429,0.156 20.663,0.776 C20.745,0.994 20.763,1.23 20.713,1.457 L17.513,16.059 C17.351,16.799 16.62,17.268 15.88,17.105 C15.696,17.065 15.523,16.987 15.37,16.877 L8.997,12.271 C8.614,11.994 8.527,11.458 8.805,11.074 C8.835,11.033 8.869,10.994 8.905,10.958 L15.458,4.661 C15.594,4.53 15.598,4.313 15.467,4.176 C15.354,4.059 15.174,4.037 15.036,4.125 L6.104,9.795 C5.575,10.131 4.922,10.207 4.329,10.002 L0.577,8.704 C0.13,8.55 -0.107,8.061 0.047,7.614 C0.131,7.374 0.316,7.182 0.554,7.092 Z"></path></g></svg>Download Telegram
+          </a>
+          <div class="tgme_footer">
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/faq">About</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/blog">Blog</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//telegram.org/apps">Apps</a></h5>
+            </div>
+            <div class="tgme_footer_column">
+              <h5><a href="//core.telegram.org/">Platform</a></h5>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tgme_header_info">
+      <a class="tgme_channel_join_telegram" href="//telegram.org/dl?tme=523ef52e9346485f83_4020585110958350520">
+        <svg class="tgme_channel_join_telegram_icon" width="19px" height="16px" viewBox="0 0 19 16"><g fill="none"><path fill="#ffffff" d="M0.465,6.638 L17.511,0.073 C18.078,-0.145 18.714,0.137 18.932,0.704 C19.009,0.903 19.026,1.121 18.981,1.33 L16.042,15.001 C15.896,15.679 15.228,16.111 14.549,15.965 C14.375,15.928 14.211,15.854 14.068,15.748 L8.223,11.443 C7.874,11.185 7.799,10.694 8.057,10.345 C8.082,10.311 8.109,10.279 8.139,10.249 L14.191,4.322 C14.315,4.201 14.317,4.002 14.195,3.878 C14.091,3.771 13.926,3.753 13.8,3.834 L5.602,9.138 C5.112,9.456 4.502,9.528 3.952,9.333 L0.486,8.112 C0.077,7.967 -0.138,7.519 0.007,7.11 C0.083,6.893 0.25,6.721 0.465,6.638 Z"></path></g></svg>Join
+      </a>
+      <a class="tgme_header_link" href="https://t.me/Ln2Ray">
+        <i class="tgme_page_photo_image bgcolor5" data-content="IV"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i>
+        <div class="tgme_header_title_wrap">
+          <div class="tgme_header_title"><span dir="auto">Iranian Cypherpunks VPN</span></div>
+          <div class="tgme_header_labels"></div>
+        </div>
+        <div class="tgme_header_counter">14.2K subscribers</div>
+      </a>
+    </div>
+  </div>
+</header>
+<main class="tgme_main" data-url="/Ln2Ray">
+  <div class="tgme_container">
+    <section class="tgme_channel_history js-message_history">
+      <div class="tgme_widget_message_centered js-messages_more_wrap"><a href="/s/Ln2Ray?before=1252" class="tme_messages_more js-messages_more" data-before="1252"></a></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1252" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6IjEyNTJnIiwidCI6MTc4ODM2MDkwMywiaCI6IjgxYTIxYzI1NmEyYmYxOTgxMyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/822"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="media_supported_cont"><div class="tgme_widget_message_one_media js-message_media"><div class="media_supported_cont"><div class="tgme_widget_message_grouped_wrap js-message_grouped_wrap" data-margin-w="2" data-margin-h="2" style="width:453px;">
+  <div class="tgme_widget_message_grouped js-message_grouped" style="padding-top:41.28%">
+    <div class="tgme_widget_message_grouped_layer js-message_grouped_layer" style="width:453px;height:187px">
+      <a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:0px;top:0px;width:187px;height:187px;margin-right:2px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/j3sSk2mRJaBE164M4c042VwWa9fNtY0hbHCtzkbO_S1GMHuBwUBqIBQ44o3gcv60X9Ze_heyEz-zNDkVuzemEdAFHe4dx1kBB4yiJxBe9VNEO-o-tpivsyZ9xMLdHKKd0VOuq5gQQX7prgyqGGICtwZQFB92PRyBsOdni2d--R5YvkPsB-sk4FSLrzlhY2hPqbriiSmo_D3UxPzY6DUXELtcCWVH3jTJ4tUQ8QSjhlzL3pZcRvXENsF6oSypvSLRHTMGAG13YUs9MQaN3SI-XfT-uWgX74UQtZGTz1X1kxokuKKwqT7M7ZU8S2rmkquMTLct3puWyZvj5YyR4y2jbg.jpg')" data-ratio="1" href="https://t.me/Ln2Ray/1252?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:133px;right:133px;">
+    <div class="tgme_widget_message_photo grouped_media" style="top:0;bottom:0;left:0px;right:0px;"></div>
+  </div>
+</a><a class="tgme_widget_message_photo_wrap grouped_media_wrap blured js-message_photo" style="left:189px;top:0px;width:264px;height:187px;margin-right:0px;margin-bottom:0px;background-image:url('https://cdn4.telesco.pe/file/pLDN4wWUo4afetfNNMcDpz3jJiUaBTN6oMRhrN7CKS0PI3i9xR_c8pw3grOeS78C4FTRO9iWmqOhT-p4MpDih6z4ndHxNXY8ZfbzBHoODrCQpBBKte2EjJN5UwGCElZqOTC7F_sdw4ZWsL0k_l5LuTZ5IotlEwJ96GRFaDi-hNx5WbMiEm1w_6mKm7fpucWLazDRpRUe9lF_Yo5X4lksfGxFmFhNVEUYpfFQHYMsim26AMMp2IQftTPKbj7Ntz8Pfq58wL44j-GByKlcsfJxntxItDGYABKe82CrcTT2na3MqbdleE6czWrezx2jU9SA_ozdw2gkK6EkVfOhu4MURQ.jpg')" data-ratio="1.4059753954306" href="https://t.me/Ln2Ray/1253?single">
+  <div class="grouped_media_helper" style="top:0;bottom:0;left:95px;right:95px;">
+    <div class="tgme_widget_message_photo grouped_media" style="left:0;right:0;top:-1px;bottom:0px;"></div>
+  </div>
+</a>
+    </div>
+  </div>
+</div><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5017108172138087141"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9BA1.png')"><b>🛡</b></i></tg-emoji><b> بریم تا ۱.۱.۱.۱ دوباره فعال کنیم حالا چطوری؟</b><br/><br/>کلادفلر در سرویس وارپ خودش از MASQUE رونمایی کرده که بجای Wireguard از Quic برای تانل کردن دیتا به خارج  استفاده میکنه. <br/><br/>آموزش: ابتدا نسخه بتا رو از گوگل پلی فعال و نصب کنید سپس طبق تصویر MASQUE رو انتخاب کنید. این پروتکل روی وارپ فری، وارپ پلاس و zero trust فعال هست.<br/>مسیر فعال سازی MASQUE در تنظیمات اپ:<br/>Menu -&gt; Advanced -&gt; Connection options -&gt; Tunnel Protocol -&gt; MASQUE<br/><br/><tg-emoji emoji-id="5213307977640979750"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AC.png')"><b>💬</b></i></tg-emoji>برای دوستاتون هم بفرستید.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1252?single" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1252" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>26</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">8.83K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1252"><time datetime="2026-05-26T20:42:51+00:00" class="time">20:42</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1254" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1NCwidCI6MTc4ODM2MDkwMywiaCI6ImUyOGVjZGMwMTg2YTVkNmYzNyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1253" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/qsnyMJ2JDxpn5vJOzivv5w94vvN2XMyM1pG7td2KAOYcjCA6b7hpYOYB677tJ4blCa-LSvZgztaprjjV6ms1LYr3r4ISSXAGbo0oc463HsY1sSDRBl_m5x78Hh5xFEv15yVpe64Bha4igUEftyXHUJKtOzwLoQEDjqdiFF7k4kBKk3KUuuGM89ZYM_oDkHr06eHhjbzrBWzhDTB-pr_Z7fuXBJCCzgky_9AxS2hyddu6s2Jl8fNAb6lyaJAppYUH4sW0mAe-gSKn7G1aSvyKR-MdwDFolEye3c5EB5N0EdgjYA4CzYYv6CFGSGx09SlM4w5gqC4sDmSb8iyYNEBseQ.jpg')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_metatext js-message_reply_text" dir="auto">Photo</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">متصله روی همراه اول.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>14</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA49D.png')"><b>🤝</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">9.07K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1254"><time datetime="2026-05-26T20:43:14+00:00" class="time">20:43</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1255" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1NSwidCI6MTc4ODM2MDkwMywiaCI6IjIzMzY1NGZjN2M0ODgwYjcwNSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1249" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">کارگران مشغول کارند<tg-emoji emoji-id="5197371802136892976"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91B7E2808DE29982.png')"><b>👷‍♂️</b></i></tg-emoji><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91B7E2808DE29982.png')"><b>👷‍♂️</b></i></div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><code>vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%2C%22headers%22%3A%7B%22User-Agent%22%3A%22Mozilla%2F5.0%28WindowsNT10.0%3BWin64%3Bx64%29AppleWebKit%2F537.36%28KHTML%2ClikeGecko%29Chrome%2F101.0.4951.67Safari%2F537.36%22%7D%7D&amp;insecure=0&amp;host=dey.lnmarketplace.net&amp;fp=firefox&amp;type=xhttp&amp;allowInsecure=0&amp;sni=dey.lnmarketplace.net#IRCP%20%40Ln2ray</code><br/><br/><br/><tg-emoji emoji-id="5974532450582269189"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i></tg-emoji>متصل بر روی تمامی نت‌ها. حالت هواپیما بزنید اگر وصل نشد.<br/><a href="https://t.me/Ln2ray" target="_blank">@Ln2ray</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1255" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>24</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>10</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>7</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">13.6K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1255"><time datetime="2026-05-26T23:50:38+00:00" class="time">23:50</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1256" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1NiwidCI6MTc4ODM2MDkwMywiaCI6IjMyMDI5MzMxMDVkZjg0MTQyNCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1254" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">متصله روی همراه اول.</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">فیلترچی نتونست تحمل کنه<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA4A3.png')"><b>🤣</b></i><br/>احمق ول کن نت و کامل بستی باز اومدیم آنلاین شدیم دیگه دنبال چی هستی<tg-emoji emoji-id="5460992080107020036"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9882.png')"><b>😂</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1256" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>34</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F988E.png')"><b>😎</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">12.3K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1256"><time datetime="2026-05-27T00:10:19+00:00" class="time">00:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1257" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1NywidCI6MTc4ODM2MDkwMywiaCI6ImRkYjI0Mjk4M2E5MTlhN2VjZCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1255" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%…</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">بعلت استقبال زیاد یک سرور دیگه تا شب اضافه میشه<tg-emoji emoji-id="5855190238732751076"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i></tg-emoji><br/>برسونید به 13k که زودتر بذاریم(:</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1257" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>68</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>8</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9881.png')"><b>😁</b></i>6</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">11.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1257"><time datetime="2026-05-27T13:12:28+00:00" class="time">13:12</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1258" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1OCwidCI6MTc4ODM2MDkwMywiaCI6ImI1NmJhZjg2Nzc5YzVjNmFmMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1255" ">
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%…</div>
+</a>
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5816783795523358473 1354325515_460001033" href="https://t.me/Ln2Ray/1258" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/CQEx9zgdqPz7PIrLmJjBlmvqVhvSYF_w9s-Znqzir2LkuojgRGWurJZ-okdAPiLBL9pblZDXEOOBsTuabmD7KmAD6f78PXlSABwbZclcjAk3ODA8W6He7jdNbA2AFU3ne7TRjqInJ10qNmqstTNq2p_kIToDoIzcs2C5xhS45RjnUtZxd-XdiUFkRMRaXUelE52-kQY84JdMzXNOG2avGSnzkITIe_h2eb2T__xuO2YhaKlFiHpe-uZPIPVIYDVp2EJcc58lHmbS_QQH2DWvaWzhsdic3x-93cj3euEZ46JR8lbyASZLMJfUAYughwv9A___sc6u2e13pkVxaI0A4A.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:99.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><code>vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%2C%22headers%22%3A%7B%22User-Agent%22%3A%22Mozilla%2F5.0%28WindowsNT10.0%3BWin64%3Bx64%29AppleWebKit%2F537.36%28KHTML%2ClikeGecko%29Chrome%2F101.0.4951.67Safari%2F537.36%22%7D%7D&amp;insecure=0&amp;host=dey.lnmarketplace.net&amp;fp=firefox&amp;type=xhttp&amp;allowInsecure=0&amp;sni=dey.lnmarketplace.net#IRCP%20%40Ln2ray</code><br/><br/><br/><tg-emoji emoji-id="5271604874419647061"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i></tg-emoji>۲سرور جدید اضافه شد. برای دوستانتون بفرستید. فعال بر روی تمامی ‌نت‌ها.<br/><br/><tg-emoji emoji-id="5402250396515183081"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪️</b></i></tg-emoji>اشتراک گذاری فراموش نشه. استقبال خوب باشه سرورهای جدید تو راهه<tg-emoji emoji-id="5188208446461188962"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1258" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>90</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>26</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">40.8K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1258"><time datetime="2026-05-28T06:47:01+00:00" class="time">06:47</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1259" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI1OSwidCI6MTc4ODM2MDkwMywiaCI6Ijk2ZTg5OTIzZDU1ZTQ1NDVkYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="6244367657898870676"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FABA5.png')"><b>🫥</b></i></tg-emoji> ما در حال آماده‌سازی یک سرور مشابه روشی هستیم که سال‌های پیش به آن متصل می‌شدید تا بتوانید از آن استفاده کنید.</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1259" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>122</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>18</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>12</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">13.7K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1259"><time datetime="2026-05-29T09:32:39+00:00" class="time">09:32</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1260" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2MCwidCI6MTc4ODM2MDkwMywiaCI6Ijg5M2MzM2YxOTExNjQ2NzFmYyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/joinraaznet/139"><span dir="auto">RaazNet | رازنت</span></a></div>
+
+<a class="tgme_widget_message_photo_wrap 5823491417748213617 1355887255_460001137" href="https://t.me/Ln2Ray/1260" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/u3YqPrJCPaLvc3vpvJdqrijLkgTWM1i9LPD1UzACUolCIoohGZF4aNI_nVzoSyhAigwkrKPGNWdi41-uiq8J050vnIQc_lMiuKoIR_60SaAc8ZDGhwJKJFHFmdtS91ooZpyiQ3vrcIDykLkq5SFrO7_j9LzJaFI2ohZTgkQ6-jQjkF0wUI-YWzYg4eVHLbdngsZrqkp_uccPFjVKOzgLJUMMbNEeBZyrWy15WoQnXSCXMkkUMlPheE9KT1nuiQmTFLt-GeqqjzJ1HwYv3ReHmgMtjaHCzHtGzSuaitu7xr7iDZBvKAvzWlx4pGtWnriR-kZgFSRcOoP7Kt24nDbIgw.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:76.5%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto">اپلیکیشن تقویم بادصبا هنگام باز شدن با بیش از ۵۰ سرور مجزا (برای اهداف تبلیغاتی، تحلیلی و پیکربندی) در تماس است و موقعیت مکانی و مشخصات دستگاه را بین آن‌ها توزیع می‌کند. یک اپ تقویم به این زیرساخت نیاز ندارد&#33; اگر از آن استفاده می‌کنید مجوز مکانی را لغو کنید.<br/><br/>گزارش کامل بررسی اپلیکیشن بادصبا را در سایت رازنت بخوانید:<br/><a href="https://raaznet.com/fa/reports/badesaba-islamic-calendar-privacy-audit" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">لینک گزارش<br/></a><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29E96.png')"><b>➖</b></i><br/><a href="https://raaznet.com/fa" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">وب‌سایت «رازنت</a>» <i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9189.png')"><b>👉</b></i><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9FA3.png')"><b>🟣</b></i> <a href="https://www.instagram.com/joinraaznet?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">JoinRaazNet</a><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA496.png')"><b>🤖</b></i> <a href="https://x.com/joinraaznet?s=21" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">JoinRaazNet</a><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AD.png')"><b>💭</b></i> <a href="https://t.me/joinraaznet" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">JoinRaazNet</a></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>56</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>25</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>5</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">14.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1260"><time datetime="2026-05-29T17:36:07+00:00" class="time">17:36</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1261" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2MSwidCI6MTc4ODM2MDkwMywiaCI6ImE3ZGIyOThiYTg0ZmFkMDdlYSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1260" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/ANw9e0cV5kNiUDkzk9s2PIOo_RqVRYuZt5B4ybmDhHp6yn0O4oNfrAhIUIBi200k4a2Nx_5wyVzVcArAAT0LWHdxiXUnOdnsNawbAmr-0K7e6jisor27EVHZi9H4k0Xs2DGeWN2y5nlerdzmz3hjco5WZ1ztwx6rC1jHpEcsNUZdrdQq43MxprmU4YlGh2hbAQFpoUI6ZlYkj-k6XJe07ZSE06htLB6qO0xxmvXRd3fYiso85Yr7h1TjaXPMvgPWy-HvcmdiBlHWqGxkYBoN_zPLhVNjQnX6yEgo4YOV7_fN1r8UCa-uSLHkPsv-P75hIpt-N5Vy2BNgrkGzrCmevA.jpg')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">RaazNet | رازنت</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">اپلیکیشن تقویم بادصبا هنگام باز شدن با بیش از ۵۰ سرور مجزا (برای اهداف تبلیغاتی، تحلیلی و پیکربندی) در تماس است و موقعیت مکانی و مشخصات دستگاه را بین آن‌ها توزیع می‌کند. یک اپ تقویم به این زیرساخت نیاز ندارد&#33; اگر از آن استفاده می‌کنید مجوز مکانی را لغو کنید.…</div>
+</a>
+<div class="tgme_widget_message_text js-message_text" dir="auto">توصیه شخصی: از Persian Calendar استفاده کنید. تمام امکانات ضروری و داره Opensource و سبک هست.</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>94</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>22</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>4</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">14.8K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1261"><time datetime="2026-05-29T17:36:44+00:00" class="time">17:36</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1264" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2NCwidCI6MTc4ODM2MDkwMywiaCI6IjM2ODc0ZmI3ZmJjMTI4ZGUzNSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/818"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5447410659077661506"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji> دوستانی که تمایل دارند از ما حمایت مالی بکنند، میتونن از ما کانفیگ اختصاصی خودشون رو خریداری کنند . <br/><br/><tg-emoji emoji-id="5019328391057244975"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> حداقل سفارش : <br/><br/>۵۰ گیگ حجم ، ۱ ماه اعتبار ، <b>کاربر نامحدود</b>،<br/>۳ دالر<br/><br/>۱۰۰ گیگ حجم، ۱ ماه اعتبار ، <b>کاربر نامحدود</b>،<br/>۵ دالر<br/><br/>۲۰۰ گیگ حجم، ۳ ماه اعتبار، <b>کاربر نامحدود</b><br/>۱۰ دالر<br/><br/>۵۰۰ گیگ حجم، ۶ ماه اعتبار، <b>کاربر نامحدود</b><br/>۲۵ دالر<br/><br/><tg-emoji emoji-id="5447644880824181073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA0.png')"><b>⚠️</b></i></tg-emoji>پرداخت فقط و فقط با کریپتو و به آدرس والتهای موجود در کانال <tg-emoji emoji-id="5215683627131613033"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92B8.png')"><b>💸</b></i></tg-emoji><br/><br/><tg-emoji emoji-id="5447644880824181073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA0.png')"><b>⚠️</b></i></tg-emoji> لازم به ذکره، کلیه درامد ازین راه صرف حفظ و نگهداری و ارتقا سرویسهای رایگان میشه.<br/><br/>بنابراین با خرید کانفیگ اختصاصی از ما، به حفظ و ارتقا سرویسهای رایگان نیز کمک کردین.<br/><br/><tg-emoji emoji-id="5447410659077661506"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji>لوکیشن های لینک سابسکریپشن مولتی لوکیشن :<br/><br/><tg-emoji emoji-id="5382151560182642075"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87ABF09F87AE.png')"><b>🇫🇮</b></i></tg-emoji>فنلاند<br/><tg-emoji emoji-id="5409360418520967565"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87A9F09F87AA.png')"><b>🇩🇪</b></i></tg-emoji>آلمان<br/><tg-emoji emoji-id="5202132623060640759"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87ABF09F87B7.png')"><b>🇫🇷</b></i></tg-emoji>فرانسه<br/><tg-emoji emoji-id="5226948110873278599"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B9F09F87B7.png')"><b>🇹🇷</b></i></tg-emoji> ترکیه<br/><tg-emoji emoji-id="6034969533859499947"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87BAF09F87B8.png')"><b>🇺🇸</b></i></tg-emoji>امریکا<br/><tg-emoji emoji-id="5206607081334906820"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji>بر روی تمامی سرور‌ها تحریم شکن فعال هست. در صورتی که سرویس خارجی براتون باز نشد یا 403 داد حتما اطلاع بدید تا بررسی و حل بشه.<br/><br/>جهت هماهنگی به اکانت <a href="https://t.me/ircpamin" target="_blank">@ircpamin</a> پیام بدید</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1264" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>38</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F97BF.png')"><b>🗿</b></i>8</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">9.4K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1264"><time datetime="2026-06-17T09:22:23+00:00" class="time">09:22</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap sticker_media no_bubble js-widget_message" data-post="Ln2Ray/1265" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2NSwidCI6MTc4ODM2MDkwMywiaCI6IjZiMTk0ZjgwOGQzOTI2ZTNhNiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/913"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="message_media_not_supported_wrap media_not_supported_cont">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">This media is not supported in your browser</div>
+    <a href="https://t.me/Ln2Ray/1265" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_sticker_wrap media_supported_cont"><i class="tgme_widget_message_sticker js-sticker_image" style="background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iLTMwMCUiIHgyPSItMjAwJSIgeTE9IjAiIHkyPSIwIj48c3RvcCBvZmZzZXQ9Ii0xMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjExMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MSIgZnJvbT0iLTMwMCUiIHRvPSIxMjAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MiIgZnJvbT0iLTIwMCUiIHRvPSIxMzAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjcyLDUxMGMtMi02MS0xLTEyNi0xLTE4OSwwLTgtNS00NSwwLTUwLDItMiwyNSwwLDI4LDAsNTMsMCwxMDgtNCwxNjEsMCwwLDAtMTksMTEtMzUsMTktMjgsMTMtNTUsMjYtODMsMzktMjQsMTEtNTQsMTQ2LTcwLDE4MXpNMjQwLDQ2MGMtMTMtMTUtNTItMTIxLTYxLTEyNy05LTUtMjItNy0zMi0xMC00Mi0xNC04My0zMC0xMjUtNDQtNi0yLTE2LTMtMjEtNi0zLTIsNi0yLDktMiwxNiwwLDMxLDAsNDcsMCw0MCwwLDgwLDAsMTIwLDAsNiwwLDY0LDAsNjQsMCwzLDMsMCwyNCwwLDI4LDAsNTMsMywxMTAsMSwxNjF6TTE0NywyNDFjLTMyLTItNjQsMy05NSwwLTcsMSwxMi03LDE5LTExLDE1LTcsMzEtMTQsNDYtMjIsNTMtMjUsNTYtMTMsNzYtNzAsMTEtMzMsMjItNjUsMzMtOTgsNC0xMiw5LTI0LDEzLTM2LDAtMSwyLTQsMi0zLDcsNjYsMCwxMzcsMCwyMDMsMCw2LDQsMzMsMCwzNy0xLDEtODUsMC05NCwwek0zOTEsMjQxYy0zNCwwLTY4LDAtMTAxLDAtNywwLTE1LDQtMTksMCwwLDAtMS0xNzMsMC0xODksMC0yLDExLDIwLDIwLDM4LDEzLDI3LDI2LDUzLDM4LDgwLDksMTgsMTA4LDQ0LDEzMCw1MiwxMSwzLDIxLDcsMzIsMTEsOSwzLDIwLDgsMjAsOC0yNCwzLTUwLDAtNzQsMC0xNSwwLTMxLDAtNDYsMHoiLz48L3N2Zz4=');width:256px;" data-webp="https://cdn4.telesco.pe/file/13b49cacb5.webp?token=g-HDj4Nl1EiNKY9iqB05XpF3MTfmYWGjPgrOoCk-TZbaJeU3F6LZR46XWFWSVIb0Y67S4ue7xnmLw25TYljUG1sBjCFIyB8bsh3X_hytYge7Shs34M_QAq_ogxReK3UGRZFjrBDU0u6Hg6AOK4xYgMSq1Wj7oe8HfHb5aCekOvjhTaH49C8mtOrzV5YbVTOaniTD1V9XnKM3KzpO5fpqXd-DKkgJOtNi-DxyPNKVMXzFTt9bLDO-DvHGUOL7DCR9gmtJkFcqY0go9ZcvBHjGZTJvK1KuVF5O6mWGVaSZc9igyw0ibv6U9vFx6G9vsedmf787ZxBneGiyUIpCWB0ATw"><div style="padding-top:100%"></div></i></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.5K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1265"><time datetime="2026-07-24T13:37:00+00:00" class="time">13:37</time></a></span>
+  </div>
+</div><div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91BB.png')"><b>👻</b></i>1</span></div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1266" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2NiwidCI6MTc4ODM2MDkwMywiaCI6ImM3Yjg5YTg5NGRlZWRkZjdhZiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/917"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>کانفیگ رایگان Xray</b><br/><br/>آموزش:<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i> اپلیکیشن زیر رو نصب کنید<br/><a href="https://github.com/2dust/v2rayNG/releases/download/1.9.39/v2rayNG_1.9.39_universal.apk" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">اندروید</a> | <a href="https://apps.apple.com/us/app/streisand/id6450534064" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ای‌او‌اس</a> | <a href="https://github.com/2dust/v2rayN/releases/download/7.10.4/v2rayN-windows-64-SelfContained.zip" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ویندوز</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/32E283A3.png')"><b>2️⃣</b></i> روی لینک زیر بزنید تا کانفیگ به اپلیکیشن افزوده بشه<br/><a href="http://iraniancypherpunks.github.io/x-ray" target="_blank" rel="noopener">iraniancypherpunks.github.io/x-ray</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i> یکبار سابسکریپشن رو آپدیت کنید</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>19</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F91BB.png')"><b>👻</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.76K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1266"><time datetime="2026-07-24T13:37:00+00:00" class="time">13:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1267" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2NywidCI6MTc4ODM2MDkwMywiaCI6IjMxYmEwYzllOGQyODFlODk0NiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/1258"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5816783795523358473 1354325515_460001033" href="https://t.me/Ln2Ray/1267" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/HO4kdc19UpOeGOU5LjPYp3ysHiyBzLkKzggAZ9yoA60_f3Yi0Erp7FYfn2jVVPEw6LXi-wHx7MzGIj51j6EOPWeWFB16bVvFtqA9t7Hl4dGCuogTSAWVdz6ATnoU_sARgYL3akOOXfQKlGiZxsnya1bALB37bvW3EST8THVZtI0JSSuFt3iyGoZfzpvm_M2zLtjTY8TzOEk8MnBrP9kOWHEpFLAJrWKlD1u09xzfCa1UtGRecdMwH0jYGWgp-2TVN0OFvf_bef6YP6CFGTwRcBiKLBt5npLyLLeBbms8vQzlxH8IWowAHTIbnBHtQ3UM5QlAEBAikS_elHUBhAFlyQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:99.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><code>vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%2C%22headers%22%3A%7B%22User-Agent%22%3A%22Mozilla%2F5.0%28WindowsNT10.0%3BWin64%3Bx64%29AppleWebKit%2F537.36%28KHTML%2ClikeGecko%29Chrome%2F101.0.4951.67Safari%2F537.36%22%7D%7D&amp;insecure=0&amp;host=dey.lnmarketplace.net&amp;fp=firefox&amp;type=xhttp&amp;allowInsecure=0&amp;sni=dey.lnmarketplace.net#IRCP%20%40Ln2ray</code><br/><br/><br/><tg-emoji emoji-id="5271604874419647061"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i></tg-emoji>۲سرور جدید اضافه شد. برای دوستانتون بفرستید. فعال بر روی تمامی ‌نت‌ها.<br/><br/><tg-emoji emoji-id="5402250396515183081"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪️</b></i></tg-emoji>اشتراک گذاری فراموش نشه. استقبال خوب باشه سرورهای جدید تو راهه<tg-emoji emoji-id="5188208446461188962"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1267" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>62</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F998F.png')"><b>🙏</b></i>11</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8D93.png')"><b>🍓</b></i>6</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">5.01K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1267"><time datetime="2026-07-24T13:37:09+00:00" class="time">13:37</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1268" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2OCwidCI6MTc4ODM2MDkwMywiaCI6IjNhMGJlZTk2YmJiNTA0ZWNjOSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1267" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/c8sHlUBpda4w0Ex-pZPcE3nvXsWW-_EV68tG-xry8IFwvfGp-vfPsQ7AVNtMvQ9zgKx9xj-SyNW24rYL1O0TICPFoOJeE2cMp4prcLj38XZiiWSZvq5dcTw_ldqG9H_4qsOX2JbW8dKMgrb1cRS4Cu9mq70VBTJQ1M339Qv6_guB6FAOhbmzlzDXEw7SlOP-z4INMdciHnfy-yJ4lyRWBtgmOx83DrnRdBszmYtAzyVqqN5_-AHHRg3W4J9SC49c8IS_x5eWNd12BZ_uh6-L70vRrQXh7nCLZO4aWGOwP31SJFdl6yIXOYvlwFSrlWS4Y4J_oJKA8mVN1UJxrop06w.jpg')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%…</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">متصل روی تمامی نت‌ها<tg-emoji emoji-id="5386587930686939199"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9A80.png')"><b>🚀</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1268" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>32</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>5</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>4</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">6.33K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1268"><time datetime="2026-07-27T08:10:09+00:00" class="time">08:10</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1269" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI2OSwidCI6MTc4ODM2MDkwMywiaCI6ImM0ZGIwMTg4ZjkxNWUxNTE0NyJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/818"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><tg-emoji emoji-id="5447410659077661506"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji> دوستانی که تمایل دارند از ما حمایت مالی بکنند، میتونن از ما کانفیگ اختصاصی خودشون رو خریداری کنند . <br/><br/><tg-emoji emoji-id="5019328391057244975"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E2AD90.png')"><b>⭐</b></i></tg-emoji> حداقل سفارش : <br/><br/>۵۰ گیگ حجم ، ۱ ماه اعتبار ، <b>کاربر نامحدود</b>،<br/>۳ دالر<br/><br/>۱۰۰ گیگ حجم، ۱ ماه اعتبار ، <b>کاربر نامحدود</b>،<br/>۵ دالر<br/><br/>۲۰۰ گیگ حجم، ۳ ماه اعتبار، <b>کاربر نامحدود</b><br/>۱۰ دالر<br/><br/>۵۰۰ گیگ حجم، ۶ ماه اعتبار، <b>کاربر نامحدود</b><br/>۲۵ دالر<br/><br/><tg-emoji emoji-id="5447644880824181073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA0.png')"><b>⚠️</b></i></tg-emoji>پرداخت فقط و فقط با کریپتو و به آدرس والتهای موجود در کانال <tg-emoji emoji-id="5215683627131613033"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92B8.png')"><b>💸</b></i></tg-emoji><br/><br/><tg-emoji emoji-id="5447644880824181073"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29AA0.png')"><b>⚠️</b></i></tg-emoji> لازم به ذکره، کلیه درامد ازین راه صرف حفظ و نگهداری و ارتقا سرویسهای رایگان میشه.<br/><br/>بنابراین با خرید کانفیگ اختصاصی از ما، به حفظ و ارتقا سرویسهای رایگان نیز کمک کردین.<br/><br/><tg-emoji emoji-id="5447410659077661506"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')"><b>🌐</b></i></tg-emoji>لوکیشن های لینک سابسکریپشن مولتی لوکیشن :<br/><br/><tg-emoji emoji-id="5382151560182642075"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87ABF09F87AE.png')"><b>🇫🇮</b></i></tg-emoji>فنلاند<br/><tg-emoji emoji-id="5409360418520967565"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87A9F09F87AA.png')"><b>🇩🇪</b></i></tg-emoji>آلمان<br/><tg-emoji emoji-id="5202132623060640759"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87ABF09F87B7.png')"><b>🇫🇷</b></i></tg-emoji>فرانسه<br/><tg-emoji emoji-id="5226948110873278599"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87B9F09F87B7.png')"><b>🇹🇷</b></i></tg-emoji> ترکیه<br/><tg-emoji emoji-id="6034969533859499947"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F87BAF09F87B8.png')"><b>🇺🇸</b></i></tg-emoji>امریکا<br/><tg-emoji emoji-id="5206607081334906820"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29C94.png')"><b>✔️</b></i></tg-emoji>بر روی تمامی سرور‌ها تحریم شکن فعال هست. در صورتی که سرویس خارجی براتون باز نشد یا 403 داد حتما اطلاع بدید تا بررسی و حل بشه.<br/><br/>جهت هماهنگی به اکانت <a href="https://t.me/ircpamin" target="_blank">@ircpamin</a> پیام بدید</div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1269" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>20</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>6</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918F.png')"><b>👏</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">3.52K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1269"><time datetime="2026-08-08T16:25:25+00:00" class="time">16:25</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap sticker_media no_bubble js-widget_message" data-post="Ln2Ray/1270" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI3MCwidCI6MTc4ODM2MDkwMywiaCI6IjcxOGM1ZDVlZTI0NTNkMTBhMCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/913"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="message_media_not_supported_wrap media_not_supported_cont">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">This media is not supported in your browser</div>
+    <a href="https://t.me/Ln2Ray/1270" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div>
+<div class="tgme_widget_message_sticker_wrap media_supported_cont"><i class="tgme_widget_message_sticker js-sticker_image" style="background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iLTMwMCUiIHgyPSItMjAwJSIgeTE9IjAiIHkyPSIwIj48c3RvcCBvZmZzZXQ9Ii0xMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48c3RvcCBvZmZzZXQ9IjMwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1vcGFjaXR5PSIuMDciLz48c3RvcCBvZmZzZXQ9IjExMCUiIHN0b3Atb3BhY2l0eT0iLjEiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MSIgZnJvbT0iLTMwMCUiIHRvPSIxMjAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ4MiIgZnJvbT0iLTIwMCUiIHRvPSIxMzAwJSIgZHVyPSIzcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBmaWxsPSJ1cmwoI2cpIiBkPSJNMjcyLDUxMGMtMi02MS0xLTEyNi0xLTE4OSwwLTgtNS00NSwwLTUwLDItMiwyNSwwLDI4LDAsNTMsMCwxMDgtNCwxNjEsMCwwLDAtMTksMTEtMzUsMTktMjgsMTMtNTUsMjYtODMsMzktMjQsMTEtNTQsMTQ2LTcwLDE4MXpNMjQwLDQ2MGMtMTMtMTUtNTItMTIxLTYxLTEyNy05LTUtMjItNy0zMi0xMC00Mi0xNC04My0zMC0xMjUtNDQtNi0yLTE2LTMtMjEtNi0zLTIsNi0yLDktMiwxNiwwLDMxLDAsNDcsMCw0MCwwLDgwLDAsMTIwLDAsNiwwLDY0LDAsNjQsMCwzLDMsMCwyNCwwLDI4LDAsNTMsMywxMTAsMSwxNjF6TTE0NywyNDFjLTMyLTItNjQsMy05NSwwLTcsMSwxMi03LDE5LTExLDE1LTcsMzEtMTQsNDYtMjIsNTMtMjUsNTYtMTMsNzYtNzAsMTEtMzMsMjItNjUsMzMtOTgsNC0xMiw5LTI0LDEzLTM2LDAtMSwyLTQsMi0zLDcsNjYsMCwxMzcsMCwyMDMsMCw2LDQsMzMsMCwzNy0xLDEtODUsMC05NCwwek0zOTEsMjQxYy0zNCwwLTY4LDAtMTAxLDAtNywwLTE1LDQtMTksMCwwLDAtMS0xNzMsMC0xODksMC0yLDExLDIwLDIwLDM4LDEzLDI3LDI2LDUzLDM4LDgwLDksMTgsMTA4LDQ0LDEzMCw1MiwxMSwzLDIxLDcsMzIsMTEsOSwzLDIwLDgsMjAsOC0yNCwzLTUwLDAtNzQsMC0xNSwwLTMxLDAtNDYsMHoiLz48L3N2Zz4=');width:256px;" data-webp="https://cdn4.telesco.pe/file/13b49cacb5.webp?token=cu9W34YU18Z2q4rj_3x6A9INKe4dgAGiwZSuoRqW8D29sYa1PEQ-uS7UE8D2aFaoNJEEzMnlLvbBlYJycGZjq0aGuy2M3S5YlqepW6dsjkbCN4YoA8RVKiJHRI9DKeMMQDwby2omdzxxUKAc42JhL3JV477Qrb5U0G7K49Xo2x4GGQSajWSEqxbelZ_3yGdcKo3wvvSHeaIS9j9RS2PUkxxDs4AV1oQhWp-o3l_GA6EKSPa7ddeTu8yPzmKAvicUg0V8qmbY6fA5iXKheS2bGXkR6DfDOrFQLwkNIzO1UuOXvyQFUmKjTgavwnGRrSneSG8Hez5PR_F1qhQxeHXUJQ"><div style="padding-top:100%"></div></i></div>
+<div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">3.19K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1270"><time datetime="2026-08-09T16:46:02+00:00" class="time">16:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1271" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI3MSwidCI6MTc4ODM2MDkwMywiaCI6ImMwMmFkY2NjOWIwMWRjNGJjYiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/917"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="tgme_widget_message_text js-message_text" dir="auto"><b>کانفیگ رایگان Xray</b><br/><br/>آموزش:<br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/31E283A3.png')"><b>1️⃣</b></i> اپلیکیشن زیر رو نصب کنید<br/><a href="https://github.com/2dust/v2rayNG/releases/download/1.9.39/v2rayNG_1.9.39_universal.apk" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">اندروید</a> | <a href="https://apps.apple.com/us/app/streisand/id6450534064" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ای‌او‌اس</a> | <a href="https://github.com/2dust/v2rayN/releases/download/7.10.4/v2rayN-windows-64-SelfContained.zip" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">ویندوز</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/32E283A3.png')"><b>2️⃣</b></i> روی لینک زیر بزنید تا کانفیگ به اپلیکیشن افزوده بشه<br/><a href="http://iraniancypherpunks.github.io/x-ray" target="_blank" rel="noopener">iraniancypherpunks.github.io/x-ray</a><br/><br/><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/33E283A3.png')"><b>3️⃣</b></i> یکبار سابسکریپشن رو آپدیت کنید</div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>15</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">3.26K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1271"><time datetime="2026-08-09T16:46:02+00:00" class="time">16:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1272" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI3MiwidCI6MTc4ODM2MDkwMywiaCI6IjUzOWMwODQ1YzlmMjlmZDVhOSJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/Ln2Ray/1258"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<div class="media_supported_cont"><a class="tgme_widget_message_photo_wrap 5816783795523358473 1354325515_460001033" href="https://t.me/Ln2Ray/1272" style="width:800px;background-image:url('https://cdn4.telesco.pe/file/K3kgh_ajK55WcpbEvKt11U4b_a8Y319vGoEVJXMynq80Q3MZCt9rLGzysmMm_isgY1_qaOTuBcVfAYEBCS_Rqn7b91Ja-eRiDMUy7vE9jwmBtqKTphXqd9Ujhi5tARMKJBn8O8TAEWIndWeN5oYNfaWOTP-tlMP4nzXptMJgyRCCA9p6ttl8LGJtBISmRxriD7EtXy4fd7xWu3YSGn8zJYrPfuSNaileZm1HBkbLr3j-rG6xbzMfUpm3F5mP0GrbKe2ubhIKh6XoP-oLWoGIEHcxOIq7nbtQSYaF7la9KpNWdvyHsSzPCXnChEJ3AhVWnGcEfRr65cLoJNEfEHl9TQ.jpg')">
+  <div class="tgme_widget_message_photo" style="padding-top:99.375%"></div>
+</a><div class="tgme_widget_message_text js-message_text" dir="auto"><code>vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%2C%22headers%22%3A%7B%22User-Agent%22%3A%22Mozilla%2F5.0%28WindowsNT10.0%3BWin64%3Bx64%29AppleWebKit%2F537.36%28KHTML%2ClikeGecko%29Chrome%2F101.0.4951.67Safari%2F537.36%22%7D%7D&amp;insecure=0&amp;host=dey.lnmarketplace.net&amp;fp=firefox&amp;type=xhttp&amp;allowInsecure=0&amp;sni=dey.lnmarketplace.net#IRCP%20%40Ln2ray</code><br/><br/><br/><tg-emoji emoji-id="5271604874419647061"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9497.png')"><b>🔗</b></i></tg-emoji>۲سرور جدید اضافه شد. برای دوستانتون بفرستید. فعال بر روی تمامی ‌نت‌ها.<br/><br/><tg-emoji emoji-id="5402250396515183081"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E286AA.png')"><b>↪️</b></i></tg-emoji>اشتراک گذاری فراموش نشه. استقبال خوب باشه سرورهای جدید تو راهه<tg-emoji emoji-id="5188208446461188962"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F92AF.png')"><b>💯</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1272" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction tgme_reaction_paid"><i class="icon icon-telegram-stars"></i>1</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>68</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA497.png')"><b>🤗</b></i>3</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">3.06K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1272"><time datetime="2026-08-09T16:46:02+00:00" class="time">16:46</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1273" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI3MywidCI6MTc4ODM2MDkwMywiaCI6ImVjMzk1NjMzN2NmZGVkZTc2MCJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+
+<a class="tgme_widget_message_reply user-color-default" href="https://t.me/Ln2Ray/1272" "><i class="tgme_widget_message_reply_thumb" style="background-image:url('https://cdn4.telesco.pe/file/lPaVgqRl69PThSPHoFI-7JWPkdov3oWQ3rTdKxUGzwRxryGYYJ4UEipDrF9HMWWfpBWO-64yQC9HMkrU2ElEMOpA4tOD0qmu2NS26qRQV49JBwLnCFbfxNE8wMoqFTAG5zT31lxFG6IXhQxyBBQxUM09cBI3-jXQaVOte-I4KEbigGMO9UcaxdUlHSstypJy8cjABCW9SA8sg2QvBMojV67mIKuzPjX2pnF2kUBhao7jObWxrI3rlpgq7u7O9qWQEQiS1q0drJrR6rqu--KXqspiaYgd0bC_WirdwWmAGmJoyxP8GEbE-Rr2eVPn2l69ZzA0ixi-okv20_iW01fDhA.jpg')"></i>
+<div class="tgme_widget_message_author accent_color">
+  <span class="tgme_widget_message_author_name" dir="auto">Iranian Cypherpunks VPN</span>
+</div>
+<div class="tgme_widget_message_text js-message_reply_text" dir="auto">vless://3536e1fa-0850-44d1-b123-925ce12476cf@dey.lnmarketplace.net:443?mode=stream-one&amp;path=%2Fkavir&amp;security=tls&amp;alpn=h2&amp;encryption=none&amp;extra=%7B%22noGRPCHeader%22%3Atrue%2C%22xmux%22%3A%7B%22maxConcurrency%22%3A%226%22%2C%22hKeepAlivePeriod%22%3A12%7D%…</div>
+</a>
+<div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto">متصل بر روی همه نت‌ها<tg-emoji emoji-id="5292212788930818831"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918C.png')"><b>👌</b></i></tg-emoji></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1273" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>31</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>2</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F94A5.png')"><b>🔥</b></i>2</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">4.72K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta">edited &nbsp;<a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1273"><time datetime="2026-08-11T07:34:29+00:00" class="time">07:34</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div><div class="tgme_widget_message_wrap js-widget_message_wrap"><div class="tgme_widget_message text_not_supported_wrap js-widget_message" data-post="Ln2Ray/1274" data-view="eyJjIjotMTcwODU3MzYyMCwicCI6MTI3NCwidCI6MTc4ODM2MDkwMywiaCI6Ijk3ZGE0MDMzOWRiY2Q4OWYyMiJ9">
+  <div class="tgme_widget_message_user"><a href="https://t.me/Ln2Ray"><i class="tgme_widget_message_user_photo bgcolor5" data-content="I"><img src="https://cdn4.telesco.pe/file/WuphvfkJEr-N3GNZ0a-kDFKE8MDkZfLLTLWF2gt3kuYe0Apq0YyuY3LzJcwYFko1k7HOPW1wGM1gVCDqG26taYWx_WAk60XUz843i4T-grnJ_RWPpDRR6DQ5KX68wZQNng228gSOcq4cD3MBDQQkKgFfJ1xCS-imLktJ6Aw2XnUnP7I_o5gWbDVwz5CGlCXVCGJ4nUHL0xydlJw4EEZPmEmV9iwUVRTg2OwBuCg6qBjnp6MLpmqPGVqjwJHv2oIFvmOPKCnO5IWx3fklTc7bMVLMOLzhG5_PReENBWOjv41yp9M-iWeTewW23i6Jxw1zyXFx5PmjO7lNO01O7Yc6xA.jpg"></i></a></div>
+  <div class="tgme_widget_message_bubble">
+    
+        <i class="tgme_widget_message_bubble_tail">
+      <svg class="bubble_icon" width="9px" height="20px" viewBox="0 0 9 20">
+        <g fill="none">
+          <path class="background" fill="#ffffff" d="M8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z"></path>
+          <path class="border_1x" fill="#d7e3ec" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z"></path>
+          <path class="border_2x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z"></path>
+          <path class="border_3x" d="M9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z"></path>
+        </g>
+      </svg>
+    </i>
+    <div class="tgme_widget_message_author accent_color"><a class="tgme_widget_message_owner_name" href="https://t.me/Ln2Ray"><span dir="auto">Iranian Cypherpunks VPN</span></a></div>
+<div class="tgme_widget_message_forwarded_from accent_color">Forwarded from&nbsp;<a class="tgme_widget_message_forwarded_from_name" href="https://t.me/gooyban/712"><span dir="auto">gooyban<i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09FA686.png')"><b>🦆</b></i></span></a></div>
+
+<a class="tgme_widget_message_link_preview" href="https://youtube.com/watch?list=PLPjkUseDw7T0&amp;v=LM_N9cFI5Go">
+  <i class="link_preview_right_image" style="background-image:url('https://cdn4.telesco.pe/file/X45VE8yhZJnh3tbxmcKglQeZj0yQXENqQp6SjPNxsaijGDKwoXYjHqW72rD2n5Lyzb5jezr2wYCobF0vjj_I4JFyj6FJqLBC7TzWzucDc9bWovy5g_HQpPWX3ubMPOqVZXlL5PN2wHaKxMjp3sMANzSu66NNe4jsdTrMr6p00YBXA2eg2hds-lEzwUd-wk9yYElxFgbed9ABKlPoTdyw69uWrQkJ-08FO4vZfLbQ_XCPlRgAj8BV3Zk35osy35vFc9tJM53NWFcLn-8U7Rq10BwIVAQVldjFW717FCLgxYS8vQt2qXto84Ubm8CkxI27fhp7e9gf0lwyGvUFCfklyw.jpg')"></i>
+  <div class="link_preview_site_name accent_color" dir="auto">YouTube</div>
+  
+  <div class="link_preview_title" dir="auto">لپتاپ قدیمی را به روتر هوشمند تبدیل کردم با OpenWrt</div>
+  <div class="link_preview_description" dir="auto">اون لپ‌تاپ یا کامپیوتر قدیمی که گوشه‌ی خونه خاک می‌خوره، می‌تونه تبدیل بشه به یه روتر هوشمند و پرقدرت که خیلی از مودم‌روترهای معمولی ازش ضعیف‌ترن. تو این ویدئو قدم‌به‌قدم و کامل با هم یه لپ‌تاپ رو با OpenWrt به یه روتر تمام‌عیار تبدیل می‌کنیم؛ روتری که اینترنت…</div>
+</a><div class="media_supported_cont"><div class="tgme_widget_message_text js-message_text" dir="auto"><b><tg-emoji emoji-id="5811938702586290095"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F9B9C.png')"><b>🛜</b></i></tg-emoji></b><b> استفاده از لپتاپ قدیمی به عنوان روتر قدرتمند OpenWrt</b><br/><blockquote>سیستم‌عامل <a href="https://openwrt.org/" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">OpenWrt</a> یکی از بهترین سیستم‌عامل‌ها برای روترهاست و می‌شه باهاش کلی کار کرد از لودبالانسیگ گرفته تا انداختن VPN (OpenVPN،WireGuard، Passwall) پشت مودم به شکلی که همه‌ی دستگاه‌ها که به اون وصل می‌شن دیگه اینترنت آزاد داشته باشن.</blockquote><br/><br/>از اونجایی که این سیستم‌عامل لینوکسه، می‌شه اونو روی کامپیوتر و لپتاپ هم نصبش کرد.<br/><b>در این ویدئو قراره فرا بگیریم که چطوری می‌شه از </b><a href="https://www.youtube.com/playlist?list=PLpl25_8ecATjo_buYZK4aDxASonBEoonV" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"><b>لپتاپ قدیمی</b></a><b> خودمون به عنوان روتر استفاده کنیم.</b><br/><blockquote>این روش موقته و برگشت‌پذیره، همه چیز روی یه فلش نصب می‌شه (فلش یه گیگابایتی هم کافیه) و هیچ کاری با داده‌های روی خود لپتاپ/کامپیوتر نداریم و اگه فلش جدا بشه همه چی سر جاش خواهد بود.</blockquote><br/><br/>هدف این ویدئو آشنا شدن با این سیستم‌عامل بدون هزینه کردن برای مودم‌ها یا یه راه‌کار موقت برای وصل کردن دستگاه‌هایی دیگه به اینترنته (تلویزیون هوشمند، کنسول بازی، جاروبرقی رباتیک و ...).<br/>پس از فرا گرفتن این سیستم‌عامل می‌تونید بهتر تصمیم بگیرید و اگه نیاز داشتید با دانش فنی بهتر مودم خریداری کنید یا حتی یه کامپیوتر مخصوص این کار بسازید.<br/><br/><tg-emoji emoji-id="5794229500157893424"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93BC.png')"><b>📼</b></i></tg-emoji> <a href="https://www.youtube.com/watch?v=LM_N9cFI5Go&amp;amp;list=PLPjkUseDw7T0" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">پیوند به ویدئو در یوتیوب</a><br/><tg-emoji emoji-id="5803415361462213587"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EAE.png')"><b>🎮</b></i></tg-emoji> <a href="https://t.me/gooyban_group/125352/223585" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">پیوند به پست OpenWrt در گروه</a> (اطلاعات تکمیلی همه اینجاست)<br/><tg-emoji emoji-id="5794229500157893424"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93BC.png')"><b>📼</b></i></tg-emoji> <a href="https://www.youtube.com/playlist?list=PLPjkUseDw7T0" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">دوره‌ی آشنایی با OpenWrt</a><br/><tg-emoji emoji-id="5794229500157893424"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F93BC.png')"><b>📼</b></i></tg-emoji> <a href="https://www.youtube.com/playlist?list=PLYPPTYz3INgw" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);">سری ویدئوهای کامل در مورد بوت، دیسک و ایمیج و کلون‌گرفتن و تنظیمات بایوس و UEFI</a> (پیش‌نیاز این دوره)<br/><tg-emoji emoji-id="5803415361462213587"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EAE.png')"><b>🎮</b></i></tg-emoji><a href="https://www.youtube.com/playlist?list=PLpl25_8ecATjo_buYZK4aDxASonBEoonV" target="_blank" rel="noopener" onclick="return confirm('Open this link?\n\n'+this.href);"> کاربردهای لپتاپ قدیمی</a><br/><br/><tg-emoji emoji-id="5803415361462213587"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F8EAE.png')"><b>🎮</b></i></tg-emoji><a href="https://t.me/gooyban" target="_blank">@gooyban</a> <a href="https://t.me/gooyban_group" target="_blank">@gooyban_group</a> <a href="?q=%23network">#network</a> <a href="?q=%23vpn">#vpn</a> <a href="?q=%23proxy">#proxy</a> <a href="?q=%23openWrt">#openWrt</a></div></div><div class="media_not_supported_cont"><div class="message_media_not_supported_wrap">
+  <div class="message_media_not_supported">
+    <div class="message_media_not_supported_label">Please open Telegram to view this post</div>
+    <a href="https://t.me/Ln2Ray/1274" class="message_media_view_in_telegram">VIEW IN TELEGRAM</a>
+  </div>
+</div></div>
+<div class="tgme_widget_message_reactions js-message_reactions"><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4.png')"><b>❤</b></i>21</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/E29DA4E2808DF09F94A5.png')"><b>❤‍🔥</b></i>4</span><span class="tgme_reaction"><i class="emoji" style="background-image:url('//telegram.org/img/emoji/40/F09F918D.png')"><b>👍</b></i>1</span></div><div class="tgme_widget_message_footer compact js-message_footer">
+  
+  <div class="tgme_widget_message_info short js-message_info">
+    <span class="tgme_widget_message_views">1.48K</span><span class="copyonly"> views</span><span class="tgme_widget_message_meta"><a class="tgme_widget_message_date" href="https://t.me/Ln2Ray/1274"><time datetime="2026-08-31T14:11:27+00:00" class="time">14:11</time></a></span>
+  </div>
+</div>
+  </div>
+  
+</div></div>
+    </section>
+  </div>
+</main>
+    <script src="//telegram.org/js/jquery.min.js"></script>
+    <script src="//telegram.org/js/jquery-ui.min.js"></script>
+    <script src="//telegram.org/js/tgwallpaper.min.js?3"></script>
+<script src="//telegram.org/js/tgsticker.js?32"></script>
+
+    <script src="//telegram.org/js/widget-frame.js?68"></script>
+    <script src="//telegram.org/js/telegram-web.js?14"></script>
+    <script>TWeb.init();
+</script>
+    
+  </body>
+</html>
+<!-- page generated in 232.45ms -->
