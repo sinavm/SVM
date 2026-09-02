@@ -12,15 +12,28 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PRIVATE_LINK_SiNAVM_1: ${{ secrets.PRIVATE_LINK_SiNAVM_1 }}
+      PRIVATE_LINK_SiNAVM_2: ${{ secrets.PRIVATE_LINK_SiNAVM_2 }}
+      PRIVATE_LINK_SiNAVM_3: ${{ secrets.PRIVATE_LINK_SiNAVM_3 }}
+      PRIVATE_LINK_SiNAVM_4: ${{ secrets.PRIVATE_LINK_SiNAVM_4 }}
+      PRIVATE_LINK_SiNAVM_5: ${{ secrets.PRIVATE_LINK_SiNAVM_5 }}
+      PRIVATE_LINK_SiNAVM_6: ${{ secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 }}
+      PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 }}
+      PRIVATE_LINK_SINAVM_3: ${{ secrets.PRIVATE_LINK_SINAVM_3 }}
+      PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 }}
+      PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 }}
+      PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          
+
       - name: Execute PHP script
         run: |
           set -euo pipefail

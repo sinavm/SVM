@@ -16,59 +16,16 @@ jobs:
       PRIVATE_LINK_SiNAVM_1: ${{ secrets.PRIVATE_LINK_SiNAVM_1 }}
       PRIVATE_LINK_SiNAVM_2: ${{ secrets.PRIVATE_LINK_SiNAVM_2 }}
       PRIVATE_LINK_SiNAVM_3: ${{ secrets.PRIVATE_LINK_SiNAVM_3 }}
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # این خط اضافه شده است
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4 
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
-      - name: Install Dependencies for HiddifyCli
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl tar 
-
-      - name: Execute PHP script
-        run: |
-          set -euo pipefail
-          git config pull.rebase true
-          git config rebase.autoStash true
-          git pull --rebase 
-
-          php -d display_errors get.php
-          php -d display_errors config-test.php || true 
-          php -d display_errors channelsAssets.php
-          php -d display_errors duplicate.php
-          php -d display_errors sort.php
-          php -d display_errors toSingbox.php
-          php -d display_errors toClashSurfboard.php
-          php -d display_errors hiddifyWarp.php
-
-          git config --global user.email "sina.bb2006@gmail.com"
-          git config --global user.name "sinavm"
-          git config credential.helper store 
-
-
-          for i in {1..3}; do
-            git pull --rebase 
-            git add -A 
-
-            commit_message="🤴‍♂️ Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
-            git commit -m "$commit_message" --allow-empty
-            git push && break || sleep 5 
-          done
-
-  sinavm-lite:
-    runs-on: ubuntu-latest
-    needs: sinavm-full
-    env:
-      PRIVATE_LINK_SiNAVM_1: ${{ secrets.PRIVATE_LINK_SiNAVM_1 }}
-      PRIVATE_LINK_SiNAVM_2: ${{ secrets.PRIVATE_LINK_SiNAVM_2 }}
-      PRIVATE_LINK_SiNAVM_3: ${{ secrets.PRIVATE_LINK_SiNAVM_3 }}
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # این خط اضافه شده است
+      PRIVATE_LINK_SiNAVM_4: ${{ secrets.PRIVATE_LINK_SiNAVM_4 }}
+      PRIVATE_LINK_SiNAVM_5: ${{ secrets.PRIVATE_LINK_SiNAVM_5 }}
+      PRIVATE_LINK_SiNAVM_6: ${{ secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 }}
+      PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 }}
+      PRIVATE_LINK_SINAVM_3: ${{ secrets.PRIVATE_LINK_SINAVM_3 }}
+      PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 }}
+      PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 }}
+      PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -85,14 +42,73 @@ jobs:
 
       - name: Execute PHP script
         run: |
-          set -euo pipefail 
+          set -euo pipefail
+          git config pull.rebase true
+          git config rebase.autoStash true
+          git pull --rebase
+
+          php -d display_errors get.php
+          php -d display_errors config-test.php || true
+          php -d display_errors channelsAssets.php
+          php -d display_errors duplicate.php
+          php -d display_errors sort.php
+          php -d display_errors toSingbox.php
+          php -d display_errors toClashSurfboard.php
+          php -d display_errors hiddifyWarp.php
+
+          git config --global user.email "sina.bb2006@gmail.com"
+          git config --global user.name "sinavm"
+          git config credential.helper store
+
+          for i in {1..3}; do
+            git pull --rebase
+            git add -A
+            commit_message="🤴‍♂️ Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+            git commit -m "$commit_message" --allow-empty
+            git push && break || sleep 5
+          done
+
+  sinavm-lite:
+    runs-on: ubuntu-latest
+    needs: sinavm-full
+    env:
+      PRIVATE_LINK_SiNAVM_1: ${{ secrets.PRIVATE_LINK_SiNAVM_1 }}
+      PRIVATE_LINK_SiNAVM_2: ${{ secrets.PRIVATE_LINK_SiNAVM_2 }}
+      PRIVATE_LINK_SiNAVM_3: ${{ secrets.PRIVATE_LINK_SiNAVM_3 }}
+      PRIVATE_LINK_SiNAVM_4: ${{ secrets.PRIVATE_LINK_SiNAVM_4 }}
+      PRIVATE_LINK_SiNAVM_5: ${{ secrets.PRIVATE_LINK_SiNAVM_5 }}
+      PRIVATE_LINK_SiNAVM_6: ${{ secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 }}
+      PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 }}
+      PRIVATE_LINK_SINAVM_3: ${{ secrets.PRIVATE_LINK_SINAVM_3 }}
+      PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 }}
+      PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 }}
+      PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Install Dependencies for HiddifyCli
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl tar
+
+      - name: Execute PHP script
+        run: |
+          set -euo pipefail
           git config pull.rebase true
           git config rebase.autoStash true
           git pull --rebase
 
           cd lite
           php -d display_errors ../get.php
-          php -d display_errors ../config-test.php || true 
+          php -d display_errors ../config-test.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors ../toSingbox.php
@@ -103,10 +119,9 @@ jobs:
           git config credential.helper store
 
           for i in {1..3}; do
-            git pull --rebase 
-            git add -A 
-
+            git pull --rebase
+            git add -A
             commit_message="👸 Lite Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
             git commit -m "$commit_message" --allow-empty
-            git push && break || sleep 5 
+            git push && break || sleep 5
           done
