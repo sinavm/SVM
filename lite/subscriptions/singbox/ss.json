@@ -75,7 +75,7 @@
             "mtu": 1400,
             "platform": {
                 "http_proxy": {
-                    "enabled": true,
+                    "enabled": false,
                     "server": "127.0.0.1",
                     "server_port": 20122
                 }
@@ -87,21 +87,17 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@𝙎𝘾𝙉𝘼𝙑𝙈"
+                "@SiNAVM",
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
-            "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
+            "tag": "@SiNAVM",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -109,73 +105,13 @@
         },
         {
             "type": "shadowsocks",
-            "server": "51.79.49.116",
-            "server_port": 8882,
-            "method": "aes-256-gcm",
-            "password": "kDWvXYZoTBcGkC4",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "141.164.45.187",
-            "server_port": 8000,
-            "method": "aes-256-gcm",
-            "password": "KixLvKzwjekG00rm",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "15.204.247.175",
-            "server_port": 8008,
-            "method": "aes-256-gcm",
-            "password": "XKFKl2rULjIp74",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "51.222.155.32",
-            "server_port": 5003,
-            "method": "aes-256-gcm",
-            "password": "g5MeD6Ft3CWlJId",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "15.204.246.108",
-            "server_port": 8881,
-            "method": "aes-256-gcm",
-            "password": "kDWvXYZoTBcGkC4",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "141.164.45.187",
-            "server_port": 7001,
-            "method": "aes-256-gcm",
-            "password": "RexnBgU7EV5ADxG",
-            "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.213.23.63",
-            "server_port": 990,
+            "server": "82.38.31.9",
+            "server_port": 8080,
             "method": "chacha20-ietf-poly1305",
-            "password": "ARgvGZywA+gacgGV26Bvmu05+wZmRW\/j+AdU+Z8Bt44=",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-7"
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "shadowsocks",
@@ -184,8 +120,8 @@
             "method": "chacha20-ietf-poly1305",
             "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4",
             "udp_over_tcp": true,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-8"
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
@@ -265,7 +201,7 @@
         },
         "clash_api": {
             "external_controller": "127.0.0.1:9090",
-            "default_mode": "@SiNAVM👈️تلگرام",
+            "default_mode": "@SiNAVM",
             "access_control_allow_origin": "https:\/\/yacd.metacubex.one",
             "access_control_allow_private_network": true
         }

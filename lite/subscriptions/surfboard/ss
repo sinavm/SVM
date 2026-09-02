@@ -11,18 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | SS | #1 = ss, 51.79.49.116, 8882, encrypt-method = aes-256-gcm, password = kDWvXYZoTBcGkC4
-SiNAVM | SS | #2 = ss, 141.164.45.187, 8000, encrypt-method = aes-256-gcm, password = KixLvKzwjekG00rm
-SiNAVM | SS | #3 = ss, 15.204.247.175, 8008, encrypt-method = aes-256-gcm, password = XKFKl2rULjIp74
-SiNAVM | SS | #4 = ss, 51.222.155.32, 5003, encrypt-method = aes-256-gcm, password = g5MeD6Ft3CWlJId
-SiNAVM | SS | #5 = ss, 15.204.246.108, 8881, encrypt-method = aes-256-gcm, password = kDWvXYZoTBcGkC4
-SiNAVM | SS | #6 = ss, 141.164.45.187, 7001, encrypt-method = aes-256-gcm, password = RexnBgU7EV5ADxG
-SiNAVM | SS | #7 = ss, 185.213.23.63, 990, encrypt-method = chacha20-ietf-poly1305, password = ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
-SiNAVM | SS | #8 = ss, 36.224.147.226, 50099, encrypt-method = chacha20-ietf-poly1305, password = 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+SiNAVM | SS | #1 = ss, 82.38.31.9, 8080, encrypt-method = chacha20-ietf-poly1305, password = oZIoA69Q8yhcQV8ka3Pa3A
+SiNAVM | SS | #2 = ss, 36.224.147.226, 50099, encrypt-method = chacha20-ietf-poly1305, password = 7e731ec3-f8e1-43f6-92cf-3978d14705c4
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5,SiNAVM | SS | #6,SiNAVM | SS | #7,SiNAVM | SS | #8
-URL-TEST = url-test,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5,SiNAVM | SS | #6,SiNAVM | SS | #7,SiNAVM | SS | #8
-FALLBACK = fallback,SiNAVM | SS | #1,SiNAVM | SS | #2,SiNAVM | SS | #3,SiNAVM | SS | #4,SiNAVM | SS | #5,SiNAVM | SS | #6,SiNAVM | SS | #7,SiNAVM | SS | #8
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | SS | #1,SiNAVM | SS | #2
+URL-TEST = url-test,SiNAVM | SS | #1,SiNAVM | SS | #2
+FALLBACK = fallback,SiNAVM | SS | #1,SiNAVM | SS | #2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
