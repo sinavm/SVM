@@ -13,12 +13,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PRIVATE_LINK_SiNAVM_1: ${{ secrets.PRIVATE_LINK_SiNAVM_1 }}
-      PRIVATE_LINK_SiNAVM_2: ${{ secrets.PRIVATE_LINK_SiNAVM_2 }}
-      PRIVATE_LINK_SiNAVM_3: ${{ secrets.PRIVATE_LINK_SiNAVM_3 }}
-      PRIVATE_LINK_SiNAVM_4: ${{ secrets.PRIVATE_LINK_SiNAVM_4 }}
-      PRIVATE_LINK_SiNAVM_5: ${{ secrets.PRIVATE_LINK_SiNAVM_5 }}
-      PRIVATE_LINK_SiNAVM_6: ${{ secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 || secrets.PRIVATE_LINK_SiNAVM_1 }}
+      PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 || secrets.PRIVATE_LINK_SiNAVM_2 }}
+      PRIVATE_LINK_SINAVM_3: ${{ secrets.PRIVATE_LINK_SINAVM_3 || secrets.PRIVATE_LINK_SiNAVM_3 }}
+      PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
+      PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
+      PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -43,5 +43,5 @@ jobs:
           git config credential.helper store
 
           git add -A
-          git commit -m "🧟 Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "zombie Servers Updated - $(TZ='Asia/Tehran' date '+%Y-%m-%d %H:%M:%S')"
           git push
