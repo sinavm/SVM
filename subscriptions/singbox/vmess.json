@@ -93,10 +93,75 @@
         {
             "type": "urltest",
             "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1",
+                "@SiNAVM-2",
+                "@SiNAVM-3",
+                "@SiNAVM-4",
+                "@SiNAVM-5"
+            ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "vmess",
+            "server": "103.240.197.112",
+            "server_port": 55314,
+            "uuid": "bdb68629-1c6a-4eed-8083-7d4379a2dd52",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vmess",
+            "server": "119.46.51.45",
+            "server_port": 37515,
+            "uuid": "9b76bc31-17a5-4454-934a-8d5fb602cd70",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vmess",
+            "server": "47.236.207.245",
+            "server_port": 29521,
+            "uuid": "f1bb29bf-a342-44d4-9ac5-5ca4566a216a",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "vmess",
+            "server": "www.shopify.com",
+            "server_port": 443,
+            "uuid": "d187a23a-76a9-4d55-84e3-ea3b8b222cbf",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "transport": {
+                "type": "ws",
+                "path": "\/d187a23a-76a9-4d55-84e3-ea3b8b222cbf-vm",
+                "headers": {
+                    "Host": ""
+                },
+                "max_early_data": 0,
+                "early_data_header_name": ""
+            },
+            "tag": "@SiNAVM-4"
+        },
+        {
+            "type": "vmess",
+            "server": "107.173.254.27",
+            "server_port": 15311,
+            "uuid": "ad78d02b-873f-4cff-8d4a-673f53d6ce0f",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_strategy": "prefer_ipv4",
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "direct",

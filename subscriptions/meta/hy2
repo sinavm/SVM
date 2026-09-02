@@ -5,15 +5,7 @@ log-level: error
 external-controller: 127.0.0.1:9090
 
 proxies:
-  - {"name":"SiNAVM | HY2 | #5","type":"hysteria2","server":"agt.xn--mes13n8pi8x2b.shop","port":21654,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"agt.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #6","type":"hysteria2","server":"mg.xn--mes13n8pi8x2b.shop","port":21349,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"mg.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #7","type":"hysteria2","server":"mg.xn--mes13n8pi8x2b.shop","port":21639,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"mg.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #8","type":"hysteria2","server":"rb.xn--mes13n8pi8x2b.shop","port":21545,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"rb.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #9","type":"hysteria2","server":"rb.xn--mes13n8pi8x2b.shop","port":21842,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"rb.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #13","type":"hysteria2","server":"tw.xn--mes13n8pi8x2b.shop","port":21860,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"tw.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #16","type":"hysteria2","server":"xg.xn--mes13n8pi8x2b.shop","port":21072,"password":"642dc0b9-6481-4d84-ad60-3586e870f263","sni":"xg.xn--mes13n8pi8x2b.shop","skip-cert-verify":false,"udp":true}
-  - {"name":"SiNAVM | HY2 | #21","type":"hysteria2","server":"206.71.158.37","port":35200,"password":"Yet-Another-Public-Config-1","sni":"YAPC","skip-cert-verify":true,"udp":true,"obfs":"salamander","obfs-password":"Yet-Another-Public-Config-1"}
-  - {"name":"SiNAVM | HY2 | #22","type":"hysteria2","server":"206.71.158.37","port":36300,"password":"Yet-Another-Public-Config-1","sni":"YAPC","skip-cert-verify":true,"udp":true,"obfs":"salamander","obfs-password":"Yet-Another-Public-Config-1"}
+  - {name: DIRECT, type: http, server: 127.0.0.1, port: 9}
 
 proxy-groups:
   - name: MANUAL
@@ -21,15 +13,7 @@ proxy-groups:
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM | HY2 | #5'
-      - 'SiNAVM | HY2 | #6'
-      - 'SiNAVM | HY2 | #7'
-      - 'SiNAVM | HY2 | #8'
-      - 'SiNAVM | HY2 | #9'
-      - 'SiNAVM | HY2 | #13'
-      - 'SiNAVM | HY2 | #16'
-      - 'SiNAVM | HY2 | #21'
-      - 'SiNAVM | HY2 | #22'
+      - DIRECT
 
   - name: URL-TEST
     type: url-test
@@ -37,30 +21,14 @@ proxy-groups:
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM | HY2 | #5'
-      - 'SiNAVM | HY2 | #6'
-      - 'SiNAVM | HY2 | #7'
-      - 'SiNAVM | HY2 | #8'
-      - 'SiNAVM | HY2 | #9'
-      - 'SiNAVM | HY2 | #13'
-      - 'SiNAVM | HY2 | #16'
-      - 'SiNAVM | HY2 | #21'
-      - 'SiNAVM | HY2 | #22'
+      - DIRECT
 
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM | HY2 | #5'
-      - 'SiNAVM | HY2 | #6'
-      - 'SiNAVM | HY2 | #7'
-      - 'SiNAVM | HY2 | #8'
-      - 'SiNAVM | HY2 | #9'
-      - 'SiNAVM | HY2 | #13'
-      - 'SiNAVM | HY2 | #16'
-      - 'SiNAVM | HY2 | #21'
-      - 'SiNAVM | HY2 | #22'
+      - DIRECT
 
 rules:
   - DOMAIN-SUFFIX,ir,DIRECT
