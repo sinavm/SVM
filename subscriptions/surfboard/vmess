@@ -11,11 +11,10 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #1 = vmess, seoul03.zgjok.com, 443, username = 72a0dac4-9689-4a57-b164-5c65bfa94772, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"seoul03.zgjok.com", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #1
-URL-TEST = url-test,SiNAVM | VMESS | #1
-FALLBACK = fallback,SiNAVM | VMESS | #1
+MANUAL = select,URL-TEST,FALLBACK
+URL-TEST = url-test
+FALLBACK = fallback
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL

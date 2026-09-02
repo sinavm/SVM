@@ -93,67 +93,10 @@
         {
             "type": "urltest",
             "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
-            "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3"
-            ],
+            "outbounds": [],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "vmess",
-            "server": "seoul03.zgjok.com",
-            "server_port": 443,
-            "uuid": "72a0dac4-9689-4a57-b164-5c65bfa94772",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_strategy": "prefer_ipv4",
-            "tls": {
-                "enabled": true,
-                "server_name": "seoul03.zgjok.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "min_version": "1.3",
-                "max_version": "1.3",
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "seoul03.zgjok.com"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": ""
-            },
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vmess",
-            "server": "45.89.52.207",
-            "server_port": 39651,
-            "uuid": "ac4c12c5-45f2-4398-a718-9983941ede2b",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "vmess",
-            "server": "157.180.120.194",
-            "server_port": 40100,
-            "uuid": "73feeed6-9a40-45b0-a26d-84770f5f05fd",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_strategy": "prefer_ipv4",
-            "tag": "@SiNAVM-3"
         },
         {
             "type": "direct",

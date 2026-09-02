@@ -118,35 +118,23 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"seoul03.zgjok.com","port":"443","cipher":"auto","uuid":"72a0dac4-9689-4a57-b164-5c65bfa94772","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/","headers":{"host":"seoul03.zgjok.com"}}}
-  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"45.89.52.207","port":"39651","cipher":"auto","uuid":"ac4c12c5-45f2-4398-a718-9983941ede2b","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #3","type":"vmess","server":"157.180.120.194","port":"40100","cipher":"auto","uuid":"73feeed6-9a40-45b0-a26d-84770f5f05fd","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
