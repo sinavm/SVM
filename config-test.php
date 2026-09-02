@@ -1,10 +1,9 @@
 <?php
-// Load environment variables
 $API_URL = "http://127.0.0.1:6756";
 $BEARER_TOKEN = "xXxTestxXx";
 $TEST_URL = "http://cp.cloudflare.com";
-$TIMEOUT = 1000; // in milliseconds
-$BATCH_SIZE = 10; // Number of proxies to process in parallel
+$TIMEOUT = 1500;
+$BATCH_SIZE = 10;
 
 function runHiddify()
 {
@@ -12,24 +11,35 @@ function runHiddify()
     if (!is_dir($hiddifyDir)) {
         mkdir($hiddifyDir, 0755, true);
     }
+    $cwd = getcwd();
     chdir($hiddifyDir);
 
-    $downloadUrl = 'https://github.com/hiddify/hiddify-core/releases/download/v1.3.6/hiddify-cli-linux-amd64.tar.gz';
-    $downloadedFile = 'hiddify-cli.tar.gz';
-    file_put_contents($downloadedFile, fopen($downloadUrl, 'r'));
+    if (!is_file('HiddifyCli')) {
+        $downloadUrl = 'https://github.com/hiddify/hiddify-core/releases/download/v1.3.6/hiddify-cli-linux-amd64.tar.gz';
+        $downloadedFile = 'hiddify-cli.tar.gz';
+        $data = @file_get_contents($downloadUrl);
+        if ($data === false) {
+            chdir($cwd);
+            throw new Exception("Failed to download HiddifyCli");
+        }
+        file_put_contents($downloadedFile, $data);
+        shell_exec("tar -zxvf " . escapeshellarg($downloadedFile) . " 2>/dev/null");
+        if (is_file('HiddifyCli')) {
+            chmod('HiddifyCli', 0755);
+        }
+    }
 
-    $command = "tar -zxvf {$downloadedFile}";
-    shell_exec($command);
+    if (!is_file('HiddifyCli')) {
+        chdir($cwd);
+        throw new Exception("HiddifyCli binary not found");
+    }
 
-    chmod('HiddifyCli', 0755);
-
-    $configPath = escapeshellarg('../config.txt');
-    $hiddifyConfigPath = escapeshellarg('../hiddify-conf.json');
+    $configPath = escapeshellarg($cwd . '/config.txt');
+    $hiddifyConfigPath = escapeshellarg($cwd . '/hiddify-conf.json');
     $command = "./HiddifyCli run -c {$configPath} --hiddify {$hiddifyConfigPath} > /dev/null 2>&1 & echo $!";
     $pid = (int)shell_exec($command);
-
     file_put_contents('hiddify.pid', $pid);
-    chdir('../');
+    chdir($cwd);
 
     echo "Hiddify started in background with PID: $pid\n";
 }
@@ -40,10 +50,10 @@ function stopHiddify()
     if (file_exists($pidFile)) {
         $pid = (int)file_get_contents($pidFile);
         if ($pid) {
-            posix_kill($pid, 9);
+            @posix_kill($pid, 9);
             echo "Hiddify process (PID: $pid) stopped.\n";
         }
-        unlink($pidFile);
+        @unlink($pidFile);
     }
 }
 
@@ -53,6 +63,26 @@ function get_custom_headers()
     return ["Authorization: Bearer $BEARER_TOKEN"];
 }
 
+function waitForApi($seconds = 60)
+{
+    global $API_URL;
+    for ($i = 0; $i < $seconds; $i++) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "$API_URL/proxies");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 2);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, get_custom_headers());
+        $response = curl_exec($ch);
+        $httpcode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($httpcode === 200 && $response) {
+            return true;
+        }
+        sleep(1);
+    }
+    return false;
+}
+
 function get_proxies()
 {
     global $API_URL;
@@ -60,16 +90,15 @@ function get_proxies()
     curl_setopt($ch, CURLOPT_URL, "$API_URL/proxies");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, get_custom_headers());
-
     $response = curl_exec($ch);
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
     if ($httpcode === 200) {
-        return json_decode($response, true)["proxies"];
-    } else {
-        throw new Exception("Failed to get proxies: HTTP $httpcode");
+        $decoded = json_decode($response, true);
+        return isset($decoded["proxies"]) && is_array($decoded["proxies"]) ? $decoded["proxies"] : [];
     }
+    throw new Exception("Failed to get proxies: HTTP $httpcode");
 }
 
 function get_real_delay_batch($proxy_names)
@@ -81,12 +110,11 @@ function get_real_delay_batch($proxy_names)
 
     foreach ($proxy_names as $proxy_name) {
         $ch = curl_init();
-        $encoded_proxy_name = str_replace('+', '%20', urlencode($proxy_name));
-        curl_setopt($ch, CURLOPT_URL, "$API_URL/proxies/$encoded_proxy_name/delay?timeout=$TIMEOUT&url=$TEST_URL");
+        $encoded_proxy_name = rawurlencode($proxy_name);
+        curl_setopt($ch, CURLOPT_URL, "$API_URL/proxies/$encoded_proxy_name/delay?timeout=$TIMEOUT&url=" . rawurlencode($TEST_URL));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT_MS, $TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT_MS, $TIMEOUT + 500);
         curl_setopt($ch, CURLOPT_HTTPHEADER, get_custom_headers());
-
         curl_multi_add_handle($multiHandle, $ch);
         $curlHandles[$proxy_name] = $ch;
     }
@@ -94,17 +122,21 @@ function get_real_delay_batch($proxy_names)
     $running = null;
     do {
         curl_multi_exec($multiHandle, $running);
+        curl_multi_select($multiHandle, 0.2);
     } while ($running);
 
     $results = [];
     foreach ($curlHandles as $proxy_name => $ch) {
         $response = curl_multi_getcontent($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        if ($httpcode === 200) {
-            $results[$proxy_name] = json_decode($response, true)["delay"];
-        } else {
-            $results[$proxy_name] = $TIMEOUT;
+        $delay = $TIMEOUT;
+        if ($httpcode === 200 && $response) {
+            $decoded = json_decode($response, true);
+            if (isset($decoded["delay"]) && is_numeric($decoded["delay"])) {
+                $delay = (int)$decoded["delay"];
+            }
         }
+        $results[$proxy_name] = $delay;
         curl_multi_remove_handle($multiHandle, $ch);
         curl_close($ch);
     }
@@ -113,19 +145,15 @@ function get_real_delay_batch($proxy_names)
     return $results;
 }
 
-function update_delay_info($proxies, $sampling_type)
+function update_delay_info($proxies)
 {
     global $BATCH_SIZE;
-
     $proxy_names = array_keys($proxies);
     $batches = array_chunk($proxy_names, $BATCH_SIZE);
-
     foreach ($batches as $batch) {
-        if ($sampling_type === "single") {
-            $delays = get_real_delay_batch($batch);
-            foreach ($delays as $proxy_name => $delay) {
-                $proxies[$proxy_name]["delay_single"] = $delay;
-            }
+        $delays = get_real_delay_batch($batch);
+        foreach ($delays as $proxy_name => $delay) {
+            $proxies[$proxy_name]["delay_single"] = $delay;
         }
     }
     return $proxies;
@@ -134,10 +162,12 @@ function update_delay_info($proxies, $sampling_type)
 function filter_single_working_proxies($proxies)
 {
     global $TIMEOUT;
-
-    $working_proxies = array_filter($proxies, function ($proxy_data) use ($TIMEOUT) {
-        return in_array($proxy_data["type"], ["VLESS", "Trojan", "Shadowsocks", "VMess", "TUIC"]) &&
+    $allowed = ["VLESS", "Trojan", "Shadowsocks", "VMess", "TUIC", "Hysteria2", "Hysteria", "WireGuard"];
+    $working_proxies = array_filter($proxies, function ($proxy_data) use ($TIMEOUT, $allowed) {
+        $type = $proxy_data["type"] ?? "";
+        return in_array($type, $allowed, true) &&
             isset($proxy_data["delay_single"]) &&
+            $proxy_data["delay_single"] > 0 &&
             $proxy_data["delay_single"] < $TIMEOUT;
     });
 
@@ -146,6 +176,51 @@ function filter_single_working_proxies($proxies)
     });
 
     return $working_proxies;
+}
+
+function collectProxyNames($working_proxies)
+{
+    $names = [];
+    foreach ($working_proxies as $item) {
+        foreach (["name", "tag"] as $field) {
+            if (isset($item[$field]) && is_string($item[$field]) && $item[$field] !== "") {
+                $names[] = $item[$field];
+            }
+        }
+        foreach (["tags", "labels"] as $field) {
+            if (isset($item[$field]) && is_array($item[$field])) {
+                foreach ($item[$field] as $t) {
+                    if (is_string($t) && $t !== "") {
+                        $names[] = $t;
+                    }
+                }
+            }
+        }
+    }
+    return array_values(array_unique($names));
+}
+
+function nameVariants($name)
+{
+    $variants = [];
+    $raw = trim((string)$name);
+    if ($raw === "") return $variants;
+
+    $decoded = urldecode(str_replace("+", " ", $raw));
+    $decoded = trim($decoded);
+    $variants[] = $raw;
+    $variants[] = $decoded;
+    $variants[] = rawurlencode($decoded);
+    $variants[] = str_replace(" ", "%20", $decoded);
+    $variants[] = str_replace(" | ", "|", $decoded);
+    $variants[] = str_replace("|", " | ", $decoded);
+
+    if (preg_match('/#\d+/', $decoded, $m)) {
+        $variants[] = $m[0];
+    }
+    return array_values(array_unique(array_filter($variants, function ($v) {
+        return $v !== "";
+    })));
 }
 
 function filterConfigs($names, $configFile)
@@ -161,32 +236,12 @@ function filterConfigs($names, $configFile)
         return;
     }
 
-    $filteredConfigs = [];
     $searchPatterns = [];
-
     foreach ($names as $name) {
-        $name = trim($name);
-        if ($name === '') continue;
-
-        if (strpos($name, '|') !== false) {
-            $parts = array_map('trim', explode('|', $name));
-            $p0 = isset($parts[0]) ? $parts[0] : '';
-            $p1 = isset($parts[1]) ? $parts[1] : '';
-            $p2 = isset($parts[2]) ? $parts[2] : '';
-            $p3 = isset($parts[3]) ? $parts[3] : '';
-            $key = $p3 !== '' ? explode(" § ", $p3)[0] : '';
-
-            $pattern1 = str_replace(' ', '%20', $p0) . "%20|%20" . str_replace(' ', '%20', $p1) . "%20|%20" .
-                        str_replace(' ', '%20', $p2) . "%20|%20" . $key;
-            $pattern2 = $p0 . '|' . $p1 . '|' . $p2 . '|' . $key;
-            $searchPatterns[] = $pattern1;
-            $searchPatterns[] = $pattern2;
-        } else {
-            $searchPatterns[] = $name;
-            $searchPatterns[] = str_replace(' ', '%20', $name);
+        foreach (nameVariants($name) as $variant) {
+            $searchPatterns[] = $variant;
         }
     }
-
     $searchPatterns = array_values(array_unique($searchPatterns));
 
     if (empty($searchPatterns)) {
@@ -194,11 +249,14 @@ function filterConfigs($names, $configFile)
         return;
     }
 
+    $filteredConfigs = [];
     foreach ($configs as $configLine) {
+        $line = trim($configLine);
+        if ($line === "") continue;
+        $decodedLine = urldecode($line);
         foreach ($searchPatterns as $pattern) {
-            if ($pattern === '') continue;
-            if (strpos($configLine, $pattern) !== false) {
-                $filteredConfigs[] = trim($configLine);
+            if (strpos($line, $pattern) !== false || strpos($decodedLine, $pattern) !== false) {
+                $filteredConfigs[] = $line;
                 break;
             }
         }
@@ -207,10 +265,10 @@ function filterConfigs($names, $configFile)
     $filteredConfigs = array_values(array_unique($filteredConfigs));
 
     if (!empty($filteredConfigs)) {
-        file_put_contents("config.txt", implode("\n\n", $filteredConfigs) . "\n\n");
-        echo "\nConfig file written successfully. " . count($filteredConfigs) . " lines.\n";
+        file_put_contents("config.txt", implode("\n", $filteredConfigs) . "\n");
+        echo "\nConfig file written successfully. " . count($filteredConfigs) . " working lines.\n";
     } else {
-        echo "\nNo valid new configurations found. Config file not written.\n";
+        echo "\nNo matching working configurations found. Keeping original config.txt.\n";
     }
 }
 
@@ -218,44 +276,29 @@ function main()
 {
     try {
         runHiddify();
-        sleep(30); // منتظر بارگذاری Hiddify
+        if (!waitForApi(60)) {
+            throw new Exception("Hiddify Clash API did not become ready on :6756");
+        }
 
         $proxies = get_proxies();
-        $proxies = update_delay_info($proxies, "single");
-        $working_proxies = filter_single_working_proxies($proxies);
-
-        $names = [];
-        foreach ($working_proxies as $item) {
-            if (isset($item['name']) && is_string($item['name']) && $item['name'] !== '') {
-                $names[] = $item['name'];
-            }
-            if (isset($item['tags']) && is_array($item['tags'])) {
-                foreach ($item['tags'] as $t) {
-                    if (is_string($t) && $t !== '') {
-                        $names[] = $t;
-                    }
-                }
-            }
-            if (isset($item['labels']) && is_array($item['labels'])) {
-                foreach ($item['labels'] as $t) {
-                    if (is_string($t) && $t !== '') {
-                        $names[] = $t;
-                    }
-                }
-            }
+        if (empty($proxies)) {
+            echo "No proxies reported by API. Keeping original config.txt.\n";
+            return;
         }
-        $names = array_values(array_unique($names));
 
-        $configFile = 'config.txt';
-        filterConfigs($names, $configFile);
+        $proxies = update_delay_info($proxies);
+        $working_proxies = filter_single_working_proxies($proxies);
+        $names = collectProxyNames($working_proxies);
 
+        echo "Working proxies: " . count($working_proxies) . "\n";
+        filterConfigs($names, "config.txt");
         echo "\nTesting Configs Done!\n";
     } catch (Exception $e) {
         echo "An error occurred: " . $e->getMessage() . "\n";
+        echo "Keeping original config.txt so the pipeline can continue.\n";
     }
 }
 
 echo "Running The Config-Test Script...\n";
-register_shutdown_function('stopHiddify');
+register_shutdown_function("stopHiddify");
 main();
-?>
