@@ -52,33 +52,19 @@ function fetchWithCache($url, $cacheFile, $ttlSeconds = 7200, $retries = 3) {
     throw new Exception("Fetch failed: " . ($lastErr['message'] ?? 'unknown error'));
 }
 
-function looksLikeBase64Sub($text) {
-    $t = trim($text);
-    if ($t === '') return false;
-    // If it already contains scheme lines, it's not base64-only
-    if (preg_match('/\b(vmess|vless|trojan|ss|tuic|hy2):\/\//i', $t)) return false;
-    // base64 alphabet-ish and long enough
-    return (bool)preg_match('/^[A-Za-z0-9+\/_=\-\r\n]+$/', $t) && strlen($t) > 100;
-}
-
-function decodeMaybeBase64($text) {
-    if (!looksLikeBase64Sub($text)) return $text;
-    $t = preg_replace('/\s+/', '', trim($text));
-    $decoded = base64_decode($t, true);
-    return $decoded !== false ? $decoded : $text;
-}
-
 // Load sources
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
 
-// Load sublinks and inject secrets
+// Load sublinks and inject secrets (__PRIVATE_LINK_SiNAVM_N__ -> env)
 $sublinksJson = file_get_contents("sublinks.json");
-$sublinksJson = str_replace(
-    ["__PRIVATE_LINK_SiNAVM_1__", "__PRIVATE_LINK_SiNAVM_2__", "__PRIVATE_LINK_SiNAVM_3__"],
-    [getenv("PRIVATE_LINK_SiNAVM_1"), getenv("PRIVATE_LINK_SiNAVM_2"), getenv("PRIVATE_LINK_SiNAVM_3")],
-    $sublinksJson
-);
+$sublinksJson = preg_replace_callback('/__PRIVATE_LINK_SiNAVM_(\d+)__/', function ($m) {
+    $val = getenv("PRIVATE_LINK_SiNAVM_" . $m[1]);
+    return $val !== false ? $val : '';
+}, $sublinksJson);
 $sublinksArray = json_decode($sublinksJson, true);
+if (!is_array($sublinksArray) || !isset($sublinksArray['sublinks']) || !is_array($sublinksArray['sublinks'])) {
+    $sublinksArray = ['sublinks' => []];
+}
 
 $totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
 $tempCounter = 1;
@@ -127,10 +113,12 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     echo "] " . number_format($percentage, 2) . "%";
     $tempCounter++;
 
-    $url = $sublink['url'];
-    $protocols = implode("|", $sublink['protocols']);
+    $url = trim((string)($sublink['url'] ?? ''));
+    // drop URL fragment used only as a label (e.g. #SUB3)
+    $url = preg_replace('/#.*$/', '', $url);
+    $protocols = expandProtocolPattern($sublink['protocols'] ?? []);
 
-    if (!$url) continue;
+    if ($url === '' || $protocols === '') continue;
 
     $cacheKey = substr(sha1($url), 0, 16);
     $cacheFile = "cache/subs/" . $cacheKey . ".txt";
