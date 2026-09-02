@@ -1,202 +1,178 @@
 {
-    "log":{
-        "level":"panic",
-        "timestamp":true
-    },
-    "dns":{
-        "servers":[
-            {
-                "tag":"dns_proxy",
-                "address":"https://1.1.1.1:443/dns-query",
-                "address_resolver":"dns_direct",
-                "strategy":"prefer_ipv4",
-                "detour":"@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag":"dns_direct",
-                "address":"local",
-                "strategy":"prefer_ipv4",
-                "detour":"@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag":"direct",
-                "address":"tls://8.8.8.8",
-                "detour":"@sinvt خرید نسخه ویژه"
-            },
-            {
-                "tag":"dns_block",
-                "address":"rcode://success"
-            }
-        ],
-        "rules":[
-            {
-                "outbound":"any",
-                "server":"dns_direct"
-            }
-        ],
-        "final":"dns_proxy",
-        "independent_cache":true
-    },
-    "ntp":{
-        "enabled":true,
-        "server":"ir.pool.ntp.org",
-        "server_port":123,
-        "detour":"direct"
-    },
-    "inbounds":[
-        {
-            "type":"mixed",
-            "listen":"127.0.0.1",
-            "listen_port":20122,
-            "udp_fragment":true,
-            "sniff":true,
-            "sniff_override_destination":true,
-            "domain_strategy":"ipv4_only"
-        },
-        {
-            "type":"http",
-            "listen":"127.0.0.1",
-            "listen_port":8181,
-            "udp_fragment":true,
-            "sniff":true,
-            "sniff_override_destination":true,
-            "domain_strategy":"ipv4_only"
-        },
-        {
-            "type":"socks",
-            "listen":"127.0.0.1",
-            "listen_port":8080,
-            "udp_fragment":true,
-            "sniff":true,
-            "sniff_override_destination":true,
-            "domain_strategy":"ipv4_only"
-        },
-        {
-            "type":"tun",
-            "address":[
-                "172.19.0.1/30",
-                "fdfe:dcba:9876::1/126"
-            ],
-            "auto_route":true,
-            "strict_route":true,
-            "stack":"mixed",
-            "platform":{
-                "http_proxy":{
-                    "enabled":true,
-                    "server":"127.0.0.1",
-                    "server_port":20122
-                }
-            },
-            "sniff":true,
-            "sniff_override_destination":true,
-            "domain_strategy":"ipv4_only"
-        }
+  "log": {
+    "level": "panic",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "dns_proxy",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "انتخابگر دستی"
+      },
+      {
+        "type": "udp",
+        "tag": "dns_direct",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "tls",
+        "tag": "dns_google",
+        "server": "8.8.8.8",
+        "detour": "انتخابگر دستی"
+      }
     ],
-    "outbounds":[
-        {
-            "type":"selector",
-            "tag":"Internet",
-            "outbounds":["Best Latency"]
-        },
-        {
-            "type":"urltest",
-            "tag":"Best Latency",
-            "outbounds":[],
-            "url":"http://1.1.1.1/",
-            "interval":"3m0s",
-            "tolerance":1
-        },
-        {
-            "type":"direct",
-            "tag":"direct"
-        }
-    ],
-    "route":{
-        "rules":[
-            {
-                "inbound":"tun-in",
-                "action":"sniff"
-            },
-            {
-                "type":"logical",
-                "mode":"or",
-                "rules":[
-                    {
-                        "inbound":"dns-in"
-                    },
-                    {
-                        "port":53
-                    },
-                    {
-                        "protocol":"dns"
-                    }
-                ],
-                "action":"hijack-dns"
-            },
-            {
-                "clash_mode":"@sinvt خرید نسخه ویژه",
-                "outbound":"@sinvt خرید نسخه ویژه"
-            },
-            {
-                "network":"tcp",
-                "port":853,
-                "action":"reject"
-            },
-            {
-                "network":"udp",
-                "port":443,
-                "action":"reject"
-            },
-            {
-                "inbound":"tun-in",
-                "action":"resolve"
-            },
-            {
-                "ip_cidr":"10.10.34.0/24",
-                "outbound":"@sinvt خرید نسخه ویژه"
-            },
-            {
-                "ip_is_private":true,
-                "outbound":"direct"
-            },
-            {
-                "domain_regex":[
-                    ".*\\.ir$",
-                    ".*\\.xn--mgba3a4f16a$"
-                ],
-                "outbound":"direct"
-            },
-            {
-                "protocol":"stun",
-                "action":"reject"
-            },
-            {
-                "source_ip_cidr":[
-                    "224.0.0.0/3",
-                    "ff00::/8"
-                ],
-                "ip_cidr":[
-                    "224.0.0.0/3",
-                    "ff00::/8"
-                ],
-                "action":"reject"
-            }
-        ],
-        "auto_detect_interface":true,
-        "override_android_vpn":true
+    "final": "dns_proxy",
+    "strategy": "ipv4_only",
+    "reverse_mapping": true
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "ir.pool.ntp.org",
+    "server_port": 123,
+    "detour": "direct"
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "udp_fragment": true
     },
-    "experimental":{
-        "cache_file":{
-            "enabled":true,
-            "path":"cache.db",
-            "cache_id":"sinavm",
-            "store_fakeip":true
-        },
-        "clash_api":{
-            "external_controller":"127.0.0.1:9090",
-            "default_mode":"@SiNAVM👈🏻تلگرام",
-            "access_control_allow_origin":"https://yacd.metacubex.one",
-            "access_control_allow_private_network":true
+    {
+      "type": "http",
+      "tag": "http-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8181
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8080,
+      "udp_fragment": true
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "mtu": 1400,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
         }
+      }
     }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "انتخابگر دستی",
+      "outbounds": [
+        "@𝙎𝘾𝙉𝘼𝙑𝙈"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
+      "outbounds": [],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "3m0s",
+      "tolerance": 1
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "inbound": "tun-in",
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "@sinavmbot خرید",
+        "action": "route",
+        "outbound": "انتخابگر دستی"
+      },
+      {
+        "network": "tcp",
+        "port": 853,
+        "action": "reject"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "action": "reject"
+      },
+      {
+        "ip_cidr": "10.10.34.0/24",
+        "action": "route",
+        "outbound": "انتخابگر دستی"
+      },
+      {
+        "protocol": "stun",
+        "action": "reject"
+      },
+      {
+        "source_ip_cidr": [
+          "224.0.0.0/3",
+          "ff00::/8"
+        ],
+        "ip_cidr": [
+          "224.0.0.0/3",
+          "ff00::/8"
+        ],
+        "action": "reject"
+      }
+    ],
+    "final": "انتخابگر دستی",
+    "auto_detect_interface": true,
+    "default_domain_resolver": "dns_direct"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "cache_id": "sinavm",
+      "store_fakeip": true,
+      "store_dns": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "default_mode": "@SiNAVM👈️تلگرام",
+      "access_control_allow_origin": "https://yacd.metacubex.one",
+      "access_control_allow_private_network": true
+    }
+  }
 }

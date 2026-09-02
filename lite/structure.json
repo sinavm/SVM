@@ -1,70 +1,96 @@
 {
   "log": {
-    "disabled": true,
-    "level": "panic"
+    "level": "panic",
+    "timestamp": true
   },
   "dns": {
     "servers": [
       {
-        "tag": "Internet-dns",
-        "address": "tcp://1.1.1.2",
-        "strategy": "prefer_ipv4",
-        "detour": "Internet"
+        "type": "https",
+        "tag": "dns_proxy",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "انتخابگر دستی"
       },
       {
-        "tag": "direct-dns",
-        "address": "tcp://1.1.1.2",
-        "strategy": "prefer_ipv4",
-        "detour": "direct"
-      }
-    ],
-    "rules": [
-      {
-        "outbound": "any",
-        "server": "direct-dns"
+        "type": "udp",
+        "tag": "dns_direct",
+        "server": "8.8.8.8"
       },
       {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
-        "server": "direct-dns"
+        "type": "tls",
+        "tag": "dns_google",
+        "server": "8.8.8.8",
+        "detour": "انتخابگر دستی"
       }
     ],
-    "strategy": "prefer_ipv4",
-    "independent_cache": true
+    "final": "dns_proxy",
+    "strategy": "ipv4_only",
+    "reverse_mapping": true
+  },
+  "ntp": {
+    "enabled": true,
+    "server": "ir.pool.ntp.org",
+    "server_port": 123,
+    "detour": "direct"
   },
   "inbounds": [
     {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "udp_fragment": true
+    },
+    {
+      "type": "http",
+      "tag": "http-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8181
+    },
+    {
+      "type": "socks",
+      "tag": "socks-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8080,
+      "udp_fragment": true
+    },
+    {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "@SiNAVM",
-      "mtu": 9000,
-      "address": "172.18.0.1/30",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
       "auto_route": true,
       "strict_route": true,
-      "route_exclude_address": [
-        "192.168.0.0/16",
-        "fc00::/7"
-      ],
       "stack": "mixed",
-      "domain_strategy": "prefer_ipv4"
+      "mtu": 1400,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 20122
+        }
+      }
     }
   ],
   "outbounds": [
     {
       "type": "selector",
-      "tag": "Internet",
-      "outbounds": ["Best Latency"]
+      "tag": "انتخابگر دستی",
+      "outbounds": [
+        "@𝙎𝘾𝙉𝘼𝙑𝙈"
+      ]
     },
     {
       "type": "urltest",
-      "tag": "Best Latency",
+      "tag": "@𝙎𝘾𝙉𝘼𝙑𝙈",
       "outbounds": [],
-      "url": "http://1.1.1.1/",
+      "url": "http://www.gstatic.com/generate_204",
       "interval": "3m0s",
-      "tolerance": 1,
-      "idle_timeout": "9m0s"
+      "tolerance": 1
     },
     {
       "type": "direct",
@@ -81,44 +107,42 @@
         "mode": "or",
         "rules": [
           {
-            "inbound": "dns-in"
+            "protocol": "dns"
           },
           {
             "port": 53
-          },
-          {
-            "protocol": "dns"
           }
         ],
         "action": "hijack-dns"
       },
       {
+        "inbound": "tun-in",
+        "action": "resolve",
+        "strategy": "ipv4_only"
+      },
+      {
+        "clash_mode": "@sinavmbot خرید",
+        "action": "route",
+        "outbound": "انتخابگر دستی"
+      },
+      {
         "network": "tcp",
         "port": 853,
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "network": "udp",
-        "port": [443, 853],
-        "action": "reject",
-        "method": "default"
+        "port": 443,
+        "action": "reject"
       },
       {
-        "ip_is_private": true,
-        "outbound": "direct"
-      },
-      {
-        "domain_regex": [
-          ".*\\.ir$",
-          ".*\\.xn--mgba3a4f16a$"
-        ],
-        "outbound": "direct"
+        "ip_cidr": "10.10.34.0/24",
+        "action": "route",
+        "outbound": "انتخابگر دستی"
       },
       {
         "protocol": "stun",
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       },
       {
         "source_ip_cidr": [
@@ -129,18 +153,26 @@
           "224.0.0.0/3",
           "ff00::/8"
         ],
-        "action": "reject",
-        "method": "default"
+        "action": "reject"
       }
     ],
+    "final": "انتخابگر دستی",
     "auto_detect_interface": true,
-    "override_android_vpn": true
+    "default_domain_resolver": "dns_direct"
   },
   "experimental": {
     "cache_file": {
       "enabled": true,
       "path": "cache.db",
-      "cache_id": "@SiNAVM"
+      "cache_id": "sinavm",
+      "store_fakeip": true,
+      "store_dns": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "default_mode": "@SiNAVM👈️تلگرام",
+      "access_control_allow_origin": "https://yacd.metacubex.one",
+      "access_control_allow_private_network": true
     }
   }
 }
