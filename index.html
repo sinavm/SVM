@@ -1,522 +1,362 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="3;url=sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#2️⃣@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
-<title>کانفیگ سینگ باکس شماره ٢</title>
-<style>
-    body {
-        font-family: 'Tahoma', sans-serif;
-        text-align: center;
-        direction: rtl;
-        background: linear-gradient(135deg, #0d0d0d, #121212);
-        color: #ffffff;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="SiNAVM - نسل جدید اتصال آزاد. کانفیگ‌های اختصاصی Sing-box و V2Ray برای کاربران VIP و رایگان.">
+    <meta name="theme-color" content="#0f172a">
+    <title>SiNAVM-SVM | اتصال هوشمند</title>
+    
 
-    .content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    .header {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 5px;
-        opacity: 0;
-        transform: translateY(-30px);
-        animation: fadeSlideIn 1s forwards;
-    }
-    .header:first-child { animation-delay: 0.2s; }
-    .header:last-child { animation-delay: 0.4s; }
-    .header a { text-decoration: none; color: #ffcc00; }
-    .header a:hover { text-decoration: underline; color: #ffd700; }
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --primary: #6366f1;
+            --accent: #ec4899;
+            --cyan: #06b6d4;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-glow: 0 0 50px rgba(99, 102, 241, 0.15);
+        }
 
-    .status-text {
-        font-size: 20px;
-        margin-bottom: 10px;
-        opacity: 0;
-        transform: translateY(-50px);
-        animation: slideInOnce 1s forwards 0.6s;
-    }
-    .info-text {
-        font-size: 16px;
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(-50px);
-        animation: slideInOnce 1s forwards 0.8s;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-    @keyframes fadeSlideIn { to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideInOnce {
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    .redirect-link {
-        font-size: 22px;
-        font-weight: bold;
-        color: #00d9ff;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(-50px);
-        animation: slideInOnce 1s forwards 1s;
-        transition: all 0.4s ease-in-out;
-    }
-    .redirect-link:hover {
-        color: #ffffff;
-        text-shadow: 0 0 20px rgba(0,217,255,1),0 0 40px rgba(0,136,204,0.6);
-        transform: scale(1.07) rotate(-1deg);
-    }
-
-    .left-container {
-        position: fixed;
-        bottom: 70px;
-        left: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        z-index: 10;
-    }
-
-    .telegram-box, .github-box, .visit-box {
-        border-radius: 10px;
-        font-weight: bold;
-        text-align: center;
-        width: 140px;
-        padding: 10px;
-        transition: all 0.3s ease;
-    }
-
-    .telegram-box {
-        display: flex; align-items: center; justify-content: center;
-        background: linear-gradient(270deg, #00d9ff, #0088cc, #00d9ff);
-        background-size: 600% 600%;
-        color: white;
-        animation: pulseGradient 3s ease infinite;
-        box-shadow: 0 0 10px rgba(0,217,255,0.6), 0 0 20px rgba(0,136,204,0.3);
-    }
-    .telegram-box img { width: 22px; height: 22px; margin-left: 5px; }
-    .telegram-box:hover { transform: scale(1.12) rotate(-2deg); box-shadow: 0 0 25px rgba(0,217,255,1),0 0 50px rgba(0,136,204,0.8); }
-
-    .github-box {
-        display: flex; align-items: center; justify-content: center;
-        background: linear-gradient(270deg, #6e5494, #9b59b6, #6e5494);
-        background-size: 600% 600%;
-        color: white;
-        animation: pulseGradient 3s ease infinite;
-        box-shadow: 0 0 10px rgba(155,89,182,0.6),0 0 20px rgba(110,84,148,0.3);
-        cursor: pointer;
-        text-decoration: none;
-    }
-    .github-box img { width: 22px; height: 22px; margin-left: 5px; }
-    .github-box:hover { transform: scale(1.12) rotate(2deg); box-shadow: 0 0 25px rgba(155,89,182,1),0 0 50px rgba(110,84,148,0.8); }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
 
 
-    .visit-box {
-        background: rgba(0,0,0,0.5);
-        color: white;
-        padding: 6px 12px;
-        font-size: 14px;
-        box-shadow: 0 0 5px rgba(0,255,255,0.3);
-        animation: pulseGradient 4s ease infinite;
-    }
-    .visit-box:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(0,255,255,0.7); }
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-deep) 60%);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatOrb 20s infinite ease-in-out;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--primary); animation-delay: 0s; }
+        .orb-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--accent); animation-delay: -5s; }
+        .orb-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: var(--cyan); opacity: 0.2; animation-delay: -10s; }
 
-    @keyframes pulseGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
-    .footer { 
-        background: rgba(0,0,0,0.7); 
-        padding: 10px; 
-        font-size: 16px; 
-        text-align: center; 
-        color: #bbb; 
-        margin-top: auto; 
-    }
-    .footer a { 
-        color: #ffcc00; 
-        text-decoration: none; 
-        margin: 0 10px; 
-    }
-    .footer a:hover { 
-        text-decoration: underline; 
-    }
-
-    @media (max-width: 768px) {
-        .redirect-link { font-size: 18px; }
-        .header { font-size: 20px; }
-        .status-text { font-size: 18px; }
-        .info-text { font-size: 14px; }
-        .telegram-box, .github-box, .visit-box { width: 120px; font-size: 13px; }
-        .telegram-box img, .github-box img { width: 18px; height: 18px; }
-    }
-    @media (max-width: 480px) {
-        body { padding: 10px; }
-        .redirect-link { font-size: 16px; }
-        .header { font-size: 18px; }
-        .status-text { font-size: 16px; }
-        .info-text { font-size: 14px; }
-        .telegram-box, .github-box, .visit-box { width: 110px; font-size: 12px; padding: 6px; }
-    }
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
 
 
-    :root {
-        --game-height: 55vh;
-        --game-max-height: 400px;
-        --font-base: 1rem;
-    }
+        .container {
+            width: 90%;
+            max-width: 480px;
+            z-index: 10;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
 
-    * { box-sizing: border-box; }
 
-    .game-container {
-        background: linear-gradient(270deg, #ff2a6d, #ff8c00, #ff2a6d);
-        background-size: 600% 600%;
-        animation: pulseGradient 3s ease infinite;
-        border-radius: 20px;
-        box-shadow: 0 0 20px rgba(255,42,109,0.7), 0 0 40px rgba(255,140,0,0.4);
-        margin-bottom: 20px;
-        width: 90%;
-        max-width: 380px;
-        height: var(--game-height);
-        max-height: var(--game-max-height);
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        opacity: 0;
-        transform: translateY(-30px);
-        animation: fadeSlideIn 1s forwards 0.2s;
-    }
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); border-color: rgba(255,255,255,0.15); }
 
-    .game-canvas {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        background: linear-gradient(to bottom, #87CEEB 0%, #98D8E8 70%, #228B22 100%);
-        border-radius: 15px;
-        overflow: hidden;
-    }
 
-    .player {
-        position: absolute;
-        font-size: 7vw;
-        max-font-size: 32px;
-        transition: none;
-        user-select: none;
-        left: 12%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+        .hero { text-align: center; padding-top: 10px; }
+        .brand-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: #818cf8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .hero p { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; }
 
-    .pipe {
-        position: absolute;
-        background: linear-gradient(#2ecc71, #27ae60);
-        width: 15vw;
-        max-width: 60px;
-        bottom: 0;
-        border-radius: 10px 10px 0 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
 
-    .score {
-        position: absolute;
-        top: 8px;
-        right: 12px;
-        font-size: 6vw;
-        max-font-size: 26px;
-        font-weight: bold;
-        color: #fff;
-        text-shadow: 2px 2px 4px #000;
-        z-index: 10;
-    }
+        .action-btn-wrapper { position: relative; margin: 0 auto; width: 100%; }
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .action-btn i { margin-left: 10px; font-size: 1.4rem; }
+        .action-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        .action-btn:hover { transform: scale(1.02); box-shadow: 0 20px 50px -10px rgba(236, 72, 153, 0.5); }
+        .action-btn:hover::before { left: 100%; }
 
-    .lives {
-        position: absolute;
-        top: 8px;
-        left: 12px;
-        font-size: 6vw;
-        max-font-size: 26px;
-        color: #ff4444;
-        text-shadow: 2px 2px 4px #000;
-        z-index: 10;
-    }
 
-    .game-over {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0,0,0,0.9);
-        color: #ff2a6d;
-        padding: 15px 25px;
-        border-radius: 15px;
-        font-weight: bold;
-        font-size: 4.5vw;
-        max-font-size: 18px;
-        text-shadow: 0 0 8px #fff;
-        display: none;
-        z-index: 100;
-        text-align: center;
-        line-height: 1.4;
-    }
+        .loader-container {
+            margin-top: 15px;
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loader-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--cyan), var(--primary));
+            animation: loadProgress 3s ease-out forwards;
+            border-radius: 4px;
+        }
+        @keyframes loadProgress { 0% { width: 0; } 100% { width: 100%; } }
 
-    .game-over small {
-        font-size: 3.5vw;
-        max-font-size: 14px;
-        display: block;
-        margin-top: 8px;
-        color: #ffcc00;
-    }
 
-    .explosion {
-        position: absolute;
-        font-size: 10vw;
-        max-font-size: 45px;
-        pointer-events: none;
-        animation: explode 0.8s forwards;
-        z-index: 99;
-    }
+        .vip-card {
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            background: linear-gradient(145deg, rgba(236, 72, 153, 0.05), rgba(99, 102, 241, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+        .vip-card::after {
+            content: 'PREMIUM';
+            position: absolute;
+            top: 15px; left: -30px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 5px 30px;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .vip-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; cursor: pointer; }
+        .vip-title { font-size: 1.1rem; font-weight: 700; color: #fdfdfd; display: flex; align-items: center; gap: 10px; }
+        .vip-title i { color: #fbbf24; }
+        
+        .vip-content { 
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease; 
+            color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;
+        }
+        .vip-content.show { max-height: 200px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
+        .vip-tag { 
+            display: inline-block; background: rgba(255,255,255,0.05); 
+            padding: 4px 10px; border-radius: 8px; margin: 2px; font-size: 0.8rem; color: var(--cyan);
+        }
 
-    @keyframes explode {
-        0% { opacity: 1; transform: scale(0.3) rotate(0deg); }
-        100% { opacity: 0; transform: scale(2) rotate(360deg); }
-    }
 
-    .game-text {
-        margin-top: 8px;
-        font-size: 3.8vw;
-        max-font-size: 15px;
-        font-weight: bold;
-        color: #000;
-        text-shadow: 0 0 4px rgba(255,255,255,0.7);
-    }
+        .grid-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .mini-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mini-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+        .mini-card i { font-size: 1.5rem; margin-bottom: 5px; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mini-card span { font-size: 0.9rem; font-weight: 500; }
+        
 
-    @media (max-width: 480px) {
-        :root { --game-height: 50vh; --game-max-height: 320px; }
-        .game-container { width: 95%; }
-    }
-</style>
+        .footer { text-align: center; margin-top: 20px; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: 0.3s; }
+        .footer a:hover { color: var(--primary); }
+
+
+        .toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: rgba(15, 23, 42, 0.9); border: 1px solid var(--primary);
+            color: white; padding: 12px 24px; border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            font-size: 0.9rem; z-index: 100; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        .toast i { color: #4ade80; }
+
+    </style>
 </head>
 <body>
-<div class="content">
 
 
-    <div class="game-container" id="gameContainer">
-        <div class="game-canvas" id="gameCanvas">
-            <div class="score" id="score">0</div>
-            <div class="lives" id="lives">❤️❤️❤️</div>
-            <div class="player" id="player">🚀</div>
-            <div class="game-over" id="gameOver">
-                بازی تمام شد! 🎮<br>
-                <small>دوباره کلیک کن</small>
-            </div>
-        </div>
-        <div class="game-text">لمس کن تا بپری! 👆</div>
+    <div class="aurora-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <div class="header">کانال تلگرامی <a href="https://T.me/sinavm" target="_blank">SiNAVM</a></div>
-    <div class="header">کانفیگ سینگ باکس شماره ٢</div>
+    <div class="container">
 
-    <div class="status-text">در حال انتقال کانفیگ...</div>
-    <div class="info-text">اگر بعد از ٣ ثانیه انجام نشد، روی لینک زیر کلیک کنید:</div>
+        <div class="card hero">
+            <span class="brand-badge">SiNAVM PRO</span>
+            <h1>اتصال ایمن و سریع</h1>
+            <p>نسل جدید کانفیگ‌های هوشمند Sing-box</p>
+            
+            <div class="action-btn-wrapper">
+                <a href="sing-box://import-remote-profile?url=https://github.com/sinavm/SVM/raw/refs/heads/main/subscriptions/singbox/mix.json#@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام" class="action-btn" id="mainBtn">
+                    <i class="fas fa-bolt"></i>
+                    افزودن دستی کانفیگ  
+                </a>
+            </div>
 
-    <a class="redirect-link" href="sing-box://import-remote-profile?url=https://raw.githubusercontent.com/sinavm/SVM/main/@SiNAVM#2️⃣@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام">
-        وارد کردن دستی کانفیگ
-    </a>
-</div>
-
-<div class="left-container">
-    <a class="telegram-box" href="https://T.me/sinavm" target="_blank">
-        <img src="https://sinavm.github.io/sinavm/logo/telegram.png" alt="Telegram Logo">
-        کانال تلگرام
-    </a>
-
-    <a class="github-box" href="https://github.com/sinavm" target="_blank">
-        <img src="https://sinavm.github.io/sinavm/logo/github-mark.png" alt="Github Logo">
-        Github
-    </a>
-
-    <div class="visit-box">بازدید کل: <span id="total-visit-count">...</span></div>
-</div>
+            <div class="loader-container">
+                <div class="loader-bar"></div>
+            </div>
+            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--cyan); opacity: 0.8;">
+                <i class="fas fa-sync fa-spin" style="margin-left:5px;"></i> در حال ایجاد کانفیگ شما...
+            </div>
+        </div>
 
 
-<div class="footer">
-    <a href="https://sinavm.github.io/sinavm/legal_pages/about.html">درباره ما</a> |
-    <a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html">حریم خصوصی</a> |
-    <a href="https://sinavm.github.io/sinavm/legal_pages/terms.html">شرایط</a>
-</div>
+        <div class="card vip-card">
+            <div class="vip-header" onclick="toggleVip()">
+                <div class="vip-title">
+                    <i class="fas fa-crown"></i>
+                    سرویس‌های VIP اختصاصی
+                </div>
+                <i class="fas fa-chevron-down" id="vipIcon" style="transition: 0.3s; font-size: 0.9rem;"></i>
+            </div>
+            <div class="vip-content" id="vipContent">
+                <p>با خرید اشتراک VIP به سرورهای اختصاصی و پرسرعت دسترسی پیدا کنید:</p>
+                <div style="margin: 10px 0;">
+                    <span class="vip-tag">پینگ پایین</span>
+                    <span class="vip-tag">IP ثابت</span>
+                    <span class="vip-tag">بدون قطعی</span>
+                    <span class="vip-tag">پشتیبانی ۲۴/۷</span>
+                </div>
+                <a href="https://t.me/sinvt" target="_blank" style="display: block; margin-top: 15px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">
+                    مشاهده پلن‌ها و خرید <i class="fas fa-arrow-left" style="margin-right: 5px;"></i>
+                </a>
+            </div>
+        </div>
 
-<script>
 
-fetch('https://page-views.count1.workers.dev')
-    .then(r => r.text())
-    .then(data => { document.getElementById("total-visit-count").innerText = data; })
-    .catch(e => console.error(e));
+        <div class="grid-links">
+            <a href="https://t.me/sinavm" target="_blank" class="mini-card">
+                <i class="fab fa-telegram-plane"></i>
+                <span>کانال تلگرام</span>
+            </a>
+            <a href="https://github.com/sinavm" target="_blank" class="mini-card">
+                <i class="fab fa-github"></i>
+                <span>گیت‌هاب</span>
+            </a>
+        </div>
 
-const canvas = document.getElementById('gameCanvas');
-const player = document.getElementById('player');
-const gameOverScreen = document.getElementById('gameOver');
-const scoreDisplay = document.getElementById('score');
-const livesDisplay = document.getElementById('lives');
 
-let gameActive = false;
-let gravity = 0.3;
-let lift = -8;
-let velocity = 0;
-let posY = 150;
-let speed = 1.8;
-let pipes = [];
-let score = 0;
-let lives = 3;
-let frame = 0;
-let gameLoop;
-let lastCrashY = 0;
+        <div class="card" style="padding: 15px;">
+            <div style="font-size: 0.9rem; margin-bottom: 12px; text-align: center; color: var(--text-muted);">اپلیکیشن ندارید؟ دانلود کنید:</div>
+            <div class="grid-links">
+                <a href="https://apps.apple.com/app/id6673731168" class="mini-card" style="border-radius: 12px; padding: 10px;">
+                    <i class="fab fa-apple" style="font-size: 1.2rem;"></i>
+                    <span style="font-size: 0.8rem;">iOS</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" class="mini-card" style="border-radius: 12px; padding: 10px;">
+                    <i class="fab fa-android" style="font-size: 1.2rem; color: #3ddc84;"></i>
+                    <span style="font-size: 0.8rem;">Android</span>
+                </a>
+            </div>
+        </div>
 
-function startGame() {
-    gameActive = true;
-    gameOverScreen.style.display = 'none';
-    pipes.forEach(p => p.elem.remove());
-    pipes = [];
-    score = 0;
-    speed = 1.5;
-    lives = 3;
-    posY = canvas.offsetHeight / 2 - 50;
-    velocity = 0;
-    scoreDisplay.textContent = '0';
-    livesDisplay.textContent = '❤️❤️❤️';
-    frame = 0;
-    updateSizes();
-    loop();
-}
 
-function loseLife() {
-    lives--;
-    createExplosion(60, lastCrashY);
-    
-    if (lives > 0) {
-        posY = lastCrashY - 20;
-        velocity = lift * 0.8;
-        livesDisplay.textContent = '❤️'.repeat(lives);
-    } else {
-        gameActive = false;
-        cancelAnimationFrame(gameLoop);
-        gameOverScreen.style.display = 'block';
-    }
-}
+        <div class="footer">
+            Design & Config by <a href="https://t.me/sinavm">SiNAVM</a>
+            <br>
+            <span id="visit-count" style="opacity: 0.5; font-size: 0.7rem;">Visits: Loading...</span>
+        </div>
+    </div>
 
-function createExplosion(x, y) {
-    const exp = document.createElement('div');
-    exp.className = 'explosion';
-    exp.innerText = '💥';
-    exp.style.left = (x - 20) + 'px';
-    exp.style.top = (y - 20) + 'px';
-    canvas.appendChild(exp);
-    setTimeout(() => exp.remove(), 800);
-}
 
-function createPipe() {
-    const height = 80 + Math.random() * 120;
-    const pipe = document.createElement('div');
-    pipe.className = 'pipe';
-    pipe.style.height = height + 'px';
-    pipe.style.right = '-80px';
-    canvas.appendChild(pipe);
-    pipes.push({ elem: pipe, x: canvas.offsetWidth, height: height });
-}
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>لینک کپی شد!</span>
+    </div>
 
-function jump() {
-    if (!gameActive) { startGame(); return; }
-    velocity = lift;
-}
+    <script>
 
-canvas.addEventListener('click', jump);
-canvas.addEventListener('touchstart', e => { e.preventDefault(); jump(); });
+        setTimeout(() => {
+            window.location.href = "sing-box://import-remote-profile?url=https://github.com/sinavm/SVM/raw/refs/heads/main/subscriptions/singbox/mix.json#@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام";
+        }, 2500);
 
-function updateSizes() {
-    const width = canvas.offsetWidth;
-    player.style.fontSize = Math.min(width * 0.08, 32) + 'px';
-    document.querySelectorAll('.pipe').forEach(p => {
-        p.style.width = Math.min(width * 0.15, 60) + 'px';
-    });
-}
-window.addEventListener('resize', updateSizes);
-
-function loop() {
-    if (!gameActive) return;
-
-    velocity += gravity;
-    posY += velocity;
-    player.style.top = posY + 'px';
-    lastCrashY = posY;
-
-    if (posY < 10) { posY = 10; velocity = 0; }
-
-    if (posY > canvas.offsetHeight - 40) {
-        loseLife();
-        return;
-    }
-
-    frame++;
-    if (frame % 140 === 0) createPipe();
-
-    pipes.forEach((pipe, i) => {
-        pipe.x -= speed;
-        pipe.elem.style.right = (canvas.offsetWidth - pipe.x) + 'px';
-
-        if (!pipe.passed && pipe.x < 80) {
-            pipe.passed = true;
-            score++;
-            scoreDisplay.textContent = score;
-            speed = Math.min(speed + 0.15, 3.5);
+        function toggleVip() {
+            const content = document.getElementById('vipContent');
+            const icon = document.getElementById('vipIcon');
+            content.classList.toggle('show');
+            icon.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        if (pipe.x < -80) {
-            pipe.elem.remove();
-            pipes.splice(i, 1);
+
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (isIOS) {
+            document.getElementById('mainBtn').addEventListener('click', (e) => {
+                setTimeout(() => {
+
+                }, 1000);
+            });
         }
 
-        if (pipe.x < 100 && pipe.x > 20) {
-            const playerBottom = posY + 35;
-            if (playerBottom > canvas.offsetHeight - pipe.height) {
-                loseLife();
-            }
-        }
-    });
+        fetch('https://page-views.count1.workers.dev')
+            .then(r => r.text())
+            .then(d => document.getElementById('visit-count').innerText = 'Visits: ' + d)
+            .catch(e => console.log('Counter error'));
 
-    gameLoop = requestAnimationFrame(loop);
-}
-
-setTimeout(() => {
-    const msg = document.createElement('div');
-    msg.innerText = 'بازیه؟👆 لمس کن';
-    msg.style.cssText = `
-        position: absolute; top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff; font-weight: bold; font-size: 4.5vw;
-        max-font-size: 18px; text-shadow: 0 0 10px #000;
-        z-index: 20; background: rgba(0,0,0,0.5);
-        padding: 10px 20px; border-radius: 10px;
-    `;
-    canvas.appendChild(msg);
-    setTimeout(() => msg.remove(), 3000);
-}, 500);
-
-updateSizes();
-</script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
 </body>
 </html>
