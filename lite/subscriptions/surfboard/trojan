@@ -11,10 +11,22 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, 104.21.33.59, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #2 = trojan, xn--1ugy405pdua.gayvibe.dpdns.org, 2174, password = tripitropa444, udp-delay = true, skip-cert-verify = false, ws = false
+SiNAVM | TROJAN | #3 = trojan, 191.96.94.226, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #4 = trojan, hu2.vpnjantit.com, 4443, password = C0ldyfh-vpnjantit.com, udp-delay = true, skip-cert-verify = false, sni = hu2.vpnjantit.com, ws = false
+SiNAVM | TROJAN | #5 = trojan, 46.29.142.57, 4443, password = C0ldyfh-vpnjantit.com, udp-delay = true, skip-cert-verify = false, sni = hu2.vpnjantit.com, ws = false
+SiNAVM | TROJAN | #6 = trojan, hu2.vpnjantit.com, 4443, password = C0ldyfh-vpnjantit.com, udp-delay = true, skip-cert-verify = false, sni = hu2.vpnjantit.com, ws = false
+SiNAVM | TROJAN | #7 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #8 = trojan, edu.ruangguru.com, 443, password = 018b8e7b-7813-4dcb-84a5-3c98f1521e00, udp-delay = true, skip-cert-verify = true, sni = id1.nathaya.web.id, ws = false
+SiNAVM | TROJAN | #9 = trojan, 172.67.176.157, 443, password = 018b8e7b-7813-4dcb-84a5-3c98f1521e00, udp-delay = true, skip-cert-verify = true, sni = id1.nathaya.web.id, ws = false
+SiNAVM | TROJAN | #10 = trojan, 213.182.199.137, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #11 = trojan, 178.172.227.178, 500, password = 8qCNZU2XdtefT7uB4uPxgRR839btqMG8, udp-delay = true, skip-cert-verify = false, sni = by01.botovod.space, ws = false
+SiNAVM | TROJAN | #12 = trojan, by01.botovod.space, 500, password = 8qCNZU2XdtefT7uB4uPxgRR839btqMG8, udp-delay = true, skip-cert-verify = false, sni = by01.botovod.space, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
