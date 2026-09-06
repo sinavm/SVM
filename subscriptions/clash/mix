@@ -118,13 +118,12 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"104.21.33.59","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"hu2.vpnjantit.com","port":4443,"udp":false,"password":"C0ldyfh-vpnjantit.com","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"hu2.vpnjantit.com"}
-  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"46.29.142.57","port":4443,"udp":false,"password":"C0ldyfh-vpnjantit.com","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"hu2.vpnjantit.com"}
-  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"hu2.vpnjantit.com","port":4443,"udp":false,"password":"C0ldyfh-vpnjantit.com","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"hu2.vpnjantit.com"}
-  - {"name":"SiNAVM | TROJAN | #5","type":"trojan","server":"172.67.176.157","port":443,"udp":false,"password":"018b8e7b-7813-4dcb-84a5-3c98f1521e00","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"id1.nathaya.web.id"}
-  - {"name":"SiNAVM | TROJAN | #6","type":"trojan","server":"edu.ruangguru.com","port":443,"udp":false,"password":"018b8e7b-7813-4dcb-84a5-3c98f1521e00","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"id1.nathaya.web.id"}
-  - {"name":"SiNAVM | TROJAN | #7","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"104.21.33.59","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"172.67.176.157","port":443,"udp":false,"password":"018b8e7b-7813-4dcb-84a5-3c98f1521e00","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"id1.nathaya.web.id"}
+  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #5","type":"trojan","server":"edu.ruangguru.com","port":443,"udp":false,"password":"018b8e7b-7813-4dcb-84a5-3c98f1521e00","skip-cert-verify":true,"network":"tcp","client-fingerprint":"chrome","sni":"id1.nathaya.web.id"}
+  - {"name":"SiNAVM | TROJAN | #6","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -137,7 +136,6 @@ proxy-groups:
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
       - 'SiNAVM | TROJAN | #6'
-      - 'SiNAVM | TROJAN | #7'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -150,7 +148,6 @@ proxy-groups:
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
       - 'SiNAVM | TROJAN | #6'
-      - 'SiNAVM | TROJAN | #7'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -162,7 +159,6 @@ proxy-groups:
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
       - 'SiNAVM | TROJAN | #6'
-      - 'SiNAVM | TROJAN | #7'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
