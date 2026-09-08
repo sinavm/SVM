@@ -118,23 +118,31 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
+  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"31.77.8.97","port":"110","cipher":"auto","uuid":"8e9687fc-a3a7-414a-8676-8e2136797cfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"119.46.51.45","port":"37515","cipher":"auto","uuid":"9b76bc31-17a5-4454-934a-8d5fb602cd70","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
