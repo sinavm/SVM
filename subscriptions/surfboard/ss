@@ -11,11 +11,10 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | SS | #1 = ss, 68.183.180.151, 16696, encrypt-method = aes-256-gcm, password = UWUJS8F7JN8OrE3Zy8yoYxh2T3aUNqL0oxmGoHCT++g=
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | SS | #1
-URL-TEST = url-test,SiNAVM | SS | #1
-FALLBACK = fallback,SiNAVM | SS | #1
+MANUAL = select,URL-TEST,FALLBACK
+URL-TEST = url-test
+FALLBACK = fallback
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
