@@ -120,13 +120,9 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"45.130.125.112","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"104.17.121.71","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
   - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
-  - {"name":"SiNAVM | TROJAN | #8","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #35","type":"trojan","server":"185.220.100.168","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #56","type":"trojan","server":"212.183.88.136","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #6","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -134,12 +130,8 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM | TROJAN | #35'
-      - 'SiNAVM | TROJAN | #56'
+      - 'SiNAVM | TROJAN | #6'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -147,24 +139,16 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM | TROJAN | #35'
-      - 'SiNAVM | TROJAN | #56'
+      - 'SiNAVM | TROJAN | #6'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM | TROJAN | #35'
-      - 'SiNAVM | TROJAN | #56'
+      - 'SiNAVM | TROJAN | #6'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
