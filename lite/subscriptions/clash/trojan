@@ -118,9 +118,13 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
-  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #6","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #20","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
+  - {"name":"SiNAVM | TROJAN | #29","type":"trojan","server":"193.233.87.41","port":8443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #31","type":"trojan","server":"89.150.34.41","port":2053,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #33","type":"trojan","server":"78.47.146.151","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #34","type":"trojan","server":"5.181.187.58","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,8 +132,12 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #20'
+      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #31'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #34'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -137,16 +145,24 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #20'
+      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #31'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #34'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #20'
+      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #31'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #34'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
