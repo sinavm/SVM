@@ -118,7 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"104.21.57.84","port":"8443","cipher":"auto","uuid":"60441548-b68e-43b2-8191-e3b884be4b3c","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/lMnsZUN4/","headers":{"host":"v2ray1.dozapp.xyz"}}}
+  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"107.173.254.27","port":"15311","cipher":"auto","uuid":"ad78d02b-873f-4cff-8d4a-673f53d6ce0f","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"104.21.57.84","port":"8443","cipher":"auto","uuid":"60441548-b68e-43b2-8191-e3b884be4b3c","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/lMnsZUN4/","headers":{"host":"v2ray1.dozapp.xyz"}}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -126,6 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -133,12 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VMESS | #2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve

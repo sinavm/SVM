@@ -11,11 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #1 = vmess, 104.21.57.84, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #2 = vmess, 104.21.57.84, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #1
-URL-TEST = url-test,SiNAVM | VMESS | #1
-FALLBACK = fallback,SiNAVM | VMESS | #1
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #2
+URL-TEST = url-test,SiNAVM | VMESS | #2
+FALLBACK = fallback,SiNAVM | VMESS | #2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
