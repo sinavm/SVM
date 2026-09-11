@@ -11,15 +11,23 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | TROJAN | #1 = trojan, 213.182.199.137, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #1 = trojan, bright.bitgas.org, 443, password = UQfj7bdfjibTjpUHfg72aew51S7fB32g, udp-delay = true, skip-cert-verify = false, ws = false
+SiNAVM | TROJAN | #2 = trojan, 193.233.87.41, 8443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
 SiNAVM | TROJAN | #3 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #28 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #31 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, ws = false
-SiNAVM | TROJAN | #34 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #7 = trojan, 213.182.199.137, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #9 = trojan, 89.150.34.41, 2053, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #16 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, ws = false
+SiNAVM | TROJAN | #17 = trojan, 5.181.187.58, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #18 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | VMESS | #1 = vmess, 104.21.57.84, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | TROJAN | #24 = trojan, 45.130.125.112, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #32 = trojan, 45.205.0.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #35 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #36 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #31,SiNAVM | TROJAN | #34
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #31,SiNAVM | TROJAN | #34
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #31,SiNAVM | TROJAN | #34
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #17,SiNAVM | TROJAN | #18,SiNAVM | VMESS | #1,SiNAVM | TROJAN | #24,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #17,SiNAVM | TROJAN | #18,SiNAVM | VMESS | #1,SiNAVM | TROJAN | #24,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #17,SiNAVM | TROJAN | #18,SiNAVM | VMESS | #1,SiNAVM | TROJAN | #24,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
