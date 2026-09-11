@@ -87,16 +87,49 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM"
+                "@SiNAVM",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "vmess",
+            "server": "104.21.57.84",
+            "server_port": 8443,
+            "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+            "security": "auto",
+            "alter_id": 0,
+            "tls": {
+                "enabled": true,
+                "server_name": "v2ray1.dozapp.xyz",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/lMnsZUN4\/",
+                "headers": {
+                    "Host": "v2ray1.dozapp.xyz"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
