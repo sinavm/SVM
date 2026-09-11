@@ -121,8 +121,18 @@ dns:
 
 proxies:
   - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #29","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"188.114.96.3","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #9","type":"trojan","server":"185.18.250.252","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #10","type":"trojan","server":"212.183.88.136","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #11","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #16","type":"trojan","server":"172.67.200.219","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #24","type":"trojan","server":"45.205.0.6","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #32","type":"trojan","server":"45.130.125.112","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #33","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #41","type":"trojan","server":"89.150.34.41","port":2053,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #43","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
+  - {"name":"SiNAVM | TROJAN | #53","type":"trojan","server":"5.181.187.58","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #67","type":"trojan","server":"185.220.100.168","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,7 +141,17 @@ proxy-groups:
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #9'
+      - 'SiNAVM | TROJAN | #10'
+      - 'SiNAVM | TROJAN | #11'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #24'
+      - 'SiNAVM | TROJAN | #32'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #41'
+      - 'SiNAVM | TROJAN | #43'
+      - 'SiNAVM | TROJAN | #53'
+      - 'SiNAVM | TROJAN | #67'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -140,7 +160,17 @@ proxy-groups:
     proxies:
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #9'
+      - 'SiNAVM | TROJAN | #10'
+      - 'SiNAVM | TROJAN | #11'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #24'
+      - 'SiNAVM | TROJAN | #32'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #41'
+      - 'SiNAVM | TROJAN | #43'
+      - 'SiNAVM | TROJAN | #53'
+      - 'SiNAVM | TROJAN | #67'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
@@ -148,7 +178,17 @@ proxy-groups:
     proxies:
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #9'
+      - 'SiNAVM | TROJAN | #10'
+      - 'SiNAVM | TROJAN | #11'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #24'
+      - 'SiNAVM | TROJAN | #32'
+      - 'SiNAVM | TROJAN | #33'
+      - 'SiNAVM | TROJAN | #41'
+      - 'SiNAVM | TROJAN | #43'
+      - 'SiNAVM | TROJAN | #53'
+      - 'SiNAVM | TROJAN | #67'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
