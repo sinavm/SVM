@@ -120,343 +120,255 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-7d703ff6","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
-  - {"name":"SiNAVM | SS | #1","type":"ss","server":"15.204.247.124","port":2375,"password":"faBAoD54k87UJG7","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-644ab5cd","type":"vless","server":"ww9.levikogjgfdd.ir","port":36925,"udp":true,"uuid":"c9fd0fb1-8251-4106-b09a-f4b426736f67","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0"}}
-  - {"name":"SiNAVM | SS | #2","type":"ss","server":"51.79.85.185","port":8118,"password":"cdBIDV42DCwnfIN","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-ae2ec90a","type":"vless","server":"15.204.97.197","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-7452832d","type":"vless","server":"15.204.97.219","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-7ec27dd2","type":"vless","server":"ww13.levikogjgfdd.ir","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d444ceec","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-f94cd75d","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-1e5b1a80","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-590205b3","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-ac99ba4d","type":"vless","server":"15.204.97.214","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"82.198.246.97","port":180,"cipher":"auto","uuid":"d13fc2f5-3e05-4795-81eb-44143a09e552","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VLESS | #1","type":"vless","server":"188.114.96.2","port":2096,"udp":false,"uuid":"8d82944e-17b9-473f-a456-dec9a6e21471","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"peekconfig.peekconf1.workers.dev","ws-opts":{"path":"/eyJqdW5rIjoidnlSRWhQQ3ZCNGZRNHVYMyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSJdfQ==","headers":{"host":"peekconfig.peekconf1.workers.dev"}}}
+  - {"name":"SiNAVM | VLESS | #2","type":"vless","server":"172.66.149.243","port":8443,"udp":false,"uuid":"ededaf7e-ad86-40bc-b837-b1403c56f311","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"bazyepc.aminrazavi1384.workers.dev","ws-opts":{"path":"/eyJqdW5rIjoid2tkV0g2R3kxYlNTIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19","headers":{"host":"bazyepc.aminrazavi1384.workers.dev"}}}
+  - {"name":"SiNAVM | VLESS | #3","type":"vless","server":"172.67.142.2","port":443,"udp":false,"uuid":"36d9003c-7240-40bc-af62-07c39f7a0b94","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"server20.peekconfig5.workers.dev","ws-opts":{"path":"/eyJqdW5rIjoiYmNCdUhCVkFEIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIiwiWzI2MDI6ZmM1OTpiMDo2NDo6XSIsIlsyNjAyOmZjNTk6MTE6NjQ6Ol0iXX0=","headers":{"host":"server20.peekconfig5.workers.dev"}}}
+  - {"name":"SiNAVM | VLESS | #4","type":"vless","server":"o.server5peekconfig.workers.dev","port":443,"udp":false,"uuid":"04cb9c0f-363c-4bf8-a195-2cb8bd43b02a","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"O.seRVer5peEKCOnFIG.WOrKers.dEV","ws-opts":{"path":"/eyJqdW5rIjoiSU9LdXp3R1p6IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19","headers":{"host":"O.seRVer5peEKCOnFIG.WOrKers.dEV"}}}
+  - {"name":"SiNAVM | VLESS | #5","type":"vless","server":"104.21.70.21","port":8080,"udp":false,"uuid":"8ccb3a94-9e3c-45d0-a280-850faea6bbff","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev","ws-opts":{"path":"/vl/EpnESUGGdoM40CHmsDT?ed","headers":{"host":"fdjl8sdmc774ru70b3a45lv4w8.akbar1sale6.workers.dev"}}}
+  - {"name":"SiNAVM-reality-518a4450","type":"vless","server":"31.58.50.200","port":8443,"udp":true,"uuid":"4b2fbd30-1a64-4b27-aea9-713d62c9e69b","tls":true,"network":"tcp","client-fingerprint":null,"servername":"tradingview.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mr5AF0LFyDzYDRoYAwH6QNcHXL77-LoiwRx50ZzU8QU"}}
+  - {"name":"SiNAVM-reality-bbac111c","type":"vless","server":"ww13.levikogjgfdd.ir","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-d038fb2f","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-9792dbe6","type":"vless","server":"15.204.97.197","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-c0aee257","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-bb409535","type":"vless","server":"15.204.97.219","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-3adf5e13","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-e1da64fc","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #14","type":"vless","server":"104.17.183.0","port":2052,"udp":false,"uuid":"e11664a1-39e9-4dd8-a432-b712ec423262","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"tianshu.kevqwkt451.workers.dev","ws-opts":{"path":"/?ed=2560","headers":{"host":"tianshu.kevqwkt451.workers.dev"}}}
+  - {"name":"SiNAVM-reality-178317f6","type":"vless","server":"15.204.97.214","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-a65f4948","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
+  - {"name":"SiNAVM-reality-eec39055","type":"vless","server":"51.158.206.12","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-b14a8a0e","type":"vless","server":"51.158.206.97","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #21","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/"}}
+  - {"name":"SiNAVM | VLESS | #22","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"85.17.145.65","ws-opts":{"path":"/"}}
+  - {"name":"SiNAVM-reality-365d77cc","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-98c899a4","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-32572de2","type":"vless","server":"51.158.206.93","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #26","type":"vless","server":"mypanel.unixzone.us","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/","headers":{"host":"mypanel.unixzone.us"}}}
+  - {"name":"SiNAVM-reality-4525e271","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #31","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"85.17.145.65","ws-opts":{"path":"/"}}
+  - {"name":"SiNAVM | VLESS | #32","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"mypanel.unixzone.us","ws-opts":{"path":"/","headers":{"host":"mypanel.unixzone.us"}}}
+  - {"name":"SiNAVM-reality-c860f9cc","type":"vless","server":"51.158.206.103","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-5a0ca407","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-974f6ce7","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-31d891d8","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-520b9bb3","type":"vless","server":"51.158.206.29","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-f20ff677","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-58d6127b","type":"vless","server":"62.210.91.2","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-7a1eb0ff","type":"vless","server":"51.158.206.26","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-2def13f1","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-d059e6d5","type":"vless","server":"51.158.206.86","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-cea74d84","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
   - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"212.183.88.136","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | VLESS | #14","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/"}}
-  - {"name":"SiNAVM | VLESS | #15","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"85.17.145.65","ws-opts":{"path":"/"}}
-  - {"name":"SiNAVM-reality-4dbcc8e7","type":"vless","server":"3.9.135.156","port":51847,"udp":true,"uuid":"391a01e9-b664-407b-9158-610fab3f5920","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.tesla.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"S6noV0L8eNASnTe1gXLutLZNdfENsvKMsOJiGQYi6nc","short-id":"0eec442e7b34d2f2"}}
-  - {"name":"SiNAVM | VLESS | #18","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"85.17.145.65","ws-opts":{"path":"/"}}
-  - {"name":"SiNAVM | VLESS | #19","type":"vless","server":"85.17.145.65","port":12068,"udp":false,"uuid":"05caca6c-9e97-4c0f-8edf-7b88a6e572c5","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"mypanel.unixzone.us","ws-opts":{"path":"/","headers":{"host":"mypanel.unixzone.us"}}}
-  - {"name":"SiNAVM | TROJAN | #5","type":"trojan","server":"45.205.0.6","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM-reality-d1f10d10","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | TROJAN | #6","type":"trojan","server":"45.130.125.160","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"45.130.125.160","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"185.204.168.28","port":1819,"udp":false,"password":"kiu30181q5ftupbz","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
   - {"name":"SiNAVM | TROJAN | #7","type":"trojan","server":"45.130.125.112","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM-reality-9194395b","type":"vless","server":"51.158.206.103","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-2589c190","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d1cca42e","type":"vless","server":"51.158.206.26","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-2872de35","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-ffede010","type":"vless","server":"51.158.206.12","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-86b77289","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-53828ff2","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-2622e8b7","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-a183056f","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-e3c40c07","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-7df8e63b","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-ba48505f","type":"vless","server":"51.158.206.29","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-ad4df3e5","type":"vless","server":"51.158.206.93","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-0a6f66f9","type":"vless","server":"62.210.91.2","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-ee3c628a","type":"vless","server":"51.158.206.97","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #3","type":"ss","server":"82.38.31.13","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-9a53f998","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #4","type":"ss","server":"193.29.139.168","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #5","type":"ss","server":"82.38.31.162","port":443,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #6","type":"ss","server":"82.38.31.149","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #7","type":"ss","server":"82.38.31.155","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #8","type":"ss","server":"82.38.31.35","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #9","type":"ss","server":"82.38.31.218","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #10","type":"ss","server":"82.38.31.201","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #11","type":"ss","server":"82.38.31.211","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #12","type":"ss","server":"82.38.31.9","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #13","type":"ss","server":"82.38.31.205","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #14","type":"ss","server":"193.29.139.225","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #15","type":"ss","server":"82.38.31.176","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #16","type":"ss","server":"82.38.31.198","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #17","type":"ss","server":"82.38.31.186","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #18","type":"ss","server":"82.38.31.179","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | TROJAN | #8","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM-reality-48860aa3","type":"vless","server":"31.58.50.200","port":8443,"udp":true,"uuid":"4b2fbd30-1a64-4b27-aea9-713d62c9e69b","tls":true,"network":"tcp","client-fingerprint":null,"servername":"tradingview.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mr5AF0LFyDzYDRoYAwH6QNcHXL77-LoiwRx50ZzU8QU"}}
-  - {"name":"SiNAVM | TROJAN | #10","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | SS | #19","type":"ss","server":"82.38.31.189","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-feaaed74","type":"vless","server":"51.158.206.86","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | TROJAN | #21","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM-reality-e8e7a05d","type":"vless","server":"82.118.22.161","port":443,"udp":true,"uuid":"05488656-d4bf-4634-8b2e-e4ff5a56c7e2","tls":true,"network":"tcp","client-fingerprint":"","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"xY1KpNxaIGmi6jfeudYQ_aaLGQqWK_uHStnwUFd2_2E","short-id":"fa3ea655619a3e78"}}
-  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"66.163.117.58","port":22324,"cipher":"auto","uuid":"04621bae-ab36-11ec-b909-0242ac120002","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | SS | #20","type":"ss","server":"193.29.139.151","port":8080,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | TROJAN | #22","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
-  - {"name":"SiNAVM | VLESS | #47","type":"vless","server":"57.131.32.191","port":80,"udp":false,"uuid":"049e56d8-0ba0-49e3-b764-ee04122b9f00","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
-  - {"name":"SiNAVM | SS | #21","type":"ss","server":"144.31.243.2","port":16015,"password":"J1InuU6QRT5JOh1mQfkjU2","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #22","type":"ss","server":"51.79.49.116","port":8882,"password":"kDWvXYZoTBcGkC4","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | TROJAN | #32","type":"trojan","server":"5.181.187.58","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM-reality-db1c8530","type":"vless","server":"185.65.148.217","port":15443,"udp":true,"uuid":"3f63c86c-ac4a-4900-85cf-4fedf93c2ca5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"rutube.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc","short-id":"43dcff53849b81e6"}}
-  - {"name":"SiNAVM | SS | #23","type":"ss","server":"198.98.53.130","port":443,"password":"eDfN7SODQceIOmIAbtJJtK","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-0ee32af4","type":"vless","server":"206.206.78.36","port":443,"udp":true,"uuid":"e3f0c894-0f76-4683-a751-6a93da8fd14d","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"UOLfRKeEoVxkp-APTF2OlvFkKSoiR2mWzUuhSWxcVmQ","short-id":"133a3f10a1581047"}}
-  - {"name":"SiNAVM | SS | #24","type":"ss","server":"194.61.121.93","port":7538,"password":"U9YAoqBgg5VyGBc6vQv1sN","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #25","type":"ss","server":"102.37.156.224","port":443,"password":"aduB9HGxQHjA2SBMRjkHX6","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-6c258f90","type":"vless","server":"85.198.70.200","port":14406,"udp":true,"uuid":"237f91bf-102e-4077-8cc3-baebccb42936","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"vk.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ldAmsl3dqTCUBmlmA8CS9ZnpznP6cFWj9AxNddWnbxY","short-id":"1a2b3c4d5e6f7a8b"}}
-  - {"name":"SiNAVM | VLESS | #51","type":"vless","server":"144.31.5.64","port":443,"udp":false,"uuid":"cd3bb7d9-7df3-4644-ac05-c260990ac277","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"pl6.moritech.net","flow":"xtls-rprx-vision"}
-  - {"name":"SiNAVM-reality-d9e4399d","type":"vless","server":"45.12.75.242","port":26424,"udp":true,"uuid":"633f424e-2b11-48da-a6b3-a849dd71456f","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"ya.ru","reality-opts":{"public-key":"l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0","short-id":"23103e1e"}}
-  - {"name":"SiNAVM | SS | #26","type":"ss","server":"92.112.126.90","port":443,"password":"9tqhMdIrTkgQ46PvhyAtMH","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #27","type":"ss","server":"switcher-nick-croquet.freesocks.work","port":443,"password":"9tqhMdIrTkgQ46PvhyAtMH","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-376ed699","type":"vless","server":"5.253.42.164","port":40443,"udp":true,"uuid":"e99ba96d-dec8-42eb-be53-19e71eef7cab","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"deepl.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw","short-id":"68a8"}}
-  - {"name":"SiNAVM | SS | #28","type":"ss","server":"193.29.139.212","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | TROJAN | #10","type":"trojan","server":"www.calmlunch.com","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | VLESS | #48","type":"vless","server":"94.183.170.135","port":443,"udp":false,"uuid":"06c4e938-2954-478f-a870-ca1b163e30e9","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/"}}
+  - {"name":"SiNAVM | TROJAN | #16","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #17","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM-reality-71d0c1b8","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VMESS | #10","type":"vmess","server":"149.88.23.207","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | TROJAN | #19","type":"trojan","server":"213.182.199.137","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | VLESS | #50","type":"vless","server":"57.131.32.191","port":80,"udp":false,"uuid":"049e56d8-0ba0-49e3-b764-ee04122b9f00","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
+  - {"name":"SiNAVM | TROJAN | #21","type":"trojan","server":"5.181.187.58","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM-reality-3bf6028a","type":"vless","server":"185.141.227.155","port":20002,"udp":true,"uuid":"2b3e8750-b944-42fc-b36e-ec2c64b48a98","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"pool.dataroute.biz","flow":"xtls-rprx-vision","reality-opts":{"public-key":"_ilhBTibNauMOEUqylnlBAUTYiqHHtmEDXkx18SHCR4"}}
+  - {"name":"SiNAVM-reality-604dfe4c","type":"vless","server":"185.65.148.217","port":15443,"udp":true,"uuid":"3f63c86c-ac4a-4900-85cf-4fedf93c2ca5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"rutube.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc","short-id":"43dcff53849b81e6"}}
+  - {"name":"SiNAVM-reality-f57a8571","type":"vless","server":"85.198.70.200","port":14406,"udp":true,"uuid":"237f91bf-102e-4077-8cc3-baebccb42936","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"vk.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ldAmsl3dqTCUBmlmA8CS9ZnpznP6cFWj9AxNddWnbxY","short-id":"1a2b3c4d5e6f7a8b"}}
+  - {"name":"SiNAVM-reality-43599cde","type":"vless","server":"3.9.135.156","port":51847,"udp":true,"uuid":"391a01e9-b664-407b-9158-610fab3f5920","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.tesla.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"S6noV0L8eNASnTe1gXLutLZNdfENsvKMsOJiGQYi6nc","short-id":"0eec442e7b34d2f2"}}
+  - {"name":"SiNAVM | VMESS | #11","type":"vmess","server":"38.110.1.246","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-7d703ff6'
-      - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-644ab5cd'
-      - 'SiNAVM | SS | #2'
-      - 'SiNAVM-reality-ae2ec90a'
-      - 'SiNAVM-reality-7452832d'
-      - 'SiNAVM-reality-7ec27dd2'
-      - 'SiNAVM-reality-d444ceec'
-      - 'SiNAVM-reality-f94cd75d'
-      - 'SiNAVM-reality-1e5b1a80'
-      - 'SiNAVM-reality-590205b3'
-      - 'SiNAVM-reality-ac99ba4d'
-      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VLESS | #1'
+      - 'SiNAVM | VLESS | #2'
+      - 'SiNAVM | VLESS | #3'
+      - 'SiNAVM | VLESS | #4'
+      - 'SiNAVM | VLESS | #5'
+      - 'SiNAVM-reality-518a4450'
+      - 'SiNAVM-reality-bbac111c'
+      - 'SiNAVM-reality-d038fb2f'
+      - 'SiNAVM-reality-9792dbe6'
+      - 'SiNAVM-reality-c0aee257'
+      - 'SiNAVM-reality-bb409535'
+      - 'SiNAVM-reality-3adf5e13'
+      - 'SiNAVM-reality-e1da64fc'
       - 'SiNAVM | VLESS | #14'
-      - 'SiNAVM | VLESS | #15'
-      - 'SiNAVM-reality-4dbcc8e7'
-      - 'SiNAVM | VLESS | #18'
-      - 'SiNAVM | VLESS | #19'
-      - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM-reality-d1f10d10'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM-reality-178317f6'
+      - 'SiNAVM-reality-a65f4948'
+      - 'SiNAVM-reality-eec39055'
+      - 'SiNAVM-reality-b14a8a0e'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #22'
+      - 'SiNAVM-reality-365d77cc'
+      - 'SiNAVM-reality-98c899a4'
+      - 'SiNAVM-reality-32572de2'
+      - 'SiNAVM | VLESS | #26'
+      - 'SiNAVM-reality-4525e271'
+      - 'SiNAVM | VLESS | #31'
+      - 'SiNAVM | VLESS | #32'
+      - 'SiNAVM-reality-c860f9cc'
+      - 'SiNAVM-reality-5a0ca407'
+      - 'SiNAVM-reality-974f6ce7'
+      - 'SiNAVM-reality-31d891d8'
+      - 'SiNAVM-reality-520b9bb3'
+      - 'SiNAVM-reality-f20ff677'
+      - 'SiNAVM-reality-58d6127b'
+      - 'SiNAVM-reality-7a1eb0ff'
+      - 'SiNAVM-reality-2def13f1'
+      - 'SiNAVM-reality-d059e6d5'
+      - 'SiNAVM-reality-cea74d84'
+      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
+      - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM-reality-9194395b'
-      - 'SiNAVM-reality-2589c190'
-      - 'SiNAVM-reality-d1cca42e'
-      - 'SiNAVM-reality-2872de35'
-      - 'SiNAVM-reality-ffede010'
-      - 'SiNAVM-reality-86b77289'
-      - 'SiNAVM-reality-53828ff2'
-      - 'SiNAVM-reality-2622e8b7'
-      - 'SiNAVM-reality-a183056f'
-      - 'SiNAVM-reality-e3c40c07'
-      - 'SiNAVM-reality-7df8e63b'
-      - 'SiNAVM-reality-ba48505f'
-      - 'SiNAVM-reality-ad4df3e5'
-      - 'SiNAVM-reality-0a6f66f9'
-      - 'SiNAVM-reality-ee3c628a'
-      - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-9a53f998'
-      - 'SiNAVM | SS | #4'
-      - 'SiNAVM | SS | #5'
-      - 'SiNAVM | SS | #6'
-      - 'SiNAVM | SS | #7'
-      - 'SiNAVM | SS | #8'
-      - 'SiNAVM | SS | #9'
-      - 'SiNAVM | SS | #10'
-      - 'SiNAVM | SS | #11'
-      - 'SiNAVM | SS | #12'
-      - 'SiNAVM | SS | #13'
-      - 'SiNAVM | SS | #14'
-      - 'SiNAVM | SS | #15'
-      - 'SiNAVM | SS | #16'
-      - 'SiNAVM | SS | #17'
-      - 'SiNAVM | SS | #18'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM-reality-48860aa3'
       - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | SS | #19'
-      - 'SiNAVM-reality-feaaed74'
+      - 'SiNAVM | VLESS | #48'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #17'
+      - 'SiNAVM-reality-71d0c1b8'
+      - 'SiNAVM | VMESS | #10'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | VLESS | #50'
       - 'SiNAVM | TROJAN | #21'
-      - 'SiNAVM-reality-e8e7a05d'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM | TROJAN | #22'
-      - 'SiNAVM | VLESS | #47'
-      - 'SiNAVM | SS | #21'
-      - 'SiNAVM | SS | #22'
-      - 'SiNAVM | TROJAN | #32'
-      - 'SiNAVM-reality-db1c8530'
-      - 'SiNAVM | SS | #23'
-      - 'SiNAVM-reality-0ee32af4'
-      - 'SiNAVM | SS | #24'
-      - 'SiNAVM | SS | #25'
-      - 'SiNAVM-reality-6c258f90'
-      - 'SiNAVM | VLESS | #51'
-      - 'SiNAVM-reality-d9e4399d'
-      - 'SiNAVM | SS | #26'
-      - 'SiNAVM | SS | #27'
-      - 'SiNAVM-reality-376ed699'
-      - 'SiNAVM | SS | #28'
+      - 'SiNAVM-reality-3bf6028a'
+      - 'SiNAVM-reality-604dfe4c'
+      - 'SiNAVM-reality-f57a8571'
+      - 'SiNAVM-reality-43599cde'
+      - 'SiNAVM | VMESS | #11'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-7d703ff6'
-      - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-644ab5cd'
-      - 'SiNAVM | SS | #2'
-      - 'SiNAVM-reality-ae2ec90a'
-      - 'SiNAVM-reality-7452832d'
-      - 'SiNAVM-reality-7ec27dd2'
-      - 'SiNAVM-reality-d444ceec'
-      - 'SiNAVM-reality-f94cd75d'
-      - 'SiNAVM-reality-1e5b1a80'
-      - 'SiNAVM-reality-590205b3'
-      - 'SiNAVM-reality-ac99ba4d'
-      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VLESS | #1'
+      - 'SiNAVM | VLESS | #2'
+      - 'SiNAVM | VLESS | #3'
+      - 'SiNAVM | VLESS | #4'
+      - 'SiNAVM | VLESS | #5'
+      - 'SiNAVM-reality-518a4450'
+      - 'SiNAVM-reality-bbac111c'
+      - 'SiNAVM-reality-d038fb2f'
+      - 'SiNAVM-reality-9792dbe6'
+      - 'SiNAVM-reality-c0aee257'
+      - 'SiNAVM-reality-bb409535'
+      - 'SiNAVM-reality-3adf5e13'
+      - 'SiNAVM-reality-e1da64fc'
       - 'SiNAVM | VLESS | #14'
-      - 'SiNAVM | VLESS | #15'
-      - 'SiNAVM-reality-4dbcc8e7'
-      - 'SiNAVM | VLESS | #18'
-      - 'SiNAVM | VLESS | #19'
-      - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM-reality-d1f10d10'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM-reality-178317f6'
+      - 'SiNAVM-reality-a65f4948'
+      - 'SiNAVM-reality-eec39055'
+      - 'SiNAVM-reality-b14a8a0e'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #22'
+      - 'SiNAVM-reality-365d77cc'
+      - 'SiNAVM-reality-98c899a4'
+      - 'SiNAVM-reality-32572de2'
+      - 'SiNAVM | VLESS | #26'
+      - 'SiNAVM-reality-4525e271'
+      - 'SiNAVM | VLESS | #31'
+      - 'SiNAVM | VLESS | #32'
+      - 'SiNAVM-reality-c860f9cc'
+      - 'SiNAVM-reality-5a0ca407'
+      - 'SiNAVM-reality-974f6ce7'
+      - 'SiNAVM-reality-31d891d8'
+      - 'SiNAVM-reality-520b9bb3'
+      - 'SiNAVM-reality-f20ff677'
+      - 'SiNAVM-reality-58d6127b'
+      - 'SiNAVM-reality-7a1eb0ff'
+      - 'SiNAVM-reality-2def13f1'
+      - 'SiNAVM-reality-d059e6d5'
+      - 'SiNAVM-reality-cea74d84'
+      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
+      - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM-reality-9194395b'
-      - 'SiNAVM-reality-2589c190'
-      - 'SiNAVM-reality-d1cca42e'
-      - 'SiNAVM-reality-2872de35'
-      - 'SiNAVM-reality-ffede010'
-      - 'SiNAVM-reality-86b77289'
-      - 'SiNAVM-reality-53828ff2'
-      - 'SiNAVM-reality-2622e8b7'
-      - 'SiNAVM-reality-a183056f'
-      - 'SiNAVM-reality-e3c40c07'
-      - 'SiNAVM-reality-7df8e63b'
-      - 'SiNAVM-reality-ba48505f'
-      - 'SiNAVM-reality-ad4df3e5'
-      - 'SiNAVM-reality-0a6f66f9'
-      - 'SiNAVM-reality-ee3c628a'
-      - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-9a53f998'
-      - 'SiNAVM | SS | #4'
-      - 'SiNAVM | SS | #5'
-      - 'SiNAVM | SS | #6'
-      - 'SiNAVM | SS | #7'
-      - 'SiNAVM | SS | #8'
-      - 'SiNAVM | SS | #9'
-      - 'SiNAVM | SS | #10'
-      - 'SiNAVM | SS | #11'
-      - 'SiNAVM | SS | #12'
-      - 'SiNAVM | SS | #13'
-      - 'SiNAVM | SS | #14'
-      - 'SiNAVM | SS | #15'
-      - 'SiNAVM | SS | #16'
-      - 'SiNAVM | SS | #17'
-      - 'SiNAVM | SS | #18'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM-reality-48860aa3'
       - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | SS | #19'
-      - 'SiNAVM-reality-feaaed74'
+      - 'SiNAVM | VLESS | #48'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #17'
+      - 'SiNAVM-reality-71d0c1b8'
+      - 'SiNAVM | VMESS | #10'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | VLESS | #50'
       - 'SiNAVM | TROJAN | #21'
-      - 'SiNAVM-reality-e8e7a05d'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM | TROJAN | #22'
-      - 'SiNAVM | VLESS | #47'
-      - 'SiNAVM | SS | #21'
-      - 'SiNAVM | SS | #22'
-      - 'SiNAVM | TROJAN | #32'
-      - 'SiNAVM-reality-db1c8530'
-      - 'SiNAVM | SS | #23'
-      - 'SiNAVM-reality-0ee32af4'
-      - 'SiNAVM | SS | #24'
-      - 'SiNAVM | SS | #25'
-      - 'SiNAVM-reality-6c258f90'
-      - 'SiNAVM | VLESS | #51'
-      - 'SiNAVM-reality-d9e4399d'
-      - 'SiNAVM | SS | #26'
-      - 'SiNAVM | SS | #27'
-      - 'SiNAVM-reality-376ed699'
-      - 'SiNAVM | SS | #28'
+      - 'SiNAVM-reality-3bf6028a'
+      - 'SiNAVM-reality-604dfe4c'
+      - 'SiNAVM-reality-f57a8571'
+      - 'SiNAVM-reality-43599cde'
+      - 'SiNAVM | VMESS | #11'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-7d703ff6'
-      - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-644ab5cd'
-      - 'SiNAVM | SS | #2'
-      - 'SiNAVM-reality-ae2ec90a'
-      - 'SiNAVM-reality-7452832d'
-      - 'SiNAVM-reality-7ec27dd2'
-      - 'SiNAVM-reality-d444ceec'
-      - 'SiNAVM-reality-f94cd75d'
-      - 'SiNAVM-reality-1e5b1a80'
-      - 'SiNAVM-reality-590205b3'
-      - 'SiNAVM-reality-ac99ba4d'
-      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | VMESS | #1'
+      - 'SiNAVM | VLESS | #1'
+      - 'SiNAVM | VLESS | #2'
+      - 'SiNAVM | VLESS | #3'
+      - 'SiNAVM | VLESS | #4'
+      - 'SiNAVM | VLESS | #5'
+      - 'SiNAVM-reality-518a4450'
+      - 'SiNAVM-reality-bbac111c'
+      - 'SiNAVM-reality-d038fb2f'
+      - 'SiNAVM-reality-9792dbe6'
+      - 'SiNAVM-reality-c0aee257'
+      - 'SiNAVM-reality-bb409535'
+      - 'SiNAVM-reality-3adf5e13'
+      - 'SiNAVM-reality-e1da64fc'
       - 'SiNAVM | VLESS | #14'
-      - 'SiNAVM | VLESS | #15'
-      - 'SiNAVM-reality-4dbcc8e7'
-      - 'SiNAVM | VLESS | #18'
-      - 'SiNAVM | VLESS | #19'
-      - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM-reality-d1f10d10'
-      - 'SiNAVM | TROJAN | #6'
+      - 'SiNAVM-reality-178317f6'
+      - 'SiNAVM-reality-a65f4948'
+      - 'SiNAVM-reality-eec39055'
+      - 'SiNAVM-reality-b14a8a0e'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #22'
+      - 'SiNAVM-reality-365d77cc'
+      - 'SiNAVM-reality-98c899a4'
+      - 'SiNAVM-reality-32572de2'
+      - 'SiNAVM | VLESS | #26'
+      - 'SiNAVM-reality-4525e271'
+      - 'SiNAVM | VLESS | #31'
+      - 'SiNAVM | VLESS | #32'
+      - 'SiNAVM-reality-c860f9cc'
+      - 'SiNAVM-reality-5a0ca407'
+      - 'SiNAVM-reality-974f6ce7'
+      - 'SiNAVM-reality-31d891d8'
+      - 'SiNAVM-reality-520b9bb3'
+      - 'SiNAVM-reality-f20ff677'
+      - 'SiNAVM-reality-58d6127b'
+      - 'SiNAVM-reality-7a1eb0ff'
+      - 'SiNAVM-reality-2def13f1'
+      - 'SiNAVM-reality-d059e6d5'
+      - 'SiNAVM-reality-cea74d84'
+      - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
+      - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM-reality-9194395b'
-      - 'SiNAVM-reality-2589c190'
-      - 'SiNAVM-reality-d1cca42e'
-      - 'SiNAVM-reality-2872de35'
-      - 'SiNAVM-reality-ffede010'
-      - 'SiNAVM-reality-86b77289'
-      - 'SiNAVM-reality-53828ff2'
-      - 'SiNAVM-reality-2622e8b7'
-      - 'SiNAVM-reality-a183056f'
-      - 'SiNAVM-reality-e3c40c07'
-      - 'SiNAVM-reality-7df8e63b'
-      - 'SiNAVM-reality-ba48505f'
-      - 'SiNAVM-reality-ad4df3e5'
-      - 'SiNAVM-reality-0a6f66f9'
-      - 'SiNAVM-reality-ee3c628a'
-      - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-9a53f998'
-      - 'SiNAVM | SS | #4'
-      - 'SiNAVM | SS | #5'
-      - 'SiNAVM | SS | #6'
-      - 'SiNAVM | SS | #7'
-      - 'SiNAVM | SS | #8'
-      - 'SiNAVM | SS | #9'
-      - 'SiNAVM | SS | #10'
-      - 'SiNAVM | SS | #11'
-      - 'SiNAVM | SS | #12'
-      - 'SiNAVM | SS | #13'
-      - 'SiNAVM | SS | #14'
-      - 'SiNAVM | SS | #15'
-      - 'SiNAVM | SS | #16'
-      - 'SiNAVM | SS | #17'
-      - 'SiNAVM | SS | #18'
-      - 'SiNAVM | TROJAN | #8'
-      - 'SiNAVM-reality-48860aa3'
       - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | SS | #19'
-      - 'SiNAVM-reality-feaaed74'
+      - 'SiNAVM | VLESS | #48'
+      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #17'
+      - 'SiNAVM-reality-71d0c1b8'
+      - 'SiNAVM | VMESS | #10'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | VLESS | #50'
       - 'SiNAVM | TROJAN | #21'
-      - 'SiNAVM-reality-e8e7a05d'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM | TROJAN | #22'
-      - 'SiNAVM | VLESS | #47'
-      - 'SiNAVM | SS | #21'
-      - 'SiNAVM | SS | #22'
-      - 'SiNAVM | TROJAN | #32'
-      - 'SiNAVM-reality-db1c8530'
-      - 'SiNAVM | SS | #23'
-      - 'SiNAVM-reality-0ee32af4'
-      - 'SiNAVM | SS | #24'
-      - 'SiNAVM | SS | #25'
-      - 'SiNAVM-reality-6c258f90'
-      - 'SiNAVM | VLESS | #51'
-      - 'SiNAVM-reality-d9e4399d'
-      - 'SiNAVM | SS | #26'
-      - 'SiNAVM | SS | #27'
-      - 'SiNAVM-reality-376ed699'
-      - 'SiNAVM | SS | #28'
+      - 'SiNAVM-reality-3bf6028a'
+      - 'SiNAVM-reality-604dfe4c'
+      - 'SiNAVM-reality-f57a8571'
+      - 'SiNAVM-reality-43599cde'
+      - 'SiNAVM | VMESS | #11'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
