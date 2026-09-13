@@ -88,14 +88,16 @@
             "tag": "انتخابگر دستی",
             "outbounds": [
                 "@SiNAVM",
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
             "outbounds": [
-                "@SiNAVM-1"
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -103,13 +105,23 @@
         },
         {
             "type": "vmess",
-            "server": "ww11.levikogjgfdd.ir",
+            "server": "45.32.57.118",
+            "server_port": 4433,
+            "uuid": "35b89832-0a7c-48dd-8d1c-a2891b522195",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vmess",
+            "server": "149.88.23.207",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
