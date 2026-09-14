@@ -11,24 +11,22 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | TROJAN | #1 = trojan, 188.114.96.3, 443, password = humanity, udp-delay = true, skip-cert-verify = true, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #2 = trojan, 213.182.199.137, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #7 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #10 = trojan, 212.183.88.136, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #11 = trojan, 45.130.125.112, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #12 = trojan, 45.130.125.160, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #16 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #32 = trojan, 45.205.0.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #34 = trojan, 185.255.179.166, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #35 = trojan, 88.99.189.60, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #36 = trojan, 185.220.100.168, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #38 = trojan, 78.47.146.151, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #41 = trojan, 5.181.187.58, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #42 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #1 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #3 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #4 = trojan, 212.183.88.136, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #5 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #6 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #14 = trojan, 213.182.199.137, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #22 = trojan, 45.130.125.160, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #25 = trojan, 45.130.125.112, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #32 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #50 = trojan, 88.99.189.60, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #53 = trojan, 78.47.146.151, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #56 = trojan, 5.181.187.58, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #34,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36,SiNAVM | TROJAN | #38,SiNAVM | TROJAN | #41,SiNAVM | TROJAN | #42
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #34,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36,SiNAVM | TROJAN | #38,SiNAVM | TROJAN | #41,SiNAVM | TROJAN | #42
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #10,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #16,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #34,SiNAVM | TROJAN | #35,SiNAVM | TROJAN | #36,SiNAVM | TROJAN | #38,SiNAVM | TROJAN | #41,SiNAVM | TROJAN | #42
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #14,SiNAVM | TROJAN | #22,SiNAVM | TROJAN | #25,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #50,SiNAVM | TROJAN | #53,SiNAVM | TROJAN | #56
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #14,SiNAVM | TROJAN | #22,SiNAVM | TROJAN | #25,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #50,SiNAVM | TROJAN | #53,SiNAVM | TROJAN | #56
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #14,SiNAVM | TROJAN | #22,SiNAVM | TROJAN | #25,SiNAVM | TROJAN | #32,SiNAVM | TROJAN | #50,SiNAVM | TROJAN | #53,SiNAVM | TROJAN | #56
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
