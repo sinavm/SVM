@@ -120,43 +120,47 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM | VMESS | #11","type":"vmess","server":"82.198.246.97","port":180,"cipher":"auto","uuid":"d13fc2f5-3e05-4795-81eb-44143a09e552","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #19","type":"vmess","server":"38.91.107.49","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #23","type":"vmess","server":"169.197.142.22","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #24","type":"vmess","server":"67.220.95.3","port":18000,"cipher":"aes-128-gcm","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #27","type":"vmess","server":"ww11.levikogjgfdd.ir","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"38.110.1.246","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #5","type":"vmess","server":"82.198.246.250","port":180,"cipher":"auto","uuid":"d13fc2f5-3e05-4795-81eb-44143a09e552","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #17","type":"vmess","server":"82.198.246.250","port":180,"cipher":"auto","uuid":"d13fc2f5-3e05-4795-81eb-44143a09e552","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #20","type":"vmess","server":"169.197.142.22","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #25","type":"vmess","server":"ww11.levikogjgfdd.ir","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #29","type":"vmess","server":"67.220.85.46","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM | VMESS | #11'
-      - 'SiNAVM | VMESS | #19'
-      - 'SiNAVM | VMESS | #23'
-      - 'SiNAVM | VMESS | #24'
-      - 'SiNAVM | VMESS | #27'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM | VMESS | #20'
+      - 'SiNAVM | VMESS | #25'
+      - 'SiNAVM | VMESS | #29'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM | VMESS | #11'
-      - 'SiNAVM | VMESS | #19'
-      - 'SiNAVM | VMESS | #23'
-      - 'SiNAVM | VMESS | #24'
-      - 'SiNAVM | VMESS | #27'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM | VMESS | #20'
+      - 'SiNAVM | VMESS | #25'
+      - 'SiNAVM | VMESS | #29'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM | VMESS | #11'
-      - 'SiNAVM | VMESS | #19'
-      - 'SiNAVM | VMESS | #23'
-      - 'SiNAVM | VMESS | #24'
-      - 'SiNAVM | VMESS | #27'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM | VMESS | #20'
+      - 'SiNAVM | VMESS | #25'
+      - 'SiNAVM | VMESS | #29'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
