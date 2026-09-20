@@ -119,9 +119,9 @@ dns:
 
 proxies:
   - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #27","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #28","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #29","type":"trojan","server":"www.calmlunch.com","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"SiNAVM | TROJAN | #19","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
+  - {"name":"SiNAVM | TROJAN | #23","type":"trojan","server":"78.47.146.151","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #33","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -129,9 +129,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #27'
-      - 'SiNAVM | TROJAN | #28'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | TROJAN | #23'
+      - 'SiNAVM | TROJAN | #33'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -139,18 +139,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #27'
-      - 'SiNAVM | TROJAN | #28'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | TROJAN | #23'
+      - 'SiNAVM | TROJAN | #33'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #27'
-      - 'SiNAVM | TROJAN | #28'
-      - 'SiNAVM | TROJAN | #29'
+      - 'SiNAVM | TROJAN | #19'
+      - 'SiNAVM | TROJAN | #23'
+      - 'SiNAVM | TROJAN | #33'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
