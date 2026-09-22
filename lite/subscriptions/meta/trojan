@@ -121,9 +121,9 @@ dns:
 
 proxies:
   - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #7","type":"trojan","server":"www.calmlunch.com","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #11","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
-  - {"name":"SiNAVM | TROJAN | #16","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"www.calmlunch.com","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #7","type":"trojan","server":"8.47.69.0","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.pleadcourt.org"}
+  - {"name":"SiNAVM | TROJAN | #31","type":"trojan","server":"88.99.189.60","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,9 +131,9 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM | TROJAN | #11'
-      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #31'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
@@ -141,18 +141,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM | TROJAN | #11'
-      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #31'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #7'
-      - 'SiNAVM | TROJAN | #11'
-      - 'SiNAVM | TROJAN | #16'
+      - 'SiNAVM | TROJAN | #31'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
