@@ -11,12 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | TROJAN | #1 = trojan, 172.67.205.222, 2087, password = eabf1999fefbb7d2, udp-delay = true, skip-cert-verify = false, sni = WaYSi.wAYsI6688.WOrkeRS.deV, ws = false
-SiNAVM | TROJAN | #3 = trojan, jp3.998998.best, 443, password = 3c6d1933-b22a-484b-ac8a-63e24f5fba75, udp-delay = true, skip-cert-verify = false, sni = nat11.outsidemyheart.space, ws = false
+SiNAVM | TROJAN | #1 = trojan, jp3.998998.best, 443, password = 3c6d1933-b22a-484b-ac8a-63e24f5fba75, udp-delay = true, skip-cert-verify = false, sni = nat11.outsidemyheart.space, ws = false
+SiNAVM | TROJAN | #2 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
