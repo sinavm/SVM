@@ -118,8 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
-  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"jp3.998998.best","port":443,"udp":false,"password":"3c6d1933-b22a-484b-ac8a-63e24f5fba75","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"nat11.outsidemyheart.space"}
+  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"172.67.205.222","port":2087,"udp":false,"password":"eabf1999fefbb7d2","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"WaYSi.wAYsI6688.WOrkeRS.deV"}
+  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"jp3.998998.best","port":443,"udp":false,"password":"3c6d1933-b22a-484b-ac8a-63e24f5fba75","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"nat11.outsidemyheart.space"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -127,7 +127,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #4'
+      - 'SiNAVM | TROJAN | #3'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -135,14 +135,14 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #4'
+      - 'SiNAVM | TROJAN | #3'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #4'
+      - 'SiNAVM | TROJAN | #3'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
