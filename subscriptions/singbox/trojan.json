@@ -105,6 +105,34 @@
         },
         {
             "type": "trojan",
+            "server": "www.speedtest.net",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "trojan",
             "server": "188.42.145.180",
             "server_port": 443,
             "password": "humanity",
@@ -125,34 +153,6 @@
                 "path": "\/assignment",
                 "headers": {
                     "Host": "www.volumeroot.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "trojan",
-            "server": "jp3.998998.best",
-            "server_port": 443,
-            "password": "3c6d1933-b22a-484b-ac8a-63e24f5fba75",
-            "tls": {
-                "enabled": true,
-                "server_name": "nat11.outsidemyheart.space",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/w4e5yh0p945y3",
-                "headers": {
-                    "Host": "nat11.outsidemyheart.space"
                 },
                 "max_early_data": 0
             },
