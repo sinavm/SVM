@@ -1,0 +1,26 @@
+name: نود مرده / اشتراک خراب
+description: گزارش لینک یا لیستی که کار نمی‌کند
+labels: [subscription]
+body:
+  - type: dropdown
+    id: client
+    attributes:
+      label: کلاینت
+      options: [sing-box, v2rayNG, Hiddify, Clash Meta, سایر]
+    validations:
+      required: true
+  - type: dropdown
+    id: isp
+    attributes:
+      label: اپراتور
+      options: [همراه اول, ایرانسل, رایتل, شتل, نت ملی, نمی‌دانم]
+  - type: input
+    id: link
+    attributes:
+      label: لینک اشتراک
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: توضیح
