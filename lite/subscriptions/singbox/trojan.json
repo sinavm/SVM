@@ -101,9 +101,7 @@
                 "@SiNAVM-11",
                 "@SiNAVM-12",
                 "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15",
-                "@SiNAVM-16"
+                "@SiNAVM-14"
             ]
         },
         {
@@ -123,9 +121,7 @@
                 "@SiNAVM-11",
                 "@SiNAVM-12",
                 "@SiNAVM-13",
-                "@SiNAVM-14",
-                "@SiNAVM-15",
-                "@SiNAVM-16"
+                "@SiNAVM-14"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -133,15 +129,15 @@
         },
         {
             "type": "trojan",
-            "server": "45.205.0.6",
-            "server_port": 443,
+            "server": "185.114.72.31",
+            "server_port": 2053,
             "password": "humanity",
             "tls": {
                 "enabled": true,
                 "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "utls": {
                     "enabled": true,
@@ -189,7 +185,7 @@
         },
         {
             "type": "trojan",
-            "server": "45.130.125.112",
+            "server": "45.205.0.6",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -197,7 +193,7 @@
                 "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
-                    "h3"
+                    "http\/1.1"
                 ],
                 "utls": {
                     "enabled": true,
@@ -217,7 +213,7 @@
         },
         {
             "type": "trojan",
-            "server": "212.183.88.136",
+            "server": "172.67.231.254",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -245,7 +241,7 @@
         },
         {
             "type": "trojan",
-            "server": "www.calmlunch.com",
+            "server": "185.220.100.168",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -273,12 +269,12 @@
         },
         {
             "type": "trojan",
-            "server": "188.114.97.6",
+            "server": "188.114.98.0",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.pleadcourt.org",
+                "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -292,7 +288,7 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "www.pleadcourt.org"
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
@@ -357,7 +353,7 @@
         },
         {
             "type": "trojan",
-            "server": "172.67.231.254",
+            "server": "185.225.68.232",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -385,7 +381,7 @@
         },
         {
             "type": "trojan",
-            "server": "188.114.98.0",
+            "server": "45.130.125.112",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -413,34 +409,6 @@
         },
         {
             "type": "trojan",
-            "server": "185.114.72.31",
-            "server_port": 2053,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "trojan",
             "server": "188.42.145.180",
             "server_port": 443,
             "password": "humanity",
@@ -465,19 +433,19 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-12"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "trojan",
-            "server": "188.42.145.180",
+            "server": "188.114.97.6",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "wWw.Volumeroot.cOm.",
+                "server_name": "www.pleadcourt.org",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "utls": {
                     "enabled": true,
@@ -488,7 +456,35 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "wWw.Volumeroot.cOm."
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-12"
+        },
+        {
+            "type": "trojan",
+            "server": "212.183.88.136",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
@@ -497,7 +493,7 @@
         },
         {
             "type": "trojan",
-            "server": "185.220.100.168",
+            "server": "www.calmlunch.com",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -522,62 +518,6 @@
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "trojan",
-            "server": "78.47.146.151",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-15"
-        },
-        {
-            "type": "trojan",
-            "server": "185.225.68.232",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-16"
         },
         {
             "type": "direct",
