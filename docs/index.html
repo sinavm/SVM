@@ -1,10 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<meta charset="utf-8">
-<title>SVM subs</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>SVM | اشتراک SiNAVM</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#0f172a;--primary:#3b82f6;--accent:#06b6d4;--gold:#fbbf24;--green:#10b981;--glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--text:#f8fafc;--mute:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Vazirmatn,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;justify-content:center;
+background-image:radial-gradient(at 0% 0%,hsla(253,16%,7%,1) 0,transparent 50%),radial-gradient(at 50% 0%,hsla(225,39%,30%,1) 0,transparent 50%),radial-gradient(at 100% 0%,hsla(339,49%,30%,1) 0,transparent 50%);background-attachment:fixed}
+.container{width:100%;max-width:500px;padding:20px 20px 80px;display:flex;flex-direction:column;gap:18px}
+header{text-align:center;margin-top:12px}
+.logo{width:90px;height:90px;border-radius:50%;border:3px solid rgba(255,255,255,.2);box-shadow:0 0 30px rgba(6,182,212,.4);padding:3px;background:var(--glass)}
+h1{font-size:1.8rem;font-weight:900;margin:12px 0 4px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--accent);font-size:.9rem}
+.card{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:20px}
+.title{font-size:1rem;color:var(--mute);margin:0 0 12px;padding-right:10px;border-right:3px solid var(--primary)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;padding:14px;text-align:center;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:6px}
+.btn span{font-weight:700}
+.btn small{color:var(--mute);font-size:.72rem}
+.gold{border-color:rgba(251,191,36,.35)}
+.green{border-color:rgba(16,185,129,.35)}
+.status{color:var(--mute);font-size:.85rem;margin:0 0 12px}
+.qr{background:#fff;border-radius:14px;padding:8px;width:140px;height:140px;display:block;margin:12px auto 0}
+footer{text-align:center;color:var(--mute);font-size:.8rem}
+footer a{color:var(--mute);margin:0 8px;text-decoration:none}
+</style>
+</head>
 <body>
-<h1>اشتراک SVM</h1>
-<p>کامل: <a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">mix</a></p>
-<p>جمورع lite: <a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">alive-fast</a></p>
-</body>
-</html>
+<div class="container">
+<header>
+  <img class="logo" src="https://sinavm.github.io/sinavm/logo/sinavm_logo_1.jpg" alt="SiNAVM">
+  <h1>SVM</h1>
+  <div class="sub">اشتراک کامل و لایت</div>
+</header>
+<div class="card">
+  <div class="title">وضعیت زنده</div>
+  <p class="status" id="status-line">در حال خواندن…</p>
+</div>
+<div class="card">
+  <div class="title">انتخاب اشتراک</div>
+  <div class="grid">
+    <a class="btn gold" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">
+      <i class="fas fa-layer-group" style="color:var(--gold)"></i><span>کامل</span><small>raw mix</small>
+    </a>
+    <a class="btn green" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">
+      <i class="fas fa-bolt" style="color:var(--green)"></i><span>لایت سریع</span><small>alive-fast</small>
+    </a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/subscriptions/xray/normal/mix">
+      <span>jsDelivr کامل</span><small>آینه raw</small>
+    </a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/lite/subscriptions/xray/normal/alive-fast">
+      <span>jsDelivr لایت</span><small>آینه raw</small>
+    </a>
+  </div>
+  <img class="qr" alt="QR lite" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast">
+</div>
+<footer>
+  <a href="https://sinavm.github.io/sinavm/">پنل SiNAVM</a>
+  <a href="https://t.me/sinavm">تلگرام</a>
+  <a href="https://github.com/sinavm/SVM">گیتهاب</a>
+</footer>
+</div>
+<script>
+fetch('https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json').then(r=>r.json()).then(j=>{
+  document.getElementById('status-line').textContent=' زنده '+ (j.kept||'?') +' از '+ (j.input||'?') +' · '+ (j.tested_at||'');
+}).catch(()=>{document.getElementById('status-line').textContent='وضعیت در دسترس نیست';});
+</script>
+</body></html>
