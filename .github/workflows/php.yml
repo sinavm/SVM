@@ -63,6 +63,7 @@ jobs:
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors compact.php || true
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
@@ -85,7 +86,8 @@ jobs:
   sinavm-lite:
     runs-on: ubuntu-latest
     timeout-minutes: 40
-    needs: sinavm-full
+    needs: [sinavm-full]
+    if: always()
     env:
       PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 || secrets.PRIVATE_LINK_SiNAVM_1 }}
       PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 || secrets.PRIVATE_LINK_SiNAVM_2 }}
@@ -133,6 +135,7 @@ jobs:
           php -d display_errors ../config-test.php
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors ../compact.php || true
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
           php -d display_errors ../toClashMetaExtra.php || true
