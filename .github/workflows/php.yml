@@ -63,7 +63,6 @@ jobs:
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
-          php -d display_errors rank.php || true
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
@@ -74,6 +73,9 @@ jobs:
           git config credential.helper store
 
           git rm -r --cached cache lite/cache hiddify-cli sing-box-bin reports/invalid.txt lite/reports/invalid.txt reports/singbox-test.log 2>/dev/null || true
+          rm -f subscriptions/xray/normal/mci subscriptions/xray/normal/irancell subscriptions/xray/normal/national-net \
+                subscriptions/xray/base64/mci subscriptions/xray/base64/irancell subscriptions/xray/base64/national-net \
+                docs/subscriptions/mci docs/subscriptions/irancell docs/subscriptions/national-net || true
 
           for i in {1..3}; do
             git pull --rebase
