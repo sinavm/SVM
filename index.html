@@ -1,362 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="SiNAVM - نسل جدید اتصال آزاد. کانفیگ‌های اختصاصی Sing-box و V2Ray برای کاربران VIP و رایگان.">
-    <meta name="theme-color" content="#0f172a">
-    <title>SiNAVM-SVM | اتصال هوشمند</title>
-    
-
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bg-deep: #020617;
-            --primary: #6366f1;
-            --accent: #ec4899;
-            --cyan: #06b6d4;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --shadow-glow: 0 0 50px rgba(99, 102, 241, 0.15);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            min-height: 100vh;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-
-        .aurora-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-deep) 60%);
-        }
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: floatOrb 20s infinite ease-in-out;
-        }
-        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--primary); animation-delay: 0s; }
-        .orb-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--accent); animation-delay: -5s; }
-        .orb-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: var(--cyan); opacity: 0.2; animation-delay: -10s; }
-
-        @keyframes floatOrb {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-
-
-        .container {
-            width: 90%;
-            max-width: 480px;
-            z-index: 10;
-            padding: 20px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); border-color: rgba(255,255,255,0.15); }
-
-
-        .hero { text-align: center; padding-top: 10px; }
-        .brand-badge {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(99, 102, 241, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            border-radius: 50px;
-            color: #818cf8;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        .hero p { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; }
-
-
-        .action-btn-wrapper { position: relative; margin: 0 auto; width: 100%; }
-        .action-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.5);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .action-btn i { margin-left: 10px; font-size: 1.4rem; }
-        .action-btn::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
-        }
-        .action-btn:hover { transform: scale(1.02); box-shadow: 0 20px 50px -10px rgba(236, 72, 153, 0.5); }
-        .action-btn:hover::before { left: 100%; }
-
-
-        .loader-container {
-            margin-top: 15px;
-            height: 4px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-        .loader-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--cyan), var(--primary));
-            animation: loadProgress 3s ease-out forwards;
-            border-radius: 4px;
-        }
-        @keyframes loadProgress { 0% { width: 0; } 100% { width: 100%; } }
-
-
-        .vip-card {
-            border: 1px solid rgba(236, 72, 153, 0.3);
-            background: linear-gradient(145deg, rgba(236, 72, 153, 0.05), rgba(99, 102, 241, 0.05));
-            position: relative;
-            overflow: hidden;
-        }
-        .vip-card::after {
-            content: 'PREMIUM';
-            position: absolute;
-            top: 15px; left: -30px;
-            background: var(--accent);
-            color: white;
-            font-size: 0.6rem;
-            font-weight: 800;
-            padding: 5px 30px;
-            transform: rotate(-45deg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .vip-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; cursor: pointer; }
-        .vip-title { font-size: 1.1rem; font-weight: 700; color: #fdfdfd; display: flex; align-items: center; gap: 10px; }
-        .vip-title i { color: #fbbf24; }
-        
-        .vip-content { 
-            max-height: 0; overflow: hidden; transition: max-height 0.5s ease; 
-            color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;
-        }
-        .vip-content.show { max-height: 200px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
-        .vip-tag { 
-            display: inline-block; background: rgba(255,255,255,0.05); 
-            padding: 4px 10px; border-radius: 8px; margin: 2px; font-size: 0.8rem; color: var(--cyan);
-        }
-
-
-        .grid-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .mini-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 18px;
-            padding: 16px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        .mini-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
-        .mini-card i { font-size: 1.5rem; margin-bottom: 5px; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .mini-card span { font-size: 0.9rem; font-weight: 500; }
-        
-
-        .footer { text-align: center; margin-top: 20px; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
-        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: 0.3s; }
-        .footer a:hover { color: var(--primary); }
-
-
-        .toast {
-            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
-            background: rgba(15, 23, 42, 0.9); border: 1px solid var(--primary);
-            color: white; padding: 12px 24px; border-radius: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            font-size: 0.9rem; z-index: 100; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex; align-items: center; gap: 10px;
-        }
-        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        .toast i { color: #4ade80; }
-
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVM اشتراک</title>
+<style>
+body{font-family:sans-serif;background:#020617;color:#e2e8f0;margin:0;padding:24px}
+.wrap{max-width:520px;margin:auto}
+.card{background:#0f172a;border:1px solid #1e293b;border-radius:16px;padding:16px;margin:12px 0}
+a{color:#67e8f9}
+.stat{display:flex;justify-content:space-between;color:#94a3b8;font-size:14px}
+img.qr{background:#fff;border-radius:12px;padding:8px}
+</style>
 </head>
 <body>
-
-
-    <div class="aurora-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
-    <div class="container">
-
-        <div class="card hero">
-            <span class="brand-badge">SiNAVM PRO</span>
-            <h1>اتصال ایمن و سریع</h1>
-            <p>نسل جدید کانفیگ‌های هوشمند Sing-box</p>
-            
-            <div class="action-btn-wrapper">
-                <a href="sing-box://import-remote-profile?url=https://github.com/sinavm/SVM/raw/refs/heads/main/lite/subscriptions/singbox/vless.json#@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام" class="action-btn" id="mainBtn">
-                    <i class="fas fa-bolt"></i>
-                    افزودن دستی کانفیگ  
-                </a>
-            </div>
-
-            <div class="loader-container">
-                <div class="loader-bar"></div>
-            </div>
-            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--cyan); opacity: 0.8;">
-                <i class="fas fa-sync fa-spin" style="margin-left:5px;"></i> در حال ایجاد کانفیگ شما...
-            </div>
-        </div>
-
-
-        <div class="card vip-card">
-            <div class="vip-header" onclick="toggleVip()">
-                <div class="vip-title">
-                    <i class="fas fa-crown"></i>
-                    سرویس‌های VIP اختصاصی
-                </div>
-                <i class="fas fa-chevron-down" id="vipIcon" style="transition: 0.3s; font-size: 0.9rem;"></i>
-            </div>
-            <div class="vip-content" id="vipContent">
-                <p>با خرید اشتراک VIP به سرورهای اختصاصی و پرسرعت دسترسی پیدا کنید:</p>
-                <div style="margin: 10px 0;">
-                    <span class="vip-tag">پینگ پایین</span>
-                    <span class="vip-tag">IP ثابت</span>
-                    <span class="vip-tag">بدون قطعی</span>
-                    <span class="vip-tag">پشتیبانی ۲۴/۷</span>
-                </div>
-                <a href="https://t.me/sinvt" target="_blank" style="display: block; margin-top: 15px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">
-                    مشاهده پلن‌ها و خرید <i class="fas fa-arrow-left" style="margin-right: 5px;"></i>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="grid-links">
-            <a href="https://t.me/sinavm" target="_blank" class="mini-card">
-                <i class="fab fa-telegram-plane"></i>
-                <span>کانال تلگرام</span>
-            </a>
-            <a href="https://github.com/sinavm" target="_blank" class="mini-card">
-                <i class="fab fa-github"></i>
-                <span>گیت‌هاب</span>
-            </a>
-        </div>
-
-
-        <div class="card" style="padding: 15px;">
-            <div style="font-size: 0.9rem; margin-bottom: 12px; text-align: center; color: var(--text-muted);">اپلیکیشن ندارید؟ دانلود کنید:</div>
-            <div class="grid-links">
-                <a href="https://apps.apple.com/app/id6673731168" class="mini-card" style="border-radius: 12px; padding: 10px;">
-                    <i class="fab fa-apple" style="font-size: 1.2rem;"></i>
-                    <span style="font-size: 0.8rem;">iOS</span>
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" class="mini-card" style="border-radius: 12px; padding: 10px;">
-                    <i class="fab fa-android" style="font-size: 1.2rem; color: #3ddc84;"></i>
-                    <span style="font-size: 0.8rem;">Android</span>
-                </a>
-            </div>
-        </div>
-
-
-        <div class="footer">
-            Design & Config by <a href="https://t.me/sinavm">SiNAVM</a>
-            <br>
-            <span id="visit-count" style="opacity: 0.5; font-size: 0.7rem;">Visits: Loading...</span>
-        </div>
-    </div>
-
-
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span>لینک کپی شد!</span>
-    </div>
-
-    <script>
-
-        setTimeout(() => {
-            window.location.href = "sing-box://import-remote-profile?url=https://github.com/sinavm/SVM/raw/refs/heads/main/lite/subscriptions/singbox/vless.json#@𝗦𝗶𝗡𝗔𝗩𝗠 👈🏻کانال تلگرام";
-        }, 2500);
-
-        function toggleVip() {
-            const content = document.getElementById('vipContent');
-            const icon = document.getElementById('vipIcon');
-            content.classList.toggle('show');
-            icon.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
-        }
-
-
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (isIOS) {
-            document.getElementById('mainBtn').addEventListener('click', (e) => {
-                setTimeout(() => {
-
-                }, 1000);
-            });
-        }
-
-        fetch('https://page-views.count1.workers.dev')
-            .then(r => r.text())
-            .then(d => document.getElementById('visit-count').innerText = 'Visits: ' + d)
-            .catch(e => console.log('Counter error'));
-
-        document.addEventListener('contextmenu', event => event.preventDefault());
-    </script>
+<div class="wrap">
+  <h1>SVM</h1>
+  <p id="status-line">در حال خواندن وضعیت…</p>
+  <div class="card">
+    <h2>کامل</h2>
+    <p><a id="full-raw" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">raw mix</a></p>
+    <p><a href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/subscriptions/xray/normal/mix">jsDelivr mix</a></p>
+  </div>
+  <div class="card">
+    <h2>لایت جمورع</h2>
+    <p><a id="lite-raw" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">raw alive-fast</a></p>
+    <p><a href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/lite/subscriptions/xray/normal/alive-fast">jsDelivr alive-fast</a></p>
+    <p><img class="qr" width="160" height="160" alt="QR lite" src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast"></p>
+  </div>
+  <p><a href="https://t.me/sinavm">تلگرام</a> · <a href="https://github.com/sinavm/SVM">گیتهاب</a></p>
+</div>
+<script>
+fetch('https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json')
+  .then(r=>r.json())
+  .then(j=>{
+    const el=document.getElementById('status-line');
+    el.textContent = 'زنده: ' + (j.kept||'?') + ' از ' + (j.input||'?') + ' · آپدیت: ' + (j.tested_at||'');
+  })
+  .catch(()=>{});
+</script>
 </body>
 </html>
