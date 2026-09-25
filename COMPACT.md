@@ -1,13 +1,18 @@
-# لیست‌های جمورع و پایدار
+# اشتراک‌های جمورع
 
-به‌جای mix کامل، این دو فایل را اول استفاده کنید:
+اول Pages، بعد raw.
 
-| فایل | حداکثر نود | لینک |
-| :--- | ---: | :--- |
-| alive-fast | 25 | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-fast |
-| alive-stable | 50 | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-stable |
-| mix | همه | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix |
+| لیست | حداکثر | Pages | raw |
+| :--- | ---: | :--- | :--- |
+| alive-fast | 25 | https://sinavm.github.io/SVM/subscriptions/alive-fast | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-fast |
+| alive-stable | 50 | https://sinavm.github.io/SVM/subscriptions/alive-stable | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-stable |
+| mix | زنده‌های این ران | https://sinavm.github.io/SVM/subscriptions/mix | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix |
+| mci | 20 | https://sinavm.github.io/SVM/subscriptions/mci | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mci |
+| irancell | 20 | https://sinavm.github.io/SVM/subscriptions/irancell | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/irancell |
+| national-net | 15 | https://sinavm.github.io/SVM/subscriptions/national-net | https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/national-net |
 
-وضعیت آخرین ران: [reports/status.json](reports/status.json)
+آمار: https://sinavm.github.io/SVM/reports/status.json
 
-فایل‌ها بعد از `sort.php` با `compact.php` ساخته می‌شوند.
+لیست‌های اپراتور از رانر گیتهاب قابل اندازه‌گیری واقعی همراه‌اول/ایرانسل نیستند. همان لیست جمورع سریع با نام جدا هستند تا کلاینت لینک جدا داشته باشد.
+
+نودی که دو ران پشت‌سرهم مرده باشد از لیست عمومی خارج می‌شود.
