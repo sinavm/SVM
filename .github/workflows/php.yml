@@ -39,8 +39,14 @@ jobs:
         run: |
           set -euo pipefail
           VER="${SINGBOX_VERSION:-1.14.0}"
-          curl -L --retry 5 --retry-delay 2 -o /tmp/sing-box.tar.gz \
-            "https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
+          file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || {
+            echo "downloaded file is not a tarball:"
+            file /tmp/sing-box.tar.gz
+            head -c 200 /tmp/sing-box.tar.gz || true
+            exit 1
+          }
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
@@ -103,8 +109,14 @@ jobs:
         run: |
           set -euo pipefail
           VER="${SINGBOX_VERSION:-1.14.0}"
-          curl -L --retry 5 --retry-delay 2 -o /tmp/sing-box.tar.gz \
-            "https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
+          curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
+          file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || {
+            echo "downloaded file is not a tarball:"
+            file /tmp/sing-box.tar.gz
+            head -c 200 /tmp/sing-box.tar.gz || true
+            exit 1
+          }
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
