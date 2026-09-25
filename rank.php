@@ -42,8 +42,7 @@ foreach ($lines as $line) {
     }
     $seen[$fp] = true;
     $pos++;
-    $delayGuess = $pos * 15;
-    if (!isset($history[$fp])) {
+    if (!isset($history[$fp]) || !is_array($history[$fp])) {
         $history[$fp] = [
             "first_seen" => $now,
             "last_ok" => $now,
@@ -54,47 +53,85 @@ foreach ($lines as $line) {
         ];
     }
     $history[$fp]["last_ok"] = $now;
-    $history[$fp]["ok"] = (int)$history[$fp]["ok"] + 1;
+    $history[$fp]["ok"] = (int)($history[$fp]["ok"] ?? 0) + 1;
     $history[$fp]["fail_streak"] = 0;
-    $history[$fp]["delays"][] = $delayGuess;
-    $history[$fp]["delays"] = array_slice($history[$fp]["delays"], -8);
     $ok = max(1, (int)$history[$fp]["ok"]);
-    $fail = (int)$history[$fp]["fail"];
+    $fail = (int)($history[$fp]["fail"] ?? 0);
     $success = $ok / max(1, $ok + $fail);
     $ageHours = max(0, ($now - (int)$history[$fp]["first_seen"]) / 3600);
     $ageBonus = $ageHours <= 24 ? 25 : ($ageHours <= 72 ? 10 : 0);
-    $delayScore = max(0, 100 - $pos);
+    $delayScore = max(0, 120 - $pos);
     $score = (int)round(($success * 50) + $delayScore + $ageBonus);
-    $type = detect_type($line);
     $ranked[] = [
         "fp" => $fp,
         "uri" => $line,
-        "type" => $type,
+        "type" => detect_type($line),
         "score" => $score,
         "success" => $success,
-        "fail_streak" => 0,
-        "age_hours" => $ageHours,
         "rank_index" => $pos,
     ];
+}
+
+if (empty($ranked)) {
+    fwrite(STDERR, "rank.php: no live nodes; leaving existing subscription files untouched\n");
+    exit(0);
 }
 
 foreach ($history as $fp => $row) {
     if (isset($seen[$fp])) {
         continue;
     }
-    $history[$fp]["fail"] = (int)$row["fail"] + 1;
-    $history[$fp]["fail_streak"] = (int)$row["fail_streak"] + 1;
+    $history[$fp]["fail"] = (int)($row["fail"] ?? 0) + 1;
+    $history[$fp]["fail_streak"] = (int)($row["fail_streak"] ?? 0) + 1;
     if ($history[$fp]["fail_streak"] >= 8) {
         unset($history[$fp]);
     }
+}
+
+if (count($history) > 2500) {
+    uasort($history, function ($a, $b) {
+        return ((int)($b["last_ok"] ?? 0)) <=> ((int)($a["last_ok"] ?? 0));
+    });
+    $history = array_slice($history, 0, 2500, true);
 }
 
 $public = array_values(array_filter($ranked, function ($n) use ($history) {
     return (int)($history[$n["fp"]]["fail_streak"] ?? 0) < 2;
 }));
 usort($public, function ($a, $b) {
+    if ($a["score"] === $b["score"]) {
+        return $a["rank_index"] <=> $b["rank_index"];
+    }
     return $b["score"] <=> $a["score"];
 });
+
+function pickDiverse($nodes, $limit, $perType = 10) {
+    $out = [];
+    $count = [];
+    foreach ($nodes as $n) {
+        $t = $n["type"] ?: "other";
+        if (($count[$t] ?? 0) >= $perType) {
+            continue;
+        }
+        $out[] = $n;
+        $count[$t] = ($count[$t] ?? 0) + 1;
+        if (count($out) >= $limit) {
+            break;
+        }
+    }
+    if (count($out) < $limit) {
+        foreach ($nodes as $n) {
+            if (in_array($n, $out, true)) {
+                continue;
+            }
+            $out[] = $n;
+            if (count($out) >= $limit) {
+                break;
+            }
+        }
+    }
+    return $out;
+}
 
 function subHeader($title, $count) {
     $expire = time() + (30 * 86400);
@@ -108,21 +145,26 @@ function subHeader($title, $count) {
 
 function writeSub($name, $title, $nodes) {
     global $ROOT;
-    $uris = array_map(fn($n) => $n["uri"], $nodes);
-    $body = subHeader($title, count($uris)) . implode("\n", $uris) . (empty($uris) ? "" : "\n");
+    if (empty($nodes)) {
+        return 0;
+    }
+    $uris = [];
+    foreach ($nodes as $n) {
+        $uris[] = $n["uri"];
+    }
+    $body = subHeader($title, count($uris)) . implode("\n", $uris) . "\n";
     file_put_contents($ROOT . "/subscriptions/xray/normal/" . $name, $body);
     file_put_contents($ROOT . "/subscriptions/xray/base64/" . $name, base64_encode($body));
     file_put_contents($ROOT . "/docs/subscriptions/" . $name, $body);
     return count($uris);
 }
 
-$fast = array_slice($public, 0, 25);
+$fast = pickDiverse($public, 25, 8);
 $stable = array_slice($public, 0, 50);
-$mixKeep = $public;
 
 $nFast = writeSub("alive-fast", "SiNAVM FAST", $fast);
 $nStable = writeSub("alive-stable", "SiNAVM STABLE", $stable);
-$nMix = writeSub("mix", "SiNAVM MIX", $mixKeep);
+$nMix = writeSub("mix", "SiNAVM MIX", $public);
 $nMci = writeSub("mci", "SiNAVM MCI", array_slice($fast, 0, 20));
 $nIrancell = writeSub("irancell", "SiNAVM IRANCELL", array_slice($fast, 0, 20));
 $nNational = writeSub("national-net", "SiNAVM NATIONAL", array_slice($fast, 0, 15));
@@ -143,7 +185,7 @@ $status = [
     "tested" => (int)($test["input"] ?? count($lines)),
     "alive" => (int)($test["kept"] ?? count($ranked)),
     "public_after_history" => count($public),
-    "dropped_flaky" => count($ranked) - count($public),
+    "dropped_flaky" => max(0, count($ranked) - count($public)),
     "avg_delay_ms_top15" => $avgDelay,
     "alive_fast" => $nFast,
     "alive_stable" => $nStable,
@@ -155,9 +197,6 @@ $status = [
     "links" => [
         "pages_fast" => "https://sinavm.github.io/SVM/subscriptions/alive-fast",
         "pages_stable" => "https://sinavm.github.io/SVM/subscriptions/alive-stable",
-        "pages_mci" => "https://sinavm.github.io/SVM/subscriptions/mci",
-        "pages_irancell" => "https://sinavm.github.io/SVM/subscriptions/irancell",
-        "pages_national" => "https://sinavm.github.io/SVM/subscriptions/national-net",
         "raw_fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-fast",
         "raw_stable" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/alive-stable",
     ],
