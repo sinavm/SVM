@@ -118,7 +118,8 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"www.calmlunch.com","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"www.speedtest.net","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.calmlunch.com"}
   - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"188.42.145.180","port":443,"udp":false,"password":"humanity","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"www.volumeroot.com"}
 proxy-groups:
   - name: MANUAL
@@ -127,6 +128,7 @@ proxy-groups:
       - URL-TEST
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #4'
   - name: URL-TEST
     type: url-test
@@ -135,6 +137,7 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #4'
   - name: FALLBACK
     type: fallback
@@ -142,6 +145,7 @@ proxy-groups:
     interval: 60
     proxies:
       - 'SiNAVM | TROJAN | #1'
+      - 'SiNAVM | TROJAN | #2'
       - 'SiNAVM | TROJAN | #4'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
