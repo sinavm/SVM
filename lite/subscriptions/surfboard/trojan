@@ -11,10 +11,14 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #4 = trojan, 88.99.189.60, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #6 = trojan, www.calmlunch.com, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #7 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
