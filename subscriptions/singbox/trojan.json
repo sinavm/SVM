@@ -87,47 +87,16 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM",
-                "@SiNAVM-1"
+                "@SiNAVM"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [
-                "@SiNAVM-1"
-            ],
+            "outbounds": [],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "trojan",
-            "server": "104.21.42.129",
-            "server_port": 2087,
-            "password": "eabf1999fefbb7d2",
-            "tls": {
-                "enabled": true,
-                "server_name": "WaYSi.wAYsI6688.WOrkeRS.deV",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/tr\/sMpzOZ0eWEt6jbZ1jjN3BaM7LLoQ",
-                "headers": {
-                    "Host": "WaYSi.wAYsI6688.WOrkeRS.deV"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
