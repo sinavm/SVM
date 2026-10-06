@@ -11,11 +11,10 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #9 = vmess, yg1.ygkkk.dpdns.org, 443, username = b2ba4a73-3123-479e-aa96-5973a9ecd0c0, ws = true, tls = 1, vmess-aead = true, ws-path = /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm, ws-headers = Host:"jmp1.907737.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #9
-URL-TEST = url-test,SiNAVM | VMESS | #9
-FALLBACK = fallback,SiNAVM | VMESS | #9
+MANUAL = select,URL-TEST,FALLBACK
+URL-TEST = url-test
+FALLBACK = fallback
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
