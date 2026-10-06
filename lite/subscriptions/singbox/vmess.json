@@ -91,8 +91,7 @@
                 "@SiNAVM-1",
                 "@SiNAVM-2",
                 "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-4"
             ]
         },
         {
@@ -102,8 +101,7 @@
                 "@SiNAVM-1",
                 "@SiNAVM-2",
                 "@SiNAVM-3",
-                "@SiNAVM-4",
-                "@SiNAVM-5"
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -121,9 +119,9 @@
         },
         {
             "type": "vmess",
-            "server": "38.110.1.246",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "server": "198.57.27.190",
+            "server_port": 22324,
+            "uuid": "04621bae-ab36-11ec-b909-0242ac120002",
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
@@ -131,9 +129,9 @@
         },
         {
             "type": "vmess",
-            "server": "198.57.27.190",
-            "server_port": 22324,
-            "uuid": "04621bae-ab36-11ec-b909-0242ac120002",
+            "server": "149.88.23.207",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
@@ -141,23 +139,33 @@
         },
         {
             "type": "vmess",
-            "server": "216.106.187.60",
-            "server_port": 22324,
-            "uuid": "04621bae-ab36-11ec-b909-0242ac120002",
+            "server": "yg1.ygkkk.dpdns.org",
+            "server_port": 443,
+            "uuid": "b2ba4a73-3123-479e-aa96-5973a9ecd0c0",
             "security": "auto",
             "alter_id": 0,
+            "tls": {
+                "enabled": true,
+                "server_name": "jmp1.907737.xyz",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm",
+                "headers": {
+                    "Host": "jmp1.907737.xyz"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vmess",
-            "server": "ww11.levikogjgfdd.ir",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-5"
         },
         {
             "type": "direct",
