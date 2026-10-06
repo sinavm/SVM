@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1
+URL-TEST = url-test,SiNAVM | TROJAN | #1
+FALLBACK = fallback,SiNAVM | TROJAN | #1
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
