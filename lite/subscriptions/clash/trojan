@@ -118,31 +118,23 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"51.68.164.10","port":443,"udp":false,"password":"2e631f0c-226a-484b-9e7c-d6c9c444ef13","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fmwf6gbnad0a.dop16.com"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"fmwf6gbnad0a.dop16.com","port":443,"udp":false,"password":"2e631f0c-226a-484b-9e7c-d6c9c444ef13","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fmwf6gbnad0a.dop16.com"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
     interval: 60
     proxies:
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
