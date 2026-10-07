@@ -11,12 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | TROJAN | #1 = trojan, 51.68.164.10, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
-SiNAVM | TROJAN | #2 = trojan, fmwf6gbnad0a.dop16.com, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
+SiNAVM | VMESS | #7 = vmess, yg1.ygkkk.dpdns.org, 443, username = b2ba4a73-3123-479e-aa96-5973a9ecd0c0, ws = true, tls = 1, vmess-aead = true, ws-path = /b2ba4a73-3123-479e-aa96-5973a9ecd0c0-vm, ws-headers = Host:"jmp1.907737.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #7
+URL-TEST = url-test,SiNAVM | VMESS | #7
+FALLBACK = fallback,SiNAVM | VMESS | #7
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
