@@ -11,10 +11,15 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, fmwf6gbnad0a.dop16.com, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
+SiNAVM | TROJAN | #2 = trojan, 51.68.164.10, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
+SiNAVM | TROJAN | #3 = trojan, pl.zhabulik.ru, 443, password = WFer-5gN21nfHbVB2N8s71Z74EPUfzVj, udp-delay = true, skip-cert-verify = false, sni = pl.zhabulik.ru, ws = false
+SiNAVM | TROJAN | #4 = trojan, nl.zhabulik.ru, 443, password = WFer-5gN21nfHbVB2N8s71Z74EPUfzVj, udp-delay = true, skip-cert-verify = false, sni = nl.zhabulik.ru, ws = false
+SiNAVM | TROJAN | #5 = trojan, de.zhabulik.ru, 443, password = WFer-5gN21nfHbVB2N8s71Z74EPUfzVj, udp-delay = true, skip-cert-verify = false, sni = de.zhabulik.ru, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
