@@ -120,43 +120,23 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"fmwf6gbnad0a.dop16.com","port":443,"udp":false,"password":"2e631f0c-226a-484b-9e7c-d6c9c444ef13","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fmwf6gbnad0a.dop16.com"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"51.68.164.10","port":443,"udp":false,"password":"2e631f0c-226a-484b-9e7c-d6c9c444ef13","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"fmwf6gbnad0a.dop16.com"}
-  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"pl.zhabulik.ru","port":443,"udp":false,"password":"WFer-5gN21nfHbVB2N8s71Z74EPUfzVj","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"pl.zhabulik.ru"}
-  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"nl.zhabulik.ru","port":443,"udp":false,"password":"WFer-5gN21nfHbVB2N8s71Z74EPUfzVj","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"nl.zhabulik.ru"}
-  - {"name":"SiNAVM | TROJAN | #5","type":"trojan","server":"de.zhabulik.ru","port":443,"udp":false,"password":"WFer-5gN21nfHbVB2N8s71Z74EPUfzVj","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"de.zhabulik.ru"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #5'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #5'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM | TROJAN | #1'
-      - 'SiNAVM | TROJAN | #2'
-      - 'SiNAVM | TROJAN | #3'
-      - 'SiNAVM | TROJAN | #4'
-      - 'SiNAVM | TROJAN | #5'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
