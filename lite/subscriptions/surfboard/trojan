@@ -11,10 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, 51.68.164.10, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
+SiNAVM | TROJAN | #2 = trojan, fmwf6gbnad0a.dop16.com, 443, password = 2e631f0c-226a-484b-9e7c-d6c9c444ef13, udp-delay = true, skip-cert-verify = false, sni = fmwf6gbnad0a.dop16.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
