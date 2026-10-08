@@ -12,15 +12,16 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 SiNAVM | TROJAN | #1 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #2 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
-SiNAVM | TROJAN | #4 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #5 = trojan, 78.47.146.151, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #6 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #8 = trojan, 203.202.232.211, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #2 = trojan, 78.47.146.151, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #3 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #5 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #7 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #12 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #31 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = wWw.Volumeroot.cOm., ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #31
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #31
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #12,SiNAVM | TROJAN | #31
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
