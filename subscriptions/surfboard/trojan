@@ -12,14 +12,14 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 SiNAVM | TROJAN | #1 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #4 = trojan, 212.227.144.37, 8443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
-SiNAVM | TROJAN | #6 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
-SiNAVM | TROJAN | #8 = trojan, 78.47.146.151, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #10 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = wWw.Volumeroot.cOm., ws = false
+SiNAVM | TROJAN | #2 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #8 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #9 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = wWw.Volumeroot.cOm., ws = false
+SiNAVM | TROJAN | #12 = trojan, 188.114.97.6, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #10
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #10
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #10
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #12
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #12
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #12
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
