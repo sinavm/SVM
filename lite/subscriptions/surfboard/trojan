@@ -12,12 +12,14 @@ enhanced-mode-by-rule = true
 [Proxy]
 DIRECT = direct
 SiNAVM | TROJAN | #1 = trojan, 8.47.69.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
-SiNAVM | TROJAN | #11 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = wWw.Volumeroot.cOm., ws = false
-SiNAVM | TROJAN | #13 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #15 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #28 = trojan, 188.42.145.180, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = wWw.Volumeroot.cOm., ws = false
+SiNAVM | TROJAN | #56 = trojan, 203.202.232.211, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.volumeroot.com, ws = false
+SiNAVM | TROJAN | #61 = trojan, www.speedtest.net, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #13
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #13
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #11,SiNAVM | TROJAN | #13
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #15,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #56,SiNAVM | TROJAN | #61
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #15,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #56,SiNAVM | TROJAN | #61
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #15,SiNAVM | TROJAN | #28,SiNAVM | TROJAN | #56,SiNAVM | TROJAN | #61
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
