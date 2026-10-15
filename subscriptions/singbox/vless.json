@@ -93,7 +93,8 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6"
+                "@SiNAVM-6",
+                "@SiNAVM-7"
             ]
         },
         {
@@ -105,7 +106,8 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6"
+                "@SiNAVM-6",
+                "@SiNAVM-7"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -131,7 +133,7 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/?Telegram---mehrosaboran",
+                "path": "\/",
                 "headers": {
                     "Host": "lucasjow.us.ci"
                 },
@@ -160,7 +162,7 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/",
+                "path": "\/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
                 "headers": {
                     "Host": "lucasjow.us.ci"
                 },
@@ -218,7 +220,7 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/?Telegram---bored_vpn",
+                "path": "\/?Telegram---mehrosaboran",
                 "headers": {
                     "Host": "lucasjow.us.ci"
                 },
@@ -226,6 +228,35 @@
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
+        },
+        {
+            "type": "vless",
+            "server": "188.114.98.0",
+            "server_port": 443,
+            "uuid": "e6df2095-a73c-4043-8693-8d5a03686870",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "lucasjow.us.ci",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/?Telegram---bored_vpn",
+                "headers": {
+                    "Host": "lucasjow.us.ci"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vless",
@@ -254,7 +285,7 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-5"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "vless",
@@ -281,7 +312,7 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-6"
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "direct",
