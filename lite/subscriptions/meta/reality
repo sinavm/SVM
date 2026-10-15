@@ -120,27 +120,27 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-88eb9ba4","type":"vless","server":"193.163.203.170","port":443,"udp":true,"uuid":"11aabba0-5fd1-4f15-8068-74c1a466cefc","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yandex.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o","short-id":"b28db60d77c50b4f"}}
+  - {"name":"SiNAVM-reality-aa317f7a","type":"vless","server":"185.115.34.209","port":8444,"udp":true,"uuid":"f55e9aba-7b14-4f6f-b59a-d5b3d45c9309","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"github.com","grpc-opts":{"grpc-service-name":"GunService"},"reality-opts":{"public-key":"FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-88eb9ba4'
+      - 'SiNAVM-reality-aa317f7a'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-88eb9ba4'
+      - 'SiNAVM-reality-aa317f7a'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-88eb9ba4'
+      - 'SiNAVM-reality-aa317f7a'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
