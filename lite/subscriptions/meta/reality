@@ -120,35 +120,39 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-0b753d3d","type":"vless","server":"ww9.levikogjgfdd.ir","port":36925,"udp":true,"uuid":"c9fd0fb1-8251-4106-b09a-f4b426736f67","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0"}}
-  - {"name":"SiNAVM-reality-aa479717","type":"vless","server":"sw.golangwikito.cfd","port":443,"udp":true,"uuid":"f8d52ece-fad4-478d-875d-df6eed3befa7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"sw.golangwikito.cfd","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg","short-id":"a1037b25dcef6aa7"}}
-  - {"name":"SiNAVM-reality-a0fb6db8","type":"vless","server":"78.159.250.88","port":2096,"udp":true,"uuid":"e667f5c7-6b38-48ef-ab89-40519713afb0","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"id.vk.com","grpc-opts":{"grpc-service-name":"vless-grpc-reality"},"reality-opts":{"public-key":"SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"}}
+  - {"name":"SiNAVM-reality-e9dcf952","type":"vless","server":"ww9.levikogjgfdd.ir","port":36925,"udp":true,"uuid":"c9fd0fb1-8251-4106-b09a-f4b426736f67","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0"}}
+  - {"name":"SiNAVM-reality-1b8083c4","type":"vless","server":"185.192.22.159","port":8444,"udp":true,"uuid":"f55e9aba-7b14-4f6f-b59a-d5b3d45c9309","tls":true,"network":"grpc","client-fingerprint":null,"servername":"github.com","grpc-opts":{"grpc-service-name":"GunService"},"reality-opts":{"public-key":"FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0","short-id":"457fab2ac885dbe0"}}
+  - {"name":"SiNAVM-reality-9767a79a","type":"vless","server":"sw.golangwikito.cfd","port":443,"udp":true,"uuid":"f8d52ece-fad4-478d-875d-df6eed3befa7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"sw.golangwikito.cfd","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg","short-id":"a1037b25dcef6aa7"}}
+  - {"name":"SiNAVM-reality-68a77f76","type":"vless","server":"78.159.250.88","port":2096,"udp":true,"uuid":"e667f5c7-6b38-48ef-ab89-40519713afb0","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"id.vk.com","grpc-opts":{"grpc-service-name":"vless-grpc-reality"},"reality-opts":{"public-key":"SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-0b753d3d'
-      - 'SiNAVM-reality-aa479717'
-      - 'SiNAVM-reality-a0fb6db8'
+      - 'SiNAVM-reality-e9dcf952'
+      - 'SiNAVM-reality-1b8083c4'
+      - 'SiNAVM-reality-9767a79a'
+      - 'SiNAVM-reality-68a77f76'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-0b753d3d'
-      - 'SiNAVM-reality-aa479717'
-      - 'SiNAVM-reality-a0fb6db8'
+      - 'SiNAVM-reality-e9dcf952'
+      - 'SiNAVM-reality-1b8083c4'
+      - 'SiNAVM-reality-9767a79a'
+      - 'SiNAVM-reality-68a77f76'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-0b753d3d'
-      - 'SiNAVM-reality-aa479717'
-      - 'SiNAVM-reality-a0fb6db8'
+      - 'SiNAVM-reality-e9dcf952'
+      - 'SiNAVM-reality-1b8083c4'
+      - 'SiNAVM-reality-9767a79a'
+      - 'SiNAVM-reality-68a77f76'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
