@@ -120,35 +120,27 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-15e18321","type":"vless","server":"ww9.levikogjgfdd.ir","port":36925,"udp":true,"uuid":"c9fd0fb1-8251-4106-b09a-f4b426736f67","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0"}}
-  - {"name":"SiNAVM-reality-d5583264","type":"vless","server":"sw.golangwikito.cfd","port":443,"udp":true,"uuid":"f8d52ece-fad4-478d-875d-df6eed3befa7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"sw.golangwikito.cfd","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg","short-id":"a1037b25dcef6aa7"}}
-  - {"name":"SiNAVM-reality-cf9a817f","type":"vless","server":"78.159.250.88","port":2096,"udp":true,"uuid":"e667f5c7-6b38-48ef-ab89-40519713afb0","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"id.vk.com","grpc-opts":{"grpc-service-name":"vless-grpc-reality"},"reality-opts":{"public-key":"SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"}}
+  - {"name":"SiNAVM-reality-e75048e5","type":"vless","server":"ww9.levikogjgfdd.ir","port":36925,"udp":true,"uuid":"c9fd0fb1-8251-4106-b09a-f4b426736f67","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"lJ9INPpO4rdnm2Tek_yg0PGFyUrBB6MoKyvqt_Mfqm0"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-15e18321'
-      - 'SiNAVM-reality-d5583264'
-      - 'SiNAVM-reality-cf9a817f'
+      - 'SiNAVM-reality-e75048e5'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-15e18321'
-      - 'SiNAVM-reality-d5583264'
-      - 'SiNAVM-reality-cf9a817f'
+      - 'SiNAVM-reality-e75048e5'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-15e18321'
-      - 'SiNAVM-reality-d5583264'
-      - 'SiNAVM-reality-cf9a817f'
+      - 'SiNAVM-reality-e75048e5'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
