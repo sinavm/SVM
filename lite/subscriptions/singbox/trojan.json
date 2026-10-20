@@ -98,7 +98,8 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11"
+                "@SiNAVM-11",
+                "@SiNAVM-12"
             ]
         },
         {
@@ -115,7 +116,8 @@
                 "@SiNAVM-8",
                 "@SiNAVM-9",
                 "@SiNAVM-10",
-                "@SiNAVM-11"
+                "@SiNAVM-11",
+                "@SiNAVM-12"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -123,12 +125,12 @@
         },
         {
             "type": "trojan",
-            "server": "de9.dedushka.top",
+            "server": "188.114.97.6",
             "server_port": 443,
-            "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+            "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "de9.dedushka.top",
+                "server_name": "www.volumeroot.com",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -137,29 +139,17 @@
                     "enabled": true,
                     "fingerprint": "chrome"
                 }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.volumeroot.com"
+                },
+                "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "trojan",
-            "server": "188.241.241.235",
-            "server_port": 443,
-            "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
-            "tls": {
-                "enabled": true,
-                "server_name": "de9.dedushka.top",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "trojan",
@@ -183,6 +173,34 @@
                 "path": "\/assignment",
                 "headers": {
                     "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "trojan",
+            "server": "www.speedtest.net",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
@@ -191,12 +209,12 @@
         },
         {
             "type": "trojan",
-            "server": "188.114.97.6",
+            "server": "188.114.98.0",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.pleadcourt.org",
+                "server_name": "www.volumeroot.com",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -210,96 +228,12 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "www.pleadcourt.org"
+                    "Host": "www.volumeroot.com"
                 },
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.volumeroot.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.volumeroot.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.6",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.volumeroot.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.volumeroot.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
-            "tls": {
-                "enabled": true,
-                "server_name": "nat3.xxai.dpdns.org",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/anyway",
-                "headers": {
-                    "Host": "nat3.xxai.dpdns.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-7"
         },
         {
             "type": "trojan",
@@ -319,16 +253,84 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-8"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "trojan",
-            "server": "de2.dedushka.top",
+            "server": "de9.dedushka.top",
             "server_port": 443,
             "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
             "tls": {
                 "enabled": true,
-                "server_name": "de2.dedushka.top",
+                "server_name": "de9.dedushka.top",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.97.6",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-7"
+        },
+        {
+            "type": "trojan",
+            "server": "188.241.241.235",
+            "server_port": 443,
+            "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+            "tls": {
+                "enabled": true,
+                "server_name": "de9.dedushka.top",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-8"
+        },
+        {
+            "type": "trojan",
+            "server": "188.241.241.236",
+            "server_port": 443,
+            "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+            "tls": {
+                "enabled": true,
+                "server_name": "de10.dedushka.top",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -363,12 +365,12 @@
         },
         {
             "type": "trojan",
-            "server": "188.241.241.236",
+            "server": "de4.dedushka.top",
             "server_port": 443,
             "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
             "tls": {
                 "enabled": true,
-                "server_name": "de10.dedushka.top",
+                "server_name": "de4.dedushka.top",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -380,6 +382,26 @@
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-11"
+        },
+        {
+            "type": "trojan",
+            "server": "de2.dedushka.top",
+            "server_port": 443,
+            "password": "4_VfP9fKaM-3LpSVvoZuc_WUzLoCdHaA",
+            "tls": {
+                "enabled": true,
+                "server_name": "de2.dedushka.top",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "direct",
