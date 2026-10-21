@@ -120,39 +120,27 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-5dc975ab","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":"","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
-  - {"name":"SiNAVM-reality-712121c0","type":"vless","server":"lists.soloramtin.cyou","port":443,"udp":true,"uuid":"67eb6b17-7797-4ded-bf52-423c4c5f6cbd","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.foxsports.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY","short-id":"91af08b1ce1f"}}
-  - {"name":"SiNAVM-reality-df6b847c","type":"vless","server":"185.192.22.159","port":8444,"udp":true,"uuid":"f55e9aba-7b14-4f6f-b59a-d5b3d45c9309","tls":true,"network":"grpc","client-fingerprint":null,"servername":"github.com","grpc-opts":{"grpc-service-name":"GunService"},"reality-opts":{"public-key":"FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0","short-id":"457fab2ac885dbe0"}}
-  - {"name":"SiNAVM-reality-673808b9","type":"vless","server":"193.233.253.180","port":8444,"udp":true,"uuid":"f55e9aba-7b14-4f6f-b59a-d5b3d45c9309","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"github.com","grpc-opts":{"grpc-service-name":"GunService"},"reality-opts":{"public-key":"FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0","short-id":"457fab2ac885dbe0"}}
+  - {"name":"SiNAVM-reality-53d5057b","type":"vless","server":"193.233.253.180","port":8444,"udp":true,"uuid":"f55e9aba-7b14-4f6f-b59a-d5b3d45c9309","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"github.com","grpc-opts":{"grpc-service-name":"GunService"},"reality-opts":{"public-key":"FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0","short-id":"457fab2ac885dbe0"}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-5dc975ab'
-      - 'SiNAVM-reality-712121c0'
-      - 'SiNAVM-reality-df6b847c'
-      - 'SiNAVM-reality-673808b9'
+      - 'SiNAVM-reality-53d5057b'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-5dc975ab'
-      - 'SiNAVM-reality-712121c0'
-      - 'SiNAVM-reality-df6b847c'
-      - 'SiNAVM-reality-673808b9'
+      - 'SiNAVM-reality-53d5057b'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-5dc975ab'
-      - 'SiNAVM-reality-712121c0'
-      - 'SiNAVM-reality-df6b847c'
-      - 'SiNAVM-reality-673808b9'
+      - 'SiNAVM-reality-53d5057b'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
