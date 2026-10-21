@@ -107,6 +107,33 @@
         },
         {
             "type": "vless",
+            "server": "sw.golangwikito.cfd",
+            "server_port": 443,
+            "uuid": "f8d52ece-fad4-478d-875d-df6eed3befa7",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "sw.golangwikito.cfd",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "Kb8SsVPprs46BJSUNp5JvWLI-TFEiHmlBOXLQd37Glg",
+                    "short_id": "a1037b25dcef6aa7"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
             "server": "lists.soloramtin.cyou",
             "server_port": 443,
             "uuid": "67eb6b17-7797-4ded-bf52-423c4c5f6cbd",
@@ -127,32 +154,6 @@
                     "enabled": true,
                     "public_key": "G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY",
                     "short_id": "91af08b1ce1f"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vless",
-            "server": "45.12.75.242",
-            "server_port": 26424,
-            "uuid": "633f424e-2b11-48da-a6b3-a849dd71456f",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "ya.ru",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0",
-                    "short_id": "23103e1e"
                 }
             },
             "domain_resolver": "dns_direct",
