@@ -120,27 +120,35 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM-reality-0b261f4d","type":"vless","server":"ai.smrtai.top","port":443,"udp":true,"uuid":"086bf957-9cd0-4e55-8280-bbef10435b41","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","reality-opts":{"public-key":"R-w7BpNgtryZRBMyRoHx81OnjzAwrKhVtV1EUKLFJzc","short-id":"086bf957"}}
+  - {"name":"SiNAVM-reality-f78770ca","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
+  - {"name":"SiNAVM-reality-df13bce7","type":"vless","server":"pl1.h1cloud.net","port":27591,"udp":true,"uuid":"056405e8-de9f-4d0d-8145-956f13cc34da","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.samsung.com","reality-opts":{"public-key":"LY0H47MWx87_L_JBzxFAuTzKZB53U7MrZQK8-dNnMxM","short-id":"6c5c7900406a1ae7"}}
+  - {"name":"SiNAVM | VLESS | #10","type":"vless","server":"157.22.128.7","port":443,"udp":false,"uuid":"04c808e2-0b59-47b0-a54b-32fc7ef1c902","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"free.cndyw.ggff.net","ws-opts":{"path":"pyip=bpb.yousef.isegaro.comfp=chrome","headers":{"host":"free.cndyw.ggff.net"}}}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
-      - 'SiNAVM-reality-0b261f4d'
+      - 'SiNAVM-reality-f78770ca'
+      - 'SiNAVM-reality-df13bce7'
+      - 'SiNAVM | VLESS | #10'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
-      - 'SiNAVM-reality-0b261f4d'
+      - 'SiNAVM-reality-f78770ca'
+      - 'SiNAVM-reality-df13bce7'
+      - 'SiNAVM | VLESS | #10'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
-      - 'SiNAVM-reality-0b261f4d'
+      - 'SiNAVM-reality-f78770ca'
+      - 'SiNAVM-reality-df13bce7'
+      - 'SiNAVM | VLESS | #10'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
