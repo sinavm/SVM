@@ -194,25 +194,7 @@
                 "@SiNAVM-104",
                 "@SiNAVM-105",
                 "@SiNAVM-106",
-                "@SiNAVM-107",
-                "@SiNAVM-108",
-                "@SiNAVM-109",
-                "@SiNAVM-110",
-                "@SiNAVM-111",
-                "@SiNAVM-112",
-                "@SiNAVM-113",
-                "@SiNAVM-114",
-                "@SiNAVM-115",
-                "@SiNAVM-116",
-                "@SiNAVM-117",
-                "@SiNAVM-118",
-                "@SiNAVM-119",
-                "@SiNAVM-120",
-                "@SiNAVM-121",
-                "@SiNAVM-122",
-                "@SiNAVM-123",
-                "@SiNAVM-124",
-                "@SiNAVM-125"
+                "@SiNAVM-107"
             ]
         },
         {
@@ -325,25 +307,7 @@
                 "@SiNAVM-104",
                 "@SiNAVM-105",
                 "@SiNAVM-106",
-                "@SiNAVM-107",
-                "@SiNAVM-108",
-                "@SiNAVM-109",
-                "@SiNAVM-110",
-                "@SiNAVM-111",
-                "@SiNAVM-112",
-                "@SiNAVM-113",
-                "@SiNAVM-114",
-                "@SiNAVM-115",
-                "@SiNAVM-116",
-                "@SiNAVM-117",
-                "@SiNAVM-118",
-                "@SiNAVM-119",
-                "@SiNAVM-120",
-                "@SiNAVM-121",
-                "@SiNAVM-122",
-                "@SiNAVM-123",
-                "@SiNAVM-124",
-                "@SiNAVM-125"
+                "@SiNAVM-107"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -351,14 +315,14 @@
         },
         {
             "type": "vless",
-            "server": "15.204.97.195",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "server": "47.253.226.114",
+            "server_port": 443,
+            "uuid": "055a1ce8-2a16-4a0d-a2c2-22826c9b2413",
             "packet_encoding": "xudp",
             "flow": "xtls-rprx-vision",
             "tls": {
                 "enabled": true,
-                "server_name": "fuck.rkn",
+                "server_name": "www.cloudflare.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -369,118 +333,50 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
+                    "public_key": "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc",
+                    "short_id": ""
                 }
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-1"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.197",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "198.98.53.130",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "eDfN7SODQceIOmIAbtJJtK",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-2"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.214",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "193.151.163.18",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.219",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "45.86.51.18",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.198",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "51.222.136.236",
+            "server_port": 8882,
+            "method": "aes-256-gcm",
+            "password": "kDWvXYZoTBcGkC4",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-5"
         },
@@ -513,7 +409,7 @@
         },
         {
             "type": "vless",
-            "server": "15.204.97.216",
+            "server": "15.204.97.219",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -539,38 +435,89 @@
             "tag": "@SiNAVM-7"
         },
         {
-            "type": "shadowsocks",
-            "server": "193.151.163.18",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "15.204.97.198",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-8"
         },
         {
-            "type": "shadowsocks",
-            "server": "45.86.51.18",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "ww13.levikogjgfdd.ir",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-9"
         },
         {
-            "type": "shadowsocks",
-            "server": "15.204.246.132",
-            "server_port": 7307,
-            "method": "aes-256-gcm",
-            "password": "FoOiGlkAA9yPEGP",
-            "udp_over_tcp": true,
+            "type": "vless",
+            "server": "15.204.97.214",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
-            "server": "51.158.206.98",
+            "server": "15.204.97.216",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -596,13 +543,15 @@
             "tag": "@SiNAVM-11"
         },
         {
-            "type": "trojan",
-            "server": "162.159.133.152",
-            "server_port": 443,
-            "password": "humanity",
+            "type": "vless",
+            "server": "15.204.97.195",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
             "tls": {
                 "enabled": true,
-                "server_name": "www.pleadcourt.org",
+                "server_name": "fuck.rkn",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -610,22 +559,19 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
                 },
-                "max_early_data": 0
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-12"
         },
         {
             "type": "vless",
-            "server": "51.158.206.34",
+            "server": "15.204.97.197",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -652,7 +598,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.80",
+            "server": "51.158.206.26",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -679,7 +625,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.26",
+            "server": "51.158.206.93",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -706,7 +652,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.97",
+            "server": "51.158.206.25",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -733,7 +679,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.25",
+            "server": "51.158.206.8",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -760,7 +706,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.96",
+            "server": "51.158.206.86",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -814,7 +760,7 @@
         },
         {
             "type": "vless",
-            "server": "51.158.206.93",
+            "server": "51.158.206.80",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -838,61 +784,6 @@
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-20"
-        },
-        {
-            "type": "trojan",
-            "server": "172.66.1.36",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-21"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.103",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-22"
         },
         {
             "type": "vless",
@@ -919,16 +810,71 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-23"
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.96",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "trojan",
-            "server": "8.47.69.0",
+            "server": "212.183.88.136",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.pleadcourt.org",
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-23"
+        },
+        {
+            "type": "trojan",
+            "server": "172.66.40.99",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.trusteeforward.com",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -942,7 +888,7 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "www.pleadcourt.org"
+                    "Host": "www.trusteeforward.com"
                 },
                 "max_early_data": 0
             },
@@ -951,7 +897,7 @@
         },
         {
             "type": "trojan",
-            "server": "www.speedtest.net",
+            "server": "212.183.88.136",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -979,15 +925,15 @@
         },
         {
             "type": "trojan",
-            "server": "109.234.211.232",
+            "server": "45.80.111.7",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.pleadcourt.org",
+                "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "utls": {
                     "enabled": true,
@@ -998,171 +944,12 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "www.pleadcourt.org"
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.2",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-27"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.34",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-28"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.6",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-29"
-        },
-        {
-            "type": "trojan",
-            "server": "212.183.88.136",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-30"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.6",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-31"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.8",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-32"
-        },
-        {
-            "type": "trojan",
-            "server": "172.64.190.13",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-33"
         },
         {
             "type": "vless",
@@ -1189,217 +976,11 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-34"
-        },
-        {
-            "type": "trojan",
-            "server": "104.18.32.47",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-35"
-        },
-        {
-            "type": "trojan",
-            "server": "108.162.194.134",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-36"
-        },
-        {
-            "type": "trojan",
-            "server": "212.183.88.136",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-37"
-        },
-        {
-            "type": "trojan",
-            "server": "172.64.145.133",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-38"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.82",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-39"
-        },
-        {
-            "type": "trojan",
-            "server": "172.64.152.23",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-40"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-41"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.4",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-42"
+            "tag": "@SiNAVM-27"
         },
         {
             "type": "vless",
-            "server": "51.158.206.19",
+            "server": "51.158.206.97",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -1422,34 +1003,7 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-43"
-        },
-        {
-            "type": "vless",
-            "server": "62.210.91.2",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-44"
+            "tag": "@SiNAVM-28"
         },
         {
             "type": "shadowsocks",
@@ -1459,272 +1013,7 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-45"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.155",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-46"
-        },
-        {
-            "type": "trojan",
-            "server": "104.25.108.234",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-47"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.169",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-48"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.3",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-49"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.6",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-50"
-        },
-        {
-            "type": "vless",
-            "server": "62.210.91.10",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-51"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.8",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-52"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.42",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-53"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-54"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.204",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-55"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.35",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-56"
-        },
-        {
-            "type": "trojan",
-            "server": "104.27.201.80",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-57"
-        },
-        {
-            "type": "trojan",
-            "server": "45.80.111.7",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-58"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "178.83.185.156",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-59"
+            "tag": "@SiNAVM-29"
         },
         {
             "type": "trojan",
@@ -1752,269 +1041,11 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-60"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.179",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-61"
-        },
-        {
-            "type": "trojan",
-            "server": "141.193.213.172",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-62"
-        },
-        {
-            "type": "trojan",
-            "server": "104.16.72.41",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-63"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.162",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-64"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.66",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-65"
-        },
-        {
-            "type": "trojan",
-            "server": "104.18.9.83",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-66"
-        },
-        {
-            "type": "trojan",
-            "server": "104.27.203.207",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-67"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.61",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-68"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "213.202.208.199",
-            "server_port": 7001,
-            "method": "aes-256-gcm",
-            "password": "RexnBgU7EV5ADxG",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-69"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.159",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-70"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.62",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-71"
-        },
-        {
-            "type": "trojan",
-            "server": "104.18.45.38",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-72"
-        },
-        {
-            "type": "trojan",
-            "server": "185.114.72.31",
-            "server_port": 2053,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.calmlunch.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-73"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.202",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-74"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.26",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-75"
+            "tag": "@SiNAVM-30"
         },
         {
             "type": "vless",
-            "server": "51.158.206.86",
+            "server": "51.158.206.103",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -2037,33 +1068,63 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-76"
+            "tag": "@SiNAVM-31"
         },
         {
-            "type": "vless",
-            "server": "45.132.75.213",
-            "server_port": 2053,
-            "uuid": "f46182d1-e13b-47d3-97e2-fa5426a93e7c",
-            "packet_encoding": "xudp",
+            "type": "trojan",
+            "server": "www.speedtest.net",
+            "server_port": 443,
+            "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.cloudflare.com",
+                "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
                     "h3"
                 ],
                 "utls": {
                     "enabled": true,
-                    "fingerprint": "firefox"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "TpWeZocgNOygOhMo0l7oJawPu7STkn9D-SOa0UppcyY",
-                    "short_id": "cd7e85995ae2afc9"
+                    "fingerprint": "chrome"
                 }
             },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-77"
+            "tag": "@SiNAVM-32"
+        },
+        {
+            "type": "trojan",
+            "server": "8.6.112.206",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.trusteeforward.com",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.trusteeforward.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-33"
         },
         {
             "type": "vless",
@@ -2090,7 +1151,7 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-78"
+            "tag": "@SiNAVM-34"
         },
         {
             "type": "trojan",
@@ -2099,7 +1160,7 @@
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.trusteeforward.com",
+                "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -2113,31 +1174,21 @@
                 "type": "ws",
                 "path": "\/assignment",
                 "headers": {
-                    "Host": "www.trusteeforward.com"
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-79"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "202.50.253.27",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-80"
+            "tag": "@SiNAVM-35"
         },
         {
             "type": "trojan",
-            "server": "104.18.45.38",
+            "server": "188.114.98.0",
             "server_port": 443,
             "password": "humanity",
             "tls": {
                 "enabled": true,
-                "server_name": "www.trusteeforward.com",
+                "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
                     "http\/1.1"
@@ -2149,25 +1200,25 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/assignment",
+                "path": "\/\/assignment",
                 "headers": {
-                    "Host": "www.trusteeforward.com"
+                    "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-81"
+            "tag": "@SiNAVM-36"
         },
         {
             "type": "vless",
-            "server": "213.152.165.201",
-            "server_port": 2094,
-            "uuid": "2ddcb519-ac96-48fe-8f91-4af4254c7d90",
+            "server": "51.158.206.34",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
             "flow": "xtls-rprx-vision",
             "tls": {
                 "enabled": true,
-                "server_name": "www.apple.com",
+                "server_name": "fuck.rkn",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -2178,72 +1229,26 @@
                 },
                 "reality": {
                     "enabled": true,
-                    "public_key": "jHtC6ayzhkd_GVNF5TIGPu9iVpqUltBAQj1dpGJHwxs",
-                    "short_id": "55986a94e2228791"
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-82"
-        },
-        {
-            "type": "vless",
-            "server": "95.216.27.15",
-            "server_port": 2053,
-            "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.google.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
-                    "short_id": "d368b94e275ab080"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-83"
+            "tag": "@SiNAVM-37"
         },
         {
             "type": "shadowsocks",
-            "server": "51.79.49.116",
-            "server_port": 8882,
-            "method": "aes-256-gcm",
-            "password": "kDWvXYZoTBcGkC4",
+            "server": "82.38.31.198",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-84"
+            "tag": "@SiNAVM-38"
         },
         {
             "type": "trojan",
-            "server": "92.118.150.146",
-            "server_port": 443,
-            "password": "Trojan@82164024",
-            "tls": {
-                "enabled": true,
-                "server_name": "pl.tronsg.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-85"
-        },
-        {
-            "type": "trojan",
-            "server": "185.220.100.168",
+            "server": "188.114.97.6",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -2251,7 +1256,7 @@
                 "server_name": "www.calmlunch.com",
                 "insecure": false,
                 "alpn": [
-                    "h3"
+                    "http\/1.1"
                 ],
                 "utls": {
                     "enabled": true,
@@ -2260,23 +1265,45 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/assignment",
+                "path": "\/\/assignment",
                 "headers": {
                     "Host": "www.calmlunch.com"
                 },
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-86"
+            "tag": "@SiNAVM-39"
         },
         {
-            "type": "trojan",
-            "server": "185.225.68.232",
+            "type": "shadowsocks",
+            "server": "82.38.31.162",
             "server_port": 443,
-            "password": "humanity",
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-40"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "178.83.185.156",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-41"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.19",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
             "tls": {
                 "enabled": true,
-                "server_name": "www.calmlunch.com",
+                "server_name": "fuck.rkn",
                 "insecure": false,
                 "alpn": [
                     "h3"
@@ -2284,18 +1311,35 @@
                 "utls": {
                     "enabled": true,
                     "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
                 }
             },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.calmlunch.com"
-                },
-                "max_early_data": 0
-            },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-87"
+            "tag": "@SiNAVM-42"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.9",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-43"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.155",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-44"
         },
         {
             "type": "trojan",
@@ -2323,11 +1367,77 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-88"
+            "tag": "@SiNAVM-45"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.179",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-46"
         },
         {
             "type": "trojan",
-            "server": "185.255.179.166",
+            "server": "185.114.72.31",
+            "server_port": 2053,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-47"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.97.6",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.trusteeforward.com",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.trusteeforward.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-48"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.32.47",
             "server_port": 443,
             "password": "humanity",
             "tls": {
@@ -2351,7 +1461,101 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-89"
+            "tag": "@SiNAVM-49"
+        },
+        {
+            "type": "trojan",
+            "server": "104.25.108.234",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-50"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.9.83",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-51"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.45.38",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.trusteeforward.com",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.trusteeforward.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-52"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.171",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-53"
         },
         {
             "type": "trojan",
@@ -2379,7 +1583,995 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-54"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.186",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-55"
+        },
+        {
+            "type": "vless",
+            "server": "62.210.91.2",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-56"
+        },
+        {
+            "type": "trojan",
+            "server": "108.162.194.134",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-57"
+        },
+        {
+            "type": "trojan",
+            "server": "172.66.1.36",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-58"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "202.50.253.63",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-59"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.179",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-60"
+        },
+        {
+            "type": "trojan",
+            "server": "141.193.213.172",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-61"
+        },
+        {
+            "type": "trojan",
+            "server": "172.64.152.23",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-62"
+        },
+        {
+            "type": "trojan",
+            "server": "8.47.69.0",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-63"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "15.204.246.132",
+            "server_port": 7307,
+            "method": "aes-256-gcm",
+            "password": "FoOiGlkAA9yPEGP",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-64"
+        },
+        {
+            "type": "trojan",
+            "server": "104.19.229.21",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-65"
+        },
+        {
+            "type": "trojan",
+            "server": "109.234.211.232",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-66"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.97.6",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-67"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "202.50.253.27",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-68"
+        },
+        {
+            "type": "trojan",
+            "server": "88.216.69.253",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-69"
+        },
+        {
+            "type": "trojan",
+            "server": "85.31.102.163",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-70"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.168",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "QCXDxuDlTTMD7jtgHUjIoj",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-71"
+        },
+        {
+            "type": "trojan",
+            "server": "185.220.100.168",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-72"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "185.176.204.18",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-73"
+        },
+        {
+            "type": "trojan",
+            "server": "104.16.72.41",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-74"
+        },
+        {
+            "type": "trojan",
+            "server": "chatgpt.com",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-75"
+        },
+        {
+            "type": "trojan",
+            "server": "104.18.45.38",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-76"
+        },
+        {
+            "type": "trojan",
+            "server": "185.225.68.232",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-77"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.98.0",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-78"
+        },
+        {
+            "type": "vless",
+            "server": "95.216.27.15",
+            "server_port": 2053,
+            "uuid": "1c81f6d3-5771-4c5d-9fdd-1655eff50634",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.google.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM",
+                    "short_id": "d368b94e275ab080"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-79"
+        },
+        {
+            "type": "trojan",
+            "server": "185.255.179.166",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-80"
+        },
+        {
+            "type": "trojan",
+            "server": "190.93.245.148",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-81"
+        },
+        {
+            "type": "trojan",
+            "server": "195.181.244.216",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.calmlunch.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.calmlunch.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-82"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.201",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-83"
+        },
+        {
+            "type": "trojan",
+            "server": "172.64.190.13",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-84"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "15.204.233.41",
+            "server_port": 8882,
+            "method": "aes-256-gcm",
+            "password": "kDWvXYZoTBcGkC4",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-85"
+        },
+        {
+            "type": "vless",
+            "server": "ru.letsconnectpoint.com",
+            "server_port": 443,
+            "uuid": "4b1be712-774c-4b65-8491-a3339e124a70",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "ru.letsconnectpoint.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "myIjvlXZS0rm1eg4q2w5WsQBuj80i2rBA0HpRGCUg1w",
+                    "short_id": "86d1efde"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-86"
+        },
+        {
+            "type": "trojan",
+            "server": "162.159.133.152",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-87"
+        },
+        {
+            "type": "trojan",
+            "server": "172.64.145.133",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-88"
+        },
+        {
+            "type": "vless",
+            "server": "45.12.75.242",
+            "server_port": 26424,
+            "uuid": "633f424e-2b11-48da-a6b3-a849dd71456f",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "ya.ru",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0",
+                    "short_id": "23103e1e"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-89"
+        },
+        {
+            "type": "vless",
+            "server": "51.158.206.98",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-90"
+        },
+        {
+            "type": "trojan",
+            "server": "104.27.201.80",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-91"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.13",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-92"
+        },
+        {
+            "type": "vmess",
+            "server": "149.88.23.207",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-93"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "202.50.253.45",
+            "server_port": 19999,
+            "method": "aes-256-gcm",
+            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-94"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "102.133.165.160",
+            "server_port": 16233,
+            "method": "chacha20-ietf-poly1305",
+            "password": "Xsy8Ox4yOV3xLlpxtjzs3X",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-95"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.97.8",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-96"
+        },
+        {
+            "type": "vless",
+            "server": "62.210.91.10",
+            "server_port": 23576,
+            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "fuck.rkn",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+                    "short_id": "01"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-97"
+        },
+        {
+            "type": "vless",
+            "server": "45.132.75.213",
+            "server_port": 2053,
+            "uuid": "f46182d1-e13b-47d3-97e2-fa5426a93e7c",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.cloudflare.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "TpWeZocgNOygOhMo0l7oJawPu7STkn9D-SOa0UppcyY",
+                    "short_id": "cd7e85995ae2afc9"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-98"
         },
         {
             "type": "shadowsocks",
@@ -2389,7 +2581,55 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-91"
+            "tag": "@SiNAVM-99"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.205",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-100"
+        },
+        {
+            "type": "trojan",
+            "server": "104.27.203.207",
+            "server_port": 443,
+            "password": "humanity",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.pleadcourt.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/assignment",
+                "headers": {
+                    "Host": "www.pleadcourt.org"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-101"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "94.156.250.148",
+            "server_port": 7001,
+            "method": "aes-256-gcm",
+            "password": "RexnBgU7EV5ADxG",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-102"
         },
         {
             "type": "vless",
@@ -2418,449 +2658,47 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-92"
-        },
-        {
-            "type": "vmess",
-            "server": "149.88.23.207",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-93"
-        },
-        {
-            "type": "trojan",
-            "server": "8.6.112.206",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.trusteeforward.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.trusteeforward.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-94"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "202.50.253.45",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-95"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.171",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-96"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.170",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-97"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "94.156.250.148",
-            "server_port": 7001,
-            "method": "aes-256-gcm",
-            "password": "RexnBgU7EV5ADxG",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-98"
-        },
-        {
-            "type": "vless",
-            "server": "152.228.139.33",
-            "server_port": 51671,
-            "uuid": "75cc7568-abb0-46a8-88be-8137d3c647d4",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.sony.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "-5PowNUY37Pi01YKO9fjRTrum1m_9n6XauaPDpmOJzU",
-                    "short_id": "2fed44d8c59f7e71"
-                }
-            },
-            "transport": {
-                "type": "grpc",
-                "service_name": "grpc_common3",
-                "idle_timeout": "15s",
-                "ping_timeout": "15s",
-                "permit_without_stream": false
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-99"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "202.50.253.63",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-100"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "102.133.165.160",
-            "server_port": 16233,
-            "method": "chacha20-ietf-poly1305",
-            "password": "Xsy8Ox4yOV3xLlpxtjzs3X",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-101"
-        },
-        {
-            "type": "trojan",
-            "server": "172.66.40.99",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.trusteeforward.com",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.trusteeforward.com"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-102"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.175",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-103"
         },
         {
-            "type": "vless",
-            "server": "147.45.46.157",
-            "server_port": 8443,
-            "uuid": "75985152-e16e-4a48-87ff-35c2615e0ab5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "apple.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "firefox"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc",
-                    "short_id": ""
-                }
-            },
+            "type": "shadowsocks",
+            "server": "82.38.31.176",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-104"
         },
         {
             "type": "shadowsocks",
-            "server": "82.38.31.174",
-            "server_port": 443,
+            "server": "193.29.139.212",
+            "server_port": 8080,
             "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "password": "QCXDxuDlTTMD7jtgHUjIoj",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-105"
         },
         {
-            "type": "trojan",
-            "server": "190.93.245.148",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
+            "type": "shadowsocks",
+            "server": "82.38.31.178",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-106"
         },
         {
             "type": "shadowsocks",
-            "server": "82.38.31.149",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "server": "172.105.39.124",
+            "server_port": 7002,
+            "method": "aes-256-gcm",
+            "password": "RexnBgU7EV5ADxG",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-107"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.10",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-108"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.235",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-109"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.235",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-110"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "198.98.53.130",
-            "server_port": 443,
-            "method": "chacha20-ietf-poly1305",
-            "password": "eDfN7SODQceIOmIAbtJJtK",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-111"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.39",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-112"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.198",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-113"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.54",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-114"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.198",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-115"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "193.29.139.197",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-116"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.28",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-117"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "15.204.247.124",
-            "server_port": 2375,
-            "method": "aes-256-gcm",
-            "password": "faBAoD54k87UJG7",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-118"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.201",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "k1dBOmOB4oqi7Ump37a1bQ",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-119"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "185.176.204.18",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-120"
-        },
-        {
-            "type": "trojan",
-            "server": "188.114.97.2",
-            "server_port": 443,
-            "password": "humanity",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.pleadcourt.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/assignment",
-                "headers": {
-                    "Host": "www.pleadcourt.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-121"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.18",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-122"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.16",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-123"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.17",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-124"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "82.38.31.69",
-            "server_port": 8080,
-            "method": "chacha20-ietf-poly1305",
-            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-125"
         },
         {
             "type": "direct",
