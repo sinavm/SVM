@@ -11,10 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #4 = vmess, us-23.hihu.net, 80, username = 8a9aaa70-ced9-11f1-b934-205c6d5f5d78, ws = true, tls = , vmess-aead = true, ws-path = /, ws-headers = Host:"us", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #5 = vmess, us-23.hihu.net, 80, username = 8a9aaa70-ced9-11f1-b934-205c6d5f5d78, ws = true, tls = , vmess-aead = true, ws-path = /870ao26f, ws-headers = Host:"172.66.0.251", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5
+URL-TEST = url-test,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5
+FALLBACK = fallback,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
