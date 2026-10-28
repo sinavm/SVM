@@ -88,58 +88,18 @@
             "tag": "انتخابگر دستی",
             "outbounds": [
                 "@SiNAVM",
-                "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
             "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-1"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "vmess",
-            "server": "us-23.hihu.net",
-            "server_port": 80,
-            "uuid": "8a9aaa70-ced9-11f1-b934-205c6d5f5d78",
-            "security": "auto",
-            "alter_id": 0,
-            "transport": {
-                "type": "ws",
-                "path": "\/870ao26f",
-                "headers": {
-                    "Host": "us-23.hihu.net"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "vmess",
-            "server": "us-23.hihu.net",
-            "server_port": 80,
-            "uuid": "8a9aaa70-ced9-11f1-b934-205c6d5f5d78",
-            "security": "auto",
-            "alter_id": 0,
-            "transport": {
-                "type": "ws",
-                "path": "\/",
-                "headers": {
-                    "Host": "us-23.hihu.net"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "vmess",
@@ -149,7 +109,7 @@
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
