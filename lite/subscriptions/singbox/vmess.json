@@ -93,11 +93,7 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10"
+                "@SiNAVM-6"
             ]
         },
         {
@@ -109,25 +105,11 @@
                 "@SiNAVM-3",
                 "@SiNAVM-4",
                 "@SiNAVM-5",
-                "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8",
-                "@SiNAVM-9",
-                "@SiNAVM-10"
+                "@SiNAVM-6"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "vmess",
-            "server": "67.220.85.46",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
         },
         {
             "type": "vmess",
@@ -137,11 +119,11 @@
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "vmess",
-            "server": "www.windowssearchtools.com",
+            "server": "188.114.97.1",
             "server_port": 443,
             "uuid": "ba1116e2-8c2f-4e3d-8e50-c954360cf970",
             "security": "auto",
@@ -167,77 +149,37 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "vmess",
+            "server": "172.67.156.121",
+            "server_port": 443,
+            "uuid": "e70a5b70-f63c-4450-af8b-94990cdf80c0",
+            "security": "auto",
+            "alter_id": 0,
+            "tls": {
+                "enabled": true,
+                "server_name": "www.gptcloudai.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/truth",
+                "headers": {
+                    "Host": "www.gptcloudai.com"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "vmess",
-            "server": "172.66.0.1",
-            "server_port": 443,
-            "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-            "security": "auto",
-            "alter_id": 0,
-            "tls": {
-                "enabled": true,
-                "server_name": "vmess.lbw666.dpdns.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/ws",
-                "headers": {
-                    "Host": "vmess.lbw666.dpdns.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-4"
-        },
-        {
-            "type": "vmess",
-            "server": "172.64.229.21",
-            "server_port": 443,
-            "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-            "security": "auto",
-            "alter_id": 0,
-            "tls": {
-                "enabled": true,
-                "server_name": "vmess.lbw666.dpdns.org",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/ws",
-                "headers": {
-                    "Host": "vmess.lbw666.dpdns.org"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-5"
-        },
-        {
-            "type": "vmess",
-            "server": "ww11.levikogjgfdd.ir",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-6"
         },
         {
             "type": "vmess",
@@ -267,21 +209,11 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-7"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "vmess",
-            "server": "67.220.95.3",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-8"
-        },
-        {
-            "type": "vmess",
-            "server": "172.66.203.67",
+            "server": "172.66.0.1",
             "server_port": 443,
             "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
             "security": "auto",
@@ -307,17 +239,37 @@
                 "max_early_data": 0
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-9"
+            "tag": "@SiNAVM-5"
         },
         {
             "type": "vmess",
-            "server": "38.110.1.246",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "none",
+            "server": "172.64.229.21",
+            "server_port": 443,
+            "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+            "security": "auto",
             "alter_id": 0,
+            "tls": {
+                "enabled": true,
+                "server_name": "vmess.lbw666.dpdns.org",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/ws",
+                "headers": {
+                    "Host": "vmess.lbw666.dpdns.org"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-10"
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "direct",

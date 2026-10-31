@@ -11,15 +11,15 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #8 = vmess, www.windowssearchtools.com, 443, username = ba1116e2-8c2f-4e3d-8e50-c954360cf970, ws = true, tls = 1, vmess-aead = true, ws-path = /truth, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #9 = vmess, 172.66.0.1, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = true, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #10 = vmess, 172.64.229.21, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = true, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #12 = vmess, 104.21.91.53, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #15 = vmess, 172.66.203.67, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = true, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #2 = vmess, 188.114.97.1, 443, username = ba1116e2-8c2f-4e3d-8e50-c954360cf970, ws = true, tls = 1, vmess-aead = true, ws-path = /truth, ws-headers = Host:"www.windowssearchtools.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #3 = vmess, 172.67.156.121, 443, username = e70a5b70-f63c-4450-af8b-94990cdf80c0, ws = true, tls = 1, vmess-aead = true, ws-path = /truth, ws-headers = Host:"www.gptcloudai.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #4 = vmess, 104.21.91.53, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #5 = vmess, 172.66.0.1, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = true, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #6 = vmess, 172.64.229.21, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = true, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #8,SiNAVM | VMESS | #9,SiNAVM | VMESS | #10,SiNAVM | VMESS | #12,SiNAVM | VMESS | #15
-URL-TEST = url-test,SiNAVM | VMESS | #8,SiNAVM | VMESS | #9,SiNAVM | VMESS | #10,SiNAVM | VMESS | #12,SiNAVM | VMESS | #15
-FALLBACK = fallback,SiNAVM | VMESS | #8,SiNAVM | VMESS | #9,SiNAVM | VMESS | #10,SiNAVM | VMESS | #12,SiNAVM | VMESS | #15
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5,SiNAVM | VMESS | #6
+URL-TEST = url-test,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5,SiNAVM | VMESS | #6
+FALLBACK = fallback,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #4,SiNAVM | VMESS | #5,SiNAVM | VMESS | #6
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
