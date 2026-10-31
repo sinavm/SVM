@@ -118,8 +118,12 @@ dns:
     - "https://8.8.4.4/dns-query"
 
 proxies:
-  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"www.speedtest.net","port":"443","cipher":"auto","uuid":"83b09a64-1eaf-4c4d-89ed-866d4b6b8115","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/truth","headers":{"host":"www.ubuntuupdates.com"}}}
-  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"38.110.1.246","port":"18000","cipher":"none","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"129.146.143.80","port":"48111","cipher":"auto","uuid":"d4603cc2-e0ee-4651-83f5-1db5b7168177","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"www.windowsmsidownloads.com","port":"443","cipher":"auto","uuid":"80be2deb-3b27-4775-9bd1-7f2a2b9c261b","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/truth","headers":{"host":"www.windowsmsidownloads.com"}}}
+  - {"name":"SiNAVM | VMESS | #3","type":"vmess","server":"67.220.85.46","port":18000,"cipher":"aes-128-gcm","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"149.88.23.207","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #6","type":"vmess","server":"172.64.229.21","port":"443","cipher":"auto","uuid":"0cf6d970-3f1d-4aae-a989-92a8f76ae3db","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ws","headers":{"host":"vmess.lbw666.dpdns.org"}}}
+  - {"name":"SiNAVM | VMESS | #7","type":"vmess","server":"172.66.0.1","port":"443","cipher":"auto","uuid":"0cf6d970-3f1d-4aae-a989-92a8f76ae3db","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/ws","headers":{"host":"vmess.lbw666.dpdns.org"}}}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -128,6 +132,10 @@ proxy-groups:
       - FALLBACK
       - 'SiNAVM | VMESS | #1'
       - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM | VMESS | #4'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -136,6 +144,10 @@ proxy-groups:
     proxies:
       - 'SiNAVM | VMESS | #1'
       - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM | VMESS | #4'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -143,6 +155,10 @@ proxy-groups:
     proxies:
       - 'SiNAVM | VMESS | #1'
       - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM | VMESS | #4'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
