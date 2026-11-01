@@ -11,10 +11,18 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | TROJAN | #1 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #2 = trojan, 104.18.8.83, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #3 = trojan, 104.18.37.127, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.trusteeforward.com, ws = false
+SiNAVM | TROJAN | #4 = trojan, 104.18.45.38, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.pleadcourt.org, ws = false
+SiNAVM | TROJAN | #5 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.calmlunch.com, ws = false
+SiNAVM | TROJAN | #6 = trojan, 104.18.49.85, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.trusteeforward.com, ws = false
+SiNAVM | TROJAN | #21 = trojan, 104.18.45.38, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.trusteeforward.com, ws = false
+SiNAVM | TROJAN | #26 = trojan, 188.114.98.0, 443, password = humanity, udp-delay = true, skip-cert-verify = false, sni = www.trusteeforward.com, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #21,SiNAVM | TROJAN | #26
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #21,SiNAVM | TROJAN | #26
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #21,SiNAVM | TROJAN | #26
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
