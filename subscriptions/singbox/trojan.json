@@ -87,77 +87,16 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM",
-                "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [
-                "@SiNAVM-1",
-                "@SiNAVM-2"
-            ],
+            "outbounds": [],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
-        },
-        {
-            "type": "trojan",
-            "server": "104.16.148.5",
-            "server_port": 443,
-            "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
-            "tls": {
-                "enabled": true,
-                "server_name": "dimskiee.biz.id",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/WangCai-8",
-                "headers": {
-                    "Host": "dimskiee.biz.id"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
-        },
-        {
-            "type": "trojan",
-            "server": "104.18.153.182",
-            "server_port": 443,
-            "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
-            "tls": {
-                "enabled": true,
-                "server_name": "dimskiee.biz.id",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/WangCai-8",
-                "headers": {
-                    "Host": "dimskiee.biz.id"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
