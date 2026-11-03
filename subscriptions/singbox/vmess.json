@@ -90,7 +90,10 @@
                 "@SiNAVM",
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4",
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ]
         },
         {
@@ -99,11 +102,34 @@
             "outbounds": [
                 "@SiNAVM-1",
                 "@SiNAVM-2",
-                "@SiNAVM-3"
+                "@SiNAVM-3",
+                "@SiNAVM-4",
+                "@SiNAVM-5",
+                "@SiNAVM-6"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "vmess",
+            "server": "23.162.200.198",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vmess",
+            "server": "84.17.41.2",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "vmess",
@@ -113,27 +139,37 @@
             "security": "aes-128-gcm",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-1"
+            "tag": "@SiNAVM-3"
         },
         {
             "type": "vmess",
-            "server": "23.147.56.181",
-            "server_port": 52843,
-            "uuid": "88be793c-c368-4eb1-8809-057e5df96606",
+            "server": "169.197.142.22",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "vmess",
-            "server": "38.110.1.246",
+            "server": "ww11.levikogjgfdd.ir",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "none",
+            "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-3"
+            "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "vmess",
+            "server": "149.88.23.207",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-6"
         },
         {
             "type": "direct",

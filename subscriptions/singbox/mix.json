@@ -133,7 +133,11 @@
                 "@SiNAVM-43",
                 "@SiNAVM-44",
                 "@SiNAVM-45",
-                "@SiNAVM-46"
+                "@SiNAVM-46",
+                "@SiNAVM-47",
+                "@SiNAVM-48",
+                "@SiNAVM-49",
+                "@SiNAVM-50"
             ]
         },
         {
@@ -185,112 +189,121 @@
                 "@SiNAVM-43",
                 "@SiNAVM-44",
                 "@SiNAVM-45",
-                "@SiNAVM-46"
+                "@SiNAVM-46",
+                "@SiNAVM-47",
+                "@SiNAVM-48",
+                "@SiNAVM-49",
+                "@SiNAVM-50"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
         },
         {
-            "type": "shadowsocks",
-            "server": "156.146.38.170",
+            "type": "trojan",
+            "server": "104.16.148.5",
             "server_port": 443,
-            "method": "aes-128-gcm",
-            "password": "shadowsocks",
-            "udp_over_tcp": true,
+            "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
+            "tls": {
+                "enabled": true,
+                "server_name": "dimskiee.biz.id",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/WangCai-8",
+                "headers": {
+                    "Host": "dimskiee.biz.id"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-1"
         },
         {
-            "type": "shadowsocks",
-            "server": "185.215.132.18",
-            "server_port": 19999,
-            "method": "aes-256-gcm",
-            "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
-            "udp_over_tcp": true,
+            "type": "trojan",
+            "server": "104.18.153.182",
+            "server_port": 443,
+            "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
+            "tls": {
+                "enabled": true,
+                "server_name": "dimskiee.biz.id",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/WangCai-8",
+                "headers": {
+                    "Host": "dimskiee.biz.id"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-2"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.214",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "vmess",
+            "server": "23.162.200.198",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-3"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.206",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "198.98.53.130",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "eDfN7SODQceIOmIAbtJJtK",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-4"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.198",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "shadowsocks",
+            "server": "51.79.85.185",
+            "server_port": 8118,
+            "method": "aes-256-gcm",
+            "password": "cdBIDV42DCwnfIN",
+            "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-5"
+        },
+        {
+            "type": "vmess",
+            "server": "84.17.41.2",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-6"
+        },
+        {
+            "type": "vmess",
+            "server": "67.220.95.3",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "aes-128-gcm",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-7"
         },
         {
             "type": "vless",
@@ -317,587 +330,17 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-6"
-        },
-        {
-            "type": "vless",
-            "server": "15.204.97.216",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vless",
-            "server": "15.204.97.219",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-8"
         },
         {
-            "type": "vless",
-            "server": "15.204.97.195",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
+            "type": "vmess",
+            "server": "169.197.142.22",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-9"
-        },
-        {
-            "type": "vless",
-            "server": "15.204.97.197",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-10"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "51.79.85.185",
-            "server_port": 8118,
-            "method": "aes-256-gcm",
-            "password": "cdBIDV42DCwnfIN",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-11"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "15.204.247.244",
-            "server_port": 4444,
-            "method": "aes-256-gcm",
-            "password": "pKEW8JPByTVTLtM",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-12"
-        },
-        {
-            "type": "vless",
-            "server": "47.251.25.74",
-            "server_port": 443,
-            "uuid": "18805ff3-b420-45de-af18-93be14024ae8",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "www.amazon.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "firefox"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "H56cOJhw0xw76lDEpt7IuJJmVGemK6_CK34KtHwDMX8",
-                    "short_id": ""
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-13"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.103",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-14"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "dns22.m3hrzd.ir",
-            "server_port": 8044,
-            "method": "chacha20-ietf-poly1305",
-            "password": "v1c-i5SSFXP8n4g1Wbc0L9gX82x5O2Qa",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-15"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.12",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-16"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.20",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-17"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.87",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-18"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.26",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-19"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.93",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-20"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.34",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-21"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.86",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-22"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.29",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-23"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.80",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-24"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.19",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-25"
-        },
-        {
-            "type": "vless",
-            "server": "51.158.206.8",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-26"
-        },
-        {
-            "type": "vless",
-            "server": "62.210.91.2",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-27"
-        },
-        {
-            "type": "vless",
-            "server": "157.90.165.181",
-            "server_port": 11762,
-            "uuid": "7c9b4360-6be9-47f2-ace9-b87297ea3d8f",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "swdist.apple.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU",
-                    "short_id": ""
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-28"
-        },
-        {
-            "type": "vless",
-            "server": "62.210.91.10",
-            "server_port": 23576,
-            "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
-            "packet_encoding": "xudp",
-            "flow": "xtls-rprx-vision",
-            "tls": {
-                "enabled": true,
-                "server_name": "fuck.rkn",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
-                    "short_id": "01"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-29"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "51.83.192.80",
-            "server_port": 8388,
-            "method": "aes-256-gcm",
-            "password": "itzvpn@321",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-30"
         },
         {
             "type": "vless",
@@ -924,11 +367,11 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-31"
+            "tag": "@SiNAVM-10"
         },
         {
             "type": "vless",
-            "server": "51.158.206.96",
+            "server": "62.210.91.2",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -951,93 +394,17 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-32"
+            "tag": "@SiNAVM-11"
         },
         {
             "type": "shadowsocks",
-            "server": "193.29.139.204",
+            "server": "82.38.31.149",
             "server_port": 8080,
             "method": "chacha20-ietf-poly1305",
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-33"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "15.204.233.41",
-            "server_port": 8882,
-            "method": "aes-256-gcm",
-            "password": "kDWvXYZoTBcGkC4",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-34"
-        },
-        {
-            "type": "vless",
-            "server": "156.252.229.11",
-            "server_port": 8443,
-            "uuid": "3e21e3d3-6d26-4155-b851-764dd8e8c6b5",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "play.googleapis.com",
-                "insecure": false,
-                "alpn": [
-                    "h3"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                },
-                "reality": {
-                    "enabled": true,
-                    "public_key": "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A",
-                    "short_id": "974f7f8f"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-35"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "dns27.m3hrzd.ir",
-            "server_port": 1355,
-            "method": "chacha20-ietf-poly1305",
-            "password": "v1c-i5SSFXP8n4g1Wbc0L9gX82x5O2Qa",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-36"
-        },
-        {
-            "type": "vmess",
-            "server": "67.220.95.3",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "aes-128-gcm",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-37"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "dns27.m3hrzd.ir",
-            "server_port": 1353,
-            "method": "chacha20-ietf-poly1305",
-            "password": "v1c-i5SSFXP8n4g1Wbc0L9gX82x5O2Qa",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-38"
-        },
-        {
-            "type": "shadowsocks",
-            "server": "dns22.m3hrzd.ir",
-            "server_port": 1346,
-            "method": "chacha20-ietf-poly1305",
-            "password": "v1c-i5SSFXP8n4g1Wbc0L9gX82x5O2Qa",
-            "udp_over_tcp": true,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-39"
+            "tag": "@SiNAVM-12"
         },
         {
             "type": "shadowsocks",
@@ -1047,21 +414,101 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-40"
+            "tag": "@SiNAVM-13"
         },
         {
             "type": "shadowsocks",
-            "server": "149.104.109.252",
-            "server_port": 8882,
-            "method": "aes-256-gcm",
-            "password": "kDWvXYZoTBcGkC4",
+            "server": "82.38.31.28",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-41"
+            "tag": "@SiNAVM-14"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.151",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-15"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.168",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "QCXDxuDlTTMD7jtgHUjIoj",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-16"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.204",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-17"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.34",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-18"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.215",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-19"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.165",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-20"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.9",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-21"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.225",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-22"
         },
         {
             "type": "vless",
-            "server": "51.158.206.25",
+            "server": "62.210.91.10",
             "server_port": 23576,
             "uuid": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
             "packet_encoding": "xudp",
@@ -1084,27 +531,67 @@
                 }
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-42"
-        },
-        {
-            "type": "vmess",
-            "server": "23.147.56.181",
-            "server_port": 52843,
-            "uuid": "88be793c-c368-4eb1-8809-057e5df96606",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-43"
+            "tag": "@SiNAVM-23"
         },
         {
             "type": "shadowsocks",
-            "server": "193.29.139.235",
+            "server": "82.38.31.162",
             "server_port": 443,
             "method": "chacha20-ietf-poly1305",
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-44"
+            "tag": "@SiNAVM-24"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.175",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-25"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.201",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-26"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.186",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-27"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.13",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-28"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.179",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-29"
         },
         {
             "type": "shadowsocks",
@@ -1114,17 +601,296 @@
             "password": "oZIoA69Q8yhcQV8ka3Pa3A",
             "udp_over_tcp": true,
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-45"
+            "tag": "@SiNAVM-30"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.155",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-31"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.174",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "oZIoA69Q8yhcQV8ka3Pa3A",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-32"
+        },
+        {
+            "type": "vless",
+            "server": "137.74.16.237",
+            "server_port": 443,
+            "uuid": "aaec4e42-a095-44b6-a239-f16d234a0798",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.icloud.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I",
+                    "short_id": "b390e0a721d242b0"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-33"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.198",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-34"
+        },
+        {
+            "type": "vless",
+            "server": "157.90.165.181",
+            "server_port": 11762,
+            "uuid": "7c9b4360-6be9-47f2-ace9-b87297ea3d8f",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "swdist.apple.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU",
+                    "short_id": ""
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-35"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.192",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-36"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "193.29.139.212",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "QCXDxuDlTTMD7jtgHUjIoj",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-37"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.176",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-38"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "51.83.192.80",
+            "server_port": 8388,
+            "method": "aes-256-gcm",
+            "password": "itzvpn@321",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-39"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "82.38.31.218",
+            "server_port": 8080,
+            "method": "chacha20-ietf-poly1305",
+            "password": "k1dBOmOB4oqi7Ump37a1bQ",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-40"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "54.36.174.140",
+            "server_port": 443,
+            "method": "chacha20-ietf-poly1305",
+            "password": "6heexyz",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-41"
+        },
+        {
+            "type": "vless",
+            "server": "lists.soloramtin.cyou",
+            "server_port": 443,
+            "uuid": "67eb6b17-7797-4ded-bf52-423c4c5f6cbd",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "www.foxsports.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY",
+                    "short_id": "91af08b1ce1f"
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-42"
         },
         {
             "type": "vmess",
-            "server": "38.110.1.246",
+            "server": "ww11.levikogjgfdd.ir",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "none",
+            "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-43"
+        },
+        {
+            "type": "vmess",
+            "server": "149.88.23.207",
+            "server_port": 18000,
+            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "security": "auto",
+            "alter_id": 0,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-44"
+        },
+        {
+            "type": "vless",
+            "server": "185.178.208.167",
+            "server_port": 443,
+            "uuid": "fb37d713-0ed3-4146-b085-a5c879a9aafa",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "lorettmay.top",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/blog\/posts",
+                "headers": {
+                    "Host": "lorettmay.top"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-45"
+        },
+        {
+            "type": "vless",
+            "server": "188.114.98.0",
+            "server_port": 443,
+            "uuid": "4e4f1f70-5e56-4a76-bb9d-db087f4690c4",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "jp3.yohototo.top",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/tyxyws",
+                "headers": {
+                    "Host": "jp3.yohototo.top"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-46"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "149.104.109.252",
+            "server_port": 8882,
+            "method": "aes-256-gcm",
+            "password": "kDWvXYZoTBcGkC4",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-47"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "51.222.141.125",
+            "server_port": 445,
+            "method": "aes-256-gcm",
+            "password": "zDNVedRFPQexG9v",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-48"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "51.222.12.127",
+            "server_port": 445,
+            "method": "aes-256-gcm",
+            "password": "zDNVedRFPQexG9v",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-49"
+        },
+        {
+            "type": "shadowsocks",
+            "server": "15.204.247.244",
+            "server_port": 4444,
+            "method": "aes-256-gcm",
+            "password": "pKEW8JPByTVTLtM",
+            "udp_over_tcp": true,
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-50"
         },
         {
             "type": "direct",
