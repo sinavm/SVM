@@ -87,16 +87,47 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM"
+                "@SiNAVM",
+                "@SiNAVM-1"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1"
+            ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.98.0",
+            "server_port": 443,
+            "password": "7e9facb8-b5e1-4a00-8295-2bf6e2e60a70",
+            "tls": {
+                "enabled": true,
+                "server_name": "de01.node.qixi.best",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/download",
+                "headers": {
+                    "Host": "de01.node.qixi.best"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
         },
         {
             "type": "direct",
