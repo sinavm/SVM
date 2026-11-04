@@ -87,16 +87,81 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM"
+                "@SiNAVM",
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1",
+                "@SiNAVM-2"
+            ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "vless",
+            "server": "157.90.165.181",
+            "server_port": 11762,
+            "uuid": "7c9b4360-6be9-47f2-ace9-b87297ea3d8f",
+            "packet_encoding": "xudp",
+            "flow": "xtls-rprx-vision",
+            "tls": {
+                "enabled": true,
+                "server_name": "swdist.apple.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "R2gKMF0Tetlnesc1pPkZH9NaOeehw-f5_U9JKG_cLjU",
+                    "short_id": ""
+                }
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "vless",
+            "server": "62.133.63.45",
+            "server_port": 8444,
+            "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+            "packet_encoding": "xudp",
+            "tls": {
+                "enabled": true,
+                "server_name": "github.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                },
+                "reality": {
+                    "enabled": true,
+                    "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+                    "short_id": "457fab2ac885dbe0"
+                }
+            },
+            "transport": {
+                "type": "grpc",
+                "service_name": "GunService",
+                "idle_timeout": "15s",
+                "ping_timeout": "15s",
+                "permit_without_stream": false
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
