@@ -89,9 +89,7 @@
             "outbounds": [
                 "@SiNAVM",
                 "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4"
+                "@SiNAVM-2"
             ]
         },
         {
@@ -99,9 +97,7 @@
             "tag": "@SiNAVM",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2",
-                "@SiNAVM-3",
-                "@SiNAVM-4"
+                "@SiNAVM-2"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -136,28 +132,6 @@
         },
         {
             "type": "vless",
-            "server": "w.geogame.ir",
-            "server_port": 2053,
-            "uuid": "fbda2834-b1e7-4148-afb9-deda31036a30",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "w.geogame.ir",
-                "insecure": false,
-                "alpn": [
-                    "h2",
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-2"
-        },
-        {
-            "type": "vless",
             "server": "62.133.63.45",
             "server_port": 8444,
             "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
@@ -187,36 +161,7 @@
                 "permit_without_stream": false
             },
             "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-3"
-        },
-        {
-            "type": "vless",
-            "server": "188.114.98.0",
-            "server_port": 443,
-            "uuid": "4e4f1f70-5e56-4a76-bb9d-db087f4690c4",
-            "packet_encoding": "xudp",
-            "tls": {
-                "enabled": true,
-                "server_name": "jp3.yohototo.top",
-                "insecure": false,
-                "alpn": [
-                    "http\/1.1"
-                ],
-                "utls": {
-                    "enabled": true,
-                    "fingerprint": "chrome"
-                }
-            },
-            "transport": {
-                "type": "ws",
-                "path": "\/tyxyws",
-                "headers": {
-                    "Host": "jp3.yohototo.top"
-                },
-                "max_early_data": 0
-            },
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-4"
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
