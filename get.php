@@ -78,16 +78,16 @@ function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
     $lastError = null;
     $attempts = 0;
     $latency = 0;
-    $backoffs = [1, 2, 4];
-    for ($i = 0; $i < 3; $i++) {
+    $backoffs = [1, 2];
+    for ($i = 0; $i < 2; $i++) {
         $attempts++;
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_MAXREDIRS => 5,
-            CURLOPT_CONNECTTIMEOUT => 8,
-            CURLOPT_TIMEOUT => 25,
+            CURLOPT_CONNECTTIMEOUT => 6,
+            CURLOPT_TIMEOUT => 15,
             CURLOPT_USERAGENT => "SVM-Upstream-Aggregator/2.0",
             CURLOPT_HTTPHEADER => ["Accept: text/plain, */*"],
             CURLOPT_SSL_VERIFYPEER => true,
@@ -109,7 +109,7 @@ function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
         if (is_string($body) && strlen($body) > 12000000) $lastError = "response_too_large";
         elseif (!$lastError) $lastError = $lastCode ? "http_" . $lastCode : "empty_response";
         if ($lastCode >= 400 && $lastCode < 500 && $lastCode !== 429) break;
-        if ($i < 2) sleep($backoffs[$i]);
+        if ($i < 1) sleep($backoffs[$i]);
     }
     if ($hasCache && $cacheAge < 86400) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => $cacheAge, "error" => $lastError ?: "refresh_failed"]];
     return ["", ["status" => "error", "fetch_mode" => "network", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => null, "error" => $lastError ?: "fetch_failed"]];
