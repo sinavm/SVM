@@ -322,7 +322,7 @@ foreach ($sourceHealth as $key => $entry) {
     $history = is_array($old["yield_history"] ?? null) ? $old["yield_history"] : [];
     $history[] = $yield;
     $history = array_slice($history, -20);
-    $zeroStreak = $yield > 0 ? 0 : ((int)($old["zero_unique_streak"] ?? 0) + 1);
+    $zeroStreak = $yield > 0 ? 0 : ((int)($old["zero_exclusive_streak"] ?? $old["zero_unique_streak"] ?? 0) + 1);
     $lastSuccess = $old["last_success_at"] ?? null;
     if ($yield > 0 && ($entry["fetch_mode"] ?? "") === "network") $lastSuccess = gmdate("c");
     $sourceHistory["sources"][$key] = [
@@ -337,7 +337,7 @@ foreach ($sourceHealth as $key => $entry) {
         "last_unique_configs" => (int)($entry["unique_configs"] ?? 0),
         "last_exclusive_configs" => $yield,
         "last_overlap_ratio" => $entry["overlap_ratio"] ?? null,
-        "zero_unique_streak" => $zeroStreak,
+        "zero_exclusive_streak" => $zeroStreak,
         "disable_candidate" => $zeroStreak >= 8,
         "last_success_at" => $lastSuccess,
         "yield_history" => $history,
