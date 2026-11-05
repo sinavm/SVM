@@ -234,6 +234,7 @@ $sourceHistory = is_file($sourceHistoryPath) ? json_decode((string)file_get_cont
 if (!is_array($sourceHistory)) $sourceHistory = [];
 if (!is_array($sourceHistory["sources"] ?? null)) $sourceHistory["sources"] = [];
 $globalSourceFingerprints = [];
+$sourceFingerprintSets = [];
 
 foreach ($publicSources as $source) {
     $sourceId = preg_replace('/[^A-Za-z0-9_.-]/', '-', (string)$source["id"]);
@@ -289,9 +290,27 @@ foreach ($publicSources as $source) {
         }
     }
     $sourceHealth[$key]["unique_configs"] = count($sourceFingerprints);
+    $sourceFingerprintSets[$key] = $sourceFingerprints;
     if ($sourceHealth[$key]["status"] === "ok" && $sourceHealth[$key]["configs_found"] === 0) {
         $sourceHealth[$key]["status"] = "empty";
     }
+}
+
+$fingerprintSourceCounts = [];
+foreach ($sourceFingerprintSets as $fingerprints) {
+    foreach ($fingerprints as $fingerprint => $present) {
+        $fingerprintSourceCounts[$fingerprint] = ($fingerprintSourceCounts[$fingerprint] ?? 0) + 1;
+    }
+}
+foreach ($sourceFingerprintSets as $key => $fingerprints) {
+    $exclusive = 0;
+    foreach ($fingerprints as $fingerprint => $present) {
+        if (($fingerprintSourceCounts[$fingerprint] ?? 0) === 1) $exclusive++;
+    }
+    $uniqueCount = count($fingerprints);
+    $sourceHealth[$key]["exclusive_configs"] = $exclusive;
+    $sourceHealth[$key]["overlap_configs"] = max(0, $uniqueCount - $exclusive);
+    $sourceHealth[$key]["overlap_ratio"] = $uniqueCount > 0 ? round(($uniqueCount - $exclusive) / $uniqueCount, 4) : null;
 }
 
 $sourceHistory["schema_version"] = 1;
@@ -299,7 +318,7 @@ $sourceHistory["updated_at"] = gmdate("c");
 foreach ($sourceHealth as $key => $entry) {
     if (($entry["kind"] ?? "") !== "public") continue;
     $old = $sourceHistory["sources"][$key] ?? [];
-    $yield = (int)($entry["unique_configs"] ?? 0);
+    $yield = (int)($entry["exclusive_configs"] ?? 0);
     $history = is_array($old["yield_history"] ?? null) ? $old["yield_history"] : [];
     $history[] = $yield;
     $history = array_slice($history, -20);
@@ -315,7 +334,9 @@ foreach ($sourceHealth as $key => $entry) {
         "last_status" => $entry["status"],
         "last_http_code" => $entry["http_code"] ?? null,
         "last_configs_found" => (int)($entry["configs_found"] ?? 0),
-        "last_unique_configs" => $yield,
+        "last_unique_configs" => (int)($entry["unique_configs"] ?? 0),
+        "last_exclusive_configs" => $yield,
+        "last_overlap_ratio" => $entry["overlap_ratio"] ?? null,
         "zero_unique_streak" => $zeroStreak,
         "disable_candidate" => $zeroStreak >= 8,
         "last_success_at" => $lastSuccess,
