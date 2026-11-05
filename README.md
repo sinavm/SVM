@@ -22,15 +22,15 @@
 | Full Mix | مجموعه کامل خروجی اصلی | [Xray](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
 | Top 100 | تا ۱۰۰ نود Verified با کمترین تأخیر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt) |
 | All live | همه نودهای زنده پس از تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/all) |
-| Curated | نودهای آمده از منابع منتخب | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated) |
-| Heavy | نودهای آمده از تجمیع‌کننده‌های حجیم | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy) |
+| Curated | نودهای آمده از منابع منتخب | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/source-tiers/curated) |
+| Heavy | نودهای آمده از تجمیع‌کننده‌های حجیم | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/source-tiers/heavy) |
 | Lite Fast | فهرست کوچک و سریع | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast) |
 | Lite Stable | فهرست فشرده با انتخاب پایدارتر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | Lite Fast Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-fast) |
 | Lite Stable Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-stable) |
-| Verified | موفق در هر سه دور و تأخیر حداکثر ۸۰۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) |
-| Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) |
-| Secure | دارای TLS یا Reality در لایه انتقال | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) |
+| Verified | موفق در هر سه دور و تأخیر حداکثر ۸۰۰ms | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/verified) |
+| Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/fast) |
+| Secure | دارای TLS یا Reality در لایه انتقال | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/secure) |
 | By protocol | اشتراک جداگانه برای هر پروتکل | [فهرست پروتکل‌ها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/protocols) |
 | By country | اشتراک جداگانه بر اساس کشور IP سرور | [فهرست کشورها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/countries) |
 
