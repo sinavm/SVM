@@ -24,8 +24,8 @@ $API_URL = "http://{$API_HOST}:{$API_PORT}";
 $API_SECRET = "xXxTestxXx";
 $TEST_URL = "http://www.gstatic.com/generate_204";
 $TIMEOUT_MS = 4500;
-$BATCH_SIZE = 24;
-$DELAY_CONCURRENCY = 8;
+$BATCH_SIZE = 48;
+$DELAY_CONCURRENCY = 16;
 $TCP_CONCURRENCY = 64;
 $TCP_TIMEOUT_MS = 1500;
 $SINGBOX_VERSION = getenv("SINGBOX_VERSION") ?: "1.14.0";
@@ -390,7 +390,7 @@ function protocolTestBatch($bin, $items)
             throw new Exception("clash_api not ready");
         }
         $samples = [];
-        $chunks = array_chunk($tags, 8);
+        $chunks = array_chunk($tags, max(1, $DELAY_CONCURRENCY));
         for ($round = 1; $round <= 3; $round++) {
             foreach ($chunks as $chunk) {
                 $part = delayBatch($chunk);
