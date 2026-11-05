@@ -233,6 +233,15 @@ $sourceHistoryPath = "reports/source-history.json";
 $sourceHistory = is_file($sourceHistoryPath) ? json_decode((string)file_get_contents($sourceHistoryPath), true) : [];
 if (!is_array($sourceHistory)) $sourceHistory = [];
 if (!is_array($sourceHistory["sources"] ?? null)) $sourceHistory["sources"] = [];
+foreach (array_keys($sourceHistory["sources"]) as $historyKey) {
+    if (!preg_match('/^public:feed-\\d+$/', $historyKey)) {
+        unset($sourceHistory["sources"][$historyKey]);
+        continue;
+    }
+    $slot = (int)preg_replace('/\\D+/', '', $historyKey);
+    unset($sourceHistory["sources"][$historyKey]["url"]);
+    $sourceHistory["sources"][$historyKey]["name"] = "Private feed " . $slot;
+}
 $globalSourceFingerprints = [];
 $sourceFingerprintSets = [];
 
@@ -245,7 +254,7 @@ foreach ($publicSources as $source) {
     $cacheFile = "cache/public/" . $sourceId . ".txt";
     $key = "public:" . $sourceId;
     $sourceHealth[$key] = [
-        "kind" => "private_feed",
+        "kind" => "public",
         "group" => $sourceGroup,
         "name" => $sourceName,
         "secret_slot" => $slot,
