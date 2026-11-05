@@ -20,6 +20,10 @@
 | اشتراک | کاربرد | لینک مستقیم |
 | --- | --- | --- |
 | Full Mix | مجموعه کامل خروجی اصلی | [Xray](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
+| Top 100 | صد نود Verified با کمترین تأخیر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt) |
+| All live | همه نودهای زنده پس از تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/all) |
+| Curated | نودهای آمده از منابع منتخب | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated) |
+| Heavy | نودهای آمده از تجمیع‌کننده‌های حجیم | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy) |
 | Lite Fast | فهرست کوچک و سریع | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast) |
 | Lite Stable | فهرست فشرده با انتخاب پایدارتر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | Lite Fast Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-fast) |
@@ -42,13 +46,35 @@
 
 | مرحله | وظیفه |
 | --- | --- |
-| جمع‌آوری | دریافت کانفیگ از کانال‌های عمومی تلگرام و منابع اشتراک تعریف‌شده |
+| جمع‌آوری | دریافت از کانال‌های تلگرام، اشتراک‌های خصوصی و ۱۲ فید عمومی مستقل در دو گروه Curated و Heavy |
 | استخراج | تشخیص لینک‌ها، جداسازی پروتکل‌ها و Decode کردن ورودی Base64 |
 | اعتبارسنجی | بررسی UUID، آدرس سرور، پورت، پارامترهای Reality و ساختار پروتکل |
 | یکسان‌سازی | استانداردسازی نام نودها و آماده‌سازی خروجی |
 | تست زنده | تبدیل به outboundهای sing-box، بررسی ساختار و تست درخواست واقعی در سه دور مستقل |
 | رتبه‌بندی | نگهداری تاریخچه موفقیت و شکست، امتیازدهی و ساخت فهرست Lite و کیفیت |
 | انتشار | تولید اشتراک‌های معمولی و Base64، سطح‌های Verified/Fast/Secure و گزارش‌های JSON |
+
+## منابع عمومی کانفیگ
+
+علاوه بر کانال‌های تلگرام و لینک‌های اشتراک خصوصی، SVM دوازده فید عمومی را از مخازن بالادستی دریافت می‌کند. فهرست URLها، گروه هر منبع، پروتکل‌های مجاز و فعال/غیرفعال بودن هر فید در [public_sources.json](public_sources.json) نگهداری می‌شود.
+
+| گروه | منبع | نوع |
+| --- | --- | --- |
+| Curated | [WhiteDNS Sub](https://github.com/iampedii/whitedns-sub) | فید Base64 |
+| Curated | [4n0nymou3 Multi Proxy Fetcher](https://github.com/4n0nymou3/multi-proxy-config-fetcher) | خروجی تجمیع‌شده |
+| Curated | [MahsaNet](https://github.com/mahsanet/MahsaFreeConfig) | دو فید MCI و MTN |
+| Curated | [ALIILAPRO](https://github.com/ALIILAPRO/v2rayNG-Config) | فهرست سرورها |
+| Curated | [Au1rxx](https://github.com/Au1rxx/free-vpn-subscriptions) | فید Base64 |
+| Curated | [Danial Samadi v2go](https://github.com/Danialsamadi/v2go) | اشتراک تجمیعی |
+| Curated | [LalatinaHub](https://github.com/LalatinaHub/LatinaSub) | اشتراک تجمیعی |
+| Heavy | [Roosterkid Open Proxy List](https://github.com/roosterkid/openproxylist) | فهرست حجیم |
+| Heavy | [Barry Far V2ray Config](https://github.com/barry-far/V2ray-Config) | فید Base64 حجیم |
+| Heavy | [ShadowException VPN](https://github.com/ShadowException/VPN) | فهرست حجیم |
+| Heavy | [Delta-Kronecker](https://github.com/Delta-Kronecker/V2ray-Config) | فید حجیم |
+
+MahsaNet دو URL مستقل دارد؛ بنابراین تعداد فیدهای عمومی فعال ۱۲ است. وضعیت HTTP، زمان پاسخ، تعداد کانفیگ خام و یکتای هر منبع، عمر کش و خطای آخر در گزارش منابع ثبت می‌شود. فیدهای عمومی با TTL پانزده دقیقه دریافت می‌شوند؛ در قطعی موقت، کش حداکثر ۲۴ ساعت فقط با برچسب stale استفاده می‌شود. منبعی که هشت اجرای متوالی خروجی یکتای نداشته باشد فقط به‌عنوان نامزد بازبینی علامت می‌خورد و خودکار از فهرست حذف نمی‌شود.
+
+کانفیگ‌ها از منابع عمومی و بدون تضمین مالکیت یا اعتماد جمع‌آوری می‌شوند. SVM صرفاً منبع را ثبت، داده را پاک‌سازی و کانفیگ را آزمایش می‌کند؛ منبع بالادستی لزوماً کیفیت یا امنیت هر نود را تضمین نمی‌کند.
 
 ## فرمت‌ها و کلاینت‌ها
 
@@ -69,7 +95,9 @@
 | --- | --- |
 | [Network health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json) | سلامت منابع، نتیجه تست، آمار اعتبارسنجی و تعداد دسته‌های کیفیت |
 | [API index](https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json) | فهرست مرکزی گزارش‌ها و اشتراک‌ها برای مصرف خودکار |
-| [Source health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json) | وضعیت دریافت هر منبع و تعداد کانفیگ‌های استخراج‌شده |
+| [Source health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json) | وضعیت دریافت هر منبع، HTTP، تأخیر و تعداد کانفیگ‌های یکتا |
+| [Source history](https://raw.githubusercontent.com/sinavm/SVM/main/reports/source-history.json) | تاریخچه بازده هر فید و نامزدهای نیازمند بازبینی |
+| [Source provenance](https://raw.githubusercontent.com/sinavm/SVM/main/reports/source-provenance.json) | نگاشت fingerprint کانفیگ به منبع یا منابع اصلی |
 | [GeoIP cache](https://github.com/sinavm/SVM/blob/main/reports/geo-cache.json) | کش ۳۰ روزه کشور IP سرورهای عمومی |
 | [Full test report](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) | تعداد ورودی، تبدیل، تست TCP، سه دور تست پروتکل و سریع‌ترین نودها |
 | [Lite status](https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json) | زمان به‌روزرسانی و تعداد اشتراک‌های Fast و Stable |
