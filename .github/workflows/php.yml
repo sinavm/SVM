@@ -2,6 +2,14 @@ name: "Let's SiNAVM!"
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - get.php
+      - config-test.php
+      - quality.php
+      - functions.php
+      - .github/workflows/php.yml
   schedule:
     - cron: '0 */3 * * *'
 
@@ -34,6 +42,15 @@ jobs:
           php-version: '8.2'
           extensions: curl
           coverage: none
+
+      - name: Validate PHP syntax
+        run: |
+          set -euo pipefail
+          php -l get.php
+          php -l config-test.php
+          php -l quality.php
+          php -l functions.php
+          php -l rank.php
 
       - name: Install sing-box
         run: |
