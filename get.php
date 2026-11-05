@@ -137,6 +137,7 @@ $tempCounter = 1;
 
 $configsRaw = [];
 $sourceOf = [];
+$sourceOrigins = [];
 $sourceHealth = [];
 
 @mkdir("cache/telegram", 0777, true);
@@ -163,6 +164,7 @@ foreach ($sourcesArray as $source => $types) {
                 if ($line === '') continue;
                 $configsRaw[] = $line;
                 $sourceOf[$line] = "tg:" . $source;
+                $sourceOrigins[$line][] = "telegram:" . $source;
                 $sourceHealth["telegram:" . $source]["configs_found"]++;
             }
         }
@@ -215,6 +217,7 @@ foreach ($sublinksArray['sublinks'] as $sublinkIndex => $sublink) {
             if (!preg_match("/^($protocols):\/\//i", $line)) continue;
             $configsRaw[] = $line;
             $sourceOf[$line] = "sub:" . $cacheKey;
+            $sourceOrigins[$line][] = "private:" . $cacheKey;
             $sourceHealth["subscription:" . $cacheKey]["configs_found"]++;
         }
         $sourceHealth["subscription:" . $cacheKey]["status"] = (time() - filemtime($cacheFile) > 1800) ? "stale" : ($sourceHealth["subscription:" . $cacheKey]["configs_found"] > 0 ? "ok" : "empty");
@@ -276,6 +279,7 @@ foreach ($publicSources as $source) {
             if ($line === "" || !detect_type($line)) continue;
             $configsRaw[] = $line;
             $sourceOf[$line] = $key;
+            $sourceOrigins[$line][] = $key;
             $sourceHealth[$key]["configs_found"]++;
             $fingerprint = configFingerprint($line);
             if ($fingerprint !== null) {
@@ -334,6 +338,7 @@ $stats = [
 ];
 
 $counterByType = [];
+$validProvenance = [];
 
 foreach ($configsRaw as $raw) {
     $res = validateConfig($raw);
@@ -354,10 +359,30 @@ foreach ($configsRaw as $raw) {
     $stats["total_valid"] += 1;
     $stats["by_type"][$type] += 1;
     $counterByType[$type] += 1;
+    $fingerprint = configFingerprint($raw);
+    if ($fingerprint !== null) {
+        $origins = array_values(array_unique($sourceOrigins[$raw] ?? [$sourceOf[$raw] ?? "unknown"]));
+        $groups = [];
+        foreach ($origins as $origin) {
+            if (strpos($origin, "public:") === 0) {
+                $groups[] = $sourceHistory["sources"][$origin]["group"] ?? "public";
+            } elseif (strpos($origin, "telegram:") === 0) {
+                $groups[] = "telegram";
+            } elseif (strpos($origin, "private:") === 0) {
+                $groups[] = "private";
+            }
+        }
+        $validProvenance[$fingerprint] = ["sources" => $origins, "groups" => array_values(array_unique($groups))];
+    }
     $valid[] = setConfigName($raw, buildStandardName($type, $counterByType[$type]));
 }
 
 file_put_contents("reports/invalid.txt", implode("\n", $invalid));
+file_put_contents("reports/source-provenance.json", json_encode([
+    "schema_version" => 1,
+    "updated_at" => gmdate("c"),
+    "nodes" => $validProvenance
+], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 $publicHealth = array_filter($sourceHealth, function ($s) { return ($s["kind"] ?? "") === "public"; });
 $publicCurated = array_filter($publicHealth, function ($s) { return ($s["group"] ?? "") === "curated"; });
