@@ -73,6 +73,7 @@ $tempCounter = 1;
 
 $configsRaw = [];
 $sourceOf = [];
+$sourceHealth = [];
 
 @mkdir("cache/telegram", 0777, true);
 @mkdir("cache/subs", 0777, true);
@@ -87,6 +88,7 @@ foreach ($sourcesArray as $source => $types) {
     $tempCounter++;
 
     $cacheFile = "cache/telegram/" . preg_replace('/[^A-Za-z0-9_\-\.]/', '_', $source) . ".html";
+    $sourceHealth["telegram:" . $source] = ["kind" => "telegram", "name" => $source, "status" => "unknown", "configs_found" => 0, "checked_at" => gmdate("c"), "error" => null];
     try {
         $html = fetchWithCache("https://t.me/s/" . $source, $cacheFile, 7200, 3);
         $type = implode("|", $types);
@@ -97,9 +99,13 @@ foreach ($sourcesArray as $source => $types) {
                 if ($line === '') continue;
                 $configsRaw[] = $line;
                 $sourceOf[$line] = "tg:" . $source;
+                $sourceHealth["telegram:" . $source]["configs_found"]++;
             }
         }
+        $sourceHealth["telegram:" . $source]["status"] = "ok";
     } catch (Exception $e) {
+        $sourceHealth["telegram:" . $source]["status"] = "error";
+        $sourceHealth["telegram:" . $source]["error"] = $e->getMessage();
         file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] tg:$source " . $e->getMessage() . "\n", FILE_APPEND);
     }
 }
@@ -123,10 +129,10 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $cacheKey = substr(sha1($url), 0, 16);
     $cacheFile = "cache/subs/" . $cacheKey . ".txt";
 
+    $sourceHealth["subscription:" . $cacheKey] = ["kind" => "subscription", "name" => "source-" . substr($cacheKey, 0, 8), "status" => "unknown", "configs_found" => 0, "checked_at" => gmdate("c"), "error" => null];
     try {
         $resp = fetchWithCache($url, $cacheFile, 1800, 3);
         $resp = decodeMaybeBase64($resp);
-
         $lines = preg_split('/\r?\n/', $resp);
         foreach ($lines as $line) {
             $line = trim($line);
@@ -134,8 +140,12 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
             if (!preg_match("/^($protocols):\/\//i", $line)) continue;
             $configsRaw[] = $line;
             $sourceOf[$line] = "sub:" . $cacheKey;
+            $sourceHealth["subscription:" . $cacheKey]["configs_found"]++;
         }
+        $sourceHealth["subscription:" . $cacheKey]["status"] = "ok";
     } catch (Exception $e) {
+        $sourceHealth["subscription:" . $cacheKey]["status"] = "error";
+        $sourceHealth["subscription:" . $cacheKey]["error"] = $e->getMessage();
         file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] sub:$cacheKey " . $e->getMessage() . "\n", FILE_APPEND);
     }
 }
@@ -176,6 +186,13 @@ foreach ($configsRaw as $raw) {
 
 file_put_contents("reports/invalid.txt", implode("\n", $invalid));
 file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+file_put_contents("reports/sources.json", json_encode([
+    "updated_at" => gmdate("c"),
+    "total_sources" => count($sourceHealth),
+    "healthy_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "ok"; })),
+    "failed_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "error"; })),
+    "sources" => $sourceHealth
+], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 file_put_contents("config.txt", implode("\n", $valid));
 
 echo "\nDone. Valid: {$stats['total_valid']} | Invalid: {$stats['total_invalid']}\n";
