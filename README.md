@@ -24,7 +24,7 @@
 | Lite Stable | فهرست فشرده با انتخاب پایدارتر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | Lite Fast Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-fast) |
 | Lite Stable Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-stable) |
-| Verified | موفق در هر سه دور تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) |
+| Verified | موفق در هر سه دور و تأخیر حداکثر ۸۰۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) |
 | Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) |
 | Secure | دارای TLS یا Reality در لایه انتقال | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) |
 | By protocol | اشتراک جداگانه برای هر پروتکل | [فهرست پروتکل‌ها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/protocols) |
@@ -87,7 +87,7 @@ GitHub Actions پردازش را به‌صورت زمان‌بندی‌شده ا
 - موفقیت تست یعنی کانفیگ از محیط GitHub Actions در زمان تست پاسخ داده است؛ این نتیجه تضمین اتصال از همه کشورها، اپراتورها یا دستگاه‌ها نیست.
 - سرورها متعلق به اشخاص ثالث هستند. برای ترافیک حساس از کانفیگ‌های عمومی استفاده نکنید و به گردانندگان آن‌ها اعتماد پیش‌فرض نداشته باشید.
 - وضعیت نودها ممکن است بلافاصله پس از انتشار تغییر کند.
-- Verified یعنی نود در هر سه دور تست همان اجرای CI موفق بوده است؛ تضمین پایداری دائمی یا کیفیت مسیر از شبکه کاربر نیست.
+- Verified یعنی نود در هر سه دور تست همان اجرای CI موفق بوده و میانه تأخیرش حداکثر ۸۰۰ms بوده است؛ تضمین پایداری دائمی یا کیفیت مسیر از شبکه کاربر نیست.
 - Fast بر اساس حداقل دو موفقیت از سه دور و تأخیر حداکثر ۳۵۰ میلی‌ثانیه ساخته می‌شود.
 - Secure صرفاً وجود نشانه‌های TLS یا Reality در پیکربندی را مشخص می‌کند و ممیزی رمزنگاری، امنیت سرور یا قابل اعتماد بودن گرداننده نیست.
 - دسته‌بندی کشور با سرویس GeoIP بیرونی انجام می‌شود؛ فقط IP عمومی سرورها برای تعیین کشور ارسال و نتیجه تا ۳۰ روز cache می‌شود. نودهای بدون نتیجه در دسته‌بندی کشور قرار نمی‌گیرند.
