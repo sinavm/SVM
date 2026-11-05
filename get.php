@@ -102,7 +102,7 @@ foreach ($sourcesArray as $source => $types) {
                 $sourceHealth["telegram:" . $source]["configs_found"]++;
             }
         }
-        $sourceHealth["telegram:" . $source]["status"] = "ok";
+        $sourceHealth["telegram:" . $source]["status"] = (time() - filemtime($cacheFile) > 7200) ? "stale" : "ok";
     } catch (Exception $e) {
         $sourceHealth["telegram:" . $source]["status"] = "error";
         $sourceHealth["telegram:" . $source]["error"] = $e->getMessage();
@@ -153,7 +153,7 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
             $sourceOf[$line] = "sub:" . $cacheKey;
             $sourceHealth["subscription:" . $cacheKey]["configs_found"]++;
         }
-        $sourceHealth["subscription:" . $cacheKey]["status"] = "ok";
+        $sourceHealth["subscription:" . $cacheKey]["status"] = (time() - filemtime($cacheFile) > 1800) ? "stale" : "ok";
     } catch (Exception $e) {
         $sourceHealth["subscription:" . $cacheKey]["status"] = "error";
         $sourceHealth["subscription:" . $cacheKey]["error"] = "fetch_failed";
@@ -201,7 +201,9 @@ file_put_contents("reports/sources.json", json_encode([
     "updated_at" => gmdate("c"),
     "total_sources" => count($sourceHealth),
     "healthy_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "ok"; })),
+    "stale_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "stale"; })),
     "failed_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "error"; })),
+    "unconfigured_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "unconfigured"; })),
     "sources" => $sourceHealth
 ], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 file_put_contents("config.txt", implode("\n", $valid));
