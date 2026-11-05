@@ -52,6 +52,9 @@ $geoCache = is_file($geoCachePath) ? json_decode((string)file_get_contents($geoC
 if (!is_array($geoCache)) $geoCache = [];
 $geoTtl = 30 * 86400;
 $publicIpFlags = FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE;
+foreach (array_keys($geoCache) as $cachedIp) {
+    if (!filter_var($cachedIp, FILTER_VALIDATE_IP, $publicIpFlags)) unset($geoCache[$cachedIp]);
+}
 $hostIps = [];
 $missingIps = [];
 if ($testUsable) {
