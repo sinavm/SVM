@@ -36,7 +36,7 @@ function isSecureTransport($line, $type) {
     $params = $parsed["params"] ?? [];
     $security = strtolower((string)($params["security"] ?? $parsed["security"] ?? ""));
     if (in_array($security, ["tls", "reality"], true)) return true;
-    if ($type === "tuic") return !isset($params["disable_sni"]) || (string)$params["disable_sni"] !== "true";
+    if ($type === "tuic") return true;
     return false;
 }
 
