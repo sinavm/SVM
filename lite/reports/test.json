@@ -1,113 +1,1172 @@
 {
     "engine": "sing-box-1.14.0",
-    "tested_at": "2026-11-05T10:05:34+00:00",
+    "tested_at": "2026-11-05T17:20:15+00:00",
     "test_url": "http:\/\/www.gstatic.com\/generate_204",
     "timeout_ms": 4500,
-    "input": 374,
-    "converted": 371,
-    "convert_failed": 3,
-    "tcp_alive": 201,
-    "tcp_dead": 94,
+    "input": 445,
+    "converted": 443,
+    "convert_failed": 2,
+    "tcp_alive": 235,
+    "tcp_dead": 132,
     "tcp_skipped_udp": 76,
-    "protocol_alive": 68,
-    "protocol_dead": 209,
-    "kept": 68,
-    "dropped": 306,
+    "protocol_alive": 88,
+    "protocol_dead": 223,
+    "kept": 88,
+    "dropped": 357,
     "by_type_kept": {
-        "vmess": 10,
-        "ss": 54,
-        "vless": 4
+        "vless": 17,
+        "vmess": 16,
+        "ss": 55
     },
     "fastest": [
         {
-            "tag": "n0184",
-            "type": "vmess",
-            "delay": 28,
-            "host": "67.220.85.46"
+            "tag": "n0386",
+            "type": "vless",
+            "delay": 79,
+            "host": "15.204.97.197"
         },
         {
-            "tag": "n0183",
-            "type": "vmess",
-            "delay": 30,
-            "host": "67.220.85.46"
+            "tag": "n0384",
+            "type": "vless",
+            "delay": 81,
+            "host": "15.204.97.197"
         },
         {
-            "tag": "n0073",
+            "tag": "n0378",
+            "type": "vless",
+            "delay": 82,
+            "host": "15.204.97.198"
+        },
+        {
+            "tag": "n0385",
+            "type": "vless",
+            "delay": 82,
+            "host": "15.204.97.195"
+        },
+        {
+            "tag": "n0388",
+            "type": "vless",
+            "delay": 82,
+            "host": "15.204.97.219"
+        },
+        {
+            "tag": "n0397",
+            "type": "vless",
+            "delay": 82,
+            "host": "15.204.97.198"
+        },
+        {
+            "tag": "n0398",
+            "type": "vless",
+            "delay": 82,
+            "host": "15.204.97.209"
+        },
+        {
+            "tag": "n0380",
+            "type": "vless",
+            "delay": 85,
+            "host": "15.204.97.219"
+        },
+        {
+            "tag": "n0387",
+            "type": "vless",
+            "delay": 85,
+            "host": "15.204.97.214"
+        },
+        {
+            "tag": "n0383",
+            "type": "vless",
+            "delay": 87,
+            "host": "15.204.97.197"
+        },
+        {
+            "tag": "n0367",
+            "type": "vmess",
+            "delay": 90,
+            "host": "84.17.41.2"
+        },
+        {
+            "tag": "n0379",
+            "type": "vless",
+            "delay": 90,
+            "host": "15.204.97.214"
+        },
+        {
+            "tag": "n0370",
+            "type": "vmess",
+            "delay": 91,
+            "host": "84.17.41.2"
+        },
+        {
+            "tag": "n0393",
+            "type": "vless",
+            "delay": 91,
+            "host": "15.204.97.206"
+        },
+        {
+            "tag": "n0365",
+            "type": "vmess",
+            "delay": 92,
+            "host": "84.17.41.2"
+        }
+    ],
+    "stability_rounds": 3,
+    "node_results": [
+        {
+            "fingerprint": "a217c068529f730c4ab34e728511aa4ff7972796",
+            "type": "vless",
+            "delay_ms": 1039,
+            "successes": 2,
+            "rounds": [
+                0,
+                479,
+                1599
+            ],
+            "host": "188.114.98.0"
+        },
+        {
+            "fingerprint": "abf571fbf483863eeac2084cd14a40a4ca717bb2",
+            "type": "vless",
+            "delay_ms": 741,
+            "successes": 3,
+            "rounds": [
+                741,
+                888,
+                591
+            ],
+            "host": "5.230.216.85"
+        },
+        {
+            "fingerprint": "bbd56d8466d1607b5f3a65f566c67d20a9b5645c",
+            "type": "vless",
+            "delay_ms": 139,
+            "successes": 3,
+            "rounds": [
+                140,
+                137,
+                139
+            ],
+            "host": "169.40.42.89"
+        },
+        {
+            "fingerprint": "3be6bb437d5336e7a8a86069013e3d2406291399",
+            "type": "vless",
+            "delay_ms": 372,
+            "successes": 3,
+            "rounds": [
+                564,
+                372,
+                311
+            ],
+            "host": "45.129.242.56"
+        },
+        {
+            "fingerprint": "036f7457ccae57223d4721e1ad64660ccc0a6d6a",
             "type": "ss",
-            "delay": 42,
+            "delay_ms": 300,
+            "successes": 3,
+            "rounds": [
+                300,
+                298,
+                305
+            ],
+            "host": "193.29.139.212"
+        },
+        {
+            "fingerprint": "502220a7ec25fdcad2ebcdae62243924f0b01bbc",
+            "type": "ss",
+            "delay_ms": 137,
+            "successes": 3,
+            "rounds": [
+                137,
+                132,
+                2079
+            ],
             "host": "198.98.53.130"
         },
         {
-            "tag": "n0186",
-            "type": "vmess",
-            "delay": 62,
-            "host": "38.110.1.246"
-        },
-        {
-            "tag": "n0214",
+            "fingerprint": "12ae3a7094407d638fd9aeab72e7ff864d8fdaa9",
             "type": "ss",
-            "delay": 67,
-            "host": "193.151.160.18"
+            "delay_ms": 299,
+            "successes": 3,
+            "rounds": [
+                298,
+                299,
+                304
+            ],
+            "host": "82.38.31.176"
         },
         {
-            "tag": "n0215",
+            "fingerprint": "6de184f659f51541386f3436a37b11215a4da37f",
             "type": "ss",
-            "delay": 68,
-            "host": "193.151.160.18"
+            "delay_ms": 302,
+            "successes": 3,
+            "rounds": [
+                302,
+                697,
+                302
+            ],
+            "host": "82.38.31.198"
         },
         {
-            "tag": "n0244",
+            "fingerprint": "c81e772cc5e05362dd9559a5e9e1158bd5ce7e99",
             "type": "ss",
-            "delay": 75,
-            "host": "45.86.51.18"
+            "delay_ms": 1153,
+            "successes": 2,
+            "rounds": [
+                398,
+                1907,
+                0
+            ],
+            "host": "82.38.31.204"
         },
         {
-            "tag": "n0176",
-            "type": "vmess",
-            "delay": 84,
-            "host": "134.195.196.211"
-        },
-        {
-            "tag": "n0182",
-            "type": "vmess",
-            "delay": 143,
-            "host": "169.197.142.22"
-        },
-        {
-            "tag": "n0066",
-            "type": "vless",
-            "delay": 175,
-            "host": "ww13.levikogjgfdd.ir"
-        },
-        {
-            "tag": "n0255",
+            "fingerprint": "b0cea9964ae4958495ac94fe24f9789ed57991bd",
             "type": "ss",
-            "delay": 177,
-            "host": "140.82.56.38"
+            "delay_ms": 1151,
+            "successes": 2,
+            "rounds": [
+                397,
+                1905,
+                0
+            ],
+            "host": "82.38.31.205"
         },
         {
-            "tag": "n0081",
+            "fingerprint": "b24a0de7516de9ad1b937a624c48ffe0d14b96c2",
             "type": "ss",
-            "delay": 178,
-            "host": "82.38.31.215"
+            "delay_ms": 494,
+            "successes": 3,
+            "rounds": [
+                494,
+                617,
+                302
+            ],
+            "host": "82.38.31.212"
         },
         {
-            "tag": "n0256",
+            "fingerprint": "0be83aee15829a26e13631db1f6b6b7f8e0538e3",
             "type": "ss",
-            "delay": 178,
-            "host": "140.82.56.38"
+            "delay_ms": 497,
+            "successes": 3,
+            "rounds": [
+                497,
+                1355,
+                305
+            ],
+            "host": "82.38.31.213"
         },
         {
-            "tag": "n0088",
+            "fingerprint": "3c97916eda8d0b30e404df6494d35a3e78fac993",
             "type": "ss",
-            "delay": 180,
+            "delay_ms": 495,
+            "successes": 3,
+            "rounds": [
+                495,
+                1005,
+                304
+            ],
+            "host": "82.38.31.214"
+        },
+        {
+            "fingerprint": "64395a73ffc56a0f1387fc3850839c5a723cfc9f",
+            "type": "ss",
+            "delay_ms": 290,
+            "successes": 3,
+            "rounds": [
+                293,
+                290,
+                288
+            ],
+            "host": "82.38.31.155"
+        },
+        {
+            "fingerprint": "9aae2a32119c44c0190c0e4ce9ccc5b695c3eba5",
+            "type": "ss",
+            "delay_ms": 290,
+            "successes": 3,
+            "rounds": [
+                288,
+                295,
+                290
+            ],
+            "host": "82.38.31.162"
+        },
+        {
+            "fingerprint": "fe26b77a8b1020f7804e741663b60878a2419f86",
+            "type": "ss",
+            "delay_ms": 292,
+            "successes": 3,
+            "rounds": [
+                292,
+                294,
+                291
+            ],
+            "host": "82.38.31.34"
+        },
+        {
+            "fingerprint": "41fb9f8d55d0a4f83c3c4af88b5dc4b6b37d1781",
+            "type": "ss",
+            "delay_ms": 306,
+            "successes": 3,
+            "rounds": [
+                314,
+                300,
+                306
+            ],
             "host": "82.38.31.42"
         },
         {
-            "tag": "n0065",
+            "fingerprint": "779978c5c74b54bb5de87c468beb770621cb29cf",
+            "type": "ss",
+            "delay_ms": 296,
+            "successes": 3,
+            "rounds": [
+                296,
+                296,
+                297
+            ],
+            "host": "82.38.31.61"
+        },
+        {
+            "fingerprint": "35807679a6586ead5da2e68e79926b4c364ceb3c",
+            "type": "ss",
+            "delay_ms": 284,
+            "successes": 3,
+            "rounds": [
+                284,
+                628,
+                187
+            ],
+            "host": "15.204.246.108"
+        },
+        {
+            "fingerprint": "94601e5e1e55901c65a6659dd7cf358b0bcedf93",
+            "type": "vmess",
+            "delay_ms": 173,
+            "successes": 3,
+            "rounds": [
+                187,
+                173,
+                165
+            ],
+            "host": "134.195.196.211"
+        },
+        {
+            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
+            "type": "vmess",
+            "delay_ms": 320,
+            "successes": 3,
+            "rounds": [
+                320,
+                527,
+                313
+            ],
+            "host": "d2.anonix.cloud"
+        },
+        {
+            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
+            "type": "vmess",
+            "delay_ms": 315,
+            "successes": 3,
+            "rounds": [
+                315,
+                319,
+                311
+            ],
+            "host": "d2.anonix.cloud"
+        },
+        {
+            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
+            "type": "vmess",
+            "delay_ms": 373,
+            "successes": 3,
+            "rounds": [
+                365,
+                373,
+                373
+            ],
+            "host": "149.88.23.207"
+        },
+        {
+            "fingerprint": "512a4a591a1b814ccb5418d97318f37b35830e06",
+            "type": "vmess",
+            "delay_ms": 147,
+            "successes": 3,
+            "rounds": [
+                79,
+                1805,
+                147
+            ],
+            "host": "169.197.142.22"
+        },
+        {
+            "fingerprint": "1a233b39a9263a416c53d2b10ff809bade600564",
+            "type": "vmess",
+            "delay_ms": 3566,
+            "successes": 3,
+            "rounds": [
+                3289,
+                3566,
+                3656
+            ],
+            "host": "134.195.196.211"
+        },
+        {
+            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
+            "type": "vmess",
+            "delay_ms": 378,
+            "successes": 3,
+            "rounds": [
+                378,
+                378,
+                377
+            ],
+            "host": "149.88.23.207"
+        },
+        {
+            "fingerprint": "639a99b3cbd1337a54d95e6e88e34904e6dafda7",
+            "type": "vmess",
+            "delay_ms": 371,
+            "successes": 3,
+            "rounds": [
+                371,
+                365,
+                371
+            ],
+            "host": "ww11.levikogjgfdd.ir"
+        },
+        {
+            "fingerprint": "15eec57e55e6b7ce3b1e3b48acf957480bb1bb81",
+            "type": "ss",
+            "delay_ms": 3898,
+            "successes": 3,
+            "rounds": [
+                536,
+                4054,
+                3898
+            ],
+            "host": "154.36.158.197"
+        },
+        {
+            "fingerprint": "0d3336aa4bd53852209ea71de5d267011ddf8cd8",
+            "type": "ss",
+            "delay_ms": 1767,
+            "successes": 3,
+            "rounds": [
+                2296,
+                1767,
+                1102
+            ],
+            "host": "15.204.246.132"
+        },
+        {
+            "fingerprint": "1b047fc0f20c323ca3a8163d2323b6c3ea6e93c3",
+            "type": "ss",
+            "delay_ms": 442,
+            "successes": 3,
+            "rounds": [
+                1685,
+                442,
+                392
+            ],
+            "host": "141.164.45.187"
+        },
+        {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "type": "ss",
+            "delay_ms": 521,
+            "successes": 3,
+            "rounds": [
+                434,
+                524,
+                521
+            ],
+            "host": "213.202.208.199"
+        },
+        {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "type": "ss",
+            "delay_ms": 1866,
+            "successes": 3,
+            "rounds": [
+                2060,
+                1866,
+                1316
+            ],
+            "host": "213.202.208.199"
+        },
+        {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "type": "ss",
+            "delay_ms": 1866,
+            "successes": 3,
+            "rounds": [
+                2058,
+                1866,
+                1310
+            ],
+            "host": "213.202.208.199"
+        },
+        {
+            "fingerprint": "7d0efb1c86f1fd5242a0fbb6123930f203ce2af2",
+            "type": "ss",
+            "delay_ms": 97,
+            "successes": 3,
+            "rounds": [
+                778,
+                97,
+                95
+            ],
+            "host": "185.215.132.18"
+        },
+        {
+            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
+            "type": "ss",
+            "delay_ms": 120,
+            "successes": 3,
+            "rounds": [
+                126,
+                117,
+                120
+            ],
+            "host": "193.151.160.18"
+        },
+        {
+            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
+            "type": "ss",
+            "delay_ms": 122,
+            "successes": 3,
+            "rounds": [
+                124,
+                122,
+                119
+            ],
+            "host": "193.151.160.18"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "type": "ss",
+            "delay_ms": 363,
+            "successes": 2,
+            "rounds": [
+                0,
+                367,
+                359
+            ],
+            "host": "202.50.253.18"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "type": "ss",
+            "delay_ms": 415,
+            "successes": 2,
+            "rounds": [
+                0,
+                437,
+                393
+            ],
+            "host": "202.50.253.18"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "type": "ss",
+            "delay_ms": 396,
+            "successes": 2,
+            "rounds": [
+                0,
+                441,
+                350
+            ],
+            "host": "202.50.253.18"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "type": "ss",
+            "delay_ms": 397,
+            "successes": 3,
+            "rounds": [
+                454,
+                366,
+                397
+            ],
+            "host": "202.50.253.18"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "type": "ss",
+            "delay_ms": 402,
+            "successes": 3,
+            "rounds": [
+                537,
+                350,
+                402
+            ],
+            "host": "202.50.253.18"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "type": "ss",
+            "delay_ms": 338,
+            "successes": 3,
+            "rounds": [
+                338,
+                336,
+                432
+            ],
+            "host": "202.50.253.27"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "type": "ss",
+            "delay_ms": 345,
+            "successes": 3,
+            "rounds": [
+                339,
+                345,
+                414
+            ],
+            "host": "202.50.253.27"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "type": "ss",
+            "delay_ms": 408,
+            "successes": 3,
+            "rounds": [
+                408,
+                357,
+                445
+            ],
+            "host": "202.50.253.27"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "type": "ss",
+            "delay_ms": 410,
+            "successes": 3,
+            "rounds": [
+                410,
+                348,
+                411
+            ],
+            "host": "202.50.253.27"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 372,
+            "successes": 3,
+            "rounds": [
+                372,
+                1944,
+                338
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 359,
+            "successes": 3,
+            "rounds": [
+                359,
+                2999,
+                341
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 364,
+            "successes": 3,
+            "rounds": [
+                364,
+                2711,
+                336
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 365,
+            "successes": 3,
+            "rounds": [
+                365,
+                1673,
+                340
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 656,
+            "successes": 3,
+            "rounds": [
+                340,
+                656,
+                1372
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "type": "ss",
+            "delay_ms": 696,
+            "successes": 3,
+            "rounds": [
+                356,
+                696,
+                1370
+            ],
+            "host": "202.50.253.36"
+        },
+        {
+            "fingerprint": "15fba737e7a65f4f7feaa841e2336e54d8fbb88d",
+            "type": "ss",
+            "delay_ms": 386,
+            "successes": 3,
+            "rounds": [
+                356,
+                386,
+                391
+            ],
+            "host": "202.50.253.45"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "type": "ss",
+            "delay_ms": 368,
+            "successes": 3,
+            "rounds": [
+                356,
+                368,
+                463
+            ],
+            "host": "202.50.253.54"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "type": "ss",
+            "delay_ms": 420,
+            "successes": 3,
+            "rounds": [
+                420,
+                417,
+                445
+            ],
+            "host": "202.50.253.54"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "type": "ss",
+            "delay_ms": 417,
+            "successes": 3,
+            "rounds": [
+                352,
+                417,
+                449
+            ],
+            "host": "202.50.253.54"
+        },
+        {
+            "fingerprint": "83e96f94f6e8d3c29962537f116b7ccaf7d5c2e7",
+            "type": "ss",
+            "delay_ms": 635,
+            "successes": 3,
+            "rounds": [
+                635,
+                566,
+                1111
+            ],
+            "host": "202.50.253.63"
+        },
+        {
+            "fingerprint": "83e96f94f6e8d3c29962537f116b7ccaf7d5c2e7",
+            "type": "ss",
+            "delay_ms": 861,
+            "successes": 3,
+            "rounds": [
+                861,
+                346,
+                979
+            ],
+            "host": "202.50.253.63"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 382,
+            "successes": 3,
+            "rounds": [
+                382,
+                341,
+                429
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 388,
+            "successes": 3,
+            "rounds": [
+                388,
+                347,
+                412
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 394,
+            "successes": 3,
+            "rounds": [
+                394,
+                346,
+                432
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 380,
+            "successes": 3,
+            "rounds": [
+                397,
+                367,
+                380
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 371,
+            "successes": 3,
+            "rounds": [
+                389,
+                344,
+                371
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "type": "ss",
+            "delay_ms": 360,
+            "successes": 3,
+            "rounds": [
+                350,
+                360,
+                431
+            ],
+            "host": "202.50.253.72"
+        },
+        {
+            "fingerprint": "73a5e299674afe522a92cc9519997e85b2c7663e",
+            "type": "ss",
+            "delay_ms": 2838,
+            "successes": 3,
+            "rounds": [
+                3570,
+                1009,
+                2838
+            ],
+            "host": "202.50.253.99"
+        },
+        {
+            "fingerprint": "2b7823c78d41d2df776c0b560ea32549a77b2026",
+            "type": "ss",
+            "delay_ms": 155,
+            "successes": 3,
+            "rounds": [
+                149,
+                155,
+                161
+            ],
+            "host": "45.86.51.18"
+        },
+        {
+            "fingerprint": "81c56abfb9c6078b91e73c6d45f3e54e926819a5",
+            "type": "ss",
+            "delay_ms": 389,
+            "successes": 3,
+            "rounds": [
+                538,
+                389,
+                261
+            ],
+            "host": "51.222.136.236"
+        },
+        {
+            "fingerprint": "1da1c9470df3c846e9216734f82ac7acb75fc64f",
+            "type": "ss",
+            "delay_ms": 3401,
+            "successes": 2,
+            "rounds": [
+                3557,
+                3244,
+                0
+            ],
+            "host": "15.204.247.244"
+        },
+        {
+            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
+            "type": "vmess",
+            "delay_ms": 92,
+            "successes": 3,
+            "rounds": [
+                92,
+                92,
+                90
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "d404482d75d69ffebce8fefc6624c11a388d5ec2",
+            "type": "vmess",
+            "delay_ms": 97,
+            "successes": 3,
+            "rounds": [
+                97,
+                97,
+                109
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "7d20f05e02592e42ae849c7703452386b6f98020",
+            "type": "vmess",
+            "delay_ms": 90,
+            "successes": 3,
+            "rounds": [
+                98,
+                89,
+                90
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "d2ff2984161330b5f7cfde314c3d4bb1e05950bb",
+            "type": "vmess",
+            "delay_ms": 93,
+            "successes": 3,
+            "rounds": [
+                93,
+                89,
+                105
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "e52ee494c9e4d337ecba8320b2e92845b4acdb8e",
+            "type": "vmess",
+            "delay_ms": 94,
+            "successes": 3,
+            "rounds": [
+                94,
+                86,
+                95
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
+            "type": "vmess",
+            "delay_ms": 91,
+            "successes": 3,
+            "rounds": [
+                94,
+                85,
+                91
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "a3968cad592a25c13e017f56da409110d235eed3",
+            "type": "vmess",
+            "delay_ms": 96,
+            "successes": 3,
+            "rounds": [
+                92,
+                100,
+                96
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "e3c7902174f73c5492cba7252ec3f9b0f9a3350d",
+            "type": "vmess",
+            "delay_ms": 101,
+            "successes": 3,
+            "rounds": [
+                102,
+                101,
+                88
+            ],
+            "host": "84.17.41.2"
+        },
+        {
+            "fingerprint": "c588c14ae391470d04e992bce9564dc793d13f1a",
             "type": "vless",
-            "delay": 182,
-            "host": "62.210.91.2"
+            "delay_ms": 82,
+            "successes": 3,
+            "rounds": [
+                81,
+                82,
+                82
+            ],
+            "host": "15.204.97.198"
+        },
+        {
+            "fingerprint": "8469d6f1264458731060973e26a9605484888620",
+            "type": "vless",
+            "delay_ms": 90,
+            "successes": 3,
+            "rounds": [
+                93,
+                90,
+                81
+            ],
+            "host": "15.204.97.214"
+        },
+        {
+            "fingerprint": "45176915653677623b8fef729f3340976cb34dc1",
+            "type": "vless",
+            "delay_ms": 85,
+            "successes": 3,
+            "rounds": [
+                85,
+                81,
+                92
+            ],
+            "host": "15.204.97.219"
+        },
+        {
+            "fingerprint": "a9d393f6895f9cb49df936f92a39c11b3601f8a8",
+            "type": "vless",
+            "delay_ms": 87,
+            "successes": 3,
+            "rounds": [
+                87,
+                88,
+                82
+            ],
+            "host": "15.204.97.197"
+        },
+        {
+            "fingerprint": "becda7fbe99ba507099428cedc424f650b52a14d",
+            "type": "vless",
+            "delay_ms": 81,
+            "successes": 3,
+            "rounds": [
+                90,
+                81,
+                80
+            ],
+            "host": "15.204.97.197"
+        },
+        {
+            "fingerprint": "9384a3768453a3242ffc638c29db23d3b34d2619",
+            "type": "vless",
+            "delay_ms": 82,
+            "successes": 3,
+            "rounds": [
+                82,
+                79,
+                93
+            ],
+            "host": "15.204.97.195"
+        },
+        {
+            "fingerprint": "caca529be5ee1437bba779507fcb11ce1efaa5af",
+            "type": "vless",
+            "delay_ms": 79,
+            "successes": 3,
+            "rounds": [
+                85,
+                79,
+                79
+            ],
+            "host": "15.204.97.197"
+        },
+        {
+            "fingerprint": "e9a71a80641e6187af0a0312f8c3a497a4cbe12e",
+            "type": "vless",
+            "delay_ms": 85,
+            "successes": 3,
+            "rounds": [
+                85,
+                79,
+                91
+            ],
+            "host": "15.204.97.214"
+        },
+        {
+            "fingerprint": "9eabaa290ce123fcbcc4ada35210daef3d101a3f",
+            "type": "vless",
+            "delay_ms": 82,
+            "successes": 3,
+            "rounds": [
+                80,
+                90,
+                82
+            ],
+            "host": "15.204.97.219"
+        },
+        {
+            "fingerprint": "2bf7f2480e7a72a511411390cf1cd3f56a1aa472",
+            "type": "vless",
+            "delay_ms": 93,
+            "successes": 3,
+            "rounds": [
+                95,
+                80,
+                93
+            ],
+            "host": "15.204.97.209"
+        },
+        {
+            "fingerprint": "e3c9559257027272130580eb55d65d1a4ffcbae9",
+            "type": "vless",
+            "delay_ms": 91,
+            "successes": 3,
+            "rounds": [
+                93,
+                91,
+                85
+            ],
+            "host": "15.204.97.206"
+        },
+        {
+            "fingerprint": "9bf5939786e99ff1a606d2d310013da6421e39d9",
+            "type": "vless",
+            "delay_ms": 82,
+            "successes": 3,
+            "rounds": [
+                82,
+                82,
+                81
+            ],
+            "host": "15.204.97.198"
+        },
+        {
+            "fingerprint": "7b57eeb8b4e119a748485cdb9df5d5d20e29d407",
+            "type": "vless",
+            "delay_ms": 82,
+            "successes": 3,
+            "rounds": [
+                82,
+                81,
+                94
+            ],
+            "host": "15.204.97.209"
         }
     ],
     "error": null,
