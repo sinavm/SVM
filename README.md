@@ -24,6 +24,9 @@
 | Lite Stable | فهرست فشرده با انتخاب پایدارتر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | Lite Fast Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-fast) |
 | Lite Stable Base64 | نسخه کدگذاری‌شده | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-stable) |
+| Verified | موفق در هر سه دور تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) |
+| Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) |
+| Secure | دارای TLS یا Reality در لایه انتقال | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) |
 
 <div align="center">
 
@@ -41,9 +44,9 @@
 | استخراج | تشخیص لینک‌ها، جداسازی پروتکل‌ها و Decode کردن ورودی Base64 |
 | اعتبارسنجی | بررسی UUID، آدرس سرور، پورت، پارامترهای Reality و ساختار پروتکل |
 | یکسان‌سازی | استانداردسازی نام نودها و آماده‌سازی خروجی |
-| تست زنده | تبدیل به outboundهای sing-box، بررسی ساختار و تست درخواست واقعی |
-| رتبه‌بندی | نگهداری تاریخچه موفقیت و شکست، امتیازدهی و ساخت فهرست Lite |
-| انتشار | تولید اشتراک‌های معمولی و Base64 و گزارش‌های JSON |
+| تست زنده | تبدیل به outboundهای sing-box، بررسی ساختار و تست درخواست واقعی در سه دور مستقل |
+| رتبه‌بندی | نگهداری تاریخچه موفقیت و شکست، امتیازدهی و ساخت فهرست Lite و کیفیت |
+| انتشار | تولید اشتراک‌های معمولی و Base64، سطح‌های Verified/Fast/Secure و گزارش‌های JSON |
 
 ## فرمت‌ها و کلاینت‌ها
 
@@ -62,7 +65,10 @@
 
 | گزارش | محتوا |
 | --- | --- |
-| [Full test report](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) | تعداد ورودی، تبدیل، تست TCP، تست پروتکل و سریع‌ترین نودها |
+| [Network health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json) | سلامت منابع، نتیجه تست، آمار اعتبارسنجی و تعداد دسته‌های کیفیت |
+| [API index](https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json) | فهرست مرکزی گزارش‌ها و اشتراک‌ها برای مصرف خودکار |
+| [Source health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json) | وضعیت دریافت هر منبع و تعداد کانفیگ‌های استخراج‌شده |
+| [Full test report](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) | تعداد ورودی، تبدیل، تست TCP، سه دور تست پروتکل و سریع‌ترین نودها |
 | [Lite status](https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json) | زمان به‌روزرسانی و تعداد اشتراک‌های Fast و Stable |
 | [Validation stats](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json) | تعداد ورودی معتبر و نامعتبر و دلیل رد |
 | [Fetch errors](https://raw.githubusercontent.com/sinavm/SVM/main/reports/fetch_errors.txt) | خطاهای دریافت منابع، در صورت وجود |
@@ -78,6 +84,9 @@ GitHub Actions پردازش را به‌صورت زمان‌بندی‌شده ا
 - موفقیت تست یعنی کانفیگ از محیط GitHub Actions در زمان تست پاسخ داده است؛ این نتیجه تضمین اتصال از همه کشورها، اپراتورها یا دستگاه‌ها نیست.
 - سرورها متعلق به اشخاص ثالث هستند. برای ترافیک حساس از کانفیگ‌های عمومی استفاده نکنید و به گردانندگان آن‌ها اعتماد پیش‌فرض نداشته باشید.
 - وضعیت نودها ممکن است بلافاصله پس از انتشار تغییر کند.
+- Verified یعنی نود در هر سه دور تست همان اجرای CI موفق بوده است؛ تضمین پایداری دائمی یا کیفیت مسیر از شبکه کاربر نیست.
+- Fast بر اساس حداقل دو موفقیت از سه دور و تأخیر حداکثر ۳۵۰ میلی‌ثانیه ساخته می‌شود.
+- Secure صرفاً وجود نشانه‌های TLS یا Reality در پیکربندی را مشخص می‌کند و ممیزی رمزنگاری، امنیت سرور یا قابل اعتماد بودن گرداننده نیست.
 - فهرست‌های Lite انتخاب‌های کاربردی هستند و تضمین پایداری دائمی محسوب نمی‌شوند.
 - استفاده از پروژه باید مطابق قوانین محل استفاده و سیاست سرویس‌های مقصد باشد.
 
