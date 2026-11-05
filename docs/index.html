@@ -77,7 +77,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 .qrrow p{color:var(--muted);font-size:12px;line-height:1.9}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding:42px 0 26px}.orbit{max-width:220px}.navlinks{display:none}.metrics{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.subgrid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.metric{min-height:112px;padding:15px}.metric-value{font-size:26px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-</style>
+.source-panel{margin-top:16px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.source-item{min-width:0;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:13px;padding:12px}.source-item-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.source-name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.source-status{font-size:10px;padding:4px 7px;border-radius:20px;white-space:nowrap}.source-status.ok{background:rgba(34,197,94,.13);color:#86efac}.source-status.stale{background:rgba(245,158,11,.13);color:#fcd34d}.source-status.error,.source-status.empty,.source-status.unconfigured{background:rgba(248,113,113,.12);color:#fca5a5}.source-meta{font-size:10px;color:var(--muted);line-height:1.9;margin-top:7px;overflow-wrap:anywhere}.source-item a{display:inline-block;font-size:10px;color:var(--accent);margin-top:5px}.source-empty{font-size:11px;color:var(--muted)}@media(max-width:900px){.source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.source-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <div class="shell">
@@ -108,6 +108,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="metric"><span class="metric-label">اعتبارسنجی‌شده</span><strong class="metric-value" id="valid">—</strong><span class="metric-note" id="invalidNote">ساختار معتبر</span></article>
 </div>
 <div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><span id="sourceState">سلامت منابع: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
+<article class="panel source-panel"><div class="section-head"><div><h3>منابع ورودی کانفیگ</h3><p>فیدهای عمومی، کانال‌های تلگرام و اشتراک‌های خصوصی؛ وضعیت هر منبع مستقل گزارش می‌شود.</p></div><span class="pill" id="publicSourceCount">۱۲ فید عمومی</span></div><div class="source-grid" id="sourceGrid"><span class="source-empty">در انتظار گزارش منابع</span></div></article>
 </section>
 <section class="section">
 <div class="section-head"><div><h2>قیف اعتبارسنجی</h2><p>مقایسه ورودی، تبدیل، اتصال TCP و تست واقعی پروتکل</p></div></div>
@@ -141,6 +142,9 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="subcard"><div class="subtop"><span class="subicon">✓</span><span class="pill">VERIFIED · 3/3</span></div><h3>تأییدشده</h3><p>نودهایی که در هر سه دور تست موفق بوده‌اند و تأخیر قابل قبول دارند.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">کپی لینک</button></div></article>
 <article class="subcard"><div class="subtop"><span class="subicon">⚡</span><span class="pill">FAST · ≤350MS</span></div><h3>اشتراک سریع</h3><p>نودهای زنده با حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ میلی‌ثانیه.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">کپی لینک</button></div></article>
 <article class="subcard"><div class="subtop"><span class="subicon">◇</span><span class="pill">SECURE · TLS</span></div><h3>رمزنگاری‌شده</h3><p>کانفیگ‌هایی که از انتقال TLS یا Reality پشتیبانی می‌کنند؛ این دسته تضمین ممیزی امنیتی نیست.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">🏆</span><span class="pill">TOP 100</span></div><h3>صد نود برتر</h3><p>صد نود Verified مرتب‌شده بر اساس کمترین تأخیر.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">✦</span><span class="pill">CURATED</span></div><h3>منابع منتخب</h3><p>نودهای زنده‌ای که از فیدهای منتخب وارد شده‌اند.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">▤</span><span class="pill">HEAVY</span></div><h3>منابع حجیم</h3><p>نودهای زندهٔ ورودی از تجمیع‌کننده‌های حجیم.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy">کپی لینک</button></div></article>
 </div>
 </section>
 <section class="section" id="reports">
@@ -160,14 +164,14 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <footer class="footer">SVM · SiNAVM Network · داده‌ها از گزارش‌های واقعی مخزن خوانده می‌شوند<br><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://t.me/sinavm">Telegram</a></footer>
 </div>
 <script>
-const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"};
+const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json",sources:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"};
 const number=value=>Number.isFinite(Number(value))?Number(value):0;
 const format=value=>number(value).toLocaleString("fa-IR");
 const setText=(id,value)=>{document.getElementById(id).textContent=value};
 const setBar=(id,value,total)=>{document.getElementById(id).style.width=(total>0?Math.min(100,Math.max(0,value/total*100)):0)+"%"};
 async function loadData(){
 const stamp=Date.now();
-const [testResult,liteResult,statsResult,healthResult]=await Promise.allSettled([
+const [testResult,liteResult,statsResult,healthResult,sourcesResult]=await Promise.allSettled([
 fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
 fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
 fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()}),
@@ -176,7 +180,7 @@ fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new E
 const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
 const stats=statsResult.status==="fulfilled"?statsResult.value:{};
-const health=healthResult.status==="fulfilled"?healthResult.value:{};
+const health=healthResult.status==="fulfilled"?healthResult.value:{};\nconst sourceReport=sourcesResult.status==="fulfilled"?sourcesResult.value:{};
 const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(health.overall?.nodes?.alive??test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
@@ -209,10 +213,17 @@ const tested=test.tested_at||lite.tested_at||null;
 setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
 const sourceHealth=health.overall?.source_health;
 setText("sourceState",sourceHealth?"منابع سالم: "+format(sourceHealth.healthy)+" · قدیمی: "+format(sourceHealth.stale||0)+" · خطا: "+format(sourceHealth.failed||0)+" · خالی: "+format(sourceHealth.empty||0)+" · تنظیم‌نشده: "+format(sourceHealth.unconfigured||0):"سلامت منابع: —");
+const sourceGrid=document.getElementById("sourceGrid");
+sourceGrid.replaceChildren();
+const sourceEntries=Object.entries(sourceReport.sources||{}).sort((a,b)=>{const ga=a[1].group||a[1].kind||"";const gb=b[1].group||b[1].kind||"";return ga.localeCompare(gb)||String(a[1].name||a[0]).localeCompare(String(b[1].name||b[0]))});
+const statusLabels={ok:"سالم",stale:"قدیمی",error:"خطا",empty:"بدون کانفیگ",unconfigured:"تنظیم‌نشده",unknown:"نامشخص"};
+sourceEntries.forEach(([key,entry])=>{const card=document.createElement("article");card.className="source-item";const head=document.createElement("div");head.className="source-item-head";const name=document.createElement("span");name.className="source-name";name.textContent=entry.name||key;const status=document.createElement("span");status.className="source-status "+(entry.status||"unknown");status.textContent=statusLabels[entry.status]||"نامشخص";head.append(name,status);const meta=document.createElement("div");meta.className="source-meta";const group=entry.group||entry.kind||"source";const count=number(entry.configs_found);const unique=entry.unique_configs===undefined?"—":format(entry.unique_configs);const http=entry.http_code||"—";const latency=entry.latency_ms===null||entry.latency_ms===undefined?"—":format(entry.latency_ms)+"ms";meta.textContent=group+" · کانفیگ: "+format(count)+" · یکتا: "+unique+" · HTTP: "+http+" · پاسخ: "+latency;card.append(head,meta);if(typeof entry.url==="string"&&entry.url.startsWith("https://")){const link=document.createElement("a");link.href=entry.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="مشاهده فید ↗";card.append(link)}sourceGrid.append(card)});
+if(!sourceEntries.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="هنوز گزارشی از منابع منتشر نشده است";sourceGrid.append(empty)}
+setText("publicSourceCount",format(sourceReport.public_sources_healthy||0)+" از "+format(sourceReport.public_sources_total||0)+" فید عمومی سالم");
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
-const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled";
-const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled";
+const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled"&&sourcesResult.status==="fulfilled";
+const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled"||sourcesResult.status==="fulfilled";
 setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":partial?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
 }
 document.getElementById("refresh").addEventListener("click",loadData);
