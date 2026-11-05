@@ -51,6 +51,7 @@ $geoCachePath = $reports . "/geo-cache.json";
 $geoCache = is_file($geoCachePath) ? json_decode((string)file_get_contents($geoCachePath), true) : [];
 if (!is_array($geoCache)) $geoCache = [];
 $geoTtl = 30 * 86400;
+$publicIpFlags = FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE;
 $hostIps = [];
 $missingIps = [];
 if ($testUsable) {
@@ -59,8 +60,8 @@ if ($testUsable) {
         if (!$type) continue;
         $host = nodeHost(trim($line), $type);
         if ($host === "") continue;
-        $ip = filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ? $host : gethostbyname($host);
-        if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) continue;
+        $ip = filter_var($host, FILTER_VALIDATE_IP, $publicIpFlags) ? $host : gethostbyname($host);
+        if (!filter_var($ip, FILTER_VALIDATE_IP, $publicIpFlags)) continue;
         $hostIps[configFingerprint(trim($line))] = $ip;
         $cached = $geoCache[$ip] ?? [];
         if (empty($cached["country"]) || (time() - (int)($cached["checked_at"] ?? 0)) > $geoTtl) $missingIps[$ip] = true;
