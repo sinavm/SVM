@@ -77,11 +77,12 @@ jobs:
 
           php -d display_errors get.php
           php -d display_errors config-test.php
-          php -d display_errors quality.php
           php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors quality.php
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
@@ -154,10 +155,11 @@ jobs:
           cd lite
           php -d display_errors ../get.php
           php -d display_errors ../config-test.php
-          php -d display_errors ../quality.php
           php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors ../quality.php
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors ../rank.php || true
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
