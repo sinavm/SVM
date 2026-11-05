@@ -120,7 +120,7 @@ if (!is_array($sourcesArray)) $sourcesArray = [];
 $publicCatalog = is_file("public_sources.json") ? json_decode(file_get_contents("public_sources.json"), true) : [];
 $publicSources = is_array($publicCatalog["sources"] ?? null) ? $publicCatalog["sources"] : [];
 $publicSources = array_values(array_filter($publicSources, function ($source) {
-    return is_array($source) && !empty($source["enabled"]) && !empty($source["url"]) && !empty($source["id"]);
+    return is_array($source) && !empty($source["enabled"]) && !empty($source["secret_slot"]) && !empty($source["id"]);
 }));
 
 $sublinksJson = file_get_contents("sublinks.json");
@@ -240,15 +240,16 @@ foreach ($publicSources as $source) {
     $sourceId = preg_replace('/[^A-Za-z0-9_.-]/', '-', (string)$source["id"]);
     $sourceName = trim((string)($source["name"] ?? $sourceId));
     $sourceGroup = in_array(($source["group"] ?? ""), ["curated", "heavy"], true) ? $source["group"] : "other";
-    $url = trim((string)$source["url"]);
+    $slot = (int)$source["secret_slot"];
+    $url = $slot > 0 ? resolvePrivateSublink($slot) : "";
     $cacheFile = "cache/public/" . $sourceId . ".txt";
     $key = "public:" . $sourceId;
     $sourceHealth[$key] = [
-        "kind" => "public",
+        "kind" => "private_feed",
         "group" => $sourceGroup,
         "name" => $sourceName,
-        "url" => $url,
-        "status" => "unknown",
+        "secret_slot" => $slot,
+        "status" => $url !== "" ? "unknown" : "unconfigured",
         "configs_found" => 0,
         "unique_configs" => 0,
         "checked_at" => gmdate("c"),
@@ -261,6 +262,11 @@ foreach ($publicSources as $source) {
     echo str_repeat(" ", max(0, $totalSources - (int)floor($percentage / (100 / max(1, $totalSources)))));
     echo "] " . number_format($percentage, 2) . "%";
     $tempCounter++;
+
+    if ($url === "") {
+        $sourceHealth[$key]["error"] = "missing_secret";
+        continue;
+    }
 
     [$body, $fetchMeta] = fetchPublicSource($url, $cacheFile, 900);
     $sourceHealth[$key] = array_merge($sourceHealth[$key], $fetchMeta);
@@ -328,7 +334,7 @@ foreach ($sourceHealth as $key => $entry) {
     $sourceHistory["sources"][$key] = [
         "name" => $entry["name"],
         "group" => $entry["group"],
-        "url" => $entry["url"],
+        "secret_slot" => $entry["secret_slot"],
         "runs" => (int)($old["runs"] ?? 0) + 1,
         "successful_runs" => (int)($old["successful_runs"] ?? 0) + (($yield > 0 && $entry["status"] === "ok") ? 1 : 0),
         "last_status" => $entry["status"],
@@ -416,8 +422,7 @@ $publicHeavy = array_filter($publicHealth, function ($s) { return ($s["group"] ?
 $disableCandidates = array_filter($sourceHistory["sources"] ?? [], function ($s) { return !empty($s["disable_candidate"]); });
 file_put_contents("reports/sources.json", json_encode([
     "updated_at" => gmdate("c"),
-    "catalog" => "https://raw.githubusercontent.com/sinavm/SVM/main/public_sources.json",
-    "retired_sources" => array_map(function ($source) { return ["id" => $source["id"] ?? null, "name" => $source["name"] ?? null, "reason" => $source["reason"] ?? null, "checked_at" => $source["checked_at"] ?? null]; }, $publicCatalog["retired_sources"] ?? []),
+    "retired_sources" => [],
     "public_sources_total" => count($publicHealth),
     "public_sources_healthy" => count(array_filter($publicHealth, function ($s) { return $s["status"] === "ok"; })),
     "curated_sources" => count($publicCurated),
