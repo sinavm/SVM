@@ -6,16 +6,18 @@ on:
     branches: [main]
     paths:
       - get.php
+      - public_sources.json
+      - lite/public_sources.json
       - config-test.php
       - quality.php
       - functions.php
       - .github/workflows/php.yml
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '*/15 * * * *'
 
 concurrency:
   group: "sinavm-full"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -81,7 +83,7 @@ jobs:
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors quality.php
-          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
@@ -157,7 +159,7 @@ jobs:
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors ../quality.php
-          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/test.json", "reports/health.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors ../rank.php || true
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
