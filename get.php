@@ -102,7 +102,7 @@ foreach ($sourcesArray as $source => $types) {
                 $sourceHealth["telegram:" . $source]["configs_found"]++;
             }
         }
-        $sourceHealth["telegram:" . $source]["status"] = (time() - filemtime($cacheFile) > 7200) ? "stale" : "ok";
+        $sourceHealth["telegram:" . $source]["status"] = (time() - filemtime($cacheFile) > 7200) ? "stale" : ($sourceHealth["telegram:" . $source]["configs_found"] > 0 ? "ok" : "empty");
     } catch (Exception $e) {
         $sourceHealth["telegram:" . $source]["status"] = "error";
         $sourceHealth["telegram:" . $source]["error"] = $e->getMessage();
@@ -110,7 +110,7 @@ foreach ($sourcesArray as $source => $types) {
     }
 }
 
-foreach ($sublinksArray['sublinks'] as $sublink) {
+foreach ($sublinksArray['sublinks'] as $sublinkIndex => $sublink) {
     $percentage = ($tempCounter / $totalSources) * 100;
     echo "\rProgress: [";
     echo str_repeat("=", floor($percentage / (100 / $totalSources)));
@@ -123,7 +123,7 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $protocols = expandProtocolPattern($sublink['protocols'] ?? []);
 
     if ($url === '' || strpos($url, '__PRIVATE_LINK_') !== false || $protocols === '') {
-        $slot = "unknown";
+        $slot = (string)($sublinkIndex + 1);
         if (preg_match('/__PRIVATE_LINK_SiNAVM_(\d+)__/', $url, $match)) $slot = $match[1];
         $key = "subscription_slot:" . $slot;
         $sourceHealth[$key] = [
@@ -153,7 +153,7 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
             $sourceOf[$line] = "sub:" . $cacheKey;
             $sourceHealth["subscription:" . $cacheKey]["configs_found"]++;
         }
-        $sourceHealth["subscription:" . $cacheKey]["status"] = (time() - filemtime($cacheFile) > 1800) ? "stale" : "ok";
+        $sourceHealth["subscription:" . $cacheKey]["status"] = (time() - filemtime($cacheFile) > 1800) ? "stale" : ($sourceHealth["subscription:" . $cacheKey]["configs_found"] > 0 ? "ok" : "empty");
     } catch (Exception $e) {
         $sourceHealth["subscription:" . $cacheKey]["status"] = "error";
         $sourceHealth["subscription:" . $cacheKey]["error"] = "fetch_failed";
@@ -202,6 +202,7 @@ file_put_contents("reports/sources.json", json_encode([
     "total_sources" => count($sourceHealth),
     "healthy_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "ok"; })),
     "stale_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "stale"; })),
+    "empty_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "empty"; })),
     "failed_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "error"; })),
     "unconfigured_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "unconfigured"; })),
     "sources" => $sourceHealth
