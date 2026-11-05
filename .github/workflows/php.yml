@@ -34,6 +34,7 @@ jobs:
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
       SINGBOX_VERSION: "1.14.0"
+      MIHOMO_VERSION: "v1.19.29"
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -69,6 +70,12 @@ jobs:
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
+          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
+          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+          gunzip -f /tmp/mihomo.gz
+          install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          mihomo -v
 
       - name: Execute PHP script
         run: |
@@ -88,6 +95,11 @@ jobs:
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
           php -d display_errors hiddifyWarp.php
+          test -s subscriptions/singbox/mix.json
+          test -s subscriptions/clash/mix
+          test -s subscriptions/meta/mix
+          for f in subscriptions/singbox/*.json; do [ -f "$f" ] || continue; sing-box check -c "$f"; done
+          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
@@ -145,6 +157,12 @@ jobs:
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
+          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
+          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+          gunzip -f /tmp/mihomo.gz
+          install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          mihomo -v
 
       - name: Execute PHP script
         run: |
@@ -164,6 +182,11 @@ jobs:
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
           php -d display_errors ../toClashMetaExtra.php || true
+          test -s subscriptions/singbox/mix.json
+          test -s subscriptions/clash/mix
+          test -s subscriptions/meta/mix
+          for f in subscriptions/singbox/*.json; do [ -f "$f" ] || continue; sing-box check -c "$f"; done
+          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
