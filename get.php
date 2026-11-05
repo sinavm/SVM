@@ -70,7 +70,7 @@ function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
             $body = fetchWithCache($url, $cacheFile, $ttlSeconds, 3);
             return [$body, ["status" => "ok", "fetch_mode" => "stream", "http_code" => null, "attempts" => 1, "latency_ms" => null, "cache_age_seconds" => 0, "error" => null]];
         } catch (Exception $e) {
-            if ($hasCache) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => null, "attempts" => 3, "latency_ms" => null, "cache_age_seconds" => $cacheAge, "error" => "refresh_failed"]];
+            if ($hasCache && $cacheAge < 86400) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => null, "attempts" => 3, "latency_ms" => null, "cache_age_seconds" => $cacheAge, "error" => "refresh_failed"]];
             return ["", ["status" => "error", "fetch_mode" => "network", "http_code" => null, "attempts" => 3, "latency_ms" => null, "cache_age_seconds" => null, "error" => "fetch_failed"]];
         }
     }
@@ -111,7 +111,7 @@ function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
         if ($lastCode >= 400 && $lastCode < 500 && $lastCode !== 429) break;
         if ($i < 2) sleep($backoffs[$i]);
     }
-    if ($hasCache) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => $cacheAge, "error" => $lastError ?: "refresh_failed"]];
+    if ($hasCache && $cacheAge < 86400) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => $cacheAge, "error" => $lastError ?: "refresh_failed"]];
     return ["", ["status" => "error", "fetch_mode" => "network", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => null, "error" => $lastError ?: "fetch_failed"]];
 }
 
