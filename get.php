@@ -123,6 +123,17 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
     $protocols = expandProtocolPattern($sublink['protocols'] ?? []);
 
     if ($url === '' || strpos($url, '__PRIVATE_LINK_') !== false || $protocols === '') {
+        $slot = "unknown";
+        if (preg_match('/__PRIVATE_LINK_SiNAVM_(\d+)__/', $url, $match)) $slot = $match[1];
+        $key = "subscription_slot:" . $slot;
+        $sourceHealth[$key] = [
+            "kind" => "subscription",
+            "name" => "private-source-" . $slot,
+            "status" => "unconfigured",
+            "configs_found" => 0,
+            "checked_at" => gmdate("c"),
+            "error" => "missing_secret_or_protocol_filter"
+        ];
         continue;
     }
 
@@ -145,8 +156,8 @@ foreach ($sublinksArray['sublinks'] as $sublink) {
         $sourceHealth["subscription:" . $cacheKey]["status"] = "ok";
     } catch (Exception $e) {
         $sourceHealth["subscription:" . $cacheKey]["status"] = "error";
-        $sourceHealth["subscription:" . $cacheKey]["error"] = $e->getMessage();
-        file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] sub:$cacheKey " . $e->getMessage() . "\n", FILE_APPEND);
+        $sourceHealth["subscription:" . $cacheKey]["error"] = "fetch_failed";
+        file_put_contents("reports/fetch_errors.txt", "[" . date('c') . "] sub:$cacheKey fetch_failed\n", FILE_APPEND);
     }
 }
 
