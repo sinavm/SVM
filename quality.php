@@ -226,7 +226,7 @@ $health = [
     ],
     "protocols_alive" => $protocols,
     "country_nodes" => array_map("count", $countryNodes),
-    "geoip" => ["provider" => "ip-api.com", "known_nodes" => count($nodeCountries), "unknown_nodes" => max(0, count($hostIps) - count($nodeCountries)), "cache_ttl_days" => 30],
+    "geoip" => ["provider" => "ip-api.com", "known_nodes" => count($nodeCountries), "unknown_nodes" => max(0, count($nodeSummary) - count($nodeCountries)), "resolved_ipv4_nodes" => count($hostIps), "unresolved_hosts" => max(0, count($nodeSummary) - count($hostIps)), "cache_ttl_days" => 30],
     "quality_data_fresh" => $testUsable,
     "links" => [
         "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/verified",
