@@ -175,12 +175,14 @@ const [testResult,liteResult,statsResult,healthResult,sourcesResult]=await Promi
 fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
 fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
 fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()}),
-fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("health");return r.json()})
+fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("health");return r.json()}),
+fetch(paths.sources+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("sources");return r.json()})
 ]);
 const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
 const stats=statsResult.status==="fulfilled"?statsResult.value:{};
-const health=healthResult.status==="fulfilled"?healthResult.value:{};\nconst sourceReport=sourcesResult.status==="fulfilled"?sourcesResult.value:{};
+const health=healthResult.status==="fulfilled"?healthResult.value:{};
+const sourceReport=sourcesResult.status==="fulfilled"?sourcesResult.value:{};
 const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(health.overall?.nodes?.alive??test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
