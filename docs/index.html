@@ -237,9 +237,9 @@ const fillNodeFilter=(select,values,label)=>{select.replaceChildren();const firs
 fillNodeFilter(nodeProtocolFilter,[...new Set(nodes.map(n=>String(n.protocol||"").toUpperCase()).filter(Boolean))].sort(),"همه پروتکل‌ها");
 fillNodeFilter(nodeCountryFilter,[...new Set(nodes.map(n=>String(n.country_code||"").toUpperCase()).filter(Boolean))].sort(),"همه کشورها");
 const renderNodes=()=>{const query=nodeSearch.value.trim().toLowerCase();const protocol=nodeProtocolFilter.value;const country=nodeCountryFilter.value;const filtered=nodes.filter(node=>{const haystack=[node.fingerprint,node.protocol,node.country_code].join(" ").toLowerCase();return (!query||haystack.includes(query))&&(!protocol||String(node.protocol||"").toUpperCase()===protocol)&&(!country||String(node.country_code||"").toUpperCase()===country)}).sort((a,b)=>number(a.delay_ms)-number(b.delay_ms));nodeExplorer.replaceChildren();filtered.slice(0,60).forEach(node=>{const item=document.createElement("article");item.className="node-item";const main=document.createElement("div");main.className="node-main";const title=document.createElement("div");title.className="node-title";title.textContent=String(node.protocol||"NODE").toUpperCase()+" · "+String(node.country_code||"XX").toUpperCase();const sub=document.createElement("div");sub.className="node-sub";sub.textContent=String(node.fingerprint||"").slice(0,14)+" · "+format(node.successful_rounds||0)+"/"+format(node.total_rounds||3)+" دور موفق"+(node.encrypted_transport?" · TLS/Reality":"");main.append(title,sub);const delay=document.createElement("span");delay.className="node-delay";delay.textContent=number(node.delay_ms)>0?format(node.delay_ms)+"ms":"—";item.append(main,delay);nodeExplorer.append(item)});setText("explorerCount",format(filtered.length)+" نود · نمایش "+format(Math.min(60,filtered.length)));if(!filtered.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="نودی با این فیلتر پیدا نشد";nodeExplorer.append(empty)}};
-nodeSearch.addEventListener("input",renderNodes);
-nodeProtocolFilter.addEventListener("change",renderNodes);
-nodeCountryFilter.addEventListener("change",renderNodes);
+nodeSearch.oninput=renderNodes;
+nodeProtocolFilter.onchange=renderNodes;
+nodeCountryFilter.onchange=renderNodes;
 renderNodes();
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
