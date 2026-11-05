@@ -60,6 +60,7 @@ jobs:
 
           php -d display_errors get.php
           php -d display_errors config-test.php
+          php -d display_errors quality.php
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
@@ -135,6 +136,7 @@ jobs:
           cd lite
           php -d display_errors ../get.php
           php -d display_errors ../config-test.php
+          php -d display_errors ../quality.php
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors ../rank.php || true
