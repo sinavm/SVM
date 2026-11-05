@@ -1,118 +1,87 @@
-![SVM](https://img.shields.io/badge/SVM-SiNAVM-0f172a?style=for-the-badge&logo=github)
-[![Automation](https://img.shields.io/github/actions/workflow/status/sinavm/SVM/php.yml?style=for-the-badge&label=automation)](https://github.com/sinavm/SVM/actions/workflows/php.yml)
-[![Dashboard](https://img.shields.io/github/actions/workflow/status/sinavm/SVM/pages.yml?style=for-the-badge&label=dashboard)](https://github.com/sinavm/SVM/actions/workflows/pages.yml)
-[![Last commit](https://img.shields.io/github/last-commit/sinavm/SVM?style=for-the-badge)](https://github.com/sinavm/SVM/commits/main)
-[![License](https://img.shields.io/github/license/sinavm/SVM?style=for-the-badge)](LICENSE)
+<p align="center">
+  <img src="https://sinavm.github.io/sinavm/logo/sinavm_logo.jpg" alt="V2Ray Collector Banner" width="120">
+</p>
 
-<div align="center">
+# 🌠 V2Ray Collector
 
-# SVM · SiNAVM Network
+<p align="center">
+  <img src="https://img.shields.io/github/languages/top/sinavm/SVM?color=1e90ff&style=flat-square" alt="Top Language">
+  <img src="https://img.shields.io/github/license/sinavm/SVM?color=2ecc71&style=flat-square" alt="License">
+  <img src="https://img.shields.io/github/stars/sinavm/SVM?color=ffca28&style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/commit-activity/t/sinavm/SVM?color=ff4757&style=flat-square" alt="Commit Activity">
+</p>
 
-### Smart proxy aggregation, validation and subscription delivery
+<p align="center">
+  <a href="#فارسی">🇮🇷 فارسی</a> | <a href="#english">🇬🇧 English</a>
+</p>
 
-تجمیع خودکار منابع، اعتبارسنجی ساختاری، تست واقعی اتصال با sing-box و انتشار اشتراک‌های آماده برای کلاینت‌های سازگار.
+---
 
-[داشبورد زنده](https://sinavm.github.io/SVM/) · [GitHub Actions](https://github.com/sinavm/SVM/actions) · [تلگرام](https://t.me/sinavm)
+## 🇮🇷 فارسی
+<div dir="rtl">
+
+### 🌟 درباره V2Ray Collector
+🎯 **V2Ray Collector** یه ابزار PHP است که کانفیگ‌ها را جمع می‌کند و تبدیل می‌کند. برای اهداف آموزشی منتشر شده.
+
+### دو نوع اشتراک
+
+| نوع | مناسب | لینک raw | آینه jsDelivr |
+| :--- | :--- | :--- | :--- |
+| **کامل** | همه نودهای زنده | [mix](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) | [jsDelivr](https://cdn.jsdelivr.net/gh/sinavm/SVM@main/subscriptions/xray/normal/mix) |
+| **لایت سریع** | حداکثر ۲۵ نود | [alive-fast](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast) | [jsDelivr](https://cdn.jsdelivr.net/gh/sinavm/SVM@main/lite/subscriptions/xray/normal/alive-fast) |
+| **لایت پایدار** | حداکثر ۵۰ نود | [alive-stable](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) | [jsDelivr](https://cdn.jsdelivr.net/gh/sinavm/SVM@main/lite/subscriptions/xray/normal/alive-stable) |
+
+وضعیت زنده: [reports/test.json](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) · صفحه: [sinavm.github.io/SVM](https://sinavm.github.io/SVM/)
+
+### 📋 راهنمای استفاده
+1. اگر کلاینت لیست شلوغ را خوب تحمل می‌کند، mix کامل را بگیر.
+2. اگر می‌خواهی زود وصل شوی، alive-fast را بگیر.
+3. اگر raw باز نشد، jsDelivr را امتحان کن.
+
+#### 📦 لینک‌های اشتراک (کامل Mix)
+| کلاینت         | لینک اشتراک                                      |
+|-----------------|--------------------------------------------------|
+| **Singbox**     | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/mix.json) |
+| **Xray**        | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
+| **Xray (Base64)** | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix) |
+| **Clash**       | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix) |
+| **Clash.Meta**  | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix) |
+| **Surfboard**   | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix) |
+
+#### 🔧 لینک‌های اختصاصی (بر اساس پروتکل)
+| کلاینت         | VMess                                      | VLess                                      | Reality                                    | Trojan                                     | Shadowsocks                                | Tuic                                       | Hysteria2                                  |
+|-----------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
+| **Singbox**     | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/vmess.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/vless.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/reality.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/trojan.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/ss.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/tuic.json) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/hy2.json) |
+| **Xray**        | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vmess) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vless) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/reality) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/trojan) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/ss) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/tuic) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/hy2) |
+| **Xray (Base64)** | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/vmess) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/vless) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/reality) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/trojan) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/ss) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/tuic) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/hy2) |
+| **Clash**       | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/vmess) | 🚫 | 🚫 | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/trojan) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/ss) | 🚫 | 🚫 |
+| **Clash.Meta**  | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vmess) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vless) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/reality) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/trojan) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/ss) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/tuic) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/hy2) |
+| **Surfboard**   | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/vmess) | 🚫 | 🚫 | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/trojan) | [Link](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/ss) | 🚫 | 🚫 |
+
+> پروتکل‌های 🚫 توسط کلاینت پشتیبانی نمی‌شوند.
+
+### 🤝 مشارکت کنید
+ایشو یا Pull Request بدهید.
+
+### 📜 مجوز
+GNU Affero GPL v3.0 — [LICENSE](LICENSE)
+
+### 📞 تماس
+[تلگرام](https://t.me/sinavm)
 
 </div>
 
-## شروع سریع
+---
 
-یکی از لینک‌های زیر را در بخش Subscription کلاینت خود اضافه کنید. برای شروع، Lite Fast یا Verified پیشنهاد می‌شود.
+## 🇬🇧 English
+<div dir="ltr">
 
-| اشتراک | کاربرد | لینک مستقیم |
-| --- | --- | --- |
-| Lite Fast | فهرست فشرده و سریع | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-fast) |
-| Lite Stable | انتخاب پایدارتر با استفاده از تاریخچه کیفیت | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/base64/alive-stable) |
-| Verified | موفق در هر سه دور تست | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/verified) |
-| Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/fast) |
-| Secure | دارای نشانه TLS یا Reality در لایه انتقال | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/secure) |
-| Full Mix | مجموعه کامل خروجی اصلی | [Normal](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix) |
+Full mix stays complete. Compact lists live only under `lite/`.
 
-<div align="center">
+- Full: https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix
+- Lite fast: https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast
+- Mirror: https://cdn.jsdelivr.net/gh/sinavm/SVM@main/subscriptions/xray/normal/mix
 
-[![QR اشتراک Lite Fast](https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast)](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast)
-
-**اسکن QR برای دریافت اشتراک Lite Fast**
-
-</div>
-
-## انتخاب فرمت و کلاینت
-
-SVM خروجی‌های اصلی زیر را منتشر می‌کند:
-
-| کلاینت | اشتراک |
-| --- | --- |
-| Xray / V2Ray | [Mix](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) · [Base64](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix) |
-| sing-box | [Mix JSON](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/mix.json) |
-| Clash | [Mix](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix) |
-| Clash Meta / Mihomo | [Mix](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix) |
-| Surfboard | [Mix](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix) |
-
-اشتراک‌های جداگانه بر اساس پروتکل در [پوشه پروتکل‌ها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/protocols) و بر اساس کشور در [پوشه کشورها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/countries) قرار دارند. لینک‌های هر دو گروه از داشبورد نیز قابل انتخاب هستند.
-
-## قابلیت‌ها
-
-| بخش | قابلیت |
-| --- | --- |
-| جمع‌آوری | دریافت از کانال‌های تلگرام و اشتراک‌های ورودی |
-| استخراج | تشخیص لینک‌ها، جداسازی پروتکل‌ها و Decode ورودی Base64 |
-| اعتبارسنجی | بررسی UUID، سرور، پورت، پارامترهای Reality و ساختار پروتکل |
-| تست زنده | تست TCP و درخواست واقعی از مسیر sing-box در سه دور مستقل |
-| رتبه‌بندی | تاریخچه موفقیت و شکست، امتیازدهی و ساخت فهرست‌های Fast و Stable |
-| تفکیک | تولید خروجی بر اساس پروتکل و کشور |
-| فرمت‌ها | Xray، Base64، sing-box، Clash، Clash Meta و Surfboard |
-| شفافیت | گزارش سلامت منابع، اعتبارسنجی، تست، کیفیت و وضعیت شبکه |
-| داشبورد | انتخاب اشتراک، QR، کاوشگر نودها، فیلتر کشور و پروتکل و آینه CDN |
-
-## گزارش‌های زنده
-
-| گزارش | محتوا |
-| --- | --- |
-| [Network health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json) | سلامت کلی، منابع، نتایج تست و توزیع کشورها |
-| [API index](https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json) | فهرست مرکزی نودها، آمار و اشتراک‌ها |
-| [Source health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json) | وضعیت دریافت هر منبع |
-| [Source history](https://raw.githubusercontent.com/sinavm/SVM/main/reports/history.json) | تاریخچه پردازش |
-| [Quality history](https://raw.githubusercontent.com/sinavm/SVM/main/reports/quality-history.json) | روند تغییر کیفیت |
-| [GeoIP cache](https://github.com/sinavm/SVM/blob/main/reports/geo-cache.json) | کش ۳۰ روزه کشور IP سرورها |
-| [Full test report](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) | ورودی، تبدیل، تست TCP و تست واقعی پروتکل |
-| [Validation stats](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json) | تعداد ورودی معتبر و نامعتبر و دلایل رد |
-| [Lite status](https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json) | زمان به‌روزرسانی و تعداد فهرست‌های Lite |
-
-## منابع خصوصی و GitHub Secrets
-
-فیدهای خصوصی فقط از طریق GitHub Actions Secrets خوانده می‌شوند. برای تنظیم آن‌ها به مسیر **Settings → Secrets and variables → Actions** بروید.
-
-- فیدهای شخصی: `PRIVATE_LINK_SINAVM_1` تا `PRIVATE_LINK_SINAVM_6`
-- فیدهای گروه Curated و Heavy: `PRIVATE_LINK_SINAVM_7` تا `PRIVATE_LINK_SINAVM_18`
-
-هر Secret یک URL اشتراک می‌گیرد. Secret خالی باعث توقف کل پردازش نمی‌شود و فقط همان منبع بدون داده گزارش می‌شود. مقدار Secret نباید در لاگ یا فایل‌های عمومی چاپ شود.
-
-## اتوماسیون
-
-GitHub Actions پردازش اصلی و Lite را اجرا می‌کند. منابع دریافت، استخراج و اعتبارسنجی می‌شوند؛ سپس کانفیگ‌ها با sing-box تست می‌شوند و خروجی‌های کلاینت ساخته و اعتبارسنجی می‌شوند. داشبورد GitHub Pages از پوشه `docs` منتشر می‌شود.
-
-[اجرای پردازش اصلی](https://github.com/sinavm/SVM/actions/workflows/php.yml) · [انتشار داشبورد](https://github.com/sinavm/SVM/actions/workflows/pages.yml)
-
-## محدودیت‌ها و امنیت
-
-- موفقیت تست یعنی کانفیگ از محیط GitHub Actions در زمان تست پاسخ داده است؛ این نتیجه تضمین اتصال از همه کشورها، اپراتورها یا دستگاه‌ها نیست.
-- سرورها متعلق به اشخاص ثالث هستند. برای ترافیک حساس از کانفیگ‌های عمومی استفاده نکنید و به گردانندگان آن‌ها اعتماد پیش‌فرض نداشته باشید.
-- وضعیت نودها ممکن است بلافاصله پس از انتشار تغییر کند.
-- Verified یعنی نود در هر سه دور تست همان اجرای CI موفق بوده است؛ این معیار تضمین پایداری دائمی نیست.
-- Fast بر اساس حداقل دو موفقیت از سه دور و تأخیر حداکثر ۳۵۰ میلی‌ثانیه ساخته می‌شود.
-- Secure صرفاً وجود نشانه‌های TLS یا Reality را مشخص می‌کند و ممیزی امنیتی سرور یا گرداننده نیست.
-- مکان‌یابی کشور با سرویس GeoIP بیرونی انجام می‌شود؛ IP عمومی سرورها برای تعیین کشور پردازش و نتیجه تا ۳۰ روز cache می‌شود.
-- استفاده از پروژه باید مطابق قوانین محل استفاده و سیاست سرویس‌های مقصد باشد.
-
-## مشارکت
-
-برای گزارش مشکل، نوع پروتکل، گزارش مرتبط و مراحل بازتولید را در Issue قرار دهید. Pull Request برای بهبود کد، تست و مستندات پذیرفته می‌شود.
-
-<div align="center">
-
-**SiNAVM · SVM**
-
-[GitHub](https://github.com/sinavm/SVM) · [Dashboard](https://sinavm.github.io/SVM/) · [Telegram](https://t.me/sinavm)
+Contact: [t.me/sinavm](https://t.me/sinavm)
 
 </div>

@@ -1,134 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08111f">
-<meta name="description" content="داشبورد زنده SVM؛ اشتراک‌های تست‌شده، وضعیت منابع، آمار شبکه و انتخاب خروجی برای کلاینت‌های Xray، sing-box و Clash">
-<meta property="og:title" content="SVM | SiNAVM Network">
-<meta property="og:description" content="مرکز هوشمند دریافت اشتراک و پایش زنده شبکه SVM">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://raw.githubusercontent.com">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="styles.css?v=20261106">
-<title>SVM | SiNAVM Network</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>SVM | اشتراک SiNAVM</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#0f172a;--primary:#3b82f6;--accent:#06b6d4;--gold:#fbbf24;--green:#10b981;--glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--text:#f8fafc;--mute:#94a3b8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Vazirmatn,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;justify-content:center;
+background-image:radial-gradient(at 0% 0%,hsla(253,16%,7%,1) 0,transparent 50%),radial-gradient(at 50% 0%,hsla(225,39%,30%,1) 0,transparent 50%),radial-gradient(at 100% 0%,hsla(339,49%,30%,1) 0,transparent 50%);background-attachment:fixed}
+.container{width:100%;max-width:500px;padding:20px 20px 80px;display:flex;flex-direction:column;gap:18px}
+header{text-align:center;margin-top:12px}
+.logo{width:90px;height:90px;border-radius:50%;border:3px solid rgba(255,255,255,.2);box-shadow:0 0 30px rgba(6,182,212,.4);padding:3px;background:var(--glass)}
+h1{font-size:1.8rem;font-weight:900;margin:12px 0 4px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--accent);font-size:.9rem}
+.card{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:24px;padding:20px}
+.title{font-size:1rem;color:var(--mute);margin:0 0 12px;padding-right:10px;border-right:3px solid var(--primary)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:18px;padding:14px;text-align:center;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:6px}
+.btn span{font-weight:700}
+.btn small{color:var(--mute);font-size:.72rem}
+.gold{border-color:rgba(251,191,36,.35)}
+.green{border-color:rgba(16,185,129,.35)}
+.status{color:var(--mute);font-size:.85rem;margin:0 0 12px}
+.qr{background:#fff;border-radius:14px;padding:8px;width:140px;height:140px;display:block;margin:12px auto 0}
+footer{text-align:center;color:var(--mute);font-size:.8rem}
+footer a{color:var(--mute);margin:0 8px;text-decoration:none}
+</style>
 </head>
 <body>
-<div class="ambient ambient-one"></div>
-<div class="ambient ambient-two"></div>
-<header class="site-header">
-<div class="wrap nav-wrap">
-<a class="brand" href="./" aria-label="SVM home"><span class="brand-mark">S</span><span><strong>SVM</strong><small>SINAVM NETWORK</small></span></a>
-<nav class="main-nav"><a href="#overview">نمای کلی</a><a href="#hub">مرکز اشتراک</a><a href="#explorer">کاوشگر</a><a href="#sources">منابع</a><a href="#reports">گزارش‌ها</a></nav>
-<div class="nav-actions"><label class="mirror-switch"><input id="mirrorToggle" type="checkbox"><span class="switch-ui"></span><span>آینه CDN</span></label><a class="github-link" href="https://github.com/sinavm/SVM" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a></div>
-</div>
+<div class="container">
+<header>
+  <img class="logo" src="https://sinavm.github.io/sinavm/logo/sinavm_logo_1.jpg" alt="SiNAVM">
+  <h1>SVM</h1>
+  <div class="sub">اشتراک کامل و لایت</div>
 </header>
-<main class="wrap">
-<section class="hero">
-<div class="hero-copy">
-<div class="eyebrow"><span class="live-dot"></span> NETWORK INTELLIGENCE · LIVE DATA</div>
-<h1>شبکه‌ای هوشمند برای<br><span>اتصال‌های بهتر</span></h1>
-<p class="hero-lead">تجمیع منابع، اعتبارسنجی ساختاری و تست واقعی با sing-box؛ خروجی‌های آماده برای کلاینت‌های مختلف، همراه با آمار و گزارش شفاف.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#hub">ساخت لینک اشتراک <span>←</span></a><a class="btn btn-ghost" href="https://github.com/sinavm/SVM/actions" target="_blank" rel="noopener noreferrer">وضعیت پردازش‌ها ↗</a></div>
-<div class="hero-meta"><span class="meta-chip"><i></i> تست سه‌مرحله‌ای</span><span class="meta-chip">Sing-box engine</span><span class="meta-chip">به‌روزرسانی خودکار</span></div>
+<div class="card">
+  <div class="title">وضعیت زنده</div>
+  <p class="status" id="status-line">در حال خواندن…</p>
 </div>
-<div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="hero-core"><span>SVM</span><small>SMART NETWORK</small></div><span class="float-tag tag-a">LIVE TEST</span><span class="float-tag tag-b">3× VERIFY</span><span class="float-tag tag-c">MULTI CLIENT</span></div>
-</section>
-<section id="overview" class="section">
-<div class="section-heading"><div><span class="section-kicker">NETWORK OVERVIEW</span><h2>نمای کلی شبکه</h2><p>اطلاعات از گزارش‌های واقعی آخرین اجرای مخزن خوانده می‌شود.</p></div><div class="fresh-pill" id="freshness"><span class="live-dot"></span> در حال دریافت داده‌ها</div></div>
-<div class="stats-grid">
-<article class="stat-card"><span class="stat-icon cyan">⌁</span><span class="stat-label">کانفیگ‌های ورودی</span><strong id="metricInput">—</strong><small>Raw configurations</small></article>
-<article class="stat-card"><span class="stat-icon green">✓</span><span class="stat-label">اتصال‌های موفق</span><strong id="metricAlive">—</strong><small>Real protocol test</small></article>
-<article class="stat-card"><span class="stat-icon violet">◇</span><span class="stat-label">تأییدشده</span><strong id="metricVerified">—</strong><small>Passed all test rounds</small></article>
-<article class="stat-card"><span class="stat-icon amber">ϟ</span><span class="stat-label">فهرست سریع</span><strong id="metricFast">—</strong><small>Fast quality tier</small></article>
-<article class="stat-card"><span class="stat-icon blue">▤</span><span class="stat-label">منابع سالم</span><strong id="metricSources">—</strong><small id="metricSourceNote">Source health</small></article>
+<div class="card">
+  <div class="title">انتخاب اشتراک</div>
+  <div class="grid">
+    <a class="btn gold" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">
+      <i class="fas fa-layer-group" style="color:var(--gold)"></i><span>کامل</span><small>raw mix</small>
+    </a>
+    <a class="btn green" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">
+      <i class="fas fa-bolt" style="color:var(--green)"></i><span>لایت سریع</span><small>alive-fast</small>
+    </a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/subscriptions/xray/normal/mix">
+      <span>jsDelivr کامل</span><small>آینه raw</small>
+    </a>
+    <a class="btn" href="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/lite/subscriptions/xray/normal/alive-fast">
+      <span>jsDelivr لایت</span><small>آینه raw</small>
+    </a>
+  </div>
+  <img class="qr" alt="QR lite" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast">
 </div>
-<div class="status-strip"><div class="status-message"><span class="status-indicator" id="statusIndicator"></span><strong id="pipelineState">در انتظار گزارش پردازش</strong></div><span id="testedAt">آخرین تست: —</span><span id="sourceSummary">سلامت منابع: —</span><button class="text-button" id="refreshButton" type="button">↻ تازه‌سازی</button></div>
-</section>
-<section id="hub" class="section">
-<div class="section-heading"><div><span class="section-kicker">SUBSCRIPTION BUILDER</span><h2>مرکز هوشمند اشتراک</h2><p>کلاینت و نوع خروجی را انتخاب کن؛ لینک آمادهٔ کپی یا اسکن ساخته می‌شود.</p></div><span class="section-index">01 / SUBSCRIBE</span></div>
-<div class="hub-layout">
-<div class="hub-panel">
-<div class="steps"><span class="step active"><b>01</b> انتخاب کلاینت</span><span class="step"><b>02</b> انتخاب فهرست</span><span class="step"><b>03</b> دریافت لینک</span></div>
-<div class="field-grid">
-<label class="field"><span>کلاینت / فرمت</span><select id="clientSelect"><option value="xray">Xray / V2Ray</option><option value="singbox">sing-box JSON</option><option value="clash">Clash</option><option value="meta">Clash Meta / Mihomo</option><option value="surfboard">Surfboard</option></select></label>
-<label class="field"><span>نوع اشتراک</span><select id="tierSelect"><option value="mix">مجموعه کامل</option><option value="verified">تأییدشده · 3/3</option><option value="fast">سریع · ≤350ms</option><option value="secure">TLS / Reality</option><option value="alive-fast">Lite Fast</option><option value="alive-stable">Lite Stable</option></select></label>
-<label class="field" id="profileField"><span>نوع لینک Xray</span><select id="profileSelect"><option value="normal">متن ساده</option><option value="base64">Base64</option></select></label>
+<footer>
+  <a href="https://sinavm.github.io/sinavm/">پنل SiNAVM</a>
+  <a href="https://t.me/sinavm">تلگرام</a>
+  <a href="https://github.com/sinavm/SVM">گیتهاب</a>
+</footer>
 </div>
-<div class="selected-link"><div><span class="link-label">لینک اشتراک شما</span><code id="subscriptionUrl">در حال آماده‌سازی…</code></div><div class="link-actions"><button id="copySubscription" class="btn btn-primary" type="button">کپی لینک</button><a id="openSubscription" class="btn btn-ghost" href="#" target="_blank" rel="noopener noreferrer">باز کردن ↗</a></div></div>
-<div class="hub-note" id="hubNote">برای دریافت مستقیم از GitHub از لینک اصلی استفاده کن. اگر GitHub در دسترس نبود، آینه CDN را فعال کن.</div>
-</div>
-<div class="qr-panel"><div class="qr-top"><span class="qr-label">QUICK IMPORT</span><span class="qr-live">READY</span></div><div class="qr-frame"><img id="subscriptionQr" alt="QR اشتراک انتخاب‌شده" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Fsubscriptions%2Fxray%2Fnormal%2Fmix"></div><strong>اسکن و اتصال</strong><p>کد را با برنامهٔ سازگار اسکن کن یا لینک را مستقیماً کپی کن.</p><button id="downloadQr" class="qr-download" type="button">باز کردن تصویر QR ↗</button></div>
-</div>
-<div class="subscription-grid">
-<article class="subscription-card featured"><div class="card-top"><span class="card-symbol">✓</span><span class="tag tag-green">VERIFIED · 3/3</span></div><h3>تأییدشده</h3><p>نودهایی که در هر سه دور تست موفق بوده‌اند.</p><div class="card-bottom"><strong id="countVerified">—</strong><a data-path="subscriptions/xray/normal/verified" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">دریافت ↗</a></div></article>
-<article class="subscription-card"><div class="card-top"><span class="card-symbol">ϟ</span><span class="tag tag-amber">FAST · 350MS</span></div><h3>سریع</h3><p>حداقل دو موفقیت از سه تست با تأخیر حداکثر ۳۵۰ میلی‌ثانیه.</p><div class="card-bottom"><strong id="countFast">—</strong><a data-path="subscriptions/xray/normal/fast" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">دریافت ↗</a></div></article>
-<article class="subscription-card"><div class="card-top"><span class="card-symbol">◈</span><span class="tag tag-violet">SECURE · TLS</span></div><h3>رمزنگاری‌شده</h3><p>دارای نشانه‌های TLS یا Reality در لایهٔ انتقال.</p><div class="card-bottom"><strong id="countSecure">—</strong><a data-path="subscriptions/xray/normal/secure" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">دریافت ↗</a></div></article>
-<article class="subscription-card"><div class="card-top"><span class="card-symbol">⚡</span><span class="tag tag-cyan">LITE · FAST</span></div><h3>لایت سریع</h3><p>فهرست فشرده برای دسترسی سریع و استفادهٔ روزمره.</p><div class="card-bottom"><strong id="countLiteFast">—</strong><a data-path="lite/subscriptions/xray/normal/alive-fast" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت ↗</a></div></article>
-<article class="subscription-card"><div class="card-top"><span class="card-symbol">◉</span><span class="tag tag-blue">LITE · STABLE</span></div><h3>لایت پایدار</h3><p>انتخابی متعادل‌تر با استفاده از تاریخچهٔ کیفیت.</p><div class="card-bottom"><strong id="countLiteStable">—</strong><a data-path="lite/subscriptions/xray/normal/alive-stable" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت ↗</a></div></article>
-<article class="subscription-card"><div class="card-top"><span class="card-symbol">▦</span><span class="tag">FULL · MIX</span></div><h3>مجموعه کامل</h3><p>خروجی اصلی برای استفاده در کلاینت‌های مختلف.</p><div class="card-bottom"><strong>ALL</strong><a data-path="subscriptions/xray/normal/mix" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت ↗</a></div></article>
-</div>
-<div class="source-tier-block"><div class="source-tier-heading"><div><strong>فهرست بر اساس منبع ورودی</strong><span>تفکیک نودهای تست‌شده بر اساس گروه منبع، مشابه دسته‌بندی‌های All و Heavy در پروژه مرجع.</span></div><span class="section-index">SOURCE POOLS</span></div><div id="sourceTierGrid" class="source-tier-grid"><div class="empty-state">در انتظار گزارش کیفیت جدید</div></div></div>
-<div class="format-row"><div><strong>خروجی‌های دیگر</strong><span>لینک‌های آماده برای هر کلاینت</span></div><div class="format-links"><a data-path="subscriptions/singbox/mix.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/mix.json">sing-box JSON</a><a data-path="subscriptions/clash/mix" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix">Clash</a><a data-path="subscriptions/meta/mix" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix">Mihomo</a><a data-path="subscriptions/surfboard/mix" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix">Surfboard</a></div></div>
-</section>
-<section id="explorer" class="section">
-<div class="section-heading"><div><span class="section-kicker">NODE EXPLORER</span><h2>کاوشگر نودهای تست‌شده</h2><p>فیلتر بر اساس پروتکل، کشور و سرعت؛ جزئیات حساس کانفیگ نمایش داده نمی‌شود.</p></div><span class="section-index">02 / EXPLORE</span></div>
-<div class="explorer-panel">
-<div class="explorer-controls"><input id="nodeSearch" type="search" placeholder="جست‌وجو در شناسه، پروتکل یا کشور"><select id="nodeProtocol"><option value="">همهٔ پروتکل‌ها</option></select><select id="nodeCountry"><option value="">همهٔ کشورها</option></select><select id="nodeSpeed"><option value="">همهٔ سرعت‌ها</option><option value="200">زیر ۲۰۰ ms</option><option value="350">زیر ۳۵۰ ms</option><option value="800">زیر ۸۰۰ ms</option></select></div>
-<div class="explorer-summary"><span id="nodeCount">در انتظار داده</span><span>مرتب‌شده بر اساس کمترین تأخیر</span></div>
-<div id="nodeList" class="node-list"><div class="empty-state">در حال دریافت فهرست نودها…</div></div>
-</div>
-<div class="geo-protocol-grid">
-<article class="data-panel"><div class="panel-heading"><div><span class="section-kicker">BY COUNTRY</span><h3>اشتراک بر اساس کشور</h3></div><span class="panel-icon">◎</span></div><div id="countryGrid" class="chip-grid"><span class="muted">در انتظار گزارش کشورها</span></div></article>
-<article class="data-panel"><div class="panel-heading"><div><span class="section-kicker">BY PROTOCOL</span><h3>اشتراک بر اساس پروتکل</h3></div><span class="panel-icon">⌘</span></div><div id="protocolGrid" class="chip-grid"><span class="muted">در انتظار گزارش پروتکل‌ها</span></div></article>
-</div>
-</section>
-<section class="section">
-<div class="section-heading"><div><span class="section-kicker">VALIDATION PIPELINE</span><h2>از ورودی تا اتصال واقعی</h2><p>نمایش شفاف مراحل پردازش و میزان عبور کانفیگ‌ها از هر مرحله.</p></div><span class="section-index">03 / QUALITY</span></div>
-<div class="pipeline-panel">
-<div class="pipeline-step"><span class="pipeline-number">01</span><div><strong>جمع‌آوری و استخراج</strong><small>دریافت منابع و استخراج کانفیگ‌ها</small></div><b id="funnelInput">—</b><div class="pipeline-track"><i id="barInput"></i></div></div>
-<div class="pipeline-step"><span class="pipeline-number">02</span><div><strong>اعتبارسنجی و تبدیل</strong><small>بررسی ساختار و ساخت outbound</small></div><b id="funnelConverted">—</b><div class="pipeline-track"><i id="barConverted"></i></div></div>
-<div class="pipeline-step"><span class="pipeline-number">03</span><div><strong>اتصال TCP</strong><small>بررسی دسترسی به سرور</small></div><b id="funnelTcp">—</b><div class="pipeline-track"><i id="barTcp"></i></div></div>
-<div class="pipeline-step"><span class="pipeline-number">04</span><div><strong>تست واقعی پروتکل</strong><small>درخواست واقعی از مسیر پروکسی در چند دور</small></div><b id="funnelAlive">—</b><div class="pipeline-track"><i id="barAlive"></i></div></div>
-</div>
-</section>
-<section id="sources" class="section">
-<div class="section-heading"><div><span class="section-kicker">SOURCE MONITOR</span><h2>مرکز پایش منابع</h2><p>وضعیت هر منبع مستقل نمایش داده می‌شود؛ منابع خالی و غیرفعال از منابع سالم جدا هستند.</p></div><span class="section-index">04 / SOURCES</span></div>
-<div class="source-summary" id="sourceTotals">در انتظار گزارش منابع</div>
-<div id="sourceGrid" class="source-grid"><div class="empty-state">در حال دریافت وضعیت منابع…</div></div>
-</section>
-<section id="reports" class="section">
-<div class="section-heading"><div><span class="section-kicker">OPEN DATA</span><h2>گزارش‌ها و داده‌های باز</h2><p>فایل‌های JSON و خروجی‌های قابل استفاده برای ابزارهای دیگر.</p></div><span class="section-index">05 / REPORTS</span></div>
-<div class="report-grid">
-<a class="report-card" data-path="reports/health.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"><span>01</span><strong>سلامت شبکه</strong><small>وضعیت کلی، منابع، تست و کشورها</small><b>مشاهده ↗</b></a>
-<a class="report-card" data-path="reports/index.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"><span>02</span><strong>API Index</strong><small>فهرست مرکزی آمار، نودها و اشتراک‌ها</small><b>مشاهده ↗</b></a>
-<a class="report-card" data-path="reports/test.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><span>03</span><strong>گزارش تست کامل</strong><small>نتایج TCP و تست پروتکل</small><b>مشاهده ↗</b></a>
-<a class="report-card" data-path="reports/sources.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"><span>04</span><strong>سلامت منابع</strong><small>وضعیت دریافت و بازده منابع</small><b>مشاهده ↗</b></a>
-<a class="report-card" data-path="reports/stats.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><span>05</span><strong>آمار اعتبارسنجی</strong><small>ورودی معتبر، نامعتبر و دلایل رد</small><b>مشاهده ↗</b></a>
-<a class="report-card" data-path="reports/geo-cache.json" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/geo-cache.json"><span>06</span><strong>داده‌های GeoIP</strong><small>کش مکان‌یابی کشور سرورها</small><b>مشاهده ↗</b></a>
-</div>
-</section>
-<section class="section" id="guide">
-<div class="section-heading"><div><span class="section-kicker">GET CONNECTED</span><h2>راهنمای اتصال</h2><p>با لینک اشتراک، کلاینت سازگار را به‌روز نگه دار و در صورت نیاز فرمت دیگری انتخاب کن.</p></div><span class="section-index">06 / GUIDE</span></div>
-<div class="guide-grid">
-<article class="guide-card"><span class="guide-icon">▣</span><h3>اندروید</h3><p>در v2rayNG یا Hiddify بخش افزودن اشتراک را باز کن، لینک Xray را وارد کن و فهرست سرورها را به‌روزرسانی کن.</p></article>
-<article class="guide-card"><span class="guide-icon">◎</span><h3>iOS و iPadOS</h3><p>در کلاینتی که از Xray یا sing-box پشتیبانی می‌کند، لینک اشتراک یا فایل JSON سازگار را اضافه و به‌روزرسانی کن.</p></article>
-<article class="guide-card"><span class="guide-icon">⌘</span><h3>ویندوز، مک و لینوکس</h3><p>برای Xray از لینک Normal یا Base64 استفاده کن. برای Mihomo و sing-box خروجی اختصاصی همان کلاینت را از بخش فرمت‌ها بگیر.</p></article>
-</div>
-<div class="faq-panel">
-<div class="panel-heading"><div><span class="section-kicker">FAQ</span><h3>پرسش‌های متداول</h3></div></div>
-<details><summary>از کدام اشتراک شروع کنم؟</summary><p>برای شروع Lite Fast یا Verified مناسب است. Verified در همهٔ دورهای تست موفق بوده؛ Lite Fast فهرست فشرده‌تری برای دریافت سریع‌تر است.</p></details>
-<details><summary>Verified یعنی اتصال من هم حتماً برقرار می‌شود؟</summary><p>خیر. Verified فقط نتیجهٔ تست در محیط GitHub Actions و زمان اجرای مشخص را نشان می‌دهد. مسیر اینترنت، اپراتور و محدودیت‌های منطقه‌ای می‌توانند نتیجه را تغییر دهند.</p></details>
-<details><summary>تفاوت Fast و Secure چیست؟</summary><p>Fast بر اساس تعداد دورهای موفق و آستانهٔ تأخیر ساخته می‌شود. Secure وجود نشانه‌های TLS یا Reality را مشخص می‌کند و به معنی ممیزی امنیت سرور نیست.</p></details>
-<details><summary>اگر GitHub باز نشد چه کار کنم؟</summary><p>کلید آینه CDN بالای صفحه را فعال کن. داشبورد برای دریافت گزارش‌ها نیز در صورت شکست GitHub تلاش می‌کند از آینه استفاده کند.</p></details>
-</div>
-</section>
-<section class="section safety-section">
-<div class="safety-mark">i</div><div><h2>نکتهٔ امنیتی</h2><p>تست موفق فقط نشان می‌دهد کانفیگ از محیط GitHub Actions در زمان بررسی پاسخ داده است. سرورهای عمومی متعلق به اشخاص ثالث هستند و SVM مالک یا ممیز امنیتی آن‌ها نیست. برای حساب‌ها و اطلاعات حساس از سرویس‌های ناشناس استفاده نکنید.</p></div>
-</section>
-</main>
-<footer class="site-footer"><a class="brand footer-brand" href="./"><span class="brand-mark">S</span><span><strong>SVM</strong><small>SINAVM NETWORK</small></span></a><span>تجمیع هوشمند · تست واقعی · انتشار شفاف</span><div><a href="https://github.com/sinavm/SVM">GitHub</a><a href="https://t.me/sinavm">Telegram</a><a href="https://github.com/sinavm/SVM/actions">Actions</a></div></footer>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="app.js?v=20261106" defer></script>
-</body>
-</html>
+<script>
+fetch('https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json').then(r=>r.json()).then(j=>{
+  document.getElementById('status-line').textContent=' زنده '+ (j.kept||'?') +' از '+ (j.input||'?') +' · '+ (j.tested_at||'');
+}).catch(()=>{document.getElementById('status-line').textContent='وضعیت در دسترس نیست';});
+</script>
+</body></html>

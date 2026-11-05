@@ -24,8 +24,8 @@ $API_URL = "http://{$API_HOST}:{$API_PORT}";
 $API_SECRET = "xXxTestxXx";
 $TEST_URL = "http://www.gstatic.com/generate_204";
 $TIMEOUT_MS = 4500;
-$BATCH_SIZE = 96;
-$DELAY_CONCURRENCY = 24;
+$BATCH_SIZE = 24;
+$DELAY_CONCURRENCY = 8;
 $TCP_CONCURRENCY = 64;
 $TCP_TIMEOUT_MS = 1500;
 $SINGBOX_VERSION = getenv("SINGBOX_VERSION") ?: "1.14.0";
@@ -373,7 +373,7 @@ function protocolTestBatch($bin, $items)
         testLog("sing-box check failed for batch of " . count($items) . ", falling back to singles");
         $results = [];
         if (count($items) === 1) {
-            $results[$items[0]["tag"]] = ["delay" => 0, "successes" => 0, "samples" => [0, 0, 0]];
+            $results[$items[0]["tag"]] = 0;
             return $results;
         }
         foreach ($items as $one) {
@@ -389,32 +389,13 @@ function protocolTestBatch($bin, $items)
         if (!waitForApi(25)) {
             throw new Exception("clash_api not ready");
         }
-        $samples = [];
-        $chunks = array_chunk($tags, max(1, $DELAY_CONCURRENCY));
-        for ($round = 1; $round <= 3; $round++) {
-            foreach ($chunks as $chunk) {
-                $part = delayBatch($chunk);
-                foreach ($part as $tag => $delay) {
-                    if (!isset($samples[$tag])) $samples[$tag] = [];
-                    $samples[$tag][] = ($delay > 0 && $delay < $TIMEOUT_MS) ? $delay : 0;
-                }
-            }
-            testLog("Stability round {$round}/3 completed");
-            if ($round < 3) usleep(350000);
-        }
         $results = [];
-        foreach ($samples as $tag => $values) {
-            $successful = array_values(array_filter($values, function ($v) { return $v > 0; }));
-            sort($successful);
-            $count = count($successful);
-            if ($count === 2) {
-                $median = (int)round(($successful[0] + $successful[1]) / 2);
-            } elseif ($count > 0) {
-                $median = $successful[(int)floor(($count - 1) / 2)];
-            } else {
-                $median = 0;
+        $chunks = array_chunk($tags, 8);
+        foreach ($chunks as $chunk) {
+            $part = delayBatch($chunk);
+            foreach ($part as $tag => $delay) {
+                $results[$tag] = ($delay > 0 && $delay < $TIMEOUT_MS) ? $delay : 0;
             }
-            $results[$tag] = ["delay" => $median, "successes" => $count, "samples" => $values];
         }
         return $results;
     } finally {
@@ -512,8 +493,6 @@ function main()
         "dropped" => 0,
         "by_type_kept" => [],
         "fastest" => [],
-        "stability_rounds" => 3,
-        "node_results" => [],
         "error" => null,
         "infra_ok" => false,
     ];
@@ -570,12 +549,9 @@ function main()
             $delays = protocolTestBatch($bin, $batch);
             $infraOk = true;
             foreach ($batch as $n) {
-                $result = $delays[$n["tag"]] ?? ["delay" => 0, "successes" => 0, "samples" => []];
-                $d = (int)($result["delay"] ?? 0);
-                $n["delay"] = $d;
-                $n["successes"] = (int)($result["successes"] ?? 0);
-                $n["samples"] = $result["samples"] ?? [];
-                if ($d > 0 && $n["successes"] >= 2) {
+                $d = isset($delays[$n["tag"]]) ? (int)$delays[$n["tag"]] : 0;
+                if ($d > 0 && $d < $TIMEOUT_MS) {
+                    $n["delay"] = $d;
                     $alive[] = $n;
                 } else {
                     $protocolDead++;
@@ -589,12 +565,9 @@ function main()
                         $delays = protocolTestBatch($bin, $one);
                         $infraOk = true;
                         $n = $one[0];
-                        $result = $delays[$n["tag"]] ?? ["delay" => 0, "successes" => 0, "samples" => []];
-                        $d = (int)($result["delay"] ?? 0);
-                        $n["delay"] = $d;
-                        $n["successes"] = (int)($result["successes"] ?? 0);
-                        $n["samples"] = $result["samples"] ?? [];
-                        if ($d > 0 && $n["successes"] >= 2) {
+                        $d = isset($delays[$n["tag"]]) ? (int)$delays[$n["tag"]] : 0;
+                        if ($d > 0 && $d < $TIMEOUT_MS) {
+                            $n["delay"] = $d;
                             $alive[] = $n;
                         } else {
                             $protocolDead++;
@@ -626,16 +599,6 @@ function main()
     $report["by_type_kept"] = $byType;
     $report["kept"] = count($alive);
     $report["dropped"] = count($rawLines) - count($alive);
-    $report["node_results"] = array_map(function ($n) {
-        return [
-            "fingerprint" => configFingerprint($n["uri"]),
-            "type" => $n["type"],
-            "delay_ms" => $n["delay"],
-            "successes" => $n["successes"] ?? 0,
-            "rounds" => $n["samples"] ?? [],
-            "host" => $n["host"]
-        ];
-    }, $alive);
 
     $fastest = $alive;
     usort($fastest, function ($a, $b) {
