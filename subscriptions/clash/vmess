@@ -119,10 +119,10 @@ dns:
 
 proxies:
   - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"67.220.85.46","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"67.220.85.46","port":18000,"cipher":"aes-128-gcm","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #6","type":"vmess","server":"38.110.1.246","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #7","type":"vmess","server":"149.88.23.207","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #11","type":"vmess","server":"ww11.levikogjgfdd.ir","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"38.110.1.246","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #5","type":"vmess","server":"149.88.23.207","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #9","type":"vmess","server":"67.220.85.46","port":18000,"cipher":"aes-128-gcm","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #10","type":"vmess","server":"ww11.levikogjgfdd.ir","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -131,9 +131,9 @@ proxy-groups:
       - FALLBACK
       - 'SiNAVM | VMESS | #2'
       - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #6'
-      - 'SiNAVM | VMESS | #7'
-      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #10'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -142,9 +142,9 @@ proxy-groups:
     proxies:
       - 'SiNAVM | VMESS | #2'
       - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #6'
-      - 'SiNAVM | VMESS | #7'
-      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #10'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -152,9 +152,9 @@ proxy-groups:
     proxies:
       - 'SiNAVM | VMESS | #2'
       - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | VMESS | #6'
-      - 'SiNAVM | VMESS | #7'
-      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #10'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
