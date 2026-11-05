@@ -45,7 +45,7 @@ $testUsable = !empty($test["infra_ok"]) && !empty($test["node_results"]) && is_a
 $protocols = [];
 $nodeSummary = [];
 $now = time();
-foreach ($lines as $line) {
+if ($testUsable) foreach ($lines as $line) {
     $line = trim($line);
     $type = detect_type($line);
     $fp = configFingerprint($line);
