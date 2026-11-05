@@ -107,7 +107,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="metric"><span class="metric-label">فهرست پایدار لایت</span><strong class="metric-value" id="stable">—</strong><span class="metric-note">Lite stable selection</span></article>
 <article class="metric"><span class="metric-label">اعتبارسنجی‌شده</span><strong class="metric-value" id="valid">—</strong><span class="metric-note" id="invalidNote">ساختار معتبر</span></article>
 </div>
-<div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
+<div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><span id="sourceState">سلامت منابع: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
 </section>
 <section class="section">
 <div class="section-head"><div><h2>قیف اعتبارسنجی</h2><p>مقایسه ورودی، تبدیل، اتصال TCP و تست واقعی پروتکل</p></div></div>
@@ -133,11 +133,17 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="subcard"><div class="subtop"><span class="subicon">⚡</span><span class="pill">LITE · FAST</span></div><h3>لایت سریع</h3><p>انتخاب فشرده از نودهای موفق با تنوع پروتکل.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">کپی لینک</button></div></article>
 <article class="subcard"><div class="subtop"><span class="subicon">◈</span><span class="pill">LITE · STABLE</span></div><h3>لایت پایدار</h3><p>فهرست بزرگ‌تر برای انتخاب‌های بیشتر و استفاده روزمره.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">کپی لینک</button></div></article>
 <article class="subcard"><div class="subtop"><span class="subicon">▦</span><span class="pill">FULL · MIX</span></div><h3>اشتراک کامل</h3><p>مجموعه کامل خروجی تولیدشده توسط پردازش اصلی.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">✓</span><span class="pill">VERIFIED · 3/3</span></div><h3>تأییدشده</h3><p>نودهایی که در هر سه دور تست موفق بوده‌اند و تأخیر قابل قبول دارند.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">⚡</span><span class="pill">FAST · ≤350MS</span></div><h3>اشتراک سریع</h3><p>نودهای زنده با حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ میلی‌ثانیه.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">کپی لینک</button></div></article>
+<article class="subcard"><div class="subtop"><span class="subicon">◇</span><span class="pill">SECURE · TLS</span></div><h3>رمزنگاری‌شده</h3><p>کانفیگ‌هایی که از انتقال TLS یا Reality پشتیبانی می‌کنند؛ این دسته تضمین ممیزی امنیتی نیست.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">کپی لینک</button></div></article>
 </div>
 </section>
 <section class="section" id="reports">
 <div class="section-head"><div><h2>شفافیت و گزارش‌ها</h2><p>فایل‌های ماشینی و قابل استفاده برای ابزارهای دیگر</p></div></div>
 <div class="panel">
+<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"><span>سلامت جامع شبکه</span><span>JSON ↗</span></a>
+<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"><span>فهرست مرکزی API</span><span>JSON ↗</span></a>
+<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"><span>سلامت منابع دریافت</span><span>JSON ↗</span></a>
 <a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><span>گزارش تست کامل</span><span>JSON ↗</span></a>
 <a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json"><span>وضعیت اشتراک‌های Lite</span><span>JSON ↗</span></a>
 <a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><span>آمار اعتبارسنجی</span><span>JSON ↗</span></a>
@@ -149,21 +155,23 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <footer class="footer">SVM · SiNAVM Network · داده‌ها از گزارش‌های واقعی مخزن خوانده می‌شوند<br><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://t.me/sinavm">Telegram</a></footer>
 </div>
 <script>
-const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"};
+const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"};
 const number=value=>Number.isFinite(Number(value))?Number(value):0;
 const format=value=>number(value).toLocaleString("fa-IR");
 const setText=(id,value)=>{document.getElementById(id).textContent=value};
 const setBar=(id,value,total)=>{document.getElementById(id).style.width=(total>0?Math.min(100,Math.max(0,value/total*100)):0)+"%"};
 async function loadData(){
 const stamp=Date.now();
-const [testResult,liteResult,statsResult]=await Promise.allSettled([
+const [testResult,liteResult,statsResult,healthResult]=await Promise.allSettled([
 fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
 fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
-fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()})
+fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()}),
+fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("health");return r.json()})
 ]);
 const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
 const stats=statsResult.status==="fulfilled"?statsResult.value:{};
+const health=healthResult.status==="fulfilled"?healthResult.value:{};
 const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
@@ -185,10 +193,12 @@ Object.entries(types).sort((a,b)=>number(b[1])-number(a[1])).forEach(([name,coun
 if(!Object.keys(types).length){const item=document.createElement("span");item.className="protocol";item.textContent="داده پروتکل موجود نیست";protocolBox.append(item)}
 const tested=test.tested_at||lite.tested_at||null;
 setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
+const sourceHealth=health.overall?.source_health;
+setText("sourceState",sourceHealth?"سلامت منابع: "+format(sourceHealth.healthy)+"/"+format(sourceHealth.total):"سلامت منابع: —");
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
-const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled";
-const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled";
+const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled";
+const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled";
 setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":partial?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
 }
 document.getElementById("refresh").addEventListener("click",loadData);
