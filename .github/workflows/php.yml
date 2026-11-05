@@ -110,7 +110,59 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          for f in subscriptions/singbox/*.json; do [ -f "$f" ] || continue; sing-box check -c "$f"; done
+          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+          php <<'PHP'
+          <?php
+          foreach (glob('subscriptions/singbox/*.json') as $file) {
+              $raw = file_get_contents($file);
+              $jsonStart = strpos($raw, '{');
+              if ($jsonStart === false) {
+                  fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $prefix = substr($raw, 0, $jsonStart);
+              $config = json_decode(substr($raw, $jsonStart), true);
+              if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
+                  fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $used = [];
+              foreach ($config['outbounds'] as $outbound) {
+                  if (is_array($outbound) && !empty($outbound['tag'])) $used[(string)$outbound['tag']] = true;
+              }
+              $changed = false;
+              foreach ($config['outbounds'] as $index => &$outbound) {
+                  if (!is_array($outbound)) {
+                      fwrite(STDERR, "Invalid outbound[{$index}] in {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  if (trim((string)($outbound['tag'] ?? '')) === '') {
+                      $base = '@SiNAVM-Recovered-' . ($index + 1);
+                      $tag = $base;
+                      $suffix = 2;
+                      while (isset($used[$tag])) $tag = $base . '-' . $suffix++;
+                      $outbound['tag'] = $tag;
+                      $used[$tag] = true;
+                      $changed = true;
+                  }
+              }
+              unset($outbound);
+              if ($changed) {
+                  $encoded = json_encode($config, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+                  if ($encoded === false || file_put_contents($file, $prefix . $encoded) === false) {
+                      fwrite(STDERR, "Could not repair outbound tags: {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  echo "Repaired missing outbound tags: {$file}" . PHP_EOL;
+              }
+          }
+          PHP
+
+          for f in subscriptions/singbox/*.json; do
+            [ -f "$f" ] || continue
+            echo "Checking sing-box: $f"
+            sing-box check -c "$f"
+          done
           for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
@@ -209,7 +261,59 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          for f in subscriptions/singbox/*.json; do [ -f "$f" ] || continue; sing-box check -c "$f"; done
+          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+          php <<'PHP'
+          <?php
+          foreach (glob('subscriptions/singbox/*.json') as $file) {
+              $raw = file_get_contents($file);
+              $jsonStart = strpos($raw, '{');
+              if ($jsonStart === false) {
+                  fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $prefix = substr($raw, 0, $jsonStart);
+              $config = json_decode(substr($raw, $jsonStart), true);
+              if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
+                  fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $used = [];
+              foreach ($config['outbounds'] as $outbound) {
+                  if (is_array($outbound) && !empty($outbound['tag'])) $used[(string)$outbound['tag']] = true;
+              }
+              $changed = false;
+              foreach ($config['outbounds'] as $index => &$outbound) {
+                  if (!is_array($outbound)) {
+                      fwrite(STDERR, "Invalid outbound[{$index}] in {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  if (trim((string)($outbound['tag'] ?? '')) === '') {
+                      $base = '@SiNAVM-Recovered-' . ($index + 1);
+                      $tag = $base;
+                      $suffix = 2;
+                      while (isset($used[$tag])) $tag = $base . '-' . $suffix++;
+                      $outbound['tag'] = $tag;
+                      $used[$tag] = true;
+                      $changed = true;
+                  }
+              }
+              unset($outbound);
+              if ($changed) {
+                  $encoded = json_encode($config, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+                  if ($encoded === false || file_put_contents($file, $prefix . $encoded) === false) {
+                      fwrite(STDERR, "Could not repair outbound tags: {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  echo "Repaired missing outbound tags: {$file}" . PHP_EOL;
+              }
+          }
+          PHP
+
+          for f in subscriptions/singbox/*.json; do
+            [ -f "$f" ] || continue
+            echo "Checking sing-box: $f"
+            sing-box check -c "$f"
+          done
           for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
