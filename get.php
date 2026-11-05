@@ -417,6 +417,7 @@ $disableCandidates = array_filter($sourceHistory["sources"] ?? [], function ($s)
 file_put_contents("reports/sources.json", json_encode([
     "updated_at" => gmdate("c"),
     "catalog" => "https://raw.githubusercontent.com/sinavm/SVM/main/public_sources.json",
+    "retired_sources" => array_map(function ($source) { return ["id" => $source["id"] ?? null, "name" => $source["name"] ?? null, "reason" => $source["reason"] ?? null, "checked_at" => $source["checked_at"] ?? null]; }, $publicCatalog["retired_sources"] ?? []),
     "public_sources_total" => count($publicHealth),
     "public_sources_healthy" => count(array_filter($publicHealth, function ($s) { return $s["status"] === "ok"; })),
     "curated_sources" => count($publicCurated),
