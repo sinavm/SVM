@@ -7,6 +7,7 @@ $root = getcwd();
 $reports = $root . "/reports";
 $normal = $root . "/subscriptions/xray/normal";
 $base64 = $root . "/subscriptions/xray/base64";
+$repoPrefix = basename($root) === "lite" ? "lite/" : "";
 @mkdir($reports, 0777, true);
 @mkdir($normal, 0777, true);
 @mkdir($base64, 0777, true);
@@ -126,19 +127,19 @@ $health = [
     "protocols_alive" => $protocols,
     "quality_data_fresh" => $testUsable,
     "links" => [
-        "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified",
-        "fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast",
-        "secure" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure"
+        "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/verified",
+        "fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/fast",
+        "secure" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/secure"
     ]
 ];
 $index = [
     "schema_version" => 1,
     "generated_at" => gmdate("c"),
     "project" => "SVM",
-    "health" => "https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json",
-    "stats" => "https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",
-    "sources" => "https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json",
-    "test" => "https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",
+    "health" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/health.json",
+    "stats" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/stats.json",
+    "sources" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/sources.json",
+    "test" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/test.json",
     "subscriptions" => $health["links"],
     "counts" => $health["tiers"],
     "nodes" => $nodeSummary
