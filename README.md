@@ -54,25 +54,15 @@
 | رتبه‌بندی | نگهداری تاریخچه موفقیت و شکست، امتیازدهی و ساخت فهرست Lite و کیفیت |
 | انتشار | تولید اشتراک‌های معمولی و Base64، سطح‌های Verified/Fast/Secure، اشتراک‌های Curated/Heavy، Top 100 و گزارش‌های JSON |
 
-## منابع عمومی کانفیگ
+## منابع خصوصی و GitHub Secrets
 
-علاوه بر کانال‌های تلگرام و لینک‌های اشتراک خصوصی، SVM دوازده فید عمومی را از مخازن بالادستی دریافت می‌کند. فهرست URLها، گروه هر منبع، پروتکل‌های مجاز و فعال/غیرفعال بودن هر فید در [public_sources.json](public_sources.json) نگهداری می‌شود.
+تمام ۱۲ فید بالادستی فقط از طریق GitHub Actions Secrets خوانده می‌شوند؛ هیچ URL یا نام مخزن بالادستی در کد، کاتالوگ عمومی، داشبورد یا گزارش‌ها ذخیره نمی‌شود. برای تنظیم فیدها در مسیر **Settings → Secrets and variables → Actions → New repository secret** مقدار هر URL را در Secret متناظر قرار دهید:
 
-| گروه | منبع | نوع |
-| --- | --- | --- |
-| Curated | [WhiteDNS Sub](https://github.com/iampedii/whitedns-sub) | فید Base64 |
-| Curated | [4n0nymou3 Multi Proxy Fetcher](https://github.com/4n0nymou3/multi-proxy-config-fetcher) | خروجی تجمیع‌شده |
-| Curated | [MahsaNet](https://github.com/mahsanet/MahsaFreeConfig) | دو فید MCI و MTN |
-| Curated | [ALIILAPRO](https://github.com/ALIILAPRO/v2rayNG-Config) | فهرست سرورها |
-| Curated | [Au1rxx](https://github.com/Au1rxx/free-vpn-subscriptions) | فید Base64 |
-| Curated | [Danial Samadi v2go](https://github.com/Danialsamadi/v2go) | اشتراک تجمیعی |
-| Curated | [LalatinaHub](https://github.com/LalatinaHub/LatinaSub) | اشتراک تجمیعی |
-| Heavy | [Roosterkid Open Proxy List](https://github.com/roosterkid/openproxylist) | فهرست حجیم |
-| Heavy | [Barry Far V2ray Config](https://github.com/barry-far/V2ray-Config) | فید Base64 حجیم |
-| Heavy | [ShadowException VPN](https://github.com/ShadowException/VPN) | فهرست حجیم |
-| Heavy | [Delta-Kronecker](https://github.com/Delta-Kronecker/V2ray-Config) | فید حجیم |
+- فیدهای جمع‌آوری‌شده: `PRIVATE_LINK_SINAVM_7` تا `PRIVATE_LINK_SINAVM_18`
+- اشتراک‌های خصوصی شخصی: `PRIVATE_LINK_SINAVM_1` تا `PRIVATE_LINK_SINAVM_6`
 
-MahsaNet دو URL مستقل دارد؛ بنابراین تعداد فیدهای عمومی فعال ۱۲ است. فید Epodonios که در فهرست مرجع دیده می‌شد به‌دلیل پاسخ 404 از مخزن فعال کنار گذاشته و در بخش `retired_sources` کاتالوگ ثبت شده است. علاوه بر آن، دو کانال تلگرام `SiNAVM` و `mtmvpn` و تا شش اشتراک خصوصی از طریق GitHub Secrets با نام‌های `PRIVATE_LINK_SINAVM_1` تا `PRIVATE_LINK_SINAVM_6` قابل افزودن‌اند؛ مقدار URLهای خصوصی در گزارش عمومی منتشر نمی‌شود. وضعیت HTTP، زمان پاسخ، تعداد کانفیگ خام، یکتا و انحصاری هر منبع، درصد هم‌پوشانی با سایر فیدهای عمومی، عمر کش و خطای آخر در گزارش منابع ثبت می‌شود. تاریخچهٔ بازده انحصاری کمک می‌کند منبعی که صرفاً تکرار منابع دیگر است شناسایی شود؛ پس از هشت دور بدون کانفیگ انحصاری فقط نامزد بازبینی می‌شود. فیدهای عمومی با TTL پانزده دقیقه دریافت می‌شوند؛ در قطعی موقت، کش حداکثر ۲۴ ساعت فقط با برچسب stale استفاده می‌شود. 
+هر Secret فقط یک URL اشتراک می‌گیرد. شماره‌های ۷ تا ۱۸ برای دوازده فید تجمیع‌شده رزرو شده‌اند؛ شماره‌های ۱ تا ۶ برای اشتراک‌های خصوصی فعلی باقی می‌مانند. اگر Secret یک شماره خالی باشد، آن فید با وضعیت «تنظیم‌نشده» رد می‌شود و بقیه فیدها پردازش می‌شوند. مقدار Secret در خروجی Actions چاپ نمی‌شود و URLها وارد گزارش عمومی نمی‌شوند.
+
 
 کانفیگ‌ها از منابع عمومی و بدون تضمین مالکیت یا اعتماد جمع‌آوری می‌شوند. SVM صرفاً منبع را ثبت، داده را پاک‌سازی و کانفیگ را آزمایش می‌کند؛ منبع بالادستی لزوماً کیفیت یا امنیت هر نود را تضمین نمی‌کند.
 
