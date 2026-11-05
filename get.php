@@ -225,6 +225,104 @@ foreach ($sublinksArray['sublinks'] as $sublinkIndex => $sublink) {
     }
 }
 
+
+$sourceHistoryPath = "reports/source-history.json";
+$sourceHistory = is_file($sourceHistoryPath) ? json_decode((string)file_get_contents($sourceHistoryPath), true) : [];
+if (!is_array($sourceHistory)) $sourceHistory = [];
+if (!is_array($sourceHistory["sources"] ?? null)) $sourceHistory["sources"] = [];
+$globalSourceFingerprints = [];
+
+foreach ($publicSources as $source) {
+    $sourceId = preg_replace('/[^A-Za-z0-9_.-]/', '-', (string)$source["id"]);
+    $sourceName = trim((string)($source["name"] ?? $sourceId));
+    $sourceGroup = in_array(($source["group"] ?? ""), ["curated", "heavy"], true) ? $source["group"] : "other";
+    $url = trim((string)$source["url"]);
+    $cacheFile = "cache/public/" . $sourceId . ".txt";
+    $key = "public:" . $sourceId;
+    $sourceHealth[$key] = [
+        "kind" => "public",
+        "group" => $sourceGroup,
+        "name" => $sourceName,
+        "url" => $url,
+        "status" => "unknown",
+        "configs_found" => 0,
+        "unique_configs" => 0,
+        "checked_at" => gmdate("c"),
+        "error" => null
+    ];
+
+    $percentage = ($tempCounter / max(1, $totalSources)) * 100;
+    echo "\rProgress: [";
+    echo str_repeat("=", (int)floor($percentage / (100 / max(1, $totalSources))));
+    echo str_repeat(" ", max(0, $totalSources - (int)floor($percentage / (100 / max(1, $totalSources)))));
+    echo "] " . number_format($percentage, 2) . "%";
+    $tempCounter++;
+
+    [$body, $fetchMeta] = fetchPublicSource($url, $cacheFile, 900);
+    $sourceHealth[$key] = array_merge($sourceHealth[$key], $fetchMeta);
+    if (!is_string($body) || trim($body) === "") {
+        $sourceHealth[$key]["status"] = "error";
+        $sourceHealth[$key]["error"] = $fetchMeta["error"] ?? "empty_response";
+        continue;
+    }
+
+    $decodedBody = decodeMaybeBase64($body);
+    $protocolPattern = expandProtocolPattern($source["protocols"] ?? ["vmess", "vless", "trojan", "ss", "tuic", "hy2"]);
+    $extracted = extractLinksByType($decodedBody, $protocolPattern);
+    $sourceFingerprints = [];
+    if (is_array($extracted)) {
+        foreach ($extracted as $line) {
+            $line = trim($line);
+            if ($line === "" || !detect_type($line)) continue;
+            $configsRaw[] = $line;
+            $sourceOf[$line] = $key;
+            $sourceHealth[$key]["configs_found"]++;
+            $fingerprint = configFingerprint($line);
+            if ($fingerprint !== null) {
+                $sourceFingerprints[$fingerprint] = true;
+                $globalSourceFingerprints[$fingerprint] = true;
+            }
+        }
+    }
+    $sourceHealth[$key]["unique_configs"] = count($sourceFingerprints);
+    if ($sourceHealth[$key]["status"] === "ok" && $sourceHealth[$key]["configs_found"] === 0) {
+        $sourceHealth[$key]["status"] = "empty";
+    }
+}
+
+$sourceHistory["schema_version"] = 1;
+$sourceHistory["updated_at"] = gmdate("c");
+foreach ($sourceHealth as $key => $entry) {
+    if (($entry["kind"] ?? "") !== "public") continue;
+    $old = $sourceHistory["sources"][$key] ?? [];
+    $yield = (int)($entry["unique_configs"] ?? 0);
+    $history = is_array($old["yield_history"] ?? null) ? $old["yield_history"] : [];
+    $history[] = $yield;
+    $history = array_slice($history, -20);
+    $zeroStreak = $yield > 0 ? 0 : ((int)($old["zero_unique_streak"] ?? 0) + 1);
+    $lastSuccess = $old["last_success_at"] ?? null;
+    if ($yield > 0 && ($entry["fetch_mode"] ?? "") === "network") $lastSuccess = gmdate("c");
+    $sourceHistory["sources"][$key] = [
+        "name" => $entry["name"],
+        "group" => $entry["group"],
+        "url" => $entry["url"],
+        "runs" => (int)($old["runs"] ?? 0) + 1,
+        "successful_runs" => (int)($old["successful_runs"] ?? 0) + (($yield > 0 && $entry["status"] === "ok") ? 1 : 0),
+        "last_status" => $entry["status"],
+        "last_http_code" => $entry["http_code"] ?? null,
+        "last_configs_found" => (int)($entry["configs_found"] ?? 0),
+        "last_unique_configs" => $yield,
+        "zero_unique_streak" => $zeroStreak,
+        "disable_candidate" => $zeroStreak >= 8,
+        "last_success_at" => $lastSuccess,
+        "yield_history" => $history,
+        "updated_at" => gmdate("c")
+    ];
+}
+$sourceHistoryTmp = $sourceHistoryPath . ".tmp";
+file_put_contents($sourceHistoryTmp, json_encode($sourceHistory, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+@rename($sourceHistoryTmp, $sourceHistoryPath);
+
 $invalid = [];
 $valid = [];
 $stats = [
@@ -261,8 +359,19 @@ foreach ($configsRaw as $raw) {
 
 file_put_contents("reports/invalid.txt", implode("\n", $invalid));
 file_put_contents("reports/stats.json", json_encode($stats, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+$publicHealth = array_filter($sourceHealth, function ($s) { return ($s["kind"] ?? "") === "public"; });
+$publicCurated = array_filter($publicHealth, function ($s) { return ($s["group"] ?? "") === "curated"; });
+$publicHeavy = array_filter($publicHealth, function ($s) { return ($s["group"] ?? "") === "heavy"; });
+$disableCandidates = array_filter($sourceHistory["sources"] ?? [], function ($s) { return !empty($s["disable_candidate"]); });
 file_put_contents("reports/sources.json", json_encode([
     "updated_at" => gmdate("c"),
+    "catalog" => "https://raw.githubusercontent.com/sinavm/SVM/main/public_sources.json",
+    "public_sources_total" => count($publicHealth),
+    "public_sources_healthy" => count(array_filter($publicHealth, function ($s) { return $s["status"] === "ok"; })),
+    "curated_sources" => count($publicCurated),
+    "heavy_sources" => count($publicHeavy),
+    "auto_disable_candidates" => array_keys($disableCandidates),
+    "unique_public_configs" => count($globalSourceFingerprints),
     "total_sources" => count($sourceHealth),
     "healthy_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "ok"; })),
     "stale_sources" => count(array_filter($sourceHealth, function ($s) { return $s["status"] === "stale"; })),
