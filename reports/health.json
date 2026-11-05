@@ -1,0 +1,154 @@
+{
+    "schema_version": 1,
+    "generated_at": "2026-11-05T17:38:34+00:00",
+    "overall": {
+        "status": "degraded",
+        "pipeline_ok": true,
+        "source_health": {
+            "total": 8,
+            "healthy": 5,
+            "stale": 0,
+            "failed": 0,
+            "unconfigured": 2,
+            "empty": 1
+        },
+        "nodes": {
+            "input": 437,
+            "alive": 73,
+            "tested_alive": 110,
+            "duplicates_removed": 37,
+            "dropped": 327
+        }
+    },
+    "collection": {
+        "updated_at": "2026-11-05T17:34:57+00:00",
+        "total_sources": 8,
+        "healthy_sources": 5,
+        "stale_sources": 0,
+        "empty_sources": 1,
+        "failed_sources": 0,
+        "unconfigured_sources": 2,
+        "sources": {
+            "telegram:SiNAVM": {
+                "kind": "telegram",
+                "name": "SiNAVM",
+                "status": "empty",
+                "configs_found": 0,
+                "checked_at": "2026-11-05T17:34:55+00:00",
+                "error": null
+            },
+            "telegram:mtmvpn": {
+                "kind": "telegram",
+                "name": "mtmvpn",
+                "status": "ok",
+                "configs_found": 8,
+                "checked_at": "2026-11-05T17:34:56+00:00",
+                "error": null
+            },
+            "subscription:c49b3a17a3c16564": {
+                "kind": "subscription",
+                "name": "source-c49b3a17",
+                "status": "ok",
+                "configs_found": 28,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": null
+            },
+            "subscription:08afdd48683cd24d": {
+                "kind": "subscription",
+                "name": "source-08afdd48",
+                "status": "ok",
+                "configs_found": 158,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": null
+            },
+            "subscription:2f9a9703563cd619": {
+                "kind": "subscription",
+                "name": "source-2f9a9703",
+                "status": "ok",
+                "configs_found": 500,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": null
+            },
+            "subscription:0f6dcf19929a40f0": {
+                "kind": "subscription",
+                "name": "source-0f6dcf19",
+                "status": "ok",
+                "configs_found": 100,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": null
+            },
+            "subscription_slot:5": {
+                "kind": "subscription",
+                "name": "private-source-5",
+                "status": "unconfigured",
+                "configs_found": 0,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": "missing_secret_or_protocol_filter"
+            },
+            "subscription_slot:6": {
+                "kind": "subscription",
+                "name": "private-source-6",
+                "status": "unconfigured",
+                "configs_found": 0,
+                "checked_at": "2026-11-05T17:34:57+00:00",
+                "error": "missing_secret_or_protocol_filter"
+            }
+        }
+    },
+    "testing": {
+        "tested_at": "2026-11-05T17:34:57+00:00",
+        "engine": "sing-box-1.14.0",
+        "infra_ok": true,
+        "stability_rounds": 3,
+        "protocol_alive": 110,
+        "protocol_dead": 239,
+        "error": null
+    },
+    "validation": {
+        "total_raw": 794,
+        "total_valid": 437,
+        "total_invalid": 357,
+        "by_type": {
+            "vless": 65,
+            "ss": 112,
+            "vmess": 52,
+            "trojan": 132,
+            "hy2": 76
+        }
+    },
+    "tiers": {
+        "verified": 50,
+        "fast": 48,
+        "secure": 13
+    },
+    "protocols_alive": {
+        "vless": 17,
+        "ss": 37,
+        "vmess": 19
+    },
+    "country_nodes": {
+        "US": 35,
+        "CA": 10,
+        "NL": 13,
+        "IT": 8,
+        "DE": 4,
+        "SG": 2,
+        "JP": 1
+    },
+    "geoip": {
+        "provider": "ip-api.com",
+        "known_nodes": 73,
+        "unknown_nodes": 0,
+        "resolved_ipv4_nodes": 73,
+        "unresolved_hosts": 0,
+        "cache_ttl_days": 30
+    },
+    "quality_data_fresh": true,
+    "links": {
+        "verified": "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified",
+        "fast": "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast",
+        "secure": "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure",
+        "protocols": "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/protocols/",
+        "countries": "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/countries/"
+    }
+}
