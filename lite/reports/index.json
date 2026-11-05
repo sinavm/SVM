@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-11-05T17:28:53+00:00",
+    "generated_at": "2026-11-05T17:34:30+00:00",
     "project": "SVM",
     "health": "https://raw.githubusercontent.com/sinavm/SVM/main/lite/reports/health.json",
     "stats": "https://raw.githubusercontent.com/sinavm/SVM/main/lite/reports/stats.json",
@@ -15,65 +15,83 @@
     },
     "protocol_subscriptions": [
         "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/protocols/vless",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/protocols/vmess",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/protocols/ss"
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/protocols/ss",
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/protocols/vmess"
     ],
     "country_subscriptions": [
         "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/US",
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/CA",
         "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/NL",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/SG",
         "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/IT",
         "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/DE",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/KR",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/CA",
-        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/JP"
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/SG",
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/JP",
+        "https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/countries/IN"
     ],
     "counts": {
-        "verified": 83,
-        "fast": 60,
+        "verified": 90,
+        "fast": 80,
         "secure": 29
     },
     "nodes": [
         {
-            "fingerprint": "3d26bd4358760e8eb97e740db9dd3017431238eb",
+            "fingerprint": "aad833c6b776ddc97f1aa0d2192eb568bb082640",
             "protocol": "vless",
-            "delay_ms": 29,
+            "delay_ms": 94,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "512a4a591a1b814ccb5418d97318f37b35830e06",
-            "protocol": "vmess",
-            "delay_ms": 29,
+            "fingerprint": "d09fe9bed006d7bc6586d61a5b04bd63b38868f4",
+            "protocol": "ss",
+            "delay_ms": 94,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
         },
         {
-            "fingerprint": "1345f2a296741c24942063e381e7ec815091bfd7",
+            "fingerprint": "08e179f01d99af34008155b07bac15c1b8a6ac4d",
+            "protocol": "ss",
+            "delay_ms": 97,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "502220a7ec25fdcad2ebcdae62243924f0b01bbc",
+            "protocol": "ss",
+            "delay_ms": 99,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "4e1cdfeba12e2a1ab5d01841f2a107fac26ac55c",
             "protocol": "vless",
-            "delay_ms": 30,
+            "delay_ms": 100,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "aad833c6b776ddc97f1aa0d2192eb568bb082640",
+            "fingerprint": "ab87595274b4a52f7bcf9d2b025be639d94eb105",
             "protocol": "vless",
-            "delay_ms": 33,
+            "delay_ms": 104,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "e24d0de6335f79bba8ed166078a4dea0c49e15a5",
-            "protocol": "vmess",
-            "delay_ms": 34,
+            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
+            "protocol": "ss",
+            "delay_ms": 106,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -82,313 +100,25 @@
         {
             "fingerprint": "a3433c414441aec19a790f1fc43a157de5ba9920",
             "protocol": "vless",
-            "delay_ms": 35,
+            "delay_ms": 105,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "08e179f01d99af34008155b07bac15c1b8a6ac4d",
+            "fingerprint": "3d26bd4358760e8eb97e740db9dd3017431238eb",
+            "protocol": "vless",
+            "delay_ms": 105,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
             "protocol": "ss",
-            "delay_ms": 38,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "58570bcd94617c09bdca58d89d871180564d680d",
-            "protocol": "vless",
-            "delay_ms": 40,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "1896c40caa31cc7389a2ce09e193bf597d275f10",
-            "protocol": "ss",
-            "delay_ms": 41,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "a8a4ba59185eaec8c4e3e88bad95fd3f961d4362",
-            "protocol": "vmess",
-            "delay_ms": 49,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "c9cc2ee5e8b85f0964e3b93fcf00c00e407e0d4c",
-            "protocol": "vmess",
-            "delay_ms": 50,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "d09fe9bed006d7bc6586d61a5b04bd63b38868f4",
-            "protocol": "ss",
-            "delay_ms": 50,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "7d20f05e02592e42ae849c7703452386b6f98020",
-            "protocol": "vmess",
-            "delay_ms": 52,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "becda7fbe99ba507099428cedc424f650b52a14d",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "9eabaa290ce123fcbcc4ada35210daef3d101a3f",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "2bf7f2480e7a72a511411390cf1cd3f56a1aa472",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "8469d6f1264458731060973e26a9605484888620",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "a9d393f6895f9cb49df936f92a39c11b3601f8a8",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "9bf5939786e99ff1a606d2d310013da6421e39d9",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "8a909a7892729cf556b72e99c9b6404ec475a8ef",
-            "protocol": "vless",
-            "delay_ms": 53,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "3bebefdcb5f9742cbde1767a1c0e1d3d5996d5eb",
-            "protocol": "vless",
-            "delay_ms": 54,
-            "successful_rounds": 2,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "c588c14ae391470d04e992bce9564dc793d13f1a",
-            "protocol": "vless",
-            "delay_ms": 54,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "caca529be5ee1437bba779507fcb11ce1efaa5af",
-            "protocol": "vless",
-            "delay_ms": 54,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "a3968cad592a25c13e017f56da409110d235eed3",
-            "protocol": "vmess",
-            "delay_ms": 56,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "d404482d75d69ffebce8fefc6624c11a388d5ec2",
-            "protocol": "vmess",
-            "delay_ms": 57,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e9a71a80641e6187af0a0312f8c3a497a4cbe12e",
-            "protocol": "vless",
-            "delay_ms": 57,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "4e1cdfeba12e2a1ab5d01841f2a107fac26ac55c",
-            "protocol": "vless",
-            "delay_ms": 57,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e52ee494c9e4d337ecba8320b2e92845b4acdb8e",
-            "protocol": "vmess",
-            "delay_ms": 58,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e5cddb6db835a17bdfa131f76d96b962370a7a06",
-            "protocol": "vless",
-            "delay_ms": 58,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "9384a3768453a3242ffc638c29db23d3b34d2619",
-            "protocol": "vless",
-            "delay_ms": 59,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "45176915653677623b8fef729f3340976cb34dc1",
-            "protocol": "vless",
-            "delay_ms": 60,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "7b57eeb8b4e119a748485cdb9df5d5d20e29d407",
-            "protocol": "vless",
-            "delay_ms": 62,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e3c9559257027272130580eb55d65d1a4ffcbae9",
-            "protocol": "vless",
-            "delay_ms": 62,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
-            "protocol": "vmess",
-            "delay_ms": 63,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e3c7902174f73c5492cba7252ec3f9b0f9a3350d",
-            "protocol": "vmess",
-            "delay_ms": 63,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "9384a3768453a3242ffc638c29db23d3b34d2619",
-            "protocol": "vless",
-            "delay_ms": 59,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
-            "protocol": "vmess",
-            "delay_ms": 63,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "d2ff2984161330b5f7cfde314c3d4bb1e05950bb",
-            "protocol": "vmess",
-            "delay_ms": 65,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e3c9559257027272130580eb55d65d1a4ffcbae9",
-            "protocol": "vless",
-            "delay_ms": 62,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "e24d0de6335f79bba8ed166078a4dea0c49e15a5",
-            "protocol": "vmess",
-            "delay_ms": 34,
+            "delay_ms": 106,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -397,88 +127,340 @@
         {
             "fingerprint": "bbd56d8466d1607b5f3a65f566c67d20a9b5645c",
             "protocol": "vless",
-            "delay_ms": 149,
+            "delay_ms": 108,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
-            "protocol": "ss",
-            "delay_ms": 150,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "36b93ce960a6b9287535cac3a9a11b5da52dc7ef",
-            "protocol": "ss",
-            "delay_ms": 150,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "2b7823c78d41d2df776c0b560ea32549a77b2026",
-            "protocol": "ss",
-            "delay_ms": 175,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "c012e21a5ad4e8a1d5c9a3048e04e0234725c629",
+            "fingerprint": "e52ee494c9e4d337ecba8320b2e92845b4acdb8e",
             "protocol": "vmess",
-            "delay_ms": 178,
+            "delay_ms": 108,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
         },
         {
-            "fingerprint": "5c3bf9e4617aa669a802e24b120ac2f2f2894c32",
+            "fingerprint": "d404482d75d69ffebce8fefc6624c11a388d5ec2",
             "protocol": "vmess",
-            "delay_ms": 179,
+            "delay_ms": 109,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
         },
         {
-            "fingerprint": "7f232c639b2cc48bf588c78a6a4ee94f0235568b",
+            "fingerprint": "35807679a6586ead5da2e68e79926b4c364ceb3c",
+            "protocol": "ss",
+            "delay_ms": 110,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "1896c40caa31cc7389a2ce09e193bf597d275f10",
+            "protocol": "ss",
+            "delay_ms": 110,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "1345f2a296741c24942063e381e7ec815091bfd7",
+            "protocol": "vless",
+            "delay_ms": 111,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "a8a4ba59185eaec8c4e3e88bad95fd3f961d4362",
             "protocol": "vmess",
-            "delay_ms": 185,
+            "delay_ms": 115,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "9384a3768453a3242ffc638c29db23d3b34d2619",
+            "protocol": "vless",
+            "delay_ms": 140,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e3c7902174f73c5492cba7252ec3f9b0f9a3350d",
+            "protocol": "vmess",
+            "delay_ms": 121,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "c9cc2ee5e8b85f0964e3b93fcf00c00e407e0d4c",
+            "protocol": "vmess",
+            "delay_ms": 121,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "8a909a7892729cf556b72e99c9b6404ec475a8ef",
+            "protocol": "vless",
+            "delay_ms": 123,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "d2ff2984161330b5f7cfde314c3d4bb1e05950bb",
+            "protocol": "vmess",
+            "delay_ms": 124,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "9eabaa290ce123fcbcc4ada35210daef3d101a3f",
+            "protocol": "vless",
+            "delay_ms": 124,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "a9d393f6895f9cb49df936f92a39c11b3601f8a8",
+            "protocol": "vless",
+            "delay_ms": 124,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "caca529be5ee1437bba779507fcb11ce1efaa5af",
+            "protocol": "vless",
+            "delay_ms": 125,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "58570bcd94617c09bdca58d89d871180564d680d",
+            "protocol": "vless",
+            "delay_ms": 126,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "becda7fbe99ba507099428cedc424f650b52a14d",
+            "protocol": "vless",
+            "delay_ms": 126,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "a3968cad592a25c13e017f56da409110d235eed3",
+            "protocol": "vmess",
+            "delay_ms": 127,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
+            "protocol": "vmess",
+            "delay_ms": 128,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "364d50fc77bb55f1c1f727926e75dcaebd6d2a0f",
+            "protocol": "vmess",
+            "delay_ms": 129,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
         },
         {
-            "fingerprint": "2f5198ff5112ed6eda2bb59a863144e0c436b183",
+            "fingerprint": "3bebefdcb5f9742cbde1767a1c0e1d3d5996d5eb",
             "protocol": "vless",
-            "delay_ms": 230,
+            "delay_ms": 131,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "d420c5d28cd45cefaf6f3c051c639ba6b2a3c764",
+            "fingerprint": "c41a6655b3b426c2517a76abc1e12df57c72b07a",
+            "protocol": "vmess",
+            "delay_ms": 128,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "9bf5939786e99ff1a606d2d310013da6421e39d9",
             "protocol": "vless",
-            "delay_ms": 236,
+            "delay_ms": 131,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": true,
             "country_code": "US"
         },
         {
-            "fingerprint": "fe26b77a8b1020f7804e741663b60878a2419f86",
+            "fingerprint": "e3c9559257027272130580eb55d65d1a4ffcbae9",
+            "protocol": "vless",
+            "delay_ms": 142,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e9a71a80641e6187af0a0312f8c3a497a4cbe12e",
+            "protocol": "vless",
+            "delay_ms": 134,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "7d20f05e02592e42ae849c7703452386b6f98020",
+            "protocol": "vmess",
+            "delay_ms": 135,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "8469d6f1264458731060973e26a9605484888620",
+            "protocol": "vless",
+            "delay_ms": 135,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "81c56abfb9c6078b91e73c6d45f3e54e926819a5",
             "protocol": "ss",
-            "delay_ms": 323,
+            "delay_ms": 136,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "CA"
+        },
+        {
+            "fingerprint": "45176915653677623b8fef729f3340976cb34dc1",
+            "protocol": "vless",
+            "delay_ms": 136,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "2b7823c78d41d2df776c0b560ea32549a77b2026",
+            "protocol": "ss",
+            "delay_ms": 137,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "7b57eeb8b4e119a748485cdb9df5d5d20e29d407",
+            "protocol": "vless",
+            "delay_ms": 137,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "c588c14ae391470d04e992bce9564dc793d13f1a",
+            "protocol": "vless",
+            "delay_ms": 137,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "7f232c639b2cc48bf588c78a6a4ee94f0235568b",
+            "protocol": "vmess",
+            "delay_ms": 139,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "2bf7f2480e7a72a511411390cf1cd3f56a1aa472",
+            "protocol": "vless",
+            "delay_ms": 139,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "9384a3768453a3242ffc638c29db23d3b34d2619",
+            "protocol": "vless",
+            "delay_ms": 140,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e5cddb6db835a17bdfa131f76d96b962370a7a06",
+            "protocol": "vless",
+            "delay_ms": 141,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e3c9559257027272130580eb55d65d1a4ffcbae9",
+            "protocol": "vless",
+            "delay_ms": 142,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "41fb9f8d55d0a4f83c3c4af88b5dc4b6b37d1781",
+            "protocol": "ss",
+            "delay_ms": 250,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -487,43 +469,16 @@
         {
             "fingerprint": "9aae2a32119c44c0190c0e4ce9ccc5b695c3eba5",
             "protocol": "ss",
-            "delay_ms": 324,
+            "delay_ms": 252,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "NL"
         },
         {
-            "fingerprint": "12ae3a7094407d638fd9aeab72e7ff864d8fdaa9",
+            "fingerprint": "fe26b77a8b1020f7804e741663b60878a2419f86",
             "protocol": "ss",
-            "delay_ms": 332,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "779978c5c74b54bb5de87c468beb770621cb29cf",
-            "protocol": "ss",
-            "delay_ms": 334,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "036f7457ccae57223d4721e1ad64660ccc0a6d6a",
-            "protocol": "ss",
-            "delay_ms": 335,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "41fb9f8d55d0a4f83c3c4af88b5dc4b6b37d1781",
-            "protocol": "ss",
-            "delay_ms": 335,
+            "delay_ms": 253,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -532,322 +487,25 @@
         {
             "fingerprint": "64395a73ffc56a0f1387fc3850839c5a723cfc9f",
             "protocol": "ss",
-            "delay_ms": 345,
+            "delay_ms": 260,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "NL"
         },
         {
-            "fingerprint": "639a99b3cbd1337a54d95e6e88e34904e6dafda7",
-            "protocol": "vmess",
-            "delay_ms": 345,
+            "fingerprint": "779978c5c74b54bb5de87c468beb770621cb29cf",
+            "protocol": "ss",
+            "delay_ms": 261,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
-            "country_code": "SG"
-        },
-        {
-            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
-            "protocol": "vmess",
-            "delay_ms": 349,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "SG"
-        },
-        {
-            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
-            "protocol": "vmess",
-            "delay_ms": 349,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "SG"
+            "country_code": "NL"
         },
         {
             "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
             "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
-            "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
-            "protocol": "vmess",
-            "delay_ms": 356,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
-            "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
-            "protocol": "vmess",
-            "delay_ms": 356,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
-            "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
-            "protocol": "ss",
-            "delay_ms": 1045,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "b0cea9964ae4958495ac94fe24f9789ed57991bd",
-            "protocol": "ss",
-            "delay_ms": 385,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
-            "protocol": "ss",
-            "delay_ms": 1045,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "c81e772cc5e05362dd9559a5e9e1158bd5ce7e99",
-            "protocol": "ss",
-            "delay_ms": 390,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
-            "protocol": "ss",
-            "delay_ms": 1045,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "15fba737e7a65f4f7feaa841e2336e54d8fbb88d",
-            "protocol": "ss",
-            "delay_ms": 418,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
-            "protocol": "ss",
-            "delay_ms": 565,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "0be83aee15829a26e13631db1f6b6b7f8e0538e3",
-            "protocol": "ss",
-            "delay_ms": 504,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "3c97916eda8d0b30e404df6494d35a3e78fac993",
-            "protocol": "ss",
-            "delay_ms": 526,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
-            "protocol": "ss",
-            "delay_ms": 565,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
-            "protocol": "ss",
-            "delay_ms": 565,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "b24a0de7516de9ad1b937a624c48ffe0d14b96c2",
-            "protocol": "ss",
-            "delay_ms": 541,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "NL"
-        },
-        {
-            "fingerprint": "502220a7ec25fdcad2ebcdae62243924f0b01bbc",
-            "protocol": "ss",
-            "delay_ms": 547,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
-            "protocol": "ss",
-            "delay_ms": 565,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "abf571fbf483863eeac2084cd14a40a4ca717bb2",
-            "protocol": "vless",
-            "delay_ms": 568,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
-            "protocol": "ss",
-            "delay_ms": 711,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "35807679a6586ead5da2e68e79926b4c364ceb3c",
-            "protocol": "ss",
-            "delay_ms": 644,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "1b047fc0f20c323ca3a8163d2323b6c3ea6e93c3",
-            "protocol": "ss",
-            "delay_ms": 683,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "KR"
-        },
-        {
-            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
-            "protocol": "ss",
-            "delay_ms": 711,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
-            "protocol": "ss",
-            "delay_ms": 711,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "83e96f94f6e8d3c29962537f116b7ccaf7d5c2e7",
-            "protocol": "ss",
-            "delay_ms": 1086,
-            "successful_rounds": 2,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "3be6bb437d5336e7a8a86069013e3d2406291399",
-            "protocol": "vless",
-            "delay_ms": 934,
-            "successful_rounds": 2,
-            "total_rounds": 3,
-            "encrypted_transport": true,
-            "country_code": "DE"
-        },
-        {
-            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
-            "protocol": "ss",
-            "delay_ms": 1006,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
-            "protocol": "ss",
-            "delay_ms": 1006,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
-            "protocol": "ss",
-            "delay_ms": 1045,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
-            "protocol": "ss",
-            "delay_ms": 1006,
+            "delay_ms": 324,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -856,8 +514,89 @@
         {
             "fingerprint": "83e96f94f6e8d3c29962537f116b7ccaf7d5c2e7",
             "protocol": "ss",
-            "delay_ms": 1086,
-            "successful_rounds": 2,
+            "delay_ms": 293,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
+            "protocol": "vmess",
+            "delay_ms": 296,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "2d743c8b699ee3505a80aab816c8b279dd6c1225",
+            "protocol": "vmess",
+            "delay_ms": 296,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "83e96f94f6e8d3c29962537f116b7ccaf7d5c2e7",
+            "protocol": "ss",
+            "delay_ms": 293,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "protocol": "ss",
+            "delay_ms": 317,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "2f5198ff5112ed6eda2bb59a863144e0c436b183",
+            "protocol": "vless",
+            "delay_ms": 319,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "protocol": "ss",
+            "delay_ms": 324,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "protocol": "ss",
+            "delay_ms": 317,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "protocol": "ss",
+            "delay_ms": 324,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "IT"
@@ -865,7 +604,61 @@
         {
             "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
             "protocol": "ss",
-            "delay_ms": 1045,
+            "delay_ms": 330,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "protocol": "ss",
+            "delay_ms": 330,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "protocol": "ss",
+            "delay_ms": 317,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "protocol": "ss",
+            "delay_ms": 330,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "46db7f48b8f8fe736bb21139610ac6be5884589d",
+            "protocol": "ss",
+            "delay_ms": 317,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -874,134 +667,350 @@
         {
             "fingerprint": "73a5e299674afe522a92cc9519997e85b2c7663e",
             "protocol": "ss",
-            "delay_ms": 1248,
+            "delay_ms": 336,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "IT"
         },
         {
-            "fingerprint": "512a4a591a1b814ccb5418d97318f37b35830e06",
-            "protocol": "vmess",
-            "delay_ms": 29,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "US"
-        },
-        {
-            "fingerprint": "0d3336aa4bd53852209ea71de5d267011ddf8cd8",
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
             "protocol": "ss",
-            "delay_ms": 1500,
+            "delay_ms": 324,
             "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
-            "country_code": "US"
+            "country_code": "IT"
         },
         {
-            "fingerprint": "1a233b39a9263a416c53d2b10ff809bade600564",
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "protocol": "ss",
+            "delay_ms": 330,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "56be82f46503ddd5526f36c4f856abfff350537e",
+            "protocol": "ss",
+            "delay_ms": 330,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "15fba737e7a65f4f7feaa841e2336e54d8fbb88d",
+            "protocol": "ss",
+            "delay_ms": 347,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "protocol": "ss",
+            "delay_ms": 349,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "3be6bb437d5336e7a8a86069013e3d2406291399",
+            "protocol": "vless",
+            "delay_ms": 372,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "0be83aee15829a26e13631db1f6b6b7f8e0538e3",
+            "protocol": "ss",
+            "delay_ms": 399,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
             "protocol": "vmess",
-            "delay_ms": 1627,
+            "delay_ms": 402,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "SG"
+        },
+        {
+            "fingerprint": "e9dbdc39d13d8a54b88ab97e2eec95591f4a5931",
+            "protocol": "vmess",
+            "delay_ms": 402,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "SG"
+        },
+        {
+            "fingerprint": "639a99b3cbd1337a54d95e6e88e34904e6dafda7",
+            "protocol": "vmess",
+            "delay_ms": 404,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "SG"
+        },
+        {
+            "fingerprint": "3c97916eda8d0b30e404df6494d35a3e78fac993",
+            "protocol": "ss",
+            "delay_ms": 406,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "b24a0de7516de9ad1b937a624c48ffe0d14b96c2",
+            "protocol": "ss",
+            "delay_ms": 409,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "protocol": "ss",
+            "delay_ms": 324,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "c81e772cc5e05362dd9559a5e9e1158bd5ce7e99",
+            "protocol": "ss",
+            "delay_ms": 471,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
-            "country_code": "CA"
+            "country_code": "NL"
         },
         {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
+            "fingerprint": "b0cea9964ae4958495ac94fe24f9789ed57991bd",
             "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
-            "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
-            "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
-            "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
-            "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "966a2a0e66618f54e1dc8ccbf6a3dbdc9d9e3719",
-            "protocol": "ss",
-            "delay_ms": 1629,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "81c56abfb9c6078b91e73c6d45f3e54e926819a5",
-            "protocol": "ss",
-            "delay_ms": 1845,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "CA"
-        },
-        {
-            "fingerprint": "94601e5e1e55901c65a6659dd7cf358b0bcedf93",
-            "protocol": "vmess",
-            "delay_ms": 1893,
+            "delay_ms": 479,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
-            "country_code": "CA"
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "036f7457ccae57223d4721e1ad64660ccc0a6d6a",
+            "protocol": "ss",
+            "delay_ms": 491,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "12ae3a7094407d638fd9aeab72e7ff864d8fdaa9",
+            "protocol": "ss",
+            "delay_ms": 498,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
         },
         {
             "fingerprint": "49c04a501edb43a8b9903b9365f7fb18933c686e",
             "protocol": "vmess",
-            "delay_ms": 2036,
+            "delay_ms": 517,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
         },
         {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "protocol": "ss",
+            "delay_ms": 573,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "0d3336aa4bd53852209ea71de5d267011ddf8cd8",
+            "protocol": "ss",
+            "delay_ms": 563,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "protocol": "ss",
+            "delay_ms": 573,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "7e95f89228c28f5ba24b7bd7c9730979cd14ecbf",
+            "protocol": "ss",
+            "delay_ms": 573,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "abf571fbf483863eeac2084cd14a40a4ca717bb2",
+            "protocol": "vless",
+            "delay_ms": 778,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": true,
+            "country_code": "DE"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "protocol": "ss",
+            "delay_ms": 900,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "protocol": "ss",
+            "delay_ms": 900,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "fb0aef6fd92751496f795a4db5ec729a8c765688",
+            "protocol": "ss",
+            "delay_ms": 900,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
+            "fingerprint": "6de184f659f51541386f3436a37b11215a4da37f",
+            "protocol": "ss",
+            "delay_ms": 1150,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "NL"
+        },
+        {
+            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
+            "protocol": "ss",
+            "delay_ms": 324,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IT"
+        },
+        {
             "fingerprint": "15eec57e55e6b7ce3b1e3b48acf957480bb1bb81",
             "protocol": "ss",
-            "delay_ms": 2169,
-            "successful_rounds": 2,
+            "delay_ms": 2898,
+            "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "JP"
         },
         {
-            "fingerprint": "364d50fc77bb55f1c1f727926e75dcaebd6d2a0f",
+            "fingerprint": "512a4a591a1b814ccb5418d97318f37b35830e06",
             "protocol": "vmess",
-            "delay_ms": 2217,
+            "delay_ms": 1369,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "512a4a591a1b814ccb5418d97318f37b35830e06",
+            "protocol": "vmess",
+            "delay_ms": 1369,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "c012e21a5ad4e8a1d5c9a3048e04e0234725c629",
+            "protocol": "vmess",
+            "delay_ms": 1541,
             "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e24d0de6335f79bba8ed166078a4dea0c49e15a5",
+            "protocol": "vmess",
+            "delay_ms": 1551,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "94601e5e1e55901c65a6659dd7cf358b0bcedf93",
+            "protocol": "vmess",
+            "delay_ms": 1553,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "CA"
+        },
+        {
+            "fingerprint": "5c3bf9e4617aa669a802e24b120ac2f2f2894c32",
+            "protocol": "vmess",
+            "delay_ms": 1553,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "US"
+        },
+        {
+            "fingerprint": "e24d0de6335f79bba8ed166078a4dea0c49e15a5",
+            "protocol": "vmess",
+            "delay_ms": 1551,
+            "successful_rounds": 3,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "US"
@@ -1009,7 +1018,7 @@
         {
             "fingerprint": "747ed1f99da609c2e0b7eabc03f71a23194eb536",
             "protocol": "ss",
-            "delay_ms": 3336,
+            "delay_ms": 1619,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
@@ -1018,38 +1027,56 @@
         {
             "fingerprint": "747ed1f99da609c2e0b7eabc03f71a23194eb536",
             "protocol": "ss",
-            "delay_ms": 3336,
+            "delay_ms": 1619,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "CA"
-        },
-        {
-            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
-            "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
-        },
-        {
-            "fingerprint": "7038b5c89a206dbe43bfd6803cc5c691a752fd1e",
-            "protocol": "ss",
-            "delay_ms": 357,
-            "successful_rounds": 3,
-            "total_rounds": 3,
-            "encrypted_transport": false,
-            "country_code": "IT"
         },
         {
             "fingerprint": "747ed1f99da609c2e0b7eabc03f71a23194eb536",
             "protocol": "ss",
-            "delay_ms": 3336,
+            "delay_ms": 1619,
             "successful_rounds": 2,
             "total_rounds": 3,
             "encrypted_transport": false,
             "country_code": "CA"
+        },
+        {
+            "fingerprint": "02615d61c557cdcf30f78fb1ea364d92f88093b9",
+            "protocol": "ss",
+            "delay_ms": 3247,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IN"
+        },
+        {
+            "fingerprint": "15eec57e55e6b7ce3b1e3b48acf957480bb1bb81",
+            "protocol": "ss",
+            "delay_ms": 2898,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "JP"
+        },
+        {
+            "fingerprint": "1a233b39a9263a416c53d2b10ff809bade600564",
+            "protocol": "vmess",
+            "delay_ms": 2976,
+            "successful_rounds": 3,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "CA"
+        },
+        {
+            "fingerprint": "02615d61c557cdcf30f78fb1ea364d92f88093b9",
+            "protocol": "ss",
+            "delay_ms": 3247,
+            "successful_rounds": 2,
+            "total_rounds": 3,
+            "encrypted_transport": false,
+            "country_code": "IN"
         }
     ]
 }
