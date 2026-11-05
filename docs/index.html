@@ -177,7 +177,7 @@ const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
 const stats=statsResult.status==="fulfilled"?statsResult.value:{};
 const health=healthResult.status==="fulfilled"?healthResult.value:{};
-const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(test.kept);
+const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(health.overall?.nodes?.alive??test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
 setText("fast",lite.alive_fast!==undefined?format(lite.alive_fast):"—");
@@ -192,7 +192,7 @@ setBar("barInput",input,input||1);
 setBar("barConverted",converted,input);
 setBar("barTcp",tcp,input);
 setBar("barAlive",alive,input);
-const types=test.by_type_kept||{},protocolBox=document.getElementById("protocols");
+const types=health.protocols_alive||test.by_type_kept||{},protocolBox=document.getElementById("protocols");
 protocolBox.replaceChildren();
 Object.entries(types).sort((a,b)=>number(b[1])-number(a[1])).forEach(([name,count])=>{const item=document.createElement("span");item.className="protocol";item.textContent=name.toUpperCase()+" · "+format(count);protocolBox.append(item)});
 if(!Object.keys(types).length){const item=document.createElement("span");item.className="protocol";item.textContent="داده پروتکل موجود نیست";protocolBox.append(item)}
