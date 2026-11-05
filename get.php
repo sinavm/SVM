@@ -372,7 +372,12 @@ foreach ($configsRaw as $raw) {
                 $groups[] = "private";
             }
         }
-        $validProvenance[$fingerprint] = ["sources" => $origins, "groups" => array_values(array_unique($groups))];
+        if (!isset($validProvenance[$fingerprint])) {
+            $validProvenance[$fingerprint] = ["sources" => $origins, "groups" => array_values(array_unique($groups))];
+        } else {
+            $validProvenance[$fingerprint]["sources"] = array_values(array_unique(array_merge($validProvenance[$fingerprint]["sources"], $origins)));
+            $validProvenance[$fingerprint]["groups"] = array_values(array_unique(array_merge($validProvenance[$fingerprint]["groups"], $groups)));
+        }
     }
     $valid[] = setConfigName($raw, buildStandardName($type, $counterByType[$type]));
 }
