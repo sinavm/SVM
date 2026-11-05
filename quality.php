@@ -40,6 +40,7 @@ function isSecureTransport($line, $type) {
 }
 
 $tiers = ["verified" => [], "fast" => [], "secure" => []];
+$testUsable = !empty($test["infra_ok"]) && !empty($test["node_results"]) && is_array($test["node_results"]);
 $protocols = [];
 $nodeSummary = [];
 $now = time();
@@ -74,7 +75,7 @@ foreach ($lines as $line) {
         "protocol" => $type
     ];
 }
-foreach ($tiers as $name => $items) {
+if ($testUsable) foreach ($tiers as $name => $items) {
     $body = "#profile-title: base64:" . base64_encode("SVM " . strtoupper($name)) . "\n";
     $body .= "#profile-update-interval: 1\n";
     $body .= "#support-url: https://t.me/sinavm\n";
@@ -118,11 +119,12 @@ $health = [
         "by_type" => $stats["by_type"] ?? []
     ],
     "tiers" => [
-        "verified" => count($tiers["verified"]),
-        "fast" => count($tiers["fast"]),
-        "secure" => count($tiers["secure"])
+        "verified" => $testUsable ? count($tiers["verified"]) : null,
+        "fast" => $testUsable ? count($tiers["fast"]) : null,
+        "secure" => $testUsable ? count($tiers["secure"]) : null
     ],
     "protocols_alive" => $protocols,
+    "quality_data_fresh" => $testUsable,
     "links" => [
         "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified",
         "fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast",
@@ -147,4 +149,4 @@ if (is_dir($root . "/docs/reports")) {
     file_put_contents($root . "/docs/reports/health.json", json_encode($health, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n");
     file_put_contents($root . "/docs/reports/index.json", json_encode($index, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . "\n");
 }
-echo "Quality tiers generated: verified=" . count($tiers["verified"]) . " fast=" . count($tiers["fast"]) . " secure=" . count($tiers["secure"]) . PHP_EOL;
+echo $testUsable ? ("Quality tiers generated: verified=" . count($tiers["verified"]) . " fast=" . count($tiers["fast"]) . " secure=" . count($tiers["secure"]) . PHP_EOL) : "Quality tiers unchanged because no fresh successful test data is available." . PHP_EOL;
