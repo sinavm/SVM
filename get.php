@@ -57,7 +57,71 @@ function resolvePrivateSublink($n) {
     return '';
 }
 
+function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
+    $cacheDir = dirname($cacheFile);
+    if (!is_dir($cacheDir)) @mkdir($cacheDir, 0777, true);
+    $hasCache = is_file($cacheFile);
+    $cacheAge = $hasCache ? max(0, time() - filemtime($cacheFile)) : null;
+    if ($hasCache && $cacheAge < $ttlSeconds) {
+        return [file_get_contents($cacheFile), ["status" => "ok", "fetch_mode" => "cache", "http_code" => null, "attempts" => 0, "latency_ms" => 0, "cache_age_seconds" => $cacheAge, "error" => null]];
+    }
+    if (!function_exists("curl_init")) {
+        try {
+            $body = fetchWithCache($url, $cacheFile, $ttlSeconds, 3);
+            return [$body, ["status" => "ok", "fetch_mode" => "stream", "http_code" => null, "attempts" => 1, "latency_ms" => null, "cache_age_seconds" => 0, "error" => null]];
+        } catch (Exception $e) {
+            if ($hasCache) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => null, "attempts" => 3, "latency_ms" => null, "cache_age_seconds" => $cacheAge, "error" => "refresh_failed"]];
+            return ["", ["status" => "error", "fetch_mode" => "network", "http_code" => null, "attempts" => 3, "latency_ms" => null, "cache_age_seconds" => null, "error" => "fetch_failed"]];
+        }
+    }
+    $lastCode = 0;
+    $lastError = null;
+    $attempts = 0;
+    $latency = 0;
+    $backoffs = [1, 2, 4];
+    for ($i = 0; $i < 3; $i++) {
+        $attempts++;
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS => 5,
+            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_TIMEOUT => 25,
+            CURLOPT_USERAGENT => "SVM-Upstream-Aggregator/2.0",
+            CURLOPT_HTTPHEADER => ["Accept: text/plain, */*"],
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2
+        ]);
+        $started = microtime(true);
+        $body = curl_exec($ch);
+        $lastCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $latency = (int)round((microtime(true) - $started) * 1000);
+        $errno = curl_errno($ch);
+        $lastError = $errno ? curl_error($ch) : null;
+        curl_close($ch);
+        if ($lastCode >= 200 && $lastCode < 300 && is_string($body) && strlen($body) > 50 && strlen($body) <= 12000000) {
+            $tmp = $cacheFile . ".tmp";
+            if (file_put_contents($tmp, $body, LOCK_EX) !== false) @rename($tmp, $cacheFile);
+            else @unlink($tmp);
+            return [$body, ["status" => "ok", "fetch_mode" => "network", "http_code" => $lastCode, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => 0, "error" => null]];
+        }
+        if (is_string($body) && strlen($body) > 12000000) $lastError = "response_too_large";
+        elseif (!$lastError) $lastError = $lastCode ? "http_" . $lastCode : "empty_response";
+        if ($lastCode >= 400 && $lastCode < 500 && $lastCode !== 429) break;
+        if ($i < 2) sleep($backoffs[$i]);
+    }
+    if ($hasCache) return [file_get_contents($cacheFile), ["status" => "stale", "fetch_mode" => "stale-cache", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => $cacheAge, "error" => $lastError ?: "refresh_failed"]];
+    return ["", ["status" => "error", "fetch_mode" => "network", "http_code" => $lastCode ?: null, "attempts" => $attempts, "latency_ms" => $latency, "cache_age_seconds" => null, "error" => $lastError ?: "fetch_failed"]];
+}
+
 $sourcesArray = json_decode(file_get_contents("channels.json"), true);
+if (!is_array($sourcesArray)) $sourcesArray = [];
+$publicCatalog = is_file("public_sources.json") ? json_decode(file_get_contents("public_sources.json"), true) : [];
+$publicSources = is_array($publicCatalog["sources"] ?? null) ? $publicCatalog["sources"] : [];
+$publicSources = array_values(array_filter($publicSources, function ($source) {
+    return is_array($source) && !empty($source["enabled"]) && !empty($source["url"]) && !empty($source["id"]);
+}));
 
 $sublinksJson = file_get_contents("sublinks.json");
 $sublinksJson = preg_replace_callback('/__PRIVATE_LINK_SiNAVM_(\d+)__/', function ($m) {
@@ -68,7 +132,7 @@ if (!is_array($sublinksArray) || !isset($sublinksArray['sublinks']) || !is_array
     $sublinksArray = ['sublinks' => []];
 }
 
-$totalSources = count($sourcesArray) + count($sublinksArray['sublinks']);
+$totalSources = count($sourcesArray) + count($sublinksArray['sublinks']) + count($publicSources);
 $tempCounter = 1;
 
 $configsRaw = [];
