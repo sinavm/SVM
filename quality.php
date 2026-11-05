@@ -201,7 +201,7 @@ $health = [
         "status" => !empty($test["infra_ok"]) ? (($failedSources + $staleSources + $unconfiguredSources + $emptySources > 0) ? "degraded" : "healthy") : "unknown",
         "pipeline_ok" => !empty($test["infra_ok"]),
         "source_health" => ["total" => count($sourceRows), "healthy" => $healthySources, "stale" => $staleSources, "failed" => $failedSources, "unconfigured" => $unconfiguredSources, "empty" => $emptySources],
-        "nodes" => ["input" => (int)($test["input"] ?? 0), "alive" => (int)($test["kept"] ?? 0), "dropped" => (int)($test["dropped"] ?? 0)]
+        "nodes" => ["input" => (int)($test["input"] ?? 0), "alive" => count($nodeSummary), "tested_alive" => (int)($test["kept"] ?? 0), "duplicates_removed" => max(0, (int)($test["kept"] ?? 0) - count($nodeSummary)), "dropped" => (int)($test["dropped"] ?? 0)]
     ],
     "collection" => $sources,
     "testing" => [
