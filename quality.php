@@ -31,18 +31,78 @@ foreach (($test["node_results"] ?? []) as $row) {
 function isSecureTransport($line, $type) {
     $parsed = configParse($line);
     if (!is_array($parsed)) return false;
-    if ($type === "trojan" || $type === "hy2" || $type === "hysteria") return true;
+    if ($type === "trojan" || $type === "hy2" || $type === "hysteria" || $type === "tuic") return true;
     if ($type === "vmess") return !empty($parsed["tls"]) && strtolower((string)$parsed["tls"]) !== "none";
     $params = $parsed["params"] ?? [];
     $security = strtolower((string)($params["security"] ?? $parsed["security"] ?? ""));
-    if (in_array($security, ["tls", "reality"], true)) return true;
-    if ($type === "tuic") return true;
-    return false;
+    return in_array($security, ["tls", "reality"], true);
+}
+
+function nodeHost($line, $type) {
+    $parsed = configParse($line);
+    if (!is_array($parsed)) return "";
+    if ($type === "vmess") return trim((string)($parsed["add"] ?? ""));
+    if ($type === "ss") return trim((string)($parsed["server_address"] ?? ""));
+    return trim((string)($parsed["hostname"] ?? ""));
+}
+
+$geoCachePath = $reports . "/geo-cache.json";
+$geoCache = is_file($geoCachePath) ? json_decode((string)file_get_contents($geoCachePath), true) : [];
+if (!is_array($geoCache)) $geoCache = [];
+$geoTtl = 30 * 86400;
+$hostIps = [];
+$missingIps = [];
+if ($testUsable) {
+    foreach ($lines as $line) {
+        $type = detect_type(trim($line));
+        if (!$type) continue;
+        $host = nodeHost(trim($line), $type);
+        if ($host === "") continue;
+        $ip = filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ? $host : gethostbyname($host);
+        if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) continue;
+        $hostIps[configFingerprint(trim($line))] = $ip;
+        $cached = $geoCache[$ip] ?? [];
+        if (empty($cached["country"]) || (time() - (int)($cached["checked_at"] ?? 0)) > $geoTtl) $missingIps[$ip] = true;
+    }
+}
+if (function_exists("curl_init") && !empty($missingIps)) {
+    foreach (array_chunk(array_keys($missingIps), 100) as $ipBatch) {
+        $payload = json_encode(array_map(function ($ip) { return ["query" => $ip]; }, $ipBatch));
+        $ch = curl_init("http://ip-api.com/batch?fields=status,countryCode,query");
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_HTTPHEADER => ["Content-Type: application/json", "Accept: application/json"],
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_TIMEOUT => 15
+        ]);
+        $body = curl_exec($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        $rows = ($code === 200 && is_string($body)) ? json_decode($body, true) : null;
+        if (!is_array($rows)) continue;
+        foreach ($rows as $row) {
+            $ip = (string)($row["query"] ?? "");
+            $country = strtoupper((string)($row["countryCode"] ?? ""));
+            if (($row["status"] ?? "") === "success" && filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) && preg_match('/^[A-Z]{2}$/', $country)) {
+                $geoCache[$ip] = ["country" => $country, "checked_at" => time()];
+            }
+        }
+    }
+}
+file_put_contents($geoCachePath, json_encode($geoCache, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+$nodeCountries = [];
+foreach ($hostIps as $fp => $ip) {
+    $country = $geoCache[$ip]["country"] ?? null;
+    if (is_string($country) && preg_match('/^[A-Z]{2}$/', $country)) $nodeCountries[$fp] = $country;
 }
 
 $tiers = ["verified" => [], "fast" => [], "secure" => []];
 $testUsable = !empty($test["infra_ok"]) && !empty($test["node_results"]) && is_array($test["node_results"]);
 $protocols = [];
+$protocolNodes = [];
+$countryNodes = [];
 $nodeSummary = [];
 $now = time();
 if ($testUsable) foreach ($lines as $line) {
@@ -56,13 +116,17 @@ if ($testUsable) foreach ($lines as $line) {
     $rounds = $result["rounds"] ?? [];
     if (!isset($protocols[$type])) $protocols[$type] = 0;
     $protocols[$type]++;
+    $protocolNodes[$type][] = $line;
+    $country = $nodeCountries[$fp] ?? null;
+    if ($country !== null) $countryNodes[$country][] = $line;
     $entry = [
         "fingerprint" => $fp,
         "protocol" => $type,
         "delay_ms" => $delay,
         "successful_rounds" => $successes,
         "total_rounds" => 3,
-        "encrypted_transport" => isSecureTransport($line, $type)
+        "encrypted_transport" => isSecureTransport($line, $type),
+        "country_code" => $country
     ];
     $nodeSummary[] = $entry;
     if ($successes >= 3 && $delay > 0 && $delay <= 800) $tiers["verified"][] = $line;
@@ -84,6 +148,30 @@ if ($testUsable) foreach ($tiers as $name => $items) {
     $body .= implode("\n", $items) . (count($items) ? "\n" : "");
     file_put_contents($normal . "/" . $name, $body);
     file_put_contents($base64 . "/" . $name, base64_encode($body));
+}
+if ($testUsable) {
+    @mkdir($normal . "/protocols", 0777, true);
+    @mkdir($base64 . "/protocols", 0777, true);
+    foreach ($protocolNodes as $type => $items) {
+        $body = "#profile-title: base64:" . base64_encode("SVM " . strtoupper($type)) . "\n";
+        $body .= "#profile-update-interval: 1\n";
+        $body .= "#support-url: https://t.me/sinavm\n";
+        $body .= "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
+        $body .= implode("\n", $items) . "\n";
+        file_put_contents($normal . "/protocols/" . $type, $body);
+        file_put_contents($base64 . "/protocols/" . $type, base64_encode($body));
+    }
+    @mkdir($normal . "/countries", 0777, true);
+    @mkdir($base64 . "/countries", 0777, true);
+    foreach ($countryNodes as $country => $items) {
+        $body = "#profile-title: base64:" . base64_encode("SVM " . $country) . "\n";
+        $body .= "#profile-update-interval: 1\n";
+        $body .= "#support-url: https://t.me/sinavm\n";
+        $body .= "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
+        $body .= implode("\n", $items) . "\n";
+        file_put_contents($normal . "/countries/" . $country, $body);
+        file_put_contents($base64 . "/countries/" . $country, base64_encode($body));
+    }
 }
 if (count($history) > 5000) {
     uasort($history, function ($a, $b) { return ($b["last_seen"] ?? 0) <=> ($a["last_seen"] ?? 0); });
@@ -127,11 +215,15 @@ $health = [
         "secure" => $testUsable ? count($tiers["secure"]) : null
     ],
     "protocols_alive" => $protocols,
+    "country_nodes" => array_map("count", $countryNodes),
+    "geoip" => ["provider" => "ip-api.com", "known_nodes" => count($nodeCountries), "unknown_nodes" => max(0, count($hostIps) - count($nodeCountries)), "cache_ttl_days" => 30],
     "quality_data_fresh" => $testUsable,
     "links" => [
         "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/verified",
         "fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/fast",
-        "secure" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/secure"
+        "secure" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/secure",
+        "protocols" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/protocols/",
+        "countries" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/countries/"
     ]
 ];
 $index = [
@@ -143,6 +235,8 @@ $index = [
     "sources" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/sources.json",
     "test" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/test.json",
     "subscriptions" => $health["links"],
+    "protocol_subscriptions" => array_map(function ($type) use ($health) { return $health["links"]["protocols"] . $type; }, array_keys($protocols)),
+    "country_subscriptions" => array_map(function ($country) use ($health) { return $health["links"]["countries"] . $country; }, array_keys($countryNodes)),
     "counts" => $health["tiers"],
     "nodes" => $nodeSummary
 ];
