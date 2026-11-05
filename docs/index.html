@@ -208,7 +208,7 @@ countryFilter.onchange=()=>{const value=countryFilter.value;const base=health.li
 const tested=test.tested_at||lite.tested_at||null;
 setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
 const sourceHealth=health.overall?.source_health;
-setText("sourceState",sourceHealth?"منابع سالم: "+format(sourceHealth.healthy)+" · قدیمی: "+format(sourceHealth.stale||0)+" · خطا: "+format(sourceHealth.failed||0):"سلامت منابع: —");
+setText("sourceState",sourceHealth?"منابع سالم: "+format(sourceHealth.healthy)+" · قدیمی: "+format(sourceHealth.stale||0)+" · خطا: "+format(sourceHealth.failed||0)+" · تنظیم‌نشده: "+format(sourceHealth.unconfigured||0):"سلامت منابع: —");
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
 const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled";
