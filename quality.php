@@ -94,13 +94,15 @@ file_put_contents($historyPath, json_encode($history, JSON_PRETTY_PRINT | JSON_U
 $sourceRows = $sources["sources"] ?? [];
 $healthySources = (int)($sources["healthy_sources"] ?? 0);
 $failedSources = (int)($sources["failed_sources"] ?? 0);
+$staleSources = (int)($sources["stale_sources"] ?? 0);
+$unconfiguredSources = (int)($sources["unconfigured_sources"] ?? 0);
 $health = [
     "schema_version" => 1,
     "generated_at" => gmdate("c"),
     "overall" => [
-        "status" => !empty($test["infra_ok"]) ? (($failedSources > 0) ? "degraded" : "healthy") : "unknown",
+        "status" => !empty($test["infra_ok"]) ? (($failedSources + $staleSources + $unconfiguredSources > 0) ? "degraded" : "healthy") : "unknown",
         "pipeline_ok" => !empty($test["infra_ok"]),
-        "source_health" => ["total" => count($sourceRows), "healthy" => $healthySources, "failed" => $failedSources],
+        "source_health" => ["total" => count($sourceRows), "healthy" => $healthySources, "stale" => $staleSources, "failed" => $failedSources, "unconfigured" => $unconfiguredSources],
         "nodes" => ["input" => (int)($test["input"] ?? 0), "alive" => (int)($test["kept"] ?? 0), "dropped" => (int)($test["dropped"] ?? 0)]
     ],
     "collection" => $sources,
