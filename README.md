@@ -27,6 +27,8 @@
 | Verified | موفق در هر سه دور تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified) |
 | Fast | حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ms | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast) |
 | Secure | دارای TLS یا Reality در لایه انتقال | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure) |
+| By protocol | اشتراک جداگانه برای هر پروتکل | [فهرست پروتکل‌ها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/protocols) |
+| By country | اشتراک جداگانه بر اساس کشور IP سرور | [فهرست کشورها](https://github.com/sinavm/SVM/tree/main/subscriptions/xray/normal/countries) |
 
 <div align="center">
 
@@ -68,6 +70,7 @@
 | [Network health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json) | سلامت منابع، نتیجه تست، آمار اعتبارسنجی و تعداد دسته‌های کیفیت |
 | [API index](https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json) | فهرست مرکزی گزارش‌ها و اشتراک‌ها برای مصرف خودکار |
 | [Source health](https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json) | وضعیت دریافت هر منبع و تعداد کانفیگ‌های استخراج‌شده |
+| [GeoIP cache](https://github.com/sinavm/SVM/blob/main/reports/geo-cache.json) | کش ۳۰ روزه کشور IP سرورهای عمومی |
 | [Full test report](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) | تعداد ورودی، تبدیل، تست TCP، سه دور تست پروتکل و سریع‌ترین نودها |
 | [Lite status](https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json) | زمان به‌روزرسانی و تعداد اشتراک‌های Fast و Stable |
 | [Validation stats](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json) | تعداد ورودی معتبر و نامعتبر و دلیل رد |
@@ -87,6 +90,7 @@ GitHub Actions پردازش را به‌صورت زمان‌بندی‌شده ا
 - Verified یعنی نود در هر سه دور تست همان اجرای CI موفق بوده است؛ تضمین پایداری دائمی یا کیفیت مسیر از شبکه کاربر نیست.
 - Fast بر اساس حداقل دو موفقیت از سه دور و تأخیر حداکثر ۳۵۰ میلی‌ثانیه ساخته می‌شود.
 - Secure صرفاً وجود نشانه‌های TLS یا Reality در پیکربندی را مشخص می‌کند و ممیزی رمزنگاری، امنیت سرور یا قابل اعتماد بودن گرداننده نیست.
+- دسته‌بندی کشور با سرویس GeoIP بیرونی انجام می‌شود؛ فقط IP عمومی سرورها برای تعیین کشور ارسال و نتیجه تا ۳۰ روز cache می‌شود. نودهای بدون نتیجه در دسته‌بندی کشور قرار نمی‌گیرند.
 - فهرست‌های Lite انتخاب‌های کاربردی هستند و تضمین پایداری دائمی محسوب نمی‌شوند.
 - استفاده از پروژه باید مطابق قوانین محل استفاده و سیاست سرویس‌های مقصد باشد.
 
