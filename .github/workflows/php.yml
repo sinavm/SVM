@@ -74,7 +74,7 @@ jobs:
           curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
           echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
           gunzip -f /tmp/mihomo.gz
-          install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
           mihomo -v
 
       - name: Execute PHP script
@@ -161,7 +161,7 @@ jobs:
           curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
           echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
           gunzip -f /tmp/mihomo.gz
-          install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
           mihomo -v
 
       - name: Execute PHP script
