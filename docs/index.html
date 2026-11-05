@@ -122,6 +122,11 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="panel">
 <h3>ترکیب پروتکل‌های موفق</h3>
 <div class="protocols" id="protocols"><span class="protocol">در انتظار گزارش</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+<div><label for="protocolFilter" style="display:block;color:var(--muted);font-size:11px;margin-bottom:6px">اشتراک بر اساس پروتکل</label><select id="protocolFilter" style="width:100%;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px"><option value="">انتخاب پروتکل</option></select><a id="protocolDownload" class="reportlink" href="#" hidden>دریافت اشتراک پروتکل</a></div>
+<div><label for="countryFilter" style="display:block;color:var(--muted);font-size:11px;margin-bottom:6px">اشتراک بر اساس کشور</label><select id="countryFilter" style="width:100%;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px"><option value="">انتخاب کشور</option></select><a id="countryDownload" class="reportlink" href="#" hidden>دریافت اشتراک کشور</a></div>
+</div>
+<p style="font-size:10px;color:var(--muted);line-height:1.8;margin-top:8px">تشخیص کشور با IP عمومی سرورها انجام می‌شود؛ موارد نامشخص در دسته کشور قرار نمی‌گیرند.</p>
 <div style="height:18px"></div>
 <div class="qrrow"><img id="qr" alt="QR اشتراک سریع" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast"><div><strong>اشتراک سریع</strong><p>کد را با اپلیکیشن سازگار اسکن کنید یا لینک اشتراک را از بخش پایین کپی کنید.</p></div></div>
 </article>
@@ -191,6 +196,15 @@ const types=test.by_type_kept||{},protocolBox=document.getElementById("protocols
 protocolBox.replaceChildren();
 Object.entries(types).sort((a,b)=>number(b[1])-number(a[1])).forEach(([name,count])=>{const item=document.createElement("span");item.className="protocol";item.textContent=name.toUpperCase()+" · "+format(count);protocolBox.append(item)});
 if(!Object.keys(types).length){const item=document.createElement("span");item.className="protocol";item.textContent="داده پروتکل موجود نیست";protocolBox.append(item)}
+const protocolFilter=document.getElementById("protocolFilter");
+const countryFilter=document.getElementById("countryFilter");
+const protocolDownload=document.getElementById("protocolDownload");
+const countryDownload=document.getElementById("countryDownload");
+const fillFilter=(select,items,label)=>{select.replaceChildren();const first=document.createElement("option");first.value="";first.textContent=label;select.append(first);Object.entries(items||{}).sort((a,b)=>number(b[1])-number(a[1])).forEach(([key,count])=>{const option=document.createElement("option");option.value=key;option.textContent=key.toUpperCase()+" · "+format(count);select.append(option)})};
+fillFilter(protocolFilter,health.protocols_alive,"انتخاب پروتکل");
+fillFilter(countryFilter,health.country_nodes,"انتخاب کشور");
+protocolFilter.onchange=()=>{const value=protocolFilter.value;const base=health.links?.protocols;protocolDownload.hidden=!(value&&base);if(value&&base){protocolDownload.href=base+encodeURIComponent(value);protocolDownload.textContent="دریافت "+value.toUpperCase()}};
+countryFilter.onchange=()=>{const value=countryFilter.value;const base=health.links?.countries;countryDownload.hidden=!(value&&base);if(value&&base){countryDownload.href=base+encodeURIComponent(value);countryDownload.textContent="دریافت "+value}};
 const tested=test.tested_at||lite.tested_at||null;
 setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
 const sourceHealth=health.overall?.source_health;
