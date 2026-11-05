@@ -20,7 +20,7 @@
 | اشتراک | کاربرد | لینک مستقیم |
 | --- | --- | --- |
 | Full Mix | مجموعه کامل خروجی اصلی | [Xray](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
-| Top 100 | صد نود Verified با کمترین تأخیر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt) |
+| Top 100 | تا ۱۰۰ نود Verified با کمترین تأخیر | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt) |
 | All live | همه نودهای زنده پس از تست | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/all) |
 | Curated | نودهای آمده از منابع منتخب | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated) |
 | Heavy | نودهای آمده از تجمیع‌کننده‌های حجیم | [دریافت](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy) |
@@ -72,7 +72,7 @@
 | Heavy | [ShadowException VPN](https://github.com/ShadowException/VPN) | فهرست حجیم |
 | Heavy | [Delta-Kronecker](https://github.com/Delta-Kronecker/V2ray-Config) | فید حجیم |
 
-MahsaNet دو URL مستقل دارد؛ بنابراین تعداد فیدهای عمومی فعال ۱۲ است. علاوه بر آن، دو کانال تلگرام `SiNAVM` و `mtmvpn` و تا شش اشتراک خصوصی از طریق GitHub Secrets با نام‌های `PRIVATE_LINK_SINAVM_1` تا `PRIVATE_LINK_SINAVM_6` قابل افزودن‌اند؛ مقدار URLهای خصوصی در گزارش عمومی منتشر نمی‌شود. وضعیت HTTP، زمان پاسخ، تعداد کانفیگ خام، یکتا و انحصاری هر منبع، درصد هم‌پوشانی، عمر کش و خطای آخر در گزارش منابع ثبت می‌شود. تاریخچهٔ بازده انحصاری کمک می‌کند منبعی که صرفاً تکرار منابع دیگر است شناسایی شود؛ پس از هشت دور بدون کانفیگ انحصاری فقط نامزد بازبینی می‌شود. فیدهای عمومی با TTL پانزده دقیقه دریافت می‌شوند؛ در قطعی موقت، کش حداکثر ۲۴ ساعت فقط با برچسب stale استفاده می‌شود. منبعی که هشت اجرای متوالی خروجی یکتای نداشته باشد فقط به‌عنوان نامزد بازبینی علامت می‌خورد و خودکار از فهرست حذف نمی‌شود.
+MahsaNet دو URL مستقل دارد؛ بنابراین تعداد فیدهای عمومی فعال ۱۲ است. علاوه بر آن، دو کانال تلگرام `SiNAVM` و `mtmvpn` و تا شش اشتراک خصوصی از طریق GitHub Secrets با نام‌های `PRIVATE_LINK_SINAVM_1` تا `PRIVATE_LINK_SINAVM_6` قابل افزودن‌اند؛ مقدار URLهای خصوصی در گزارش عمومی منتشر نمی‌شود. وضعیت HTTP، زمان پاسخ، تعداد کانفیگ خام، یکتا و انحصاری هر منبع، درصد هم‌پوشانی، عمر کش و خطای آخر در گزارش منابع ثبت می‌شود. تاریخچهٔ بازده انحصاری کمک می‌کند منبعی که صرفاً تکرار منابع دیگر است شناسایی شود؛ پس از هشت دور بدون کانفیگ انحصاری فقط نامزد بازبینی می‌شود. فیدهای عمومی با TTL پانزده دقیقه دریافت می‌شوند؛ در قطعی موقت، کش حداکثر ۲۴ ساعت فقط با برچسب stale استفاده می‌شود. 
 
 کانفیگ‌ها از منابع عمومی و بدون تضمین مالکیت یا اعتماد جمع‌آوری می‌شوند. SVM صرفاً منبع را ثبت، داده را پاک‌سازی و کانفیگ را آزمایش می‌کند؛ منبع بالادستی لزوماً کیفیت یا امنیت هر نود را تضمین نمی‌کند.
 
