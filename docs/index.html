@@ -43,7 +43,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:15px}
 .section-head h2{font-size:19px;margin:0}
 .section-head p{font-size:12px;color:var(--muted);margin:5px 0 0}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .metric,.panel,.subcard{border:1px solid var(--line);background:linear-gradient(145deg,rgba(20,34,58,.92),rgba(13,23,40,.92));border-radius:var(--radius);box-shadow:0 16px 40px rgba(0,0,0,.12)}
 .metric{padding:19px;min-height:128px}
 .metric-label{color:var(--muted);font-size:12px}
@@ -105,6 +105,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <article class="metric"><span class="metric-label">اتصال‌های موفق</span><strong class="metric-value" id="alive">—</strong><span class="metric-note">Real protocol test</span></article>
 <article class="metric"><span class="metric-label">فهرست سریع لایت</span><strong class="metric-value" id="fast">—</strong><span class="metric-note">Lite fast selection</span></article>
 <article class="metric"><span class="metric-label">فهرست پایدار لایت</span><strong class="metric-value" id="stable">—</strong><span class="metric-note">Lite stable selection</span></article>
+<article class="metric"><span class="metric-label">اعتبارسنجی‌شده</span><strong class="metric-value" id="valid">—</strong><span class="metric-note" id="invalidNote">ساختار معتبر</span></article>
 </div>
 <div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
 </section>
@@ -148,24 +149,28 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <footer class="footer">SVM · SiNAVM Network · داده‌ها از گزارش‌های واقعی مخزن خوانده می‌شوند<br><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://t.me/sinavm">Telegram</a></footer>
 </div>
 <script>
-const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json"};
+const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"};
 const number=value=>Number.isFinite(Number(value))?Number(value):0;
 const format=value=>number(value).toLocaleString("fa-IR");
 const setText=(id,value)=>{document.getElementById(id).textContent=value};
 const setBar=(id,value,total)=>{document.getElementById(id).style.width=(total>0?Math.min(100,Math.max(0,value/total*100)):0)+"%"};
 async function loadData(){
 const stamp=Date.now();
-const [testResult,liteResult]=await Promise.allSettled([
+const [testResult,liteResult,statsResult]=await Promise.allSettled([
 fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
-fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()})
+fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
+fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()})
 ]);
 const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
+const stats=statsResult.status==="fulfilled"?statsResult.value:{};
 const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
 setText("fast",lite.alive_fast!==undefined?format(lite.alive_fast):"—");
 setText("stable",lite.alive_stable!==undefined?format(lite.alive_stable):"—");
+setText("valid",stats.total_valid!==undefined?format(stats.total_valid):"—");
+setText("invalidNote",stats.total_invalid!==undefined?"نامعتبر: "+format(stats.total_invalid):"ساختار معتبر");
 setText("valInput",input?format(input):"—");
 setText("valConverted",format(converted));
 setText("valTcp",format(tcp));
@@ -182,8 +187,9 @@ const tested=test.tested_at||lite.tested_at||null;
 setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
-const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled";
-setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":testResult.status==="fulfilled"||liteResult.status==="fulfilled"?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
+const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled";
+const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled";
+setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":partial?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
 }
 document.getElementById("refresh").addEventListener("click",loadData);
 document.querySelectorAll("[data-copy]").forEach(button=>button.addEventListener("click",async()=>{const value=button.getAttribute("data-copy");try{await navigator.clipboard.writeText(value);button.textContent="کپی شد";setTimeout(()=>button.textContent="کپی لینک",1500)}catch{window.prompt("لینک اشتراک را کپی کنید",value)}}));
