@@ -407,7 +407,13 @@ function protocolTestBatch($bin, $items)
             $successful = array_values(array_filter($values, function ($v) { return $v > 0; }));
             sort($successful);
             $count = count($successful);
-            $median = $count ? $successful[(int)floor(($count - 1) / 2)] : 0;
+            if ($count === 2) {
+                $median = (int)round(($successful[0] + $successful[1]) / 2);
+            } elseif ($count > 0) {
+                $median = $successful[(int)floor(($count - 1) / 2)];
+            } else {
+                $median = 0;
+            }
             $results[$tag] = ["delay" => $median, "successes" => $count, "samples" => $values];
         }
         return $results;
