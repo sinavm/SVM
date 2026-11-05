@@ -373,7 +373,7 @@ function protocolTestBatch($bin, $items)
         testLog("sing-box check failed for batch of " . count($items) . ", falling back to singles");
         $results = [];
         if (count($items) === 1) {
-            $results[$items[0]["tag"]] = 0;
+            $results[$items[0]["tag"]] = ["delay" => 0, "successes" => 0, "samples" => [0, 0, 0]];
             return $results;
         }
         foreach ($items as $one) {
