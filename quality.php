@@ -46,6 +46,7 @@ function nodeHost($line, $type) {
     return trim((string)($parsed["hostname"] ?? ""));
 }
 
+$testUsable = !empty($test["infra_ok"]) && !empty($test["node_results"]) && is_array($test["node_results"]);
 $geoCachePath = $reports . "/geo-cache.json";
 $geoCache = is_file($geoCachePath) ? json_decode((string)file_get_contents($geoCachePath), true) : [];
 if (!is_array($geoCache)) $geoCache = [];
@@ -99,7 +100,6 @@ foreach ($hostIps as $fp => $ip) {
 }
 
 $tiers = ["verified" => [], "fast" => [], "secure" => []];
-$testUsable = !empty($test["infra_ok"]) && !empty($test["node_results"]) && is_array($test["node_results"]);
 $protocols = [];
 $protocolNodes = [];
 $countryNodes = [];
