@@ -77,7 +77,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 .qrrow p{color:var(--muted);font-size:12px;line-height:1.9}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding:42px 0 26px}.orbit{max-width:220px}.navlinks{display:none}.metrics{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.subgrid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.metric{min-height:112px;padding:15px}.metric-value{font-size:26px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-.source-panel{margin-top:16px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.source-item{min-width:0;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:13px;padding:12px}.source-item-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.source-name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.source-status{font-size:10px;padding:4px 7px;border-radius:20px;white-space:nowrap}.source-status.ok{background:rgba(34,197,94,.13);color:#86efac}.source-status.stale{background:rgba(245,158,11,.13);color:#fcd34d}.source-status.error,.source-status.empty,.source-status.unconfigured{background:rgba(248,113,113,.12);color:#fca5a5}.source-meta{font-size:10px;color:var(--muted);line-height:1.9;margin-top:7px;overflow-wrap:anywhere}.source-item a{display:inline-block;font-size:10px;color:var(--accent);margin-top:5px}.source-empty{font-size:11px;color:var(--muted)}@media(max-width:900px){.source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.source-grid{grid-template-columns:1fr}}</style>
+.source-panel{margin-top:16px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.source-item{min-width:0;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:13px;padding:12px}.source-item-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.source-name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.source-status{font-size:10px;padding:4px 7px;border-radius:20px;white-space:nowrap}.source-status.ok{background:rgba(34,197,94,.13);color:#86efac}.source-status.stale{background:rgba(245,158,11,.13);color:#fcd34d}.source-status.error,.source-status.empty,.source-status.unconfigured{background:rgba(248,113,113,.12);color:#fca5a5}.source-meta{font-size:10px;color:var(--muted);line-height:1.9;margin-top:7px;overflow-wrap:anywhere}.source-item a{display:inline-block;font-size:10px;color:var(--accent);margin-top:5px}.source-empty{font-size:11px;color:var(--muted)}@media(max-width:900px){.source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.source-grid{grid-template-columns:1fr}}.explorer-panel{margin-top:16px}.explorer-controls{display:grid;grid-template-columns:minmax(180px,2fr) minmax(130px,1fr) minmax(130px,1fr);gap:9px;margin-bottom:12px}.explorer-controls input,.explorer-controls select{min-width:0;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:11px}.explorer-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.node-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:11px;padding:10px;min-width:0}.node-main{min-width:0}.node-title{font-size:11px;font-weight:700}.node-sub{font-size:10px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.node-delay{font-size:12px;font-weight:700;white-space:nowrap;color:var(--accent)}@media(max-width:760px){.explorer-controls{grid-template-columns:1fr 1fr}.explorer-controls input{grid-column:1/-1}.explorer-list{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <div class="shell">
@@ -109,6 +109,7 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 </div>
 <div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><span id="sourceState">سلامت منابع: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
 <article class="panel source-panel"><div class="section-head"><div><h3>منابع ورودی کانفیگ</h3><p>فیدهای عمومی، کانال‌های تلگرام و اشتراک‌های خصوصی؛ وضعیت هر منبع مستقل گزارش می‌شود.</p></div><span class="pill" id="publicSourceCount">۱۲ فید عمومی</span></div><div class="source-grid" id="sourceGrid"><span class="source-empty">در انتظار گزارش منابع</span></div></article>
+<article class="panel explorer-panel"><div class="section-head"><div><h3>کاوشگر نودهای زنده</h3><p>جست‌وجو و فیلتر نودهای تست‌شده بر اساس پروتکل، کشور و شناسه.</p></div><span class="pill" id="explorerCount">در انتظار داده</span></div><div class="explorer-controls"><input id="nodeSearch" type="search" placeholder="جست‌وجو در پروتکل، کشور یا fingerprint"><select id="nodeProtocolFilter"><option value="">همه پروتکل‌ها</option></select><select id="nodeCountryFilter"><option value="">همه کشورها</option></select></div><div class="explorer-list" id="nodeExplorer"><span class="source-empty">در انتظار فهرست نودها</span></div></article>
 </section>
 <section class="section">
 <div class="section-head"><div><h2>قیف اعتبارسنجی</h2><p>مقایسه ورودی، تبدیل، اتصال TCP و تست واقعی پروتکل</p></div></div>
@@ -167,25 +168,27 @@ h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:line
 <footer class="footer">SVM · SiNAVM Network · داده‌ها از گزارش‌های واقعی مخزن خوانده می‌شوند<br><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://t.me/sinavm">Telegram</a></footer>
 </div>
 <script>
-const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json",sources:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"};
+const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json",sources:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json",index:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"};
 const number=value=>Number.isFinite(Number(value))?Number(value):0;
 const format=value=>number(value).toLocaleString("fa-IR");
 const setText=(id,value)=>{document.getElementById(id).textContent=value};
 const setBar=(id,value,total)=>{document.getElementById(id).style.width=(total>0?Math.min(100,Math.max(0,value/total*100)):0)+"%"};
 async function loadData(){
 const stamp=Date.now();
-const [testResult,liteResult,statsResult,healthResult,sourcesResult]=await Promise.allSettled([
+const [testResult,liteResult,statsResult,healthResult,sourcesResult,indexResult]=await Promise.allSettled([
 fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
 fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
 fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()}),
 fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("health");return r.json()}),
-fetch(paths.sources+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("sources");return r.json()})
+fetch(paths.sources+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("sources");return r.json()}),
+fetch(paths.index+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("index");return r.json()})
 ]);
 const test=testResult.status==="fulfilled"?testResult.value:{};
 const lite=liteResult.status==="fulfilled"?liteResult.value:{};
 const stats=statsResult.status==="fulfilled"?statsResult.value:{};
 const health=healthResult.status==="fulfilled"?healthResult.value:{};
 const sourceReport=sourcesResult.status==="fulfilled"?sourcesResult.value:{};
+const indexData=indexResult.status==="fulfilled"?indexResult.value:{};
 const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(health.overall?.nodes?.alive??test.kept);
 setText("input",input?format(input):"—");
 setText("alive",format(alive));
@@ -225,10 +228,23 @@ const statusLabels={ok:"سالم",stale:"قدیمی",error:"خطا",empty:"بد�
 sourceEntries.forEach(([key,entry])=>{const card=document.createElement("article");card.className="source-item";const head=document.createElement("div");head.className="source-item-head";const name=document.createElement("span");name.className="source-name";name.textContent=entry.name||key;const status=document.createElement("span");status.className="source-status "+(entry.status||"unknown");status.textContent=statusLabels[entry.status]||"نامشخص";head.append(name,status);const meta=document.createElement("div");meta.className="source-meta";const group=entry.group||entry.kind||"source";const count=number(entry.configs_found);const unique=entry.unique_configs===undefined?"—":format(entry.unique_configs);const http=entry.http_code||"—";const latency=entry.latency_ms===null||entry.latency_ms===undefined?"—":format(entry.latency_ms)+"ms";const exclusive=entry.exclusive_configs===undefined?"—":format(entry.exclusive_configs);meta.textContent=group+" · کانفیگ: "+format(count)+" · یکتا: "+unique+" · انحصاری: "+exclusive+" · HTTP: "+http+" · پاسخ: "+latency;card.append(head,meta);if(typeof entry.url==="string"&&entry.url.startsWith("https://")){const link=document.createElement("a");link.href=entry.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="مشاهده فید ↗";card.append(link)}sourceGrid.append(card)});
 if(!sourceEntries.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="هنوز گزارشی از منابع منتشر نشده است";sourceGrid.append(empty)}
 setText("publicSourceCount",format(sourceReport.public_sources_healthy||0)+" از "+format(sourceReport.public_sources_total||0)+" فید عمومی سالم");
+const nodes=Array.isArray(indexData.nodes)?indexData.nodes:[];
+const nodeSearch=document.getElementById("nodeSearch");
+const nodeProtocolFilter=document.getElementById("nodeProtocolFilter");
+const nodeCountryFilter=document.getElementById("nodeCountryFilter");
+const nodeExplorer=document.getElementById("nodeExplorer");
+const fillNodeFilter=(select,values,label)=>{select.replaceChildren();const first=document.createElement("option");first.value="";first.textContent=label;select.append(first);values.forEach(value=>{const option=document.createElement("option");option.value=value;option.textContent=value;select.append(option)})};
+fillNodeFilter(nodeProtocolFilter,[...new Set(nodes.map(n=>String(n.protocol||"").toUpperCase()).filter(Boolean))].sort(),"همه پروتکل‌ها");
+fillNodeFilter(nodeCountryFilter,[...new Set(nodes.map(n=>String(n.country_code||"").toUpperCase()).filter(Boolean))].sort(),"همه کشورها");
+const renderNodes=()=>{const query=nodeSearch.value.trim().toLowerCase();const protocol=nodeProtocolFilter.value;const country=nodeCountryFilter.value;const filtered=nodes.filter(node=>{const haystack=[node.fingerprint,node.protocol,node.country_code].join(" ").toLowerCase();return (!query||haystack.includes(query))&&(!protocol||String(node.protocol||"").toUpperCase()===protocol)&&(!country||String(node.country_code||"").toUpperCase()===country)}).sort((a,b)=>number(a.delay_ms)-number(b.delay_ms));nodeExplorer.replaceChildren();filtered.slice(0,60).forEach(node=>{const item=document.createElement("article");item.className="node-item";const main=document.createElement("div");main.className="node-main";const title=document.createElement("div");title.className="node-title";title.textContent=String(node.protocol||"NODE").toUpperCase()+" · "+String(node.country_code||"XX").toUpperCase();const sub=document.createElement("div");sub.className="node-sub";sub.textContent=String(node.fingerprint||"").slice(0,14)+" · "+format(node.successful_rounds||0)+"/"+format(node.total_rounds||3)+" دور موفق"+(node.encrypted_transport?" · TLS/Reality":"");main.append(title,sub);const delay=document.createElement("span");delay.className="node-delay";delay.textContent=number(node.delay_ms)>0?format(node.delay_ms)+"ms":"—";item.append(main,delay);nodeExplorer.append(item)});setText("explorerCount",format(filtered.length)+" نود · نمایش "+format(Math.min(60,filtered.length)));if(!filtered.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="نودی با این فیلتر پیدا نشد";nodeExplorer.append(empty)}};
+nodeSearch.addEventListener("input",renderNodes);
+nodeProtocolFilter.addEventListener("change",renderNodes);
+nodeCountryFilter.addEventListener("change",renderNodes);
+renderNodes();
 const updated=lite.updated_at||test.tested_at||null;
 setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
-const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled"&&sourcesResult.status==="fulfilled";
-const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled"||sourcesResult.status==="fulfilled";
+const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled"&&sourcesResult.status==="fulfilled"&&indexResult.status==="fulfilled";
+const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled"||sourcesResult.status==="fulfilled"||indexResult.status==="fulfilled";
 setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":partial?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
 }
 document.getElementById("refresh").addEventListener("click",loadData);
