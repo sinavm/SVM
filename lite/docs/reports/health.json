@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "generated_at": "2026-11-05T17:34:30+00:00",
+    "generated_at": "2026-11-05T17:43:00+00:00",
     "overall": {
         "status": "degraded",
         "pipeline_ok": true,
@@ -13,15 +13,15 @@
             "empty": 1
         },
         "nodes": {
-            "input": 457,
-            "alive": 116,
-            "tested_alive": 116,
-            "duplicates_removed": 0,
-            "dropped": 341
+            "input": 437,
+            "alive": 71,
+            "tested_alive": 105,
+            "duplicates_removed": 34,
+            "dropped": 332
         }
     },
     "collection": {
-        "updated_at": "2026-11-05T17:30:59+00:00",
+        "updated_at": "2026-11-05T17:39:01+00:00",
         "total_sources": 8,
         "healthy_sources": 5,
         "stale_sources": 0,
@@ -34,7 +34,7 @@
                 "name": "SiNAVM",
                 "status": "empty",
                 "configs_found": 0,
-                "checked_at": "2026-11-05T17:30:56+00:00",
+                "checked_at": "2026-11-05T17:38:58+00:00",
                 "error": null
             },
             "telegram:mtmvpn": {
@@ -42,7 +42,7 @@
                 "name": "mtmvpn",
                 "status": "ok",
                 "configs_found": 8,
-                "checked_at": "2026-11-05T17:30:57+00:00",
+                "checked_at": "2026-11-05T17:38:59+00:00",
                 "error": null
             },
             "subscription:c49b3a17a3c16564": {
@@ -50,7 +50,7 @@
                 "name": "source-c49b3a17",
                 "status": "ok",
                 "configs_found": 28,
-                "checked_at": "2026-11-05T17:30:58+00:00",
+                "checked_at": "2026-11-05T17:39:00+00:00",
                 "error": null
             },
             "subscription:08afdd48683cd24d": {
@@ -58,7 +58,7 @@
                 "name": "source-08afdd48",
                 "status": "ok",
                 "configs_found": 158,
-                "checked_at": "2026-11-05T17:30:58+00:00",
+                "checked_at": "2026-11-05T17:39:01+00:00",
                 "error": null
             },
             "subscription:2f9a9703563cd619": {
@@ -66,7 +66,7 @@
                 "name": "source-2f9a9703",
                 "status": "ok",
                 "configs_found": 500,
-                "checked_at": "2026-11-05T17:30:58+00:00",
+                "checked_at": "2026-11-05T17:39:01+00:00",
                 "error": null
             },
             "subscription:0f6dcf19929a40f0": {
@@ -74,7 +74,7 @@
                 "name": "source-0f6dcf19",
                 "status": "ok",
                 "configs_found": 100,
-                "checked_at": "2026-11-05T17:30:59+00:00",
+                "checked_at": "2026-11-05T17:39:01+00:00",
                 "error": null
             },
             "subscription_slot:5": {
@@ -82,7 +82,7 @@
                 "name": "private-source-5",
                 "status": "unconfigured",
                 "configs_found": 0,
-                "checked_at": "2026-11-05T17:30:59+00:00",
+                "checked_at": "2026-11-05T17:39:01+00:00",
                 "error": "missing_secret_or_protocol_filter"
             },
             "subscription_slot:6": {
@@ -90,58 +90,57 @@
                 "name": "private-source-6",
                 "status": "unconfigured",
                 "configs_found": 0,
-                "checked_at": "2026-11-05T17:30:59+00:00",
+                "checked_at": "2026-11-05T17:39:01+00:00",
                 "error": "missing_secret_or_protocol_filter"
             }
         }
     },
     "testing": {
-        "tested_at": "2026-11-05T17:30:59+00:00",
+        "tested_at": "2026-11-05T17:39:01+00:00",
         "engine": "sing-box-1.14.0",
         "infra_ok": true,
         "stability_rounds": 3,
-        "protocol_alive": 116,
-        "protocol_dead": 252,
+        "protocol_alive": 105,
+        "protocol_dead": 245,
         "error": null
     },
     "validation": {
         "total_raw": 794,
-        "total_valid": 457,
-        "total_invalid": 337,
+        "total_valid": 437,
+        "total_invalid": 357,
         "by_type": {
-            "vless": 76,
-            "ss": 108,
-            "vmess": 37,
-            "trojan": 160,
+            "vless": 65,
+            "ss": 112,
+            "vmess": 52,
+            "trojan": 132,
             "hy2": 76
         }
     },
     "tiers": {
-        "verified": 90,
-        "fast": 80,
-        "secure": 29
+        "verified": 53,
+        "fast": 50,
+        "secure": 14
     },
     "protocols_alive": {
-        "vless": 29,
-        "ss": 61,
-        "vmess": 26
+        "ss": 34,
+        "vless": 18,
+        "vmess": 19
     },
     "country_nodes": {
-        "US": 55,
-        "CA": 6,
-        "NL": 13,
-        "IT": 28,
-        "DE": 7,
-        "SG": 3,
-        "JP": 2,
-        "IN": 2
+        "US": 34,
+        "CA": 10,
+        "NL": 12,
+        "IT": 8,
+        "DE": 4,
+        "SG": 2,
+        "JP": 1
     },
     "geoip": {
         "provider": "ip-api.com",
-        "known_nodes": 82,
-        "unknown_nodes": 34,
-        "resolved_ipv4_nodes": 82,
-        "unresolved_hosts": 34,
+        "known_nodes": 71,
+        "unknown_nodes": 0,
+        "resolved_ipv4_nodes": 71,
+        "unresolved_hosts": 0,
         "cache_ttl_days": 30
     },
     "quality_data_fresh": true,
