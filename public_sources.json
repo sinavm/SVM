@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "maintainer": "SVM",
-  "upstream_policy": "Publicly published configuration feeds. Each URL is fetched independently, normalized, structurally validated and then tested by the SVM pipeline.",
+  "upstream_policy": "Private source endpoints are supplied only through GitHub Actions secrets. Public reports expose numeric feed slots only.",
   "sources": [
     {
-      "id": "whitedns-sub",
-      "name": "WhiteDNS Sub",
+      "id": "feed-07",
+      "name": "Private feed 7",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/iampedii/whitedns-sub/main/base64.txt",
+      "secret_slot": 7,
       "protocols": [
         "vmess",
         "vless",
@@ -21,10 +21,10 @@
       "enabled": true
     },
     {
-      "id": "multi-proxy-config-fetcher",
-      "name": "4n0nymou3 Multi Proxy Fetcher",
+      "id": "feed-08",
+      "name": "Private feed 8",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs.txt",
+      "secret_slot": 8,
       "protocols": [
         "vmess",
         "vless",
@@ -38,10 +38,10 @@
       "enabled": true
     },
     {
-      "id": "mahsanet-mci",
-      "name": "MahsaNet MCI",
+      "id": "feed-09",
+      "name": "Private feed 9",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_1.txt",
+      "secret_slot": 9,
       "protocols": [
         "vmess",
         "vless",
@@ -55,10 +55,10 @@
       "enabled": true
     },
     {
-      "id": "mahsanet-mtn",
-      "name": "MahsaNet MTN",
+      "id": "feed-10",
+      "name": "Private feed 10",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_1.txt",
+      "secret_slot": 10,
       "protocols": [
         "vmess",
         "vless",
@@ -72,10 +72,10 @@
       "enabled": true
     },
     {
-      "id": "aliilapro",
-      "name": "ALIILAPRO v2rayNG Config",
+      "id": "feed-11",
+      "name": "Private feed 11",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/server.txt",
+      "secret_slot": 11,
       "protocols": [
         "vmess",
         "vless",
@@ -89,10 +89,10 @@
       "enabled": true
     },
     {
-      "id": "au1rxx",
-      "name": "Au1rxx Free VPN Subscriptions",
+      "id": "feed-12",
+      "name": "Private feed 12",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
+      "secret_slot": 12,
       "protocols": [
         "vmess",
         "vless",
@@ -106,10 +106,10 @@
       "enabled": true
     },
     {
-      "id": "danialsamadi-v2go",
-      "name": "Danial Samadi v2go",
+      "id": "feed-13",
+      "name": "Private feed 13",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/Danialsamadi/v2go/main/AllConfigsSub.txt",
+      "secret_slot": 13,
       "protocols": [
         "vmess",
         "vless",
@@ -123,10 +123,10 @@
       "enabled": true
     },
     {
-      "id": "latinasub",
-      "name": "LalatinaHub LatinaSub",
+      "id": "feed-14",
+      "name": "Private feed 14",
       "group": "curated",
-      "url": "https://raw.githubusercontent.com/LalatinaHub/LatinaSub/main/result/sub",
+      "secret_slot": 14,
       "protocols": [
         "vmess",
         "vless",
@@ -140,10 +140,10 @@
       "enabled": true
     },
     {
-      "id": "roosterkid-openproxylist",
-      "name": "Roosterkid Open Proxy List",
+      "id": "feed-15",
+      "name": "Private feed 15",
       "group": "heavy",
-      "url": "https://raw.githubusercontent.com/roosterkid/openproxylist/refs/heads/main/V2RAY_RAW.txt",
+      "secret_slot": 15,
       "protocols": [
         "vmess",
         "vless",
@@ -157,10 +157,10 @@
       "enabled": true
     },
     {
-      "id": "shadowexception-vpn",
-      "name": "ShadowException VPN Cat",
+      "id": "feed-16",
+      "name": "Private feed 16",
       "group": "heavy",
-      "url": "https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat",
+      "secret_slot": 16,
       "protocols": [
         "vmess",
         "vless",
@@ -174,10 +174,10 @@
       "enabled": true
     },
     {
-      "id": "barry-far",
-      "name": "Barry Far V2ray Config",
+      "id": "feed-17",
+      "name": "Private feed 17",
       "group": "heavy",
-      "url": "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/All_Configs_base64_Sub.txt",
+      "secret_slot": 17,
       "protocols": [
         "vmess",
         "vless",
@@ -191,10 +191,10 @@
       "enabled": true
     },
     {
-      "id": "delta-kronecker",
-      "name": "Delta-Kronecker V2ray Config",
+      "id": "feed-18",
+      "name": "Private feed 18",
       "group": "heavy",
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/refs/heads/main/config/all_configs.txt",
+      "secret_slot": 18,
       "protocols": [
         "vmess",
         "vless",
@@ -208,14 +208,5 @@
       "enabled": true
     }
   ],
-  "retired_sources": [
-    {
-      "id": "epodonios-v2ray-configs",
-      "name": "Epodonios v2ray-configs",
-      "url": "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt",
-      "enabled": false,
-      "reason": "upstream returned HTTP 404 during source audit",
-      "checked_at": "2026-11-05"
-    }
-  ]
+  "retired_sources": []
 }
