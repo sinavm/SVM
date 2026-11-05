@@ -156,6 +156,13 @@ if ($testUsable) foreach ($tiers as $name => $items) {
 if ($testUsable) {
     @mkdir($normal . "/protocols", 0777, true);
     @mkdir($base64 . "/protocols", 0777, true);
+    @mkdir($normal . "/countries", 0777, true);
+    @mkdir($base64 . "/countries", 0777, true);
+    foreach ([$normal . "/protocols", $base64 . "/protocols", $normal . "/countries", $base64 . "/countries"] as $directory) {
+        foreach (glob($directory . "/*") ?: [] as $oldFile) {
+            if (is_file($oldFile)) @unlink($oldFile);
+        }
+    }
     foreach ($protocolNodes as $type => $items) {
         $body = "#profile-title: base64:" . base64_encode("SVM " . strtoupper($type)) . "\n";
         $body .= "#profile-update-interval: 1\n";
@@ -165,8 +172,6 @@ if ($testUsable) {
         file_put_contents($normal . "/protocols/" . $type, $body);
         file_put_contents($base64 . "/protocols/" . $type, base64_encode($body));
     }
-    @mkdir($normal . "/countries", 0777, true);
-    @mkdir($base64 . "/countries", 0777, true);
     foreach ($countryNodes as $country => $items) {
         $body = "#profile-title: base64:" . base64_encode("SVM " . $country) . "\n";
         $body .= "#profile-update-interval: 1\n";
