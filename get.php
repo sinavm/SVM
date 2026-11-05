@@ -63,7 +63,7 @@ function fetchPublicSource($url, $cacheFile, $ttlSeconds = 900) {
     $hasCache = is_file($cacheFile);
     $cacheAge = $hasCache ? max(0, time() - filemtime($cacheFile)) : null;
     if ($hasCache && $cacheAge < $ttlSeconds) {
-        return [file_get_contents($cacheFile), ["status" => "ok", "fetch_mode" => "cache", "http_code" => null, "attempts" => 0, "latency_ms" => 0, "cache_age_seconds" => $cacheAge, "error" => null]];
+        return [file_get_contents($cacheFile), ["status" => "ok", "fetch_mode" => "cache", "http_code" => null, "attempts" => 0, "latency_ms" => null, "cache_age_seconds" => $cacheAge, "error" => null]];
     }
     if (!function_exists("curl_init")) {
         try {
