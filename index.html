@@ -161,6 +161,27 @@ footer a{color:#67d9f5}
   .nav a { padding-inline:2px; }
 }
 
+
+/* Touch-first responsive layout: fixes iOS Safari desktop-site mode. */
+@media (max-width: 980px), (pointer: coarse) and (hover: none) {
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.shell,.top-inner{width:calc(100% - 20px);max-width:760px;min-width:0}
+.top{width:100%}
+.top-inner{display:grid;grid-template-columns:minmax(0,1fr);justify-content:stretch;gap:9px;padding:9px 0 10px}
+.brand{justify-self:center}
+.nav{width:100%;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.nav a{min-width:0;white-space:normal;padding:7px 3px;font-size:clamp(.58rem,2.6vw,.7rem);text-align:center}
+main{width:100%;min-width:0}
+main>*,.panel,.hero,.section-head,.stats{min-width:0}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat{min-width:0}
+.section-head{flex-wrap:wrap}
+.head-copy{min-width:0}
+.head-link{margin-inline-start:auto}
+.hero p{max-width:100%;overflow-wrap:anywhere}
+.table-wrap{max-width:100%}
+}
+@media(max-width:430px){.panel{padding:12px}.stats{gap:8px}.stat{padding:10px}.stat strong{font-size:1.4rem}.nav{gap:4px}.nav a{padding-inline:2px}}
 </style>
 </head>
 <body>
