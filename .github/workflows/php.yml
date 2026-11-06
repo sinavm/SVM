@@ -114,7 +114,7 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+          # Validate outbound tags and selector/urltest references; never mask malformed output by inventing tags.
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
@@ -124,41 +124,40 @@ jobs:
                   fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
                   exit(1);
               }
-              $prefix = substr($raw, 0, $jsonStart);
               $config = json_decode(substr($raw, $jsonStart), true);
               if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
                   fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
                   exit(1);
               }
-              $used = [];
-              foreach ($config['outbounds'] as $outbound) {
-                  if (is_array($outbound) && !empty($outbound['tag'])) $used[(string)$outbound['tag']] = true;
-              }
-              $changed = false;
-              foreach ($config['outbounds'] as $index => &$outbound) {
-                  if (!is_array($outbound)) {
-                      fwrite(STDERR, "Invalid outbound[{$index}] in {$file}" . PHP_EOL);
+              $tags = [];
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (!is_array($outbound) || trim((string)($outbound['tag'] ?? '')) === '') {
+                      fwrite(STDERR, "Outbound[{$index}] has missing tag: {$file}" . PHP_EOL);
                       exit(1);
                   }
-                  if (trim((string)($outbound['tag'] ?? '')) === '') {
-                      $base = '@SiNAVM-Recovered-' . ($index + 1);
-                      $tag = $base;
-                      $suffix = 2;
-                      while (isset($used[$tag])) $tag = $base . '-' . $suffix++;
-                      $outbound['tag'] = $tag;
-                      $used[$tag] = true;
-                      $changed = true;
-                  }
-              }
-              unset($outbound);
-              if ($changed) {
-                  $encoded = json_encode($config, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-                  if ($encoded === false || file_put_contents($file, $prefix . $encoded) === false) {
-                      fwrite(STDERR, "Could not repair outbound tags: {$file}" . PHP_EOL);
+                  $tag = (string)$outbound['tag'];
+                  if (isset($tags[$tag])) {
+                      fwrite(STDERR, "Duplicate outbound tag '{$tag}': {$file}" . PHP_EOL);
                       exit(1);
                   }
-                  echo "Repaired missing outbound tags: {$file}" . PHP_EOL;
+                  $tags[$tag] = true;
               }
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (in_array(($outbound['type'] ?? ''), ['selector', 'urltest'], true)) {
+                      $targets = $outbound['outbounds'] ?? [];
+                      if (!is_array($targets) || count($targets) === 0) {
+                          fwrite(STDERR, "Outbound[{$index}] {$outbound['type']} has empty outbounds: {$file}" . PHP_EOL);
+                          exit(1);
+                      }
+                      foreach ($targets as $target) {
+                          if (!isset($tags[$target])) {
+                              fwrite(STDERR, "Outbound[{$index}] references missing tag '{$target}': {$file}" . PHP_EOL);
+                              exit(1);
+                          }
+                      }
+                  }
+              }
+              echo "Outbound references valid: {$file}" . PHP_EOL;
           }
           PHP
 
@@ -265,7 +264,7 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+          # Validate outbound tags and selector/urltest references; never mask malformed output by inventing tags.
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
@@ -275,41 +274,40 @@ jobs:
                   fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
                   exit(1);
               }
-              $prefix = substr($raw, 0, $jsonStart);
               $config = json_decode(substr($raw, $jsonStart), true);
               if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
                   fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
                   exit(1);
               }
-              $used = [];
-              foreach ($config['outbounds'] as $outbound) {
-                  if (is_array($outbound) && !empty($outbound['tag'])) $used[(string)$outbound['tag']] = true;
-              }
-              $changed = false;
-              foreach ($config['outbounds'] as $index => &$outbound) {
-                  if (!is_array($outbound)) {
-                      fwrite(STDERR, "Invalid outbound[{$index}] in {$file}" . PHP_EOL);
+              $tags = [];
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (!is_array($outbound) || trim((string)($outbound['tag'] ?? '')) === '') {
+                      fwrite(STDERR, "Outbound[{$index}] has missing tag: {$file}" . PHP_EOL);
                       exit(1);
                   }
-                  if (trim((string)($outbound['tag'] ?? '')) === '') {
-                      $base = '@SiNAVM-Recovered-' . ($index + 1);
-                      $tag = $base;
-                      $suffix = 2;
-                      while (isset($used[$tag])) $tag = $base . '-' . $suffix++;
-                      $outbound['tag'] = $tag;
-                      $used[$tag] = true;
-                      $changed = true;
-                  }
-              }
-              unset($outbound);
-              if ($changed) {
-                  $encoded = json_encode($config, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-                  if ($encoded === false || file_put_contents($file, $prefix . $encoded) === false) {
-                      fwrite(STDERR, "Could not repair outbound tags: {$file}" . PHP_EOL);
+                  $tag = (string)$outbound['tag'];
+                  if (isset($tags[$tag])) {
+                      fwrite(STDERR, "Duplicate outbound tag '{$tag}': {$file}" . PHP_EOL);
                       exit(1);
                   }
-                  echo "Repaired missing outbound tags: {$file}" . PHP_EOL;
+                  $tags[$tag] = true;
               }
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (in_array(($outbound['type'] ?? ''), ['selector', 'urltest'], true)) {
+                      $targets = $outbound['outbounds'] ?? [];
+                      if (!is_array($targets) || count($targets) === 0) {
+                          fwrite(STDERR, "Outbound[{$index}] {$outbound['type']} has empty outbounds: {$file}" . PHP_EOL);
+                          exit(1);
+                      }
+                      foreach ($targets as $target) {
+                          if (!isset($tags[$target])) {
+                              fwrite(STDERR, "Outbound[{$index}] references missing tag '{$target}': {$file}" . PHP_EOL);
+                              exit(1);
+                          }
+                      }
+                  }
+              }
+              echo "Outbound references valid: {$file}" . PHP_EOL;
           }
           PHP
 
