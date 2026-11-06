@@ -1,322 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080d1a">
-<meta name="description" content="داشبورد زنده SVM برای وضعیت تست، اشتراک‌ها و آمار سرورها">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08111f">
+<meta name="description" content="داشبورد زنده SVM؛ اشتراک‌های تست‌شده، وضعیت منابع، آمار شبکه و انتخاب خروجی برای کلاینت‌های Xray، sing-box و Clash">
 <meta property="og:title" content="SVM | SiNAVM Network">
-<meta property="og:description" content="داشبورد زنده تجمیع، اعتبارسنجی و تست کانفیگ‌های پراکسی">
+<meta property="og:description" content="مرکز هوشمند دریافت اشتراک و پایش زنده شبکه SVM">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="styles.css?v=20261106">
 <title>SVM | SiNAVM Network</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-:root{color-scheme:dark;--bg:#080d1a;--line:rgba(160,190,235,.13);--text:#edf4ff;--muted:#91a4c2;--cyan:#22d3ee;--green:#34d399;--amber:#fbbf24;--radius:22px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 0%,rgba(37,99,235,.22),transparent 34%),radial-gradient(ellipse at 92% 10%,rgba(8,145,178,.16),transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,system-ui,sans-serif}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.shell{width:min(1120px,calc(100% - 36px));margin:auto}
-.top{padding:34px 0 26px}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:13px}
-.mark{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#2563eb,#06b6d4);box-shadow:0 10px 35px rgba(6,182,212,.25);font-size:22px;font-weight:900}
-.brand strong{display:block;font-size:19px;letter-spacing:.08em}
-.brand small{color:var(--muted);font-size:11px;letter-spacing:.12em}
-.navlinks{display:flex;gap:18px;color:var(--muted);font-size:13px}
-.pill{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;padding:8px 13px;color:var(--muted);font-size:12px}
-.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:28px;align-items:center;padding:56px 0 42px}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:.08em}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green)}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.12;margin:15px 0;background:linear-gradient(110deg,#fff 20%,#93c5fd 60%,#67e8f9);background-clip:text;color:transparent}
-.lead{max-width:650px;color:#a9bad3;font-size:15px;line-height:2}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.action{border:1px solid var(--line);border-radius:13px;padding:11px 17px;background:rgba(255,255,255,.05);font-size:13px;font-weight:700;cursor:pointer;transition:.2s;color:var(--text)}
-.action.primary{background:linear-gradient(110deg,#2563eb,#0891b2);border:0}
-.orbit{aspect-ratio:1;max-width:300px;margin:auto;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,rgba(34,211,238,.18),rgba(37,99,235,.07) 48%,transparent 70%);border:1px solid rgba(96,165,250,.2);box-shadow:inset 0 0 60px rgba(37,99,235,.12),0 0 80px rgba(8,145,178,.08)}
-.orbit:before,.orbit:after{content:"";position:absolute;inset:12%;border:1px solid rgba(103,232,249,.18);border-radius:50%;transform:rotateX(68deg) rotate(-28deg)}
-.orbit:after{inset:22%;transform:rotateX(68deg) rotate(35deg)}
-.core{width:118px;height:118px;border-radius:34px;display:grid;place-items:center;background:linear-gradient(145deg,#1d4ed8,#0891b2);box-shadow:0 0 55px rgba(34,211,238,.3);font-size:34px;font-weight:900;z-index:1}
-.orbit-label{position:absolute;font-size:10px;letter-spacing:.12em;color:#9bb5d8}
-.orbit-label.one{top:12%;left:12%}.orbit-label.two{right:5%;bottom:23%}.orbit-label.three{left:10%;bottom:17%}
-.section{padding:22px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:15px}
-.section-head h2{font-size:19px;margin:0}
-.section-head p{font-size:12px;color:var(--muted);margin:5px 0 0}
-.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.metric,.panel,.subcard{border:1px solid var(--line);background:linear-gradient(145deg,rgba(20,34,58,.92),rgba(13,23,40,.92));border-radius:var(--radius);box-shadow:0 16px 40px rgba(0,0,0,.12)}
-.metric{padding:19px;min-height:128px}
-.metric-label{color:var(--muted);font-size:12px}
-.metric-value{display:block;font-size:31px;font-weight:900;line-height:1.5;margin-top:5px;font-variant-numeric:tabular-nums}
-.metric-note{color:#7890b2;font-size:11px}
-.metric:nth-child(1) .metric-value{color:var(--cyan)}.metric:nth-child(2) .metric-value{color:var(--green)}.metric:nth-child(3) .metric-value{color:var(--amber)}.metric:nth-child(4) .metric-value{color:#c4b5fd}
-.statusline{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 16px;margin-top:12px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025);color:var(--muted);font-size:12px}
-.statusstate{display:flex;align-items:center;gap:9px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.panel{padding:21px}
-.panel h3{font-size:15px;margin:0 0 17px}
-.barrow{display:grid;grid-template-columns:90px 1fr 42px;gap:10px;align-items:center;margin:15px 0;font-size:12px;color:var(--muted)}
-.track{height:9px;background:#07101f;border-radius:20px;overflow:hidden}
-.fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#2563eb,#22d3ee);width:0;transition:width .7s}
-.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.subcard{padding:18px;display:flex;flex-direction:column;gap:12px}
-.subtop{display:flex;justify-content:space-between;align-items:center}
-.subicon{width:38px;height:38px;border-radius:12px;background:rgba(34,211,238,.12);color:var(--cyan);display:grid;place-items:center;font-size:18px}
-.subcard h3{margin:0;font-size:15px}
-.subcard p{margin:0;color:var(--muted);font-size:11px;line-height:1.8;min-height:40px}
-.subactions{display:flex;gap:7px;margin-top:auto}
-.subactions a,.subactions button{flex:1;text-align:center;border:1px solid var(--line);border-radius:10px;padding:9px 5px;background:rgba(255,255,255,.04);font-size:11px;color:#dceaff;cursor:pointer}
-.protocols{display:flex;flex-wrap:wrap;gap:8px}
-.protocol{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:#bdd0eb;font-size:11px;background:rgba(255,255,255,.03)}
-.reportlink{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px;color:#c8d8ef}
-.reportlink:last-child{border:0}.reportlink[hidden]{display:none}
-.footer{padding:40px 0 28px;text-align:center;color:#7186a7;font-size:11px}
-.footer a{color:#a9c7ef}
-.qrrow{display:flex;align-items:center;gap:16px}
-.qrrow img{width:112px;height:112px;border-radius:12px;background:white;padding:6px}
-.qrrow p{color:var(--muted);font-size:12px;line-height:1.9}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding:42px 0 26px}.orbit{max-width:220px}.navlinks{display:none}.metrics{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.subgrid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.metric{min-height:112px;padding:15px}.metric-value{font-size:26px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
-.source-panel{margin-top:16px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.source-item{min-width:0;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:13px;padding:12px}.source-item-head{display:flex;align-items:center;justify-content:space-between;gap:8px}.source-name{font-size:12px;font-weight:700;overflow-wrap:anywhere}.source-status{font-size:10px;padding:4px 7px;border-radius:20px;white-space:nowrap}.source-status.ok{background:rgba(34,197,94,.13);color:#86efac}.source-status.stale{background:rgba(245,158,11,.13);color:#fcd34d}.source-status.error,.source-status.empty,.source-status.unconfigured{background:rgba(248,113,113,.12);color:#fca5a5}.source-meta{font-size:10px;color:var(--muted);line-height:1.9;margin-top:7px;overflow-wrap:anywhere}.source-item a{display:inline-block;font-size:10px;color:var(--cyan);margin-top:5px}.source-empty{font-size:11px;color:var(--muted)}@media(max-width:900px){.source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.source-grid{grid-template-columns:1fr}}.explorer-panel{margin-top:16px}.explorer-controls{display:grid;grid-template-columns:minmax(180px,2fr) minmax(130px,1fr) minmax(130px,1fr);gap:9px;margin-bottom:12px}.explorer-controls input,.explorer-controls select{min-width:0;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:11px}.explorer-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.node-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:rgba(8,17,32,.72);border:1px solid var(--line);border-radius:11px;padding:10px;min-width:0}.node-main{min-width:0}.node-title{font-size:11px;font-weight:700}.node-sub{font-size:10px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.node-delay{font-size:12px;font-weight:700;white-space:nowrap;color:var(--cyan)}@media(max-width:760px){.explorer-controls{grid-template-columns:1fr 1fr}.explorer-controls input{grid-column:1/-1}.explorer-list{grid-template-columns:1fr}}
-/* HTTP Custom visual language — dashboard-only presentation layer */
-:root{--bg:#0b1224;--line:rgba(255,255,255,.09);--text:#f5f8ff;--muted:#9aa9c2;--cyan:#22d3ee;--blue:#60a5fa;--green:#34d399;--purple:#a78bfa;--radius:25px}
-body{background:radial-gradient(ellipse at 10% 0%,rgba(59,130,246,.22),transparent 38%),radial-gradient(ellipse at 95% 12%,rgba(139,92,246,.16),transparent 34%),var(--bg)}
-.shell{width:min(680px,calc(100% - 28px))}
-.top{padding:0;margin:0}
-.nav{position:sticky;top:0;z-index:10;min-height:58px;padding:8px 0;background:rgba(11,18,36,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.mark{border-radius:15px}
-.navlinks{gap:12px;font-size:11px}
-.pill{background:rgba(255,255,255,.045);border-color:var(--line)}
-.hero{display:block;text-align:center;padding:32px 12px 24px}
-.hero>div:first-child{display:flex;flex-direction:column;align-items:center}
-.hero .eyebrow{font-size:12px;margin:10px 0 5px}
-h1{font-size:clamp(30px,7vw,42px);line-height:1.5;margin:2px 0 8px;letter-spacing:-.5px}
-.lead{font-size:13px;line-height:2;max-width:520px;margin:0 auto}
-.hero .actions{justify-content:center;margin-top:16px}
-.orbit{display:none}
-.section{padding:13px 0}
-.section-head{align-items:center;margin-bottom:15px}
-.section-head h2{font-size:17px;font-weight:900}
-.section-head p{font-size:11px;line-height:1.8}
-.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.metric,.panel,.subcard{background:linear-gradient(135deg,rgba(20,31,54,.92),rgba(15,23,42,.88));border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 60px rgba(2,6,23,.18);backdrop-filter:blur(14px)}
-.metric{padding:14px;min-height:106px}
-.metric-label{font-size:11px}
-.metric-value{font-size:27px}
-.metric-note{font-size:10px}
-.statusline{padding:13px;border-radius:16px;background:#ffffff06;font-size:11px}
-.action{border-radius:12px;padding:10px 14px;font-size:12px}
-.panel{padding:17px;margin-top:14px}
-.panel h3{font-size:14px;font-weight:900;margin:0 0 13px}
-.source-grid{grid-template-columns:1fr;gap:9px}
-.source-item{background:#ffffff06;border-radius:15px;padding:12px}
-.explorer-controls{grid-template-columns:1fr 1fr}
-.explorer-controls input{grid-column:1/-1}
-.explorer-list{grid-template-columns:1fr}
-.node-item{background:#ffffff06;border-radius:14px;padding:12px}
-.grid2{grid-template-columns:1fr;gap:12px}
-.barrow{grid-template-columns:78px minmax(0,1fr) 38px;gap:8px;font-size:11px}
-.subgrid{grid-template-columns:1fr;gap:11px}
-.subcard{padding:16px;border-radius:19px;gap:11px}
-.subcard p{font-size:11px;min-height:0}
-.subactions a,.subactions button{border-radius:12px;padding:10px 8px;font-size:11px}
-.protocol{background:#ffffff08}
-.reportlink{font-size:11px;padding:13px 2px}
-.qrrow{padding:12px;background:#ffffff06;border:1px solid var(--line);border-radius:16px}
-.qrrow img{width:100px;height:100px}
-.footer{padding:28px 0 24px;line-height:2}
-@media(max-width:560px){
- .shell{width:calc(100% - 20px)}
- .nav{gap:8px}
- .brand{gap:9px}
- .brand strong{font-size:16px}
- .brand small{font-size:9px}
- .mark{width:40px;height:40px}
- .navlinks{display:none}
- .hero{padding:25px 8px 18px}
- .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
- .metric{padding:12px;min-height:100px}
- .metric-value{font-size:24px}
- .section-head{align-items:flex-start;flex-direction:column;gap:7px}
- .statusline{align-items:flex-start}
- .explorer-controls{grid-template-columns:1fr}
- .explorer-controls input{grid-column:auto}
- .qrrow{align-items:flex-start}
-}
-
-</style>
 </head>
 <body>
-<div class="shell">
-<header class="top">
-<nav class="nav">
-<a class="brand" href="./"><span class="mark">S</span><span><strong>SVM</strong><small>SINAVM NETWORK</small></span></a>
-<div class="navlinks"><a href="#metrics">وضعیت زنده</a><a href="#subscriptions">اشتراک‌ها</a><a href="#reports">گزارش‌ها</a></div>
-<a class="pill" href="https://github.com/sinavm/SVM">مشاهده در GitHub ↗</a>
-</nav>
-<section class="hero">
-<div>
-<div class="eyebrow"><span class="dot"></span> AUTOMATED PROXY INTELLIGENCE</div>
-<h1>شبکه SVM<br>هوشمندتر، سریع‌تر، زنده‌تر</h1>
-<p class="lead">تجمیع خودکار منابع، اعتبارسنجی ساختاری، تست واقعی با sing-box و رتبه‌بندی مبتنی بر سابقه؛ همه در یک داشبورد شفاف و به‌روز.</p>
-<div class="actions"><a class="action primary" href="#subscriptions">دریافت اشتراک‌ها</a><a class="action" href="https://github.com/sinavm/SVM/actions">مشاهده اجرای خودکار</a></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+<header class="site-header">
+<div class="wrap nav-wrap">
+<a class="brand" href="./" aria-label="SVM home"><span class="brand-mark">S</span><span><strong>SVM</strong><small>SINAVM NETWORK</small></span></a>
+<nav class="main-nav"><a href="#overview">نمای کلی</a><a href="#hub">مرکز اشتراک</a><a href="#explorer">کاوشگر</a><a href="#sources">منابع</a><a href="#reports">گزارش‌ها</a></nav>
+<div class="nav-actions"><label class="mirror-switch"><input id="mirrorToggle" type="checkbox"><span class="switch-ui"></span><span>آینه CDN</span></label><a class="github-link" href="https://github.com/sinavm/SVM" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a></div>
 </div>
-<div class="orbit" aria-hidden="true"><span class="orbit-label one">LIVE TEST</span><span class="orbit-label two">SING-BOX</span><span class="orbit-label three">SMART RANK</span><div class="core">SVM</div></div>
-</section>
 </header>
-<main>
-<section class="section" id="metrics">
-<div class="section-head"><div><h2>نمای کلی شبکه</h2><p>آمار از گزارش‌های تولیدشده در مخزن خوانده می‌شود</p></div><span class="pill" id="freshness">در حال دریافت داده‌ها…</span></div>
-<div class="metrics">
-<article class="metric"><span class="metric-label">کانفیگ‌های ورودی</span><strong class="metric-value" id="input">—</strong><span class="metric-note">Full pipeline</span></article>
-<article class="metric"><span class="metric-label">اتصال‌های موفق</span><strong class="metric-value" id="alive">—</strong><span class="metric-note">Real protocol test</span></article>
-<article class="metric"><span class="metric-label">فهرست سریع لایت</span><strong class="metric-value" id="fast">—</strong><span class="metric-note">Lite fast selection</span></article>
-<article class="metric"><span class="metric-label">فهرست پایدار لایت</span><strong class="metric-value" id="stable">—</strong><span class="metric-note">Lite stable selection</span></article>
-<article class="metric"><span class="metric-label">اعتبارسنجی‌شده</span><strong class="metric-value" id="valid">—</strong><span class="metric-note" id="invalidNote">ساختار معتبر</span></article>
+<main class="wrap">
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow"><span class="live-dot"></span> NETWORK INTELLIGENCE · LIVE DATA</div>
+<h1>شبکه‌ای هوشمند برای<br><span>اتصال‌های بهتر</span></h1>
+<p class="hero-lead">تجمیع منابع، اعتبارسنجی ساختاری و تست واقعی با sing-box؛ خروجی‌های آماده برای کلاینت‌های مختلف، همراه با آمار و گزارش شفاف.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#hub">ساخت لینک اشتراک <span>←</span></a><a class="btn btn-ghost" href="https://github.com/sinavm/SVM/actions" target="_blank" rel="noopener noreferrer">وضعیت پردازش‌ها ↗</a></div>
+<div class="hero-meta"><span class="meta-chip"><i></i> تست سه‌مرحله‌ای</span><span class="meta-chip">Sing-box engine</span><span class="meta-chip">به‌روزرسانی خودکار</span></div>
 </div>
-<div class="statusline"><div class="statusstate"><span class="dot"></span><span id="state">در حال بررسی آخرین گزارش‌ها</span></div><span id="testedAt">آخرین تست: —</span><span id="sourceState">سلامت منابع: —</span><button class="action" id="refresh" type="button">به‌روزرسانی</button></div>
-<article class="panel source-panel"><div class="section-head"><div><h3>منابع ورودی کانفیگ</h3><p>فیدهای عمومی، کانال‌های تلگرام و اشتراک‌های خصوصی؛ وضعیت هر منبع مستقل گزارش می‌شود.</p></div><span class="pill" id="publicSourceCount">۱۲ فید عمومی</span></div><div class="source-grid" id="sourceGrid"><span class="source-empty">در انتظار گزارش منابع</span></div></article>
-<article class="panel explorer-panel"><div class="section-head"><div><h3>کاوشگر نودهای زنده</h3><p>جست‌وجو و فیلتر نودهای تست‌شده بر اساس پروتکل، کشور و شناسه.</p></div><span class="pill" id="explorerCount">در انتظار داده</span></div><div class="explorer-controls"><input id="nodeSearch" type="search" placeholder="جست‌وجو در پروتکل، کشور یا fingerprint"><select id="nodeProtocolFilter"><option value="">همه پروتکل‌ها</option></select><select id="nodeCountryFilter"><option value="">همه کشورها</option></select></div><div class="explorer-list" id="nodeExplorer"><span class="source-empty">در انتظار فهرست نودها</span></div></article>
+<div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="hero-core"><span>SVM</span><small>SMART NETWORK</small></div><span class="float-tag tag-a">LIVE TEST</span><span class="float-tag tag-b">3× VERIFY</span><span class="float-tag tag-c">MULTI CLIENT</span></div>
+</section>
+<section id="overview" class="section">
+<div class="section-heading"><div><span class="section-kicker">NETWORK OVERVIEW</span><h2>نمای کلی شبکه</h2><p>اطلاعات از گزارش‌های واقعی آخرین اجرای مخزن خوانده می‌شود.</p></div><div class="fresh-pill" id="freshness"><span class="live-dot"></span> در حال دریافت داده‌ها</div></div>
+<div class="stats-grid">
+<article class="stat-card"><span class="stat-icon cyan">⌁</span><span class="stat-label">کانفیگ‌های ورودی</span><strong id="metricInput">—</strong><small>Raw configurations</small></article>
+<article class="stat-card"><span class="stat-icon green">✓</span><span class="stat-label">اتصال‌های موفق</span><strong id="metricAlive">—</strong><small>Real protocol test</small></article>
+<article class="stat-card"><span class="stat-icon violet">◇</span><span class="stat-label">تأییدشده</span><strong id="metricVerified">—</strong><small>Passed all test rounds</small></article>
+<article class="stat-card"><span class="stat-icon amber">ϟ</span><span class="stat-label">فهرست سریع</span><strong id="metricFast">—</strong><small>Fast quality tier</small></article>
+<article class="stat-card"><span class="stat-icon blue">▤</span><span class="stat-label">منابع سالم</span><strong id="metricSources">—</strong><small id="metricSourceNote">Source health</small></article>
+</div>
+<div class="status-strip"><div class="status-message"><span class="status-indicator" id="statusIndicator"></span><strong id="pipelineState">در انتظار گزارش پردازش</strong></div><span id="testedAt">آخرین تست: —</span><span id="sourceSummary">سلامت منابع: —</span><button class="text-button" id="refreshButton" type="button">↻ تازه‌سازی</button></div>
+</section>
+<section id="hub" class="section">
+<div class="section-heading"><div><span class="section-kicker">SUBSCRIPTION BUILDER</span><h2>مرکز هوشمند اشتراک</h2><p>کلاینت و نوع خروجی را انتخاب کن؛ لینک آمادهٔ کپی یا اسکن ساخته می‌شود.</p></div><span class="section-index">01 / SUBSCRIBE</span></div>
+<div class="hub-layout">
+<div class="hub-panel">
+<div class="steps"><span class="step active"><b>01</b> انتخاب کلاینت</span><span class="step"><b>02</b> انتخاب فهرست</span><span class="step"><b>03</b> دریافت لینک</span></div>
+<div class="field-grid">
+<label class="field"><span>کلاینت / فرمت</span><select id="clientSelect"><option value="xray">Xray / V2Ray</option><option value="singbox">sing-box JSON</option><option value="clash">Clash</option><option value="meta">Clash Meta / Mihomo</option><option value="surfboard">Surfboard</option></select></label>
+<label class="field"><span>نوع اشتراک</span><select id="tierSelect"><option value="mix">مجموعه کامل</option><option value="verified">تأییدشده · 3/3</option><option value="fast">سریع · ≤350ms</option><option value="secure">TLS / Reality</option><option value="alive-fast">Lite Fast</option><option value="alive-stable">Lite Stable</option></select></label>
+<label class="field" id="profileField"><span>نوع لینک Xray</span><select id="profileSelect"><option value="normal">متن ساده</option><option value="base64">Base64</option></select></label>
+</div>
+<div class="selected-link"><div><span class="link-label">لینک اشتراک شما</span><code id="subscriptionUrl">در حال آماده‌سازی…</code></div><div class="link-actions"><button id="copySubscription" class="btn btn-primary" type="button">کپی لینک</button><a id="openSubscription" class="btn btn-ghost" href="#" target="_blank" rel="noopener noreferrer">باز کردن ↗</a></div></div>
+<div class="hub-note" id="hubNote">برای دریافت مستقیم از GitHub از لینک اصلی استفاده کن. اگر GitHub در دسترس نبود، آینه CDN را فعال کن.</div>
+</div>
+<div class="qr-panel"><div class="qr-top"><span class="qr-label">QUICK IMPORT</span><span class="qr-live">READY</span></div><div class="qr-frame"><img id="subscriptionQr" alt="QR اشتراک انتخاب‌شده" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Fsubscriptions%2Fxray%2Fnormal%2Fmix"></div><strong>اسکن و اتصال</strong><p>کد را با برنامهٔ سازگار اسکن کن یا لینک را مستقیماً کپی کن.</p><button id="downloadQr" class="qr-download" type="button">باز کردن تصویر QR ↗</button></div>
+</div>
+<div class="subscription-grid">
+<article class="subscription-card featured"><div class="card-top"><span class="card-symbol">✓</span><span class="tag tag-green">VERIFIED · 3/3</span></div><h3>تأییدشده</h3><p>نودهایی که در هر سه دور تست موفق بوده‌اند.</p><div class="card-bottom"><strong id="countVerified">—</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">دریافت ↗</a></div></article>
+<article class="subscription-card"><div class="card-top"><span class="card-symbol">ϟ</span><span class="tag tag-amber">FAST · 350MS</span></div><h3>سریع</h3><p>حداقل دو موفقیت از سه تست با تأخیر حداکثر ۳۵۰ میلی‌ثانیه.</p><div class="card-bottom"><strong id="countFast">—</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">دریافت ↗</a></div></article>
+<article class="subscription-card"><div class="card-top"><span class="card-symbol">◈</span><span class="tag tag-violet">SECURE · TLS</span></div><h3>رمزنگاری‌شده</h3><p>دارای نشانه‌های TLS یا Reality در لایهٔ انتقال.</p><div class="card-bottom"><strong id="countSecure">—</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">دریافت ↗</a></div></article>
+<article class="subscription-card"><div class="card-top"><span class="card-symbol">⚡</span><span class="tag tag-cyan">LITE · FAST</span></div><h3>لایت سریع</h3><p>فهرست فشرده برای دسترسی سریع و استفادهٔ روزمره.</p><div class="card-bottom"><strong id="countLiteFast">—</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت ↗</a></div></article>
+<article class="subscription-card"><div class="card-top"><span class="card-symbol">◉</span><span class="tag tag-blue">LITE · STABLE</span></div><h3>لایت پایدار</h3><p>انتخابی متعادل‌تر با استفاده از تاریخچهٔ کیفیت.</p><div class="card-bottom"><strong id="countLiteStable">—</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت ↗</a></div></article>
+<article class="subscription-card"><div class="card-top"><span class="card-symbol">▦</span><span class="tag">FULL · MIX</span></div><h3>مجموعه کامل</h3><p>خروجی اصلی برای استفاده در کلاینت‌های مختلف.</p><div class="card-bottom"><strong>ALL</strong><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت ↗</a></div></article>
+</div>
+<div class="format-row"><div><strong>خروجی‌های دیگر</strong><span>لینک‌های آماده برای هر کلاینت</span></div><div class="format-links"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/mix.json">sing-box JSON</a><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix">Clash</a><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix">Mihomo</a><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix">Surfboard</a></div></div>
+</section>
+<section id="explorer" class="section">
+<div class="section-heading"><div><span class="section-kicker">NODE EXPLORER</span><h2>کاوشگر نودهای تست‌شده</h2><p>فیلتر بر اساس پروتکل، کشور و سرعت؛ جزئیات حساس کانفیگ نمایش داده نمی‌شود.</p></div><span class="section-index">02 / EXPLORE</span></div>
+<div class="explorer-panel">
+<div class="explorer-controls"><input id="nodeSearch" type="search" placeholder="جست‌وجو در شناسه، پروتکل یا کشور"><select id="nodeProtocol"><option value="">همهٔ پروتکل‌ها</option></select><select id="nodeCountry"><option value="">همهٔ کشورها</option></select><select id="nodeSpeed"><option value="">همهٔ سرعت‌ها</option><option value="200">زیر ۲۰۰ ms</option><option value="350">زیر ۳۵۰ ms</option><option value="800">زیر ۸۰۰ ms</option></select></div>
+<div class="explorer-summary"><span id="nodeCount">در انتظار داده</span><span>مرتب‌شده بر اساس کمترین تأخیر</span></div>
+<div id="nodeList" class="node-list"><div class="empty-state">در حال دریافت فهرست نودها…</div></div>
+</div>
+<div class="geo-protocol-grid">
+<article class="data-panel"><div class="panel-heading"><div><span class="section-kicker">BY COUNTRY</span><h3>اشتراک بر اساس کشور</h3></div><span class="panel-icon">◎</span></div><div id="countryGrid" class="chip-grid"><span class="muted">در انتظار گزارش کشورها</span></div></article>
+<article class="data-panel"><div class="panel-heading"><div><span class="section-kicker">BY PROTOCOL</span><h3>اشتراک بر اساس پروتکل</h3></div><span class="panel-icon">⌘</span></div><div id="protocolGrid" class="chip-grid"><span class="muted">در انتظار گزارش پروتکل‌ها</span></div></article>
+</div>
 </section>
 <section class="section">
-<div class="section-head"><div><h2>قیف اعتبارسنجی</h2><p>مقایسه ورودی، تبدیل، اتصال TCP و تست واقعی پروتکل</p></div></div>
-<div class="grid2">
-<article class="panel">
-<h3>مراحل پردازش</h3>
-<div class="barrow"><span>ورودی</span><div class="track"><div class="fill" id="barInput"></div></div><b id="valInput">—</b></div>
-<div class="barrow"><span>تبدیل‌شده</span><div class="track"><div class="fill" id="barConverted"></div></div><b id="valConverted">—</b></div>
-<div class="barrow"><span>TCP زنده</span><div class="track"><div class="fill" id="barTcp"></div></div><b id="valTcp">—</b></div>
-<div class="barrow"><span>تست موفق</span><div class="track"><div class="fill" id="barAlive"></div></div><b id="valAlive">—</b></div>
-</article>
-<article class="panel">
-<h3>ترکیب پروتکل‌های موفق</h3>
-<div class="protocols" id="protocols"><span class="protocol">در انتظار گزارش</span></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
-<div><label for="protocolFilter" style="display:block;color:var(--muted);font-size:11px;margin-bottom:6px">اشتراک بر اساس پروتکل</label><select id="protocolFilter" style="width:100%;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px"><option value="">انتخاب پروتکل</option></select><a id="protocolDownload" class="reportlink" href="#" hidden>دریافت اشتراک پروتکل</a></div>
-<div><label for="countryFilter" style="display:block;color:var(--muted);font-size:11px;margin-bottom:6px">اشتراک بر اساس کشور</label><select id="countryFilter" style="width:100%;background:#07101f;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px"><option value="">انتخاب کشور</option></select><a id="countryDownload" class="reportlink" href="#" hidden>دریافت اشتراک کشور</a></div>
-</div>
-<p style="font-size:10px;color:var(--muted);line-height:1.8;margin-top:8px">تشخیص کشور با IP عمومی سرورها انجام می‌شود؛ موارد نامشخص در دسته کشور قرار نمی‌گیرند.</p>
-<div style="height:18px"></div>
-<div class="qrrow"><img id="qr" alt="QR اشتراک سریع" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Flite%2Fsubscriptions%2Fxray%2Fnormal%2Falive-fast"><div><strong>اشتراک سریع</strong><p>کد را با اپلیکیشن سازگار اسکن کنید یا لینک اشتراک را از بخش پایین کپی کنید.</p></div></div>
-</article>
+<div class="section-heading"><div><span class="section-kicker">VALIDATION PIPELINE</span><h2>از ورودی تا اتصال واقعی</h2><p>نمایش شفاف مراحل پردازش و میزان عبور کانفیگ‌ها از هر مرحله.</p></div><span class="section-index">03 / QUALITY</span></div>
+<div class="pipeline-panel">
+<div class="pipeline-step"><span class="pipeline-number">01</span><div><strong>جمع‌آوری و استخراج</strong><small>دریافت منابع و استخراج کانفیگ‌ها</small></div><b id="funnelInput">—</b><div class="pipeline-track"><i id="barInput"></i></div></div>
+<div class="pipeline-step"><span class="pipeline-number">02</span><div><strong>اعتبارسنجی و تبدیل</strong><small>بررسی ساختار و ساخت outbound</small></div><b id="funnelConverted">—</b><div class="pipeline-track"><i id="barConverted"></i></div></div>
+<div class="pipeline-step"><span class="pipeline-number">03</span><div><strong>اتصال TCP</strong><small>بررسی دسترسی به سرور</small></div><b id="funnelTcp">—</b><div class="pipeline-track"><i id="barTcp"></i></div></div>
+<div class="pipeline-step"><span class="pipeline-number">04</span><div><strong>تست واقعی پروتکل</strong><small>درخواست واقعی از مسیر پروکسی در چند دور</small></div><b id="funnelAlive">—</b><div class="pipeline-track"><i id="barAlive"></i></div></div>
 </div>
 </section>
-<section class="section" id="subscriptions">
-<div class="section-head"><div><h2>مرکز دریافت اشتراک</h2><p>لینک مستقیم، آماده افزودن به کلاینت</p></div></div>
-<div class="subgrid">
-<article class="subcard"><div class="subtop"><span class="subicon">⚡</span><span class="pill">LITE · FAST</span></div><h3>لایت سریع</h3><p>انتخاب فشرده از نودهای موفق با تنوع پروتکل.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">◈</span><span class="pill">LITE · STABLE</span></div><h3>لایت پایدار</h3><p>فهرست بزرگ‌تر برای انتخاب‌های بیشتر و استفاده روزمره.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">▦</span><span class="pill">FULL · MIX</span></div><h3>اشتراک کامل</h3><p>مجموعه کامل خروجی تولیدشده توسط پردازش اصلی.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">✓</span><span class="pill">VERIFIED · 3/3</span></div><h3>تأییدشده</h3><p>نودهایی که در هر سه دور تست موفق بوده‌اند و تأخیر قابل قبول دارند.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/verified">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">⚡</span><span class="pill">FAST · ≤350MS</span></div><h3>اشتراک سریع</h3><p>نودهای زنده با حداقل دو موفقیت از سه تست و تأخیر حداکثر ۳۵۰ میلی‌ثانیه.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/fast">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">◇</span><span class="pill">SECURE · TLS</span></div><h3>رمزنگاری‌شده</h3><p>کانفیگ‌هایی که از انتقال TLS یا Reality پشتیبانی می‌کنند؛ این دسته تضمین ممیزی امنیتی نیست.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/secure">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">🏆</span><span class="pill">TOP 100</span></div><h3>صد نود برتر</h3><p>تا ۱۰۰ نود Verified مرتب‌شده بر اساس کمترین تأخیر.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/top100.txt">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">✦</span><span class="pill">CURATED</span></div><h3>منابع منتخب</h3><p>نودهای زنده‌ای که از فیدهای منتخب وارد شده‌اند.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/curated">کپی لینک</button></div></article>
-<article class="subcard"><div class="subtop"><span class="subicon">▤</span><span class="pill">HEAVY</span></div><h3>منابع حجیم</h3><p>نودهای زندهٔ ورودی از تجمیع‌کننده‌های حجیم.</p><div class="subactions"><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy">دریافت</a><button data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/source-tiers/heavy">کپی لینک</button></div></article>
+<section id="sources" class="section">
+<div class="section-heading"><div><span class="section-kicker">SOURCE MONITOR</span><h2>مرکز پایش منابع</h2><p>وضعیت هر منبع مستقل نمایش داده می‌شود؛ منابع خالی و غیرفعال از منابع سالم جدا هستند.</p></div><span class="section-index">04 / SOURCES</span></div>
+<div class="source-summary" id="sourceTotals">در انتظار گزارش منابع</div>
+<div id="sourceGrid" class="source-grid"><div class="empty-state">در حال دریافت وضعیت منابع…</div></div>
+</section>
+<section id="reports" class="section">
+<div class="section-heading"><div><span class="section-kicker">OPEN DATA</span><h2>گزارش‌ها و داده‌های باز</h2><p>فایل‌های JSON و خروجی‌های قابل استفاده برای ابزارهای دیگر.</p></div><span class="section-index">05 / REPORTS</span></div>
+<div class="report-grid">
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"><span>01</span><strong>سلامت شبکه</strong><small>وضعیت کلی، منابع، تست و کشورها</small><b>مشاهده ↗</b></a>
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"><span>02</span><strong>API Index</strong><small>فهرست مرکزی آمار، نودها و اشتراک‌ها</small><b>مشاهده ↗</b></a>
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><span>03</span><strong>گزارش تست کامل</strong><small>نتایج TCP و تست پروتکل</small><b>مشاهده ↗</b></a>
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"><span>04</span><strong>سلامت منابع</strong><small>وضعیت دریافت و بازده منابع</small><b>مشاهده ↗</b></a>
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><span>05</span><strong>آمار اعتبارسنجی</strong><small>ورودی معتبر، نامعتبر و دلایل رد</small><b>مشاهده ↗</b></a>
+<a class="report-card" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/geo-cache.json"><span>06</span><strong>داده‌های GeoIP</strong><small>کش مکان‌یابی کشور سرورها</small><b>مشاهده ↗</b></a>
 </div>
 </section>
-<section class="section" id="reports">
-<div class="section-head"><div><h2>شفافیت و گزارش‌ها</h2><p>فایل‌های ماشینی و قابل استفاده برای ابزارهای دیگر</p></div></div>
-<div class="panel">
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json"><span>سلامت جامع شبکه</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"><span>فهرست مرکزی API</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json"><span>سلامت منابع دریافت</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/source-history.json"><span>تاریخچه بازده منابع</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/source-provenance.json"><span>منشأ کانفیگ‌ها</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/public_sources.json"><span>فهرست فیدهای عمومی</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><span>گزارش تست کامل</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json"><span>وضعیت اشتراک‌های Lite</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><span>آمار اعتبارسنجی</span><span>JSON ↗</span></a>
-<a class="reportlink" href="https://github.com/sinavm/SVM/actions"><span>تاریخچه اجرای خودکار</span><span>GitHub Actions ↗</span></a>
-<a class="reportlink" href="https://github.com/sinavm/SVM"><span>سورس کد و مشارکت</span><span>GitHub ↗</span></a>
-</div>
+<section class="section safety-section">
+<div class="safety-mark">i</div><div><h2>نکتهٔ امنیتی</h2><p>تست موفق فقط نشان می‌دهد کانفیگ از محیط GitHub Actions در زمان بررسی پاسخ داده است. سرورهای عمومی متعلق به اشخاص ثالث هستند و SVM مالک یا ممیز امنیتی آن‌ها نیست. برای حساب‌ها و اطلاعات حساس از سرویس‌های ناشناس استفاده نکنید.</p></div>
 </section>
 </main>
-<footer class="footer">SVM · SiNAVM Network · داده‌ها از گزارش‌های واقعی مخزن خوانده می‌شوند<br><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://t.me/sinavm">Telegram</a></footer>
-</div>
-<script>
-const paths={test:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json",lite:"https://raw.githubusercontent.com/sinavm/SVM/main/lite/docs/reports/status.json",stats:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json",health:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/health.json",sources:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/sources.json",index:"https://raw.githubusercontent.com/sinavm/SVM/main/reports/index.json"};
-const number=value=>Number.isFinite(Number(value))?Number(value):0;
-const format=value=>number(value).toLocaleString("fa-IR");
-const setText=(id,value)=>{document.getElementById(id).textContent=value};
-const setBar=(id,value,total)=>{document.getElementById(id).style.width=(total>0?Math.min(100,Math.max(0,value/total*100)):0)+"%"};
-async function loadData(){
-const stamp=Date.now();
-const [testResult,liteResult,statsResult,healthResult,sourcesResult,indexResult]=await Promise.allSettled([
-fetch(paths.test+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("test");return r.json()}),
-fetch(paths.lite+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("lite");return r.json()}),
-fetch(paths.stats+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("stats");return r.json()}),
-fetch(paths.health+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("health");return r.json()}),
-fetch(paths.sources+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("sources");return r.json()}),
-fetch(paths.index+"?v="+stamp,{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("index");return r.json()})
-]);
-const test=testResult.status==="fulfilled"?testResult.value:{};
-const lite=liteResult.status==="fulfilled"?liteResult.value:{};
-const stats=statsResult.status==="fulfilled"?statsResult.value:{};
-const health=healthResult.status==="fulfilled"?healthResult.value:{};
-const sourceReport=sourcesResult.status==="fulfilled"?sourcesResult.value:{};
-const indexData=indexResult.status==="fulfilled"?indexResult.value:{};
-const input=number(test.input),converted=number(test.converted),tcp=number(test.tcp_alive),alive=number(health.overall?.nodes?.alive??test.kept);
-setText("input",input?format(input):"—");
-setText("alive",format(alive));
-setText("fast",lite.alive_fast!==undefined?format(lite.alive_fast):"—");
-setText("stable",lite.alive_stable!==undefined?format(lite.alive_stable):"—");
-setText("valid",stats.total_valid!==undefined?format(stats.total_valid):"—");
-setText("invalidNote",stats.total_invalid!==undefined?"نامعتبر: "+format(stats.total_invalid):"ساختار معتبر");
-setText("valInput",input?format(input):"—");
-setText("valConverted",format(converted));
-setText("valTcp",format(tcp));
-setText("valAlive",format(alive));
-setBar("barInput",input,input||1);
-setBar("barConverted",converted,input);
-setBar("barTcp",tcp,input);
-setBar("barAlive",alive,input);
-const types=health.protocols_alive||test.by_type_kept||{},protocolBox=document.getElementById("protocols");
-protocolBox.replaceChildren();
-Object.entries(types).sort((a,b)=>number(b[1])-number(a[1])).forEach(([name,count])=>{const item=document.createElement("span");item.className="protocol";item.textContent=name.toUpperCase()+" · "+format(count);protocolBox.append(item)});
-if(!Object.keys(types).length){const item=document.createElement("span");item.className="protocol";item.textContent="داده پروتکل موجود نیست";protocolBox.append(item)}
-const protocolFilter=document.getElementById("protocolFilter");
-const countryFilter=document.getElementById("countryFilter");
-const protocolDownload=document.getElementById("protocolDownload");
-const countryDownload=document.getElementById("countryDownload");
-const fillFilter=(select,items,label)=>{select.replaceChildren();const first=document.createElement("option");first.value="";first.textContent=label;select.append(first);Object.entries(items||{}).sort((a,b)=>number(b[1])-number(a[1])).forEach(([key,count])=>{const option=document.createElement("option");option.value=key;option.textContent=key.toUpperCase()+" · "+format(count);select.append(option)})};
-fillFilter(protocolFilter,health.protocols_alive,"انتخاب پروتکل");
-fillFilter(countryFilter,health.country_nodes,"انتخاب کشور");
-protocolFilter.onchange=()=>{const value=protocolFilter.value;const base=health.links?.protocols;protocolDownload.hidden=!(value&&base);if(value&&base){protocolDownload.href=base+encodeURIComponent(value);protocolDownload.textContent="دریافت "+value.toUpperCase()}};
-countryFilter.onchange=()=>{const value=countryFilter.value;const base=health.links?.countries;countryDownload.hidden=!(value&&base);if(value&&base){countryDownload.href=base+encodeURIComponent(value);countryDownload.textContent="دریافت "+value}};
-const tested=test.tested_at||lite.tested_at||null;
-setText("testedAt","آخرین تست: "+(tested?new Date(tested).toLocaleString("fa-IR"):"نامشخص"));
-const sourceHealth=health.overall?.source_health;
-setText("sourceState",sourceHealth?"منابع سالم: "+format(sourceHealth.healthy)+" · قدیمی: "+format(sourceHealth.stale||0)+" · خطا: "+format(sourceHealth.failed||0)+" · خالی: "+format(sourceHealth.empty||0)+" · تنظیم‌نشده: "+format(sourceHealth.unconfigured||0):"سلامت منابع: —");
-const sourceGrid=document.getElementById("sourceGrid");
-sourceGrid.replaceChildren();
-const sourceEntries=Object.entries(sourceReport.sources||{}).sort((a,b)=>{const ga=a[1].group||a[1].kind||"";const gb=b[1].group||b[1].kind||"";return ga.localeCompare(gb)||String(a[1].name||a[0]).localeCompare(String(b[1].name||b[0]))});
-const statusLabels={ok:"سالم",stale:"قدیمی",error:"خطا",empty:"بدون کانفیگ",unconfigured:"تنظیم‌نشده",unknown:"نامشخص"};
-sourceEntries.forEach(([key,entry])=>{const card=document.createElement("article");card.className="source-item";const head=document.createElement("div");head.className="source-item-head";const name=document.createElement("span");name.className="source-name";name.textContent=entry.name||key;const status=document.createElement("span");status.className="source-status "+(entry.status||"unknown");status.textContent=statusLabels[entry.status]||"نامشخص";head.append(name,status);const meta=document.createElement("div");meta.className="source-meta";const group=entry.group||entry.kind||"source";const count=number(entry.configs_found);const unique=entry.unique_configs===undefined?"—":format(entry.unique_configs);const http=entry.http_code||"—";const latency=entry.latency_ms===null||entry.latency_ms===undefined?"—":format(entry.latency_ms)+"ms";const exclusive=entry.exclusive_configs===undefined?"—":format(entry.exclusive_configs);meta.textContent=group+" · کانفیگ: "+format(count)+" · یکتا: "+unique+" · انحصاری: "+exclusive+" · HTTP: "+http+" · پاسخ: "+latency;card.append(head,meta);if(typeof entry.url==="string"&&entry.url.startsWith("https://")){const link=document.createElement("a");link.href=entry.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="مشاهده فید ↗";card.append(link)}sourceGrid.append(card)});
-if(!sourceEntries.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="هنوز گزارشی از منابع منتشر نشده است";sourceGrid.append(empty)}
-setText("publicSourceCount",format(sourceReport.public_sources_healthy||0)+" از "+format(sourceReport.public_sources_total||0)+" فید عمومی سالم · کنارگذاشته‌شده: "+format((sourceReport.retired_sources||[]).length));
-const nodes=Array.isArray(indexData.nodes)?indexData.nodes:[];
-const nodeSearch=document.getElementById("nodeSearch");
-const nodeProtocolFilter=document.getElementById("nodeProtocolFilter");
-const nodeCountryFilter=document.getElementById("nodeCountryFilter");
-const nodeExplorer=document.getElementById("nodeExplorer");
-const fillNodeFilter=(select,values,label)=>{select.replaceChildren();const first=document.createElement("option");first.value="";first.textContent=label;select.append(first);values.forEach(value=>{const option=document.createElement("option");option.value=value;option.textContent=value;select.append(option)})};
-fillNodeFilter(nodeProtocolFilter,[...new Set(nodes.map(n=>String(n.protocol||"").toUpperCase()).filter(Boolean))].sort(),"همه پروتکل‌ها");
-fillNodeFilter(nodeCountryFilter,[...new Set(nodes.map(n=>String(n.country_code||"").toUpperCase()).filter(Boolean))].sort(),"همه کشورها");
-const renderNodes=()=>{const query=nodeSearch.value.trim().toLowerCase();const protocol=nodeProtocolFilter.value;const country=nodeCountryFilter.value;const filtered=nodes.filter(node=>{const haystack=[node.fingerprint,node.protocol,node.country_code].join(" ").toLowerCase();return (!query||haystack.includes(query))&&(!protocol||String(node.protocol||"").toUpperCase()===protocol)&&(!country||String(node.country_code||"").toUpperCase()===country)}).sort((a,b)=>number(a.delay_ms)-number(b.delay_ms));nodeExplorer.replaceChildren();filtered.slice(0,60).forEach(node=>{const item=document.createElement("article");item.className="node-item";const main=document.createElement("div");main.className="node-main";const title=document.createElement("div");title.className="node-title";title.textContent=String(node.protocol||"NODE").toUpperCase()+" · "+String(node.country_code||"XX").toUpperCase();const sub=document.createElement("div");sub.className="node-sub";sub.textContent=String(node.fingerprint||"").slice(0,14)+" · "+format(node.successful_rounds||0)+"/"+format(node.total_rounds||3)+" دور موفق"+(node.encrypted_transport?" · TLS/Reality":"");main.append(title,sub);const delay=document.createElement("span");delay.className="node-delay";delay.textContent=number(node.delay_ms)>0?format(node.delay_ms)+"ms":"—";item.append(main,delay);nodeExplorer.append(item)});setText("explorerCount",format(filtered.length)+" نود · نمایش "+format(Math.min(60,filtered.length)));if(!filtered.length){const empty=document.createElement("span");empty.className="source-empty";empty.textContent="نودی با این فیلتر پیدا نشد";nodeExplorer.append(empty)}};
-nodeSearch.oninput=renderNodes;
-nodeProtocolFilter.onchange=renderNodes;
-nodeCountryFilter.onchange=renderNodes;
-renderNodes();
-const updated=lite.updated_at||test.tested_at||null;
-setText("freshness",updated?"به‌روزرسانی "+new Date(updated).toLocaleString("fa-IR"):"گزارش زنده");
-const complete=testResult.status==="fulfilled"&&liteResult.status==="fulfilled"&&statsResult.status==="fulfilled"&&healthResult.status==="fulfilled"&&sourcesResult.status==="fulfilled"&&indexResult.status==="fulfilled";
-const partial=testResult.status==="fulfilled"||liteResult.status==="fulfilled"||statsResult.status==="fulfilled"||healthResult.status==="fulfilled"||sourcesResult.status==="fulfilled"||indexResult.status==="fulfilled";
-setText("state",complete?"گزارش‌ها با موفقیت دریافت شدند":partial?"بخشی از گزارش‌ها در دسترس است":"اتصال به گزارش‌ها برقرار نشد");
-}
-document.getElementById("refresh").addEventListener("click",loadData);
-document.querySelectorAll("[data-copy]").forEach(button=>button.addEventListener("click",async()=>{const value=button.getAttribute("data-copy");try{await navigator.clipboard.writeText(value);button.textContent="کپی شد";setTimeout(()=>button.textContent="کپی لینک",1500)}catch{window.prompt("لینک اشتراک را کپی کنید",value)}}));
-loadData();
-</script>
+<footer class="site-footer"><a class="brand footer-brand" href="./"><span class="brand-mark">S</span><span><strong>SVM</strong><small>SINAVM NETWORK</small></span></a><span>تجمیع هوشمند · تست واقعی · انتشار شفاف</span><div><a href="https://github.com/sinavm/SVM">GitHub</a><a href="https://t.me/sinavm">Telegram</a><a href="https://github.com/sinavm/SVM/actions">Actions</a></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js?v=20261106" defer></script>
 </body>
 </html>
