@@ -97,38 +97,85 @@ function toSingbox($input)
 
 function processConvertion($base64ConfigsList, $configsName = "Created By sinavm")
 {
-    $decodedList = base64_decode($base64ConfigsList);
+    $decodedList = base64_decode($base64ConfigsList, true);
     if ($decodedList === false) $decodedList = $base64ConfigsList;
     $configsArray = array_filter(array_map('trim', explode("\n", $decodedList)), 'strlen');
     $structure = json_decode(file_get_contents('structure.json'), true);
     if (!is_array($structure) || !isset($structure['outbounds'][0], $structure['outbounds'][1])) {
         throw new Exception("Invalid structure.json (Sing-box 1.14 template required)");
     }
-    $selector = $structure['outbounds'][0];
-    $urltest = $structure['outbounds'][1];
-    if (!isset($selector['outbounds']) || !is_array($selector['outbounds'])) $selector['outbounds'] = [];
-    if (!isset($urltest['outbounds']) || !is_array($urltest['outbounds'])) $urltest['outbounds'] = [];
+
+    $selectorTemplate = $structure['outbounds'][0];
+    $urltestTemplate = $structure['outbounds'][1];
     $proxyOutbounds = [];
-    $index = 1;
     $usedTags = [];
+    $index = 1;
+
+    // Convert and sanitize every node before adding it to selector/urltest.
+    // This prevents references to nodes that the sanitizer later removes.
     foreach ($configsArray as $config) {
         $converted = toSingbox($config);
         if (!$converted) continue;
+        $converted = sanitizeOutboundForSingbox114($converted);
+        if (!$converted) continue;
+
         $tag = "@SiNAVM-" . $index;
-        while (isset($usedTags[$tag])) { $index++; $tag = "@SiNAVM-" . $index; }
+        while (isset($usedTags[$tag])) {
+            $index++;
+            $tag = "@SiNAVM-" . $index;
+        }
         $converted['tag'] = $tag;
         $usedTags[$tag] = true;
         $proxyOutbounds[] = $converted;
-        $urltest['outbounds'][] = $tag;
         $index++;
     }
+
+    // A selector/urltest without at least one real proxy is invalid in sing-box.
+    if (count($proxyOutbounds) === 0) {
+        return null;
+    }
+
+    $proxyTags = array_column($proxyOutbounds, 'tag');
+    $urltest = $urltestTemplate;
     $urltest['tag'] = "@SiNAVM";
+    $urltest['outbounds'] = $proxyTags;
+
+    $selector = $selectorTemplate;
     $selector['tag'] = "انتخابگر دستی";
-    $selector['outbounds'] = array_values(array_unique(array_merge(["@SiNAVM"], $urltest['outbounds'])));
+    $selector['outbounds'] = array_values(array_unique(array_merge(["@SiNAVM"], $proxyTags)));
+
     $tail = [];
-    for ($i = 2; $i < count($structure['outbounds']); $i++) $tail[] = $structure['outbounds'][$i];
+    for ($i = 2; $i < count($structure['outbounds']); $i++) {
+        $item = sanitizeOutboundForSingbox114($structure['outbounds'][$i]);
+        if ($item !== null) $tail[] = $item;
+    }
     if (empty($tail)) $tail[] = ["type" => "direct", "tag" => "direct"];
+
     $structure['outbounds'] = array_merge([$selector, $urltest], $proxyOutbounds, $tail);
     sanitizeStructureForSingbox114($structure);
+
+    // Final invariant check after all sanitizers: every selector/urltest must
+    // have a tag and a non-empty list of tags that resolve to real outbounds.
+    $definedTags = [];
+    foreach ($structure['outbounds'] as $outbound) {
+        if (!is_array($outbound) || trim((string)($outbound['tag'] ?? '')) === '') {
+            throw new RuntimeException("Sing-box outbound missing tag in {$configsName}");
+        }
+        $definedTags[$outbound['tag']] = true;
+    }
+    foreach ($structure['outbounds'] as $outbound) {
+        if (in_array(($outbound['type'] ?? ''), ['selector', 'urltest'], true)) {
+            $targets = $outbound['outbounds'] ?? [];
+            if (!is_array($targets) || count($targets) === 0) {
+                throw new RuntimeException("Sing-box {$outbound['type']} has no targets in {$configsName}");
+            }
+            foreach ($targets as $target) {
+                if (!isset($definedTags[$target])) {
+                    throw new RuntimeException("Sing-box {$outbound['type']} references missing tag '{$target}' in {$configsName}");
+                }
+            }
+        }
+    }
+
     return hiddifyHeader($configsName) . json_encode($structure, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 }

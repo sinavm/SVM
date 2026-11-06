@@ -6,16 +6,22 @@ on:
     branches: [main]
     paths:
       - get.php
+      - public_sources.json
+      - lite/public_sources.json
       - config-test.php
       - quality.php
       - functions.php
+      - toSingbox.php
+      - toSingbox.part1.php
+      - toSingbox.part2.php
+      - structure.json
       - .github/workflows/php.yml
   schedule:
-    - cron: '0 */3 * * *'
+    - cron: '*/15 * * * *'
 
 concurrency:
   group: "sinavm-full"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -31,7 +37,20 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_7: ${{ secrets.PRIVATE_LINK_SINAVM_7 }}
+      PRIVATE_LINK_SINAVM_8: ${{ secrets.PRIVATE_LINK_SINAVM_8 }}
+      PRIVATE_LINK_SINAVM_9: ${{ secrets.PRIVATE_LINK_SINAVM_9 }}
+      PRIVATE_LINK_SINAVM_10: ${{ secrets.PRIVATE_LINK_SINAVM_10 }}
+      PRIVATE_LINK_SINAVM_11: ${{ secrets.PRIVATE_LINK_SINAVM_11 }}
+      PRIVATE_LINK_SINAVM_12: ${{ secrets.PRIVATE_LINK_SINAVM_12 }}
+      PRIVATE_LINK_SINAVM_13: ${{ secrets.PRIVATE_LINK_SINAVM_13 }}
+      PRIVATE_LINK_SINAVM_14: ${{ secrets.PRIVATE_LINK_SINAVM_14 }}
+      PRIVATE_LINK_SINAVM_15: ${{ secrets.PRIVATE_LINK_SINAVM_15 }}
+      PRIVATE_LINK_SINAVM_16: ${{ secrets.PRIVATE_LINK_SINAVM_16 }}
+      PRIVATE_LINK_SINAVM_17: ${{ secrets.PRIVATE_LINK_SINAVM_17 }}
+      PRIVATE_LINK_SINAVM_18: ${{ secrets.PRIVATE_LINK_SINAVM_18 }}
       SINGBOX_VERSION: "1.14.0"
+      MIHOMO_VERSION: "v1.19.29"
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -67,6 +86,12 @@ jobs:
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
+          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
+          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+          gunzip -f /tmp/mihomo.gz
+          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          mihomo -v
 
       - name: Execute PHP script
         run: |
@@ -77,14 +102,70 @@ jobs:
 
           php -d display_errors get.php
           php -d display_errors config-test.php
-          php -d display_errors quality.php
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors quality.php
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
           php -d display_errors hiddifyWarp.php
+          test -s subscriptions/singbox/mix.json
+          test -s subscriptions/clash/mix
+          test -s subscriptions/meta/mix
+          php <<'PHP'
+          <?php
+          foreach (glob('subscriptions/singbox/*.json') as $file) {
+              $raw = file_get_contents($file);
+              $jsonStart = strpos($raw, '{');
+              if ($jsonStart === false) {
+                  fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $config = json_decode(substr($raw, $jsonStart), true);
+              if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
+                  fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $tags = [];
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (!is_array($outbound) || trim((string)($outbound['tag'] ?? '')) === '') {
+                      fwrite(STDERR, "Outbound[{$index}] has missing tag: {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  $tag = (string)$outbound['tag'];
+                  if (isset($tags[$tag])) {
+                      fwrite(STDERR, "Duplicate outbound tag '{$tag}': {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  $tags[$tag] = true;
+              }
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (in_array(($outbound['type'] ?? ''), ['selector', 'urltest'], true)) {
+                      $targets = $outbound['outbounds'] ?? [];
+                      if (!is_array($targets) || count($targets) === 0) {
+                          fwrite(STDERR, "Outbound[{$index}] {$outbound['type']} has empty outbounds: {$file}" . PHP_EOL);
+                          exit(1);
+                      }
+                      foreach ($targets as $target) {
+                          if (!isset($tags[$target])) {
+                              fwrite(STDERR, "Outbound[{$index}] references missing tag '{$target}': {$file}" . PHP_EOL);
+                              exit(1);
+                          }
+                      }
+                  }
+              }
+              echo "Outbound references valid: {$file}" . PHP_EOL;
+          }
+          PHP
+
+          for f in subscriptions/singbox/*.json; do
+            [ -f "$f" ] || continue
+            echo "Checking sing-box: $f"
+            sing-box check -c "$f"
+          done
+          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
@@ -115,6 +196,18 @@ jobs:
       PRIVATE_LINK_SINAVM_4: ${{ secrets.PRIVATE_LINK_SINAVM_4 || secrets.PRIVATE_LINK_SiNAVM_4 }}
       PRIVATE_LINK_SINAVM_5: ${{ secrets.PRIVATE_LINK_SINAVM_5 || secrets.PRIVATE_LINK_SiNAVM_5 }}
       PRIVATE_LINK_SINAVM_6: ${{ secrets.PRIVATE_LINK_SINAVM_6 || secrets.PRIVATE_LINK_SiNAVM_6 }}
+      PRIVATE_LINK_SINAVM_7: ${{ secrets.PRIVATE_LINK_SINAVM_7 }}
+      PRIVATE_LINK_SINAVM_8: ${{ secrets.PRIVATE_LINK_SINAVM_8 }}
+      PRIVATE_LINK_SINAVM_9: ${{ secrets.PRIVATE_LINK_SINAVM_9 }}
+      PRIVATE_LINK_SINAVM_10: ${{ secrets.PRIVATE_LINK_SINAVM_10 }}
+      PRIVATE_LINK_SINAVM_11: ${{ secrets.PRIVATE_LINK_SINAVM_11 }}
+      PRIVATE_LINK_SINAVM_12: ${{ secrets.PRIVATE_LINK_SINAVM_12 }}
+      PRIVATE_LINK_SINAVM_13: ${{ secrets.PRIVATE_LINK_SINAVM_13 }}
+      PRIVATE_LINK_SINAVM_14: ${{ secrets.PRIVATE_LINK_SINAVM_14 }}
+      PRIVATE_LINK_SINAVM_15: ${{ secrets.PRIVATE_LINK_SINAVM_15 }}
+      PRIVATE_LINK_SINAVM_16: ${{ secrets.PRIVATE_LINK_SINAVM_16 }}
+      PRIVATE_LINK_SINAVM_17: ${{ secrets.PRIVATE_LINK_SINAVM_17 }}
+      PRIVATE_LINK_SINAVM_18: ${{ secrets.PRIVATE_LINK_SINAVM_18 }}
       SINGBOX_VERSION: "1.14.0"
     steps:
       - name: Checkout Code
@@ -142,6 +235,12 @@ jobs:
           tar -xzf /tmp/sing-box.tar.gz -C /tmp
           sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
           sing-box version
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
+          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
+          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+          gunzip -f /tmp/mihomo.gz
+          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
+          mihomo -v
 
       - name: Execute PHP script
         run: |
@@ -153,13 +252,69 @@ jobs:
           cd lite
           php -d display_errors ../get.php
           php -d display_errors ../config-test.php
-          php -d display_errors ../quality.php
           php -d display_errors duplicate.php
           php -d display_errors sort.php
+          php -d display_errors ../quality.php
+          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors ../rank.php || true
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
           php -d display_errors ../toClashMetaExtra.php || true
+          test -s subscriptions/singbox/mix.json
+          test -s subscriptions/clash/mix
+          test -s subscriptions/meta/mix
+          php <<'PHP'
+          <?php
+          foreach (glob('subscriptions/singbox/*.json') as $file) {
+              $raw = file_get_contents($file);
+              $jsonStart = strpos($raw, '{');
+              if ($jsonStart === false) {
+                  fwrite(STDERR, "Missing JSON body: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $config = json_decode(substr($raw, $jsonStart), true);
+              if (!is_array($config) || !isset($config['outbounds']) || !is_array($config['outbounds'])) {
+                  fwrite(STDERR, "Invalid outbounds JSON: {$file}" . PHP_EOL);
+                  exit(1);
+              }
+              $tags = [];
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (!is_array($outbound) || trim((string)($outbound['tag'] ?? '')) === '') {
+                      fwrite(STDERR, "Outbound[{$index}] has missing tag: {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  $tag = (string)$outbound['tag'];
+                  if (isset($tags[$tag])) {
+                      fwrite(STDERR, "Duplicate outbound tag '{$tag}': {$file}" . PHP_EOL);
+                      exit(1);
+                  }
+                  $tags[$tag] = true;
+              }
+              foreach ($config['outbounds'] as $index => $outbound) {
+                  if (in_array(($outbound['type'] ?? ''), ['selector', 'urltest'], true)) {
+                      $targets = $outbound['outbounds'] ?? [];
+                      if (!is_array($targets) || count($targets) === 0) {
+                          fwrite(STDERR, "Outbound[{$index}] {$outbound['type']} has empty outbounds: {$file}" . PHP_EOL);
+                          exit(1);
+                      }
+                      foreach ($targets as $target) {
+                          if (!isset($tags[$target])) {
+                              fwrite(STDERR, "Outbound[{$index}] references missing tag '{$target}': {$file}" . PHP_EOL);
+                              exit(1);
+                          }
+                      }
+                  }
+              }
+              echo "Outbound references valid: {$file}" . PHP_EOL;
+          }
+          PHP
+
+          for f in subscriptions/singbox/*.json; do
+            [ -f "$f" ] || continue
+            echo "Checking sing-box: $f"
+            sing-box check -c "$f"
+          done
+          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
 
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"

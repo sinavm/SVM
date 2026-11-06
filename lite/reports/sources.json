@@ -1,66 +1,213 @@
 {
-    "updated_at": "2026-11-05T17:20:15+00:00",
-    "total_sources": 7,
-    "healthy_sources": 6,
-    "stale_sources": 0,
-    "failed_sources": 0,
-    "unconfigured_sources": 1,
-    "sources": {
-        "telegram:SiNAVM": {
-            "kind": "telegram",
-            "name": "SiNAVM",
-            "status": "ok",
-            "configs_found": 0,
-            "checked_at": "2026-11-05T17:20:11+00:00",
-            "error": null
-        },
-        "telegram:mtmvpn": {
-            "kind": "telegram",
-            "name": "mtmvpn",
-            "status": "ok",
-            "configs_found": 8,
-            "checked_at": "2026-11-05T17:20:12+00:00",
-            "error": null
-        },
-        "subscription:c49b3a17a3c16564": {
-            "kind": "subscription",
-            "name": "source-c49b3a17",
-            "status": "ok",
-            "configs_found": 28,
-            "checked_at": "2026-11-05T17:20:13+00:00",
-            "error": null
-        },
-        "subscription:08afdd48683cd24d": {
-            "kind": "subscription",
-            "name": "source-08afdd48",
-            "status": "ok",
-            "configs_found": 158,
-            "checked_at": "2026-11-05T17:20:14+00:00",
-            "error": null
-        },
-        "subscription:2f9a9703563cd619": {
-            "kind": "subscription",
-            "name": "source-2f9a9703",
-            "status": "ok",
-            "configs_found": 500,
-            "checked_at": "2026-11-05T17:20:15+00:00",
-            "error": null
-        },
-        "subscription:0f6dcf19929a40f0": {
-            "kind": "subscription",
-            "name": "source-0f6dcf19",
-            "status": "ok",
-            "configs_found": 100,
-            "checked_at": "2026-11-05T17:20:15+00:00",
-            "error": null
-        },
-        "subscription_slot:unknown": {
-            "kind": "subscription",
-            "name": "private-source-unknown",
-            "status": "unconfigured",
-            "configs_found": 0,
-            "checked_at": "2026-11-05T17:20:15+00:00",
-            "error": "missing_secret_or_protocol_filter"
-        }
+  "updated_at": "2026-11-05T21:05:25.269Z",
+  "total_sources": 8,
+  "healthy_sources": 5,
+  "stale_sources": 0,
+  "empty_sources": 1,
+  "failed_sources": 0,
+  "unconfigured_sources": 2,
+  "sources": {
+    "telegram:SiNAVM": {
+      "kind": "telegram",
+      "name": "SiNAVM",
+      "status": "empty",
+      "configs_found": 0,
+      "checked_at": "2026-11-05T17:38:58+00:00",
+      "error": null
+    },
+    "telegram:mtmvpn": {
+      "kind": "telegram",
+      "name": "mtmvpn",
+      "status": "ok",
+      "configs_found": 8,
+      "checked_at": "2026-11-05T17:38:59+00:00",
+      "error": null
+    },
+    "subscription:c49b3a17a3c16564": {
+      "kind": "subscription",
+      "name": "source-c49b3a17",
+      "status": "ok",
+      "configs_found": 28,
+      "checked_at": "2026-11-05T17:39:00+00:00",
+      "error": null
+    },
+    "subscription:08afdd48683cd24d": {
+      "kind": "subscription",
+      "name": "source-08afdd48",
+      "status": "ok",
+      "configs_found": 158,
+      "checked_at": "2026-11-05T17:39:01+00:00",
+      "error": null
+    },
+    "subscription:2f9a9703563cd619": {
+      "kind": "subscription",
+      "name": "source-2f9a9703",
+      "status": "ok",
+      "configs_found": 500,
+      "checked_at": "2026-11-05T17:39:01+00:00",
+      "error": null
+    },
+    "subscription:0f6dcf19929a40f0": {
+      "kind": "subscription",
+      "name": "source-0f6dcf19",
+      "status": "ok",
+      "configs_found": 100,
+      "checked_at": "2026-11-05T17:39:01+00:00",
+      "error": null
+    },
+    "subscription_slot:5": {
+      "kind": "subscription",
+      "name": "private-source-5",
+      "status": "unconfigured",
+      "configs_found": 0,
+      "checked_at": "2026-11-05T17:39:01+00:00",
+      "error": "missing_secret_or_protocol_filter"
+    },
+    "subscription_slot:6": {
+      "kind": "subscription",
+      "name": "private-source-6",
+      "status": "unconfigured",
+      "configs_found": 0,
+      "checked_at": "2026-11-05T17:39:01+00:00",
+      "error": "missing_secret_or_protocol_filter"
+    },
+    "public:feed-07": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 7",
+      "secret_slot": 7,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-08": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 8",
+      "secret_slot": 8,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-09": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 9",
+      "secret_slot": 9,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-10": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 10",
+      "secret_slot": 10,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-11": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 11",
+      "secret_slot": 11,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-12": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 12",
+      "secret_slot": 12,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-13": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 13",
+      "secret_slot": 13,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-14": {
+      "kind": "public",
+      "group": "curated",
+      "name": "Private feed 14",
+      "secret_slot": 14,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-15": {
+      "kind": "public",
+      "group": "heavy",
+      "name": "Private feed 15",
+      "secret_slot": 15,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-16": {
+      "kind": "public",
+      "group": "heavy",
+      "name": "Private feed 16",
+      "secret_slot": 16,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-17": {
+      "kind": "public",
+      "group": "heavy",
+      "name": "Private feed 17",
+      "secret_slot": 17,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
+    },
+    "public:feed-18": {
+      "kind": "public",
+      "group": "heavy",
+      "name": "Private feed 18",
+      "secret_slot": 18,
+      "status": "unconfigured",
+      "configs_found": 0,
+      "unique_configs": 0,
+      "checked_at": "2026-11-05T21:05:25.269Z",
+      "error": "missing_secret"
     }
+  },
+  "public_sources_total": 12,
+  "public_sources_healthy": 0,
+  "curated_sources": 8,
+  "heavy_sources": 4,
+  "retired_sources": [],
+  "auto_disable_candidates": []
 }

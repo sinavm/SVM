@@ -18,6 +18,9 @@ $statsPath = $reports . "/stats.json";
 $stats = is_file($statsPath) ? json_decode((string)file_get_contents($statsPath), true) : [];
 $sourcesPath = $reports . "/sources.json";
 $sources = is_file($sourcesPath) ? json_decode((string)file_get_contents($sourcesPath), true) : [];
+$provenancePath = $reports . "/source-provenance.json";
+$provenance = is_file($provenancePath) ? json_decode((string)file_get_contents($provenancePath), true) : [];
+$provenanceNodes = is_array($provenance["nodes"] ?? null) ? $provenance["nodes"] : [];
 $historyPath = $reports . "/quality-history.json";
 $history = is_file($historyPath) ? json_decode((string)file_get_contents($historyPath), true) : [];
 if (!is_array($history)) $history = [];
@@ -51,6 +54,10 @@ $geoCachePath = $reports . "/geo-cache.json";
 $geoCache = is_file($geoCachePath) ? json_decode((string)file_get_contents($geoCachePath), true) : [];
 if (!is_array($geoCache)) $geoCache = [];
 $geoTtl = 30 * 86400;
+$publicIpFlags = FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE;
+foreach (array_keys($geoCache) as $cachedIp) {
+    if (!filter_var($cachedIp, FILTER_VALIDATE_IP, $publicIpFlags)) unset($geoCache[$cachedIp]);
+}
 $hostIps = [];
 $missingIps = [];
 if ($testUsable) {
@@ -59,8 +66,8 @@ if ($testUsable) {
         if (!$type) continue;
         $host = nodeHost(trim($line), $type);
         if ($host === "") continue;
-        $ip = filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4) ? $host : gethostbyname($host);
-        if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) continue;
+        $ip = filter_var($host, FILTER_VALIDATE_IP, $publicIpFlags) ? $host : gethostbyname($host);
+        if (!filter_var($ip, FILTER_VALIDATE_IP, $publicIpFlags)) continue;
         $hostIps[configFingerprint(trim($line))] = $ip;
         $cached = $geoCache[$ip] ?? [];
         if (empty($cached["country"]) || (time() - (int)($cached["checked_at"] ?? 0)) > $geoTtl) $missingIps[$ip] = true;
@@ -100,6 +107,8 @@ foreach ($hostIps as $fp => $ip) {
 }
 
 $tiers = ["verified" => [], "fast" => [], "secure" => []];
+$sourceTiers = ["all" => [], "curated" => [], "heavy" => []];
+$verifiedRows = [];
 $protocols = [];
 $protocolNodes = [];
 $countryNodes = [];
@@ -129,7 +138,14 @@ if ($testUsable) foreach ($lines as $line) {
         "country_code" => $country
     ];
     $nodeSummary[] = $entry;
-    if ($successes >= 3 && $delay > 0 && $delay <= 800) $tiers["verified"][] = $line;
+    $sourceTiers["all"][] = $line;
+    $originGroups = $provenanceNodes[$fp]["groups"] ?? [];
+    if (in_array("curated", $originGroups, true)) $sourceTiers["curated"][] = $line;
+    if (in_array("heavy", $originGroups, true)) $sourceTiers["heavy"][] = $line;
+    if ($successes >= 3 && $delay > 0 && $delay <= 800) {
+        $tiers["verified"][] = $line;
+        $verifiedRows[] = ["line" => $line, "delay_ms" => $delay];
+    }
     if ($successes >= 2 && $delay > 0 && $delay <= 350) $tiers["fast"][] = $line;
     if ($entry["encrypted_transport"]) $tiers["secure"][] = $line;
     $history[$fp] = [
@@ -150,8 +166,32 @@ if ($testUsable) foreach ($tiers as $name => $items) {
     file_put_contents($base64 . "/" . $name, base64_encode($body));
 }
 if ($testUsable) {
+    $normalSourceTiers = $normal . "/source-tiers";
+    $base64SourceTiers = $base64 . "/source-tiers";
+    @mkdir($normalSourceTiers, 0777, true);
+    @mkdir($base64SourceTiers, 0777, true);
+    foreach (["all", "curated", "heavy"] as $tierName) {
+        $items = $sourceTiers[$tierName];
+        $body = "#profile-title: base64:" . base64_encode("SVM " . strtoupper($tierName)) . "\n";
+        $body .= "#profile-update-interval: 1\n";
+        $body .= "#support-url: https://t.me/sinavm\n";
+        $body .= "#profile-web-page-url: https://github.com/sinavm/SVM\n\n";
+        $body .= implode("\n", $items) . (count($items) ? "\n" : "");
+        file_put_contents($normalSourceTiers . "/" . $tierName, $body);
+        file_put_contents($base64SourceTiers . "/" . $tierName, base64_encode($body));
+    }
+    usort($verifiedRows, function ($a, $b) { return $a["delay_ms"] <=> $b["delay_ms"]; });
+    $topLines = array_column(array_slice($verifiedRows, 0, 100), "line");
+    file_put_contents($root . "/top100.txt", implode("\n", $topLines) . (count($topLines) ? "\n" : ""));
     @mkdir($normal . "/protocols", 0777, true);
     @mkdir($base64 . "/protocols", 0777, true);
+    @mkdir($normal . "/countries", 0777, true);
+    @mkdir($base64 . "/countries", 0777, true);
+    foreach ([$normal . "/protocols", $base64 . "/protocols", $normal . "/countries", $base64 . "/countries"] as $directory) {
+        foreach (glob($directory . "/*") ?: [] as $oldFile) {
+            if (is_file($oldFile)) @unlink($oldFile);
+        }
+    }
     foreach ($protocolNodes as $type => $items) {
         $body = "#profile-title: base64:" . base64_encode("SVM " . strtoupper($type)) . "\n";
         $body .= "#profile-update-interval: 1\n";
@@ -161,8 +201,6 @@ if ($testUsable) {
         file_put_contents($normal . "/protocols/" . $type, $body);
         file_put_contents($base64 . "/protocols/" . $type, base64_encode($body));
     }
-    @mkdir($normal . "/countries", 0777, true);
-    @mkdir($base64 . "/countries", 0777, true);
     foreach ($countryNodes as $country => $items) {
         $body = "#profile-title: base64:" . base64_encode("SVM " . $country) . "\n";
         $body .= "#profile-update-interval: 1\n";
@@ -189,10 +227,10 @@ $health = [
     "schema_version" => 1,
     "generated_at" => gmdate("c"),
     "overall" => [
-        "status" => !empty($test["infra_ok"]) ? (($failedSources + $staleSources + $unconfiguredSources + $emptySources > 0) ? "degraded" : "healthy") : "unknown",
+        "status" => !empty($test["infra_ok"]) ? (($failedSources + $staleSources + $emptySources > 0) ? "degraded" : "healthy") : "unknown",
         "pipeline_ok" => !empty($test["infra_ok"]),
         "source_health" => ["total" => count($sourceRows), "healthy" => $healthySources, "stale" => $staleSources, "failed" => $failedSources, "unconfigured" => $unconfiguredSources, "empty" => $emptySources],
-        "nodes" => ["input" => (int)($test["input"] ?? 0), "alive" => (int)($test["kept"] ?? 0), "dropped" => (int)($test["dropped"] ?? 0)]
+        "nodes" => ["input" => (int)($test["input"] ?? 0), "alive" => count($nodeSummary), "tested_alive" => (int)($test["kept"] ?? 0), "duplicates_removed" => max(0, (int)($test["kept"] ?? 0) - count($nodeSummary)), "dropped" => (int)($test["dropped"] ?? 0)]
     ],
     "collection" => $sources,
     "testing" => [
@@ -215,16 +253,20 @@ $health = [
         "fast" => $testUsable ? count($tiers["fast"]) : null,
         "secure" => $testUsable ? count($tiers["secure"]) : null
     ],
+    "source_tiers" => ["all" => $testUsable ? count($sourceTiers["all"]) : null, "curated" => $testUsable ? count($sourceTiers["curated"]) : null, "heavy" => $testUsable ? count($sourceTiers["heavy"]) : null],
     "protocols_alive" => $protocols,
     "country_nodes" => array_map("count", $countryNodes),
-    "geoip" => ["provider" => "ip-api.com", "known_nodes" => count($nodeCountries), "unknown_nodes" => max(0, count($hostIps) - count($nodeCountries)), "cache_ttl_days" => 30],
+    "geoip" => ["provider" => "ip-api.com", "known_nodes" => count($nodeCountries), "unknown_nodes" => max(0, count($nodeSummary) - count($nodeCountries)), "resolved_ipv4_nodes" => count($hostIps), "unresolved_hosts" => max(0, count($nodeSummary) - count($hostIps)), "cache_ttl_days" => 30],
     "quality_data_fresh" => $testUsable,
     "links" => [
         "verified" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/verified",
         "fast" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/fast",
         "secure" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/secure",
         "protocols" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/protocols/",
-        "countries" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/countries/"
+        "countries" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/countries/",
+        "source_tiers" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/normal/source-tiers/",
+        "source_tiers_base64" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "subscriptions/xray/base64/source-tiers/",
+        "top100" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "top100.txt"
     ]
 ];
 $index = [
@@ -235,9 +277,12 @@ $index = [
     "stats" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/stats.json",
     "sources" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/sources.json",
     "test" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/test.json",
+    "source_provenance" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/source-provenance.json",
+    "source_history" => "https://raw.githubusercontent.com/sinavm/SVM/main/" . $repoPrefix . "reports/source-history.json",
     "subscriptions" => $health["links"],
     "protocol_subscriptions" => array_map(function ($type) use ($health) { return $health["links"]["protocols"] . $type; }, array_keys($protocols)),
     "country_subscriptions" => array_map(function ($country) use ($health) { return $health["links"]["countries"] . $country; }, array_keys($countryNodes)),
+    "source_tier_subscriptions" => array_map(function ($tier) use ($health) { return $health["links"]["source_tiers"] . $tier; }, ["all", "curated", "heavy"]),
     "counts" => $health["tiers"],
     "nodes" => $nodeSummary
 ];
