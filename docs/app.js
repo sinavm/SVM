@@ -150,9 +150,10 @@ state.nodes=Array.isArray(state.index.nodes)?state.index.nodes:[];
 const succeeded=results.filter(result=>result.status==="fulfilled").length;
 if(state.fallback&&!state.mirror){state.mirror=true;$("mirrorToggle").checked=true;updateHub();refreshDataLinks();toast("GitHub در دسترس نبود؛ آینه CDN به‌صورت خودکار فعال شد");}
 renderAll();
-if(succeeded===paths.length){set("pipelineState","همهٔ گزارش‌ها با موفقیت دریافت شدند");$("statusIndicator").className="status-indicator ok";}
-else if(succeeded){set("pipelineState","بخشی از گزارش‌ها در دسترس نیست");$("statusIndicator").className="status-indicator";}
+if(succeeded!==paths.length){
+if(succeeded){set("pipelineState","بخشی از گزارش‌ها در دسترس نیست");$("statusIndicator").className="status-indicator";}
 else{set("pipelineState","دریافت گزارش‌ها ناموفق بود");$("statusIndicator").className="status-indicator bad";}
+}
 $("refreshButton").disabled=false;
 };
 const copyCurrent=async()=>{
