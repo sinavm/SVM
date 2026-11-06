@@ -78,17 +78,17 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .tools
-          VER="\${SINGBOX_VERSION:-1.14.0}"
+          VER="${SINGBOX_VERSION:-1.14.0}"
           if [ ! -x .tools/sing-box ]; then
-            URL="https://github.com/SagerNet/sing-box/releases/download/v\${VER}/sing-box-\${VER}-linux-amd64.tar.gz"
+            URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
             curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
             file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || { file /tmp/sing-box.tar.gz; exit 1; }
             tar -xzf /tmp/sing-box.tar.gz -C /tmp
-            install -m 0755 "/tmp/sing-box-\${VER}-linux-amd64/sing-box" .tools/sing-box
+            install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" .tools/sing-box
           fi
-          MVER="\${MIHOMO_VERSION:-v1.19.29}"
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
           if [ ! -x .tools/mihomo ]; then
-            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/\${MVER}/mihomo-linux-amd64-\${MVER}.gz" -o /tmp/mihomo.gz
+            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
             echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
             gunzip -f /tmp/mihomo.gz
             install -m 0755 /tmp/mihomo .tools/mihomo
@@ -100,9 +100,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: cache/
-          key: svm-full-sources-\${{ runner.os }}-\${{ hashFiles('public_sources.json') }}
+          key: svm-full-sources-${{ runner.os }}-${{ hashFiles('public_sources.json') }}
           restore-keys: |
-            svm-full-sources-\${{ runner.os }}-
+            svm-full-sources-${{ runner.os }}-
 
       - name: Fetch and normalize full sources
         run: |
@@ -118,7 +118,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-full-fetch-\${{ github.run_id }}
+          name: svm-full-fetch-${{ github.run_id }}
           path: |
             config.txt
             reports/**
@@ -135,7 +135,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-full-tested-\${{ github.run_id }}
+          name: svm-full-tested-${{ github.run_id }}
           path: |
             config.txt
             reports/**
@@ -165,7 +165,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-full-generated-\${{ github.run_id }}
+          name: svm-full-generated-${{ github.run_id }}
           path: |
             config.txt
             reports/**
@@ -297,17 +297,17 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p .tools
-          VER="\${SINGBOX_VERSION:-1.14.0}"
+          VER="${SINGBOX_VERSION:-1.14.0}"
           if [ ! -x .tools/sing-box ]; then
-            URL="https://github.com/SagerNet/sing-box/releases/download/v\${VER}/sing-box-\${VER}-linux-amd64.tar.gz"
+            URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
             curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
             file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || { file /tmp/sing-box.tar.gz; exit 1; }
             tar -xzf /tmp/sing-box.tar.gz -C /tmp
-            install -m 0755 "/tmp/sing-box-\${VER}-linux-amd64/sing-box" .tools/sing-box
+            install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" .tools/sing-box
           fi
-          MVER="\${MIHOMO_VERSION:-v1.19.29}"
+          MVER="${MIHOMO_VERSION:-v1.19.29}"
           if [ ! -x .tools/mihomo ]; then
-            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/\${MVER}/mihomo-linux-amd64-\${MVER}.gz" -o /tmp/mihomo.gz
+            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
             echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
             gunzip -f /tmp/mihomo.gz
             install -m 0755 /tmp/mihomo .tools/mihomo
@@ -319,9 +319,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: lite/cache/
-          key: svm-lite-sources-\${{ runner.os }}-\${{ hashFiles('lite/public_sources.json') }}
+          key: svm-lite-sources-${{ runner.os }}-${{ hashFiles('lite/public_sources.json') }}
           restore-keys: |
-            svm-lite-sources-\${{ runner.os }}-
+            svm-lite-sources-${{ runner.os }}-
 
       - name: Fetch and normalize lite sources
         working-directory: lite
@@ -338,7 +338,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-lite-fetch-\${{ github.run_id }}
+          name: svm-lite-fetch-${{ github.run_id }}
           path: |
             lite/config.txt
             lite/reports/**
@@ -356,7 +356,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-lite-tested-\${{ github.run_id }}
+          name: svm-lite-tested-${{ github.run_id }}
           path: |
             lite/config.txt
             lite/reports/**
@@ -387,7 +387,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: svm-lite-generated-\${{ github.run_id }}
+          name: svm-lite-generated-${{ github.run_id }}
           path: |
             lite/config.txt
             lite/reports/**
