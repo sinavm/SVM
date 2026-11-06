@@ -3,414 +3,132 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script>
-/* Always start at the top on a fresh load or refresh, including mobile Safari. */
-if('scrollRestoration' in history) history.scrollRestoration='manual';
-window.addEventListener('pageshow',function(){
-  window.scrollTo(0,0);
-  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
-});
-</script>
-<meta name="theme-color" content="#0b1224">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta name="description" content="دریافت کانفیگ رایگان V2Ray و Xray از SVM و SiNAVM؛ اشتراک‌های رایگان و به‌روز VLESS، VMess، Reality، Trojan و Shadowsocks با تست زنده و لینک مستقیم برای کلاینت‌ها.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="theme-color" content="#247EFD">
+<meta name="description" content="داشبورد زنده SVM برای دریافت اشتراک‌های رایگان V2Ray و Xray، مشاهده گزارش تست، انتخاب فرمت کلاینت و دریافت لینک‌های به‌روز.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="SiNAVM">
 <meta name="application-name" content="SVM">
 <link rel="canonical" href="https://sinavm.github.io/SVM/">
-<link rel="sitemap" type="application/xml" href="https://sinavm.github.io/SVM/sitemap.xml">
-<link rel="alternate" hreflang="fa" href="https://sinavm.github.io/SVM/">
 <link rel="icon" type="image/svg+xml" href="https://sinavm.github.io/SVM/SEO_Logo.svg">
-<link rel="shortcut icon" href="https://sinavm.github.io/SVM/SEO_Logo.svg">
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="stylesheet" href="docs/styles.css?v=20261107-visual-1">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:site_name" content="SVM | SiNAVM">
 <meta property="og:url" content="https://sinavm.github.io/SVM/">
-<meta property="og:title" content="SVM | کانفیگ رایگان V2Ray و Xray">
-<meta property="og:description" content="کانفیگ‌های رایگان و به‌روز V2Ray و Xray از SiNAVM؛ لینک اشتراک مستقیم، تست زنده و پشتیبانی از کلاینت‌های محبوب.">
-<meta property="og:image" content="https://sinavm.github.io/SVM/SEO_Logo.svg">
-<meta property="og:image:alt" content="لوگوی SVM و SiNAVM">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SVM | کانفیگ رایگان V2Ray و Xray">
-<meta name="twitter:description" content="کانفیگ‌های رایگان V2Ray و Xray، اشتراک‌های به‌روز و لینک مستقیم از SiNAVM.">
-<meta name="twitter:image" content="https://sinavm.github.io/SVM/SEO_Logo.svg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sinavm.github.io/SVM/#organization","name":"SiNAVM","alternateName":["SVM","sinavnbot"],"url":"https://sinavm.github.io/SVM/","logo":{"@type":"ImageObject","url":"https://sinavm.github.io/SVM/SEO_Logo.svg","width":512,"height":512},"sameAs":["https://github.com/sinavm/SVM","https://t.me/sinavm"]},{"@type":"WebSite","@id":"https://sinavm.github.io/SVM/#website","url":"https://sinavm.github.io/SVM/","name":"SVM","alternateName":["SiNAVM","sinavnbot"],"inLanguage":"fa-IR","publisher":{"@id":"https://sinavm.github.io/SVM/#organization"}},{"@type":"WebPage","@id":"https://sinavm.github.io/SVM/#webpage","url":"https://sinavm.github.io/SVM/","name":"SVM | کانفیگ رایگان V2Ray و Xray","description":"دریافت کانفیگ رایگان V2Ray و Xray از SVM و SiNAVM؛ اشتراک‌های به‌روز با تست زنده و لینک مستقیم.","inLanguage":"fa-IR","isPartOf":{"@id":"https://sinavm.github.io/SVM/#website"},"about":{"@id":"https://sinavm.github.io/SVM/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://sinavm.github.io/SVM/SEO_Logo.svg"}}]}
-</script>
-<title>SVM | کانفیگ رایگان V2Ray و Xray – اشتراک‌های به‌روز | SiNAVM</title>
-<style>
-:root{color-scheme:dark;--bg:#0b1224;--panel:rgba(20,31,54,.78);--panel-solid:#111e35;--line:rgba(255,255,255,.085);--muted:#9aa9c2;--text:#f5f8ff;--blue:#60a5fa;--cyan:#22d3ee;--green:#34d399;--purple:#a78bfa;--amber:#fbbf24;--red:#fb7185;--shadow:0 18px 60px rgba(2,6,23,.3)}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:86px}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 8% 0%,rgba(59,130,246,.2),transparent 38%),radial-gradient(ellipse at 95% 14%,rgba(139,92,246,.13),transparent 34%),radial-gradient(ellipse at 50% 65%,rgba(8,145,178,.07),transparent 42%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.8}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-.shell{width:min(100% - 28px,680px);margin:auto}
-.top{height:66px;position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(11,18,36,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.top-inner{width:min(100% - 28px,680px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
-.brand{display:flex;align-items:center;gap:11px;min-width:0}
-.brand img{width:42px;height:42px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:0 7px 24px rgba(37,99,235,.2)}
-.brand strong{display:block;font-size:1rem;letter-spacing:.07em;line-height:1.35}
-.brand small{display:block;color:var(--muted);font-size:.7rem}
-.nav{display:flex;gap:7px;align-items:center;flex-wrap:nowrap;min-width:0}
-.nav a,.nav a:link,.nav a:visited,.nav a:hover,.nav a:active{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;min-height:36px;border:1px solid rgba(148,163,184,.22);border-radius:999px;padding:6px 11px;color:#dbeafe;font-size:.75rem;font-weight:700;line-height:1.5;background:rgba(30,41,59,.72);text-decoration:none!important;text-decoration-line:none!important;text-decoration-thickness:0!important;text-underline-offset:0!important;box-shadow:none;transition:background .2s,border-color .2s,color .2s}
-.nav a:hover{border-color:rgba(96,165,250,.65);color:#fff;background:rgba(59,130,246,.16)}
-.nav a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-.nav a::before,.nav a::after{content:none!important;display:none!important}
-.nav a span,.nav a .nav-label{display:inline-block;text-decoration:none!important;text-decoration-line:none!important;text-decoration-thickness:0!important;text-decoration-color:transparent!important;border:0!important;border-bottom:0!important;box-shadow:none!important;background-image:none!important;-webkit-text-decoration:none!important}
-.nav a,.nav a:link,.nav a:visited,.nav a:hover,.nav a:active{-webkit-text-decoration:none!important;text-decoration:none!important;text-decoration-line:none!important;text-decoration-color:transparent!important;background-image:none!important;border-bottom-color:rgba(148,163,184,.22)!important}
-.nav a::before,.nav a::after{content:none!important;display:none!important}
-.nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
-main{display:grid;gap:18px;margin:28px auto 54px}
-.hero{text-align:center;padding:15px 12px 8px}
-.hero-logo{width:76px;height:76px;border-radius:23px;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 42px rgba(37,99,235,.22)}
-.eyebrow{display:flex;justify-content:center;align-items:center;gap:9px;color:#67e8f9;font-size:.8rem;font-weight:800;margin:14px 0 5px}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(52,211,153,.12)}
-h1{font-size:clamp(1.8rem,6vw,2.65rem);line-height:1.45;margin:0;font-weight:900;letter-spacing:-.7px}
-.hero h1 span{color:var(--cyan)}
-.hero p{color:var(--muted);line-height:2;margin:8px auto 0;max-width:590px;font-size:.91rem}
-.hero-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:18px}
-.btn{border:0;border-radius:13px;padding:10px 15px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:800 .8rem Vazirmatn,sans-serif;cursor:pointer;transition:transform .2s,border-color .2s,filter .2s}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-.btn-primary{background:linear-gradient(120deg,#2563eb,#0891b2);color:#fff;box-shadow:0 8px 24px rgba(8,145,178,.2)}
-.btn-ghost{background:#ffffff09;border:1px solid var(--line);color:#dceaff}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:23px;padding:19px;box-shadow:var(--shadow);backdrop-filter:blur(14px)}
-.section-head{display:flex;align-items:center;gap:11px;margin-bottom:15px}
-.section-icon{width:42px;height:42px;flex:0 0 42px;border-radius:14px;display:grid;place-items:center;background:#22d3ee18;color:var(--cyan);font-size:1.08rem}
-.section-head h2{font-size:1rem;margin:0;font-weight:900}
-.section-head p{font-size:.74rem;color:var(--muted);margin:1px 0 0;line-height:1.7}
-.head-copy{min-width:0;flex:1}
-.head-link{font-size:.73rem;color:#67d9f5;white-space:nowrap}
-.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.stat{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border-radius:17px;padding:14px;min-width:0}
-.stat:after{content:"";position:absolute;width:90px;height:90px;left:-38px;bottom:-48px;border-radius:50%;background:var(--glow,rgba(96,165,250,.13));filter:blur(2px)}
-.stat-label{display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted);font-size:.73rem}
-.stat-symbol{width:29px;height:29px;border-radius:10px;display:grid;place-items:center;background:var(--symbol-bg,#60a5fa18);color:var(--symbol,#93c5fd);font-size:.9rem}
-.stat strong{display:block;font-size:1.85rem;line-height:1.4;margin-top:7px;font-weight:900;font-variant-numeric:tabular-nums}
-.stat small{color:var(--muted);font-size:.68rem}
-.stat.blue{--symbol:#93c5fd;--symbol-bg:#60a5fa1c;--glow:#60a5fa18}.stat.green{--symbol:#6ee7b7;--symbol-bg:#34d3991c;--glow:#34d39918}.stat.amber{--symbol:#fcd34d;--symbol-bg:#fbbf241c;--glow:#fbbf2418}.stat.purple{--symbol:#c4b5fd;--symbol-bg:#a78bfa1c;--glow:#a78bfa18}
-.stat.blue strong{color:#93c5fd}.stat.green strong{color:#6ee7b7}.stat.amber strong{color:#fcd34d}.stat.purple strong{color:#c4b5fd}
-.statusline{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;padding:11px 13px;border-radius:14px;background:#00000020;border:1px solid var(--line);font-size:.72rem;color:var(--muted)}
-.health{display:inline-flex;align-items:center;gap:8px}
-.health-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px #fbbf2418}
-.health.ok .health-dot{background:var(--green);box-shadow:0 0 0 4px #34d39918}
-.health.bad .health-dot{background:var(--red);box-shadow:0 0 0 4px #fb718518}
-.statusline strong{color:var(--text)}
-.refresh{border:0;background:transparent;color:#67d9f5;font:700 .72rem Vazirmatn,sans-serif;cursor:pointer;padding:0}
-.refresh:disabled{opacity:.5;cursor:wait}
-.type-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.type-chip{padding:5px 10px;border-radius:999px;border:1px solid rgba(52,211,153,.38);background:rgba(16,185,129,.12);color:#6ee7b7;font-size:.69rem}
-.type-chip b{color:#6ee7b7;margin-right:4px}
-.site-footer{padding:20px 8px 28px;margin-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center;color:var(--muted);font-size:.76rem;line-height:2}
-.site-footer a{color:var(--muted);text-decoration:none;transition:color .2s}
-.site-footer a:hover{color:var(--cyan)}
-.footer-legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px}
-.footer-credit{font-weight:700}
-.footer-credit a{color:#67d9f5}
-.footer-views{font-size:.72rem;color:var(--muted)}
-.footer-views span{font-variant-numeric:tabular-nums;color:#6ee7b7;font-weight:800}
-.subscription-list{display:grid;gap:11px}
-.subscription{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff09,#ffffff03);border-radius:18px;padding:15px}
-.subscription.featured{border-color:#34d39955;background:linear-gradient(135deg,#0e3a3b70,#14213b 62%,#172642);box-shadow:0 12px 34px #10b98112}
-.subscription.featured:before{content:"";position:absolute;width:150px;height:150px;left:-65px;top:-95px;border-radius:50%;background:#34d39912}
-.sub-top{display:flex;align-items:center;gap:11px;position:relative}
-.sub-icon{width:43px;height:43px;flex:0 0 43px;border-radius:14px;display:grid;place-items:center;background:#60a5fa1b;color:#93c5fd;font-size:1.15rem}
-.featured .sub-icon{background:#34d39920;color:#6ee7b7}
-.sub-info{flex:1;min-width:0}
-.sub-info h3{font-size:.91rem;margin:0;font-weight:900}
-.sub-info p{font-size:.71rem;color:var(--muted);margin:2px 0 0;line-height:1.8}
-.tag{font-size:.63rem;color:#86efac;background:#10b9811a;border:1px solid #10b98135;padding:4px 8px;border-radius:30px;white-space:nowrap}
-.sub-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:13px;position:relative}
-.sub-actions .btn{padding:9px 7px;font-size:.7rem;border:1px solid var(--line);background:#ffffff08;color:#dbeafe}
-.sub-actions .btn.main-action{background:linear-gradient(110deg,#2563eb,#0891b2);border:0;color:#fff}
-.sub-actions .btn:hover{border-color:#60a5fa77}
-.format-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.format{display:flex;align-items:center;gap:10px;min-width:0;padding:11px;border:1px solid var(--line);border-radius:15px;background:#ffffff05;transition:.2s}
-.format:hover{border-color:#22d3ee55;background:#22d3ee09}
-.format-icon{width:34px;height:34px;flex:0 0 34px;border-radius:11px;display:grid;place-items:center;background:#60a5fa18;color:#93c5fd;font-size:.75rem;font-weight:900}
-.format-info{min-width:0;flex:1}
-.format strong{display:block;font-size:.77rem}
-.format small{display:block;color:var(--muted);font-size:.64rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.format a{font-size:.68rem;color:#67d9f5;font-weight:800;white-space:nowrap}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px}
-table{width:100%;border-collapse:collapse;min-width:540px;background:#08162966}
-th,td{text-align:right;padding:11px 13px;border-bottom:1px solid var(--line);font-size:.75rem;white-space:nowrap}
-th{color:#a8b9d2;background:#ffffff06;font-weight:800}
-td{color:#dce9f8}
-td a{color:#67d9f5;font-weight:700}
-tbody tr:last-child td{border-bottom:0}
-tbody tr:hover{background:#ffffff05}
-.protocol{font-weight:900;color:#fff}
-footer{padding:18px 5px 25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.7rem}
-footer a{color:#67d9f5}
-.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#059669;color:#fff;padding:10px 16px;border-radius:12px;font-size:.76rem;font-weight:800;transition:.25s;z-index:30;box-shadow:0 8px 30px #0007;white-space:nowrap}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(min-width:620px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{padding:15px}.subscription-list{grid-template-columns:1fr 1fr}.subscription.featured{grid-column:1/-1}}
-@media(max-width:620px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:0}.top-inner{width:calc(100% - 20px);padding:9px 0 10px;display:grid;grid-template-columns:minmax(0,1fr);gap:9px}.brand{justify-self:center}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.nav a{min-width:0;font-size:clamp(.58rem,2.6vw,.7rem);padding:7px 3px;line-height:1.5;text-align:center}.nav-live-dot{width:6px;height:6px;margin-left:4px;flex:0 0 6px}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
-@media(max-width:350px){.nav{gap:4px}.nav a{font-size:.57rem;padding:7px 1px}.nav-live-dot{margin-left:3px}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
-.seo-copy{color:var(--muted);font-size:.82rem;line-height:2.15;margin:8px 0}.seo-copy strong{color:var(--text)}
-
-/* Mobile and touch-device layout: also handles iOS Safari "Request Desktop Website". */
-@media (max-width: 980px), (pointer: coarse) and (hover: none) {
-  html, body { width:100%; max-width:100%; overflow-x:hidden; }
-  .shell, .top-inner { width:calc(100% - 20px); max-width:760px; min-width:0; }
-  .top { width:100%; }
-  .top-inner { display:grid; grid-template-columns:minmax(0,1fr); justify-content:stretch; gap:9px; padding:9px 0 10px; }
-  .brand { justify-self:center; }
-  .nav { width:100%; min-width:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; }
-  .nav a { min-width:0; white-space:normal; padding:7px 3px; font-size:clamp(.58rem,2.6vw,.7rem); text-align:center; }
-  main { width:100%; min-width:0; }
-  main > *, .panel, .hero, .section-head, .stats { min-width:0; }
-  .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .stat { min-width:0; }
-  .section-head { flex-wrap:wrap; }
-  .head-copy { min-width:0; }
-  .head-link { margin-inline-start:auto; }
-  .hero p { max-width:100%; overflow-wrap:anywhere; }
-  .table-wrap { max-width:100%; }
-}
-@media (max-width: 380px), (pointer: coarse) and (hover: none) and (max-width: 430px) {
-  .panel { padding:12px; }
-  .stats { gap:8px; }
-  .stat { padding:10px; }
-  .stat strong { font-size:1.4rem; }
-  .nav { gap:4px; }
-  .nav a { padding-inline:2px; }
-}
-
-
-/* Touch-first responsive layout: fixes iOS Safari desktop-site mode. */
-@media (max-width: 980px), (pointer: coarse) and (hover: none) {
-html,body{width:100%;max-width:100%;overflow-x:hidden}
-.shell,.top-inner{width:calc(100% - 20px);max-width:760px;min-width:0}
-.top{width:100%}
-.top-inner{display:grid;grid-template-columns:minmax(0,1fr);justify-content:stretch;gap:9px;padding:9px 0 10px}
-.brand{justify-self:center}
-.nav{width:100%;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-.nav a{min-width:0;white-space:normal;padding:7px 3px;font-size:clamp(.58rem,2.6vw,.7rem);text-align:center}
-main{width:100%;min-width:0}
-main>*,.panel,.hero,.section-head,.stats{min-width:0}
-.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-.stat{min-width:0}
-.section-head{flex-wrap:wrap}
-.head-copy{min-width:0}
-.head-link{margin-inline-start:auto}
-.hero p{max-width:100%;overflow-wrap:anywhere}
-.table-wrap{max-width:100%}
-}
-@media(max-width:430px){.panel{padding:12px}.stats{gap:8px}.stat{padding:10px}.stat strong{font-size:1.4rem}.nav{gap:4px}.nav a{padding-inline:2px}}
-
-/* Header layout follows the compact SiNAVM / Melishekan page */
-.top{height:58px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.top>a{font-weight:800;display:flex;gap:9px;align-items:center;color:var(--text);text-decoration:none}
-.top>a i{color:var(--cyan)}
-.shell{width:min(100% - 28px,680px)}
-.hero{padding:16px 12px 8px}
-.hero-logo{width:82px;height:82px;border-radius:24px}
-.eyebrow{font-size:.82rem;margin:15px 0 4px}
-.hero p{max-width:500px}
-.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:998;text-decoration:none;box-shadow:0 7px 24px rgba(0,0,0,.28);transition:transform .2s,opacity .2s,background .2s}
-.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ED9,#1d8fc7);color:#fff;font-size:1.45rem}
-.floating-tg-btn:hover{transform:scale(1.07)}
-.scroll-top-btn{right:18px;background:rgba(255,255,255,.1);border:1px solid var(--line);color:var(--text);font-size:1.35rem;opacity:0;visibility:hidden;pointer-events:none}
-.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
-.scroll-top-btn:hover{transform:translateY(-2px);background:rgba(34,211,238,.18)}
-@media(max-width:430px){.top{height:56px}.shell{width:min(100% - 20px,680px)}.hero{padding:12px 6px 6px}.hero-logo{width:76px;height:76px}.floating-tg-btn,.scroll-top-btn{width:48px;height:48px;bottom:16px}.floating-tg-btn{left:14px}.scroll-top-btn{right:14px}}
-
-
-/* Exact Melishekan-style top and hero geometry. Existing SVM logo is intentionally preserved. */
-.top{height:58px!important;min-height:58px!important;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:0}
-.top>a{height:100%;display:flex;align-items:center;justify-content:center;gap:9px;font-weight:800;color:var(--text);text-decoration:none!important;white-space:nowrap}
-.top>a i{color:var(--cyan);font-size:1.35rem}
-main,.shell{width:min(100% - 28px,680px);max-width:680px;margin-left:auto;margin-right:auto}
-main{margin-top:34px;margin-bottom:70px;display:grid;gap:20px}
-.hero{text-align:center;padding:16px 12px 8px}
-.hero-logo{display:block;width:82px;height:82px;margin:0 auto;border-radius:24px;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 45px rgba(37,99,235,.22)}
-.eyebrow{display:block;text-align:center;color:var(--cyan);font-size:.82rem;font-weight:800;margin:15px 0 4px}
-h1{font-size:clamp(1.7rem,6vw,2.35rem);line-height:1.5;margin:0;font-weight:900;letter-spacing:-.7px}
-.hero p{color:var(--muted);line-height:2;margin:8px auto 0;max-width:500px;font-size:.94rem}
-.hero-actions{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;margin-top:18px}
-.btn{border-radius:13px;padding:11px 15px}
-.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:54px;height:54px;min-width:54px;min-height:54px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;text-decoration:none!important;line-height:1;box-shadow:0 8px 28px rgba(0,0,0,.32);transition:transform .2s,opacity .2s,background .2s}
-.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ed9,#168ac4);color:#fff;font-size:1.7rem}
-.floating-tg-btn i,.scroll-top-btn i{display:block;line-height:1}
-.floating-tg-btn:hover{transform:translateY(-2px) scale(1.04);color:#fff}
-.scroll-top-btn{right:18px;background:rgba(30,41,59,.96);border:1px solid rgba(148,163,184,.3);color:#f5f8ff;font-size:1.45rem;opacity:0;visibility:hidden;pointer-events:none}
-.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
-.scroll-top-btn:hover{transform:translateY(-3px);background:rgba(8,145,178,.95);color:#fff}
-@media(max-width:430px){
- .top{height:58px!important;min-height:58px!important}
- main,.shell{width:min(100% - 20px,680px)}
- main{margin-top:22px;margin-bottom:70px;gap:16px}
- .hero{padding:16px 12px 8px}
- .hero-logo{width:82px;height:82px}
- .hero p{font-size:.94rem}
- .floating-tg-btn,.scroll-top-btn{width:50px;height:50px;min-width:50px;min-height:50px;bottom:16px}
- .floating-tg-btn{left:14px}.scroll-top-btn{right:14px}
-}
-
-</style>
+<meta property="og:title" content="SVM | داشبورد زنده V2Ray و Xray">
+<meta property="og:description" content="اشتراک‌های به‌روز، گزارش تست و خروجی چندکلاینتی پروژه SVM.">
+<meta property="og:image" content="https://sinavm.github.io/SVM/docs/hero.svg">
+<meta property="og:image:alt" content="SVM V2Ray Collector">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SVM | V2Ray Collector">
+<meta name="twitter:description" content="Live subscriptions, client formats and test reports.">
+<meta name="twitter:image" content="https://sinavm.github.io/SVM/docs/hero.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sinavm.github.io/SVM/#organization","name":"SiNAVM","alternateName":"SVM","url":"https://sinavm.github.io/SVM/","logo":"https://sinavm.github.io/SVM/SEO_Logo.svg","sameAs":["https://github.com/sinavm/SVM","https://t.me/sinavm"]},{"@type":"WebSite","@id":"https://sinavm.github.io/SVM/#website","url":"https://sinavm.github.io/SVM/","name":"SVM","inLanguage":"fa-IR","publisher":{"@id":"https://sinavm.github.io/SVM/#organization"}},{"@type":"WebPage","@id":"https://sinavm.github.io/SVM/#webpage","url":"https://sinavm.github.io/SVM/","name":"SVM | داشبورد زنده اشتراک‌های V2Ray و Xray","inLanguage":"fa-IR","isPartOf":{"@id":"https://sinavm.github.io/SVM/#website"}}]}</script>
+<title>SVM | داشبورد زنده اشتراک‌های V2Ray و Xray | SiNAVM</title>
 </head>
 <body>
-<nav class="top" aria-label="ناوبری صفحه"><a href="https://sinavm.github.io/sinavm/"><i class="fa-solid fa-house" aria-hidden="true"></i><span>صفحه اصلی SiNAVM</span></a></nav>
-<main class="shell">
-<header class="hero">
-<img class="hero-logo" src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM برای کانفیگ رایگان V2Ray و Xray">
-<div class="eyebrow">داشبورد زنده اشتراک‌های SiNAVM</div>
-<h1>اتصال بهتر <span>انتخاب ساده‌ و رایگان</span></h1>
-<p>هر شش ساعت تمامی اشتراک‌ها به‌روزرسانی می‌شوند.</p>
-<div class="hero-actions">
-<a class="btn btn-primary" href="#subscriptions">دریافت اشتراک‌ها <span>←</span></a>
-<a class="btn btn-ghost" href="#protocols">اشتراک بر اساس پروتکل <span>⌄</span></a>
+<a class="skip" href="#main">رفتن به محتوای اصلی</a>
+<div class="site-top" id="top">
+<div class="atmosphere" aria-hidden="true"><div class="glow glow-a"></div><div class="glow glow-b"></div><div class="mesh"></div></div>
+<div class="shell">
+<header class="topbar">
+<a class="identity" href="#top" aria-label="صفحه اصلی SVM">
+<span class="identity-icon"><img src="https://sinavm.github.io/SVM/SEO_Logo.svg" width="44" height="44" alt="" decoding="async"></span>
+<span class="identity-copy"><strong>SVM</strong><small>SINAVM · V2RAY COLLECTOR</small></span>
+</a>
+<nav class="primary-nav" aria-label="ناوبری اصلی">
+<a href="#live">وضعیت زنده</a><a href="#subscriptions">اشتراک‌ها</a><a href="#formats">کلاینت‌ها</a><a href="#protocols">پروتکل‌ها</a><a href="#support">حمایت</a>
+</nav>
+<div class="nav-tools">
+<a class="nav-telegram" href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+<a class="nav-git" href="https://github.com/sinavm/SVM" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
 </div>
+<details class="mobile-menu"><summary aria-label="باز کردن منو">☰</summary><nav aria-label="منوی موبایل"><a href="#live">وضعیت زنده</a><a href="#subscriptions">اشتراک‌ها</a><a href="#formats">کلاینت‌ها</a><a href="#protocols">پروتکل‌ها</a><a href="#support">حمایت مالی</a><a href="https://t.me/sinavm">Telegram ↗</a><a href="https://github.com/sinavm/SVM">GitHub ↗</a></nav></details>
 </header>
-<section class="panel" id="live">
-<div class="section-head">
-<div class="section-icon">◉</div>
-<div class="head-copy"><h2>وضعیت آخرین بررسی</h2><p>آمار مستقیماً از گزارش آخرین اجرای تست خوانده می‌شود.</p></div>
-<a class="head-link" href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json">گزارش کامل ↗</a>
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-text">
+<span class="eyebrow-pill"><i class="live-dot" aria-hidden="true"></i> داشبورد زنده اشتراک‌های SVM</span>
+<h1 id="hero-title"><span>اتصال بهتر،</span><span class="sheen">انتخاب هوشمندتر.</span></h1>
+<p class="hero-desc">اشتراک‌های به‌روز V2Ray و Xray را یک‌جا بررسی کن. وضعیت آخرین تست را ببین و لینک مناسب کلاینتت را مستقیم دریافت کن.</p>
+<div class="hero-actions"><a class="btn btn-white" href="#subscriptions">انتخاب اشتراک <span aria-hidden="true">↓</span></a><a class="btn btn-ghost" href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a></div>
+<p class="hero-note"><i aria-hidden="true"></i> گردآوری · اعتبارسنجی · مرتب‌سازی · انتشار</p>
 </div>
-<div class="stats">
-<article class="stat blue"><div class="stat-label"><span>کانفیگ بررسی‌شده</span><span class="stat-symbol">◎</span></div><strong id="input">—</strong><small>تعداد ورودی تست</small></article>
-<article class="stat green"><div class="stat-label"><span>نود سالم</span><span class="stat-symbol">✓</span></div><strong id="kept">—</strong><small>پس از بررسی پروتکل</small></article>
-<article class="stat amber"><div class="stat-label"><span>TCP در دسترس</span><span class="stat-symbol">↗</span></div><strong id="tcp">—</strong><small>پاسخ‌گویی در سطح TCP</small></article>
-<article class="stat purple"><div class="stat-label"><span>تبدیل موفق</span><span class="stat-symbol">⇄</span></div><strong id="converted">—</strong><small>خروجی تبدیل‌شده</small></article>
+<div class="hero-visual" aria-label="نمای گرافیکی سامانه SVM">
+<div class="orbit orbit-a" aria-hidden="true"></div><div class="orbit orbit-b" aria-hidden="true"></div>
+<ul class="proto-orbit" aria-hidden="true"><li style="--i:0">VLESS</li><li style="--i:1">REALITY</li><li style="--i:2">VMESS</li><li style="--i:3">TROJAN</li><li style="--i:4">SHADOWSOCKS</li><li style="--i:5">HYSTERIA2</li></ul>
+<div class="brand-stage"><strong>SVM</strong><small>COLLECT · VALIDATE · PUBLISH</small></div>
+<div class="float-note"><span class="tick">✓</span><span><strong>Live pipeline</strong><small>Automated validation</small></span></div>
+<div class="probe-card"><span><b>●</b> SVM / LIVE STATUS</span><span>COLLECT → VALIDATE</span><span class="ok">PUBLISH → READY ✓</span></div>
 </div>
-<div class="statusline">
-<span class="health" id="health"><i class="health-dot"></i><strong>در حال دریافت وضعیت…</strong></span>
-<span id="tested-at">آخرین تست: —</span>
-<button class="refresh" id="refresh" type="button">به‌روزرسانی ↻</button>
+</section>
+<div class="hero-rail" aria-hidden="true"><span>OPEN SOURCE / SINAVM</span><span class="rail-signal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>V2RAY NETWORK / SVM</span></div>
 </div>
+</div>
+<main class="shell" id="main">
+<section class="overview" id="live" aria-labelledby="live-title">
+<div class="caption-row"><h2 class="caption" id="live-title"><span class="diamond"></span>گزارش زنده و وضعیت آخرین تست</h2><span class="runner">SOURCE · reports/test.json</span></div>
+<div class="stats-grid">
+<article class="stat stat-primary"><span class="stat-k">کانفیگ بررسی‌شده</span><strong id="input">—</strong><span class="stat-foot">کل ورودی‌های تست</span></article>
+<article class="stat"><span class="stat-k">نود سالم</span><strong id="kept">—</strong><span class="stat-foot">پس از اعتبارسنجی پروتکل</span></article>
+<article class="stat"><span class="stat-k">TCP در دسترس</span><strong id="tcp">—</strong><span class="stat-foot">پاسخ‌گویی در سطح TCP</span></article>
+<article class="stat"><span class="stat-k">تبدیل موفق</span><strong id="converted">—</strong><span class="stat-foot">خروجی‌های تبدیل‌شده</span></article>
+</div>
+<div class="fresh-bar"><div class="fresh-status" id="health" data-state="loading" role="status" aria-live="polite"><i class="fresh-dot"></i><span id="health-text">در حال دریافت گزارش…</span></div><div class="fresh-right"><span id="tested-at">آخرین تست: —</span><button class="refresh-btn" id="refresh" type="button">به‌روزرسانی ↻</button></div></div>
 <div class="type-row" id="types" aria-label="توزیع نودهای سالم"><span class="type-chip">در انتظار گزارش…</span></div>
 </section>
-<section class="panel" id="subscriptions">
-<div class="section-head">
-<div class="section-icon">⇩</div>
-<div class="head-copy"><h2>انتخاب اشتراک</h2><p>یک لینک آماده انتخاب کن و در کلاینتت وارد کن.</p></div>
-</div>
+<section class="hub" id="subscriptions" aria-labelledby="subscriptions-title">
+<div class="section-head"><div><div class="overline"><span class="overline-line"></span>SUBSCRIPTION HUB</div><h2 id="subscriptions-title">انتخاب اشتراک</h2><p>لینک مناسب را انتخاب کن، در کلاینت وارد کن و متصل شو.</p></div><span class="head-aside">RAW LINKS · AUTO UPDATED</span></div>
 <div class="subscription-list">
-<article class="subscription featured">
-<div class="sub-top"><div class="sub-icon">⚡</div><div class="sub-info"><h3>لایت سریع</h3><p>فهرست سبک‌تر برای اتصال سریع و استفاده روزمره</p></div><span class="tag">پیشنهاد شروع</span></div>
-<div class="sub-actions">
-<a class="btn main-action" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت اشتراک</a>
-<button class="btn copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast" type="button">کپی لینک</button>
-</div>
-</article>
-<article class="subscription">
-<div class="sub-top"><div class="sub-icon">◈</div><div class="sub-info"><h3>لایت پایدار</h3><p>فهرست جمع‌وجور با اولویت نودهای پایدارتر</p></div></div>
-<div class="sub-actions">
-<a class="btn main-action" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت اشتراک</a>
-<button class="btn copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable" type="button">کپی لینک</button>
-</div>
-</article>
-<article class="subscription">
-<div class="sub-top"><div class="sub-icon">◇</div><div class="sub-info"><h3>اشتراک کامل</h3><p>بیشترین تنوع برای انتخاب و فیلتر در کلاینت</p></div></div>
-<div class="sub-actions">
-<a class="btn main-action" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت اشتراک</a>
-<button class="btn copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix" type="button">کپی لینک</button>
-</div>
-</article>
+<article class="subscription featured"><div class="sub-top"><span class="sub-icon">⚡</span><div class="sub-info"><h3>لایت سریع</h3><p>فهرست سبک‌تر برای اتصال سریع و استفاده روزمره</p></div><span class="tag">پیشنهاد شروع</span></div><div class="sub-actions"><a class="btn btn-blue" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast">دریافت اشتراک ↗</a><button class="btn secondary copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast" type="button">Copy link</button><button class="btn secondary qr" data-qr="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-fast" type="button">QR code</button></div></article>
+<article class="subscription"><div class="sub-top"><span class="sub-icon">◈</span><div class="sub-info"><h3>لایت پایدار</h3><p>فهرست جمع‌وجور با اولویت پایداری</p></div></div><div class="sub-actions"><a class="btn btn-blue" href="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable">دریافت اشتراک ↗</a><button class="btn secondary copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable" type="button">Copy link</button><button class="btn secondary qr" data-qr="https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable" type="button">QR code</button></div></article>
+<article class="subscription"><div class="sub-top"><span class="sub-icon">◇</span><div class="sub-info"><h3>اشتراک کامل</h3><p>تنوع کامل نودها برای انتخاب و فیلتر در کلاینت</p></div></div><div class="sub-actions"><a class="btn btn-blue" href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت اشتراک ↗</a><button class="btn secondary copy" data-copy="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix" type="button">Copy link</button><button class="btn secondary qr" data-qr="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix" type="button">QR code</button></div></article>
 </div>
 </section>
-<section class="panel" id="formats">
-<div class="section-head">
-<div class="section-icon">▤</div>
-<div class="head-copy"><h2>فرمت‌های آماده کلاینت</h2><p>خروجی مستقیم برای برنامه‌های مختلف</p></div>
-</div>
+<section id="formats" aria-labelledby="formats-title">
+<div class="section-head"><div><div class="overline"><span class="overline-line"></span>CLIENT FORMATS</div><h2 id="formats-title">خروجی برای کلاینت‌های مختلف</h2><p>فرمت‌های مستقیم و آماده استفاده در برنامه‌های سازگار.</p></div></div>
 <div class="format-grid">
-<div class="format"><span class="format-icon">SB</span><span class="format-info"><strong>Sing-box</strong><small>JSON profile</small></span><a href="./singbox/mix.html">افزودن به Sing-box ↗</a></div>
-<div class="format"><span class="format-icon">XR</span><span class="format-info"><strong>Xray</strong><small>Normal subscription</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">دریافت ↗</a></div>
-<div class="format"><span class="format-icon">64</span><span class="format-info"><strong>Xray Base64</strong><small>Encoded subscription</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix">دریافت ↗</a></div>
-<div class="format"><span class="format-icon">CL</span><span class="format-info"><strong>Clash</strong><small>YAML profile</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix">دریافت ↗</a></div>
-<div class="format"><span class="format-icon">CM</span><span class="format-info"><strong>Clash Meta</strong><small>Meta YAML</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix">دریافت ↗</a></div>
-<div class="format"><span class="format-icon">SF</span><span class="format-info"><strong>Surfboard</strong><small>Surfboard profile</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix">دریافت ↗</a></div>
+<div class="format"><span class="format-icon">SB</span><span class="format-info"><strong>Sing-box</strong><small>JSON profile</small></span><a href="singbox/mix.html">Open ↗</a></div>
+<div class="format"><span class="format-icon">XR</span><span class="format-info"><strong>Xray</strong><small>Normal subscription</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix">Get ↗</a></div>
+<div class="format"><span class="format-icon">64</span><span class="format-info"><strong>Xray Base64</strong><small>Encoded subscription</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/base64/mix">Get ↗</a></div>
+<div class="format"><span class="format-icon">CL</span><span class="format-info"><strong>Clash</strong><small>YAML profile</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/clash/mix">Get ↗</a></div>
+<div class="format"><span class="format-icon">CM</span><span class="format-info"><strong>Clash Meta</strong><small>Meta YAML</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/mix">Get ↗</a></div>
+<div class="format"><span class="format-icon">SF</span><span class="format-info"><strong>Surfboard</strong><small>Surfboard profile</small></span><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/surfboard/mix">Get ↗</a></div>
 </div>
 </section>
-<section class="panel" id="protocols">
-<div class="section-head">
-<div class="section-icon">⌘</div>
-<div class="head-copy"><h2>اشتراک بر اساس پروتکل</h2><p>فرمت مناسب را از ردیف پروتکل انتخاب کن.</p></div>
+<section class="data-panel" id="protocols" aria-labelledby="protocols-title">
+<div class="section-head"><div><div class="overline"><span class="overline-line"></span>PROTOCOL DIRECTORY</div><h2 id="protocols-title">اشتراک بر اساس پروتکل</h2><p>فرمت مناسب را مستقیماً از ردیف پروتکل انتخاب کن.</p></div></div>
+<div class="table-wrap"><table><thead><tr><th>پروتکل</th><th>Sing-box</th><th>Xray</th><th>Clash Meta</th></tr></thead><tbody>
+<tr><td class="protocol">VLESS</td><td><a href="singbox/vless.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vless">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vless">YAML ↗</a></td></tr>
+<tr><td class="protocol">VMess</td><td><a href="singbox/vmess.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vmess">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vmess">YAML ↗</a></td></tr>
+<tr><td class="protocol">Trojan</td><td><a href="singbox/trojan.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/trojan">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/trojan">YAML ↗</a></td></tr>
+<tr><td class="protocol">Shadowsocks</td><td><a href="singbox/ss.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/ss">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/ss">YAML ↗</a></td></tr>
+<tr><td class="protocol">Hysteria2</td><td><a href="singbox/hy2.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/hy2">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/hy2">YAML ↗</a></td></tr>
+<tr><td class="protocol">TUIC</td><td><a href="singbox/tuic.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/tuic">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/tuic">YAML ↗</a></td></tr>
+<tr><td class="protocol">Reality</td><td><a href="singbox/reality.html">Open ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/reality">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/reality">YAML ↗</a></td></tr>
+</tbody></table></div><p class="section-footnote">در دسترس بودن هر خروجی به اجرای موفق آخرین چرخه تولید بستگی دارد.</p>
+</section>
+<section class="donation" id="support" aria-labelledby="support-title">
+<div class="section-head"><div><div class="overline"><span class="overline-line"></span>SUPPORT THE PROJECT</div><h2 id="support-title">حمایت از توسعه SVM</h2><p>اگر SVM برایت مفید بوده، حمایت تو به ادامه نگهداری و توسعه پروژه کمک می‌کند.</p></div></div>
+<div class="wallet-grid">
+<article class="wallet-card"><div class="wallet-head"><span class="coin">₿</span><span><strong>Bitcoin · BTC</strong><small>Bitcoin Network</small></span></div><div class="wallet-qr"><img data-wallet-qr="btc" alt="Bitcoin wallet QR" loading="lazy"></div><code class="wallet-address">bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58</code><button class="wallet-copy" data-copy="bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58" type="button">Copy address</button></article>
+<article class="wallet-card"><div class="wallet-head"><span class="coin">Ξ</span><span><strong>ETH + USDT</strong><small>Ethereum · BNB Smart Chain (BEP20)</small></span></div><div class="wallet-qr"><img data-wallet-qr="evm" alt="EVM wallet QR" loading="lazy"></div><code class="wallet-address">0x570f2ea8e90fcE23F1F0286492dDB189Ad9a0E85</code><button class="wallet-copy" data-copy="0x570f2ea8e90fcE23F1F0286492dDB189Ad9a0E85" type="button">Copy address</button></article>
+<article class="wallet-card"><div class="wallet-head"><span class="coin">TON</span><span><strong>Toncoin · TON</strong><small>TON Network</small></span></div><div class="wallet-qr"><img data-wallet-qr="ton" alt="TON wallet QR" loading="lazy"></div><code class="wallet-address">UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY</code><button class="wallet-copy" data-copy="UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY" type="button">Copy address</button></article>
 </div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>پروتکل</th><th>Sing-box</th><th>Xray</th><th>Clash Meta</th></tr></thead>
-<tbody>
-<tr><td class="protocol">VLESS</td><td><a href="./singbox/vless.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vless">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vless">YAML ↗</a></td></tr>
-<tr><td class="protocol">VMess</td><td><a href="./singbox/vmess.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/vmess">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/vmess">YAML ↗</a></td></tr>
-<tr><td class="protocol">Trojan</td><td><a href="./singbox/trojan.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/trojan">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/trojan">YAML ↗</a></td></tr>
-<tr><td class="protocol">Shadowsocks</td><td><a href="./singbox/ss.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/ss">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/ss">YAML ↗</a></td></tr>
-<tr><td class="protocol">Hysteria2</td><td><a href="./singbox/hy2.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/hy2">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/hy2">YAML ↗</a></td></tr>
-<tr><td class="protocol">TUIC</td><td><a href="./singbox/tuic.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/tuic">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/tuic">YAML ↗</a></td></tr>
-<tr><td class="protocol">Reality</td><td><a href="./singbox/reality.html">افزودن به Sing-box ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/reality">Normal ↗</a></td><td><a href="https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/meta/reality">YAML ↗</a></td></tr>
-</tbody>
-</table>
+<p class="wallet-note">USDT is accepted on <strong>BNB Smart Chain (BEP20)</strong> at the EVM address above. ETH is accepted on <strong>Ethereum (ERC20)</strong>. The same EVM address is used on both networks; assets remain separate by network. BTC and TON use their own networks.</p>
+</section>
+<section id="about" aria-labelledby="about-title">
+<div class="section-head"><div><div class="overline"><span class="overline-line"></span>ABOUT SVM</div><h2 id="about-title">درباره پروژه</h2><p>چرخه خودکار گردآوری، بررسی، مرتب‌سازی و انتشار خروجی‌های چندکلاینتی.</p></div></div>
+<p class="seo-copy"><strong>SVM (SiNAVM)</strong> مجموعه‌ای از اشتراک‌های رایگان V2Ray و Xray را در قالب‌های سازگار با Xray، Sing-box، Clash، Clash Meta و Surfboard ارائه می‌کند. گزارش تست و وضعیت نودها از فایل‌های گزارش پروژه خوانده می‌شود و خروجی‌ها با چرخه خودکار به‌روزرسانی می‌شوند.</p>
+<div class="faq-list">
+<details class="faq-item"><summary>چطور از اشتراک استفاده کنم؟</summary><p>لینک موردنظر را کپی کن و در بخش Subscription کلاینت سازگار وارد کن. برای فرمت‌های دیگر از بخش کلاینت‌ها استفاده کن.</p></details>
+<details class="faq-item"><summary>آمار زنده هر چند وقت به‌روز می‌شود؟</summary><p>گزارش بر اساس آخرین فایل تست منتشرشده در مخزن خوانده می‌شود. زمان نمایش‌داده‌شده زمان ثبت همان تست است.</p></details>
+<details class="faq-item"><summary>آیا همه نودها همیشه کار می‌کنند؟</summary><p>خیر. وضعیت نودها ممکن است با زمان، اپراتور و موقعیت جغرافیایی تغییر کند. گزارش تست فقط وضعیت زمان بررسی را نشان می‌دهد.</p></details>
 </div>
-</section><footer class="site-footer">
-<div class="footer-legal"><a href="https://sinavm.github.io/sinavm/legal_pages/about.html" rel="noopener noreferrer">درباره ما</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html" rel="noopener noreferrer">سیاست حریم خصوصی</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/terms.html" rel="noopener noreferrer">شرایط استفاده</a></div>
-<div class="footer-credit"><a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Design &amp; Config by SiNAVM</a></div>
-<div class="footer-views">بازدید کل: <span id="visit-count" aria-live="polite">...</span></div>
-</footer>
+</section>
+<footer><span>© SVM · SiNAVM · V2Ray Collector</span><span><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://github.com/sinavm/SVM/actions">Actions</a> · <a href="https://t.me/sinavm">Telegram</a> · <a href="#top">Back to top ↑</a></span></footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<a href="https://t.me/sinavm" class="floating-tg-btn" target="_blank" rel="noopener noreferrer" title="کانال تلگرام" aria-label="ورود به کانال تلگرام SiNAVM"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-<a href="#" class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا" aria-label="بازگشت به بالای صفحه"><i class="fa-solid fa-angles-up" aria-hidden="true"></i></a>
-
-<script>
-const reportUrl='https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json';
-const numberFormat=new Intl.NumberFormat('fa-IR');
-const byId=id=>document.getElementById(id);
-const scrollTopBtn=byId('scrollTopBtn');
-function updateScrollTop(){if(scrollTopBtn)scrollTopBtn.classList.toggle('visible',window.scrollY>300)}
-window.addEventListener('scroll',updateScrollTop,{passive:true});
-updateScrollTop();
-if(scrollTopBtn)scrollTopBtn.addEventListener('click',event=>{event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
-
-const put=(id,value)=>{const el=byId(id);if(el)el.textContent=value===undefined||value===null?'—':numberFormat.format(value)};
-function showToast(message){const toast=byId('toast');toast.textContent=message;toast.classList.add('show');window.setTimeout(()=>toast.classList.remove('show'),2200)}
-async function loadReport(){
-const refresh=byId('refresh');
-refresh.disabled=true;
-refresh.textContent='در حال دریافت…';
-try{
-const response=await fetch(reportUrl,{cache:'no-store'});
-if(!response.ok)throw new Error('report unavailable');
-const data=await response.json();
-put('input',data.input);
-put('kept',data.kept);
-put('tcp',data.tcp_alive);
-put('converted',data.converted);
-const date=data.tested_at?new Date(data.tested_at):null;
-byId('tested-at').textContent='آخرین تست: '+(date&&!Number.isNaN(date.getTime())?new Intl.DateTimeFormat('fa-IR',{dateStyle:'medium',timeStyle:'short'}).format(date):'نامشخص');
-const health=byId('health');
-health.className='health '+(data.infra_ok===true?'ok':'bad');
-health.innerHTML='<i class="health-dot"></i><strong>'+(data.infra_ok===true?'زیرساخت تست سالم است':'وضعیت زیرساخت نیازمند بررسی')+'</strong>';
-const types=data.by_type_kept&&typeof data.by_type_kept==='object'?Object.entries(data.by_type_kept):[];
-byId('types').innerHTML=types.length?types.map(([name,count])=>'<span class="type-chip">'+String(name).toUpperCase()+' <b>'+numberFormat.format(count)+'</b></span>').join(''):'<span class="type-chip">جزئیات پروتکل در گزارش موجود نیست</span>';
-}catch(error){
-byId('health').className='health bad';
-byId('health').innerHTML='<i class="health-dot"></i><strong>گزارش زنده در دسترس نیست</strong>';
-byId('tested-at').textContent='آخرین تست: نامشخص';
-byId('types').innerHTML='<span class="type-chip">برای مشاهده جزئیات، گزارش کامل را باز کن.</span>';
-}finally{
-refresh.disabled=false;
-refresh.textContent='به‌روزرسانی ↻';
-}
-}
-byId('refresh').addEventListener('click',loadReport);
-document.querySelectorAll('[data-copy]').forEach(button=>{
-button.addEventListener('click',async()=>{
-try{await navigator.clipboard.writeText(button.getAttribute('data-copy'));showToast('لینک اشتراک کپی شد')}
-catch{showToast('کپی خودکار در دسترس نیست')}
-});
-});
-loadReport();
-fetch('https://page-views.count1.workers.dev')
- .then(response=>{if(!response.ok)throw new Error('counter unavailable');return response.text()})
- .then(value=>{const el=byId('visit-count');if(el)el.textContent=new Intl.NumberFormat('fa-IR').format(Number(value))})
- .catch(()=>{const el=byId('visit-count');if(el)el.textContent='—'});
-</script>
+<script src="docs/app.js?v=20261107-visual-1" defer></script>
 </body>
 </html>
