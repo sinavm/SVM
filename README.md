@@ -8,19 +8,19 @@
 <a href="https://github.com/sinavm/SVM/stargazers"><img src="https://img.shields.io/github/stars/sinavm/SVM?style=for-the-badge&logo=github&color=f59e0b" alt="ستاره‌های مخزن"></a>
 <a href="https://github.com/sinavm/SVM/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sinavm/SVM?style=for-the-badge&color=10b981" alt="مجوز پروژه"></a>
 <a href="https://github.com/sinavm/SVM/commits/main"><img src="https://img.shields.io/github/last-commit/sinavm/SVM/main?style=for-the-badge&color=64748b" alt="آخرین به‌روزرسانی"></a>
-<a href="https://sinavm.github.io/SVM/"><img src="https://img.shields.io/badge/داشبورد-زنده-0891b2?style=for-the-badge&logo=githubpages&logoColor=white" alt="داشبورد زنده"></a>
+<a href="https://sinavm.github.io/SVM/"><img src="https://img.shields.io/badge/Live-Dashboard-0891b2?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Dashboard"></a>
 </p>
 
 
-<h2>SiNAVM | مجموعه کانفیگ‌های رایگان</h2>
+<h2>SiNAVM | Free Configuration Collection</h2>
 
 </div>
 
 <div align="center">
 
-<a href="#-شروع-سریع"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-links.svg" alt="Get subscription links" width="31%"></a>
-<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="Join SVM on Telegram" width="31%"></a>
-<a href="https://github.com/sinavm/SVM"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-star.svg" alt="Star SVM on GitHub" width="31%"></a>
+<a href="https://github.com/sinavm/SVM"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-star.svg" alt="Star SVM on GitHub" width="70%"></a><br>
+<a href="#-شروع-سریع"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-links.svg" alt="Get subscription links" width="70%"></a><br>
+<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="Join SVM on Telegram" width="70%"></a>
 
 </div>
 
@@ -44,13 +44,12 @@
 
 <div align="center">
 
-<a href="https://github.com/sinavm/SVM/actions"><img src="https://img.shields.io/badge/GitHub%20Actions-گزارش%20اجرا-64748b?style=for-the-badge&logo=githubactions&logoColor=white" alt="گزارش اجرای خودکار"></a>
-<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><img src="https://img.shields.io/badge/Test%20Report-گزارش%20آخرین%20تست-2563eb?style=for-the-badge" alt="گزارش آخرین تست"></a>
-<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><img src="https://img.shields.io/badge/Protocol%20Stats-آمار%20پروتکل‌ها-0d9488?style=for-the-badge" alt="آمار پروتکل‌ها"></a>
+<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><img src="https://img.shields.io/badge/Test%20Report-Latest%20Test-2563eb?style=for-the-badge" alt="Latest Test Report"></a>
+<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><img src="https://img.shields.io/badge/Protocol%20Stats-Protocol%20Stats-0d9488?style=for-the-badge" alt="Protocol Statistics"></a>
 
 </div>
 
-[گزارش آخرین تست](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) · [آمار پروتکل‌ها](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json) · [همه اجراها](https://github.com/sinavm/SVM/actions)
+
 
 ## 📦 اشتراک‌ها بر اساس کلاینت
 
