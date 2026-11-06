@@ -82,6 +82,31 @@ const a=document.createElement("a");a.className="data-chip";a.href=pathUrl("subs
 });
 if(!protocolNames.length)protocolGrid.textContent="دادهٔ پروتکل موجود نیست";
 };
+const renderSourceTiers=()=>{
+const health=state.health;
+const counts=health.source_tiers||{};
+const grid=$("sourceTierGrid");grid.replaceChildren();
+const available=Boolean(health.quality_data_fresh);
+const tiers=[{key:"all",label:"همه منابع",description:"تمام نودهای زنده از همه گروه‌های ورودی"},{key:"curated",label:"منابع منتخب",description:"نودهای ورودی از گروه Curated"},{key:"heavy",label:"منابع حجیم",description:"نودهای ورودی از گروه Heavy"}];
+if(!available){const empty=document.createElement("div");empty.className="empty-state";empty.textContent="خروجی‌های تفکیک منبع پس از انتشار گزارش تست تازه در دسترس قرار می‌گیرند";grid.append(empty);return;}
+tiers.forEach(tier=>{
+const card=document.createElement("article");card.className="source-tier-card";
+const title=document.createElement("strong");title.textContent=tier.label;
+const count=document.createElement("b");count.textContent=counts[tier.key]===null||counts[tier.key]===undefined?"—":fmt(counts[tier.key])+" نود";
+const description=document.createElement("p");description.textContent=tier.description;
+const actions=document.createElement("div");actions.className="source-tier-actions";
+[["Normal","normal"],["Base64","base64"]].forEach(([label,profile])=>{
+const link=document.createElement("a");link.textContent=label;link.href=pathUrl("subscriptions/xray/"+profile+"/source-tiers/"+tier.key);link.target="_blank";link.rel="noopener noreferrer";link.dataset.path="subscriptions/xray/"+profile+"/source-tiers/"+tier.key;actions.append(link);
+});
+card.append(title,count,description,actions);grid.append(card);
+});
+const top=document.createElement("article");top.className="source-tier-card top-tier-card";
+const title=document.createElement("strong");title.textContent="صد نود برتر";
+const count=document.createElement("b");count.textContent=fmt(Math.min(100,Number(health.tiers?.verified||0)))+" نود";
+const description=document.createElement("p");description.textContent="سریع‌ترین نودهای تأییدشده بر اساس نتیجه تست";
+const link=document.createElement("a");link.className="top-tier-link";link.textContent="دریافت Top 100";link.href=pathUrl("top100.txt");link.target="_blank";link.rel="noopener noreferrer";link.dataset.path="top100.txt";
+top.append(title,count,description,link);grid.append(top);
+};
 const renderSources=()=>{
 const report=state.sources;
 const total=Number(report.total_sources||0);
@@ -136,7 +161,7 @@ const freshness=$("freshness");
 freshness.className="fresh-pill"+(ageMinutes===null?"":ageMinutes>180?" stale critical":ageMinutes>45?" stale":"");
 freshness.textContent=ageMinutes===null?"زمان داده نامشخص":ageMinutes>45?"داده قدیمی · "+fmt(ageMinutes)+" دقیقه پیش":"داده تازه · "+fresh.toLocaleString("fa-IR");
 if(ageMinutes!==null&&ageMinutes>45){set("pipelineState","گزارش‌ها قدیمی‌اند؛ اجرای جدید هنوز داده تازه منتشر نکرده است");$("statusIndicator").className="status-indicator "+(ageMinutes>180?"bad":"");}
-renderSources();renderCountryProtocol();renderNodes();
+renderSources();renderCountryProtocol();renderNodes();renderSourceTiers();
 };
 const load=async()=>{
 state.fallback=false;
