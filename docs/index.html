@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Always start at the top on a fresh load or refresh, including mobile Safari. */
+if('scrollRestoration' in history) history.scrollRestoration='manual';
+window.addEventListener('pageshow',function(){
+  window.scrollTo(0,0);
+  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+});
+</script>
 <meta name="theme-color" content="#0b1224">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,8 +102,16 @@ h1{font-size:clamp(1.8rem,6vw,2.65rem);line-height:1.45;margin:0;font-weight:900
 .refresh{border:0;background:transparent;color:#67d9f5;font:700 .72rem Vazirmatn,sans-serif;cursor:pointer;padding:0}
 .refresh:disabled{opacity:.5;cursor:wait}
 .type-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.type-chip{padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#ffffff06;color:#cbd8eb;font-size:.69rem}
-.type-chip b{color:#fff;margin-right:4px}
+.type-chip{padding:5px 10px;border-radius:999px;border:1px solid rgba(52,211,153,.38);background:rgba(16,185,129,.12);color:#6ee7b7;font-size:.69rem}
+.type-chip b{color:#6ee7b7;margin-right:4px}
+.site-footer{padding:20px 8px 28px;margin-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center;color:var(--muted);font-size:.76rem;line-height:2}
+.site-footer a{color:var(--muted);text-decoration:none;transition:color .2s}
+.site-footer a:hover{color:var(--cyan)}
+.footer-legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-credit{font-weight:700}
+.footer-credit a{color:#67d9f5}
+.footer-views{font-size:.72rem;color:var(--muted)}
+.footer-views span{font-variant-numeric:tabular-nums;color:#6ee7b7;font-weight:800}
 .subscription-list{display:grid;gap:11px}
 .subscription{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff09,#ffffff03);border-radius:18px;padding:15px}
 .subscription.featured{border-color:#34d39955;background:linear-gradient(135deg,#0e3a3b70,#14213b 62%,#172642);box-shadow:0 12px 34px #10b98112}
@@ -214,9 +230,9 @@ h1{font-size:clamp(1.7rem,6vw,2.35rem);line-height:1.5;margin:0;font-weight:900;
 <main class="shell">
 <header class="hero">
 <img class="hero-logo" src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM برای کانفیگ رایگان V2Ray و Xray">
-<div class="eyebrow">داشبورد زنده اشتراک‌های SVM</div>
-<h1>اتصال بهتر،<br><span>انتخاب ساده‌تر.</span></h1>
-<p>اشتراک‌های به‌روز V2Ray و Xray را در یک نگاه بررسی کن. وضعیت آخرین تست را ببین و لینک مناسب کلاینتت را مستقیم و بی‌دردسر بردار.</p>
+<div class="eyebrow">داشبورد زنده اشتراک‌های SiNAVM</div>
+<h1>اتصال بهتر <span>انتخاب ساده‌ و رایگان</span></h1>
+<p>هر شش ساعت تمامی اشتراک‌ها به‌روزرسانی می‌شوند.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#subscriptions">دریافت اشتراک‌ها <span>←</span></a>
 <a class="btn btn-ghost" href="#protocols">اشتراک بر اساس پروتکل <span>⌄</span></a>
@@ -303,9 +319,10 @@ h1{font-size:clamp(1.7rem,6vw,2.35rem);line-height:1.5;margin:0;font-weight:900;
 </tbody>
 </table>
 </div>
-</section><footer>
-<span>© SVM · V2Ray Collector</span>
-<span><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://github.com/sinavm/SVM/actions">Actions</a> · <a href="https://t.me/sinavm">Telegram</a> · <a href="https://sinavm.github.io/sinavm/">SiNAVM</a></span>
+</section><footer class="site-footer">
+<div class="footer-legal"><a href="https://sinavm.github.io/sinavm/legal_pages/about.html" rel="noopener noreferrer">درباره ما</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html" rel="noopener noreferrer">سیاست حریم خصوصی</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/terms.html" rel="noopener noreferrer">شرایط استفاده</a></div>
+<div class="footer-credit"><a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Design &amp; Config by SiNAVM</a></div>
+<div class="footer-views">بازدید کل: <span id="visit-count" aria-live="polite">...</span></div>
 </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -361,6 +378,10 @@ catch{showToast('کپی خودکار در دسترس نیست')}
 });
 });
 loadReport();
+fetch('https://page-views.count1.workers.dev')
+ .then(response=>{if(!response.ok)throw new Error('counter unavailable');return response.text()})
+ .then(value=>{const el=byId('visit-count');if(el)el.textContent=new Intl.NumberFormat('fa-IR').format(Number(value))})
+ .catch(()=>{const el=byId('visit-count');if(el)el.textContent='—'});
 </script>
 </body>
 </html>
