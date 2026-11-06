@@ -1,14 +1,14 @@
 const ROOT="https://raw.githubusercontent.com/sinavm/SVM/main/";
 const CDN="https://cdn.jsdelivr.net/gh/sinavm/SVM@main/";
 const $=id=>document.getElementById(id);
-const state={mirror:false,health:{},test:{},stats:{},sources:{},index:{},lite:{},nodes:[]};
+const state={mirror:false,fallback:false,health:{},test:{},stats:{},sources:{},index:{},lite:{},nodes:[]};
 const fmt=value=>Number(value||0).toLocaleString("fa-IR");
 const safe=value=>String(value??"");
 const base=()=>state.mirror?CDN:ROOT;
 const pathUrl=path=>base()+path;
 const set=(id,value)=>{const el=$(id);if(el)el.textContent=value};
 const toast=message=>{const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2300)};
-const getJson=async path=>{const response=await fetch(pathUrl(path)+"?v="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error(path+" "+response.status);return response.json()};
+const getJson=async path=>{const url=(state.mirror?CDN:ROOT)+path+"?v="+Date.now();try{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw new Error(path+" "+response.status);return response.json();}catch(error){if(state.mirror)throw error;const fallback=await fetch(CDN+path+"?v="+Date.now(),{cache:"no-store"});if(!fallback.ok)throw error;state.fallback=true;return fallback.json();}};
 const linkFor=(client,tier,profile)=>{
 if(client==="xray"){const lite=tier==="alive-fast"||tier==="alive-stable";return "subscriptions/xray/"+profile+"/"+(lite?"": "")+(lite?"":"")+tier;}
 if(client==="singbox")return "subscriptions/singbox/mix.json";
@@ -72,12 +72,12 @@ fillSelect("nodeCountry",countryCodes,"همهٔ کشورها");
 fillSelect("nodeProtocol",protocolNames,"همهٔ پروتکل‌ها");
 const countryGrid=$("countryGrid");countryGrid.replaceChildren();
 countryCodes.forEach(code=>{
-const a=document.createElement("a");a.className="data-chip";a.href=pathUrl("subscriptions/xray/normal/countries/"+encodeURIComponent(code));a.target="_blank";a.rel="noopener noreferrer";a.innerHTML="<span>"+code+"</span><b>"+fmt(countries[code])+"</b>";countryGrid.append(a);
+const a=document.createElement("a");a.className="data-chip";a.href=pathUrl("subscriptions/xray/normal/countries/"+encodeURIComponent(code));a.target="_blank";a.rel="noopener noreferrer";const label=document.createElement("span");label.textContent=code;const count=document.createElement("b");count.textContent=fmt(countries[code]);a.append(label,count);countryGrid.append(a);
 });
 if(!countryCodes.length)countryGrid.textContent="دادهٔ کشور موجود نیست";
 const protocolGrid=$("protocolGrid");protocolGrid.replaceChildren();
 protocolNames.forEach(name=>{
-const a=document.createElement("a");a.className="data-chip";a.href=pathUrl("subscriptions/xray/normal/protocols/"+encodeURIComponent(name));a.target="_blank";a.rel="noopener noreferrer";a.innerHTML="<span>"+name.toUpperCase()+"</span><b>"+fmt(protocols[name])+"</b>";protocolGrid.append(a);
+const a=document.createElement("a");a.className="data-chip";a.href=pathUrl("subscriptions/xray/normal/protocols/"+encodeURIComponent(name));a.target="_blank";a.rel="noopener noreferrer";const label=document.createElement("span");label.textContent=name.toUpperCase();const count=document.createElement("b");count.textContent=fmt(protocols[name]);a.append(label,count);protocolGrid.append(a);
 });
 if(!protocolNames.length)protocolGrid.textContent="دادهٔ پروتکل موجود نیست";
 };
