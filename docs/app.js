@@ -130,7 +130,11 @@ const overall=h.overall?.status||"unknown";
 set("pipelineState",overall==="healthy"?"پردازش سالم":overall==="degraded"?"پردازش با هشدار":"وضعیت پردازش نامشخص");
 $("statusIndicator").className="status-indicator "+(overall==="healthy"?"ok":overall==="degraded"?"":"bad");
 const fresh=stamp?new Date(stamp):null;
-set("freshness",fresh?"آخرین داده: "+fresh.toLocaleString("fa-IR"):"زمان داده نامشخص");
+const ageMinutes=fresh?Math.max(0,Math.floor((Date.now()-fresh.getTime())/60000)):null;
+const freshness=$("freshness");
+freshness.className="fresh-pill"+(ageMinutes===null?"":ageMinutes>180?" stale critical":ageMinutes>45?" stale":"");
+freshness.textContent=ageMinutes===null?"زمان داده نامشخص":ageMinutes>45?"داده قدیمی · "+fmt(ageMinutes)+" دقیقه پیش":"داده تازه · "+fresh.toLocaleString("fa-IR");
+if(ageMinutes!==null&&ageMinutes>45){set("pipelineState","گزارش‌ها قدیمی‌اند؛ اجرای جدید هنوز داده تازه منتشر نکرده است");$("statusIndicator").className="status-indicator "+(ageMinutes>180?"bad":"");}
 renderSources();renderCountryProtocol();renderNodes();
 };
 const load=async()=>{
