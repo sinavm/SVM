@@ -38,13 +38,13 @@ a{color:inherit;text-decoration:none}
 button{font:inherit}
 .shell{width:min(100% - 28px,760px);margin:auto}
 .top{height:66px;position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(11,18,36,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.top-inner{width:min(100% - 28px,760px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top-inner{width:min(100% - 28px,760px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
 .brand{display:flex;align-items:center;gap:11px;min-width:0}
 .brand img{width:42px;height:42px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:0 7px 24px rgba(37,99,235,.2)}
 .brand strong{display:block;font-size:1rem;letter-spacing:.07em;line-height:1.35}
 .brand small{display:block;color:var(--muted);font-size:.7rem}
-.nav{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
-.nav a{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:#c9d7eb;font-size:.75rem;background:rgba(255,255,255,.035);transition:.2s}
+.nav{display:flex;gap:7px;align-items:center;flex-wrap:nowrap;min-width:0}
+.nav a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:#c9d7eb;font-size:.75rem;background:rgba(255,255,255,.035);transition:.2s}
 .nav a:hover{border-color:#60a5fa66;color:#fff;background:#60a5fa12}
 .nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
 main{display:grid;gap:18px;margin:28px auto 54px}
@@ -124,8 +124,8 @@ footer a{color:#67d9f5}
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#059669;color:#fff;padding:10px 16px;border-radius:12px;font-size:.76rem;font-weight:800;transition:.25s;z-index:30;box-shadow:0 8px 30px #0007;white-space:nowrap}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(min-width:620px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{padding:15px}.subscription-list{grid-template-columns:1fr 1fr}.subscription.featured{grid-column:1/-1}}
-@media(max-width:480px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:62px}.top-inner{width:calc(100% - 20px);padding:9px 0}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{gap:5px}.nav a{font-size:.65rem;padding:5px 8px}.nav a:nth-child(3){display:none}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
-@media(max-width:350px){.nav a:nth-child(2){display:none}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:0}.top-inner{width:calc(100% - 20px);padding:9px 0 10px;display:grid;grid-template-columns:minmax(0,1fr);gap:9px}.brand{justify-self:center}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.nav a{min-width:0;font-size:clamp(.58rem,2.6vw,.7rem);padding:7px 3px;line-height:1.5;text-align:center}.nav-live-dot{width:6px;height:6px;margin-left:4px;flex:0 0 6px}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
+@media(max-width:350px){.nav{gap:4px}.nav a{font-size:.57rem;padding:7px 1px}.nav-live-dot{margin-left:3px}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
 .seo-copy{color:var(--muted);font-size:.82rem;line-height:2.15;margin:8px 0}.seo-copy strong{color:var(--text)}
 </style>
 </head>
@@ -139,9 +139,8 @@ footer a{color:#67d9f5}
 <nav class="nav" aria-label="ناوبری اصلی">
 <a href="#live"><span class="nav-live-dot" aria-hidden="true"></span>وضعیت زنده</a>
 <a href="#subscriptions">اشتراک‌ها</a>
-<a href="#formats">فرمت‌ها</a>
 <a href="https://github.com/sinavm/SVM">GitHub ↗</a>
-<a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+<a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">تلگرام ↗</a>
 </nav>
 </div>
 </div>
