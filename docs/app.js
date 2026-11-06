@@ -5,7 +5,7 @@ const state={mirror:false,fallback:false,health:{},test:{},stats:{},sources:{},i
 const fmt=value=>Number(value||0).toLocaleString("fa-IR");
 const safe=value=>String(value??"");
 const base=()=>state.mirror?CDN:ROOT;
-const pathUrl=path=>base()+path;
+const pathUrl=path=>base()+path;\nconst refreshDataLinks=()=>document.querySelectorAll("[data-path]").forEach(link=>{link.href=pathUrl(link.dataset.path);});
 const set=(id,value)=>{const el=$(id);if(el)el.textContent=value};
 const toast=message=>{const el=$("toast");el.textContent=message;el.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove("show"),2300)};
 const getJson=async path=>{const url=(state.mirror?CDN:ROOT)+path+"?v="+Date.now();try{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw new Error(path+" "+response.status);return response.json();}catch(error){if(state.mirror)throw error;const fallback=await fetch(CDN+path+"?v="+Date.now(),{cache:"no-store"});if(!fallback.ok)throw error;state.fallback=true;return fallback.json();}};
@@ -162,7 +162,7 @@ $("tierSelect").addEventListener("change",updateHub);
 $("profileSelect").addEventListener("change",updateHub);
 $("copySubscription").addEventListener("click",copyCurrent);
 $("refreshButton").addEventListener("click",load);
-$("mirrorToggle").addEventListener("change",event=>{state.mirror=event.target.checked;updateHub();load();toast(state.mirror?"آینه CDN فعال شد":"لینک اصلی GitHub فعال شد");});
+$("mirrorToggle").addEventListener("change",event=>{state.mirror=event.target.checked;updateHub();refreshDataLinks();load();toast(state.mirror?"آینه CDN فعال شد":"لینک اصلی GitHub فعال شد");});
 ["nodeSearch","nodeProtocol","nodeCountry","nodeSpeed"].forEach(id=>$(id).addEventListener(id==="nodeSearch"?"input":"change",renderNodes));
 updateHub();
 load();
