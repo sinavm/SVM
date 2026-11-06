@@ -26,8 +26,8 @@ $TEST_URL = "http://www.gstatic.com/generate_204";
 $TIMEOUT_MS = 4500;
 // Larger batches and full-batch delay concurrency avoid thousands of sequential API waves.
 $BATCH_SIZE = 384;
-$DELAY_CONCURRENCY = 96;
-$TCP_CONCURRENCY = 64;
+$DELAY_CONCURRENCY = 384;
+$TCP_CONCURRENCY = 256;
 $TCP_TIMEOUT_MS = 1500;
 $SINGBOX_VERSION = getenv("SINGBOX_VERSION") ?: "1.14.0";
 
