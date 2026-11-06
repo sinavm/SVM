@@ -13,11 +13,11 @@ on:
       - functions.php
       - .github/workflows/php.yml
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 */3 * * *'
 
 concurrency:
   group: "sinavm-pipeline-v2-${{ github.ref }}"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
