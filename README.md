@@ -24,8 +24,9 @@
 
 <div align="center">
 
-<a href="https://github.com/sinavm/SVM"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-star.svg" alt="برای حمایت از پروژه، صفحه مخزن را باز کنید و Star را بزنید" width="48%"></a>
-<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="عضویت در کانال تلگرام @sinavm" width="48%"></a>
+<a href="#-شروع-سریع"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-links.svg" alt="Get subscription links" width="31%"></a>
+<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="Join SVM on Telegram" width="31%"></a>
+<a href="https://github.com/sinavm/SVM"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-star.svg" alt="Star SVM on GitHub" width="31%"></a>
 
 </div>
 
@@ -141,15 +142,6 @@
 `UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY`
 
 </div>
-
-**پیش از ارسال، شبکه را با دقت انتخاب کنید:**
-
-- BTC فقط روی شبکه Bitcoin ارسال شود.
-- USDT فقط روی BNB Smart Chain (BEP20) به این آدرس ارسال شود؛ این آدرس برای TRON (TRC20) نیست.
-- ETH فقط روی شبکه Ethereum (ERC20) ارسال شود.
-- TON فقط روی شبکه TON ارسال شود.
-- آدرس‌های ETH و BNB Smart Chain می‌توانند یکسان باشند؛ بااین‌حال موجودی و تراکنش هر شبکه مستقل است.
-- هر QR فقط متن آدرس همان بخش را کدگذاری می‌کند؛ مبلغ یا یادداشت تراکنش در آن قرار ندارد. همیشه شبکه و چند نویسه اول و آخر آدرس را در کیف پول خود بررسی کنید.
 
 ## ⚠️ نکات مهم
 
