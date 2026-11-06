@@ -104,20 +104,6 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
     if (!is_array($structure) || !isset($structure['outbounds'][0], $structure['outbounds'][1])) {
         throw new Exception("Invalid structure.json (Sing-box 1.14 template required)");
     }
-    // An empty source (or a source with no convertible nodes) must not
-    // produce selector/urltest outbounds with an empty tag list.
-    // Returning null lets the caller remove any stale subscription file.
-    $hasConvertibleNode = false;
-    foreach ($configsArray as $config) {
-        if (toSingbox($config)) {
-            $hasConvertibleNode = true;
-            break;
-        }
-    }
-    if (!$hasConvertibleNode) {
-        return null;
-    }
-
     $selector = $structure['outbounds'][0];
     $urltest = $structure['outbounds'][1];
     if (!isset($selector['outbounds']) || !is_array($selector['outbounds'])) $selector['outbounds'] = [];
@@ -135,6 +121,11 @@ function processConvertion($base64ConfigsList, $configsName = "Created By sinavm
         $proxyOutbounds[] = $converted;
         $urltest['outbounds'][] = $tag;
         $index++;
+    }
+    // Empty profiles leave selector/urltest with no target tags, which
+    // sing-box rejects. The caller removes any previously generated file.
+    if (empty($proxyOutbounds)) {
+        return null;
     }
     $urltest['tag'] = "@SiNAVM";
     $selector['tag'] = "انتخابگر دستی";
