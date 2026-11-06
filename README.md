@@ -97,13 +97,11 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/01-Collect-0ea5e9?style=for-the-badge" alt="گردآوری">
-<img src="https://img.shields.io/badge/02-Validate-16a34a?style=for-the-badge" alt="اعتبارسنجی">
-<img src="https://img.shields.io/badge/03-Deduplicate-8b5cf6?style=for-the-badge" alt="حذف تکراری‌ها">
-<img src="https://img.shields.io/badge/04-Sort-f59e0b?style=for-the-badge" alt="مرتب‌سازی">
-<img src="https://img.shields.io/badge/05-Publish-64748b?style=for-the-badge" alt="انتشار">
+<img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/pipeline.svg" width="100%" alt="SVM pipeline: Collect, Validate, Sort and Publish">
 
 </div>
+
+<img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/divider.svg" width="100%" alt="">
 
 ## 💛 حمایت اختیاری از پروژه
 
@@ -123,13 +121,13 @@
 
 ### ◈ آدرس مشترک شبکه‌های EVM · ETH / USDT
 
-<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس مشترک EVM برای دریافت ETH و USDT"></a>
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1F0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1F0286492dDB189Ad9a0E85" width="180" alt="QR آدرس مشترک EVM برای دریافت ETH و USDT"></a>
 
 **برای دریافت ETH:** شبکه Ethereum · ERC20
 
 **برای دریافت USDT:** شبکه BNB Smart Chain · BEP20
 
-`0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85`
+`0x570f2ea8e90fcE23F1F0286492dDB189Ad9a0E85`
 
 ---
 
