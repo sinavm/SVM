@@ -46,6 +46,7 @@ button{font:inherit}
 .nav{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 .nav a{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:#c9d7eb;font-size:.75rem;background:rgba(255,255,255,.035);transition:.2s}
 .nav a:hover{border-color:#60a5fa66;color:#fff;background:#60a5fa12}
+.nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
 main{display:grid;gap:18px;margin:28px auto 54px}
 .hero{text-align:center;padding:15px 12px 8px}
 .hero-logo{width:76px;height:76px;border-radius:23px;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 42px rgba(37,99,235,.22)}
@@ -118,21 +119,12 @@ td a{color:#67d9f5;font-weight:700}
 tbody tr:last-child td{border-bottom:0}
 tbody tr:hover{background:#ffffff05}
 .protocol{font-weight:900;color:#fff}
-.qr-layout{display:grid;grid-template-columns:1fr auto;align-items:center;gap:15px;padding:15px;border:1px solid #22d3ee30;border-radius:18px;background:linear-gradient(125deg,#0891b21a,#2563eb12,#ffffff04)}
-.qr-layout h3{font-size:.9rem;margin:0}
-.qr-layout p{font-size:.73rem;color:var(--muted);line-height:1.9;margin:5px 0 11px}
-.qr{width:112px;height:112px;background:#fff;padding:6px;border-radius:13px}
-.notes{display:grid;gap:9px}
-.note{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:#ffffff04}
-.note-icon{width:29px;height:29px;flex:0 0 29px;border-radius:9px;display:grid;place-items:center;background:#60a5fa18;color:#93c5fd;font-size:.8rem}
-.note strong{display:block;font-size:.75rem;margin-bottom:2px}
-.note p{color:var(--muted);font-size:.68rem;line-height:1.8;margin:0}
 footer{padding:18px 5px 25px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.7rem}
 footer a{color:#67d9f5}
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#059669;color:#fff;padding:10px 16px;border-radius:12px;font-size:.76rem;font-weight:800;transition:.25s;z-index:30;box-shadow:0 8px 30px #0007;white-space:nowrap}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-@media(min-width:620px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{padding:15px}.subscription-list{grid-template-columns:1fr 1fr}.subscription.featured{grid-column:1/-1}.notes{grid-template-columns:1fr 1fr}.note:last-child{grid-column:1/-1}}
-@media(max-width:480px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:62px}.top-inner{width:calc(100% - 20px);padding:9px 0}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{gap:5px}.nav a{font-size:.65rem;padding:5px 8px}.nav a:nth-child(3){display:none}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.qr-layout{grid-template-columns:1fr auto;gap:8px;padding:11px}.qr{width:88px;height:88px}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
+@media(min-width:620px){.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.stat{padding:15px}.subscription-list{grid-template-columns:1fr 1fr}.subscription.featured{grid-column:1/-1}}
+@media(max-width:480px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:62px}.top-inner{width:calc(100% - 20px);padding:9px 0}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{gap:5px}.nav a{font-size:.65rem;padding:5px 8px}.nav a:nth-child(3){display:none}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
 @media(max-width:350px){.nav a:nth-child(2){display:none}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
 .seo-copy{color:var(--muted);font-size:.82rem;line-height:2.15;margin:8px 0}.seo-copy strong{color:var(--text)}
 </style>
@@ -145,10 +137,11 @@ footer a{color:#67d9f5}
 <span><strong>SVM</strong><small>V2Ray Collector</small></span>
 </a>
 <nav class="nav" aria-label="ناوبری اصلی">
-<a href="#live">وضعیت زنده</a>
+<a href="#live"><span class="nav-live-dot" aria-hidden="true"></span>وضعیت زنده</a>
 <a href="#subscriptions">اشتراک‌ها</a>
 <a href="#formats">فرمت‌ها</a>
 <a href="https://github.com/sinavm/SVM">GitHub ↗</a>
+<a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
 </nav>
 </div>
 </div>
@@ -245,27 +238,8 @@ footer a{color:#67d9f5}
 </table>
 </div>
 </section>
-<section class="panel">
-<div class="section-head">
-<div class="section-icon">▦</div>
-<div class="head-copy"><h2>دسترسی سریع با موبایل</h2><p>QR کد را اسکن کن تا همین داشبورد باز شود.</p></div>
-</div>
-<div class="qr-layout">
-<div><h3>همیشه آخرین لینک‌ها همراهت باشد</h3><p>این کد به داشبورد متصل است؛ با هر بار مراجعه می‌توانی اشتراک‌های تازه را ببینی.</p><a class="btn btn-ghost" href="https://sinavm.github.io/SVM/">باز کردن داشبورد ↗</a></div>
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fsinavm.github.io%2FSVM%2F" alt="QR کد داشبورد SVM">
-</div>
-</section>
-<section class="panel">
-<div class="section-head">
-<div class="section-icon">ⓘ</div>
-<div class="head-copy"><h2>چند نکته پیش از استفاده</h2><p>برای درک بهتر گزارش و انتخاب اشتراک</p></div>
-</div>
-<div class="notes">
-<article class="note"><span class="note-icon">⌖</span><div><strong>نتیجه تست ممکن است متفاوت باشد</strong><p>آمار از محیط تست پروژه می‌آید و بسته به اپراتور و موقعیت جغرافیایی شما تغییر می‌کند.</p></div></article>
-<article class="note"><span class="note-icon">◉</span><div><strong>TCP با اتصال نهایی یکی نیست</strong><p>دسترسی TCP و موفقیت بررسی پروتکل دو مرحله جداگانه‌اند و در گزارش تفکیک شده‌اند.</p></div></article>
-<article class="note"><span class="note-icon">↻</span><div><strong>لینک‌های اشتراک پویا هستند</strong><p>فهرست نودها ممکن است با اجرای بعدی تغییر کند؛ لینک اشتراک را در کلاینت ذخیره کن.</p></div></article>
-</div>
-</section>
+
+
 <section class="panel" id="seo-content" aria-labelledby="seo-title">
 <div class="section-head">
 <div class="section-icon">⌕</div>
