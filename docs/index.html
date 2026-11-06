@@ -132,6 +132,27 @@ footer a{color:#67d9f5}
 @media(max-width:620px){.shell{width:min(100% - 20px,760px)}.top{height:auto;min-height:0}.top-inner{width:calc(100% - 20px);padding:9px 0 10px;display:grid;grid-template-columns:minmax(0,1fr);gap:9px}.brand{justify-self:center}.brand img{width:37px;height:37px}.brand small{font-size:.63rem}.nav{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.nav a{min-width:0;font-size:clamp(.58rem,2.6vw,.7rem);padding:7px 3px;line-height:1.5;text-align:center}.nav-live-dot{width:6px;height:6px;margin-left:4px;flex:0 0 6px}main{margin-top:18px;gap:14px}.hero{padding:10px 5px 5px}.hero-logo{width:67px;height:67px;border-radius:20px}.hero p{font-size:.82rem}.hero-actions{margin-top:14px}.btn{font-size:.73rem;padding:9px 12px}.panel{padding:14px;border-radius:19px}.section-head{margin-bottom:12px}.section-icon{width:38px;height:38px;flex-basis:38px}.section-head h2{font-size:.92rem}.section-head p{font-size:.68rem}.stat{padding:11px}.stat strong{font-size:1.55rem}.stat-label{font-size:.66rem}.stat small{font-size:.61rem}.sub-actions{gap:6px}.sub-actions .btn{font-size:.64rem}.format{padding:9px}.format-icon{width:30px;height:30px;flex-basis:30px}.format strong{font-size:.72rem}.format a{font-size:.63rem}}
 @media(max-width:350px){.nav{gap:4px}.nav a{font-size:.57rem;padding:7px 1px}.nav-live-dot{margin-left:3px}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
 .seo-copy{color:var(--muted);font-size:.82rem;line-height:2.15;margin:8px 0}.seo-copy strong{color:var(--text)}
+
+/* Touch-first responsive layout: fixes iOS Safari desktop-site mode. */
+@media (max-width: 980px), (pointer: coarse) and (hover: none) {
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.shell,.top-inner{width:calc(100% - 20px);max-width:760px;min-width:0}
+.top{width:100%}
+.top-inner{display:grid;grid-template-columns:minmax(0,1fr);justify-content:stretch;gap:9px;padding:9px 0 10px}
+.brand{justify-self:center}
+.nav{width:100%;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.nav a{min-width:0;white-space:normal;padding:7px 3px;font-size:clamp(.58rem,2.6vw,.7rem);text-align:center}
+main{width:100%;min-width:0}
+main>*,.panel,.hero,.section-head,.stats{min-width:0}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat{min-width:0}
+.section-head{flex-wrap:wrap}
+.head-copy{min-width:0}
+.head-link{margin-inline-start:auto}
+.hero p{max-width:100%;overflow-wrap:anywhere}
+.table-wrap{max-width:100%}
+}
+@media(max-width:430px){.panel{padding:12px}.stats{gap:8px}.stat{padding:10px}.stat strong{font-size:1.4rem}.nav{gap:4px}.nav a{padding-inline:2px}}
 </style>
 </head>
 <body>
