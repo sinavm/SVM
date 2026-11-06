@@ -36,9 +36,9 @@ html{scroll-behavior:smooth;scroll-padding-top:86px}
 body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 8% 0%,rgba(59,130,246,.2),transparent 38%),radial-gradient(ellipse at 95% 14%,rgba(139,92,246,.13),transparent 34%),radial-gradient(ellipse at 50% 65%,rgba(8,145,178,.07),transparent 42%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.8}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-.shell{width:min(100% - 28px,760px);margin:auto}
+.shell{width:min(100% - 28px,680px);margin:auto}
 .top{height:66px;position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(11,18,36,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.top-inner{width:min(100% - 28px,760px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.top-inner{width:min(100% - 28px,680px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
 .brand{display:flex;align-items:center;gap:11px;min-width:0}
 .brand img{width:42px;height:42px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:0 7px 24px rgba(37,99,235,.2)}
 .brand strong{display:block;font-size:1rem;letter-spacing:.07em;line-height:1.35}
@@ -153,23 +153,28 @@ main>*,.panel,.hero,.section-head,.stats{min-width:0}
 .table-wrap{max-width:100%}
 }
 @media(max-width:430px){.panel{padding:12px}.stats{gap:8px}.stat{padding:10px}.stat strong{font-size:1.4rem}.nav{gap:4px}.nav a{padding-inline:2px}}
+
+/* Header layout follows the compact SiNAVM / Melishekan page */
+.top{height:58px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.top>a{font-weight:800;display:flex;gap:9px;align-items:center;color:var(--text);text-decoration:none}
+.top>a i{color:var(--cyan)}
+.shell{width:min(100% - 28px,680px)}
+.hero{padding:16px 12px 8px}
+.hero-logo{width:82px;height:82px;border-radius:24px}
+.eyebrow{font-size:.82rem;margin:15px 0 4px}
+.hero p{max-width:500px}
+.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:998;text-decoration:none;box-shadow:0 7px 24px rgba(0,0,0,.28);transition:transform .2s,opacity .2s,background .2s}
+.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ED9,#1d8fc7);color:#fff;font-size:1.45rem}
+.floating-tg-btn:hover{transform:scale(1.07)}
+.scroll-top-btn{right:18px;background:rgba(255,255,255,.1);border:1px solid var(--line);color:var(--text);font-size:1.35rem;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-top-btn:hover{transform:translateY(-2px);background:rgba(34,211,238,.18)}
+@media(max-width:430px){.top{height:56px}.shell{width:min(100% - 20px,680px)}.hero{padding:12px 6px 6px}.hero-logo{width:76px;height:76px}.floating-tg-btn,.scroll-top-btn{width:48px;height:48px;bottom:16px}.floating-tg-btn{left:14px}.scroll-top-btn{right:14px}}
+
 </style>
 </head>
 <body>
-<div class="top">
-<div class="top-inner">
-<a class="brand" href="https://github.com/sinavm/SVM" aria-label="مخزن SVM در گیت‌هاب">
-<img src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM؛ پروژه کانفیگ رایگان V2Ray و Xray">
-<span><strong>SVM</strong><small>V2Ray Collector</small></span>
-</a>
-<nav class="nav" aria-label="ناوبری اصلی">
-<a href="#live"><span class="nav-live-dot" aria-hidden="true"></span><span class="nav-label">وضعیت زنده</span></a>
-<a href="#subscriptions"><span class="nav-label">اشتراک‌ها</span></a>
-<a href="https://github.com/sinavm/SVM">GitHub ↗</a>
-<a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">تلگرام ↗</a>
-</nav>
-</div>
-</div>
+<nav class="top" aria-label="ناوبری صفحه"><a href="https://sinavm.github.io/sinavm/"><i class="fas fa-house" aria-hidden="true"></i> صفحه اصلی SiNAVM</a></nav>
 <main class="shell">
 <header class="hero">
 <img class="hero-logo" src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM برای کانفیگ رایگان V2Ray و Xray">
@@ -178,7 +183,7 @@ main>*,.panel,.hero,.section-head,.stats{min-width:0}
 <p>اشتراک‌های به‌روز V2Ray و Xray را در یک نگاه بررسی کن. وضعیت آخرین تست را ببین و لینک مناسب کلاینتت را مستقیم و بی‌دردسر بردار.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#subscriptions">دریافت اشتراک‌ها <span>←</span></a>
-<a class="btn btn-ghost" href="https://github.com/sinavm/SVM">مشاهده مخزن ↗</a>
+<a class="btn btn-ghost" href="#protocols">اشتراک بر اساس پروتکل <span>⌄</span></a>
 </div>
 </header>
 <section class="panel" id="live">
@@ -268,10 +273,19 @@ main>*,.panel,.hero,.section-head,.stats{min-width:0}
 </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<a href="https://t.me/sinavm" class="floating-tg-btn" target="_blank" rel="noopener noreferrer" title="کانال تلگرام" aria-label="ورود به کانال تلگرام SiNAVM"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
+<a href="#" class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا" aria-label="بازگشت به بالای صفحه"><i class="fas fa-angle-double-up" aria-hidden="true"></i></a>
+
 <script>
 const reportUrl='https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json';
 const numberFormat=new Intl.NumberFormat('fa-IR');
 const byId=id=>document.getElementById(id);
+const scrollTopBtn=byId('scrollTopBtn');
+function updateScrollTop(){if(scrollTopBtn)scrollTopBtn.classList.toggle('visible',window.scrollY>300)}
+window.addEventListener('scroll',updateScrollTop,{passive:true});
+updateScrollTop();
+if(scrollTopBtn)scrollTopBtn.addEventListener('click',event=>{event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
 const put=(id,value)=>{const el=byId(id);if(el)el.textContent=value===undefined||value===null?'—':numberFormat.format(value)};
 function showToast(message){const toast=byId('toast');toast.textContent=message;toast.classList.add('show');window.setTimeout(()=>toast.classList.remove('show'),2200)}
 async function loadReport(){
