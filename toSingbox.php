@@ -19,15 +19,36 @@ if (!defined("SINAVM_SKIP_CONVERT") || !SINAVM_SKIP_CONVERT) {
         "subscriptions/xray/base64/trojan"
     ];
 
+    @mkdir("subscriptions/singbox", 0777, true);
+
     foreach ($directoryOfFiles as $directory) {
+        $profileName = explode("/", $directory)[3];
+        $outputPath = "subscriptions/singbox/" . $profileName . ".json";
+
+        // Remove stale profiles when the corresponding source disappears.
         if (!is_file($directory)) {
+            if (is_file($outputPath)) {
+                unlink($outputPath);
+            }
             continue;
         }
-        $configsName = "@SiNAVM | " . explode("/", $directory)[3];
+
+        $configsName = "@SiNAVM | " . $profileName;
         $configsData = file_get_contents($directory);
         $convertionResult = processConvertion($configsData, $configsName);
-        @mkdir("subscriptions/singbox", 0777, true);
-        file_put_contents("subscriptions/singbox/" . explode("/", $directory)[3] . ".json", $convertionResult);
+
+        // Never publish an empty selector/urltest profile: sing-box rejects it.
+        if (!is_string($convertionResult) || trim($convertionResult) === "") {
+            if (is_file($outputPath)) {
+                unlink($outputPath);
+            }
+            echo "Skipped empty Sing-box profile: {$profileName}\\n";
+            continue;
+        }
+
+        if (file_put_contents($outputPath, $convertionResult) === false) {
+            throw new RuntimeException("Unable to write Sing-box profile: {$outputPath}");
+        }
     }
 
     echo "Conversion to Sing-box completed successfully!\n";
