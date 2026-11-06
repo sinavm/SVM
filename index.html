@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1224">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta name="description" content="دریافت کانفیگ رایگان V2Ray و Xray از SVM و SiNAVM؛ اشتراک‌های رایگان و به‌روز VLESS، VMess، Reality، Trojan و Shadowsocks با تست زنده و لینک مستقیم برای کلاینت‌ها.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="SiNAVM">
@@ -200,14 +204,46 @@ main>*,.panel,.hero,.section-head,.stats{min-width:0}
 .scroll-top-btn:hover{transform:translateY(-2px);background:rgba(34,211,238,.18)}
 @media(max-width:430px){.top{height:56px}.shell{width:min(100% - 20px,680px)}.hero{padding:12px 6px 6px}.hero-logo{width:76px;height:76px}.floating-tg-btn,.scroll-top-btn{width:48px;height:48px;bottom:16px}.floating-tg-btn{left:14px}.scroll-top-btn{right:14px}}
 
+
+/* Exact Melishekan-style top and hero geometry. Existing SVM logo is intentionally preserved. */
+.top{height:58px!important;min-height:58px!important;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:0}
+.top>a{height:100%;display:flex;align-items:center;justify-content:center;gap:9px;font-weight:800;color:var(--text);text-decoration:none!important;white-space:nowrap}
+.top>a i{color:var(--cyan);font-size:1.35rem}
+main,.shell{width:min(100% - 28px,680px);max-width:680px;margin-left:auto;margin-right:auto}
+main{margin-top:34px;margin-bottom:70px;display:grid;gap:20px}
+.hero{text-align:center;padding:16px 12px 8px}
+.hero-logo{display:block;width:82px;height:82px;margin:0 auto;border-radius:24px;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 45px rgba(37,99,235,.22)}
+.eyebrow{display:block;text-align:center;color:var(--cyan);font-size:.82rem;font-weight:800;margin:15px 0 4px}
+h1{font-size:clamp(1.7rem,6vw,2.35rem);line-height:1.5;margin:0;font-weight:900;letter-spacing:-.7px}
+.hero p{color:var(--muted);line-height:2;margin:8px auto 0;max-width:500px;font-size:.94rem}
+.hero-actions{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;margin-top:18px}
+.btn{border-radius:13px;padding:11px 15px}
+.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:54px;height:54px;min-width:54px;min-height:54px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;text-decoration:none!important;line-height:1;box-shadow:0 8px 28px rgba(0,0,0,.32);transition:transform .2s,opacity .2s,background .2s}
+.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ed9,#168ac4);color:#fff;font-size:1.7rem}
+.floating-tg-btn i,.scroll-top-btn i{display:block;line-height:1}
+.floating-tg-btn:hover{transform:translateY(-2px) scale(1.04);color:#fff}
+.scroll-top-btn{right:18px;background:rgba(30,41,59,.96);border:1px solid rgba(148,163,184,.3);color:#f5f8ff;font-size:1.45rem;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-top-btn:hover{transform:translateY(-3px);background:rgba(8,145,178,.95);color:#fff}
+@media(max-width:430px){
+ .top{height:58px!important;min-height:58px!important}
+ main,.shell{width:min(100% - 20px,680px)}
+ main{margin-top:22px;margin-bottom:70px;gap:16px}
+ .hero{padding:16px 12px 8px}
+ .hero-logo{width:82px;height:82px}
+ .hero p{font-size:.94rem}
+ .floating-tg-btn,.scroll-top-btn{width:50px;height:50px;min-width:50px;min-height:50px;bottom:16px}
+ .floating-tg-btn{left:14px}.scroll-top-btn{right:14px}
+}
+
 </style>
 </head>
 <body>
-<nav class="top" aria-label="ناوبری صفحه"><a href="https://sinavm.github.io/sinavm/"><i class="fas fa-house" aria-hidden="true"></i> صفحه اصلی SiNAVM</a></nav>
+<nav class="top" aria-label="ناوبری صفحه"><a href="https://sinavm.github.io/sinavm/"><i class="fa-solid fa-house" aria-hidden="true"></i><span>صفحه اصلی SiNAVM</span></a></nav>
 <main class="shell">
 <header class="hero">
 <img class="hero-logo" src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM برای کانفیگ رایگان V2Ray و Xray">
-<div class="eyebrow"><span class="pulse"></span> داشبورد زنده اشتراک‌های SVM</div>
+<div class="eyebrow">داشبورد زنده اشتراک‌های SVM</div>
 <h1>اتصال بهتر،<br><span>انتخاب ساده‌تر.</span></h1>
 <p>اشتراک‌های به‌روز V2Ray و Xray را در یک نگاه بررسی کن. وضعیت آخرین تست را ببین و لینک مناسب کلاینتت را مستقیم و بی‌دردسر بردار.</p>
 <div class="hero-actions">
@@ -302,8 +338,8 @@ main>*,.panel,.hero,.section-head,.stats{min-width:0}
 </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<a href="https://t.me/sinavm" class="floating-tg-btn" target="_blank" rel="noopener noreferrer" title="کانال تلگرام" aria-label="ورود به کانال تلگرام SiNAVM"><i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
-<a href="#" class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا" aria-label="بازگشت به بالای صفحه"><i class="fas fa-angle-double-up" aria-hidden="true"></i></a>
+<a href="https://t.me/sinavm" class="floating-tg-btn" target="_blank" rel="noopener noreferrer" title="کانال تلگرام" aria-label="ورود به کانال تلگرام SiNAVM"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+<a href="#" class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا" aria-label="بازگشت به بالای صفحه"><i class="fa-solid fa-angles-up" aria-hidden="true"></i></a>
 
 <script>
 const reportUrl='https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json';
