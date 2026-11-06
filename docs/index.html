@@ -48,7 +48,9 @@ button{font:inherit}
 .nav a:hover{border-color:rgba(96,165,250,.65);color:#fff;background:rgba(59,130,246,.16)}
 .nav a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .nav a::before,.nav a::after{content:none!important;display:none!important}
-.nav a span{ text-decoration:none!important }
+.nav a span,.nav a .nav-label{display:inline-block;text-decoration:none!important;text-decoration-line:none!important;text-decoration-thickness:0!important;text-decoration-color:transparent!important;border:0!important;border-bottom:0!important;box-shadow:none!important;background-image:none!important;-webkit-text-decoration:none!important}
+.nav a,.nav a:link,.nav a:visited,.nav a:hover,.nav a:active{-webkit-text-decoration:none!important;text-decoration:none!important;text-decoration-line:none!important;text-decoration-color:transparent!important;background-image:none!important;border-bottom-color:rgba(148,163,184,.22)!important}
+.nav a::before,.nav a::after{content:none!important;display:none!important}
 .nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
 main{display:grid;gap:18px;margin:28px auto 54px}
 .hero{text-align:center;padding:15px 12px 8px}
@@ -140,8 +142,8 @@ footer a{color:#67d9f5}
 <span><strong>SVM</strong><small>V2Ray Collector</small></span>
 </a>
 <nav class="nav" aria-label="ناوبری اصلی">
-<a href="#live"><span class="nav-live-dot" aria-hidden="true"></span>وضعیت زنده</a>
-<a href="#subscriptions">اشتراک‌ها</a>
+<a href="#live"><span class="nav-live-dot" aria-hidden="true"></span><span class="nav-label">وضعیت زنده</span></a>
+<a href="#subscriptions"><span class="nav-label">اشتراک‌ها</span></a>
 <a href="https://github.com/sinavm/SVM">GitHub ↗</a>
 <a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">تلگرام ↗</a>
 </nav>
@@ -239,18 +241,7 @@ footer a{color:#67d9f5}
 </tbody>
 </table>
 </div>
-</section>
-
-
-<section class="panel" id="seo-content" aria-labelledby="seo-title">
-<div class="section-head">
-<div class="section-icon">⌕</div>
-<div class="head-copy"><h2 id="seo-title">کانفیگ رایگان V2Ray و Xray از SVM</h2><p>اشتراک‌های به‌روز و قابل بررسی از پروژه SiNAVM</p></div>
-</div>
-<p class="seo-copy">در داشبورد <strong>SVM (SiNAVM)</strong> می‌توانی کانفیگ رایگان و کانفیگ‌های رایگان V2Ray و Xray را از یک منبع دریافت کنی. لینک‌های اشتراک با فرمت‌های سازگار با Xray، Sing-box، Clash و Clash Meta ارائه می‌شوند و گزارش تست، وضعیت نودها و زمان آخرین بررسی در همین صفحه قابل مشاهده است. اگر عبارت‌هایی مثل <strong>کانفیگ رایگان VLESS</strong>، <strong>کانفیگ VMess</strong>، <strong>Reality</strong>، <strong>Trojan</strong> یا <strong>Shadowsocks</strong> را جست‌وجو می‌کنی، از بخش اشتراک‌ها پروتکل و فرمت مناسب کلاینتت را انتخاب کن.</p>
-<p class="seo-copy">SVM و <strong>sinavnbot</strong> با هدف مرتب‌سازی، بررسی و انتشار لینک‌های اشتراک رایگان فعالیت می‌کنند. وضعیت اتصال ممکن است با توجه به اپراتور، موقعیت جغرافیایی و زمان استفاده متفاوت باشد؛ بنابراین پیش از انتخاب، گزارش زنده را بررسی کن.</p>
-</section>
-<footer>
+</section><footer>
 <span>© SVM · V2Ray Collector</span>
 <span><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://github.com/sinavm/SVM/actions">Actions</a> · <a href="https://t.me/sinavm">Telegram</a> · <a href="https://sinavm.github.io/sinavm/">SiNAVM</a></span>
 </footer>
