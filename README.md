@@ -12,7 +12,8 @@
 <a href="https://sinavm.github.io/SVM/"><img src="https://img.shields.io/badge/live-dashboard-open-06b6d4?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live dashboard"></a>
 </p>
 
-<p><strong>جمع‌آوری، بررسی، مرتب‌سازی و انتشار اشتراک‌های V2Ray و Xray</strong></p>
+<p><a href="https://sinavm.github.io/SVM/"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM؛ کانفیگ رایگان V2Ray و Xray" width="112"></a></p>
+<p><strong>SVM و SiNAVM؛ کانفیگ رایگان V2Ray و Xray، کانفیگ‌های رایگان و اشتراک‌های به‌روز از پروژه sinavnbot برای Xray، Sing-box و Clash</strong></p>
 <p><a href="https://sinavm.github.io/SVM/">داشبورد زنده</a> · <a href="https://t.me/sinavm">کانال تلگرام</a> · <a href="https://github.com/sinavm/SVM/actions">وضعیت اجراها</a></p>
 
 </div>
