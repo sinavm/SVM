@@ -8,7 +8,7 @@ function toast(message){const el=byId('toast');if(!el)return;el.textContent=mess
 function safeDate(value){if(typeof value!=='string')return null;const d=new Date(value);return Number.isNaN(d.getTime())?null:d}
 async function loadReport(){
 const button=byId('refresh'),health=byId('health'),label=byId('health-text');
-if(button){button.disabled=true;button.textContent='در حال دریافت…'}
+if(button){button.disabled=true;button.textContent='Loading…'}
 try{
 const response=await fetch(reportUrl,{cache:'no-store'});
 if(!response.ok)throw new Error('HTTP '+response.status);
@@ -26,7 +26,7 @@ else{const chip=document.createElement('span');chip.className='type-chip';chip.t
 health.dataset.state='bad';label.textContent='گزارش زنده در دسترس نیست';
 byId('tested-at').textContent='آخرین تست: نامشخص';
 const types=byId('types');types.replaceChildren();const chip=document.createElement('span');chip.className='type-chip';chip.textContent='برای جزئیات، گزارش کامل را باز کن.';types.append(chip)
-}finally{if(button){button.disabled=false;button.textContent='به‌روزرسانی ↻'}}
+}finally{if(button){button.disabled=false;button.textContent='Refresh ↻'}}
 }
 document.addEventListener('click',async event=>{
 const copy=event.target.closest('[data-copy]');
