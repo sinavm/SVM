@@ -44,8 +44,11 @@ button{font:inherit}
 .brand strong{display:block;font-size:1rem;letter-spacing:.07em;line-height:1.35}
 .brand small{display:block;color:var(--muted);font-size:.7rem}
 .nav{display:flex;gap:7px;align-items:center;flex-wrap:nowrap;min-width:0}
-.nav a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:#c9d7eb;font-size:.75rem;background:rgba(255,255,255,.035);transition:.2s}
-.nav a:hover{border-color:#60a5fa66;color:#fff;background:#60a5fa12}
+.nav a,.nav a:link,.nav a:visited,.nav a:hover,.nav a:active{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;min-height:36px;border:1px solid rgba(148,163,184,.22);border-radius:999px;padding:6px 11px;color:#dbeafe;font-size:.75rem;font-weight:700;line-height:1.5;background:rgba(30,41,59,.72);text-decoration:none!important;text-decoration-line:none!important;text-decoration-thickness:0!important;text-underline-offset:0!important;box-shadow:none;transition:background .2s,border-color .2s,color .2s}
+.nav a:hover{border-color:rgba(96,165,250,.65);color:#fff;background:rgba(59,130,246,.16)}
+.nav a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.nav a::before,.nav a::after{content:none!important;display:none!important}
+.nav a span{ text-decoration:none!important }
 .nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
 main{display:grid;gap:18px;margin:28px auto 54px}
 .hero{text-align:center;padding:15px 12px 8px}
