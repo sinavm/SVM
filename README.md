@@ -43,7 +43,7 @@
 | 🧩 **لایت پایدار** | فهرست جمع‌وجورتر با اولویت پایداری | [دریافت اشتراک](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | 🌐 **مجموعه کامل** | همه نودهای خروجی پروژه | [دریافت اشتراک](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
 
-لینک را کپی کنید و در بخش افزودن Subscription کلاینت خود وارد کنید. برای انتخاب فرمت مناسب و دریافت QR، [داشبورد SVM](https://sinavm.github.io/SVM/) را باز کنید.
+لینک را کپی کنید و در بخش افزودن Subscription کلاینت خود وارد کنید. خروجی‌ها علاوه بر منابع اصلی، ساب‌لینک‌های تعریف‌شده در پروژه را نیز در فرآیند تجمیع پوشش می‌دهند. برای انتخاب فرمت مناسب و دریافت QR، [داشبورد SVM](https://sinavm.github.io/SVM/) را باز کنید.
 
 ## 📊 وضعیت زنده پروژه
 
