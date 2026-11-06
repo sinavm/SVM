@@ -5,14 +5,12 @@
 </a>
 
 <p>
-<a href="https://github.com/sinavm/SVM/actions/workflows/php.yml"><img src="https://img.shields.io/github/actions/workflow/status/sinavm/SVM/php.yml?style=for-the-badge&label=وضعیت%20گردآورنده&logo=githubactions&logoColor=white" alt="وضعیت گردآورنده"></a>
 <a href="https://github.com/sinavm/SVM/stargazers"><img src="https://img.shields.io/github/stars/sinavm/SVM?style=for-the-badge&logo=github&color=f59e0b" alt="ستاره‌های مخزن"></a>
 <a href="https://github.com/sinavm/SVM/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sinavm/SVM?style=for-the-badge&color=10b981" alt="مجوز پروژه"></a>
 <a href="https://github.com/sinavm/SVM/commits/main"><img src="https://img.shields.io/github/last-commit/sinavm/SVM/main?style=for-the-badge&color=64748b" alt="آخرین به‌روزرسانی"></a>
 <a href="https://sinavm.github.io/SVM/"><img src="https://img.shields.io/badge/داشبورد-زنده-0891b2?style=for-the-badge&logo=githubpages&logoColor=white" alt="داشبورد زنده"></a>
 </p>
 
-<p><a href="https://sinavm.github.io/SVM/"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/SEO_Logo.svg" alt="نشان SVM" width="104"></a></p>
 
 <h2>SVM | مجموعه کانفیگ‌های رایگان V2Ray و Xray</h2>
 <p>اشتراک‌های به‌روز، خروجی چندکلاینتی و گزارش تست برای دسترسی سریع‌تر به کانفیگ‌های قابل استفاده</p>
@@ -47,18 +45,17 @@
 
 ## 📊 وضعیت زنده پروژه
 
-آمار زیر مستقیماً از آخرین گزارش تولیدشده در مخزن خوانده می‌شود:
+وضعیت و خروجی‌های پروژه را از منابع اصلی و گزارش‌های منتشرشده دنبال کنید:
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Freports%2Ftest.json&query=%24.input&label=تست%20شده&color=2563eb&style=for-the-badge" alt="تعداد تست‌شده">
-<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Freports%2Ftest.json&query=%24.kept&label=پروتکل%20سالم&color=16a34a&style=for-the-badge" alt="پروتکل‌های سالم">
-<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Freports%2Ftest.json&query=%24.tcp_alive&label=TCP%20فعال&color=0891b2&style=for-the-badge" alt="TCP فعال">
-<img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinavm%2FSVM%2Fmain%2Freports%2Ftest.json&query=%24.converted&label=تبدیل%20شده&color=7c3aed&style=for-the-badge" alt="تبدیل‌شده">
+<a href="https://github.com/sinavm/SVM/actions"><img src="https://img.shields.io/badge/GitHub%20Actions-گزارش%20اجرا-64748b?style=for-the-badge&logo=githubactions&logoColor=white" alt="گزارش اجرای خودکار"></a>
+<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json"><img src="https://img.shields.io/badge/Test%20Report-گزارش%20آخرین%20تست-2563eb?style=for-the-badge" alt="گزارش آخرین تست"></a>
+<a href="https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json"><img src="https://img.shields.io/badge/Protocol%20Stats-آمار%20پروتکل‌ها-0d9488?style=for-the-badge" alt="آمار پروتکل‌ها"></a>
 
 </div>
 
-جزئیات بیشتر: [گزارش آخرین تست](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) · [آمار پروتکل‌ها](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json)
+[گزارش آخرین تست](https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json) · [آمار پروتکل‌ها](https://raw.githubusercontent.com/sinavm/SVM/main/reports/stats.json) · [همه اجراها](https://github.com/sinavm/SVM/actions)
 
 ## 📦 اشتراک‌ها بر اساس کلاینت
 
@@ -107,19 +104,60 @@
 
 </div>
 
-## 💛 حمایت از توسعه SVM
+## 💛 حمایت اختیاری از پروژه
 
-اگر این پروژه برایتان مفید است، می‌توانید با کمک مالی یا دادن ستاره به مخزن از ادامه توسعه آن حمایت کنید. از همراهی شما سپاسگزاریم.
+هیچ بخشی از SVM پولی نیست و تمام اشتراک‌ها و امکانات پروژه بدون پرداخت در دسترس هستند. اگر این پروژه برایتان مفید بوده و مایلید در هزینه نگهداری و توسعه آن سهیم شوید، می‌توانید هر مبلغ دلخواهی را به یکی از آدرس‌های زیر ارسال کنید. حمایت کاملاً اختیاری است و حتی یک مبلغ کوچک هم ارزشمند است.
 
-| ارز | شبکه | آدرس دریافت |
-|:--|:--|:--|
-| **Bitcoin (BTC)** | Bitcoin | `bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58` |
-| **USDT** | BNB Smart Chain (BEP20) | `0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85` |
-| **Ethereum (ETH)** | Ethereum | `0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85` |
+<div align="center">
 
-**توجه:** شبکه را پیش از ارسال دقیقاً مطابق جدول انتخاب کنید. آدرس یکسان USDT و ETH در اینجا به‌خاطر استفاده از آدرس مشترک در شبکه‌های سازگار با EVM است؛ موجودی و تراکنش‌ها در هر شبکه جداگانه ثبت می‌شوند. برای USDT فقط شبکه BNB Smart Chain (BEP20) و برای ETH فقط شبکه Ethereum را انتخاب کنید. از ارسال USDT روی TRON (TRC20) به این آدرس خودداری کنید.
+### ₿ بیت‌کوین · Bitcoin
 
-آدرس TON / Toncoin هنوز در اختیار پروژه قرار نگرفته و فعلاً برای جلوگیری از اشتباه، درج نشده است.
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58" width="180" alt="QR آدرس دریافت بیت‌کوین"></a>
+
+**شبکه:** Bitcoin
+
+`bc1qa6rsvv9dl24tdu4w28rptu96jak0rtwv5qnx58`
+
+---
+
+### ₮ تتر · USDT
+
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس دریافت تتر روی BNB Smart Chain"></a>
+
+**شبکه:** BNB Smart Chain · BEP20
+
+`0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85`
+
+---
+
+### Ξ اتریوم · Ethereum
+
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس دریافت اتریوم"></a>
+
+**شبکه:** Ethereum · ERC20
+
+`0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85`
+
+---
+
+### ◈ تون‌کوین · TON
+
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY" width="180" alt="QR آدرس دریافت TON"></a>
+
+**شبکه:** TON · The Open Network
+
+`UQDvpPr7JRx696Aj9_E6mhA4nV_Z2nHMhmMybNV2ZgAy6ThY`
+
+</div>
+
+**پیش از ارسال، شبکه را با دقت انتخاب کنید:**
+
+- BTC فقط روی شبکه Bitcoin ارسال شود.
+- USDT فقط روی BNB Smart Chain (BEP20) به این آدرس ارسال شود؛ این آدرس برای TRON (TRC20) نیست.
+- ETH فقط روی شبکه Ethereum (ERC20) ارسال شود.
+- TON فقط روی شبکه TON ارسال شود.
+- آدرس‌های ETH و BNB Smart Chain می‌توانند یکسان باشند؛ بااین‌حال موجودی و تراکنش هر شبکه مستقل است.
+- هر QR فقط متن آدرس همان بخش را کدگذاری می‌کند؛ مبلغ یا یادداشت تراکنش در آن قرار ندارد. همیشه شبکه و چند نویسه اول و آخر آدرس را در کیف پول خود بررسی کنید.
 
 ## ⚠️ نکات مهم
 
