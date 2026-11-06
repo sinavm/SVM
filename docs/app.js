@@ -139,6 +139,7 @@ if(ageMinutes!==null&&ageMinutes>45){set("pipelineState","گزارش‌ها قد
 renderSources();renderCountryProtocol();renderNodes();
 };
 const load=async()=>{
+state.fallback=false;
 $("refreshButton").disabled=true;
 set("pipelineState","در حال دریافت گزارش‌ها");
 const paths=["reports/test.json","reports/health.json","reports/stats.json","reports/sources.json","reports/index.json","lite/docs/reports/status.json"];
@@ -147,6 +148,7 @@ const keys=["test","health","stats","sources","index","lite"];
 results.forEach((result,index)=>{if(result.status==="fulfilled")state[keys[index]]=result.value;});
 state.nodes=Array.isArray(state.index.nodes)?state.index.nodes:[];
 const succeeded=results.filter(result=>result.status==="fulfilled").length;
+if(state.fallback&&!state.mirror){state.mirror=true;$("mirrorToggle").checked=true;updateHub();refreshDataLinks();toast("GitHub در دسترس نبود؛ آینه CDN به‌صورت خودکار فعال شد");}
 renderAll();
 if(succeeded===paths.length){set("pipelineState","همهٔ گزارش‌ها با موفقیت دریافت شدند");$("statusIndicator").className="status-indicator ok";}
 else if(succeeded){set("pipelineState","بخشی از گزارش‌ها در دسترس نیست");$("statusIndicator").className="status-indicator";}
@@ -166,4 +168,5 @@ $("refreshButton").addEventListener("click",load);
 $("mirrorToggle").addEventListener("change",event=>{state.mirror=event.target.checked;updateHub();refreshDataLinks();load();toast(state.mirror?"آینه CDN فعال شد":"لینک اصلی GitHub فعال شد");});
 ["nodeSearch","nodeProtocol","nodeCountry","nodeSpeed"].forEach(id=>$(id).addEventListener(id==="nodeSearch"?"input":"change",renderNodes));
 updateHub();
+refreshDataLinks();
 load();
