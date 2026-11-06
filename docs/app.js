@@ -86,7 +86,7 @@ const renderSourceTiers=()=>{
 const health=state.health;
 const counts=health.source_tiers||{};
 const grid=$("sourceTierGrid");grid.replaceChildren();
-const available=Boolean(health.quality_data_fresh);
+const available=Boolean(health.quality_data_fresh&&health.source_tiers&&Object.values(health.source_tiers).some(value=>value!==null&&value!==undefined));
 const tiers=[{key:"all",label:"همه منابع",description:"تمام نودهای زنده از همه گروه‌های ورودی"},{key:"curated",label:"منابع منتخب",description:"نودهای ورودی از گروه Curated"},{key:"heavy",label:"منابع حجیم",description:"نودهای ورودی از گروه Heavy"}];
 if(!available){const empty=document.createElement("div");empty.className="empty-state";empty.textContent="خروجی‌های تفکیک منبع پس از انتشار گزارش تست تازه در دسترس قرار می‌گیرند";grid.append(empty);return;}
 tiers.forEach(tier=>{
