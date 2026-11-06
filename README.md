@@ -28,7 +28,7 @@
 | 🧩 **لایت پایدار** | فهرست جمع‌وجورتر با اولویت پایداری | [دریافت اشتراک](https://raw.githubusercontent.com/sinavm/SVM/main/lite/subscriptions/xray/normal/alive-stable) |
 | 🌐 **کامل** | مجموعهٔ کامل نودهای خروجی پروژه | [دریافت اشتراک](https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/xray/normal/mix) |
 
-برای استفاده در کلاینت، لینک را کپی کنید و در بخش افزودن Subscription وارد کنید. اگر دریافت از GitHub Raw مشکل داشت، آینهٔ jsDelivr را امتحان کنید.
+برای استفاده در کلاینت، لینک مستقیم را کپی کنید و در بخش افزودن Subscription وارد کنید.
 
 ## 📊 وضعیت آخرین بررسی
 
