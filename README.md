@@ -120,21 +120,13 @@
 
 ---
 
-### ₮ تتر · USDT
+### ◈ آدرس مشترک شبکه‌های EVM · ETH / USDT
 
-<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس دریافت تتر روی BNB Smart Chain"></a>
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس مشترک EVM برای دریافت ETH و USDT"></a>
 
-**شبکه:** BNB Smart Chain · BEP20
+**برای دریافت ETH:** شبکه Ethereum · ERC20
 
-`0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85`
-
----
-
-### Ξ اتریوم · Ethereum
-
-<a href="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85"><img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85" width="180" alt="QR آدرس دریافت اتریوم"></a>
-
-**شبکه:** Ethereum · ERC20
+**برای دریافت USDT:** شبکه BNB Smart Chain · BEP20
 
 `0x570f2ea8e90fcE23F1f0286492dDB189Ad9a0E85`
 
@@ -177,11 +169,3 @@
 
 [GNU Affero General Public License v3.0](LICENSE)
 
-<div align="center">
-
-**اگر SVM برایت مفید بود، با یک ستاره از ادامه توسعه حمایت کن.**
-
-<a href="https://github.com/sinavm/SVM"><img src="https://img.shields.io/badge/⭐-Star%20SVM-f59e0b?style=for-the-badge" alt="ستاره دادن به SVM"></a>
-<a href="https://t.me/sinavm"><img src="https://img.shields.io/badge/✈-Join%20Telegram-0284c7?style=for-the-badge" alt="عضویت در تلگرام"></a>
-
-</div>
