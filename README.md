@@ -145,7 +145,6 @@
 
 - کانال تلگرام: [@sinavm](https://t.me/sinavm)
 - گزارش مشکل یا پیشنهاد: [GitHub Issues](https://github.com/sinavm/SVM/issues)
-- وضعیت اجرای خودکار: [GitHub Actions](https://github.com/sinavm/SVM/actions)
 - داشبورد: [sinavm.github.io/SVM](https://sinavm.github.io/SVM/)
 
 ## 📜 مجوز
