@@ -16,8 +16,8 @@ on:
     - cron: '*/15 * * * *'
 
 concurrency:
-  group: "sinavm-full"
-  cancel-in-progress: false
+  group: "sinavm-pipeline-v2-${{ github.ref }}"
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -65,44 +65,94 @@ jobs:
           php -l config-test.php
           php -l quality.php
           php -l functions.php
+          php -r '$files = ["public_sources.json", "lite/public_sources.json"]; foreach ($files as $file) { $data = json_decode(file_get_contents($file), true); if (!is_array($data) || !is_array($data["sources"] ?? null)) { fwrite(STDERR, "Invalid source catalog: " . $file . PHP_EOL); exit(1); } }'
           php -l rank.php
 
-      - name: Install sing-box
+      - name: Restore cached SVM toolchain
+        uses: actions/cache@v4
+        with:
+          path: .tools
+          key: svm-tools-ubuntu-singbox-1.14.0-mihomo-v1.19.29
+
+      - name: Install sing-box and Mihomo
         run: |
           set -euo pipefail
-          VER="${SINGBOX_VERSION:-1.14.0}"
-          URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
-          curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
-          file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || {
-            echo "downloaded file is not a tarball:"
-            file /tmp/sing-box.tar.gz
-            head -c 200 /tmp/sing-box.tar.gz || true
-            exit 1
-          }
-          tar -xzf /tmp/sing-box.tar.gz -C /tmp
-          sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
-          sing-box version
-          MVER="${MIHOMO_VERSION:-v1.19.29}"
-          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
-          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
-          gunzip -f /tmp/mihomo.gz
-          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
-          mihomo -v
+          mkdir -p .tools
+          VER="\${SINGBOX_VERSION:-1.14.0}"
+          if [ ! -x .tools/sing-box ]; then
+            URL="https://github.com/SagerNet/sing-box/releases/download/v\${VER}/sing-box-\${VER}-linux-amd64.tar.gz"
+            curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
+            file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || { file /tmp/sing-box.tar.gz; exit 1; }
+            tar -xzf /tmp/sing-box.tar.gz -C /tmp
+            install -m 0755 "/tmp/sing-box-\${VER}-linux-amd64/sing-box" .tools/sing-box
+          fi
+          MVER="\${MIHOMO_VERSION:-v1.19.29}"
+          if [ ! -x .tools/mihomo ]; then
+            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/\${MVER}/mihomo-linux-amd64-\${MVER}.gz" -o /tmp/mihomo.gz
+            echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+            gunzip -f /tmp/mihomo.gz
+            install -m 0755 /tmp/mihomo .tools/mihomo
+          fi
+          echo "$GITHUB_WORKSPACE/.tools" >> "$GITHUB_PATH"
+          .tools/sing-box version
+          .tools/mihomo -v
+      - name: Restore full source cache
+        uses: actions/cache@v4
+        with:
+          path: cache/
+          key: svm-full-sources-\${{ runner.os }}-\${{ hashFiles('public_sources.json') }}
+          restore-keys: |
+            svm-full-sources-\${{ runner.os }}-
 
-      - name: Execute PHP script
+      - name: Fetch and normalize full sources
         run: |
           set -euo pipefail
           git config pull.rebase true
           git config rebase.autoStash true
           git pull --rebase
-
           php -d display_errors get.php
+          php -r '$files = ["config.txt", "reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || ($file !== "config.txt" && !is_array(json_decode(file_get_contents($file), true)))) { fwrite(STDERR, "Missing or invalid fetch output: " . $file . PHP_EOL); exit(1); } }'
+          echo "Full source fetch and normalization completed."
+
+      - name: Save full fetch checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-full-fetch-\${{ github.run_id }}
+          path: |
+            config.txt
+            reports/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Test live full nodes
+        run: |
+          set -euo pipefail
           php -d display_errors config-test.php
+          php -r '$p = "reports/test.json"; $r = is_file($p) ? json_decode(file_get_contents($p), true) : null; if (!is_array($r) || empty($r["infra_ok"])) { fwrite(STDERR, "Live-node tester infrastructure failed: " . (is_array($r) ? ($r["error"] ?? "infra_ok=false") : "reports/test.json missing or invalid") . PHP_EOL); exit(1); } echo "Tester infrastructure OK; input=" . ($r["input"] ?? 0) . ", kept=" . ($r["kept"] ?? 0) . PHP_EOL;'
+
+      - name: Save full test checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-full-tested-\${{ github.run_id }}
+          path: |
+            config.txt
+            reports/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Build full reports and Xray feeds
+        run: |
+          set -euo pipefail
           php -d display_errors channelsAssets.php || true
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors quality.php
-          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
+
+      - name: Convert full feeds to Sing-box, Clash and WARP
+        run: |
+          set -euo pipefail
           php -d display_errors toSingbox.php
           php -d display_errors toClashSurfboard.php
           php -d display_errors toClashMetaExtra.php || true
@@ -110,7 +160,22 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+
+      - name: Save full generated-feed checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-full-generated-\${{ github.run_id }}
+          path: |
+            config.txt
+            reports/**
+            subscriptions/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Validate full Sing-box and Mihomo outputs
+        run: |
+          set -euo pipefail
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
@@ -163,17 +228,22 @@ jobs:
             echo "Checking sing-box: $f"
             sing-box check -c "$f"
           done
-          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
+          for f in subscriptions/clash/* subscriptions/meta/*; do
+            [ -f "$f" ] || continue
+            echo "Checking Mihomo: $f"
+            mihomo -t -f "$f"
+          done
 
+      - name: Publish validated full feeds
+        run: |
+          set -euo pipefail
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
           git config credential.helper store
-
           git rm -r --cached cache lite/cache hiddify-cli sing-box-bin reports/invalid.txt lite/reports/invalid.txt reports/singbox-test.log 2>/dev/null || true
           rm -f subscriptions/xray/normal/mci subscriptions/xray/normal/irancell subscriptions/xray/normal/national-net \
                 subscriptions/xray/base64/mci subscriptions/xray/base64/irancell subscriptions/xray/base64/national-net \
                 docs/subscriptions/mci docs/subscriptions/irancell docs/subscriptions/national-net || true
-
           for i in {1..3}; do
             git pull --rebase
             git add -A
@@ -181,7 +251,6 @@ jobs:
             git commit -m "$commit_message" --allow-empty
             git push && break || sleep 5
           done
-
   sinavm-lite:
     runs-on: ubuntu-latest
     timeout-minutes: 40
@@ -218,50 +287,118 @@ jobs:
           extensions: curl
           coverage: none
 
-      - name: Install sing-box
+      - name: Restore cached SVM toolchain
+        uses: actions/cache@v4
+        with:
+          path: .tools
+          key: svm-tools-ubuntu-singbox-1.14.0-mihomo-v1.19.29
+
+      - name: Install sing-box and Mihomo
         run: |
           set -euo pipefail
-          VER="${SINGBOX_VERSION:-1.14.0}"
-          URL="https://github.com/SagerNet/sing-box/releases/download/v${VER}/sing-box-${VER}-linux-amd64.tar.gz"
-          curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
-          file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || {
-            echo "downloaded file is not a tarball:"
-            file /tmp/sing-box.tar.gz
-            head -c 200 /tmp/sing-box.tar.gz || true
-            exit 1
-          }
-          tar -xzf /tmp/sing-box.tar.gz -C /tmp
-          sudo install -m 0755 "/tmp/sing-box-${VER}-linux-amd64/sing-box" /usr/local/bin/sing-box
-          sing-box version
-          MVER="${MIHOMO_VERSION:-v1.19.29}"
-          curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/${MVER}/mihomo-linux-amd64-${MVER}.gz" -o /tmp/mihomo.gz
-          echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
-          gunzip -f /tmp/mihomo.gz
-          sudo install -m 0755 /tmp/mihomo /usr/local/bin/mihomo
-          mihomo -v
+          mkdir -p .tools
+          VER="\${SINGBOX_VERSION:-1.14.0}"
+          if [ ! -x .tools/sing-box ]; then
+            URL="https://github.com/SagerNet/sing-box/releases/download/v\${VER}/sing-box-\${VER}-linux-amd64.tar.gz"
+            curl -fL --retry 8 --retry-all-errors --retry-delay 3 -o /tmp/sing-box.tar.gz "$URL"
+            file /tmp/sing-box.tar.gz | grep -qiE 'gzip|tar' || { file /tmp/sing-box.tar.gz; exit 1; }
+            tar -xzf /tmp/sing-box.tar.gz -C /tmp
+            install -m 0755 "/tmp/sing-box-\${VER}-linux-amd64/sing-box" .tools/sing-box
+          fi
+          MVER="\${MIHOMO_VERSION:-v1.19.29}"
+          if [ ! -x .tools/mihomo ]; then
+            curl -fL --retry 5 --retry-all-errors --retry-delay 2 --connect-timeout 15 --max-time 180 "https://github.com/MetaCubeX/mihomo/releases/download/\${MVER}/mihomo-linux-amd64-\${MVER}.gz" -o /tmp/mihomo.gz
+            echo "60de76a35a6cbf7b4fa4a20f5c257c24345d1d635ab1aa3877022a1997ef413c  /tmp/mihomo.gz" | sha256sum -c -
+            gunzip -f /tmp/mihomo.gz
+            install -m 0755 /tmp/mihomo .tools/mihomo
+          fi
+          echo "$GITHUB_WORKSPACE/.tools" >> "$GITHUB_PATH"
+          .tools/sing-box version
+          .tools/mihomo -v
+      - name: Restore lite source cache
+        uses: actions/cache@v4
+        with:
+          path: lite/cache/
+          key: svm-lite-sources-\${{ runner.os }}-\${{ hashFiles('lite/public_sources.json') }}
+          restore-keys: |
+            svm-lite-sources-\${{ runner.os }}-
 
-      - name: Execute PHP script
+      - name: Fetch and normalize lite sources
+        working-directory: lite
         run: |
           set -euo pipefail
           git config pull.rebase true
           git config rebase.autoStash true
           git pull --rebase
-
-          cd lite
           php -d display_errors ../get.php
+          php -r '$files = ["config.txt", "reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/index.json"]; foreach ($files as $file) { if (!is_file($file) || ($file !== "config.txt" && !is_array(json_decode(file_get_contents($file), true)))) { fwrite(STDERR, "Missing or invalid lite fetch output: " . $file . PHP_EOL); exit(1); } }'
+          echo "Lite source fetch and normalization completed."
+
+      - name: Save lite fetch checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-lite-fetch-\${{ github.run_id }}
+          path: |
+            lite/config.txt
+            lite/reports/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Test live lite nodes
+        working-directory: lite
+        run: |
+          set -euo pipefail
           php -d display_errors ../config-test.php
+          php -r '$p = "reports/test.json"; $r = is_file($p) ? json_decode(file_get_contents($p), true) : null; if (!is_array($r) || empty($r["infra_ok"])) { fwrite(STDERR, "Lite live-node tester infrastructure failed: " . (is_array($r) ? ($r["error"] ?? "infra_ok=false") : "reports/test.json missing or invalid") . PHP_EOL); exit(1); } echo "Lite tester infrastructure OK; input=" . ($r["input"] ?? 0) . ", kept=" . ($r["kept"] ?? 0) . PHP_EOL;'
+
+      - name: Save lite test checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-lite-tested-\${{ github.run_id }}
+          path: |
+            lite/config.txt
+            lite/reports/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Build lite reports and Xray feeds
+        working-directory: lite
+        run: |
+          set -euo pipefail
           php -d display_errors duplicate.php
           php -d display_errors sort.php
           php -d display_errors ../quality.php
-          php -r '$files = ["reports/stats.json", "reports/sources.json", "reports/source-history.json", "reports/source-provenance.json", "reports/test.json", "reports/health.json", "reports/index.json", "public_sources.json"]; foreach ($files as $file) { if (!is_file($file) || !is_array(json_decode(file_get_contents($file), true))) { fwrite(STDERR, "Invalid report: " . $file . PHP_EOL); exit(1); } }'
           php -d display_errors ../rank.php || true
+
+      - name: Convert lite feeds to Sing-box and Clash
+        working-directory: lite
+        run: |
+          set -euo pipefail
           php -d display_errors ../toSingbox.php
           php -d display_errors ../toClashSurfboard.php
           php -d display_errors ../toClashMetaExtra.php || true
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Repair missing outbound tags before sing-box validation and identify the exact failing file.
+
+      - name: Save lite generated-feed checkpoint
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: svm-lite-generated-\${{ github.run_id }}
+          path: |
+            lite/config.txt
+            lite/reports/**
+            lite/subscriptions/**
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Validate lite Sing-box and Mihomo outputs
+        working-directory: lite
+        run: |
+          set -euo pipefail
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
@@ -311,17 +448,23 @@ jobs:
 
           for f in subscriptions/singbox/*.json; do
             [ -f "$f" ] || continue
-            echo "Checking sing-box: $f"
+            echo "Checking lite sing-box: $f"
             sing-box check -c "$f"
           done
-          for f in subscriptions/clash/* subscriptions/meta/*; do [ -f "$f" ] || continue; mihomo -t -f "$f"; done
+          for f in subscriptions/clash/* subscriptions/meta/*; do
+            [ -f "$f" ] || continue
+            echo "Checking lite Mihomo: $f"
+            mihomo -t -f "$f"
+          done
 
+      - name: Publish validated lite feeds
+        working-directory: lite
+        run: |
+          set -euo pipefail
           git config --global user.email "sina.bb2006@gmail.com"
           git config --global user.name "sinavm"
           git config credential.helper store
-
           git rm -r --cached cache lite/cache hiddify-cli sing-box-bin reports/invalid.txt lite/reports/invalid.txt reports/singbox-test.log lite/reports/singbox-test.log 2>/dev/null || true
-
           for i in {1..3}; do
             git pull --rebase
             git add -A
