@@ -114,7 +114,6 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Validate outbound tags and selector/urltest references; never mask malformed output by inventing tags.
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
@@ -264,7 +263,6 @@ jobs:
           test -s subscriptions/singbox/mix.json
           test -s subscriptions/clash/mix
           test -s subscriptions/meta/mix
-          # Validate outbound tags and selector/urltest references; never mask malformed output by inventing tags.
           php <<'PHP'
           <?php
           foreach (glob('subscriptions/singbox/*.json') as $file) {
