@@ -255,7 +255,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     needs: [sinavm-full]
-    if: always()
     env:
       PRIVATE_LINK_SINAVM_1: ${{ secrets.PRIVATE_LINK_SINAVM_1 || secrets.PRIVATE_LINK_SiNAVM_1 }}
       PRIVATE_LINK_SINAVM_2: ${{ secrets.PRIVATE_LINK_SINAVM_2 || secrets.PRIVATE_LINK_SiNAVM_2 }}
