@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="اشتراک VLESS رایگان SVM برای برنامه Sing-box؛ افزودن مستقیم در Android و iPhone و کپی لینک اشتراک.">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="keywords" content="کانفیگ sing-box, کانفیگ v2ray رایگان, وی پی ان رایگان, sing-box config, v2ray config, SiNAVM, پروکسی رایگان, دانلود کانفیگ sing box, وی پی ان پرسرعت, کانفیگ تلگرام, singbox وی پی ان, v2rayng, nekobox, اتصال هوشمند, دور زدن فیلترینگ, کانفیگ رایگان singbox, sing-box رایگان, v2ray config رایگان">
+    <meta name="author" content="SiNAVM">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://sinavm.github.io/SVM/singbox/vless.html">
+
+    <title>SVM | کانفیگ رایگان Sing-box VLESS</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sinavm.github.io/SVM/singbox/vless.html">
+    <meta property="og:title" content="SVM | کانفیگ رایگان Sing-box VLESS">
+    <meta property="og:description" content="دریافت و افزودن مستقیم اشتراک VLESS به برنامه Sing-box و V2Ray. رایگان و VIP با پینگ پایین، IP ثابت و بدون قطعی. دریافت کانفیگ و شروع اتصال ایمن به اینترنت آزاد همین حالا!">
+    <meta property="og:site_name" content="SiNAVM">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="SiNAVM | کانفیگ رایگان Sing-box و V2Ray | وی پی ان هوشمند">
+    <meta name="twitter:description" content="دانلود کانفیگ رایگان و سرویس VIP Sing-box و V2Ray. اتصال سریع، ایمن و بدون قطعی با SiNAVM.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "SiNAVM",
+          "url": "https://sinavm.github.io/SVM/singbox/vless.html",
+          "description": "ارائه‌دهنده کانفیگ‌های رایگان و اختصاصی Sing-box و V2Ray برای اتصال امن، سریع و بدون قطعی به اینترنت آزاد",
+          "sameAs": [
+            "https://t.me/sinavm",
+            "https://github.com/sinavm",
+            "https://t.me/sinvt"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["Persian", "Farsi"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://sinavm.github.io/SVM/singbox/vless.html",
+          "name": "SiNAVM | اتصال هوشمند",
+          "description": "دانلود کانفیگ رایگان Sing-box و V2Ray - وی پی ان پرسرعت و ایمن",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://sinavm.github.io/SVM/singbox/vless.html?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "کانفیگ‌های Sing-box و V2Ray SiNAVM",
+          "description": "کانفیگ‌های رایگان و VIP برای دسترسی به اینترنت بدون سانسور با کلاینت Sing-box و V2Ray",
+          "provider": {
+            "@type": "Organization",
+            "name": "SiNAVM"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Iran"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IRR",
+            "description": "کانفیگ رایگان + پلن‌های VIP اختصاصی با پینگ پایین و IP ثابت"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --primary: #6366f1;
+            --accent: #ec4899;
+            --cyan: #06b6d4;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --shadow-glow: 0 0 50px rgba(99, 102, 241, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .home-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+        .home-link:hover {
+            color: var(--accent);
+        }
+
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-deep) 60%);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatOrb 20s infinite ease-in-out;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--primary); animation-delay: 0s; }
+        .orb-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--accent); animation-delay: -5s; }
+        .orb-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: var(--cyan); opacity: 0.2; animation-delay: -10s; }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 480px;
+            z-index: 10;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow); border-color: rgba(255,255,255,0.15); }
+
+        .hero { text-align: center; padding-top: 10px; }
+        .brand-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: #818cf8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .hero p { color: var(--text-muted); font-size: 1rem; margin-bottom: 30px; }
+
+        .action-btn-wrapper { position: relative; margin: 0 auto; width: 100%; }
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .action-btn i { margin-left: 10px; font-size: 1.4rem; }
+        .action-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        .action-btn:hover { transform: scale(1.02); box-shadow: 0 20px 50px -10px rgba(236, 72, 153, 0.5); }
+        .action-btn:hover::before { left: 100%; }
+
+        .loader-container {
+            margin-top: 15px;
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .loader-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--cyan), var(--primary));
+            animation: loadProgress 3s ease-out forwards;
+            border-radius: 4px;
+        }
+        @keyframes loadProgress { 0% { width: 0; } 100% { width: 100%; } }
+
+        .vip-card {
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            background: linear-gradient(145deg, rgba(236, 72, 153, 0.05), rgba(99, 102, 241, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+        .vip-card::after {
+            content: 'PREMIUM';
+            position: absolute;
+            top: 15px; left: -30px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 5px 30px;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .vip-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; cursor: pointer; }
+        .vip-title { font-size: 1.1rem; font-weight: 700; color: #fdfdfd; display: flex; align-items: center; gap: 10px; }
+        .vip-title i { color: #fbbf24; }
+        
+        .vip-content { 
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease; 
+            color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;
+        }
+        .vip-content.show { max-height: 200px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.1); }
+        .vip-tag { 
+            display: inline-block; background: rgba(255,255,255,0.05); 
+            padding: 4px 10px; border-radius: 8px; margin: 2px; font-size: 0.8rem; color: var(--cyan);
+        }
+
+        .grid-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .mini-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mini-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+        .mini-card i { font-size: 1.5rem; margin-bottom: 5px; background: linear-gradient(to bottom, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mini-card span { font-size: 0.9rem; font-weight: 500; }
+
+        .footer { text-align: center; margin-top: 20px; font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+        .footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: 0.3s; }
+        .footer a:hover { color: var(--primary); }
+
+        .toast {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);
+            background: rgba(15, 23, 42, 0.9); border: 1px solid var(--primary);
+            color: white; padding: 12px 24px; border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            font-size: 0.9rem; z-index: 100; opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        .toast i { color: #4ade80; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="https://sinavm.github.io/SVM/" class="home-link">
+            <i class="fas fa-home"></i>
+            <span>صفحه اصلی SiNAVM</span>
+        </a>
+    </div>
+
+    <div class="aurora-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="card hero">
+            <span class="brand-badge">SiNAVM PRO</span>
+            <h1>کانفیگ VLESS</h1>
+            <p>دریافت و افزودن مستقیم اشتراک VLESS به برنامه Sing-box</p>
+            
+            <div class="action-btn-wrapper">
+                <button class="action-btn" id="mainBtn" type="button">
+                    <i class="fas fa-bolt"></i>
+                    افزودن VLESS به Sing-box  
+                </button>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;">
+                <a class="mini-card" id="androidImport" href="#" style="justify-content:center;cursor:pointer;"><i class="fab fa-android"></i><span>افزودن در Android</span></a>
+                <a class="mini-card" id="iosImport" href="#" style="justify-content:center;cursor:pointer;"><i class="fab fa-apple"></i><span>افزودن در iPhone</span></a>
+            </div>
+            <button class="action-btn" id="copyConfig" type="button" style="margin-top:12px;background:rgba(255,255,255,.08);box-shadow:none;font-size:1rem;padding:14px;">کپی لینک اشتراک</button>
+            <div class="loader-container">
+                <div class="loader-bar"></div>
+            </div>
+            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--cyan); opacity: 0.8;">
+                <i class="fas fa-sync fa-spin" style="margin-left:5px;"></i> در حال ایجاد کانفیگ شما...
+            </div>
+        </div>
+
+        <div class="card vip-card">
+            <div class="vip-header" onclick="toggleVip()">
+                <div class="vip-title">
+                    <i class="fas fa-crown"></i>
+                    سرویس‌های VIP اختصاصی
+                </div>
+                <i class="fas fa-chevron-down" id="vipIcon" style="transition: 0.3s; font-size: 0.9rem;"></i>
+            </div>
+            <div class="vip-content" id="vipContent">
+                <p>با خرید اشتراک VIP به سرورهای اختصاصی و پرسرعت دسترسی پیدا کنید:</p>
+                <div style="margin: 10px 0;">
+                    <span class="vip-tag">پینگ پایین</span>
+                    <span class="vip-tag">IP ثابت</span>
+                    <span class="vip-tag">بدون قطعی</span>
+                    <span class="vip-tag">پشتیبانی ۲۴/۷</span>
+                </div>
+                <a href="https://t.me/sinavmbot" target="_blank" style="display: block; margin-top: 15px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem;">
+                    مشاهده پلن‌ها و خرید <i class="fas fa-arrow-left" style="margin-right: 5px;"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid-links">
+            <a href="https://t.me/sinavm" target="_blank" class="mini-card">
+                <i class="fab fa-telegram-plane"></i>
+                <span>کانال تلگرام</span>
+            </a>
+            <a href="https://github.com/sinavm" target="_blank" class="mini-card">
+                <i class="fab fa-github"></i>
+                <span>گیت‌هاب</span>
+            </a>
+        </div>
+
+        <div class="card" style="padding: 15px;">
+            <div style="font-size: 0.9rem; margin-bottom: 12px; text-align: center; color: var(--text-muted);">اپلیکیشن ندارید؟ دانلود کنید:</div>
+            <div class="grid-links">
+                <a href="https://apps.apple.com/app/id6785326793" class="mini-card" style="border-radius: 12px; padding: 10px;">
+                    <i class="fab fa-apple" style="font-size: 1.2rem;"></i>
+                    <span style="font-size: 0.8rem;">iOS</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=io.nekohasekai.sfa" class="mini-card" style="border-radius: 12px; padding: 10px;">
+                    <i class="fab fa-android" style="font-size: 1.2rem; color: #3ddc84;"></i>
+                    <span style="font-size: 0.8rem;">Android</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            Design & Config by <a href="https://t.me/sinavm">SiNAVM</a>
+            <br>
+            <span id="visit-count" style="opacity: 0.5; font-size: 0.7rem;">Visits: Loading...</span>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>لینک کپی شد!</span>
+    </div>
+
+    <script>
+
+        const device = (() => {
+            const ua = navigator.userAgent || '';
+            if (/Android/i.test(ua)) return 'android';
+            const isIOS = /iPad|iPhone|iPod/.test(ua) || 
+                         (/Macintosh/i.test(ua) && (navigator.maxTouchPoints || 0) > 1);
+            return isIOS ? 'ios' : 'desktop';
+        })();
+
+
+        const configUrl = 'https://raw.githubusercontent.com/sinavm/SVM/main/subscriptions/singbox/vless.json';
+        const configLinks = { android: configUrl, ios: configUrl };
+
+        function getDeepLink() {
+            const baseUrl = configLinks[device] || configLinks.ios;
+            return `sing-box://import-remote-profile?url=${encodeURIComponent(baseUrl)}#SVM%20VLESS`;
+        }
+
+        function openConfigLink() {
+            const link = getDeepLink();
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = 'display:none;width:0;height:0;border:0;';
+            iframe.src = link;
+            document.body.appendChild(iframe);
+            setTimeout(() => {
+                if (iframe && iframe.parentNode) iframe.parentNode.removeChild(iframe);
+            }, 2000);
+        }
+
+        let autoCancelled = false;
+
+
+        const androidImport = document.getElementById('androidImport');
+        const iosImport = document.getElementById('iosImport');
+        if (androidImport) androidImport.href = getDeepLink();
+        if (iosImport) iosImport.href = getDeepLink();
+        const copyConfig = document.getElementById('copyConfig');
+        if (copyConfig) copyConfig.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(configUrl);
+                const label = copyConfig.textContent;
+                copyConfig.textContent = 'لینک کپی شد';
+                setTimeout(() => copyConfig.textContent = label, 1800);
+            } catch (error) {
+                const field = document.createElement('textarea');
+                field.value = configUrl;
+                document.body.appendChild(field);
+                field.select();
+                document.execCommand('copy');
+                field.remove();
+                copyConfig.textContent = 'لینک کپی شد';
+            }
+        });
+
+        const mainBtn = document.getElementById('mainBtn');
+        if (mainBtn) {
+            mainBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                autoCancelled = true;
+                openConfigLink();
+            });
+
+            if (device === 'desktop') {
+                mainBtn.textContent = 'برای افزودن، با موبایل باز کنید';
+                mainBtn.style.opacity = "0.7";
+            }
+        }
+
+        setTimeout(() => {
+            if (!autoCancelled && device !== 'desktop' && document.visibilityState === 'visible') {
+                autoCancelled = true;
+                openConfigLink();
+            }
+        }, 2500);
+
+
+        function toggleVip() {
+            const content = document.getElementById('vipContent');
+            const icon = document.getElementById('vipIcon');
+            if (!content || !icon) return;
+            content.classList.toggle('show');
+            icon.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        const visitEl = document.getElementById('visit-count');
+        if (visitEl) {
+            fetch('https://page-views.count1.workers.dev')
+                .then(r => r.text())
+                .then(d => visitEl.innerText = 'Visits: ' + d)
+                .catch(() => visitEl.innerText = 'Visits: --');
+        }
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+</body>
+</html>
