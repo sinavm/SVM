@@ -3,7 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+/* Always start at the top on a fresh load or refresh, including mobile Safari. */
+if('scrollRestoration' in history) history.scrollRestoration='manual';
+window.addEventListener('pageshow',function(){
+  window.scrollTo(0,0);
+  if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+});
+</script>
 <meta name="theme-color" content="#0b1224">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <meta name="description" content="دریافت کانفیگ رایگان V2Ray و Xray از SVM و SiNAVM؛ اشتراک‌های رایگان و به‌روز VLESS، VMess، Reality، Trojan و Shadowsocks با تست زنده و لینک مستقیم برای کلاینت‌ها.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="SiNAVM">
@@ -36,9 +48,9 @@ html{scroll-behavior:smooth;scroll-padding-top:86px}
 body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 8% 0%,rgba(59,130,246,.2),transparent 38%),radial-gradient(ellipse at 95% 14%,rgba(139,92,246,.13),transparent 34%),radial-gradient(ellipse at 50% 65%,rgba(8,145,178,.07),transparent 42%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.8}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-.shell{width:min(100% - 28px,760px);margin:auto}
+.shell{width:min(100% - 28px,680px);margin:auto}
 .top{height:66px;position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(11,18,36,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.top-inner{width:min(100% - 28px,760px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
+.top-inner{width:min(100% - 28px,680px);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0}
 .brand{display:flex;align-items:center;gap:11px;min-width:0}
 .brand img{width:42px;height:42px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:0 7px 24px rgba(37,99,235,.2)}
 .brand strong{display:block;font-size:1rem;letter-spacing:.07em;line-height:1.35}
@@ -48,7 +60,9 @@ button{font:inherit}
 .nav a:hover{border-color:rgba(96,165,250,.65);color:#fff;background:rgba(59,130,246,.16)}
 .nav a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 .nav a::before,.nav a::after{content:none!important;display:none!important}
-.nav a span{ text-decoration:none!important }
+.nav a span,.nav a .nav-label{display:inline-block;text-decoration:none!important;text-decoration-line:none!important;text-decoration-thickness:0!important;text-decoration-color:transparent!important;border:0!important;border-bottom:0!important;box-shadow:none!important;background-image:none!important;-webkit-text-decoration:none!important}
+.nav a,.nav a:link,.nav a:visited,.nav a:hover,.nav a:active{-webkit-text-decoration:none!important;text-decoration:none!important;text-decoration-line:none!important;text-decoration-color:transparent!important;background-image:none!important;border-bottom-color:rgba(148,163,184,.22)!important}
+.nav a::before,.nav a::after{content:none!important;display:none!important}
 .nav-live-dot{display:inline-block;width:7px;height:7px;margin-left:7px;vertical-align:middle;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(52,211,153,.13),0 0 10px rgba(52,211,153,.55)}
 main{display:grid;gap:18px;margin:28px auto 54px}
 .hero{text-align:center;padding:15px 12px 8px}
@@ -88,8 +102,16 @@ h1{font-size:clamp(1.8rem,6vw,2.65rem);line-height:1.45;margin:0;font-weight:900
 .refresh{border:0;background:transparent;color:#67d9f5;font:700 .72rem Vazirmatn,sans-serif;cursor:pointer;padding:0}
 .refresh:disabled{opacity:.5;cursor:wait}
 .type-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.type-chip{padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#ffffff06;color:#cbd8eb;font-size:.69rem}
-.type-chip b{color:#fff;margin-right:4px}
+.type-chip{padding:5px 10px;border-radius:999px;border:1px solid rgba(52,211,153,.38);background:rgba(16,185,129,.12);color:#6ee7b7;font-size:.69rem}
+.type-chip b{color:#6ee7b7;margin-right:4px}
+.site-footer{padding:20px 8px 28px;margin-top:20px;border-top:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;text-align:center;color:var(--muted);font-size:.76rem;line-height:2}
+.site-footer a{color:var(--muted);text-decoration:none;transition:color .2s}
+.site-footer a:hover{color:var(--cyan)}
+.footer-legal{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-credit{font-weight:700}
+.footer-credit a{color:#67d9f5}
+.footer-views{font-size:.72rem;color:var(--muted)}
+.footer-views span{font-variant-numeric:tabular-nums;color:#6ee7b7;font-weight:800}
 .subscription-list{display:grid;gap:11px}
 .subscription{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff09,#ffffff03);border-radius:18px;padding:15px}
 .subscription.featured{border-color:#34d39955;background:linear-gradient(135deg,#0e3a3b70,#14213b 62%,#172642);box-shadow:0 12px 34px #10b98112}
@@ -131,35 +153,118 @@ footer a{color:#67d9f5}
 @media(max-width:350px){.nav{gap:4px}.nav a{font-size:.57rem;padding:7px 1px}.nav-live-dot{margin-left:3px}.sub-actions{grid-template-columns:1fr 1fr}.sub-actions .btn:last-child{grid-column:1/-1}.format-grid{grid-template-columns:1fr}}
 .seo-copy{color:var(--muted);font-size:.82rem;line-height:2.15;margin:8px 0}.seo-copy strong{color:var(--text)}
 
-.mobile-menu{display:none;position:relative;direction:rtl}.mobile-menu summary{list-style:none;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.06);color:var(--text);font-size:1.35rem}.mobile-menu summary::-webkit-details-marker{display:none}.mobile-menu nav{position:absolute;right:0;top:calc(100% + 9px);min-width:190px;padding:8px;display:grid;gap:5px;background:#101b31;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 38px #0008;z-index:20}.mobile-menu nav a{display:block;padding:10px 12px;border-radius:9px;color:var(--text);text-decoration:none;font-size:.84rem}.mobile-menu nav a:hover{background:rgba(255,255,255,.08)}
-@media(max-width:620px){.nav{display:none!important}.mobile-menu{display:block;flex:0 0 auto}}
+/* Mobile and touch-device layout: also handles iOS Safari "Request Desktop Website". */
+@media (max-width: 980px), (pointer: coarse) and (hover: none) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  .shell, .top-inner { width:calc(100% - 20px); max-width:760px; min-width:0; }
+  .top { width:100%; }
+  .top-inner { display:grid; grid-template-columns:minmax(0,1fr); justify-content:stretch; gap:9px; padding:9px 0 10px; }
+  .brand { justify-self:center; }
+  .nav { width:100%; min-width:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; }
+  .nav a { min-width:0; white-space:normal; padding:7px 3px; font-size:clamp(.58rem,2.6vw,.7rem); text-align:center; }
+  main { width:100%; min-width:0; }
+  main > *, .panel, .hero, .section-head, .stats { min-width:0; }
+  .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .stat { min-width:0; }
+  .section-head { flex-wrap:wrap; }
+  .head-copy { min-width:0; }
+  .head-link { margin-inline-start:auto; }
+  .hero p { max-width:100%; overflow-wrap:anywhere; }
+  .table-wrap { max-width:100%; }
+}
+@media (max-width: 380px), (pointer: coarse) and (hover: none) and (max-width: 430px) {
+  .panel { padding:12px; }
+  .stats { gap:8px; }
+  .stat { padding:10px; }
+  .stat strong { font-size:1.4rem; }
+  .nav { gap:4px; }
+  .nav a { padding-inline:2px; }
+}
+
+
+/* Touch-first responsive layout: fixes iOS Safari desktop-site mode. */
+@media (max-width: 980px), (pointer: coarse) and (hover: none) {
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+.shell,.top-inner{width:calc(100% - 20px);max-width:760px;min-width:0}
+.top{width:100%}
+.top-inner{display:grid;grid-template-columns:minmax(0,1fr);justify-content:stretch;gap:9px;padding:9px 0 10px}
+.brand{justify-self:center}
+.nav{width:100%;min-width:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.nav a{min-width:0;white-space:normal;padding:7px 3px;font-size:clamp(.58rem,2.6vw,.7rem);text-align:center}
+main{width:100%;min-width:0}
+main>*,.panel,.hero,.section-head,.stats{min-width:0}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stat{min-width:0}
+.section-head{flex-wrap:wrap}
+.head-copy{min-width:0}
+.head-link{margin-inline-start:auto}
+.hero p{max-width:100%;overflow-wrap:anywhere}
+.table-wrap{max-width:100%}
+}
+@media(max-width:430px){.panel{padding:12px}.stats{gap:8px}.stat{padding:10px}.stat strong{font-size:1.4rem}.nav{gap:4px}.nav a{padding-inline:2px}}
+
+/* Header layout follows the compact SiNAVM / Melishekan page */
+.top{height:58px;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.top>a{font-weight:800;display:flex;gap:9px;align-items:center;color:var(--text);text-decoration:none}
+.top>a i{color:var(--cyan)}
+.shell{width:min(100% - 28px,680px)}
+.hero{padding:16px 12px 8px}
+.hero-logo{width:82px;height:82px;border-radius:24px}
+.eyebrow{font-size:.82rem;margin:15px 0 4px}
+.hero p{max-width:500px}
+.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:998;text-decoration:none;box-shadow:0 7px 24px rgba(0,0,0,.28);transition:transform .2s,opacity .2s,background .2s}
+.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ED9,#1d8fc7);color:#fff;font-size:1.45rem}
+.floating-tg-btn:hover{transform:scale(1.07)}
+.scroll-top-btn{right:18px;background:rgba(255,255,255,.1);border:1px solid var(--line);color:var(--text);font-size:1.35rem;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-top-btn:hover{transform:translateY(-2px);background:rgba(34,211,238,.18)}
+@media(max-width:430px){.top{height:56px}.shell{width:min(100% - 20px,680px)}.hero{padding:12px 6px 6px}.hero-logo{width:76px;height:76px}.floating-tg-btn,.scroll-top-btn{width:48px;height:48px;bottom:16px}.floating-tg-btn{left:14px}.scroll-top-btn{right:14px}}
+
+
+/* Exact Melishekan-style top and hero geometry. Existing SVM logo is intentionally preserved. */
+.top{height:58px!important;min-height:58px!important;position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(11,18,36,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:0}
+.top>a{height:100%;display:flex;align-items:center;justify-content:center;gap:9px;font-weight:800;color:var(--text);text-decoration:none!important;white-space:nowrap}
+.top>a i{color:var(--cyan);font-size:1.35rem}
+main,.shell{width:min(100% - 28px,680px);max-width:680px;margin-left:auto;margin-right:auto}
+main{margin-top:34px;margin-bottom:70px;display:grid;gap:20px}
+.hero{text-align:center;padding:16px 12px 8px}
+.hero-logo{display:block;width:82px;height:82px;margin:0 auto;border-radius:24px;object-fit:cover;border:1px solid var(--line);box-shadow:0 12px 45px rgba(37,99,235,.22)}
+.eyebrow{display:block;text-align:center;color:var(--cyan);font-size:.82rem;font-weight:800;margin:15px 0 4px}
+h1{font-size:clamp(1.7rem,6vw,2.35rem);line-height:1.5;margin:0;font-weight:900;letter-spacing:-.7px}
+.hero p{color:var(--muted);line-height:2;margin:8px auto 0;max-width:500px;font-size:.94rem}
+.hero-actions{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;margin-top:18px}
+.btn{border-radius:13px;padding:11px 15px}
+.floating-tg-btn,.scroll-top-btn{position:fixed;bottom:22px;width:54px;height:54px;min-width:54px;min-height:54px;padding:0;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:1000;text-decoration:none!important;line-height:1;box-shadow:0 8px 28px rgba(0,0,0,.32);transition:transform .2s,opacity .2s,background .2s}
+.floating-tg-btn{left:18px;background:linear-gradient(135deg,#229ed9,#168ac4);color:#fff;font-size:1.7rem}
+.floating-tg-btn i,.scroll-top-btn i{display:block;line-height:1}
+.floating-tg-btn:hover{transform:translateY(-2px) scale(1.04);color:#fff}
+.scroll-top-btn{right:18px;background:rgba(30,41,59,.96);border:1px solid rgba(148,163,184,.3);color:#f5f8ff;font-size:1.45rem;opacity:0;visibility:hidden;pointer-events:none}
+.scroll-top-btn.visible{opacity:1;visibility:visible;pointer-events:auto}
+.scroll-top-btn:hover{transform:translateY(-3px);background:rgba(8,145,178,.95);color:#fff}
+@media(max-width:430px){
+ .top{height:58px!important;min-height:58px!important}
+ main,.shell{width:min(100% - 20px,680px)}
+ main{margin-top:22px;margin-bottom:70px;gap:16px}
+ .hero{padding:16px 12px 8px}
+ .hero-logo{width:82px;height:82px}
+ .hero p{font-size:.94rem}
+ .floating-tg-btn,.scroll-top-btn{width:50px;height:50px;min-width:50px;min-height:50px;bottom:16px}
+ .floating-tg-btn{left:14px}.scroll-top-btn{right:14px}
+}
+
 </style>
 </head>
 <body>
-<div class="top">
-<div class="top-inner">
-<a class="brand" href="https://github.com/sinavm/SVM" aria-label="مخزن SVM در گیت‌هاب">
-<img src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM؛ پروژه کانفیگ رایگان V2Ray و Xray">
-<span><strong>SVM</strong><small>V2Ray Collector</small></span>
-</a>
-<nav class="nav" aria-label="ناوبری اصلی">
-<a href="#live"><span class="nav-live-dot" aria-hidden="true"></span>وضعیت زنده</a>
-<a href="#subscriptions">اشتراک‌ها</a>
-<a href="https://github.com/sinavm/SVM">GitHub ↗</a>
-<a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">تلگرام ↗</a>
-</nav>
-<details class="mobile-menu"><summary aria-label="Open menu">☰</summary><nav aria-label="Mobile navigation"><a href="#live">وضعیت زنده</a><a href="#subscriptions">اشتراک‌ها</a><a href="https://github.com/sinavm/SVM">GitHub ↗</a><a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">تلگرام ↗</a></nav></details>
-</div>
-</div>
+<nav class="top" aria-label="ناوبری صفحه"><a href="https://sinavm.github.io/sinavm/"><i class="fa-solid fa-house" aria-hidden="true"></i><span>صفحه اصلی SiNAVM</span></a></nav>
 <main class="shell">
 <header class="hero">
 <img class="hero-logo" src="https://sinavm.github.io/SVM/SEO_Logo.svg" alt="لوگوی SVM و SiNAVM برای کانفیگ رایگان V2Ray و Xray">
-<div class="eyebrow"><span class="pulse"></span> داشبورد زنده اشتراک‌های SVM</div>
-<h1>اتصال بهتر،<br><span>انتخاب ساده‌تر.</span></h1>
-<p>اشتراک‌های به‌روز V2Ray و Xray را در یک نگاه بررسی کن. وضعیت آخرین تست را ببین و لینک مناسب کلاینتت را مستقیم و بی‌دردسر بردار.</p>
+<div class="eyebrow">داشبورد زنده اشتراک‌های SiNAVM</div>
+<h1>اتصال بهتر <span>انتخاب ساده‌ و رایگان</span></h1>
+<p>هر شش ساعت تمامی اشتراک‌ها به‌روزرسانی می‌شوند.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#subscriptions">دریافت اشتراک‌ها <span>←</span></a>
-<a class="btn btn-ghost" href="https://github.com/sinavm/SVM">مشاهده مخزن ↗</a>
+<a class="btn btn-ghost" href="#protocols">اشتراک بر اساس پروتکل <span>⌄</span></a>
 </div>
 </header>
 <section class="panel" id="live">
@@ -243,27 +348,26 @@ footer a{color:#67d9f5}
 </tbody>
 </table>
 </div>
-</section>
-
-
-<section class="panel" id="seo-content" aria-labelledby="seo-title">
-<div class="section-head">
-<div class="section-icon">⌕</div>
-<div class="head-copy"><h2 id="seo-title">کانفیگ رایگان V2Ray و Xray از SVM</h2><p>اشتراک‌های به‌روز و قابل بررسی از پروژه SiNAVM</p></div>
-</div>
-<p class="seo-copy">در داشبورد <strong>SVM (SiNAVM)</strong> می‌توانی کانفیگ رایگان و کانفیگ‌های رایگان V2Ray و Xray را از یک منبع دریافت کنی. لینک‌های اشتراک با فرمت‌های سازگار با Xray، Sing-box، Clash و Clash Meta ارائه می‌شوند و گزارش تست، وضعیت نودها و زمان آخرین بررسی در همین صفحه قابل مشاهده است. اگر عبارت‌هایی مثل <strong>کانفیگ رایگان VLESS</strong>، <strong>کانفیگ VMess</strong>، <strong>Reality</strong>، <strong>Trojan</strong> یا <strong>Shadowsocks</strong> را جست‌وجو می‌کنی، از بخش اشتراک‌ها پروتکل و فرمت مناسب کلاینتت را انتخاب کن.</p>
-<p class="seo-copy">SVM و <strong>sinavnbot</strong> با هدف مرتب‌سازی، بررسی و انتشار لینک‌های اشتراک رایگان فعالیت می‌کنند. وضعیت اتصال ممکن است با توجه به اپراتور، موقعیت جغرافیایی و زمان استفاده متفاوت باشد؛ بنابراین پیش از انتخاب، گزارش زنده را بررسی کن.</p>
-</section>
-<footer>
-<span>© SVM · V2Ray Collector</span>
-<span><a href="https://github.com/sinavm/SVM">GitHub</a> · <a href="https://github.com/sinavm/SVM/actions">Actions</a> · <a href="https://t.me/sinavm">Telegram</a> · <a href="https://sinavm.github.io/sinavm/">SiNAVM</a></span>
+</section><footer class="site-footer">
+<div class="footer-legal"><a href="https://sinavm.github.io/sinavm/legal_pages/about.html" rel="noopener noreferrer">درباره ما</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/privacy.html" rel="noopener noreferrer">سیاست حریم خصوصی</a><span aria-hidden="true">|</span><a href="https://sinavm.github.io/sinavm/legal_pages/terms.html" rel="noopener noreferrer">شرایط استفاده</a></div>
+<div class="footer-credit"><a href="https://t.me/sinavm" target="_blank" rel="noopener noreferrer">Design &amp; Config by SiNAVM</a></div>
+<div class="footer-views">بازدید کل: <span id="visit-count" aria-live="polite">...</span></div>
 </footer>
 </main>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<a href="https://t.me/sinavm" class="floating-tg-btn" target="_blank" rel="noopener noreferrer" title="کانال تلگرام" aria-label="ورود به کانال تلگرام SiNAVM"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
+<a href="#" class="scroll-top-btn" id="scrollTopBtn" title="بازگشت به بالا" aria-label="بازگشت به بالای صفحه"><i class="fa-solid fa-angles-up" aria-hidden="true"></i></a>
+
 <script>
 const reportUrl='https://raw.githubusercontent.com/sinavm/SVM/main/reports/test.json';
 const numberFormat=new Intl.NumberFormat('fa-IR');
 const byId=id=>document.getElementById(id);
+const scrollTopBtn=byId('scrollTopBtn');
+function updateScrollTop(){if(scrollTopBtn)scrollTopBtn.classList.toggle('visible',window.scrollY>300)}
+window.addEventListener('scroll',updateScrollTop,{passive:true});
+updateScrollTop();
+if(scrollTopBtn)scrollTopBtn.addEventListener('click',event=>{event.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+
 const put=(id,value)=>{const el=byId(id);if(el)el.textContent=value===undefined||value===null?'—':numberFormat.format(value)};
 function showToast(message){const toast=byId('toast');toast.textContent=message;toast.classList.add('show');window.setTimeout(()=>toast.classList.remove('show'),2200)}
 async function loadReport(){
@@ -303,6 +407,10 @@ catch{showToast('کپی خودکار در دسترس نیست')}
 });
 });
 loadReport();
+fetch('https://page-views.count1.workers.dev')
+ .then(response=>{if(!response.ok)throw new Error('counter unavailable');return response.text()})
+ .then(value=>{const el=byId('visit-count');if(el)el.textContent=new Intl.NumberFormat('fa-IR').format(Number(value))})
+ .catch(()=>{const el=byId('visit-count');if(el)el.textContent='—'});
 </script>
 </body>
 </html>
