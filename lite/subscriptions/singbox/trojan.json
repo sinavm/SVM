@@ -87,16 +87,77 @@
             "type": "selector",
             "tag": "انتخابگر دستی",
             "outbounds": [
-                "@SiNAVM"
+                "@SiNAVM",
+                "@SiNAVM-1",
+                "@SiNAVM-2"
             ]
         },
         {
             "type": "urltest",
             "tag": "@SiNAVM",
-            "outbounds": [],
+            "outbounds": [
+                "@SiNAVM-1",
+                "@SiNAVM-2"
+            ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
             "tolerance": 1
+        },
+        {
+            "type": "trojan",
+            "server": "199.68.156.250",
+            "server_port": 2087,
+            "password": "7bpe9s002exll38s",
+            "tls": {
+                "enabled": true,
+                "server_name": "nexoshop.netvia.ir",
+                "insecure": true,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/wss",
+                "headers": {
+                    "Host": "nexoshop.netvia.ir"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-1"
+        },
+        {
+            "type": "trojan",
+            "server": "199.68.156.121",
+            "server_port": 2087,
+            "password": "7bpe9s002exll38s",
+            "tls": {
+                "enabled": true,
+                "server_name": "nexoshop.netvia.ir",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "firefox"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/wss",
+                "headers": {
+                    "Host": "nexoshop.netvia.ir"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-2"
         },
         {
             "type": "direct",
