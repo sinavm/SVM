@@ -89,7 +89,9 @@
             "outbounds": [
                 "@SiNAVM",
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ]
         },
         {
@@ -97,7 +99,9 @@
             "tag": "@SiNAVM",
             "outbounds": [
                 "@SiNAVM-1",
-                "@SiNAVM-2"
+                "@SiNAVM-2",
+                "@SiNAVM-3",
+                "@SiNAVM-4"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -105,7 +109,7 @@
         },
         {
             "type": "trojan",
-            "server": "188.114.98.0",
+            "server": "104.17.10.171",
             "server_port": 443,
             "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
             "tls": {
@@ -113,7 +117,7 @@
                 "server_name": "ltf8.jueson.de5.net",
                 "insecure": false,
                 "alpn": [
-                    "http\/1.1"
+                    "h3"
                 ],
                 "utls": {
                     "enabled": true,
@@ -150,7 +154,7 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "\/order\/ads\/",
+                "path": "\/categories\/community\/",
                 "headers": {
                     "Host": "ltf8.jueson.de5.net"
                 },
@@ -158,6 +162,62 @@
             },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-2"
+        },
+        {
+            "type": "trojan",
+            "server": "188.114.98.0",
+            "server_port": 443,
+            "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+            "tls": {
+                "enabled": true,
+                "server_name": "ltf8.jueson.de5.net",
+                "insecure": false,
+                "alpn": [
+                    "http\/1.1"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/order\/ads\/",
+                "headers": {
+                    "Host": "ltf8.jueson.de5.net"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-3"
+        },
+        {
+            "type": "trojan",
+            "server": "104.25.95.49",
+            "server_port": 443,
+            "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+            "tls": {
+                "enabled": true,
+                "server_name": "ltf8.jueson.de5.net",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/",
+                "headers": {
+                    "Host": "ltf8.jueson.de5.net"
+                },
+                "max_early_data": 0
+            },
+            "domain_resolver": "dns_direct",
+            "tag": "@SiNAVM-4"
         },
         {
             "type": "direct",
