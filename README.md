@@ -20,7 +20,7 @@
 
 <a href="https://github.com/sinavm/SVM"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-star.svg" alt="Star SVM on GitHub" width="70%"></a><br>
 <a href="#-شروع-سریع"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-links.svg" alt="Get subscription links" width="70%"></a><br>
-<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="Join SVM on Telegram" width="70%"></a>
+<a href="https://t.me/sinavm"><img src="https://raw.githubusercontent.com/sinavm/SVM/main/assets/cta-telegram.svg" alt="Join SiNAVM on Telegram" width="70%"></a>
 
 </div>
 
