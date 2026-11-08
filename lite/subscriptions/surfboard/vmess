@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #11 = vmess, 2.26.54.200, 8018, username = b831381d-6324-4d53-ad4f-8cda48b30811, ws = true, tls = , vmess-aead = true, ws-path = /websocket/transfer/gayporn, ws-headers = Host:"null", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #11
+URL-TEST = url-test,SiNAVM | VMESS | #11
+FALLBACK = fallback,SiNAVM | VMESS | #11
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
