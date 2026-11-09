@@ -119,13 +119,10 @@ dns:
 
 proxies:
   - {"name":"SiNAVM | TROJAN | #1","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"104.17.10.171","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"104.25.95.49","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
+  - {"name":"SiNAVM | TROJAN | #2","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
+  - {"name":"SiNAVM | TROJAN | #3","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
+  - {"name":"SiNAVM | TROJAN | #4","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
   - {"name":"SiNAVM | TROJAN | #5","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #9","type":"trojan","server":"104.25.95.49","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #10","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #13","type":"trojan","server":"188.114.98.0","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
-  - {"name":"SiNAVM | TROJAN | #18","type":"trojan","server":"104.25.95.49","port":443,"udp":false,"password":"883e3cc8-9613-4f2d-8c42-0dd3d429db55","skip-cert-verify":false,"network":"tcp","client-fingerprint":"chrome","sni":"ltf8.jueson.de5.net"}
 proxy-groups:
   - name: MANUAL
     type: select
@@ -134,12 +131,9 @@ proxy-groups:
       - FALLBACK
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM | TROJAN | #9'
-      - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | TROJAN | #13'
-      - 'SiNAVM | TROJAN | #18'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com
@@ -148,12 +142,9 @@ proxy-groups:
     proxies:
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM | TROJAN | #9'
-      - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | TROJAN | #13'
-      - 'SiNAVM | TROJAN | #18'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com
@@ -161,12 +152,9 @@ proxy-groups:
     proxies:
       - 'SiNAVM | TROJAN | #1'
       - 'SiNAVM | TROJAN | #2'
+      - 'SiNAVM | TROJAN | #3'
       - 'SiNAVM | TROJAN | #4'
       - 'SiNAVM | TROJAN | #5'
-      - 'SiNAVM | TROJAN | #9'
-      - 'SiNAVM | TROJAN | #10'
-      - 'SiNAVM | TROJAN | #13'
-      - 'SiNAVM | TROJAN | #18'
 rules:
   - IP-CIDR,127.0.0.1/32,DIRECT,no-resolve
   - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve
