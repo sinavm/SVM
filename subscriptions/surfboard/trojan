@@ -11,19 +11,18 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | TROJAN | #1 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #3 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #1 = trojan, 104.17.10.171, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #2 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #3 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
 SiNAVM | TROJAN | #4 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #5 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #6 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #8 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #13 = trojan, 104.17.10.171, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #19 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
-SiNAVM | TROJAN | #24 = trojan, 188.114.98.0, 443, password = Nd2bFutZK2ma29bYqC@z, udp-delay = true, skip-cert-verify = false, sni = 4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev, ws = false
+SiNAVM | TROJAN | #6 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #7 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #9 = trojan, 188.114.98.0, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
+SiNAVM | TROJAN | #14 = trojan, 104.25.95.49, 443, password = 883e3cc8-9613-4f2d-8c42-0dd3d429db55, udp-delay = true, skip-cert-verify = false, sni = ltf8.jueson.de5.net, ws = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #13,SiNAVM | TROJAN | #19,SiNAVM | TROJAN | #24
-URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #13,SiNAVM | TROJAN | #19,SiNAVM | TROJAN | #24
-FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #5,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #8,SiNAVM | TROJAN | #13,SiNAVM | TROJAN | #19,SiNAVM | TROJAN | #24
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #14
+URL-TEST = url-test,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #14
+FALLBACK = fallback,SiNAVM | TROJAN | #1,SiNAVM | TROJAN | #2,SiNAVM | TROJAN | #3,SiNAVM | TROJAN | #4,SiNAVM | TROJAN | #6,SiNAVM | TROJAN | #7,SiNAVM | TROJAN | #9,SiNAVM | TROJAN | #14
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL

@@ -11,11 +11,19 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #23 = vmess, 2.26.54.200, 8018, username = b831381d-6324-4d53-ad4f-8cda48b30811, ws = true, tls = , vmess-aead = true, ws-path = /websocket/transfer/gayporn, ws-headers = Host:"null", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #2 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #4 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #16 = vmess, 172.64.145.93, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #17 = vmess, guanwang.awsno.com, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #18 = vmess, guanwang.awsno.com, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #19 = vmess, www.shopify.com, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #20 = vmess, nomino.11hi8itbaf.workers.dev, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /guanwang.awsno.com/hls/cctv5phd.m3u8, ws-headers = Host:"nomino.11hi8itbaf.workers.dev", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #21 = vmess, 104.18.42.163, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #22 = vmess, 2.26.54.200, 8018, username = b831381d-6324-4d53-ad4f-8cda48b30811, ws = true, tls = , vmess-aead = true, ws-path = /websocket/transfer/gayporn, ws-headers = Host:"null", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #23
-URL-TEST = url-test,SiNAVM | VMESS | #23
-FALLBACK = fallback,SiNAVM | VMESS | #23
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #2,SiNAVM | VMESS | #4,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18,SiNAVM | VMESS | #19,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #22
+URL-TEST = url-test,SiNAVM | VMESS | #2,SiNAVM | VMESS | #4,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18,SiNAVM | VMESS | #19,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #22
+FALLBACK = fallback,SiNAVM | VMESS | #2,SiNAVM | VMESS | #4,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18,SiNAVM | VMESS | #19,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #22
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
