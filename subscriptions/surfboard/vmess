@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #30 = vmess, yg6.ygkkk.dpdns.org, 80, username = 3c75a551-81d6-46d0-876d-79519719bb22, ws = true, tls = , vmess-aead = true, ws-path = 3c75a551-81d6-46d0-876d-79519719bb22-vm, ws-headers = Host:"argo.235697.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #30
+URL-TEST = url-test,SiNAVM | VMESS | #30
+FALLBACK = fallback,SiNAVM | VMESS | #30
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
