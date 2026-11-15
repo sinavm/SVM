@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #16 = vmess, news.zoom.us, 8443, username = bd67fcd2-ec34-40a6-aac6-67731f2d7011, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"matrix.phonicsindia.mobi", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #16
+URL-TEST = url-test,SiNAVM | VMESS | #16
+FALLBACK = fallback,SiNAVM | VMESS | #16
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
