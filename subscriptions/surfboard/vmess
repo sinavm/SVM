@@ -11,12 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #20 = vmess, 141.193.213.21, 8443, username = bd67fcd2-ec34-40a6-aac6-67731f2d7011, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"matrix.phonicsindia.mobi", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #21 = vmess, news.zoom.us, 8443, username = bd67fcd2-ec34-40a6-aac6-67731f2d7011, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"matrix.phonicsindia.mobi", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #16 = vmess, news.zoom.us, 8443, username = bd67fcd2-ec34-40a6-aac6-67731f2d7011, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"matrix.phonicsindia.mobi", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #17 = vmess, 141.193.213.21, 8443, username = bd67fcd2-ec34-40a6-aac6-67731f2d7011, ws = true, tls = 1, vmess-aead = true, ws-path = /, ws-headers = Host:"matrix.phonicsindia.mobi", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21
-URL-TEST = url-test,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21
-FALLBACK = fallback,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17
+URL-TEST = url-test,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17
+FALLBACK = fallback,SiNAVM | VMESS | #16,SiNAVM | VMESS | #17
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
