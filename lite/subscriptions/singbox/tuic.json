@@ -12,11 +12,10 @@
     "dns": {
         "servers": [
             {
-                "type": "https",
+                "type": "udp",
                 "tag": "dns_proxy",
                 "server": "1.1.1.1",
-                "server_port": 443,
-                "path": "\/dns-query",
+                "server_port": 53,
                 "detour": "انتخابگر دستی"
             },
             {
