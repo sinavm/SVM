@@ -94,8 +94,7 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-7"
             ]
         },
         {
@@ -108,8 +107,7 @@
                 "@SiNAVM-4",
                 "@SiNAVM-5",
                 "@SiNAVM-6",
-                "@SiNAVM-7",
-                "@SiNAVM-8"
+                "@SiNAVM-7"
             ],
             "url": "http:\/\/www.gstatic.com\/generate_204",
             "interval": "3m0s",
@@ -117,27 +115,47 @@
         },
         {
             "type": "vmess",
-            "server": "134.195.196.211",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+            "server": "188.114.99.137",
+            "server_port": 443,
+            "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
             "security": "auto",
             "alter_id": 0,
+            "tls": {
+                "enabled": true,
+                "server_name": "guanwang.awsno.com",
+                "insecure": false,
+                "alpn": [
+                    "h3"
+                ],
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "\/hls\/cctv5phd.m3u8",
+                "headers": {
+                    "Host": "guanwang.awsno.com"
+                },
+                "max_early_data": 0
+            },
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-1"
         },
         {
             "type": "vmess",
-            "server": "67.220.85.46",
+            "server": "169.197.142.22",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "aes-128-gcm",
+            "security": "auto",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-2"
         },
         {
             "type": "vmess",
-            "server": "67.220.85.46",
+            "server": "169.197.142.22",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
@@ -147,7 +165,7 @@
         },
         {
             "type": "vmess",
-            "server": "67.220.85.46",
+            "server": "84.17.41.2",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
@@ -157,7 +175,7 @@
         },
         {
             "type": "vmess",
-            "server": "67.220.85.46",
+            "server": "149.88.23.207",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
             "security": "auto",
@@ -167,10 +185,10 @@
         },
         {
             "type": "vmess",
-            "server": "134.195.196.211",
+            "server": "169.197.142.22",
             "server_port": 18000,
             "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
+            "security": "none",
             "alter_id": 0,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-6"
@@ -184,16 +202,6 @@
             "alter_id": 0,
             "domain_resolver": "dns_direct",
             "tag": "@SiNAVM-7"
-        },
-        {
-            "type": "vmess",
-            "server": "23.162.200.198",
-            "server_port": 18000,
-            "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-            "security": "auto",
-            "alter_id": 0,
-            "domain_resolver": "dns_direct",
-            "tag": "@SiNAVM-8"
         },
         {
             "type": "direct",
