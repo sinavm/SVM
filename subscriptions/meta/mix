@@ -120,611 +120,1023 @@ dns:
     'RULE-SET:ir,ircidr,geoip:ir,+.ir,+.bonyan.co': ["217.218.155.155", "217.218.127.127", "https://dns.403.online/dns-query", "https://dns.shecan.ir/dns-query"]
 
 proxies:
-  - {"name":"SiNAVM | SS | #1","type":"ss","server":"104.238.140.45","port":11051,"password":"JUXsy78dSs6ROkasikmoaL","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-df9c8a37","type":"vless","server":"172.235.49.52","port":443,"udp":true,"uuid":"ff5fc681-8548-4621-87d1-6b123db48f64","tls":true,"network":"ws","client-fingerprint":"","servername":"itunes.apple.com","ws-opts":{"path":"/ws","headers":{"host":"itunes.apple.com"}},"reality-opts":{"public-key":"Md-qJgtcKVbuLuwCX8r-VZnfKq3z_3CtyPt3CRcqdQE","short-id":"270d474c"}}
-  - {"name":"SiNAVM-reality-6ebe3988","type":"vless","server":"195.123.240.65","port":443,"udp":true,"uuid":"ce18d0eb-5c71-41f9-96e5-1632e22456e4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE","short-id":"19296c9f1bf9c7b1"}}
-  - {"name":"SiNAVM | SS | #2","type":"ss","server":"95.215.201.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VMESS | #1","type":"vmess","server":"188.114.99.137","port":"443","cipher":"auto","uuid":"6a89a215-22bf-4bd7-9642-b95b2e09583a","alterId":"0","tls":true,"skip-cert-verify":true,"network":"ws","ws-opts":{"path":"/hls/cctv5phd.m3u8","headers":{"host":"guanwang.awsno.com"}}}
-  - {"name":"SiNAVM-reality-f1ee05df","type":"vless","server":"143.246.62.191","port":8443,"udp":true,"uuid":"eb8c97f7-a154-4442-91b0-54c0d055ad0b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"github.githubassets.com","reality-opts":{"public-key":"4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA","short-id":"4ad2e4e660550e43"}}
-  - {"name":"SiNAVM-reality-ef3a2538","type":"vless","server":"198.247.127.131","port":443,"udp":true,"uuid":"59548d2d-5d7c-4328-aa81-0d5614da0c1b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"addons.mozilla.org","flow":"xtls-rprx-vision","reality-opts":{"public-key":"vmHHRwA9ER6c8dfgtL-gh2HBMCvjySy1xLimqYpLiCI"}}
-  - {"name":"SiNAVM | VLESS | #9","type":"vless","server":"38.107.232.36","port":80,"udp":false,"uuid":"18cf8db1-9f86-43f7-baa0-382efb7f2dfa","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
-  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"169.197.142.22","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | VMESS | #3","type":"vmess","server":"169.197.142.22","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | SS | #3","type":"ss","server":"167.88.62.56","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-4f2039a5","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-93fa30c0","type":"vless","server":"ww13.levikogjgfdd.ir","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-cbc26ece","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-6e17c384","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d44ab0d6","type":"vless","server":"143.246.60.254","port":443,"udp":true,"uuid":"fa895069-bfe5-42c9-9f30-f918e1e442c1","tls":true,"network":"tcp","client-fingerprint":"","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE","short-id":"eb68848e2575a1f4"}}
-  - {"name":"SiNAVM-reality-1fdd755c","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d30462ca","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-3ffa5f52","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #10","type":"ss","server":"167.88.62.203","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-ba7fe7a1","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-4bef67be","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #11","type":"ss","server":"149.40.57.138","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #12","type":"ss","server":"149.40.57.133","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #13","type":"ss","server":"149.40.57.134","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-5795ada5","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
-  - {"name":"SiNAVM | VMESS | #4","type":"vmess","server":"84.17.41.2","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | SS | #20","type":"ss","server":"64.177.90.30","port":8388,"password":"BWyPPTusFKhGgzKh","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-bf4e3c7a","type":"vless","server":"195.211.98.43","port":443,"udp":true,"uuid":"1b4b11d5-4c2d-4533-9a55-636757cdee94","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA","short-id":"9c56fddf237e8eaf"}}
-  - {"name":"SiNAVM-reality-cb822f88","type":"vless","server":"169.40.42.89","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-e8de3e3b","type":"vless","server":"169.40.42.168","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-00c3a44e","type":"vless","server":"169.40.42.202","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":null,"servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM | SS | #22","type":"ss","server":"38.64.138.135","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-438b5f1c","type":"vless","server":"169.40.42.163","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-e63146f1","type":"vless","server":"169.40.42.229","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-ed2d872d","type":"vless","server":"169.40.42.74","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-5a077649","type":"vless","server":"169.40.42.231","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-b9b72772","type":"vless","server":"169.40.42.35","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":null,"servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-d0b080f8","type":"vless","server":"169.40.42.231","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
-  - {"name":"SiNAVM-reality-2886119b","type":"vless","server":"167.17.69.171","port":443,"udp":true,"uuid":"00144519-7e0d-476b-8d28-435576af9262","tls":true,"network":"raw","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk","short-id":"0990d22f"}}
-  - {"name":"SiNAVM | SS | #24","type":"ss","server":"185.230.230.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #25","type":"ss","server":"45.86.51.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #27","type":"ss","server":"198.98.53.130","port":443,"password":"eDfN7SODQceIOmIAbtJJtK","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #28","type":"ss","server":"137.184.89.151","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #30","type":"ss","server":"185.215.132.9","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #31","type":"ss","server":"216.106.178.169","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VLESS | #102","type":"vless","server":"69.48.201.136","port":30016,"udp":false,"uuid":"03dc60cb-a8d4-4226-93fe-0e6cbf77fe5a","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"zoom.us","ws-opts":{"path":"/usserver","headers":{"host":"zoom.us"}}}
-  - {"name":"SiNAVM | VLESS | #103","type":"vless","server":"69.48.201.136","port":30016,"udp":false,"uuid":"03dc60cb-a8d4-4226-93fe-0e6cbf77fe5a","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"uspanel.unixzone.us","ws-opts":{"path":"/usserver","headers":{"host":"uspanel.unixzone.us"}}}
-  - {"name":"SiNAVM | SS | #34","type":"ss","server":"38.22.17.214","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #35","type":"ss","server":"40.160.86.43","port":8388,"password":"itzvpn@321","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #36","type":"ss","server":"38.22.17.219","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #38","type":"ss","server":"15.204.247.124","port":2375,"password":"faBAoD54k87UJG7","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #39","type":"ss","server":"193.151.160.9","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #41","type":"ss","server":"193.151.160.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-6b94817c","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d5bb3660","type":"vless","server":"51.158.206.26","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-d0d78954","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-8e70bf3a","type":"vless","server":"51.158.206.97","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-acc3d3e5","type":"vless","server":"51.158.206.103","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-708c5414","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
-  - {"name":"SiNAVM-reality-735dcdbc","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-da9fcea7","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-393ab790","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-c56d6006","type":"vless","server":"51.158.206.29","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-cfe13a39","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
-  - {"name":"SiNAVM-reality-4134b5d4","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-f841e5e3","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-b6b13ce0","type":"vless","server":"51.158.206.12","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-49832f45","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-41cddd9e","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-35b4a178","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-613fa995","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-937f6634","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | VLESS | #177","type":"vless","server":"163.172.214.188","port":80,"udp":false,"uuid":"40cc9b52-25b8-4cd5-8b45-715ae26e6baf","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"sc"}}}
-  - {"name":"SiNAVM-reality-b90bb0c7","type":"vless","server":"51.158.206.93","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | VLESS | #183","type":"vless","server":"sc-thenetherlands1.09vpn.com","port":80,"udp":false,"uuid":"40cc9b52-25b8-4cd5-8b45-715ae26e6baf","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"SC"}}}
-  - {"name":"SiNAVM-reality-9d247532","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-582ee2ba","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-fa12abaa","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-8b4878de","type":"vless","server":"62.210.91.2","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-844713cd","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #43","type":"ss","server":"193.108.117.84","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #44","type":"ss","server":"185.176.204.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-18f7bb5b","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM-reality-2dcc3624","type":"vless","server":"51.158.206.86","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #49","type":"ss","server":"198.244.202.215","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-2576d168","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
-  - {"name":"SiNAVM | SS | #50","type":"ss","server":"82.38.31.179","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-4f4163c3","type":"vless","server":"130.12.242.106","port":443,"udp":true,"uuid":"bc058e69-0444-4c7b-98da-bd67f0b143da","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"deepl.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8","short-id":"15affa0af66dfc79"}}
-  - {"name":"SiNAVM-reality-6eb72159","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
-  - {"name":"SiNAVM | SS | #51","type":"ss","server":"82.38.31.201","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #52","type":"ss","server":"82.38.31.215","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #53","type":"ss","server":"82.38.31.162","port":443,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #54","type":"ss","server":"82.38.31.198","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM | SS | #55","type":"ss","server":"185.176.206.9","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #56","type":"ss","server":"57.129.76.233","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-c7204a92","type":"vless","server":"87.199.205.28","port":443,"udp":true,"uuid":"501a2da5-cb22-4a3f-915e-e3b821d1d62d","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"vkvd754.okcdn.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw","short-id":"ef1d3554c652a436"}}
-  - {"name":"SiNAVM | SS | #58","type":"ss","server":"193.29.139.168","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-3e0e3d6b","type":"vless","server":"45.129.242.56","port":443,"udp":true,"uuid":"ebdfaf99-41d8-4e48-8196-d54510ffb556","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY","short-id":"abcdef"}}
-  - {"name":"SiNAVM | SS | #59","type":"ss","server":"15.204.246.108","port":8881,"password":"kDWvXYZoTBcGkC4","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VLESS | #376","type":"vless","server":"146.19.254.171","port":8443,"udp":false,"uuid":"24fb9b5b-43b7-4058-a7e5-a0499ada1fda","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"146.19.254.171","flow":"xtls-rprx-vision"}
-  - {"name":"SiNAVM-reality-cfb794e6","type":"vless","server":"80.47.10.106","port":443,"udp":true,"uuid":"a30903dc-1bf0-4be5-8b1b-603a3a56211c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"pl8.galioncc.com","reality-opts":{"public-key":"drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ","short-id":"a7c92e4b10d6f835"}}
-  - {"name":"SiNAVM-reality-6f401702","type":"vless","server":"80.47.10.106","port":443,"udp":true,"uuid":"a30903dc-1bf0-4be5-8b1b-603a3a56211c","tls":true,"network":"tcp","client-fingerprint":"firefox","servername":"pl8.galioncc.com","reality-opts":{"public-key":"drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ","short-id":"a7c92e4b10d6f835"}}
-  - {"name":"SiNAVM | SS | #60","type":"ss","server":"185.164.175.81","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-9dd117ea","type":"vless","server":"185.176.9.26","port":443,"udp":true,"uuid":"8197b9b9-8945-460f-99c9-325ef8a8a7c3","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"es1.gofizz.in","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Qxpi1A9yJXwgZ1ycBrasKBCrX3qkRJ646U28a-99WBE","short-id":"85750bd7"}}
-  - {"name":"SiNAVM-reality-c2840cba","type":"vless","server":"88.216.211.36","port":443,"udp":true,"uuid":"a30903dc-1bf0-4be5-8b1b-603a3a56211c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"de8.galioncc.com","reality-opts":{"public-key":"drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ","short-id":"c4e7a1902b8d6f35"}}
-  - {"name":"SiNAVM | SS | #63","type":"ss","server":"149.88.106.74","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #64","type":"ss","server":"149.88.107.74","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-eef76e00","type":"vless","server":"82.118.22.161","port":443,"udp":true,"uuid":"05488656-d4bf-4634-8b2e-e4ff5a56c7e2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"xY1KpNxaIGmi6jfeudYQ_aaLGQqWK_uHStnwUFd2_2E","short-id":"fa3ea655619a3e78"}}
-  - {"name":"SiNAVM | SS | #66","type":"ss","server":"202.50.253.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VMESS | #9","type":"vmess","server":"149.88.23.207","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | SS | #67","type":"ss","server":"149.88.106.73","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-43bce0db","type":"vless","server":"195.206.235.202","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
-  - {"name":"SiNAVM-reality-56a78f02","type":"vless","server":"free.fugui.lol","port":47396,"udp":true,"uuid":"ead3595f-4020-4e76-a3ec-c248e1a2f2f7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"swdist.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ","short-id":"fa514b83"}}
-  - {"name":"SiNAVM-reality-65d08962","type":"vless","server":"153.56.229.207","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
-  - {"name":"SiNAVM | SS | #70","type":"ss","server":"202.50.253.54","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VLESS | #406","type":"vless","server":"194.60.228.97","port":443,"udp":false,"uuid":"667016ca-f02e-4b5f-bfc3-3d8ed81e9bec","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"base.hosamobenl.co.uk"}
-  - {"name":"SiNAVM-reality-b41395f8","type":"vless","server":"45.86.61.133","port":443,"udp":true,"uuid":"e2f3ddd0-10f1-421f-b684-4c943986da65","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"deepl.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"GwjzHvbNB5Wn6Jj7E3WSc5pc32bjeJCvv9yf0ibDnRs","short-id":"15affa0af66dfc79"}}
-  - {"name":"SiNAVM-reality-cc5c8f87","type":"vless","server":"153.56.229.218","port":443,"udp":true,"uuid":"ba0dbd83-3569-46dc-bc3d-ef6e58ffc97b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"71b840t.de7.h1clayd.click","reality-opts":{"public-key":"3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE","short-id":"e572b6579ea525d4"}}
-  - {"name":"SiNAVM | SS | #74","type":"ss","server":"79.127.184.104","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VLESS | #446","type":"vless","server":"platform102.golnamakcert.top","port":80,"udp":false,"uuid":"e13cf851-b4fd-413b-8d49-146e6eb8e5d4","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/platform102","headers":{"host":"platform102.halalkhor.info"}}}
-  - {"name":"SiNAVM | VLESS | #448","type":"vless","server":"213.176.92.168","port":14430,"udp":false,"uuid":"ba52cc43-700d-4040-9444-29214c98e6e0","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless","headers":{"host":"213.176.92.168"}}}
-  - {"name":"SiNAVM | SS | #79","type":"ss","server":"202.50.253.90","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM-reality-7c904d8e","type":"vless","server":"150.251.143.253","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
-  - {"name":"SiNAVM-reality-9bff2394","type":"vless","server":"104.171.133.209","port":443,"udp":true,"uuid":"ebd1c0d6-7ff4-4b9f-8692-237517a27a64","tls":true,"network":"tcp","client-fingerprint":null,"servername":"anyfile2file.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0","short-id":"64c1fe36c7846400"}}
-  - {"name":"SiNAVM | SS | #80","type":"ss","server":"185.226.172.8","port":8008,"password":"XKFKl2rULjIp74","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #82","type":"ss","server":"186.190.215.251","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VLESS | #458","type":"vless","server":"95.174.68.188","port":14430,"udp":false,"uuid":"965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"95.174.68.188","ws-opts":{"path":"/vless","headers":{"host":"95.174.68.188"}}}
-  - {"name":"SiNAVM | SS | #83","type":"ss","server":"202.50.253.72","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | VMESS | #12","type":"vmess","server":"169.197.142.22","port":"18000","cipher":"none","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM | SS | #85","type":"ss","server":"51.38.127.93","port":8080,"password":"03y5gbnyl4o1hc2n","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-62737a83","type":"vless","server":"156.226.168.221","port":35193,"udp":true,"uuid":"35cbae61-ee10-4cb9-abb8-4950b35e9851","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"d_pn_DMaIxhCkNh80h0Mc7nP94hrlN--I8liOIREDxE","short-id":"e8daed2d"}}
-  - {"name":"SiNAVM-reality-81d16905","type":"vless","server":"185.71.216.94","port":2195,"udp":true,"uuid":"9654f1a9-8dbc-4897-85ea-c077a52b3857","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"OKksVHWL5JepTv7if7Ta_L_7vn8OxW0INwV71HJM1jI","short-id":"3869d49a9a79e06a"}}
-  - {"name":"SiNAVM-reality-60263fe0","type":"vless","server":"148.135.86.162","port":10000,"udp":true,"uuid":"327b1113-049e-4256-8d72-8815643dbb65","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"addons.mozilla.org","flow":"xtls-rprx-vision","reality-opts":{"public-key":"DCbnS4mIPc1W2-wI0MGHhykwzf2nVuZvBadErSE6MxU","short-id":"a1b2c3d4"}}
-  - {"name":"SiNAVM | VLESS | #469","type":"vless","server":"201.51.12.98","port":443,"udp":false,"uuid":"38308ff1-5aa9-494f-a25a-0f2870d56b3e","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"vps3.nemnogogo.com","grpc-opts":{"grpc-service-name":"mobile.api.Event"}}
-  - {"name":"SiNAVM-reality-2f916db0","type":"vless","server":"4935e4t.de25.h1clayd.click","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
-  - {"name":"SiNAVM-reality-e42d739a","type":"vless","server":"132.243.163.125","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
-  - {"name":"SiNAVM-reality-3a3ce3bb","type":"vless","server":"48.102.170.205","port":8443,"udp":true,"uuid":"e07a6d05-f665-4811-91f0-9b3dc1094e4d","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tradingview.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38","short-id":"8f3c6e2a1b5d4f09"}}
-  - {"name":"SiNAVM | SS | #87","type":"ss","server":"94.156.250.148","port":7001,"password":"RexnBgU7EV5ADxG","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #88","type":"ss","server":"57.131.21.102","port":8080,"password":"n4uygjtq54pz1oiv","cipher":"chacha20-ietf-poly1305"}
-  - {"name":"SiNAVM-reality-b8399910","type":"vless","server":"185.71.216.177","port":2089,"udp":true,"uuid":"e1eaef08-e4ff-4843-9926-c0c84a034bad","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"oRmj7gTi5H2oIClNYxxgOjqp8-j5kFYtGFU8CNuMj34","short-id":"deccc6fac1ddb0ff"}}
-  - {"name":"SiNAVM-reality-8c550384","type":"vless","server":"195.206.235.215","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
-  - {"name":"SiNAVM | VMESS | #13","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
-  - {"name":"SiNAVM-reality-dcc59460","type":"vless","server":"195.206.235.121","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"7aa271t.es1.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE","short-id":"42426c882c5fcd41"}}
-  - {"name":"SiNAVM | SS | #89","type":"ss","server":"213.176.92.148","port":40647,"password":"DgMywXKqojHXeuXY8hOJaYGPFcjweCIJeD5cdg/cUUY=","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #90","type":"ss","server":"213.202.208.199","port":7001,"password":"RexnBgU7EV5ADxG","cipher":"aes-256-gcm"}
-  - {"name":"SiNAVM | SS | #93","type":"ss","server":"23.150.152.38","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-68800f94","type":"vless","server":"172.236.233.130","port":443,"udp":true,"uuid":"a663dc28-28dc-4f97-9665-6ac215c8e567","tls":true,"network":"ws","client-fingerprint":"","servername":"itunes.apple.com","ws-opts":{"path":"/ws","headers":{"host":"itunes.apple.com"}},"reality-opts":{"public-key":"4wXbhUoSy9s9bGy9PaK18XVTTw3wXkBDjEusiMHaMB4","short-id":"53908445"}}
+  - {"name":"SiNAVM-reality-ef7519ef","type":"vless","server":"45.32.70.42","port":443,"udp":true,"uuid":"8c392beb-524d-4d0a-a3a6-4d542d54a1ff","tls":true,"network":"ws","client-fingerprint":"","servername":"itunes.apple.com","ws-opts":{"path":"/ws","headers":{"host":"itunes.apple.com"}},"reality-opts":{"public-key":"cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio","short-id":"4dda4608"}}
+  - {"name":"SiNAVM-reality-02b90b97","type":"vless","server":"172.233.129.65","port":443,"udp":true,"uuid":"9d91b606-9117-4f8f-8df7-dda7facf3a57","tls":true,"network":"ws","client-fingerprint":"","servername":"itunes.apple.com","ws-opts":{"path":"/ws","headers":{"host":"itunes.apple.com"}},"reality-opts":{"public-key":"Z-RbKKLYcL0Rs6FgAjrrIyN6pAuZjP0JmaP9kLKoER0","short-id":"08d9f55d"}}
+  - {"name":"SiNAVM-reality-4d44c42d","type":"vless","server":"199.7.140.201","port":443,"udp":true,"uuid":"a52ac672-0f5f-4070-b8fd-6b5685fc8004","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","reality-opts":{"public-key":"LRAkgKlj5BPtVAGEIZfO5LvDZ5Eg91X0CBKIYhBC1jE"}}
+  - {"name":"SiNAVM | VLESS | #10","type":"vless","server":"188.114.97.6","port":443,"udp":false,"uuid":"4bde8d55-d91c-45e9-9b36-e6448a194527","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"dfsuporte.garena.com.ex33r.eu.cc","ws-opts":{"path":"/sg-amz","headers":{"host":"dfsuporte.garena.com.ex33r.eu.cc"}}}
+  - {"name":"SiNAVM-reality-8f089a75","type":"vless","server":"143.246.62.191","port":8443,"udp":true,"uuid":"eb8c97f7-a154-4442-91b0-54c0d055ad0b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"github.githubassets.com","reality-opts":{"public-key":"4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA","short-id":"4ad2e4e660550e43"}}
+  - {"name":"SiNAVM | VLESS | #12","type":"vless","server":"www.speedtest.net","port":443,"udp":false,"uuid":"ec23f217-23a1-4f62-b98d-ba56070de89c","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"wallweb4.pages.dev","ws-opts":{"path":"/fp=chrome","headers":{"host":"wallweb4.pages.dev"}}}
+  - {"name":"SiNAVM | VLESS | #13","type":"vless","server":"104.18.47.140","port":2096,"udp":false,"uuid":"341832cc-ba98-425b-8225-b3db621a0da3","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"rainfall0705.cc.cd","ws-opts":{"path":"/","headers":{"host":"rainfall0705.cc.cd"}}}
+  - {"name":"SiNAVM | VLESS | #14","type":"vless","server":"104.25.0.1","port":2096,"udp":false,"uuid":"341832cc-ba98-425b-8225-b3db621a0da3","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"rainfall0705.cc.cd","ws-opts":{"path":"/","headers":{"host":"rainfall0705.cc.cd"}}}
+  - {"name":"SiNAVM | VLESS | #15","type":"vless","server":"162.159.130.234","port":443,"udp":false,"uuid":"5d7b401c-78fa-4254-872e-6d42bf7e75ec","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"vp19.1145678.xyz","ws-opts":{"path":"/images/classify/dh","headers":{"host":"vp19.1145678.xyz"}}}
+  - {"name":"SiNAVM | VLESS | #16","type":"vless","server":"saas.sin.fan","port":2087,"udp":false,"uuid":"5d7b401c-78fa-4254-872e-6d42bf7e75ec","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"vp3.1145678.xyz","ws-opts":{"path":"/new/comics","headers":{"host":"vp3.1145678.xyz"}}}
+  - {"name":"SiNAVM | VLESS | #20","type":"vless","server":"saas.sin.fan","port":2083,"udp":false,"uuid":"5d7b401c-78fa-4254-872e-6d42bf7e75ec","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"vp25.1145678.xyz","ws-opts":{"path":"/comics/ads/threadfp=chrome","headers":{"host":"vp25.1145678.xyz"}}}
+  - {"name":"SiNAVM | VLESS | #21","type":"vless","server":"188.114.97.6","port":443,"udp":false,"uuid":"63ec2a82-e47c-4782-a89e-9aca2baf17ef","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"quiz.int.vidio.com.ex33r.eu.cc","ws-opts":{"path":"/id-pusat","headers":{"host":"quiz.int.vidio.com.ex33r.eu.cc"}}}
+  - {"name":"SiNAVM | VLESS | #23","type":"vless","server":"saas.sin.fan","port":8443,"udp":false,"uuid":"5d7b401c-78fa-4254-872e-6d42bf7e75ec","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"vp17.1145678.xyz","ws-opts":{"path":"/class/toolfp=chrome","headers":{"host":"vp17.1145678.xyz"}}}
+  - {"name":"SiNAVM-reality-c1b51a65","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-fe57d744","type":"vless","server":"15.204.97.216","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-c7c3a68c","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-87129dc4","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-c5530f59","type":"vless","server":"15.204.97.206","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-62428622","type":"vless","server":"15.204.97.195","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #37","type":"vless","server":"saas.sin.fan","port":2096,"udp":false,"uuid":"5d7b401c-78fa-4254-872e-6d42bf7e75ec","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"vp8.1145678.xyz","ws-opts":{"path":"/p","headers":{"host":"vp8.1145678.xyz"}}}
+  - {"name":"SiNAVM-reality-047e2714","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-cb636336","type":"vless","server":"ww13.levikogjgfdd.ir","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | SS | #1","type":"ss","server":"167.88.62.203","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-49ae935c","type":"vless","server":"15.204.97.198","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | SS | #2","type":"ss","server":"149.40.57.133","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #3","type":"ss","server":"137.184.89.151","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #4","type":"ss","server":"149.40.57.138","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VLESS | #68","type":"vless","server":"188.114.97.3","port":443,"udp":false,"uuid":"bc02ab8e-0de0-47e7-b2d0-a5b4737c6dab","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"VpNMofTi.SEtGUW.wORkeRS.DEV","ws-opts":{"path":"/vl/D8a5qKgqnMZ63qXsI?ed=2560","headers":{"host":"vpnmofti.setguw.workers.dev"}}}
+  - {"name":"SiNAVM-reality-b2875dda","type":"vless","server":"172.233.197.235","port":63815,"udp":true,"uuid":"c5b78fba-bfe0-438b-99b1-71a1f271c32f","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"U7t4RFE9MSMtC-o1DoJ8pYzKMfgVpTg6ZhTTknBrVkU","short-id":"1f2519bb96e5589c"}}
+  - {"name":"SiNAVM-reality-d9a048f0","type":"vless","server":"47.253.226.114","port":443,"udp":true,"uuid":"055a1ce8-2a16-4a0d-a2c2-22826c9b2413","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"}}
+  - {"name":"SiNAVM-reality-8fd13200","type":"vless","server":"195.211.98.43","port":443,"udp":true,"uuid":"1b4b11d5-4c2d-4533-9a55-636757cdee94","tls":true,"network":"raw","client-fingerprint":"firefox","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA","short-id":"9c56fddf237e8eaf"}}
+  - {"name":"SiNAVM-reality-2238ec22","type":"vless","server":"159.89.87.21","port":28190,"udp":true,"uuid":"14c80e0e-f7ce-4991-94fc-99a1db4a9b1e","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"aws.amazon.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"}}
+  - {"name":"SiNAVM-reality-0e0ab067","type":"vless","server":"159.89.87.21","port":28190,"udp":true,"uuid":"14c80e0e-f7ce-4991-94fc-99a1db4a9b1e","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"aws.amazon.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"}}
+  - {"name":"SiNAVM-reality-139abf91","type":"vless","server":"159.89.87.21","port":28190,"udp":true,"uuid":"14c80e0e-f7ce-4991-94fc-99a1db4a9b1e","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"aws.amazon.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"}}
+  - {"name":"SiNAVM | VLESS | #97","type":"vless","server":"45.138.100.248","port":14430,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"ws","client-fingerprint":"chrome","flow":"xtls-rprx-vision","ws-opts":{"path":"/vless"}}
+  - {"name":"SiNAVM-reality-85f3c561","type":"vless","server":"159.89.87.21","port":28190,"udp":true,"uuid":"14c80e0e-f7ce-4991-94fc-99a1db4a9b1e","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"aws.amazon.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"}}
+  - {"name":"SiNAVM | VLESS | #99","type":"vless","server":"45.138.100.248","port":10443,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"SiNAVM-reality-b692f440","type":"vless","server":"167.17.69.171","port":443,"udp":true,"uuid":"00144519-7e0d-476b-8d28-435576af9262","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk","short-id":"0990d22f"}}
+  - {"name":"SiNAVM | VLESS | #103","type":"vless","server":"45.138.100.248","port":10443,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"SiNAVM-reality-33fdb729","type":"vless","server":"167.17.69.171","port":443,"udp":true,"uuid":"00144519-7e0d-476b-8d28-435576af9262","tls":true,"network":"raw","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk","short-id":"0990d22f"}}
+  - {"name":"SiNAVM-reality-40076f39","type":"vless","server":"169.40.42.89","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM-reality-e53cc470","type":"vless","server":"169.40.42.231","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":null,"servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM | SS | #5","type":"ss","server":"64.177.90.30","port":8388,"password":"BWyPPTusFKhGgzKh","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-934d7b29","type":"vless","server":"169.40.42.35","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM-reality-4af70679","type":"vless","server":"45.144.112.55","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM-reality-a790c746","type":"vless","server":"169.40.42.168","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":null,"servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM-reality-0e8ea3c0","type":"vless","server":"169.40.42.74","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM | VLESS | #120","type":"vless","server":"45.138.100.248","port":14430,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless","headers":{"host":"45.138.100.248"}}}
+  - {"name":"SiNAVM | VMESS | #2","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"raw"}
+  - {"name":"SiNAVM | VLESS | #127","type":"vless","server":"45.138.100.248","port":10443,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"tcp","client-fingerprint":"chrome","servername":"45.138.100.248"}
+  - {"name":"SiNAVM | VMESS | #3","type":"vmess","server":"67.220.85.46","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM-reality-eb41a017","type":"vless","server":"169.40.42.202","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":null,"servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM | VLESS | #134","type":"vless","server":"188.114.98.0","port":443,"udp":false,"uuid":"341832cc-ba98-425b-8225-b3db621a0da3","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"rainfall0705.cc.cd","ws-opts":{"path":"/","headers":{"host":"rainfall0705.cc.cd"}}}
+  - {"name":"SiNAVM | VLESS | #138","type":"vless","server":"45.138.100.248","port":10443,"udp":false,"uuid":"ae908ff5-f749-402c-af25-e6e9aef4d6bb","tls":false,"network":"tcp","client-fingerprint":"chrome","servername":"45.138.100.248"}
+  - {"name":"SiNAVM | VMESS | #5","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #6","type":"ss","server":"138.197.89.234","port":28960,"password":"DZRy4Q3QH0jUGfKFl2jDCZ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | VMESS | #6","type":"vmess","server":"134.195.196.211","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #7","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #8","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #7","type":"ss","server":"38.64.138.135","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VMESS | #9","type":"vmess","server":"134.195.196.211","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #11","type":"vmess","server":"134.195.196.211","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #12","type":"vmess","server":"134.195.196.211","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #8","type":"ss","server":"216.106.178.169","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #9","type":"ss","server":"15.204.246.108","port":8881,"password":"kDWvXYZoTBcGkC4","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VMESS | #13","type":"vmess","server":"23.162.200.198","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #10","type":"ss","server":"54.39.96.233","port":8080,"password":"2cvhpvdg4x7mvbps","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #11","type":"ss","server":"leviko-ca4857.shopingggg.ir","port":8080,"password":"575hiopq2h28yao6","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #12","type":"ss","server":"185.230.230.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #13","type":"ss","server":"15.235.121.109","port":8080,"password":"575hiopq2h28yao6","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #14","type":"ss","server":"198.100.154.175","port":8080,"password":"3h3hb2gptqz6suyt","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #15","type":"ss","server":"15.235.57.6","port":8080,"password":"kxhnt5jtykd328cg","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #16","type":"ss","server":"198.98.53.130","port":443,"password":"eDfN7SODQceIOmIAbtJJtK","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-e352b44e","type":"vless","server":"leviko-us2057.shopingggg.ir","port":443,"udp":true,"uuid":"719b9354-45e2-4718-8709-d965b64554db","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zpXR6Y36C8qUCIVk2p_j8C9KGeBk5xisLw66j3WFOls","short-id":"9f1fc5a631ef3126"}}
+  - {"name":"SiNAVM | VMESS | #14","type":"vmess","server":"67.220.95.3","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #17","type":"ss","server":"45.86.51.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VMESS | #15","type":"vmess","server":"67.220.95.3","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | SS | #18","type":"ss","server":"172.111.38.72","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-3727b8e5","type":"vless","server":"2.24.124.64","port":443,"udp":true,"uuid":"719b9354-45e2-4718-8709-d965b64554db","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zpXR6Y36C8qUCIVk2p_j8C9KGeBk5xisLw66j3WFOls","short-id":"9f1fc5a631ef3126"}}
+  - {"name":"SiNAVM | SS | #19","type":"ss","server":"185.215.132.9","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #21","type":"ss","server":"15.204.233.41","port":8882,"password":"kDWvXYZoTBcGkC4","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #22","type":"ss","server":"15.204.247.244","port":443,"password":"pKEW8JPByTVTLtM","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #23","type":"ss","server":"15.204.246.132","port":7307,"password":"FoOiGlkAA9yPEGP","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #25","type":"ss","server":"38.22.17.219","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #26","type":"ss","server":"15.204.247.244","port":4444,"password":"pKEW8JPByTVTLtM","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #27","type":"ss","server":"193.151.160.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #28","type":"ss","server":"193.151.163.18","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #29","type":"ss","server":"15.204.247.206","port":4444,"password":"pKEW8JPByTVTLtM","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #30","type":"ss","server":"193.151.160.9","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-f0a5b71c","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-1106f0c8","type":"vless","server":"51.158.206.103","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-780d3639","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-fbf8482d","type":"vless","server":"51.158.206.29","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-8501ff80","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-532a24e1","type":"vless","server":"51.158.206.97","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-764b46fb","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-7840d970","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-365a0563","type":"vless","server":"51.158.206.26","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-4541753a","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-2ebedcfb","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-2af5ea2b","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-d71f7718","type":"vless","server":"51.158.206.12","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-98e291fb","type":"vless","server":"51.158.206.8","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-491972ed","type":"vless","server":"51.158.206.96","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-e30cad94","type":"vless","server":"87.199.205.28","port":443,"udp":true,"uuid":"501a2da5-cb22-4a3f-915e-e3b821d1d62d","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"vkvd754.okcdn.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw","short-id":"ef1d3554c652a436"}}
+  - {"name":"SiNAVM-reality-34496e1a","type":"vless","server":"51.158.206.93","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-41b3dc30","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
+  - {"name":"SiNAVM-reality-84b6cfee","type":"vless","server":"51.158.206.86","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-e42f37ef","type":"vless","server":"62.210.91.2","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #288","type":"vless","server":"104.19.164.155","port":443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-c43d89a9","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-d8f51c8e","type":"vless","server":"51.158.206.87","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
+  - {"name":"SiNAVM-reality-4f3239ac","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-b5275e77","type":"vless","server":"51.158.206.98","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #329","type":"vless","server":"163.172.214.188","port":80,"udp":false,"uuid":"40cc9b52-25b8-4cd5-8b45-715ae26e6baf","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"sc"}}}
+  - {"name":"SiNAVM-reality-816b7216","type":"vless","server":"51.158.206.20","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-69f0f853","type":"vless","server":"62.210.91.10","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"tcp","client-fingerprint":null,"servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s"}}
+  - {"name":"SiNAVM | VLESS | #373","type":"vless","server":"146.19.254.171","port":8443,"udp":false,"uuid":"24fb9b5b-43b7-4058-a7e5-a0499ada1fda","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"146.19.254.171","flow":"xtls-rprx-vision"}
+  - {"name":"SiNAVM-reality-953c81c9","type":"vless","server":"152.70.58.201","port":443,"udp":true,"uuid":"8892e34a-339b-4526-b88d-cf68c516231c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.nvidia.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Hg_ivwbClYmR-SEHdoGgq4yEk6ltbjS5c4yiQRa4_28","short-id":"52c723e0fad49689"}}
+  - {"name":"SiNAVM-reality-7ca30b5e","type":"vless","server":"51.158.206.19","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-eb9259ce","type":"vless","server":"51.158.206.34","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM-reality-5aade4fc","type":"vless","server":"51.158.206.25","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | VLESS | #468","type":"vless","server":"103.201.131.202","port":2053,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM | SS | #31","type":"ss","server":"82.38.31.198","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-31e2da36","type":"vless","server":"153.56.229.218","port":443,"udp":true,"uuid":"ba0dbd83-3569-46dc-bc3d-ef6e58ffc97b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"71b840t.de7.h1clayd.click","reality-opts":{"public-key":"3wFF83gtIA0sXj-6GGCAa--oQbSr0MVUj0FBc-0QmiE","short-id":"e572b6579ea525d4"}}
+  - {"name":"SiNAVM-reality-f2d5575b","type":"vless","server":"130.12.242.106","port":443,"udp":true,"uuid":"bc058e69-0444-4c7b-98da-bd67f0b143da","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"deepl.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8","short-id":"15affa0af66dfc79"}}
+  - {"name":"SiNAVM | SS | #32","type":"ss","server":"82.38.31.176","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | VLESS | #492","type":"vless","server":"80.240.18.227","port":10051,"udp":false,"uuid":"73996ef7-544c-45e7-abc0-973218c727e2","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev","ws-opts":{"path":"/@Marisa_kristi","headers":{"host":"ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"}}}
+  - {"name":"SiNAVM | SS | #33","type":"ss","server":"193.29.139.168","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #34","type":"ss","server":"82.38.31.201","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | VLESS | #495","type":"vless","server":"57.129.132.223","port":80,"udp":false,"uuid":"9e20b04d-5a81-4e16-b421-01e502f0aac6","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"google.com"}}}
+  - {"name":"SiNAVM | SS | #35","type":"ss","server":"82.38.31.204","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-d7133e49","type":"vless","server":"82.118.19.153","port":443,"udp":true,"uuid":"adcaa148-7c66-4282-a81a-99ec8afa029d","tls":true,"network":"raw","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Tiuy8om5Lk0pWL95-8LaFFTwH0vbURVMoOkaW9xGaiE","short-id":"670ed9f350bd8ee0"}}
+  - {"name":"SiNAVM | SS | #36","type":"ss","server":"82.38.31.212","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #37","type":"ss","server":"82.38.31.162","port":443,"password":"oZIoA69Q8yhcQV8ka3Pa3A","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-6a2d28f1","type":"vless","server":"185.176.9.26","port":443,"udp":true,"uuid":"8197b9b9-8945-460f-99c9-325ef8a8a7c3","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"es1.gofizz.in","flow":"xtls-rprx-vision","reality-opts":{"public-key":"Qxpi1A9yJXwgZ1ycBrasKBCrX3qkRJ646U28a-99WBE","short-id":"85750bd7"}}
+  - {"name":"SiNAVM | SS | #38","type":"ss","server":"82.38.31.215","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #39","type":"ss","server":"82.38.31.218","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-e78ea421","type":"vless","server":"82.39.171.12","port":443,"udp":true,"uuid":"d65cc14c-f53f-4fe2-b262-97856601319c","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"yahoo.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg","short-id":"c39cc7310a"}}
+  - {"name":"SiNAVM | VLESS | #507","type":"vless","server":"152.228.162.19","port":80,"udp":false,"uuid":"5ce84688-f535-46ad-a512-37b17becf6ea","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"akamaized.net"}}}
+  - {"name":"SiNAVM | SS | #40","type":"ss","server":"82.38.31.214","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #41","type":"ss","server":"82.38.31.220","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | VLESS | #508","type":"vless","server":"152.228.162.19","port":80,"udp":false,"uuid":"f5c47e9c-914a-4a91-a81e-a5a77bc10fc1","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
+  - {"name":"SiNAVM | VLESS | #509","type":"vless","server":"ov-france1.09vpn.com","port":80,"udp":false,"uuid":"f5c47e9c-914a-4a91-a81e-a5a77bc10fc1","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"ov"}}}
+  - {"name":"SiNAVM | VLESS | #510","type":"vless","server":"152.228.162.19","port":80,"udp":false,"uuid":"f5c47e9c-914a-4a91-a81e-a5a77bc10fc1","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/"}}
+  - {"name":"SiNAVM | VLESS | #511","type":"vless","server":"ov-france1.09vpn.com","port":80,"udp":false,"uuid":"f5c47e9c-914a-4a91-a81e-a5a77bc10fc1","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"ov"}}}
+  - {"name":"SiNAVM | SS | #42","type":"ss","server":"193.29.139.212","port":8080,"password":"QCXDxuDlTTMD7jtgHUjIoj","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #43","type":"ss","server":"82.38.31.186","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-b74329da","type":"vless","server":"51.158.206.80","port":23576,"udp":true,"uuid":"48ff2b70-e180-582f-8866-d9a2edeed5f5","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"fuck.rkn","flow":"xtls-rprx-vision","reality-opts":{"public-key":"1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s","short-id":"01"}}
+  - {"name":"SiNAVM | SS | #44","type":"ss","server":"82.38.31.182","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-bfd2e633","type":"vless","server":"83.147.18.3","port":443,"udp":true,"uuid":"9f61cdf4-810d-4052-bbc7-2da0c8e20104","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"3iVJAIGPx6JMlhlRmfpGrHkSmLpHJ4CPvBBH7KsFrFA","short-id":"fd8cf7e1173f0edb"}}
+  - {"name":"SiNAVM-reality-0e9711fb","type":"vless","server":"83.147.18.3","port":443,"udp":true,"uuid":"9f61cdf4-810d-4052-bbc7-2da0c8e20104","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"3iVJAIGPx6JMlhlRmfpGrHkSmLpHJ4CPvBBH7KsFrFA","short-id":"fd8cf7e1173f0edb"}}
+  - {"name":"SiNAVM | VLESS | #517","type":"vless","server":"ov-germany1.09vpn.com","port":80,"udp":false,"uuid":"7d74eae4-8a06-4306-a923-ad686f30bf26","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"OV"}}}
+  - {"name":"SiNAVM | SS | #45","type":"ss","server":"51.38.127.93","port":8080,"password":"03y5gbnyl4o1hc2n","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-31e07e48","type":"vless","server":"144.31.140.125","port":8443,"udp":true,"uuid":"f5e70ce3-cfb4-4df1-b25c-d19bfae627c0","tls":true,"network":"tcp","client-fingerprint":null,"servername":"twitch.tv","flow":"xtls-rprx-vision","reality-opts":{"public-key":"wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo","short-id":"168c15efac9df5fd"}}
+  - {"name":"SiNAVM | VLESS | #523","type":"vless","server":"46.101.253.244","port":2083,"udp":false,"uuid":"bba95b1f-f48c-454b-897b-a6c6bc307df1","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"edge.yzkvm.top","ws-opts":{"path":"/","headers":{"host":"edge.yzkvm.top"}}}
+  - {"name":"SiNAVM-reality-dfeb25d7","type":"vless","server":"141.227.170.220","port":8443,"udp":true,"uuid":"6c077993-952c-4318-9e93-89056a207a9b","tls":true,"network":"tcp","client-fingerprint":"","servername":"apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc","short-id":"6ba85179e30d4fc2"}}
+  - {"name":"SiNAVM-reality-74aa0ed3","type":"vless","server":"161.97.160.224","port":443,"udp":true,"uuid":"b81b4d1b-7f20-48f1-82dc-d24bef898cab","tls":true,"network":"tcp","client-fingerprint":"","servername":"passport.yandex.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0","short-id":"e6"}}
+  - {"name":"SiNAVM | SS | #46","type":"ss","server":"82.38.31.205","port":8080,"password":"k1dBOmOB4oqi7Ump37a1bQ","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | SS | #47","type":"ss","server":"185.164.175.81","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | SS | #48","type":"ss","server":"202.50.253.90","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-f4d95d5f","type":"vless","server":"leviko-de6003.shopingggg.ir","port":443,"udp":true,"uuid":"71b566cb-78c4-48e4-af5b-720e4f7884f2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"p1.xvanta.online","flow":"xtls-rprx-vision","reality-opts":{"public-key":"O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI","short-id":"cb33163cf9c03ab1"}}
+  - {"name":"SiNAVM | SS | #49","type":"ss","server":"57.131.21.102","port":8080,"password":"n4uygjtq54pz1oiv","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM | VLESS | #529","type":"vless","server":"185.65.202.122","port":10004,"udp":false,"uuid":"836c4d68-e086-11f1-aabc-67841df8a6f9","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vpnjantit"}}
+  - {"name":"SiNAVM-reality-5652d94c","type":"vless","server":"48.102.170.205","port":8443,"udp":true,"uuid":"e07a6d05-f665-4811-91f0-9b3dc1094e4d","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"tradingview.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38","short-id":"8f3c6e2a1b5d4f09"}}
+  - {"name":"SiNAVM | SS | #50","type":"ss","server":"149.88.106.74","port":19999,"password":"ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VMESS | #17","type":"vmess","server":"ww11.levikogjgfdd.ir","port":18000,"cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM-reality-342f12ff","type":"vless","server":"31.76.32.122","port":443,"udp":true,"uuid":"71b566cb-78c4-48e4-af5b-720e4f7884f2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"p1.xvanta.online","flow":"xtls-rprx-vision","reality-opts":{"public-key":"O35Np_ugrc3mUDIEO4UnViEwRobM2r9kqQCdcdCHjEI","short-id":"cb33163cf9c03ab1"}}
+  - {"name":"SiNAVM | SS | #51","type":"ss","server":"57.131.4.13","port":8080,"password":"mx81glqbtlwuhcjo","cipher":"chacha20-ietf-poly1305"}
+  - {"name":"SiNAVM-reality-9d1fc74f","type":"vless","server":"85.90.197.220","port":443,"udp":true,"uuid":"8f704ed6-9a1a-4d04-94dd-1bff501716de","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4","short-id":"94acb54627612d43"}}
+  - {"name":"SiNAVM | VLESS | #541","type":"vless","server":"ov-germany1.09vpn.com","port":80,"udp":false,"uuid":"3cfa0d9b-6279-4b73-8533-09ad84e49c80","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/vless/","headers":{"host":"/?Telegram"}}}
+  - {"name":"SiNAVM-reality-f3cd0b17","type":"vless","server":"62.60.232.250","port":8443,"udp":true,"uuid":"88a209b0-5dd9-493f-9cae-ace820544a24","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"77.88.8.8","flow":"xtls-rprx-vision","reality-opts":{"public-key":"tm1f7W3RTgSx1F6NsoE32TborUxVe1udZQr4LhDAIio","short-id":"c9927d0548a2fcd1"}}
+  - {"name":"SiNAVM-reality-da682217","type":"vless","server":"147.93.173.45","port":10444,"udp":true,"uuid":"75c5f51b-d548-4eab-a26e-aa10fc3dbc7b","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"video.yandex.ru","flow":"xtls-rprx-vision","reality-opts":{"public-key":"0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo","short-id":"8debcf36f1cc69ff"}}
+  - {"name":"SiNAVM-reality-902cb504","type":"vless","server":"45.129.242.56","port":443,"udp":true,"uuid":"ebdfaf99-41d8-4e48-8196-d54510ffb556","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY","short-id":"abcdef"}}
+  - {"name":"SiNAVM-reality-725b5b15","type":"vless","server":"150.251.113.34","port":443,"udp":true,"uuid":"d7d724b5-17ce-4f3c-877d-dfbf0f07afa1","tls":true,"network":"tcp","client-fingerprint":null,"servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"8yMLSTbkpJFfbgTjNzotzz7U8OT6AERrclgKdKrXXW8","short-id":"150a627d15154cf2"}}
+  - {"name":"SiNAVM-reality-3fb03a16","type":"vless","server":"195.206.235.202","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
+  - {"name":"SiNAVM-reality-99e7884b","type":"vless","server":"150.251.143.253","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
+  - {"name":"SiNAVM-reality-805b6c95","type":"vless","server":"179.253.85.127","port":443,"udp":true,"uuid":"0c1c6550-08ee-49fd-8ef8-df2776cca31f","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"212.192.156.15","flow":"xtls-rprx-vision","reality-opts":{"public-key":"a9O5evb8g385KJm77j9SKlB7MvHzUBGes6c8BAxyO1U","short-id":"5fd3245e96291c37"}}
+  - {"name":"SiNAVM-reality-9d6bddd4","type":"vless","server":"45.86.61.133","port":443,"udp":true,"uuid":"e2f3ddd0-10f1-421f-b684-4c943986da65","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"deepl.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"GwjzHvbNB5Wn6Jj7E3WSc5pc32bjeJCvv9yf0ibDnRs","short-id":"15affa0af66dfc79"}}
+  - {"name":"SiNAVM | VLESS | #592","type":"vless","server":"platform102.golnamakcert.top","port":80,"udp":false,"uuid":"e13cf851-b4fd-413b-8d49-146e6eb8e5d4","tls":false,"network":"ws","client-fingerprint":"chrome","ws-opts":{"path":"/platform102","headers":{"host":"platform102.halalkhor.info"}}}
+  - {"name":"SiNAVM | VLESS | #598","type":"vless","server":"45.86.60.174","port":16443,"udp":false,"uuid":"13e541f3-d09d-4633-89df-8513db0ced20","tls":false,"network":"tcp","client-fingerprint":"chrome"}
+  - {"name":"SiNAVM | SS | #53","type":"ss","server":"213.176.92.148","port":40647,"password":"DgMywXKqojHXeuXY8hOJaYGPFcjweCIJeD5cdg/cUUY=","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM | VLESS | #600","type":"vless","server":"189.30.65.203","port":2083,"udp":false,"uuid":"490dc3b4-8d1d-49fd-840e-bd5277b41557","tls":true,"network":"grpc","client-fingerprint":"chrome","grpc-opts":{"grpc-service-name":"service-41f6a2a01377"}}
+  - {"name":"SiNAVM | VLESS | #603","type":"vless","server":"189.30.65.203","port":2083,"udp":false,"uuid":"490dc3b4-8d1d-49fd-840e-bd5277b41557","tls":true,"network":"grpc","client-fingerprint":"chrome","grpc-opts":{"grpc-service-name":"service-41f6a2a01377"}}
+  - {"name":"SiNAVM-reality-60775037","type":"vless","server":"5.34.177.164","port":443,"udp":true,"uuid":"ca678d26-5435-4d13-b378-06c4c3b070ff","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"gateway.icloud.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"cwWhNuekusD1iPZZ--7G891dU9PCacxyCYwsZxOApHA","short-id":"b2efed6d157e7bb0"}}
+  - {"name":"SiNAVM | VLESS | #629","type":"vless","server":"104.17.70.206","port":8443,"udp":false,"uuid":"3692de53-42e6-4aed-a522-40ec355dcd2f","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"free.sahanwickramasinghe.com","ws-opts":{"path":"/","headers":{"host":"free.sahanwickramasinghe.com"}}}
+  - {"name":"SiNAVM-reality-410c32ab","type":"vless","server":"tgfree.rush-server.com","port":443,"udp":true,"uuid":"ebd1c0d6-7ff4-4b9f-8692-237517a27a64","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"anyfile2file.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0","short-id":"64c1fe36c7846400"}}
+  - {"name":"SiNAVM | VLESS | #633","type":"vless","server":"vellum.merlano.monster","port":443,"udp":false,"uuid":"25ac78e7-6d1d-4c9a-a450-c01a4871769f","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"sequoia.merlano.monster","ws-opts":{"path":"/api/de1/stream","headers":{"host":"vellum.merlano.monster"}}}
+  - {"name":"SiNAVM-reality-5dbe306e","type":"vless","server":"free.fugui.lol","port":51283,"udp":true,"uuid":"ead3595f-4020-4e76-a3ec-c248e1a2f2f7","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"swdist.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ","short-id":"fa514b83"}}
+  - {"name":"SiNAVM-reality-58f52bc8","type":"vless","server":"93.123.85.103","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"f0d7aft.nl17.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM-reality-ec48e10d","type":"vless","server":"104.171.133.209","port":443,"udp":true,"uuid":"ebd1c0d6-7ff4-4b9f-8692-237517a27a64","tls":true,"network":"tcp","client-fingerprint":null,"servername":"anyfile2file.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0","short-id":"64c1fe36c7846400"}}
+  - {"name":"SiNAVM-reality-41287532","type":"vless","server":"f0d7aft.nl17.h1clayd.click","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"f0d7aft.nl17.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM-reality-f461e910","type":"vless","server":"185.71.216.177","port":2194,"udp":true,"uuid":"128bd8ad-4f6c-4d70-af13-15a2cec331d2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"jHtC6ayzhkd_GVNF5TIGPu9iVpqUltBAQj1dpGJHwxs","short-id":"55986a94e2228791"}}
+  - {"name":"SiNAVM | VLESS | #641","type":"vless","server":"104.16.10.104","port":443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-5a157c54","type":"vless","server":"107.181.151.128","port":443,"udp":true,"uuid":"8cc7d0fc-1b83-4ee3-b51d-8a03a9b19435","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.microsoft.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zfsjt2A8ur0qHWIuCG7F9W4wZN3VTuL6fkTljC-9R0s","short-id":"87174b37ce3b"}}
+  - {"name":"SiNAVM-reality-0c8b91ad","type":"vless","server":"in.smrtai.top","port":443,"udp":true,"uuid":"6bdc8320-7eae-46fc-be08-f5f54e65dfc8","tls":true,"network":"tcp","client-fingerprint":"","servername":"www.cloudflare.com","reality-opts":{"public-key":"3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q","short-id":"6bdc8320"}}
+  - {"name":"SiNAVM-reality-f101ae87","type":"vless","server":"153.56.229.207","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
+  - {"name":"SiNAVM-reality-e4daf458","type":"vless","server":"13.143.232.161","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":null,"servername":"f0d7aft.nl13.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM | SS | #54","type":"ss","server":"15.204.247.124","port":2375,"password":"faBAoD54k87UJG7","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-0b9c6c15","type":"vless","server":"164.37.224.238","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"","servername":"f0d7aft.nl13.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM-reality-ae1f69e8","type":"vless","server":"185.71.216.177","port":2092,"udp":true,"uuid":"ca21222b-caf1-4418-b404-345ea713daa4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI","short-id":"716b7eba38125f3a"}}
+  - {"name":"SiNAVM-reality-cc87fe57","type":"vless","server":"201.8.64.226","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":null,"servername":"f0d7aft.nl13.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM-reality-af4dfa37","type":"vless","server":"144.48.11.146","port":43000,"udp":true,"uuid":"4a923161-156f-4914-8cac-762fb2433bfb","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"144.48.11.146","flow":"xtls-rprx-vision","reality-opts":{"public-key":"CG0mVPuvPcfZjplA21zehlqoDpGHihJBK8K_u1zfhgQ","short-id":"ee4ea980"}}
+  - {"name":"SiNAVM-reality-e6e6ecf2","type":"vless","server":"185.71.216.94","port":2092,"udp":true,"uuid":"ca21222b-caf1-4418-b404-345ea713daa4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI","short-id":"716b7eba38125f3a"}}
+  - {"name":"SiNAVM-reality-356ed52c","type":"vless","server":"185.71.216.95","port":2092,"udp":true,"uuid":"ca21222b-caf1-4418-b404-345ea713daa4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI","short-id":"716b7eba38125f3a"}}
+  - {"name":"SiNAVM-reality-9c23e068","type":"vless","server":"79.182.70.232","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":null,"servername":"5d0319t.nl7.h1clayd.click","reality-opts":{"public-key":"l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs","short-id":"361d0dd59c70516f"}}
+  - {"name":"SiNAVM-reality-4048f778","type":"vless","server":"195.206.235.232","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"5d0319t.nl7.h1clayd.click","reality-opts":{"public-key":"l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs","short-id":"361d0dd59c70516f"}}
+  - {"name":"SiNAVM-reality-79e2f536","type":"vless","server":"152.228.139.33","port":51671,"udp":true,"uuid":"75cc7568-abb0-46a8-88be-8137d3c647d4","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"www.sony.com","grpc-opts":{"grpc-service-name":"grpc_common3"},"reality-opts":{"public-key":"-5PowNUY37Pi01YKO9fjRTrum1m_9n6XauaPDpmOJzU","short-id":"2fed44d8c59f7e71"}}
+  - {"name":"SiNAVM-reality-90b84c2b","type":"vless","server":"152.228.139.33","port":35108,"udp":true,"uuid":"81dc0b61-f9fe-4ad6-8b4e-b8c067b73712","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"www.nvidia.com","grpc-opts":{"grpc-service-name":"grpc-common3"},"reality-opts":{"public-key":"X_lOw5Zz4SJBa1cRHV4dAq5msYE-ClY5-WNcBmBWRxg","short-id":"52add08b86a5ccea"}}
+  - {"name":"SiNAVM | VLESS | #676","type":"vless","server":"95.174.68.188","port":14430,"udp":false,"uuid":"965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0","tls":false,"network":"ws","client-fingerprint":"chrome","servername":"95.174.68.188","ws-opts":{"path":"/vless","headers":{"host":"95.174.68.188"}}}
+  - {"name":"SiNAVM-reality-9363f279","type":"vless","server":"185.71.216.177","port":2088,"udp":true,"uuid":"74821d64-581c-4461-b92d-d61827ab7452","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo","short-id":"66d62ef550107695"}}
+  - {"name":"SiNAVM-reality-0ee229f2","type":"vless","server":"185.71.216.95","port":2194,"udp":true,"uuid":"128bd8ad-4f6c-4d70-af13-15a2cec331d2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"jHtC6ayzhkd_GVNF5TIGPu9iVpqUltBAQj1dpGJHwxs","short-id":"55986a94e2228791"}}
+  - {"name":"SiNAVM-reality-32c6780c","type":"vless","server":"37.221.76.116","port":2092,"udp":true,"uuid":"ca21222b-caf1-4418-b404-345ea713daa4","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI","short-id":"716b7eba38125f3a"}}
+  - {"name":"SiNAVM | VLESS | #683","type":"vless","server":"23.144.68.90","port":8443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-f805caac","type":"vless","server":"37.221.76.116","port":2194,"udp":true,"uuid":"128bd8ad-4f6c-4d70-af13-15a2cec331d2","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"jHtC6ayzhkd_GVNF5TIGPu9iVpqUltBAQj1dpGJHwxs","short-id":"55986a94e2228791"}}
+  - {"name":"SiNAVM-reality-f776ebdf","type":"vless","server":"93.123.85.59","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"grpc","client-fingerprint":"","servername":"961ec0g.nl17.h1clayd.click","grpc-opts":{"grpc-service-name":"7d5abcd7d8a1"},"reality-opts":{"public-key":"xn7KVKS5MOnsFrYrEeRS04JssBCOxh12rxegaDFyGkA","short-id":"6d289ff0f47c0aac"}}
+  - {"name":"SiNAVM-reality-de29cbcb","type":"vless","server":"185.71.216.95","port":2088,"udp":true,"uuid":"74821d64-581c-4461-b92d-d61827ab7452","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo","short-id":"66d62ef550107695"}}
+  - {"name":"SiNAVM-reality-17ebaee5","type":"vless","server":"185.71.216.94","port":2088,"udp":true,"uuid":"74821d64-581c-4461-b92d-d61827ab7452","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo","short-id":"66d62ef550107695"}}
+  - {"name":"SiNAVM | SS | #55","type":"ss","server":"172.105.39.124","port":7002,"password":"RexnBgU7EV5ADxG","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-2f7d109f","type":"vless","server":"195.206.235.74","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":null,"servername":"f0d7aft.nl13.h1clayd.click","reality-opts":{"public-key":"kkCGiCQCKnkozJR1KKCRNtmdBECmThCgI9VSv7iDcWI","short-id":"8956c57cb4c4f8d2"}}
+  - {"name":"SiNAVM | VLESS | #692","type":"vless","server":"104.21.33.59","port":443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-a7e1a05d","type":"vless","server":"217.60.27.153","port":443,"udp":true,"uuid":"12776e55-6230-48b9-b069-1bb8a04b4237","tls":true,"network":"tcp","client-fingerprint":"","servername":"music.3apes.online","flow":"xtls-rprx-vision","reality-opts":{"public-key":"q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ"}}
+  - {"name":"SiNAVM-reality-5271689c","type":"vless","server":"7aa271t.es9.h1clayd.click","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"7aa271t.es9.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE","short-id":"42426c882c5fcd41"}}
+  - {"name":"SiNAVM-reality-494dd559","type":"vless","server":"209.200.246.148","port":443,"udp":true,"uuid":"ca52e2b6-fb9f-4dac-b6dc-49da9923f251","tls":true,"network":"raw","client-fingerprint":"chrome","servername":"www.cloudflare.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk","short-id":"f98843107912e782"}}
+  - {"name":"SiNAVM-reality-176a9c67","type":"vless","server":"8a2e72t.nl11.h1clayd.click","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM | VLESS | #705","type":"vless","server":"188.114.98.0","port":443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-cb101224","type":"vless","server":"196.196.148.85","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"5d0319t.nl7.h1clayd.click","reality-opts":{"public-key":"l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs","short-id":"361d0dd59c70516f"}}
+  - {"name":"SiNAVM | VLESS | #708","type":"vless","server":"subgift.gcorecdn.com","port":443,"udp":false,"uuid":"740b2630-b42d-425c-bacd-37e7e30d78f1","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"subgift.gcorecdn.com","ws-opts":{"path":"/t.me-SubGift","headers":{"host":"subgift.gcorecdn.com"}}}
+  - {"name":"SiNAVM | SS | #57","type":"ss","server":"213.202.208.199","port":7001,"password":"RexnBgU7EV5ADxG","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-585cdfd4","type":"vless","server":"196.245.153.111","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"76574ct.nl8.h1clayd.click","reality-opts":{"public-key":"9zW5lTDbs9svY-lzlPp-pq0j2Sr6g031SY0E-3xSHDc","short-id":"2ca59bdc5121f921"}}
+  - {"name":"SiNAVM-reality-4dce1fda","type":"vless","server":"78.159.245.147","port":445,"udp":true,"uuid":"37af0181-5598-4aad-a040-d926bcb65757","tls":true,"network":"grpc","client-fingerprint":"firefox","servername":"passport.yandex.ru","grpc-opts":{"grpc-service-name":"grpc"},"reality-opts":{"public-key":"VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"}}
+  - {"name":"SiNAVM-reality-03298b15","type":"vless","server":"136.148.208.221","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"8a2e72t.nl20.h1clayd.shop","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM-reality-876ed9bd","type":"vless","server":"153.52.85.198","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM-reality-40c0d2ba","type":"vless","server":"4935e4t.de25.h1clayd.click","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
+  - {"name":"SiNAVM-reality-bc04069b","type":"vless","server":"179.254.115.200","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"04535dt.us8.h1clayd.click","reality-opts":{"public-key":"UoS8qZ74hP_ECcncCz55lzvlcVss3R7VA0WYZE0YQCY","short-id":"ba2a3dce62b99092"}}
+  - {"name":"SiNAVM-reality-23ede9ec","type":"vless","server":"179.254.115.111","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"04535dt.us8.h1clayd.click","reality-opts":{"public-key":"UoS8qZ74hP_ECcncCz55lzvlcVss3R7VA0WYZE0YQCY","short-id":"ba2a3dce62b99092"}}
+  - {"name":"SiNAVM-reality-6399861f","type":"vless","server":"185.71.216.94","port":2195,"udp":true,"uuid":"9654f1a9-8dbc-4897-85ea-c077a52b3857","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"www.apple.com","flow":"xtls-rprx-vision","reality-opts":{"public-key":"OKksVHWL5JepTv7if7Ta_L_7vn8OxW0INwV71HJM1jI","short-id":"3869d49a9a79e06a"}}
+  - {"name":"SiNAVM-reality-1b6751c2","type":"vless","server":"195.206.235.215","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":null,"servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM | VLESS | #731","type":"vless","server":"154.40.36.220","port":443,"udp":false,"uuid":"4e4f1f70-5e56-4a76-bb9d-db087f4690c4","tls":true,"network":"ws","client-fingerprint":"chrome","servername":"jp3.yohototo.top","ws-opts":{"path":"/tyxyws","headers":{"host":"jp3.yohototo.top"}}}
+  - {"name":"SiNAVM-reality-bbb0a7e5","type":"vless","server":"185.242.247.252","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"8a2e72t.nl20.h1clayd.shop","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM-reality-d32d906a","type":"vless","server":"13.143.239.253","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM | SS | #61","type":"ss","server":"51.79.85.185","port":8118,"password":"cdBIDV42DCwnfIN","cipher":"aes-256-gcm"}
+  - {"name":"SiNAVM-reality-c3032c8d","type":"vless","server":"179.254.115.118","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"8a2e72t.nl11.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA","short-id":"8d0d0679f42ffd98"}}
+  - {"name":"SiNAVM-reality-43107227","type":"vless","server":"15b171g.nl7.h1clayd.click","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"15b171g.nl7.h1clayd.click","grpc-opts":{"grpc-service-name":"5b79e8a94241"},"reality-opts":{"public-key":"zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE","short-id":"50a749f0eccb628c"}}
+  - {"name":"SiNAVM-reality-1077f4d9","type":"vless","server":"79.182.39.131","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"717252g.nl8.h1clayd.click","grpc-opts":{"grpc-service-name":"204adda7e3da"},"reality-opts":{"public-key":"PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU","short-id":"d3bd772514c87d28"}}
+  - {"name":"SiNAVM-reality-7fa56d9d","type":"vless","server":"132.243.163.125","port":443,"udp":true,"uuid":"4201786b-d99b-4147-a5f0-20d47acddb81","tls":true,"network":"tcp","client-fingerprint":"chrome","servername":"4935e4t.de25.h1clayd.click","flow":"xtls-rprx-vision","reality-opts":{"public-key":"MzgB17ZFbKqs8pbC3EscTzHid_ENc-k_Cp6nXl-2knw","short-id":"6976d670818644cc"}}
+  - {"name":"SiNAVM-reality-6de33c7f","type":"vless","server":"717252g.nl8.h1clayd.click","port":443,"udp":true,"uuid":"cda0862a-0f87-4be9-8ed8-1d0c9e382839","tls":true,"network":"grpc","client-fingerprint":"chrome","servername":"717252g.nl8.h1clayd.click","grpc-opts":{"grpc-service-name":"204adda7e3da"},"reality-opts":{"public-key":"PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU","short-id":"d3bd772514c87d28"}}
+  - {"name":"SiNAVM | VMESS | #19","type":"vmess","server":"67.220.95.3","port":"18000","cipher":"aes-128-gcm","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":"0","tls":false,"skip-cert-verify":true,"network":"tcp"}
+  - {"name":"SiNAVM | VMESS | #20","type":"vmess","server":"67.220.85.46","port":"18000","cipher":"auto","uuid":"f8c8dc3d-0d37-46b0-8b34-a7232882fcfe","alterId":0,"tls":false,"skip-cert-verify":true,"network":"tcp"}
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
       - URL-TEST
       - FALLBACK
+      - 'SiNAVM-reality-68800f94'
+      - 'SiNAVM-reality-ef7519ef'
+      - 'SiNAVM-reality-02b90b97'
+      - 'SiNAVM-reality-4d44c42d'
+      - 'SiNAVM | VLESS | #10'
+      - 'SiNAVM-reality-8f089a75'
+      - 'SiNAVM | VLESS | #12'
+      - 'SiNAVM | VLESS | #13'
+      - 'SiNAVM | VLESS | #14'
+      - 'SiNAVM | VLESS | #15'
+      - 'SiNAVM | VLESS | #16'
+      - 'SiNAVM | VLESS | #20'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #23'
+      - 'SiNAVM-reality-c1b51a65'
+      - 'SiNAVM-reality-fe57d744'
+      - 'SiNAVM-reality-c7c3a68c'
+      - 'SiNAVM-reality-87129dc4'
+      - 'SiNAVM-reality-c5530f59'
+      - 'SiNAVM-reality-62428622'
+      - 'SiNAVM | VLESS | #37'
+      - 'SiNAVM-reality-047e2714'
+      - 'SiNAVM-reality-cb636336'
       - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-df9c8a37'
-      - 'SiNAVM-reality-6ebe3988'
+      - 'SiNAVM-reality-49ae935c'
       - 'SiNAVM | SS | #2'
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM-reality-f1ee05df'
-      - 'SiNAVM-reality-ef3a2538'
-      - 'SiNAVM | VLESS | #9'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
       - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-4f2039a5'
-      - 'SiNAVM-reality-93fa30c0'
-      - 'SiNAVM-reality-cbc26ece'
-      - 'SiNAVM-reality-6e17c384'
-      - 'SiNAVM-reality-d44ab0d6'
-      - 'SiNAVM-reality-1fdd755c'
-      - 'SiNAVM-reality-d30462ca'
-      - 'SiNAVM-reality-3ffa5f52'
+      - 'SiNAVM | SS | #4'
+      - 'SiNAVM | VLESS | #68'
+      - 'SiNAVM-reality-b2875dda'
+      - 'SiNAVM-reality-d9a048f0'
+      - 'SiNAVM-reality-8fd13200'
+      - 'SiNAVM-reality-2238ec22'
+      - 'SiNAVM-reality-0e0ab067'
+      - 'SiNAVM-reality-139abf91'
+      - 'SiNAVM | VLESS | #97'
+      - 'SiNAVM-reality-85f3c561'
+      - 'SiNAVM | VLESS | #99'
+      - 'SiNAVM-reality-b692f440'
+      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-33fdb729'
+      - 'SiNAVM-reality-40076f39'
+      - 'SiNAVM-reality-e53cc470'
+      - 'SiNAVM | SS | #5'
+      - 'SiNAVM-reality-934d7b29'
+      - 'SiNAVM-reality-4af70679'
+      - 'SiNAVM-reality-a790c746'
+      - 'SiNAVM-reality-0e8ea3c0'
+      - 'SiNAVM | VLESS | #120'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VLESS | #127'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM-reality-eb41a017'
+      - 'SiNAVM | VLESS | #134'
+      - 'SiNAVM | VLESS | #138'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | SS | #6'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
+      - 'SiNAVM | VMESS | #8'
+      - 'SiNAVM | SS | #7'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #12'
+      - 'SiNAVM | SS | #8'
+      - 'SiNAVM | SS | #9'
+      - 'SiNAVM | VMESS | #13'
       - 'SiNAVM | SS | #10'
-      - 'SiNAVM-reality-ba7fe7a1'
-      - 'SiNAVM-reality-4bef67be'
       - 'SiNAVM | SS | #11'
       - 'SiNAVM | SS | #12'
       - 'SiNAVM | SS | #13'
-      - 'SiNAVM-reality-5795ada5'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM-reality-bf4e3c7a'
-      - 'SiNAVM-reality-cb822f88'
-      - 'SiNAVM-reality-e8de3e3b'
-      - 'SiNAVM-reality-00c3a44e'
+      - 'SiNAVM | SS | #14'
+      - 'SiNAVM | SS | #15'
+      - 'SiNAVM | SS | #16'
+      - 'SiNAVM-reality-e352b44e'
+      - 'SiNAVM | VMESS | #14'
+      - 'SiNAVM | SS | #17'
+      - 'SiNAVM | VMESS | #15'
+      - 'SiNAVM | SS | #18'
+      - 'SiNAVM-reality-3727b8e5'
+      - 'SiNAVM | SS | #19'
+      - 'SiNAVM | SS | #21'
       - 'SiNAVM | SS | #22'
-      - 'SiNAVM-reality-438b5f1c'
-      - 'SiNAVM-reality-e63146f1'
-      - 'SiNAVM-reality-ed2d872d'
-      - 'SiNAVM-reality-5a077649'
-      - 'SiNAVM-reality-b9b72772'
-      - 'SiNAVM-reality-d0b080f8'
-      - 'SiNAVM-reality-2886119b'
-      - 'SiNAVM | SS | #24'
+      - 'SiNAVM | SS | #23'
       - 'SiNAVM | SS | #25'
+      - 'SiNAVM | SS | #26'
       - 'SiNAVM | SS | #27'
       - 'SiNAVM | SS | #28'
+      - 'SiNAVM | SS | #29'
       - 'SiNAVM | SS | #30'
+      - 'SiNAVM-reality-f0a5b71c'
+      - 'SiNAVM-reality-1106f0c8'
+      - 'SiNAVM-reality-780d3639'
+      - 'SiNAVM-reality-fbf8482d'
+      - 'SiNAVM-reality-8501ff80'
+      - 'SiNAVM-reality-532a24e1'
+      - 'SiNAVM-reality-764b46fb'
+      - 'SiNAVM-reality-7840d970'
+      - 'SiNAVM-reality-365a0563'
+      - 'SiNAVM-reality-4541753a'
+      - 'SiNAVM-reality-2ebedcfb'
+      - 'SiNAVM-reality-2af5ea2b'
+      - 'SiNAVM-reality-d71f7718'
+      - 'SiNAVM-reality-98e291fb'
+      - 'SiNAVM-reality-491972ed'
+      - 'SiNAVM-reality-e30cad94'
+      - 'SiNAVM-reality-34496e1a'
+      - 'SiNAVM-reality-41b3dc30'
+      - 'SiNAVM-reality-84b6cfee'
+      - 'SiNAVM-reality-e42f37ef'
+      - 'SiNAVM | VLESS | #288'
+      - 'SiNAVM-reality-c43d89a9'
+      - 'SiNAVM-reality-d8f51c8e'
+      - 'SiNAVM-reality-4f3239ac'
+      - 'SiNAVM-reality-b5275e77'
+      - 'SiNAVM | VLESS | #329'
+      - 'SiNAVM-reality-816b7216'
+      - 'SiNAVM-reality-69f0f853'
+      - 'SiNAVM | VLESS | #373'
+      - 'SiNAVM-reality-953c81c9'
+      - 'SiNAVM-reality-7ca30b5e'
+      - 'SiNAVM-reality-eb9259ce'
+      - 'SiNAVM-reality-5aade4fc'
+      - 'SiNAVM | VLESS | #468'
       - 'SiNAVM | SS | #31'
-      - 'SiNAVM | VLESS | #102'
-      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-31e2da36'
+      - 'SiNAVM-reality-f2d5575b'
+      - 'SiNAVM | SS | #32'
+      - 'SiNAVM | VLESS | #492'
+      - 'SiNAVM | SS | #33'
       - 'SiNAVM | SS | #34'
+      - 'SiNAVM | VLESS | #495'
       - 'SiNAVM | SS | #35'
+      - 'SiNAVM-reality-d7133e49'
       - 'SiNAVM | SS | #36'
+      - 'SiNAVM | SS | #37'
+      - 'SiNAVM-reality-6a2d28f1'
       - 'SiNAVM | SS | #38'
       - 'SiNAVM | SS | #39'
+      - 'SiNAVM-reality-e78ea421'
+      - 'SiNAVM | VLESS | #507'
+      - 'SiNAVM | SS | #40'
       - 'SiNAVM | SS | #41'
-      - 'SiNAVM-reality-6b94817c'
-      - 'SiNAVM-reality-d5bb3660'
-      - 'SiNAVM-reality-d0d78954'
-      - 'SiNAVM-reality-8e70bf3a'
-      - 'SiNAVM-reality-acc3d3e5'
-      - 'SiNAVM-reality-708c5414'
-      - 'SiNAVM-reality-735dcdbc'
-      - 'SiNAVM-reality-da9fcea7'
-      - 'SiNAVM-reality-393ab790'
-      - 'SiNAVM-reality-c56d6006'
-      - 'SiNAVM-reality-cfe13a39'
-      - 'SiNAVM-reality-4134b5d4'
-      - 'SiNAVM-reality-f841e5e3'
-      - 'SiNAVM-reality-b6b13ce0'
-      - 'SiNAVM-reality-49832f45'
-      - 'SiNAVM-reality-41cddd9e'
-      - 'SiNAVM-reality-35b4a178'
-      - 'SiNAVM-reality-613fa995'
-      - 'SiNAVM-reality-937f6634'
-      - 'SiNAVM | VLESS | #177'
-      - 'SiNAVM-reality-b90bb0c7'
-      - 'SiNAVM | VLESS | #183'
-      - 'SiNAVM-reality-9d247532'
-      - 'SiNAVM-reality-582ee2ba'
-      - 'SiNAVM-reality-fa12abaa'
-      - 'SiNAVM-reality-8b4878de'
-      - 'SiNAVM-reality-844713cd'
+      - 'SiNAVM | VLESS | #508'
+      - 'SiNAVM | VLESS | #509'
+      - 'SiNAVM | VLESS | #510'
+      - 'SiNAVM | VLESS | #511'
+      - 'SiNAVM | SS | #42'
       - 'SiNAVM | SS | #43'
+      - 'SiNAVM-reality-b74329da'
       - 'SiNAVM | SS | #44'
-      - 'SiNAVM-reality-18f7bb5b'
-      - 'SiNAVM-reality-2dcc3624'
+      - 'SiNAVM-reality-bfd2e633'
+      - 'SiNAVM-reality-0e9711fb'
+      - 'SiNAVM | VLESS | #517'
+      - 'SiNAVM | SS | #45'
+      - 'SiNAVM-reality-31e07e48'
+      - 'SiNAVM | VLESS | #523'
+      - 'SiNAVM-reality-dfeb25d7'
+      - 'SiNAVM-reality-74aa0ed3'
+      - 'SiNAVM | SS | #46'
+      - 'SiNAVM | SS | #47'
+      - 'SiNAVM | SS | #48'
+      - 'SiNAVM-reality-f4d95d5f'
       - 'SiNAVM | SS | #49'
-      - 'SiNAVM-reality-2576d168'
+      - 'SiNAVM | VLESS | #529'
+      - 'SiNAVM-reality-5652d94c'
       - 'SiNAVM | SS | #50'
-      - 'SiNAVM-reality-4f4163c3'
-      - 'SiNAVM-reality-6eb72159'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM-reality-342f12ff'
       - 'SiNAVM | SS | #51'
-      - 'SiNAVM | SS | #52'
+      - 'SiNAVM-reality-9d1fc74f'
+      - 'SiNAVM | VLESS | #541'
+      - 'SiNAVM-reality-f3cd0b17'
+      - 'SiNAVM-reality-da682217'
+      - 'SiNAVM-reality-902cb504'
+      - 'SiNAVM-reality-725b5b15'
+      - 'SiNAVM-reality-3fb03a16'
+      - 'SiNAVM-reality-99e7884b'
+      - 'SiNAVM-reality-805b6c95'
+      - 'SiNAVM-reality-9d6bddd4'
+      - 'SiNAVM | VLESS | #592'
+      - 'SiNAVM | VLESS | #598'
       - 'SiNAVM | SS | #53'
+      - 'SiNAVM | VLESS | #600'
+      - 'SiNAVM | VLESS | #603'
+      - 'SiNAVM-reality-60775037'
+      - 'SiNAVM | VLESS | #629'
+      - 'SiNAVM-reality-410c32ab'
+      - 'SiNAVM | VLESS | #633'
+      - 'SiNAVM-reality-5dbe306e'
+      - 'SiNAVM-reality-58f52bc8'
+      - 'SiNAVM-reality-ec48e10d'
+      - 'SiNAVM-reality-41287532'
+      - 'SiNAVM-reality-f461e910'
+      - 'SiNAVM | VLESS | #641'
+      - 'SiNAVM-reality-5a157c54'
+      - 'SiNAVM-reality-0c8b91ad'
+      - 'SiNAVM-reality-f101ae87'
+      - 'SiNAVM-reality-e4daf458'
       - 'SiNAVM | SS | #54'
+      - 'SiNAVM-reality-0b9c6c15'
+      - 'SiNAVM-reality-ae1f69e8'
+      - 'SiNAVM-reality-cc87fe57'
+      - 'SiNAVM-reality-af4dfa37'
+      - 'SiNAVM-reality-e6e6ecf2'
+      - 'SiNAVM-reality-356ed52c'
+      - 'SiNAVM-reality-9c23e068'
+      - 'SiNAVM-reality-4048f778'
+      - 'SiNAVM-reality-79e2f536'
+      - 'SiNAVM-reality-90b84c2b'
+      - 'SiNAVM | VLESS | #676'
+      - 'SiNAVM-reality-9363f279'
+      - 'SiNAVM-reality-0ee229f2'
+      - 'SiNAVM-reality-32c6780c'
+      - 'SiNAVM | VLESS | #683'
+      - 'SiNAVM-reality-f805caac'
+      - 'SiNAVM-reality-f776ebdf'
+      - 'SiNAVM-reality-de29cbcb'
+      - 'SiNAVM-reality-17ebaee5'
       - 'SiNAVM | SS | #55'
-      - 'SiNAVM | SS | #56'
-      - 'SiNAVM-reality-c7204a92'
-      - 'SiNAVM | SS | #58'
-      - 'SiNAVM-reality-3e0e3d6b'
-      - 'SiNAVM | SS | #59'
-      - 'SiNAVM | VLESS | #376'
-      - 'SiNAVM-reality-cfb794e6'
-      - 'SiNAVM-reality-6f401702'
-      - 'SiNAVM | SS | #60'
-      - 'SiNAVM-reality-9dd117ea'
-      - 'SiNAVM-reality-c2840cba'
-      - 'SiNAVM | SS | #63'
-      - 'SiNAVM | SS | #64'
-      - 'SiNAVM-reality-eef76e00'
-      - 'SiNAVM | SS | #66'
-      - 'SiNAVM | VMESS | #9'
-      - 'SiNAVM | SS | #67'
-      - 'SiNAVM-reality-43bce0db'
-      - 'SiNAVM-reality-56a78f02'
-      - 'SiNAVM-reality-65d08962'
-      - 'SiNAVM | SS | #70'
-      - 'SiNAVM | VLESS | #406'
-      - 'SiNAVM-reality-b41395f8'
-      - 'SiNAVM-reality-cc5c8f87'
-      - 'SiNAVM | SS | #74'
-      - 'SiNAVM | VLESS | #446'
-      - 'SiNAVM | VLESS | #448'
-      - 'SiNAVM | SS | #79'
-      - 'SiNAVM-reality-7c904d8e'
-      - 'SiNAVM-reality-9bff2394'
-      - 'SiNAVM | SS | #80'
-      - 'SiNAVM | SS | #82'
-      - 'SiNAVM | VLESS | #458'
-      - 'SiNAVM | SS | #83'
-      - 'SiNAVM | VMESS | #12'
-      - 'SiNAVM | SS | #85'
-      - 'SiNAVM-reality-62737a83'
-      - 'SiNAVM-reality-81d16905'
-      - 'SiNAVM-reality-60263fe0'
-      - 'SiNAVM | VLESS | #469'
-      - 'SiNAVM-reality-2f916db0'
-      - 'SiNAVM-reality-e42d739a'
-      - 'SiNAVM-reality-3a3ce3bb'
-      - 'SiNAVM | SS | #87'
-      - 'SiNAVM | SS | #88'
-      - 'SiNAVM-reality-b8399910'
-      - 'SiNAVM-reality-8c550384'
-      - 'SiNAVM | VMESS | #13'
-      - 'SiNAVM-reality-dcc59460'
-      - 'SiNAVM | SS | #89'
-      - 'SiNAVM | SS | #90'
-      - 'SiNAVM | SS | #93'
+      - 'SiNAVM-reality-2f7d109f'
+      - 'SiNAVM | VLESS | #692'
+      - 'SiNAVM-reality-a7e1a05d'
+      - 'SiNAVM-reality-5271689c'
+      - 'SiNAVM-reality-494dd559'
+      - 'SiNAVM-reality-176a9c67'
+      - 'SiNAVM | VLESS | #705'
+      - 'SiNAVM-reality-cb101224'
+      - 'SiNAVM | VLESS | #708'
+      - 'SiNAVM | SS | #57'
+      - 'SiNAVM-reality-585cdfd4'
+      - 'SiNAVM-reality-4dce1fda'
+      - 'SiNAVM-reality-03298b15'
+      - 'SiNAVM-reality-876ed9bd'
+      - 'SiNAVM-reality-40c0d2ba'
+      - 'SiNAVM-reality-bc04069b'
+      - 'SiNAVM-reality-23ede9ec'
+      - 'SiNAVM-reality-6399861f'
+      - 'SiNAVM-reality-1b6751c2'
+      - 'SiNAVM | VLESS | #731'
+      - 'SiNAVM-reality-bbb0a7e5'
+      - 'SiNAVM-reality-d32d906a'
+      - 'SiNAVM | SS | #61'
+      - 'SiNAVM-reality-c3032c8d'
+      - 'SiNAVM-reality-43107227'
+      - 'SiNAVM-reality-1077f4d9'
+      - 'SiNAVM-reality-7fa56d9d'
+      - 'SiNAVM-reality-6de33c7f'
+      - 'SiNAVM | VMESS | #19'
+      - 'SiNAVM | VMESS | #20'
   - name: URL-TEST
     type: url-test
     url: http://cp.cloudflare.com/
     interval: 60
     tolerance: 50
     proxies:
+      - 'SiNAVM-reality-68800f94'
+      - 'SiNAVM-reality-ef7519ef'
+      - 'SiNAVM-reality-02b90b97'
+      - 'SiNAVM-reality-4d44c42d'
+      - 'SiNAVM | VLESS | #10'
+      - 'SiNAVM-reality-8f089a75'
+      - 'SiNAVM | VLESS | #12'
+      - 'SiNAVM | VLESS | #13'
+      - 'SiNAVM | VLESS | #14'
+      - 'SiNAVM | VLESS | #15'
+      - 'SiNAVM | VLESS | #16'
+      - 'SiNAVM | VLESS | #20'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #23'
+      - 'SiNAVM-reality-c1b51a65'
+      - 'SiNAVM-reality-fe57d744'
+      - 'SiNAVM-reality-c7c3a68c'
+      - 'SiNAVM-reality-87129dc4'
+      - 'SiNAVM-reality-c5530f59'
+      - 'SiNAVM-reality-62428622'
+      - 'SiNAVM | VLESS | #37'
+      - 'SiNAVM-reality-047e2714'
+      - 'SiNAVM-reality-cb636336'
       - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-df9c8a37'
-      - 'SiNAVM-reality-6ebe3988'
+      - 'SiNAVM-reality-49ae935c'
       - 'SiNAVM | SS | #2'
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM-reality-f1ee05df'
-      - 'SiNAVM-reality-ef3a2538'
-      - 'SiNAVM | VLESS | #9'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
       - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-4f2039a5'
-      - 'SiNAVM-reality-93fa30c0'
-      - 'SiNAVM-reality-cbc26ece'
-      - 'SiNAVM-reality-6e17c384'
-      - 'SiNAVM-reality-d44ab0d6'
-      - 'SiNAVM-reality-1fdd755c'
-      - 'SiNAVM-reality-d30462ca'
-      - 'SiNAVM-reality-3ffa5f52'
+      - 'SiNAVM | SS | #4'
+      - 'SiNAVM | VLESS | #68'
+      - 'SiNAVM-reality-b2875dda'
+      - 'SiNAVM-reality-d9a048f0'
+      - 'SiNAVM-reality-8fd13200'
+      - 'SiNAVM-reality-2238ec22'
+      - 'SiNAVM-reality-0e0ab067'
+      - 'SiNAVM-reality-139abf91'
+      - 'SiNAVM | VLESS | #97'
+      - 'SiNAVM-reality-85f3c561'
+      - 'SiNAVM | VLESS | #99'
+      - 'SiNAVM-reality-b692f440'
+      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-33fdb729'
+      - 'SiNAVM-reality-40076f39'
+      - 'SiNAVM-reality-e53cc470'
+      - 'SiNAVM | SS | #5'
+      - 'SiNAVM-reality-934d7b29'
+      - 'SiNAVM-reality-4af70679'
+      - 'SiNAVM-reality-a790c746'
+      - 'SiNAVM-reality-0e8ea3c0'
+      - 'SiNAVM | VLESS | #120'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VLESS | #127'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM-reality-eb41a017'
+      - 'SiNAVM | VLESS | #134'
+      - 'SiNAVM | VLESS | #138'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | SS | #6'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
+      - 'SiNAVM | VMESS | #8'
+      - 'SiNAVM | SS | #7'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #12'
+      - 'SiNAVM | SS | #8'
+      - 'SiNAVM | SS | #9'
+      - 'SiNAVM | VMESS | #13'
       - 'SiNAVM | SS | #10'
-      - 'SiNAVM-reality-ba7fe7a1'
-      - 'SiNAVM-reality-4bef67be'
       - 'SiNAVM | SS | #11'
       - 'SiNAVM | SS | #12'
       - 'SiNAVM | SS | #13'
-      - 'SiNAVM-reality-5795ada5'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM-reality-bf4e3c7a'
-      - 'SiNAVM-reality-cb822f88'
-      - 'SiNAVM-reality-e8de3e3b'
-      - 'SiNAVM-reality-00c3a44e'
+      - 'SiNAVM | SS | #14'
+      - 'SiNAVM | SS | #15'
+      - 'SiNAVM | SS | #16'
+      - 'SiNAVM-reality-e352b44e'
+      - 'SiNAVM | VMESS | #14'
+      - 'SiNAVM | SS | #17'
+      - 'SiNAVM | VMESS | #15'
+      - 'SiNAVM | SS | #18'
+      - 'SiNAVM-reality-3727b8e5'
+      - 'SiNAVM | SS | #19'
+      - 'SiNAVM | SS | #21'
       - 'SiNAVM | SS | #22'
-      - 'SiNAVM-reality-438b5f1c'
-      - 'SiNAVM-reality-e63146f1'
-      - 'SiNAVM-reality-ed2d872d'
-      - 'SiNAVM-reality-5a077649'
-      - 'SiNAVM-reality-b9b72772'
-      - 'SiNAVM-reality-d0b080f8'
-      - 'SiNAVM-reality-2886119b'
-      - 'SiNAVM | SS | #24'
+      - 'SiNAVM | SS | #23'
       - 'SiNAVM | SS | #25'
+      - 'SiNAVM | SS | #26'
       - 'SiNAVM | SS | #27'
       - 'SiNAVM | SS | #28'
+      - 'SiNAVM | SS | #29'
       - 'SiNAVM | SS | #30'
+      - 'SiNAVM-reality-f0a5b71c'
+      - 'SiNAVM-reality-1106f0c8'
+      - 'SiNAVM-reality-780d3639'
+      - 'SiNAVM-reality-fbf8482d'
+      - 'SiNAVM-reality-8501ff80'
+      - 'SiNAVM-reality-532a24e1'
+      - 'SiNAVM-reality-764b46fb'
+      - 'SiNAVM-reality-7840d970'
+      - 'SiNAVM-reality-365a0563'
+      - 'SiNAVM-reality-4541753a'
+      - 'SiNAVM-reality-2ebedcfb'
+      - 'SiNAVM-reality-2af5ea2b'
+      - 'SiNAVM-reality-d71f7718'
+      - 'SiNAVM-reality-98e291fb'
+      - 'SiNAVM-reality-491972ed'
+      - 'SiNAVM-reality-e30cad94'
+      - 'SiNAVM-reality-34496e1a'
+      - 'SiNAVM-reality-41b3dc30'
+      - 'SiNAVM-reality-84b6cfee'
+      - 'SiNAVM-reality-e42f37ef'
+      - 'SiNAVM | VLESS | #288'
+      - 'SiNAVM-reality-c43d89a9'
+      - 'SiNAVM-reality-d8f51c8e'
+      - 'SiNAVM-reality-4f3239ac'
+      - 'SiNAVM-reality-b5275e77'
+      - 'SiNAVM | VLESS | #329'
+      - 'SiNAVM-reality-816b7216'
+      - 'SiNAVM-reality-69f0f853'
+      - 'SiNAVM | VLESS | #373'
+      - 'SiNAVM-reality-953c81c9'
+      - 'SiNAVM-reality-7ca30b5e'
+      - 'SiNAVM-reality-eb9259ce'
+      - 'SiNAVM-reality-5aade4fc'
+      - 'SiNAVM | VLESS | #468'
       - 'SiNAVM | SS | #31'
-      - 'SiNAVM | VLESS | #102'
-      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-31e2da36'
+      - 'SiNAVM-reality-f2d5575b'
+      - 'SiNAVM | SS | #32'
+      - 'SiNAVM | VLESS | #492'
+      - 'SiNAVM | SS | #33'
       - 'SiNAVM | SS | #34'
+      - 'SiNAVM | VLESS | #495'
       - 'SiNAVM | SS | #35'
+      - 'SiNAVM-reality-d7133e49'
       - 'SiNAVM | SS | #36'
+      - 'SiNAVM | SS | #37'
+      - 'SiNAVM-reality-6a2d28f1'
       - 'SiNAVM | SS | #38'
       - 'SiNAVM | SS | #39'
+      - 'SiNAVM-reality-e78ea421'
+      - 'SiNAVM | VLESS | #507'
+      - 'SiNAVM | SS | #40'
       - 'SiNAVM | SS | #41'
-      - 'SiNAVM-reality-6b94817c'
-      - 'SiNAVM-reality-d5bb3660'
-      - 'SiNAVM-reality-d0d78954'
-      - 'SiNAVM-reality-8e70bf3a'
-      - 'SiNAVM-reality-acc3d3e5'
-      - 'SiNAVM-reality-708c5414'
-      - 'SiNAVM-reality-735dcdbc'
-      - 'SiNAVM-reality-da9fcea7'
-      - 'SiNAVM-reality-393ab790'
-      - 'SiNAVM-reality-c56d6006'
-      - 'SiNAVM-reality-cfe13a39'
-      - 'SiNAVM-reality-4134b5d4'
-      - 'SiNAVM-reality-f841e5e3'
-      - 'SiNAVM-reality-b6b13ce0'
-      - 'SiNAVM-reality-49832f45'
-      - 'SiNAVM-reality-41cddd9e'
-      - 'SiNAVM-reality-35b4a178'
-      - 'SiNAVM-reality-613fa995'
-      - 'SiNAVM-reality-937f6634'
-      - 'SiNAVM | VLESS | #177'
-      - 'SiNAVM-reality-b90bb0c7'
-      - 'SiNAVM | VLESS | #183'
-      - 'SiNAVM-reality-9d247532'
-      - 'SiNAVM-reality-582ee2ba'
-      - 'SiNAVM-reality-fa12abaa'
-      - 'SiNAVM-reality-8b4878de'
-      - 'SiNAVM-reality-844713cd'
+      - 'SiNAVM | VLESS | #508'
+      - 'SiNAVM | VLESS | #509'
+      - 'SiNAVM | VLESS | #510'
+      - 'SiNAVM | VLESS | #511'
+      - 'SiNAVM | SS | #42'
       - 'SiNAVM | SS | #43'
+      - 'SiNAVM-reality-b74329da'
       - 'SiNAVM | SS | #44'
-      - 'SiNAVM-reality-18f7bb5b'
-      - 'SiNAVM-reality-2dcc3624'
+      - 'SiNAVM-reality-bfd2e633'
+      - 'SiNAVM-reality-0e9711fb'
+      - 'SiNAVM | VLESS | #517'
+      - 'SiNAVM | SS | #45'
+      - 'SiNAVM-reality-31e07e48'
+      - 'SiNAVM | VLESS | #523'
+      - 'SiNAVM-reality-dfeb25d7'
+      - 'SiNAVM-reality-74aa0ed3'
+      - 'SiNAVM | SS | #46'
+      - 'SiNAVM | SS | #47'
+      - 'SiNAVM | SS | #48'
+      - 'SiNAVM-reality-f4d95d5f'
       - 'SiNAVM | SS | #49'
-      - 'SiNAVM-reality-2576d168'
+      - 'SiNAVM | VLESS | #529'
+      - 'SiNAVM-reality-5652d94c'
       - 'SiNAVM | SS | #50'
-      - 'SiNAVM-reality-4f4163c3'
-      - 'SiNAVM-reality-6eb72159'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM-reality-342f12ff'
       - 'SiNAVM | SS | #51'
-      - 'SiNAVM | SS | #52'
+      - 'SiNAVM-reality-9d1fc74f'
+      - 'SiNAVM | VLESS | #541'
+      - 'SiNAVM-reality-f3cd0b17'
+      - 'SiNAVM-reality-da682217'
+      - 'SiNAVM-reality-902cb504'
+      - 'SiNAVM-reality-725b5b15'
+      - 'SiNAVM-reality-3fb03a16'
+      - 'SiNAVM-reality-99e7884b'
+      - 'SiNAVM-reality-805b6c95'
+      - 'SiNAVM-reality-9d6bddd4'
+      - 'SiNAVM | VLESS | #592'
+      - 'SiNAVM | VLESS | #598'
       - 'SiNAVM | SS | #53'
+      - 'SiNAVM | VLESS | #600'
+      - 'SiNAVM | VLESS | #603'
+      - 'SiNAVM-reality-60775037'
+      - 'SiNAVM | VLESS | #629'
+      - 'SiNAVM-reality-410c32ab'
+      - 'SiNAVM | VLESS | #633'
+      - 'SiNAVM-reality-5dbe306e'
+      - 'SiNAVM-reality-58f52bc8'
+      - 'SiNAVM-reality-ec48e10d'
+      - 'SiNAVM-reality-41287532'
+      - 'SiNAVM-reality-f461e910'
+      - 'SiNAVM | VLESS | #641'
+      - 'SiNAVM-reality-5a157c54'
+      - 'SiNAVM-reality-0c8b91ad'
+      - 'SiNAVM-reality-f101ae87'
+      - 'SiNAVM-reality-e4daf458'
       - 'SiNAVM | SS | #54'
+      - 'SiNAVM-reality-0b9c6c15'
+      - 'SiNAVM-reality-ae1f69e8'
+      - 'SiNAVM-reality-cc87fe57'
+      - 'SiNAVM-reality-af4dfa37'
+      - 'SiNAVM-reality-e6e6ecf2'
+      - 'SiNAVM-reality-356ed52c'
+      - 'SiNAVM-reality-9c23e068'
+      - 'SiNAVM-reality-4048f778'
+      - 'SiNAVM-reality-79e2f536'
+      - 'SiNAVM-reality-90b84c2b'
+      - 'SiNAVM | VLESS | #676'
+      - 'SiNAVM-reality-9363f279'
+      - 'SiNAVM-reality-0ee229f2'
+      - 'SiNAVM-reality-32c6780c'
+      - 'SiNAVM | VLESS | #683'
+      - 'SiNAVM-reality-f805caac'
+      - 'SiNAVM-reality-f776ebdf'
+      - 'SiNAVM-reality-de29cbcb'
+      - 'SiNAVM-reality-17ebaee5'
       - 'SiNAVM | SS | #55'
-      - 'SiNAVM | SS | #56'
-      - 'SiNAVM-reality-c7204a92'
-      - 'SiNAVM | SS | #58'
-      - 'SiNAVM-reality-3e0e3d6b'
-      - 'SiNAVM | SS | #59'
-      - 'SiNAVM | VLESS | #376'
-      - 'SiNAVM-reality-cfb794e6'
-      - 'SiNAVM-reality-6f401702'
-      - 'SiNAVM | SS | #60'
-      - 'SiNAVM-reality-9dd117ea'
-      - 'SiNAVM-reality-c2840cba'
-      - 'SiNAVM | SS | #63'
-      - 'SiNAVM | SS | #64'
-      - 'SiNAVM-reality-eef76e00'
-      - 'SiNAVM | SS | #66'
-      - 'SiNAVM | VMESS | #9'
-      - 'SiNAVM | SS | #67'
-      - 'SiNAVM-reality-43bce0db'
-      - 'SiNAVM-reality-56a78f02'
-      - 'SiNAVM-reality-65d08962'
-      - 'SiNAVM | SS | #70'
-      - 'SiNAVM | VLESS | #406'
-      - 'SiNAVM-reality-b41395f8'
-      - 'SiNAVM-reality-cc5c8f87'
-      - 'SiNAVM | SS | #74'
-      - 'SiNAVM | VLESS | #446'
-      - 'SiNAVM | VLESS | #448'
-      - 'SiNAVM | SS | #79'
-      - 'SiNAVM-reality-7c904d8e'
-      - 'SiNAVM-reality-9bff2394'
-      - 'SiNAVM | SS | #80'
-      - 'SiNAVM | SS | #82'
-      - 'SiNAVM | VLESS | #458'
-      - 'SiNAVM | SS | #83'
-      - 'SiNAVM | VMESS | #12'
-      - 'SiNAVM | SS | #85'
-      - 'SiNAVM-reality-62737a83'
-      - 'SiNAVM-reality-81d16905'
-      - 'SiNAVM-reality-60263fe0'
-      - 'SiNAVM | VLESS | #469'
-      - 'SiNAVM-reality-2f916db0'
-      - 'SiNAVM-reality-e42d739a'
-      - 'SiNAVM-reality-3a3ce3bb'
-      - 'SiNAVM | SS | #87'
-      - 'SiNAVM | SS | #88'
-      - 'SiNAVM-reality-b8399910'
-      - 'SiNAVM-reality-8c550384'
-      - 'SiNAVM | VMESS | #13'
-      - 'SiNAVM-reality-dcc59460'
-      - 'SiNAVM | SS | #89'
-      - 'SiNAVM | SS | #90'
-      - 'SiNAVM | SS | #93'
+      - 'SiNAVM-reality-2f7d109f'
+      - 'SiNAVM | VLESS | #692'
+      - 'SiNAVM-reality-a7e1a05d'
+      - 'SiNAVM-reality-5271689c'
+      - 'SiNAVM-reality-494dd559'
+      - 'SiNAVM-reality-176a9c67'
+      - 'SiNAVM | VLESS | #705'
+      - 'SiNAVM-reality-cb101224'
+      - 'SiNAVM | VLESS | #708'
+      - 'SiNAVM | SS | #57'
+      - 'SiNAVM-reality-585cdfd4'
+      - 'SiNAVM-reality-4dce1fda'
+      - 'SiNAVM-reality-03298b15'
+      - 'SiNAVM-reality-876ed9bd'
+      - 'SiNAVM-reality-40c0d2ba'
+      - 'SiNAVM-reality-bc04069b'
+      - 'SiNAVM-reality-23ede9ec'
+      - 'SiNAVM-reality-6399861f'
+      - 'SiNAVM-reality-1b6751c2'
+      - 'SiNAVM | VLESS | #731'
+      - 'SiNAVM-reality-bbb0a7e5'
+      - 'SiNAVM-reality-d32d906a'
+      - 'SiNAVM | SS | #61'
+      - 'SiNAVM-reality-c3032c8d'
+      - 'SiNAVM-reality-43107227'
+      - 'SiNAVM-reality-1077f4d9'
+      - 'SiNAVM-reality-7fa56d9d'
+      - 'SiNAVM-reality-6de33c7f'
+      - 'SiNAVM | VMESS | #19'
+      - 'SiNAVM | VMESS | #20'
   - name: FALLBACK
     type: fallback
     url: http://cp.cloudflare.com/
     interval: 60
     proxies:
+      - 'SiNAVM-reality-68800f94'
+      - 'SiNAVM-reality-ef7519ef'
+      - 'SiNAVM-reality-02b90b97'
+      - 'SiNAVM-reality-4d44c42d'
+      - 'SiNAVM | VLESS | #10'
+      - 'SiNAVM-reality-8f089a75'
+      - 'SiNAVM | VLESS | #12'
+      - 'SiNAVM | VLESS | #13'
+      - 'SiNAVM | VLESS | #14'
+      - 'SiNAVM | VLESS | #15'
+      - 'SiNAVM | VLESS | #16'
+      - 'SiNAVM | VLESS | #20'
+      - 'SiNAVM | VLESS | #21'
+      - 'SiNAVM | VLESS | #23'
+      - 'SiNAVM-reality-c1b51a65'
+      - 'SiNAVM-reality-fe57d744'
+      - 'SiNAVM-reality-c7c3a68c'
+      - 'SiNAVM-reality-87129dc4'
+      - 'SiNAVM-reality-c5530f59'
+      - 'SiNAVM-reality-62428622'
+      - 'SiNAVM | VLESS | #37'
+      - 'SiNAVM-reality-047e2714'
+      - 'SiNAVM-reality-cb636336'
       - 'SiNAVM | SS | #1'
-      - 'SiNAVM-reality-df9c8a37'
-      - 'SiNAVM-reality-6ebe3988'
+      - 'SiNAVM-reality-49ae935c'
       - 'SiNAVM | SS | #2'
-      - 'SiNAVM | VMESS | #1'
-      - 'SiNAVM-reality-f1ee05df'
-      - 'SiNAVM-reality-ef3a2538'
-      - 'SiNAVM | VLESS | #9'
-      - 'SiNAVM | VMESS | #2'
-      - 'SiNAVM | VMESS | #3'
       - 'SiNAVM | SS | #3'
-      - 'SiNAVM-reality-4f2039a5'
-      - 'SiNAVM-reality-93fa30c0'
-      - 'SiNAVM-reality-cbc26ece'
-      - 'SiNAVM-reality-6e17c384'
-      - 'SiNAVM-reality-d44ab0d6'
-      - 'SiNAVM-reality-1fdd755c'
-      - 'SiNAVM-reality-d30462ca'
-      - 'SiNAVM-reality-3ffa5f52'
+      - 'SiNAVM | SS | #4'
+      - 'SiNAVM | VLESS | #68'
+      - 'SiNAVM-reality-b2875dda'
+      - 'SiNAVM-reality-d9a048f0'
+      - 'SiNAVM-reality-8fd13200'
+      - 'SiNAVM-reality-2238ec22'
+      - 'SiNAVM-reality-0e0ab067'
+      - 'SiNAVM-reality-139abf91'
+      - 'SiNAVM | VLESS | #97'
+      - 'SiNAVM-reality-85f3c561'
+      - 'SiNAVM | VLESS | #99'
+      - 'SiNAVM-reality-b692f440'
+      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-33fdb729'
+      - 'SiNAVM-reality-40076f39'
+      - 'SiNAVM-reality-e53cc470'
+      - 'SiNAVM | SS | #5'
+      - 'SiNAVM-reality-934d7b29'
+      - 'SiNAVM-reality-4af70679'
+      - 'SiNAVM-reality-a790c746'
+      - 'SiNAVM-reality-0e8ea3c0'
+      - 'SiNAVM | VLESS | #120'
+      - 'SiNAVM | VMESS | #2'
+      - 'SiNAVM | VLESS | #127'
+      - 'SiNAVM | VMESS | #3'
+      - 'SiNAVM-reality-eb41a017'
+      - 'SiNAVM | VLESS | #134'
+      - 'SiNAVM | VLESS | #138'
+      - 'SiNAVM | VMESS | #5'
+      - 'SiNAVM | SS | #6'
+      - 'SiNAVM | VMESS | #6'
+      - 'SiNAVM | VMESS | #7'
+      - 'SiNAVM | VMESS | #8'
+      - 'SiNAVM | SS | #7'
+      - 'SiNAVM | VMESS | #9'
+      - 'SiNAVM | VMESS | #11'
+      - 'SiNAVM | VMESS | #12'
+      - 'SiNAVM | SS | #8'
+      - 'SiNAVM | SS | #9'
+      - 'SiNAVM | VMESS | #13'
       - 'SiNAVM | SS | #10'
-      - 'SiNAVM-reality-ba7fe7a1'
-      - 'SiNAVM-reality-4bef67be'
       - 'SiNAVM | SS | #11'
       - 'SiNAVM | SS | #12'
       - 'SiNAVM | SS | #13'
-      - 'SiNAVM-reality-5795ada5'
-      - 'SiNAVM | VMESS | #4'
-      - 'SiNAVM | SS | #20'
-      - 'SiNAVM-reality-bf4e3c7a'
-      - 'SiNAVM-reality-cb822f88'
-      - 'SiNAVM-reality-e8de3e3b'
-      - 'SiNAVM-reality-00c3a44e'
+      - 'SiNAVM | SS | #14'
+      - 'SiNAVM | SS | #15'
+      - 'SiNAVM | SS | #16'
+      - 'SiNAVM-reality-e352b44e'
+      - 'SiNAVM | VMESS | #14'
+      - 'SiNAVM | SS | #17'
+      - 'SiNAVM | VMESS | #15'
+      - 'SiNAVM | SS | #18'
+      - 'SiNAVM-reality-3727b8e5'
+      - 'SiNAVM | SS | #19'
+      - 'SiNAVM | SS | #21'
       - 'SiNAVM | SS | #22'
-      - 'SiNAVM-reality-438b5f1c'
-      - 'SiNAVM-reality-e63146f1'
-      - 'SiNAVM-reality-ed2d872d'
-      - 'SiNAVM-reality-5a077649'
-      - 'SiNAVM-reality-b9b72772'
-      - 'SiNAVM-reality-d0b080f8'
-      - 'SiNAVM-reality-2886119b'
-      - 'SiNAVM | SS | #24'
+      - 'SiNAVM | SS | #23'
       - 'SiNAVM | SS | #25'
+      - 'SiNAVM | SS | #26'
       - 'SiNAVM | SS | #27'
       - 'SiNAVM | SS | #28'
+      - 'SiNAVM | SS | #29'
       - 'SiNAVM | SS | #30'
+      - 'SiNAVM-reality-f0a5b71c'
+      - 'SiNAVM-reality-1106f0c8'
+      - 'SiNAVM-reality-780d3639'
+      - 'SiNAVM-reality-fbf8482d'
+      - 'SiNAVM-reality-8501ff80'
+      - 'SiNAVM-reality-532a24e1'
+      - 'SiNAVM-reality-764b46fb'
+      - 'SiNAVM-reality-7840d970'
+      - 'SiNAVM-reality-365a0563'
+      - 'SiNAVM-reality-4541753a'
+      - 'SiNAVM-reality-2ebedcfb'
+      - 'SiNAVM-reality-2af5ea2b'
+      - 'SiNAVM-reality-d71f7718'
+      - 'SiNAVM-reality-98e291fb'
+      - 'SiNAVM-reality-491972ed'
+      - 'SiNAVM-reality-e30cad94'
+      - 'SiNAVM-reality-34496e1a'
+      - 'SiNAVM-reality-41b3dc30'
+      - 'SiNAVM-reality-84b6cfee'
+      - 'SiNAVM-reality-e42f37ef'
+      - 'SiNAVM | VLESS | #288'
+      - 'SiNAVM-reality-c43d89a9'
+      - 'SiNAVM-reality-d8f51c8e'
+      - 'SiNAVM-reality-4f3239ac'
+      - 'SiNAVM-reality-b5275e77'
+      - 'SiNAVM | VLESS | #329'
+      - 'SiNAVM-reality-816b7216'
+      - 'SiNAVM-reality-69f0f853'
+      - 'SiNAVM | VLESS | #373'
+      - 'SiNAVM-reality-953c81c9'
+      - 'SiNAVM-reality-7ca30b5e'
+      - 'SiNAVM-reality-eb9259ce'
+      - 'SiNAVM-reality-5aade4fc'
+      - 'SiNAVM | VLESS | #468'
       - 'SiNAVM | SS | #31'
-      - 'SiNAVM | VLESS | #102'
-      - 'SiNAVM | VLESS | #103'
+      - 'SiNAVM-reality-31e2da36'
+      - 'SiNAVM-reality-f2d5575b'
+      - 'SiNAVM | SS | #32'
+      - 'SiNAVM | VLESS | #492'
+      - 'SiNAVM | SS | #33'
       - 'SiNAVM | SS | #34'
+      - 'SiNAVM | VLESS | #495'
       - 'SiNAVM | SS | #35'
+      - 'SiNAVM-reality-d7133e49'
       - 'SiNAVM | SS | #36'
+      - 'SiNAVM | SS | #37'
+      - 'SiNAVM-reality-6a2d28f1'
       - 'SiNAVM | SS | #38'
       - 'SiNAVM | SS | #39'
+      - 'SiNAVM-reality-e78ea421'
+      - 'SiNAVM | VLESS | #507'
+      - 'SiNAVM | SS | #40'
       - 'SiNAVM | SS | #41'
-      - 'SiNAVM-reality-6b94817c'
-      - 'SiNAVM-reality-d5bb3660'
-      - 'SiNAVM-reality-d0d78954'
-      - 'SiNAVM-reality-8e70bf3a'
-      - 'SiNAVM-reality-acc3d3e5'
-      - 'SiNAVM-reality-708c5414'
-      - 'SiNAVM-reality-735dcdbc'
-      - 'SiNAVM-reality-da9fcea7'
-      - 'SiNAVM-reality-393ab790'
-      - 'SiNAVM-reality-c56d6006'
-      - 'SiNAVM-reality-cfe13a39'
-      - 'SiNAVM-reality-4134b5d4'
-      - 'SiNAVM-reality-f841e5e3'
-      - 'SiNAVM-reality-b6b13ce0'
-      - 'SiNAVM-reality-49832f45'
-      - 'SiNAVM-reality-41cddd9e'
-      - 'SiNAVM-reality-35b4a178'
-      - 'SiNAVM-reality-613fa995'
-      - 'SiNAVM-reality-937f6634'
-      - 'SiNAVM | VLESS | #177'
-      - 'SiNAVM-reality-b90bb0c7'
-      - 'SiNAVM | VLESS | #183'
-      - 'SiNAVM-reality-9d247532'
-      - 'SiNAVM-reality-582ee2ba'
-      - 'SiNAVM-reality-fa12abaa'
-      - 'SiNAVM-reality-8b4878de'
-      - 'SiNAVM-reality-844713cd'
+      - 'SiNAVM | VLESS | #508'
+      - 'SiNAVM | VLESS | #509'
+      - 'SiNAVM | VLESS | #510'
+      - 'SiNAVM | VLESS | #511'
+      - 'SiNAVM | SS | #42'
       - 'SiNAVM | SS | #43'
+      - 'SiNAVM-reality-b74329da'
       - 'SiNAVM | SS | #44'
-      - 'SiNAVM-reality-18f7bb5b'
-      - 'SiNAVM-reality-2dcc3624'
+      - 'SiNAVM-reality-bfd2e633'
+      - 'SiNAVM-reality-0e9711fb'
+      - 'SiNAVM | VLESS | #517'
+      - 'SiNAVM | SS | #45'
+      - 'SiNAVM-reality-31e07e48'
+      - 'SiNAVM | VLESS | #523'
+      - 'SiNAVM-reality-dfeb25d7'
+      - 'SiNAVM-reality-74aa0ed3'
+      - 'SiNAVM | SS | #46'
+      - 'SiNAVM | SS | #47'
+      - 'SiNAVM | SS | #48'
+      - 'SiNAVM-reality-f4d95d5f'
       - 'SiNAVM | SS | #49'
-      - 'SiNAVM-reality-2576d168'
+      - 'SiNAVM | VLESS | #529'
+      - 'SiNAVM-reality-5652d94c'
       - 'SiNAVM | SS | #50'
-      - 'SiNAVM-reality-4f4163c3'
-      - 'SiNAVM-reality-6eb72159'
+      - 'SiNAVM | VMESS | #17'
+      - 'SiNAVM-reality-342f12ff'
       - 'SiNAVM | SS | #51'
-      - 'SiNAVM | SS | #52'
+      - 'SiNAVM-reality-9d1fc74f'
+      - 'SiNAVM | VLESS | #541'
+      - 'SiNAVM-reality-f3cd0b17'
+      - 'SiNAVM-reality-da682217'
+      - 'SiNAVM-reality-902cb504'
+      - 'SiNAVM-reality-725b5b15'
+      - 'SiNAVM-reality-3fb03a16'
+      - 'SiNAVM-reality-99e7884b'
+      - 'SiNAVM-reality-805b6c95'
+      - 'SiNAVM-reality-9d6bddd4'
+      - 'SiNAVM | VLESS | #592'
+      - 'SiNAVM | VLESS | #598'
       - 'SiNAVM | SS | #53'
+      - 'SiNAVM | VLESS | #600'
+      - 'SiNAVM | VLESS | #603'
+      - 'SiNAVM-reality-60775037'
+      - 'SiNAVM | VLESS | #629'
+      - 'SiNAVM-reality-410c32ab'
+      - 'SiNAVM | VLESS | #633'
+      - 'SiNAVM-reality-5dbe306e'
+      - 'SiNAVM-reality-58f52bc8'
+      - 'SiNAVM-reality-ec48e10d'
+      - 'SiNAVM-reality-41287532'
+      - 'SiNAVM-reality-f461e910'
+      - 'SiNAVM | VLESS | #641'
+      - 'SiNAVM-reality-5a157c54'
+      - 'SiNAVM-reality-0c8b91ad'
+      - 'SiNAVM-reality-f101ae87'
+      - 'SiNAVM-reality-e4daf458'
       - 'SiNAVM | SS | #54'
+      - 'SiNAVM-reality-0b9c6c15'
+      - 'SiNAVM-reality-ae1f69e8'
+      - 'SiNAVM-reality-cc87fe57'
+      - 'SiNAVM-reality-af4dfa37'
+      - 'SiNAVM-reality-e6e6ecf2'
+      - 'SiNAVM-reality-356ed52c'
+      - 'SiNAVM-reality-9c23e068'
+      - 'SiNAVM-reality-4048f778'
+      - 'SiNAVM-reality-79e2f536'
+      - 'SiNAVM-reality-90b84c2b'
+      - 'SiNAVM | VLESS | #676'
+      - 'SiNAVM-reality-9363f279'
+      - 'SiNAVM-reality-0ee229f2'
+      - 'SiNAVM-reality-32c6780c'
+      - 'SiNAVM | VLESS | #683'
+      - 'SiNAVM-reality-f805caac'
+      - 'SiNAVM-reality-f776ebdf'
+      - 'SiNAVM-reality-de29cbcb'
+      - 'SiNAVM-reality-17ebaee5'
       - 'SiNAVM | SS | #55'
-      - 'SiNAVM | SS | #56'
-      - 'SiNAVM-reality-c7204a92'
-      - 'SiNAVM | SS | #58'
-      - 'SiNAVM-reality-3e0e3d6b'
-      - 'SiNAVM | SS | #59'
-      - 'SiNAVM | VLESS | #376'
-      - 'SiNAVM-reality-cfb794e6'
-      - 'SiNAVM-reality-6f401702'
-      - 'SiNAVM | SS | #60'
-      - 'SiNAVM-reality-9dd117ea'
-      - 'SiNAVM-reality-c2840cba'
-      - 'SiNAVM | SS | #63'
-      - 'SiNAVM | SS | #64'
-      - 'SiNAVM-reality-eef76e00'
-      - 'SiNAVM | SS | #66'
-      - 'SiNAVM | VMESS | #9'
-      - 'SiNAVM | SS | #67'
-      - 'SiNAVM-reality-43bce0db'
-      - 'SiNAVM-reality-56a78f02'
-      - 'SiNAVM-reality-65d08962'
-      - 'SiNAVM | SS | #70'
-      - 'SiNAVM | VLESS | #406'
-      - 'SiNAVM-reality-b41395f8'
-      - 'SiNAVM-reality-cc5c8f87'
-      - 'SiNAVM | SS | #74'
-      - 'SiNAVM | VLESS | #446'
-      - 'SiNAVM | VLESS | #448'
-      - 'SiNAVM | SS | #79'
-      - 'SiNAVM-reality-7c904d8e'
-      - 'SiNAVM-reality-9bff2394'
-      - 'SiNAVM | SS | #80'
-      - 'SiNAVM | SS | #82'
-      - 'SiNAVM | VLESS | #458'
-      - 'SiNAVM | SS | #83'
-      - 'SiNAVM | VMESS | #12'
-      - 'SiNAVM | SS | #85'
-      - 'SiNAVM-reality-62737a83'
-      - 'SiNAVM-reality-81d16905'
-      - 'SiNAVM-reality-60263fe0'
-      - 'SiNAVM | VLESS | #469'
-      - 'SiNAVM-reality-2f916db0'
-      - 'SiNAVM-reality-e42d739a'
-      - 'SiNAVM-reality-3a3ce3bb'
-      - 'SiNAVM | SS | #87'
-      - 'SiNAVM | SS | #88'
-      - 'SiNAVM-reality-b8399910'
-      - 'SiNAVM-reality-8c550384'
-      - 'SiNAVM | VMESS | #13'
-      - 'SiNAVM-reality-dcc59460'
-      - 'SiNAVM | SS | #89'
-      - 'SiNAVM | SS | #90'
-      - 'SiNAVM | SS | #93'
+      - 'SiNAVM-reality-2f7d109f'
+      - 'SiNAVM | VLESS | #692'
+      - 'SiNAVM-reality-a7e1a05d'
+      - 'SiNAVM-reality-5271689c'
+      - 'SiNAVM-reality-494dd559'
+      - 'SiNAVM-reality-176a9c67'
+      - 'SiNAVM | VLESS | #705'
+      - 'SiNAVM-reality-cb101224'
+      - 'SiNAVM | VLESS | #708'
+      - 'SiNAVM | SS | #57'
+      - 'SiNAVM-reality-585cdfd4'
+      - 'SiNAVM-reality-4dce1fda'
+      - 'SiNAVM-reality-03298b15'
+      - 'SiNAVM-reality-876ed9bd'
+      - 'SiNAVM-reality-40c0d2ba'
+      - 'SiNAVM-reality-bc04069b'
+      - 'SiNAVM-reality-23ede9ec'
+      - 'SiNAVM-reality-6399861f'
+      - 'SiNAVM-reality-1b6751c2'
+      - 'SiNAVM | VLESS | #731'
+      - 'SiNAVM-reality-bbb0a7e5'
+      - 'SiNAVM-reality-d32d906a'
+      - 'SiNAVM | SS | #61'
+      - 'SiNAVM-reality-c3032c8d'
+      - 'SiNAVM-reality-43107227'
+      - 'SiNAVM-reality-1077f4d9'
+      - 'SiNAVM-reality-7fa56d9d'
+      - 'SiNAVM-reality-6de33c7f'
+      - 'SiNAVM | VMESS | #19'
+      - 'SiNAVM | VMESS | #20'
 rule-providers:
   ir: {type: http, format: text, behavior: domain, path: ./ruleset/ir.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.txt, interval: 86400}
   ads: {type: http, format: text, behavior: domain, path: ./ruleset/ads.txt, url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ads.txt, interval: 86400}
