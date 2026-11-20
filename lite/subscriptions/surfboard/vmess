@@ -11,11 +11,10 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #25 = vmess, 172.64.229.21, 443, username = 0cf6d970-3f1d-4aae-a989-92a8f76ae3db, ws = true, tls = 1, vmess-aead = false, ws-path = /ws, ws-headers = Host:"vmess.lbw666.dpdns.org", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #25
-URL-TEST = url-test,SiNAVM | VMESS | #25
-FALLBACK = fallback,SiNAVM | VMESS | #25
+MANUAL = select,URL-TEST,FALLBACK
+URL-TEST = url-test
+FALLBACK = fallback
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
