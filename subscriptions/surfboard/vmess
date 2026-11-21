@@ -11,11 +11,15 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #10 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #1 = vmess, 104.18.42.163, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #2 = vmess, 188.114.99.137, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #3 = vmess, 172.64.145.93, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #6 = vmess, 172.67.190.164, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #19 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #10
-URL-TEST = url-test,SiNAVM | VMESS | #10
-FALLBACK = fallback,SiNAVM | VMESS | #10
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #1,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #6,SiNAVM | VMESS | #19
+URL-TEST = url-test,SiNAVM | VMESS | #1,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #6,SiNAVM | VMESS | #19
+FALLBACK = fallback,SiNAVM | VMESS | #1,SiNAVM | VMESS | #2,SiNAVM | VMESS | #3,SiNAVM | VMESS | #6,SiNAVM | VMESS | #19
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
