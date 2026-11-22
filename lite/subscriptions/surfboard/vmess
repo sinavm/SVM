@@ -11,12 +11,10 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #17 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #18 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18
-URL-TEST = url-test,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18
-FALLBACK = fallback,SiNAVM | VMESS | #17,SiNAVM | VMESS | #18
+MANUAL = select,URL-TEST,FALLBACK
+URL-TEST = url-test
+FALLBACK = fallback
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
