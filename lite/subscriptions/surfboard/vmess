@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #16 = vmess, 57.129.132.223, 80, username = a25cbf11-2908-4a1b-a3a8-9a571777dca3, ws = true, tls = , vmess-aead = true, ws-path = /vmess/, ws-headers = Host:"57.129.132.223", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #16
+URL-TEST = url-test,SiNAVM | VMESS | #16
+FALLBACK = fallback,SiNAVM | VMESS | #16
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
