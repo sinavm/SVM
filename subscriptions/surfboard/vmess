@@ -11,11 +11,19 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #3 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #18 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #20 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #23 = vmess, 172.64.145.93, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #25 = vmess, 188.114.99.137, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #26 = vmess, www.shopify.com, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #28 = vmess, 57.129.132.223, 80, username = a25cbf11-2908-4a1b-a3a8-9a571777dca3, ws = true, tls = , vmess-aead = true, ws-path = /vmess/, ws-headers = Host:"57.129.132.223", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #29 = vmess, 172.67.190.164, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #31 = vmess, 104.18.42.163, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #34 = vmess, 104.18.0.1, 8443, username = 60441548-b68e-43b2-8191-e3b884be4b3c, ws = true, tls = 1, vmess-aead = true, ws-path = /lMnsZUN4/, ws-headers = Host:"v2ray1.dozapp.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #3
-URL-TEST = url-test,SiNAVM | VMESS | #3
-FALLBACK = fallback,SiNAVM | VMESS | #3
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #18,SiNAVM | VMESS | #20,SiNAVM | VMESS | #23,SiNAVM | VMESS | #25,SiNAVM | VMESS | #26,SiNAVM | VMESS | #28,SiNAVM | VMESS | #29,SiNAVM | VMESS | #31,SiNAVM | VMESS | #34
+URL-TEST = url-test,SiNAVM | VMESS | #18,SiNAVM | VMESS | #20,SiNAVM | VMESS | #23,SiNAVM | VMESS | #25,SiNAVM | VMESS | #26,SiNAVM | VMESS | #28,SiNAVM | VMESS | #29,SiNAVM | VMESS | #31,SiNAVM | VMESS | #34
+FALLBACK = fallback,SiNAVM | VMESS | #18,SiNAVM | VMESS | #20,SiNAVM | VMESS | #23,SiNAVM | VMESS | #25,SiNAVM | VMESS | #26,SiNAVM | VMESS | #28,SiNAVM | VMESS | #29,SiNAVM | VMESS | #31,SiNAVM | VMESS | #34
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
