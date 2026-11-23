@@ -11,18 +11,14 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #8 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #20 = vmess, 104.18.42.163, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #21 = vmess, www.shopify.com, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #23 = vmess, 188.114.99.137, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #24 = vmess, 172.64.145.93, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #25 = vmess, 172.67.190.164, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = true, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #40 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #41 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #7 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #37 = vmess, 152.67.8.205, 80, username = 9db4c708-aef8-4359-821b-38e47990be0d, ws = true, tls = , vmess-aead = false, ws-path = /, ws-headers = Host:"", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #38 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #40 = vmess, 168.110.63.247, 8081, username = c3bde296-8e44-4b8c-a325-577d5b3cc7c8, ws = true, tls = , vmess-aead = true, ws-path = /vless, ws-headers = Host:"", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #8,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #23,SiNAVM | VMESS | #24,SiNAVM | VMESS | #25,SiNAVM | VMESS | #40,SiNAVM | VMESS | #41
-URL-TEST = url-test,SiNAVM | VMESS | #8,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #23,SiNAVM | VMESS | #24,SiNAVM | VMESS | #25,SiNAVM | VMESS | #40,SiNAVM | VMESS | #41
-FALLBACK = fallback,SiNAVM | VMESS | #8,SiNAVM | VMESS | #20,SiNAVM | VMESS | #21,SiNAVM | VMESS | #23,SiNAVM | VMESS | #24,SiNAVM | VMESS | #25,SiNAVM | VMESS | #40,SiNAVM | VMESS | #41
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #7,SiNAVM | VMESS | #37,SiNAVM | VMESS | #38,SiNAVM | VMESS | #40
+URL-TEST = url-test,SiNAVM | VMESS | #7,SiNAVM | VMESS | #37,SiNAVM | VMESS | #38,SiNAVM | VMESS | #40
+FALLBACK = fallback,SiNAVM | VMESS | #7,SiNAVM | VMESS | #37,SiNAVM | VMESS | #38,SiNAVM | VMESS | #40
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
