@@ -11,12 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #21 = vmess, 168.110.63.247, 8081, username = c3bde296-8e44-4b8c-a325-577d5b3cc7c8, ws = true, tls = , vmess-aead = true, ws-path = /vless, ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #27 = vmess, 104.18.42.163, 443, username = 6a89a215-22bf-4bd7-9642-b95b2e09583a, ws = true, tls = 1, vmess-aead = false, ws-path = /hls/cctv5phd.m3u8, ws-headers = Host:"guanwang.awsno.com", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #16 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #21,SiNAVM | VMESS | #27
-URL-TEST = url-test,SiNAVM | VMESS | #21,SiNAVM | VMESS | #27
-FALLBACK = fallback,SiNAVM | VMESS | #21,SiNAVM | VMESS | #27
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #16
+URL-TEST = url-test,SiNAVM | VMESS | #16
+FALLBACK = fallback,SiNAVM | VMESS | #16
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
