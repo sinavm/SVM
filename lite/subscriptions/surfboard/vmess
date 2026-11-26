@@ -11,12 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #14 = vmess, 156.245.232.239, 35043, username = b15e481d-17e4-41a8-84c2-23d4f0514d9a, ws = true, tls = , vmess-aead = false, ws-path = , ws-headers = Host:"", skip-cert-verify = true, tfo = false
-SiNAVM | VMESS | #20 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #37 = vmess, 38.107.234.57, 80, username = 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c, ws = true, tls = , vmess-aead = true, ws-path = /vmess/, ws-headers = Host:"", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #14,SiNAVM | VMESS | #20
-URL-TEST = url-test,SiNAVM | VMESS | #14,SiNAVM | VMESS | #20
-FALLBACK = fallback,SiNAVM | VMESS | #14,SiNAVM | VMESS | #20
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #37
+URL-TEST = url-test,SiNAVM | VMESS | #37
+FALLBACK = fallback,SiNAVM | VMESS | #37
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
