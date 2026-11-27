@@ -11,10 +11,11 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
+SiNAVM | VMESS | #24 = vmess, 47.244.120.197, 23026, username = b9de1bc9-baa7-41ac-86f7-ccd59695cb21, ws = true, tls = , vmess-aead = true, ws-path = /arki, ws-headers = Host:"47.244.120.197", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK
-URL-TEST = url-test
-FALLBACK = fallback
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #24
+URL-TEST = url-test,SiNAVM | VMESS | #24
+FALLBACK = fallback,SiNAVM | VMESS | #24
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
