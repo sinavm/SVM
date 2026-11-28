@@ -11,11 +11,12 @@ enhanced-mode-by-rule = true
 
 [Proxy]
 DIRECT = direct
-SiNAVM | VMESS | #1 = vmess, 129.146.77.248, 39495, username = f836c736-87fc-4fde-aabc-00857ecdff3e, ws = true, tls = , vmess-aead = true, ws-path = /cctv13.m3u8, ws-headers = Host:"129.146.77.248", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #12 = vmess, 38.11.69.48, 30004, username = 418048af-a293-4b99-9b0c-98ca3580dd24, ws = true, tls = 1, vmess-aead = false, ws-path = /path/1698843555400, ws-headers = Host:"www.83761815.xyz", skip-cert-verify = true, tfo = false
+SiNAVM | VMESS | #37 = vmess, 94.130.237.57, 27154, username = d9d02f3e-c877-4a1f-990e-f2418777f745, ws = true, tls = , vmess-aead = true, ws-path = /Telegram=@AmyraxVPN, ws-headers = Host:"94.130.237.57", skip-cert-verify = true, tfo = false
 [Proxy Group]
-MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #1
-URL-TEST = url-test,SiNAVM | VMESS | #1
-FALLBACK = fallback,SiNAVM | VMESS | #1
+MANUAL = select,URL-TEST,FALLBACK,SiNAVM | VMESS | #12,SiNAVM | VMESS | #37
+URL-TEST = url-test,SiNAVM | VMESS | #12,SiNAVM | VMESS | #37
+FALLBACK = fallback,SiNAVM | VMESS | #12,SiNAVM | VMESS | #37
 [Rule]
 GEOIP,IR,DIRECT
 FINAL,MANUAL
